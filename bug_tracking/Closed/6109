@@ -1,0 +1,58 @@
+From scottg@san.rr.com  Mon Jul 21 15:03:42 2014
+Return-Path: <scottg@san.rr.com>
+Received: from cdptpa-oedge-vip.email.rr.com (cdptpa-outbound-snat.email.rr.com [107.14.166.230])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s6LL3geL032361
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 21 Jul 2014 15:03:42 -0600
+Authentication-Results:  cdptpa-oedge01 smtp.user=scottg@san.rr.com; auth=pass (LOGIN)
+Received: from [107.14.174.248] ([107.14.174.248:19515] helo=cdptpa-web08)
+	by cdptpa-oedge01 (envelope-from <scottg@san.rr.com>)
+	(ecelerity 3.5.0.35861 r(Momo-dev:tip)) with ESMTPA
+	id 02/9F-04506-D208DC35; Mon, 21 Jul 2014 21:03:41 +0000
+Message-ID: <20140721210341.RR8WT.87712.root@cdptpa-web08>
+Date: Mon, 21 Jul 2014 21:03:41 +0000
+From:  <scottg@san.rr.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>,
+        Leandro Watanabe <leandrohw@gmail.com>,
+        Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: Re: CHANGE: addInitialAssignment only add dimensions when needed
+ (PR#6100)
+In-Reply-To: <937CB72A-0140-4DF3-B12A-373D9FFEAF02@ece.utah.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+Sensitivity: Normal
+X-Originating-IP: from 66.27.83.108 by webmail.nyc.rr.com; Mon, 21 Jul 2014 21:03:41 +0000
+X-RR-Connecting-IP: 107.14.168.118:2525
+X-Cloudmark-Score: 0
+
+Thanks for the clarification.
+
+On a side note: Does trying to edit a modifier open the reactants editor?
+
+-Scott Glass
+
+---- "Chris J. Myers" <myers@ece.utah.edu> wrote: 
+> For context, here is the description from the bug database:
+> 
+> The function addInitialAssignment should only add dimensions and indices when
+> needed.  To determine this, the math should be checked to see what the
+> dimensions of the math are.  If they are scalar, then add the dimensions and
+> indices as done now.  Otherwise, should compare dimensions with those for the
+> variable.  If the math dimension number or sizes don't match, then there should
+> be an error.  Otherwise, simply add the math with no dimensions or indices
+> added.  This is to cover the case where the assignment is with other arrays or
+> using the vector operator.
+> 
+> The idea was that if you assign a vector then you would not include dimensions.  However, the current thinking that we are having is that we may want to always include dimensions.  This has some interesting ramifications which I will soon likely email the arrays mailing list with.  For example, do we want to allow an initial assignment that does not assign every element of an array?  
+> 
+> Anyway, the short answer for you is that at this point, this item is on hold while we work through these issues.
+> 
+> Chris
+> 
+> On Jul 21, 2014, at 2:14 PM, Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+> 
+> > I am very confused by this. I think an example will offer the most clarity.
+> > Where is the math read and how can it have dimensions?
+> 
+

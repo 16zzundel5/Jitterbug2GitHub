@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: eemercer@elen.utah.edu
+Subject: Re: Potential Memory Leak in geom.rsg (PR#517)
+Date: Tue Apr 23 15:36:29 2002
+
+> Who frees the anti_causal_list anti stored in the clockkey?
+> 
+I think it is in free_region in common_timing.c.  Please check.

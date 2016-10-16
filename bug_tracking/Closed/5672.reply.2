@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG:  Unable to draw arcs from species to components (PR#5672)
+Date: Thu May 31 01:19:15 2012
+
+Ok, the problem is that if you don't put a port on the compartment that it
+thinks the compartment is enclosed so 
+it does not allow port mapping.  This though is no longer a restriction, so I've
+removed it.  Should work now.
+
+Chris

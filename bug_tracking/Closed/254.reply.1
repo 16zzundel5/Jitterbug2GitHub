@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@vlsigroup.elen.utah.edu
+Subject: Re: Print out all minimal cubes found. (PR#254)
+Date: Sun Nov  7 22:20:07 1999
+CC: hans@cs
+
+findcover and resolve now output a file <filename>.cov when verbose is on which
+prints out all minimal covers found for each excitation region before the
+covering
+problem is solved.  With "exact" on, the list will include potentially more
+than
+one per excitation region.  
+
+Good examples to test this on are burst-mode ones, so ask hans.

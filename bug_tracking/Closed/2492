@@ -1,0 +1,47 @@
+From christian.atheist@gmail.com  Sun Feb 10 15:08:52 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from wx-out-0506.google.com (wx-out-0506.google.com [66.249.82.225])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1AM8qZl003146
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 10 Feb 2008 15:08:52 -0700
+Received: by wx-out-0506.google.com with SMTP id s7so4074874wxc.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 10 Feb 2008 14:08:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=Pq9kDLDZF+71LAOBy/vSdaRMx56BvPxerE/MrFUsyqU=;
+        b=ImfljqnyYU5fbQzcCdCOMcZyO2K61U9Y83/tRuPZ5D4miKfNfgzs1yrhqrH0asSUfaTRMFx+1Rrt4C3XCDAZn6/jlMu18x6qPvA0nfGDL55/KTtRvMrM8BKt71ABlfXd9j8YS5oLfWHD1jqGAPYXo0XzHkDwEmc4uQ4xl8kQD5E=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=aYpvSDhuL94cCUfkZ65wlT0DJ8yLPLRWwS3WhdN6+adItQRjx9Sed2vIy/76WdpGTih4p4K34uurg6Is8U16jaAuxGj2fSGjRpQkF/gdMN/jjZ+HkGX/7yPhxfZZ33BkhrJAdbKla7hdbdvepNiRxM1QA4p/smR6g4IUPt0g2qw=
+Received: by 10.151.82.3 with SMTP id j3mr6344629ybl.78.1202681331684;
+        Sun, 10 Feb 2008 14:08:51 -0800 (PST)
+Received: by 10.150.153.7 with HTTP; Sun, 10 Feb 2008 14:08:51 -0800 (PST)
+Message-ID: <eba119560802101408n7ef594eepb7e61fbb4b3e183b@mail.gmail.com>
+Date: Sun, 10 Feb 2008 15:08:51 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: File Created in Wrong Location
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+After running a simulation, I noticed that my top level directory
+contained the following files:
+
+majority.gcm  majority.sbml  toggle  toggleuser-defined.dat
+
+It looks like the user-defined.dat is being saved incorrectly in the
+top level directory, also.  This is probably due to a missing "/" in
+the save command.  The strange thing is that the user-defined.dat file
+is also correctly saved in the analysis directory.  I am not sure when
+this happened, though.
+
+Cheers,
+Nam
+

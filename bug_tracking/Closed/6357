@@ -1,0 +1,22 @@
+From V.Dubikhin1@newcastle.ac.uk  Tue Aug 11 10:47:54 2015
+Return-Path: <V.Dubikhin1@newcastle.ac.uk>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t7BGlrDN020497
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Aug 2015 10:47:53 -0600
+Date: Tue, 11 Aug 2015 10:47:53 -0600
+Message-Id: <201508111647.t7BGlrDN020497@chou.ece.utah.edu>
+From: V.Dubikhin1@newcastle.ac.uk
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG SBML to LPN conversion
+
+Full_Name: Vladimir Dubikhin
+Version: LEMA 2.8.4
+OS: Linux
+Submission from: (NULL) (128.240.225.110)
+
+
+Variables rates, explicitly expressed as a variable(for example, rc_ideal_rate),
+as well as not equal(!=) check for continuous  variables, present in conditional
+expression, cause errors in the conversion process. So, the resulting expression
+is empty.
+

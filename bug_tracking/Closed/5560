@@ -1,0 +1,26 @@
+From myers@eng.utah.edu  Wed Nov  9 08:46:32 2011
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id pA9FkWbC015140
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 9 Nov 2011 08:46:32 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ROAM5-000ERs-5L
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 09 Nov 2011 08:46:25 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: extracellular diffusion for grid models
+Date: Wed, 9 Nov 2011 08:46:28 -0700
+Message-Id: <39A1AEA0-EDAB-4915-A0BD-CCA33A46EF26@ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1251.1)
+X-Mailer: Apple Mail (2.1251.1)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id pA9FkWbC015140
+
+The parameters for extracellular diffusion should be stored in grid models at the top level.  Namely, for a grid based models, an extracellular array-based species should be created with array based diffusion/degradation reactions.  This is where the extracellular diffusion and degradation rates should be stored.
+
+

@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:12:50 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.191])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELCnfe012365
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:12:50 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so525909fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:12:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=e/h6n/nmREs9PDYCQId83guJukpZHmgpqlUBR10efZY=;
+        b=QqIFe/+aBDMWZewgdbda8O1oUEsLnk1BeSQOJy76fuKiHOxS14AH8CL/BxGMFxlMbtwhNjJ8qfPNnWNgjUhqqvV5qKWRlKmQqcymXUBwXn9xwtWxgm7vg+2oZF15fafVM3R5wvCCmUiXEtZGJmgE8353GDsSLTe2TetaYXo5O7Q=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=tfhO7sK8pCvlzFfzIwWi4EhIhrp+wnliavPJ1nH1TPnXIAcMucPNteiH0WOl64uKGYos4TmJOGrE5YP3Xu0QOiZra/YtCzB7af0jp1genq6/deUA2mzAATZi+FFcHMGMc+1SdXimGs+RRhMYjWK7icJa7RgzhwVZv5TtAuI7w8Y=
+Received: by 10.82.160.19 with SMTP id i19mr1710605bue.23.1203023568207;
+        Thu, 14 Feb 2008 13:12:48 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:12:48 -0800 (PST)
+Message-ID: <eba119560802141312u415d6680l2aeea0e37f1e76ad@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:12:48 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE: Change Promoters to Gene Copy
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+  Change the name of parameter
+

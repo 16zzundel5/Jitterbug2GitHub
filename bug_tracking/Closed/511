@@ -1,0 +1,39 @@
+From root@ming.elen.utah.edu  Wed Aug 30 04:31:40 2000
+Return-Path: <root@ming.elen.utah.edu>
+Received: from ming.elen.utah.edu (ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id EAA14413
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 30 Aug 2000 04:31:39 -0600
+Received: (from root@localhost)
+	by ming.elen.utah.edu (8.9.3/8.9.3) id EAA16058
+	for atacs-bugs@shang.elen.utah.edu; Wed, 30 Aug 2000 04:31:39 -0600
+Date: Wed, 30 Aug 2000 04:31:39 -0600
+From: root <root@ming.elen.utah.edu>
+Message-Id: <200008301031.EAA16058@ming.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD216 broken repository!
+
+Linux ming.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387220 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2048 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+compare - There were 6 unmatched outputs.
+compare - There were 6 unmatched product terms.
+compare - There were 17 unmatched literals.
+make[1]: *** [fifoN2.PRS.ok] Error 29
+make: *** [csp/check.subDir] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

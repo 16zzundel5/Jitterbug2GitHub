@@ -1,0 +1,56 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: haba@dtu.dk
+Subject: Re: BUG: (PR#6639)
+Date: Fri Aug 26 02:42:50 2016
+
+Please try version 2.9.1 to see if this fixes your issue.
+
+Chris
+
+> iBioSim Version 2.8.6
+> 
+> Operating system: Mac OS X
+> 
+> Bug reported by: haba@dtu.dk
+> 
+> Description:
+> 
+> 
+> Stack trace:
+> java.lang.NoClassDefFoundError: Could not initialize class
+> org.sbml.libsbml.libsbmlJNI
+> 	at org.sbml.libsbml.SBMLReader.<init>(SBMLReader.java:105)
+> 	at biomodel.util.SBMLutilities.convertToFBCVersion2(SBMLutilities.java:6717)
+> 	at biomodel.util.SBMLutilities.readSBML(SBMLutilities.java:6867)
+> 	at main.Gui.importSBML(Gui.java:5333)
+> 	at main.Gui.actionPerformed(Gui.java:3665)
+> 	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+> 	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+> 	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+> 	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+> 	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+> 	at com.apple.laf.ScreenMenuItem.actionPerformed(ScreenMenuItem.java:125)
+> 	at java.awt.MenuItem.processActionEvent(MenuItem.java:669)
+> 	at java.awt.MenuItem.processEvent(MenuItem.java:628)
+> 	at java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:351)
+> 	at java.awt.MenuComponent.dispatchEvent(MenuComponent.java:339)
+> 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:754)
+> 	at java.awt.EventQueue.access$500(EventQueue.java:97)
+> 	at java.awt.EventQueue$3.run(EventQueue.java:702)
+> 	at java.awt.EventQueue$3.run(EventQueue.java:696)
+> 	at java.security.AccessController.doPrivileged(Native Method)
+> 	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+> 	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+> 	at java.awt.EventQueue$4.run(EventQueue.java:724)
+> 	at java.awt.EventQueue$4.run(EventQueue.java:722)
+> 	at java.security.AccessController.doPrivileged(Native Method)
+> 	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+> 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:721)
+> 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+> 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+> 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+> 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+> 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+> 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+> 
+> 

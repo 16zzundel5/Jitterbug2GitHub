@@ -1,0 +1,89 @@
+From ibiosim@gmail.com  Wed Feb  4 19:18:21 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f51.google.com (mail-pa0-f51.google.com [209.85.220.51])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t152IL7B030015
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 4 Feb 2015 19:18:21 -0700
+Received: by mail-pa0-f51.google.com with SMTP id hz1so2000508pad.10
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 04 Feb 2015 18:18:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=btOufSvcl5ar+IogKBjgHgw/hDS9kIN6U4H1cevCBf4=;
+        b=XBKx59BxfvCmJI/76AoGlabLcY3g/KkZ86uW7ibNzxwKcFH6piGR8kSBt3loWiJceF
+         2veGAoOJ3JZiWMIWfMGs7zK5jsVcJGS8AC3h9e+mo6mqdJx+simkRsqJL58W9M9si/Q+
+         s8RiY8UTqIUlEGEjDHZIR/K/y4b3KCBQMTTK+rDTb9LL12c+qx1abAxYWFb7cH5QT5xZ
+         moNfxSPuXE2TXh+GuosjrldGFXhLtsVKK5p5e3jiWlpp/qzV1Dx7QivH8Tf7ICC6Jav+
+         tQCpOmXlCTrzSXlERHSbrrKeS1UCBn3XnmZSlnFlXQ4p/xmB412aRpo5/notPqECrwLe
+         xjLA==
+X-Received: by 10.66.161.170 with SMTP id xt10mr1198404pab.14.1423102701018;
+        Wed, 04 Feb 2015 18:18:21 -0800 (PST)
+Received: from Calli-pc.uconnect.utah.edu ([155.99.187.204])
+        by mx.google.com with ESMTPSA id eg4sm3290570pbb.79.2015.02.04.18.18.18
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 04 Feb 2015 18:18:19 -0800 (PST)
+Date: Wed, 04 Feb 2015 18:18:19 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: calliclark24@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <24900873.0.1423102698398.JavaMail.calli_000@Calli-pc>
+Subject: BUG: Renaming species
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.1
+
+Operating system: Windows 8.1
+
+Bug reported by: calliclark24@gmail.com
+
+Description:
+I attempted to rename a species but that name already existed as a variable
+
+Stack trace:
+java.lang.IllegalArgumentException: org.sbml.jsbml.IdentifierException: Cannot set duplicate identifier Glyph__AHL for speciesGlyph.
+	at org.sbml.jsbml.AbstractNamedSBase.setId(AbstractNamedSBase.java:289)
+	at biomodel.parser.BioModel.changeSpeciesId(BioModel.java:3283)
+	at biomodel.gui.sbmlcore.SpeciesPanel.handlePanelData(SpeciesPanel.java:884)
+	at biomodel.gui.sbmlcore.SpeciesPanel.constructor(SpeciesPanel.java:583)
+	at biomodel.gui.sbmlcore.SpeciesPanel.<init>(SpeciesPanel.java:70)
+	at biomodel.gui.schematic.ModelEditor.launchSpeciesPanel(ModelEditor.java:1903)
+	at biomodel.gui.sbmlcore.MySpecies.mouseClicked(MySpecies.java:1123)
+	at java.awt.AWTEventMulticaster.mouseClicked(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: org.sbml.jsbml.IdentifierException: Cannot set duplicate identifier Glyph__AHL for speciesGlyph.
+	at org.sbml.jsbml.AbstractNamedSBase.setId(AbstractNamedSBase.java:287)
+	... 38 more
+

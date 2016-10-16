@@ -1,0 +1,65 @@
+From myers@ece.utah.edu  Mon Nov 23 22:04:59 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.7 required=5.0 tests=AWL,BAYES_00,
+	RCVD_IN_SORBS_WEB autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id nAO54xQ5002154;
+	Mon, 23 Nov 2009 22:04:59 -0700
+Received: from 75-169-169-147.slkc.qwest.net ([75.169.169.147] helo=[192.168.0.3])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1NCnaF-0001ZX-2E; Mon, 23 Nov 2009 22:04:59 -0700
+Message-Id: <5B1F2DD8-707F-47F5-BE56-99B6D0729B8C@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: kjones@vlsigroup.ece.utah.edu,
+        Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: Problem with abstraction
+Date: Mon, 23 Nov 2009 22:04:51 -0700
+X-Mailer: Apple Mail (2.936)
+
+For this example:
+
+.inputs Y X
+.dummy t1 t3 t5 t4 t2
+#@.variables Z
+#@.failtrans t2
+#|.places p3 p1 p2
+#@.init_state [00]
+.graph
+t1 p2
+p1 t1
+t3 p2
+p1 t3
+t5 p3
+p3 t5
+t4 p1
+p2 t4
+t2 p2
+p1 t2
+.marking {p3 p1 }
+#@.init_vals {<Z=0>}
+#@.enablings {<t1=[X&Y]><t3=[~X&Y]><t5=[Z=0]><t2=[X&~Y]>}
+#@.assignments {<t1=[Z:=1]><t3=[Z:=3]><t4=[Z:=0]><t2=[Z:=2]>}
+#@.delay_assignments  
+{<t1=[1,1]><t3=[1,1]><t4=[0,0]><t5=[2,2]><t2=[1,1]>}
+#@.boolean_assignments {<t4=[X:=false]><t5=[X:=true]>}
+.end
+
+When I try to do abstraction, I get this exception:
+
+Exception in thread "Thread-10" java.lang.NullPointerException
+	at lhpn2sbml.parser.Abstraction.removeVars(Abstraction.java:1480)
+	at lhpn2sbml.parser.Abstraction.abstractSTG(Abstraction.java:75)
+	at verification.Verification.run(Verification.java:836)
+	at java.lang.Thread.run(Thread.java:613)
+
+I would expect that t1 and t3 would get removed since Y is never true.
+
+Chris
+

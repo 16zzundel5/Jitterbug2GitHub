@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Sun Oct 11 11:08:19 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t9BH8Jt3015571
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 11 Oct 2015 11:08:19 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZlK6c-000Hij-Ud)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 11 Oct 2015 11:08:19 -0600
+Received: from [155.99.154.100]
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZlK6c-0003HA-TI
+	for atacs-bugs@vlsigroup.ece.utah.edu; Sun, 11 Oct 2015 11:08:18 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: remove unused array namespace on export
+Message-Id: <E7FA32DE-6358-434D-9C3A-EC96E4FB5255@ece.utah.edu>
+Date: Sun, 11 Oct 2015 11:08:18 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.5 (--)
+X-spam-level: --
+
+If there are no arrays, remove arrays namespace.
+

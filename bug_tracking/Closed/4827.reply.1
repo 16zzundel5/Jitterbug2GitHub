@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: sbatchu@vlsigroup.ece.utah.edu
+Subject: Re: BUG: top.v does not appear to be copied to the project view on a save (PR#4827)
+Date: Thu Oct 15 22:50:45 2009
+
+> top.v should be copied to the project level on a save.
+> 
+I see the problem now.  If they are all named top.v they will crash into each
+other.  Therefore, we either need to try to combine it one file or come up with
+some unique naming convention, like <filename>_top.vams.
+
+Chris

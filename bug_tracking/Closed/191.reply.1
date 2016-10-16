@@ -1,0 +1,27 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@song.elen.utah.edu
+Subject: Re: undefined action errors should stop compilation and return that it failed (PR#191)
+Date: Thu Nov 11 19:37:46 1999
+
+This seems to work now (see below).  I will now close this report.
+
+319 xia:~/atacs/examples> more csp/bug.log 
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Verbose mode now turned ON.
+Compiling bug.csp ... 
+bug.csp: line 7: undefined action 'b+'
+Storing process bug to bug.er
+Storing process bug to bug.er
+ERROR: Compilation failed due to above errors.
+320 xia:~/atacs/examples> 

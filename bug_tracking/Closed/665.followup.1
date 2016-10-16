@@ -1,0 +1,38 @@
+From atacs-bugs  Fri Nov 15 18:27:32 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id gAG1RWb18134
+	for atacs-bugs@shang.elen.utah.edu; Fri, 15 Nov 2002 18:27:32 -0700
+Received: from 12-254-176-225.client.attbi.com (12-254-176-225.client.attbi.com [12.254.176.225])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id gAG1RV118128
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Nov 2002 18:27:31 -0700
+Received: from 12-254-176-225.client.attbi.com (localhost.localdomain [127.0.0.1])
+	by 12-254-176-225.client.attbi.com (8.12.5/8.12.5) with ESMTP id gAG1RVJD001411
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Nov 2002 18:27:31 -0700
+Received: (from peskin@localhost)
+	by 12-254-176-225.client.attbi.com (8.12.5/8.12.5/Submit) id gAG1RUCP001409;
+	Fri, 15 Nov 2002 18:27:30 -0700
+X-Authentication-Warning: 12-254-176-225.client.attbi.com: peskin set sender to peskin@cs.utah.edu using -f
+Subject: Re: segmentation fault (PR#665)
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Mailer: Ximian Evolution 1.0.8 (1.0.8-10) 
+Date: 15 Nov 2002 18:27:29 -0700
+Message-Id: <1037410049.1077.23.camel@12-254-176-225.client.attbi.com>
+Mime-Version: 1.0
+
+As of cvs tag pr665followup1, the problem with long file names is
+fixed.  However, command as written currently finds many many deadlocks,
+and doesn't seem to find anything useful.  I'm not sure why, but it
+could very well be a bug in my code.  I will move this report to
+Incorrect behavior for now.
+
+Note however, that it is possible to process this example with a
+different command.  As of cvs tag pr665followup1, the following command
+(in atacs/work/vhd) produces a circuit:
+
+../../bin/atacs -oioqPNoDtpG1-2ys matrix.vhd display.vhd DPcomp.vhd
+ctrl.vhd decoder_ch.vhd ctrl
+

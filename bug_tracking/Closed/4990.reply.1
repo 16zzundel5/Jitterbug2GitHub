@@ -1,0 +1,10 @@
+From: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: expressions on transitions need to be complete states (PR#4990)
+Date: Wed Jun  9 03:16:24 2010
+
+Not using DMV equality relations because the values should be precise. So, using
+the 
+upper and lower bound of a bin for making the enabling conditions mutually
+exclusive 
+wherever they are not.

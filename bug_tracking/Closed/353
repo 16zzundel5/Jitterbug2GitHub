@@ -1,0 +1,548 @@
+From peskin@cs.utah.edu  Wed Feb  9 15:47:54 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA11331
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 9 Feb 2000 15:47:54 -0700
+Date: Wed, 9 Feb 2000 15:47:54 -0700
+From: peskin@cs.utah.edu
+Message-Id: <200002092247.PAA11331@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: ching has multiple definitions of {floor,ceil}
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag PR344
+OS: SunOS ching 4.1.4 2 sun4m
+source: /home/xia/peskin/sun/atacs/src/Makefile
+log: (pasted below)
+Submission from: chou.elen.utah.edu (155.99.23.202)
+Submitted by: peskin
+
+
+There is a conflict between libm and libmd on ching.
+All the output from make is appended below, but the last command and 
+message are repeated first for reference.  Cut on the dashed lines:
+
+8<--------------8<--------------8<--------------8<--------------8<--------------
+
+g++ -g -DDDEBUG -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH -I/usr/include/tcl
+
+-I/home/ming/software/include -Wall -g  atacs.o misclib.o addord.o storeg.o
+load
+sis.o loader.o loadprs.o findtd.o findred.o connect.o addpers.o findrsg.o
+findre
+g.o findconf.o findcover.o storeprs.o storesg.o memaloc.o printgrf.o printrsg.o
+
+printreg.o lex.yy.o parser.tab.o tersgen.o compile.o help.o breakup.o
+findwctd.o
+ findcl.o delaycalc.o simulate.o orbitsrsg.o verify.o struct2net.o storenet.o
+st
+oreer.o resolve.o exact.o loadrsg.o hhash.o hmisc.o hxbm2csg.o merges.o
+actions.
+o events.o rules.o conflicts.o makedecl.o hash.o bddrsg.o symtab.o types.o
+aux.o
+ drawnet.o geom.o common_timing.o approx.o storevhd.o dotrsg.o dotreg.o
+dotgrf.o
+ gparse.o loadg.o findstats.o project.o CPdf.o CNormal.o CUniform.o CSpline.o
+CU
+def.o markov_matrix_func.o markov_periodic_analysis.o markov_chain_analysis.o
+rg
+_trans_prob.o simtel.o stateasgn.o graph_tracker.o cpu_time_tracker.o
+CSingular.
+o signal_handler.o CTextTel.o cudd_synth.o trigger_probs.o markov_exp.o
+bm_trans
+_probs.o partition.o cycper.o printsg.o svhelpers.o markov_matrix_check.o
+lt_tp_
+tracker.o tels_table.o heursyn.o trgtrk.o create_env.o classes.o bcp.o
+pbsuuaad.
+o kiss2sg.o stats.o -L/home/ching/atacs/lib   /usr/local/lib/libtk4.0.a
+/usr/loc
+al/lib/libtcl7.4.a -lobj -lcudd -lCutil -lmtr -lst -lX11 -lm -lprob -lmd  -o
+ata
+cs
+collect2: ld returned 1 exit status
+/usr/lib/libm.a(rint.o)(.text+0x1e8): multiple definition of `floor'
+/home/ching/atacs/lib/libmd.a(floor.o)(.text+0xb0): first defined here
+/usr/lib/libm.a(rint.o)(.text+0x150): multiple definition of `ceil'
+/home/ching/atacs/lib/libmd.a(floor.o)(.text+0x0): first defined here
+make[1]: *** [atacs] Error 1
+make[1]: Leaving directory `/tmp_mnt/home/xia/peskin/sun/atacs/src'
+make: *** [build] Error 2
+
+LAST COMMAND ENDS HERE
+8<--------------8<--------------8<--------------8<--------------8<--------------
+ENTIRE MAKE STARTS HERE
+
+
+112 ching:atacs/examples> make
+make -C ../src
+make[1]: Entering directory `/tmp_mnt/home/xia/peskin/sun/atacs/src'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c atacs.c
+atacs.c: In function `void synthesis(char, char, struct design *, bool, bool)':
+atacs.c:984: warning: implicit declaration of function `int gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c misclib.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c addord.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storeg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c loadsis.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c loader.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c loadprs.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findtd.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findred.c
+findred.c: In function `bool find_redundant(char *, struct event_struct **,
+stru
+ct rule_struct ***, struct cycle_struct *****, int, int, int *, int *, bool,
+boo
+l, bool, bool, bool)':
+findred.c:67: warning: implicit declaration of function `int gettimeofday(...)'
+findred.c:55: warning: unused variable `int b'
+findred.c:55: warning: unused variable `int a'
+findred.c:55: warning: unused variable `int z'
+findred.c:55: warning: unused variable `int y'
+findred.c:55: warning: unused variable `int x'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c connect.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c addpers.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findrsg.c
+findrsg.c: In function `bool find_rsg(char *, struct signal_struct **, struct
+ev
+ent_struct **, struct rule_struct ***, struct cycle_struct *****, struct
+state_t
+ag **, struct markkey_struct **, int, int, int, int, int, int, int, char *,
+bool
+, bool, bool, class bdd_data *, bool, struct markkey_struct **, bool, struct
+tim
+eopts)':
+findrsg.c:2726: warning: implicit declaration of function `int
+gettimeofday(...)
+'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findreg.c
+findreg.c: In function `bool find_reg(char *, struct signal_struct **, struct
+ev
+ent_struct **, struct rule_struct ***, struct state_tag **, struct region_tag
+**
+, int, int, int, int, bool, bool, bool, bool, bool)':
+findreg.c:474: warning: implicit declaration of function `int
+gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findconf.c
+findconf.c: In function `bool find_conf(char *, struct signal_struct **, struct
+
+state_tag **, struct region_tag **, int, int, bool, bool, bool, bool, bool,
+int,
+ bool, bool)':
+findconf.c:1095: warning: implicit declaration of function `int
+gettimeofday(...
+)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findcover.c
+findcover.c: In function `bool find_cov(char *, struct signal_struct **, struct
+
+region_tag **, int, int, bool, bool, bool)':
+findcover.c:659: warning: implicit declaration of function `int
+gettimeofday(...
+)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storeprs.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storesg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c memaloc.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c printgrf.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c printrsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c printreg.c
+bison -vd parser.y 
+flex -i parser.l
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c lex.yy.c
+lex.yy.c:3251: warning: `void yyunput(int, char *)' defined but not used
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c parser.tab.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c tersgen.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c compile.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c help.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c breakup.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findwctd.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findcl.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c delaycalc.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c simulate.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c orbitsrsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c verify.c
+verify.c: In function `void print_signal_list(struct _iobuf *, struct
+signal_str
+uct **, struct event_struct **, int, int, int, int, char)':
+verify.c:959: warning: unused variable `char * slash'
+verify.c: In function `void print_test(struct _iobuf *, struct signal_struct
+**,
+ struct event_struct **, struct rule_struct ***, struct cycle_struct *****,
+char
+ *, int, int, int, int, int, int, char *)':
+verify.c:1634: warning: unused variable `char * slash'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c struct2net.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storenet.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storeer.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c resolve.c
+resolve.c: In function `bool resolve(char *, struct signal_struct **, struct
+reg
+ion_tag **, int, int, bool, bool, bool, bool)':
+resolve.c:454: warning: implicit declaration of function `int
+gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c exact.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c loadrsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c hhash.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c hmisc.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c hxbm2csg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c merges.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c actions.c
+actions.c: In function `void new_action_table(const char *)':
+actions.c:87: warning: passing `const char *' as argument 1 of `CopyString(char
+
+*)' discards const
+actions.c: In function `struct action_tag * action(const char *, int)':
+actions.c:156: warning: passing `const char *' as argument 1 of
+`CopyString(char
+ *)' discards const
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c events.c
+events.c: In function `void new_event_table(const char *)':
+events.c:89: warning: passing `const char *' as argument 1 of `CopyString(char
+*
+)' discards const
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c rules.c
+rules.c: In function `void new_rule_table(const char *)':
+rules.c:90: warning: passing `const char *' as argument 1 of `CopyString(char
+*)
+' discards const
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c conflicts.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c makedecl.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c hash.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c bddrsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c symtab.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c types.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c aux.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c drawnet.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c geom.c
+geom.c: In function `bool geom_rsg(char *, struct signal_struct **, struct
+event
+_struct **, struct merge_tag **, struct rule_struct ***, struct cycle_struct
+***
+**, struct state_tag **, struct markkey_struct **, int, int, int, int, int,
+int,
+ char *, bool, bool, class bdd_data *, bool, struct markkey_struct **, struct
+ti
+meopts, int, int *)':
+geom.c:699: warning: implicit declaration of function `int gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c common_timing.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c approx.c
+approx.c: In function `bool approx_rsg(char *, struct signal_struct **, struct
+e
+vent_struct **, struct merge_tag **, struct rule_struct ***, struct
+cycle_struct
+ *****, struct state_tag **, struct markkey_struct **, int, int, int, int, int,
+
+int, char *, bool, bool, class bdd_data *, bool, struct markkey_struct **,
+struc
+t timeopts, int, int *, bool)':
+approx.c:1564: warning: implicit declaration of function `int
+gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c storevhd.c
+storevhd.c: In function `void store_vhd(class
+basic_string<char,string_char_trai
+ts<char>,__default_alloc_template<false,0> >, struct signal_struct **, struct
+st
+ate_tag **, struct region_tag **, int, int, int, bool, bool, bool *, bool)':
+storevhd.c:1390: warning: unused variable `int count'
+storevhd.c:776: warning: unused variable `struct region_tag * cur_region'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c dotrsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c dotreg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c dotgrf.c
+flex -i -Pg -t glex.l > glex.c
+bison -p g gparse.y -o gparse.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c gparse.c
+glex.l:395: warning: `void yyunput(int, char *)' defined but not used
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c loadg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c findstats.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c project.c
+project.c: In function `bool project(char *, struct signal_struct **, struct
+sta
+te_tag **, int, int, bool, struct event_struct **)':
+project.c:318: warning: implicit declaration of function `int
+gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CPdf.cpp
+CPdf.cpp: In function `unsigned int random_seed()':
+CPdf.cpp:46: warning: implicit declaration of function `int gettimeofday(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CNormal.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CUniform.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CSpline.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CUdef.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c markov_matrix_func.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c markov_periodic_analysis.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c markov_chain_analysis.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c rg_trans_prob.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c simtel.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c stateasgn.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c graph_tracker.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c cpu_time_tracker.cpp
+cpu_time_tracker.cpp: In method `cpu_time_tracker::cpu_time_tracker()':
+cpu_time_tracker.cpp:72: warning: implicit declaration of function `int
+getrusag
+e(...)'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CSingular.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c signal_handler.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c CTextTel.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c cudd_synth.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c trigger_probs.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c markov_exp.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c bm_trans_probs.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c partition.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c cycper.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c printsg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c svhelpers.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c markov_matrix_check.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c lt_tp_tracker.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c tels_table.cc
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c heursyn.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c trgtrk.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c create_env.cc
+create_env.cc: In method `struct actionset_tag *
+signals_2_dummies::action_set(s
+truct actionset_tag *)':
+create_env.cc:67: warning: unused variable `struct action_tag * inverse'
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c classes.cc
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c bcp.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c pbsuuaad.cpp
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c kiss2sg.c
+g++ -g -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH
+-I/usr/include/tcl
+ -I/home/ming/software/include -Wall -g  -c stats.c
+g++ -g -DDDEBUG -DXIF -DMEMSTATS -DTIMER  -D__TEMPLATE_PATCH -I/usr/include/tcl
+
+-I/home/ming/software/include -Wall -g  atacs.o misclib.o addord.o storeg.o
+load
+sis.o loader.o loadprs.o findtd.o findred.o connect.o addpers.o findrsg.o
+findre
+g.o findconf.o findcover.o storeprs.o storesg.o memaloc.o printgrf.o printrsg.o
+
+printreg.o lex.yy.o parser.tab.o tersgen.o compile.o help.o breakup.o
+findwctd.o
+ findcl.o delaycalc.o simulate.o orbitsrsg.o verify.o struct2net.o storenet.o
+st
+oreer.o resolve.o exact.o loadrsg.o hhash.o hmisc.o hxbm2csg.o merges.o
+actions.
+o events.o rules.o conflicts.o makedecl.o hash.o bddrsg.o symtab.o types.o
+aux.o
+ drawnet.o geom.o common_timing.o approx.o storevhd.o dotrsg.o dotreg.o
+dotgrf.o
+ gparse.o loadg.o findstats.o project.o CPdf.o CNormal.o CUniform.o CSpline.o
+CU
+def.o markov_matrix_func.o markov_periodic_analysis.o markov_chain_analysis.o
+rg
+_trans_prob.o simtel.o stateasgn.o graph_tracker.o cpu_time_tracker.o
+CSingular.
+o signal_handler.o CTextTel.o cudd_synth.o trigger_probs.o markov_exp.o
+bm_trans
+_probs.o partition.o cycper.o printsg.o svhelpers.o markov_matrix_check.o
+lt_tp_
+tracker.o tels_table.o heursyn.o trgtrk.o create_env.o classes.o bcp.o
+pbsuuaad.
+o kiss2sg.o stats.o -L/home/ching/atacs/lib   /usr/local/lib/libtk4.0.a
+/usr/loc
+al/lib/libtcl7.4.a -lobj -lcudd -lCutil -lmtr -lst -lX11 -lm -lprob -lmd  -o
+ata
+cs
+collect2: ld returned 1 exit status
+/usr/lib/libm.a(rint.o)(.text+0x1e8): multiple definition of `floor'
+/home/ching/atacs/lib/libmd.a(floor.o)(.text+0xb0): first defined here
+/usr/lib/libm.a(rint.o)(.text+0x150): multiple definition of `ceil'
+/home/ching/atacs/lib/libmd.a(floor.o)(.text+0x0): first defined here
+make[1]: *** [atacs] Error 1
+make[1]: Leaving directory `/tmp_mnt/home/xia/peskin/sun/atacs/src'
+make: *** [build] Error 2
+

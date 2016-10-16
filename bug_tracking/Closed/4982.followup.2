@@ -1,0 +1,105 @@
+From kjones5863@gmail.com  Fri May 28 10:34:33 2010
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-wy0-f170.google.com (mail-wy0-f170.google.com [74.125.82.170])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4SGYWjU009559;
+	Fri, 28 May 2010 10:34:32 -0600
+Received: by wyb32 with SMTP id 32so1334154wyb.15
+        for <multiple recipients>; Fri, 28 May 2010 09:34:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:in-reply-to
+         :references:date:message-id:subject:from:to:cc:content-type;
+        bh=aujlKWh6BApwUsUaiMLFgvKA/TBCLAym//R23W1VStA=;
+        b=DiL6WyfuUgozrE4bjcYeQh+thQwZawp1V6imnVlKMS7LuGXZqqiKKJzlogRDwr4Uxu
+         C9mxFeEVI5b8jqqLIejulJD5ScjcyND9Bf9fckBrDkF7v0Hdb+rvSae8CgKpL/MxLiP3
+         B8F+QH252tIvC7yLaqcWxHW1A5SWhHlErG8RQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=FqqYt25Ji2fjbwQsZB68+gskY81VJ5RadxluKVpLntjq9zaaH58eZ2rrZCJrO38iEi
+         naQopR1bO6wje1s7JQ/nNCzgl8C2Civ5FGPQRpayj2l5qkDvkr7PpcsBEnieF45rU8Dc
+         XKbABANqKlHyDWLEezu2KSyJX/BnWiK9pfnFQ=
+MIME-Version: 1.0
+Received: by 10.216.85.70 with SMTP id t48mr1785180wee.59.1275064470895; Fri, 
+	28 May 2010 09:34:30 -0700 (PDT)
+Received: by 10.216.39.130 with HTTP; Fri, 28 May 2010 09:34:28 -0700 (PDT)
+In-Reply-To: <2111FD38-A37F-4037-BCB8-9F54601B522C@ece.utah.edu>
+References: <201005272043.o4RKh6u6023709@chou.ece.utah.edu>
+	<2111FD38-A37F-4037-BCB8-9F54601B522C@ece.utah.edu>
+Date: Fri, 28 May 2010 10:34:28 -0600
+Message-ID: <AANLkTinrf-HqcIol3iNU8Fk65U1_bxjT69aWICIS0o47@mail.gmail.com>
+Subject: Re: FEATURE: new transform to combine transitions (PR#4982)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=0016e6d7e949da91410487aa140c
+
+--0016e6d7e949da91410487aa140c
+Content-Type: text/plain; charset=ISO-8859-1
+
+It needs to be turned on by changing the code (adding xform28 to the
+String[] transforms in AbstPane).  Adding it to the list of possible
+transforms while having it turned off by default is possible but would take
+a little bit more work.
+
+On Thu, May 27, 2010 at 3:20 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> Do you mean that it is not in the default list of abstractions or do I need
+> to turn it on by changing the code?
+>
+> Chris
+>
+> On May 27, 2010, at 2:43 PM, Kevin Jones wrote:
+>
+>  This is done for the abstraction.  I am currently not allowing the
+>> simplification
+>> because ATACS does not accept arbitrary expressions for delays, but it
+>> seems to
+>> output
+>> the correct thing.  Let me know if you find any problems.  Moving to needs
+>> testing.
+>>
+>
+>
+
+--0016e6d7e949da91410487aa140c
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+It needs to be turned on by changing the code (adding xform28 to the String=
+[] transforms in AbstPane). =A0Adding it to the list of possible transforms=
+ while having it turned off by default is possible but would take a little =
+bit more work.<div>
+<br><div class=3D"gmail_quote">On Thu, May 27, 2010 at 3:20 PM, Chris J. My=
+ers <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu">myers@ece.u=
+tah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D=
+"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex;">
+Do you mean that it is not in the default list of abstractions or do I need=
+ to turn it on by changing the code?<br>
+<br>
+Chris<br>
+<br>
+On May 27, 2010, at 2:43 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+This is done for the abstraction. =A0I am currently not allowing the<br>
+simplification<br>
+because ATACS does not accept arbitrary expressions for delays, but it seem=
+s to<br>
+output<br>
+the correct thing. =A0Let me know if you find any problems. =A0Moving to ne=
+eds<br>
+testing.<br>
+</blockquote>
+<br>
+</blockquote></div><br></div>
+
+--0016e6d7e949da91410487aa140c--
+

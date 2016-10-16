@@ -1,0 +1,28 @@
+From myers@eng.utah.edu  Tue Aug  7 15:06:22 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q77L6MBw029457
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 7 Aug 2012 15:06:22 -0600
+Received: from 75-169-178-1.slkc.qwest.net ([75.169.178.1] helo=[192.168.0.14])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Syqps-000Crq-4G; Tue, 07 Aug 2012 14:57:04 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: BUG: SBOL association only on edit of rules
+Date: Tue, 7 Aug 2012 15:06:49 -0600
+Message-Id: <0088125B-332E-4095-9C0A-4DF49D9DB0A5@ece.utah.edu>
+Cc: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+To: Nicholas ANDREW Roehner <n.roehner@utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1278)
+X-Mailer: Apple Mail (2.1278)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q77L6MBw029457
+
+I found a bug in that sbolField was not getting set when adding a new rule which caused an exception.  I moved the creation of this field outside the check for edit mode which removed the exception but SBOL cannot be associated still when adding a new rule.  It can only be done on edit.  Is this correct?  Shouldn't you be able to add it on creation of a rule?
+
+Chris
+
+

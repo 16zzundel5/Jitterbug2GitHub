@@ -1,0 +1,52 @@
+From tahooie@gmail.com  Mon Aug 30 09:49:06 2010
+Return-Path: <tahooie@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-ew0-f42.google.com (mail-ew0-f42.google.com [209.85.215.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7UFn5LS002368
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 30 Aug 2010 09:49:05 -0600
+Received: by ewy2 with SMTP id 2so4175766ewy.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 30 Aug 2010 08:49:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:sender:received:date
+         :x-google-sender-auth:message-id:subject:from:to:content-type;
+        bh=6S9/AqCq3tCSE6vsak3tHZ5ngSlcchP8mF0qbEkSsV4=;
+        b=t+WXOdlyafFiXmwaDsMxV443jNH88m+MytG8jsnI/Dywk+FR/SYFZ/ee42D5bEBJBY
+         YqRmbUvYGqnqchEsba5HP0VhPdn8vouN1nDl2GgzjUNbKRMli/lBBXqbotrXiOXUD93F
+         g8bl54fLKvBfAfEftLxPpJdExASmaBnHpz7pY=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:sender:date:x-google-sender-auth:message-id:subject
+         :from:to:content-type;
+        b=O3Fk+xn3TL13WKPih+HELf+m5+UmWkzLsAaImpE7gt1s9FNjd28+GOvQB90Y2c8yOd
+         dcr43qoFPrHNHb4MEJjj8JOqrDUBgIHn/YTwk/y26mx8Fj3APmWVzg4xwgbSs/b0jDwN
+         DhduO/yIZv7enYkWLNw/1Cysix/puplHtteU8=
+MIME-Version: 1.0
+Received: by 10.103.197.14 with SMTP id z14mr355645mup.62.1283183343407; Mon,
+ 30 Aug 2010 08:49:03 -0700 (PDT)
+Sender: tahooie@gmail.com
+Received: by 10.231.36.205 with HTTP; Mon, 30 Aug 2010 08:49:03 -0700 (PDT)
+Date: Mon, 30 Aug 2010 09:49:03 -0600
+X-Google-Sender-Auth: cizRzBWiGqbIek6j_Sw6sQZzsCs
+Message-ID: <AANLkTimr5f1i5pondo-rKPP5UXzACcPAzDe9QsmjDK32@mail.gmail.com>
+Subject: FEATURE: zoom/pan feature on modelview
+From: Tyler Patterson <tpatterson80@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=0016e649dad25db833048f0c67f9
+
+--0016e649dad25db833048f0c67f9
+Content-Type: text/plain; charset=ISO-8859-1
+
+Being able to zoom and pan will allow for the modeling of large non-trivial
+models.
+
+--0016e649dad25db833048f0c67f9
+Content-Type: text/html; charset=ISO-8859-1
+
+Being able to zoom and pan will allow for the modeling of large non-trivial models.
+
+--0016e649dad25db833048f0c67f9--
+

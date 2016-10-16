@@ -1,0 +1,26 @@
+From myers@eng.utah.edu  Thu Aug 25 14:46:11 2011
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7PKkBde019246
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 25 Aug 2011 14:46:11 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Qwgph-000FLv-AG
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 25 Aug 2011 14:47:25 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: BUG: editing event assignment requires multiple OKs
+Date: Thu, 25 Aug 2011 14:46:05 -0600
+Message-Id: <AEF161C1-E52F-4035-9E62-98A3B812A39D@ece.utah.edu>
+To: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1244.3)
+X-Mailer: Apple Mail (2.1244.3)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p7PKkBde019246
+
+When editing an event assignment, must press OK many times to get it to accept it.
+
+

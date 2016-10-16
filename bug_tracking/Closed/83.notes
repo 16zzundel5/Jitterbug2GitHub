@@ -1,0 +1,6 @@
+Chris
+This can be fixed by adding tokens between sendline+/2 and (rejpkt+/2 and
+ackline+/1).  In other words, this is a problem with the .g to .er conversion.
+
+A further note on this is that some of the merges came out wrong.  For example,
+req+/1 does not have matching req+/2.

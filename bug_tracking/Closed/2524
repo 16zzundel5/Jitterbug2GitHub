@@ -1,0 +1,40 @@
+From christian.atheist@gmail.com  Mon Mar 10 12:02:46 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=3.0 tests=BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from ik-out-1112.google.com (ik-out-1112.google.com [66.249.90.179])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m2AI2jMp026442
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Mar 2008 12:02:46 -0600
+Received: by ik-out-1112.google.com with SMTP id c28so1541557ika.5
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Mar 2008 11:02:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        bh=0BsPIli7LkQc3i+RmBC0Q2PlPRwYxnVWMFB1JzyxqTw=;
+        b=Lbc21V9JvZrLHCR/nIc8oQUp2t6wSLd4vVG5TXfUKgA6uAdx5OA3CuZcQSXzrMYFDYxUpIuktNOFY0BUiG7f9804DUGsw2UFcHG4akbwUlDc8W7EnQXRdHPb1tzU9SwasHKiCajEp5DJ8H8k0rnzWpFFEeFUpThnABtz7RQ9ACY=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=FOWw/TEli1uTE0iAqKS4uXLboPeT0XAxqTS4rM9e7BIfyTCup8U7Cjtaa0t2bAFp2LFpKUpF1wgrrQ9R3pkPO5cIX1TgYG5OzHCPlDeUoH8NiDV0GSfsKV0+ZOVIlpwWdKyFslbUAtUeXsaQPcSh5IHkOdXJiYKUNw9VBUOhato=
+Received: by 10.143.34.11 with SMTP id m11mr2008135wfj.222.1205172163129;
+        Mon, 10 Mar 2008 11:02:43 -0700 (PDT)
+Received: by 10.142.162.21 with HTTP; Mon, 10 Mar 2008 11:02:43 -0700 (PDT)
+Message-ID: <eba119560803101102r20abcac4ra2de2ca725f10e9@mail.gmail.com>
+Date: Mon, 10 Mar 2008 12:02:43 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Mysterious jump in final simulation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: 3ad15adff2a5c214
+
+When I simulate an inverter, there is a mysterious jump in production
+for one of the species at the last step of simulation.  If I increase
+the simulation time, the production still exists at the last step.  I
+have emailed the zip of the project containing this problem.
+

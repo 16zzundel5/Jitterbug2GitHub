@@ -1,0 +1,548 @@
+From peskin@sanguo.elen.utah.edu  Tue Mar 23 11:36:03 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA11061 for <atacs-bugs@ming.elen.utah.edu>; Tue, 23 Mar 1999 11:36:03 -0700 (MST)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id LAA16232
+	for atacs-bugs@ming.elen.utah.edu; Tue, 23 Mar 1999 11:36:07 -0700
+Date: Tue, 23 Mar 1999 11:36:07 -0700
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199903231836.LAA16232@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: sbuf.csp fails when solving csc violation.
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /.automount/shang/root/home/shang/peskin/examples/bugs/gotit                 
+WHEN:   Tue Mar 23 11:34:10 MST 1999                
+WHAT:   -rwx------ 1 peskin 101 10437043 Mar 23 09:07 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -mg -mM -mX -ya sbuf            
+OUTPUT:                       
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using geometric timing to obtain state graphs.
+Using multi-cube covering procedure.
+Exception handling now turned ON.
+Compiling sbuf.csp ... 
+Storing process main to main.er
+Storing process env to env.er
+Storing process sbufsendpkt2 to sbufsendpkt2.er
+Storing process sbuf to sbuf.er
+Loading timed event-rule structure from:  sbuf.er
+WARNING:  Duplicate rules ignored.
+WARNING:  Graph not connected!
+WARNING:  Dropped 12 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 
+40 regions explored, 28 states explored in 0.299314 seconds
+done
+Projecting out dummy transitions ... done
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 2 CSC violation(s)
+ack+/1 sendline-/2 <-> ack-/1  ===== sendline+/1 <-> ack+/1 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ack-/1 <-> ack+/1 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/3 <-> ack+/1 : 2+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/3 <-> ack+/1 : 2+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/1 <-> ack+/1 : 2+10 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/1 <-> ack+/1 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== req+/1 <-> ack+/1 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 <-> ack+/1 : 2+1 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ack-/1 <-> sendline+/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== req+/1 <-> sendline+/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== sendline+/1 <-> sendline-/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/1 <-> sendline-/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== req+/1 <-> sendline-/1 : 2+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/1 <-> sendline+/2 : 0+5 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== sendline+/1 <-> sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== sendline+/1 <-> ack+/1 sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ack-/1 <-> sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ack-/1 <-> ack+/1 sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/3 <-> sendline-/2 : 1+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/3 <-> sendline-/2 : 1+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/1 <-> sendline-/2 : 0+10 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/1 <-> sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== req+/1 <-> sendline-/2 : 2+15 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 <-> sendline-/2 : 2+1 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/3 <-> ack+/1 sendline-/2 : 1+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/3 <-> ack+/1 sendline-/2 : 1+13 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== ackline-/1 <-> ack+/1 sendline-/2 : 0+10 [1]
+ack+/1 sendline-/2 <-> ack-/1  ===== done+/1 <-> ack+/1 sendline-/2 : 2+1 [1]
+sendline-/2 <-> ack-/1  ===== ack-/1 <-> sendline+/1 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== req+/1 <-> sendline+/1 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== sendline+/1 <-> sendline-/1 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== ackline+/1 <-> sendline-/1 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== req+/1 <-> sendline-/1 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== ackline-/1 <-> sendline+/2 : 2+5 [1]
+sendline-/2 <-> ack-/1  ===== ackline-/3 <-> sendline-/2 : 2+13 [1]
+sendline-/2 <-> ack-/1  ===== ackline+/3 <-> sendline-/2 : 2+13 [1]
+sendline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== ackline-/1 <-> sendline-/2 : 2+10 [1]
+sendline-/2 <-> ack-/1  ===== done+/1 <-> sendline-/2 : 2+1 [1]
+sendline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 2+0 [1]
+sendline-/2 <-> ack-/1  ===== done+/1 <-> ack+/1 sendline-/2 : 2+1 [1]
+ack+/1 sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> ack+/1 : 2+0 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> ack+/1 : 2+0 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== done+/1 <-> ack+/1 : 2+1 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== sendline+/1 <-> sendline-/1 : 2+3 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== ackline-/1 <-> sendline+/2 : 0+5 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== done+/1 <-> sendline-/2 : 2+1 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [0]
+ack+/1 sendline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [0]
+sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 2+0 [0]
+sendline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 2+0 [0]
+sendline-/2 <-> sendline+/1  ===== done+/1 <-> sendline-/2 : 2+1 [0]
+sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 2+0 [0]
+sendline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== ack+/1 sendline-/2 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== ack+/1 sendline-/2 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== ack+/1 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== done-/1 req-/1 ackline-/2 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== req-/1 ackline-/2 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== done-/1 ackline-/2 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== ackline-/2 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== req-/1 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== done-/1 <-> ack-/1 : 2+0 [0]
+ackline+/2 <-> ack+/1  ===== ack-/1 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== ack+/1 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== ackline-/2 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== req-/1 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== req+/1 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== done-/1 <-> sendline+/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== sendline+/1 <-> sendline-/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== ackline-/2 <-> sendline-/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== ackline+/1 <-> sendline-/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== req-/1 <-> sendline-/1 : 2+0 [1]
+ackline+/2 <-> ack+/1  ===== req+/1 <-> sendline-/1 : 2+0 [1]
+ack+/1 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+ack+/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 req-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+done-/1 req-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+done-/1 req-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 req-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+req-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+req-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+req-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+req-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+done-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+done-/1 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+ackline-/2 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+ackline-/2 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 req-/1 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+done-/1 req-/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+done-/1 req-/1 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 req-/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+req-/1 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+req-/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+req-/1 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+req-/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> ack+/1 sendline-/2 : 0+0 [1]
+done-/1 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [1]
+done-/1 <-> ack-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [1]
+done-/1 <-> ack-/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [1]
+ack-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ack-/1 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+ack-/1 <-> sendline+/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [0]
+ack+/1 <-> sendline+/1  ===== ackline+/2 <-> ack+/1 sendline-/2 : 0+0 [0]
+done-/1 req-/1 ackline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 req-/1 ackline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+req-/1 ackline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+req-/1 ackline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+done-/1 ackline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 ackline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+ackline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ackline-/2 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+done-/1 req-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 req-/1 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+req-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+req-/1 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+req+/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+req+/1 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+done-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 <-> sendline+/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+sendline+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+sendline+/1 <-> sendline-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+req-/1 ackline-/2 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 ackline-/2 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ackline-/2 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ackline-/2 <-> sendline-/1  ===== done+/1 ackline-/1 <-> sendline-/2 : 0+0 [0]
+ackline+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+req-/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+req+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+done-/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2 : 0+0 [0]
+ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> ack-/1 : 0+0 [0]
+ackline+/2 <-> sendline-/2  ===== req-/1 <-> ack-/1 : 0+0 [0]
+ackline+/2 <-> sendline-/2  ===== done-/1 <-> ack-/1 : 0+0 [0]
+ackline+/2 <-> sendline-/2  ===== ack-/1 <-> sendline+/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> sendline+/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== req-/1 <-> sendline+/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== req+/1 <-> sendline+/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== done-/1 <-> sendline+/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== sendline+/1 <-> sendline-/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> sendline-/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== ackline+/1 <-> sendline-/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== req-/1 <-> sendline-/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== req+/1 <-> sendline-/1 : 0+0 [1]
+ackline+/2 <-> sendline-/2  ===== done-/1 <-> sendline-/1 : 0+0 [1]
+
+
+Best IPs: 
+0 ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [1]
+1 req-/1 <-> ack-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [1]
+2 done-/1 <-> ack-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [1]
+3 ack-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+4 ackline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+5 req-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+6 req+/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+7 done-/1 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+8 sendline+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+9 ackline-/2 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+10 ackline+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+11 req-/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+12 req+/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+13 done-/1 <-> sendline-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+14 ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> ack-/1  : 0+0 [0]
+15 ackline+/2 <-> sendline-/2  ===== req-/1 <-> ack-/1  : 0+0 [0]
+16 ackline+/2 <-> sendline-/2  ===== done-/1 <-> ack-/1  : 0+0 [0]
+17 ackline+/2 <-> sendline-/2  ===== ack-/1 <-> sendline+/1  : 0+0 [1]
+18 ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> sendline+/1  : 0+0 [1]
+19 ackline+/2 <-> sendline-/2  ===== req-/1 <-> sendline+/1  : 0+0 [1]
+20 ackline+/2 <-> sendline-/2  ===== req+/1 <-> sendline+/1  : 0+0 [1]
+21 ackline+/2 <-> sendline-/2  ===== done-/1 <-> sendline+/1  : 0+0 [1]
+22 ackline+/2 <-> sendline-/2  ===== sendline+/1 <-> sendline-/1  : 0+0 [1]
+23 ackline+/2 <-> sendline-/2  ===== ackline-/2 <-> sendline-/1  : 0+0 [1]
+24 ackline+/2 <-> sendline-/2  ===== ackline+/1 <-> sendline-/1  : 0+0 [1]
+25 ackline+/2 <-> sendline-/2  ===== req-/1 <-> sendline-/1  : 0+0 [1]
+26 ackline+/2 <-> sendline-/2  ===== req+/1 <-> sendline-/1  : 0+0 [1]
+27 ackline+/2 <-> sendline-/2  ===== done-/1 <-> sendline-/1  : 0+0 [1]
+28 ack+/1 sendline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [1]
+29 ack+/1 sendline-/2 <-> sendline+/1  ===== ackline+/2 <-> sendline-/2  : 0+0 [0]
+Pick a solution Solution costing 0 + 0 used
+Signal named CSC0 being added
+IP: ackline-/2 <-> ack-/1  ===== ackline+/2 <-> sendline-/2 
+
+Storing TEL to file: sbuf.er
+Loading timed event-rule structure from:  sbuf.er
+WARNING:  Duplicate conflicts ignored.
+WARNING:  Graph not connected!
+WARNING:  Dropped 12 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding redundant rules and storing to:  sbuf.rr
+Storing timed event-rule structure to:  sbuf.er
+Loading timed event-rule structure from:  sbuf.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 12 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding redundant rules and storing to:  sbuf.rr
+Storing timed event-rule structure to:  sbuf.er
+Loading timed event-rule structure from:  sbuf.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 12 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding redundant rules and storing to:  sbuf.rr
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding reduced state graph and storing to:  sbuf.rsg
+ERROR: CSC0-/1 enabled but signal is not 1 or F in state FFF0R0
+ERROR
+ERROR: STUCK IN STATE=FFF0R0
+ENABLED RULES: 
+ackline+/2 done-/1 (null) 0 0 inf
+ackline+/2 req-/1 (null) 0 0 inf
+ackline+/2 ackline-/2 (null) 0 0 inf
+ackline+/2 CSC0-/1 (null) 0 0 1
+ack-/1 sendline+/1 (null) 1 0 inf
+Storing error trace state graph to:  sbuf.grf
+Executing command:  parg sbuf.grf &
+Storing error trace in VHDL to:  trace.vhd
+Initial: 2 + 0
+Predicted: 0 + 0
+Actual: 0 + 0
+E(x)it, (C)ontinue adding variables 
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding reduced state graph ... ERROR: CSC0-/1 enabled but signal is not 1 or F in state FFF0R0
+ERROR
+ERROR: STUCK IN STATE=FFF0R0
+ENABLED RULES: 
+ackline+/2 done-/1 (null) 0 0 inf
+ackline+/2 req-/1 (null) 0 0 inf
+ackline+/2 ackline-/2 (null) 0 0 inf
+ackline+/2 CSC0-/1 (null) 0 0 1
+ack-/1 sendline+/1 (null) 1 0 inf
+Storing error trace state graph to:  sbuf.grf
+Executing command:  parg sbuf.grf &
+Storing error trace in VHDL to:  trace.vhd
+Finding regions ... done
+Finding all primes ... (warning): input line #4 ignored
+ERROR:  No inputs in system!
+ERROR!
+                              
+STATUS:  0       
+              
+FILE: ./sbuf.csp:
+/*****************************************************************************/
+/* The Sbuf-Send-Pkt2 controller from the Post Office chip.                  */
+/*****************************************************************************/
+module sbufsendpkt2;
+
+input req;
+input ackline;
+input done;
+
+output ack;
+output sendline;
+
+process main;
+*[ [req]; sendline+;
+   [ ackline & ~done -> sendline-; [~ackline]; sendline+; * 
+   | ackline &  done -> (sendline- || ack+); [~req & ~ackline & ~done]; ack-
+   ]
+ ]
+endprocess
+
+process env;
+    *[ req+; [sendline]; ackline+;
+	[~sendline -> (done+ || ackline-); [sendline]; ackline+; 
+            [~sendline & ack]; (req- || ackline- || done-); [~ack]
+        |~sendline -> ackline-; [sendline]; ackline+; *
+        ]
+     ]
+endprocess
+
+endmodule
+              
+              
+FILE: ./sbuf.er:
+#
+# sbuf
+#
+.e 31
+.i 10
+.r 30
+.n 0
+.d 2
+.c 61
+.s 000000
+#
+# List of Events
+#
+reset
+#
+# List of Input Events
+#
+done+/1 done-/1
+req+/1 req-/1
+ackline+/1 ackline-/1
+ackline+/2 ackline-/2
+ackline+/3 ackline-/3
+#
+# List of Output Events
+#
+ack+/1 ack-/1
+sendline+/1 sendline-/1
+sendline+/2 sendline-/2
+$10+/1 $11+/1
+$6+/1 $9+/1
+$8+/1 $7+/1
+$5+/1 $3+/1
+$4+/1 $1+/1
+$2+/1 $0+/1
+CSC0+/1 CSC0-/1
+#
+# List of Causal Rules
+#
+done+/1 ackline+/2 0 0 inf
+done-/1 req+/1 1 0 inf
+req+/1 ackline+/1 0 0 inf
+req-/1 req+/1 1 0 inf
+ackline+/1 done+/1 0 0 inf
+ackline+/1 ackline-/1 0 0 inf
+ackline+/1 ackline-/3 0 0 inf
+ackline-/1 ackline+/2 0 0 inf
+ackline+/2 done-/1 0 0 inf
+ackline+/2 req-/1 0 0 inf
+ackline+/2 ackline-/2 0 0 inf
+ackline+/2 CSC0-/1 0 0 1
+ackline-/2 req+/1 1 0 inf
+ackline-/2 CSC0+/1 0 0 1
+ackline+/3 done+/1 1 0 inf
+ackline+/3 ackline-/1 1 0 inf
+ackline+/3 ackline-/3 1 0 inf
+ackline-/3 ackline+/3 0 0 inf
+ack+/1 ack-/1 0 0 inf
+ack-/1 sendline+/1 1 0 inf
+sendline+/1 ack+/1 0 0 inf
+sendline+/1 sendline-/1 0 0 inf
+sendline+/1 sendline-/2 0 0 inf
+sendline-/1 sendline+/2 0 0 inf
+sendline+/2 ack+/1 1 0 inf
+sendline+/2 sendline-/1 1 0 inf
+sendline+/2 sendline-/2 1 0 inf
+sendline-/2 ack-/1 0 0 inf
+CSC0+/1 ack-/1 1 0 inf
+CSC0-/1 sendline-/2 1 0 inf
+#
+# List of Ordering Rules
+#
+#
+# List of Mergers
+#
+ackline+/1 ackline+/2
+ackline+/1 ackline+/3
+#
+# List of Conflicts
+#
+done+/1 ackline+/3
+done+/1 ackline-/3
+done+/1 $10+/1
+done+/1 $11+/1
+done-/1 ackline+/3
+done-/1 ackline-/3
+done-/1 $10+/1
+done-/1 $11+/1
+req-/1 ackline+/3
+req-/1 ackline-/3
+req-/1 $10+/1
+req-/1 $11+/1
+ackline+/1 ackline+/3
+ackline-/1 ackline+/3
+ackline-/1 ackline-/3
+ackline-/1 $10+/1
+ackline-/1 $11+/1
+ackline+/2 ackline+/3
+ackline+/2 ackline-/3
+ackline+/2 $10+/1
+ackline+/2 $11+/1
+ackline-/2 ackline+/3
+ackline-/2 ackline-/3
+ackline-/2 $10+/1
+ackline-/2 $11+/1
+ackline+/3 $6+/1
+ackline+/3 $9+/1
+ackline+/3 $8+/1
+ackline+/3 $7+/1
+ackline-/3 $6+/1
+ackline-/3 $9+/1
+ackline-/3 $8+/1
+ackline-/3 $7+/1
+ack+/1 sendline-/1
+ack+/1 sendline+/2
+ack+/1 $1+/1
+ack+/1 $2+/1
+ack-/1 sendline-/1
+ack-/1 sendline+/2
+ack-/1 $1+/1
+ack-/1 $2+/1
+sendline+/1 sendline+/2
+sendline-/1 sendline-/2
+sendline-/1 $3+/1
+sendline-/1 $4+/1
+sendline+/2 sendline-/2
+sendline+/2 $3+/1
+sendline+/2 $4+/1
+sendline-/2 $1+/1
+sendline-/2 $2+/1
+$10+/1 $6+/1
+$10+/1 $9+/1
+$10+/1 $8+/1
+$10+/1 $7+/1
+$11+/1 $6+/1
+$11+/1 $9+/1
+$11+/1 $8+/1
+$11+/1 $7+/1
+$3+/1 $1+/1
+$3+/1 $2+/1
+$4+/1 $1+/1
+              
+              
+FILE: ./sbuf.rr:
+              
+              
+FILE: ./sbuf.grf:
+N F S0 0:0R00R0
+N F S9 9:FAIL
+N F S1 1:01R0R0
+N F S2 2:01RRF0
+N F S3 3:R1FRF0
+N F S5 5:R1FF00
+N F S4 4:R1F1F0
+N F S8 8:11R0R0
+N F S7 7:11RF00
+N F S6 6:11FF00
+N E T0 req+/1:0
+E P S0 0 T0 0
+E P T0 0 S1 0
+N E T1 sendline+/1:0
+E P S1 0 T1 0
+E P T1 0 S2 0
+N E T2 ackline+/1:0
+E P S2 0 T2 0
+E P T2 0 S3 0
+N E T3 ack+/1:0
+E P S3 0 T3 0
+E P T3 0 S4 0
+N E T4 done+/1:0
+E P S5 0 T4 0
+E P T4 0 S6 0
+N E T5 sendline-/2:0
+E P S4 0 T5 0
+E P T5 0 S5 0
+N E T6 ackline+/2:0
+E P S8 0 T6 0
+E P T6 0 S9 0
+N E T7 ack-/1:0
+E P S7 0 T7 0
+E P T7 0 S8 0
+N E T8 ackline-/1:0
+E P S6 0 T8 0
+E P T8 0 S7 0
+ZZZZZ              
+              
+FILE: ./sbuf.rsg:
+SG:
+STATEVECTOR:INP done INP req INP ackline ack sendline CSC0 
+STATES:
+0R00R0
+01R0R0
+01RRF0
+R1FRF0
+R1F1F0
+R1FF00
+11FF00
+11RF00
+11R0R0
+FAIL
+              

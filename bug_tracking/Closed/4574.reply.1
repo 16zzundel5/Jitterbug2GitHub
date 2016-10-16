@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: abstraction of species used only in a rule (PR#4574)
+Date: Sat Nov 14 02:28:03 2009
+
+A species is not irrelevant if it is used in:
+1) An initial assignment expression for a relevant species.
+2) An algebraic rule that includes a relevant species.
+3) An assignment or rate rule expression for a relevant species.
+4) A event trigger, delay, or assignment expression that involves an assignment
+to a relevant species.
+5) A constraint expression.
+
+An irrelevant species still needs to be removed from:
+1) An event assignment to it.  The event should be removed if no assignments
+remain after removing the one to the irrelevant species.
+2) An algebraic rule which is composed of irrelevant species.
+

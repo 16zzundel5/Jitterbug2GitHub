@@ -1,0 +1,88 @@
+From tschomay@gmail.com  Mon Feb 18 13:10:53 2013
+Return-Path: <tschomay@gmail.com>
+Received: from mail-lb0-f177.google.com (mail-lb0-f177.google.com [209.85.217.177])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1IKAqqQ023460
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Feb 2013 13:10:52 -0700
+Received: by mail-lb0-f177.google.com with SMTP id go11so4584416lbb.36
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Feb 2013 12:10:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:mime-version:sender:in-reply-to:references:from:date
+         :x-google-sender-auth:message-id:subject:to:content-type;
+        bh=g61PuZ5uUt0arSP2tOJxWJCq2nTkBbX21md23wnVx/A=;
+        b=nPRxbqv8xzTM/Q5JqCddr5M7BWVjnuo0vnlTqdHG3juZAC8gXcXqxA1aPc6l1HWkjb
+         oAXcGo6vukZEW/vg2UzAaWBqBvJHSaJgj03yKOrLrHYqeLlQM/rdJnlP1S/WFErAkskP
+         qry8UAeaAsJooa3nCtVYrBOo/2jh2ZLOYAstA1Tt+kNoqOfXaGxirz7nVRRhRtDR7BVr
+         d9EPJ0kdEHo5j8iv904WF91nQ6Ov+ZBXBLmgqy03/hnd3kL/cWlkj8mnwXML6cNZkZxW
+         OqNyPyXz/0GxqL5mK5kMK47fpwxs/6Wh2FqaPtwY4zDEiNhGSFdBA/CZbrH8ydxpykqP
+         Nu/A==
+X-Received: by 10.112.49.35 with SMTP id r3mr637702lbn.95.1361218250373; Mon,
+ 18 Feb 2013 12:10:50 -0800 (PST)
+MIME-Version: 1.0
+Sender: tschomay@gmail.com
+Received: by 10.112.18.84 with HTTP; Mon, 18 Feb 2013 12:10:28 -0800 (PST)
+In-Reply-To: <201302181701.r1IH1Pvu017938@chou.ece.utah.edu>
+References: <201302181701.r1IH1Pvu017938@chou.ece.utah.edu>
+From: Ted Schomay <tschomay@sci.utah.edu>
+Date: Mon, 18 Feb 2013 13:10:28 -0700
+X-Google-Sender-Auth: QyaavKwRmL8sF1QPc_St3AWv2iQ
+Message-ID: <CAKz=6V8Lb8vGXSP8N-x1M75g1FhpngFK_4xjux4QJavJVC-FqQ@mail.gmail.com>
+Subject: Re: BUG: In attempt to assign a boolean value to a variable based on
+ a (PR#5848)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=90e6ba308f70467b0804d60552bc
+
+--90e6ba308f70467b0804d60552bc
+Content-Type: text/plain; charset=ISO-8859-1
+
+I don't think so, but it's possible.  I tried it again as you recommended
+by email and it worked just fine.  I'll let you know if I run into it
+again, but it seems to be fine now.
+Thanks!
+- Ted
+
+
+On Mon, Feb 18, 2013 at 10:01 AM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Did you perhaps do something like this:
+>
+> eq(x,x) OR x==x OR something similar?
+>
+> I think I've fixed this bug now, so please try it when you obtain 2.4.3
+> which I
+> hope to release later today.
+>
+> Chris
+>
+>
+
+--90e6ba308f70467b0804d60552bc
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I don&#39;t think so, but it&#39;s possible. =A0I tried it=
+ again as you recommended by email and it worked just fine. =A0I&#39;ll let=
+ you know if I run into it again, but it seems to be fine now.<div>Thanks!<=
+/div>
+
+<div style>- Ted</div></div><div class=3D"gmail_extra"><br><br><div class=
+=3D"gmail_quote">On Mon, Feb 18, 2013 at 10:01 AM, Chris Myers <span dir=3D=
+"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" target=3D"_b=
+lank">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">Did you perhaps do something like this:<br>
+<br>
+eq(x,x) OR x=3D=3Dx OR something similar?<br>
+<br>
+I think I&#39;ve fixed this bug now, so please try it when you obtain 2.4.3=
+ which I<br>
+hope to release later today.<br>
+<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></span></blockquote></div><br></div>
+
+--90e6ba308f70467b0804d60552bc--
+

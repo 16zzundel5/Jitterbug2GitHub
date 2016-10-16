@@ -1,0 +1,29 @@
+From myers@jiaqi.elen.utah.edu  Tue May  4 14:50:36 1999
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [128.110.18.217]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA06303 for <atacs-bugs@shang.elen.utah.edu>; Tue, 4 May 1999 14:50:36 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id OAA00895
+	for atacs-bugs@shang.elen.utah.edu; Tue, 4 May 1999 14:50:02 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905042050.OAA00895@jiaqi.elen.utah.edu>
+Subject: Re: Verification Error (PR#112)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Tue, 4 May 1999 14:50:01 -0600 (MDT)
+In-Reply-To: <199905031915.NAA01406@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 3, 99 01:15:29 pm
+Content-Type: text
+
+> 
+> >> Chris, even if I rename the variable "ss", I still get the seg fault if I do
+> >> what Sangtae seems to mean in [2] (See below.) 
+> >> 
+> > You need to have a copy of library.ver in your example directory.  The 
+> > file is below:
+> 
+> 
+> But the fact that its absense draws a Segmentation fault is a bug.
+> I am moving this to Fatal error.
+> 
+> 
+It now checks for existence of the file and reports an error if it is
+missing.
+
+Chris

@@ -1,0 +1,45 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@elen.utah.edu
+Subject: Re: fifoN5.csp has mysterious deadlock (PR#76)
+Date: Thu May 20 15:04:17 1999
+
+[OK.  Now I see your followup about testbenches.
+Never mind my reply 2 to report 74.]
+
+When I make the changes you suggest, I get different errors:
+
+501 xia:~/bench> pwd
+/home/song/peskin/bench
+502 xia:~/bench> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      11459439 May 20 14:36
+/home/song/peskin/atacs/atacs*
+503 xia:~/bench> diff ~atacs/examples/bugs/ fifoN5.csp
+504 xia:~/bench> diff ~atacs/examples/bugs/ sunfifo2.csp
+23c23
+< process fin;
+---
+> testbench fin;
+25c25
+< endprocess
+---
+> endtestbench
+27c27
+< process seinb;
+---
+> testbench seinb;
+29c29
+< endprocess
+---
+> endtestbench
+505 xia:~/bench> atacs -mh -ya fifoN5
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using heuristic timing analysis.
+Compiling fifoN5.csp ... 
+rm: fifoN5.er: No such file or directory
+error: undefined action 'i7+'
+error: undefined action 'i7-'
+Storing process fifoN5 to fifoN5.er
+Loading timed event-rule structure from:  fifoN5.er
+ERROR:57:  i6+/1 is an undeclared event!
+506 xia:~/bench> 

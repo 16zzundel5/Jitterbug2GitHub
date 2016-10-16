@@ -1,0 +1,66 @@
+From n.roehner@utah.edu  Sun Mar 27 14:26:58 2011
+Return-Path: <n.roehner@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2RKQviH014805
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 27 Mar 2011 14:26:57 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AtUAADedj02bYbVm/2dsb2JhbACYE441txSIbIVpBIU6gl6EX4xZ
+X-IronPort-AV: E=Sophos;i="4.63,251,1299481200"; 
+   d="scan'208";a="307348070"
+Received: from h102.umail.utah.edu (HELO HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 27 Mar 2011 14:26:37 -0600
+Received: from C5V2.xds.umail.utah.edu ([169.254.3.145]) by
+ HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi; Sun, 27 Mar 2011
+ 14:26:37 -0600
+From: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Sun, 27 Mar 2011 14:26:36 -0600
+Subject: RE: CHANGE: rate law for complex formation reaction (PR#5245)
+Thread-Topic: CHANGE: rate law for complex formation reaction (PR#5245)
+Thread-Index: AcvrHtLzhriZQE1lSkeQC1EGDXh3YABnUH71
+Message-ID: <F3FE734CBA37DE4989B91D55FAAB78B59558E4F8F2@C5V2.xds.umail.utah.edu>
+References: <201103251859.p2PIxn7p017582@chou.ece.utah.edu>
+In-Reply-To: <201103251859.p2PIxn7p017582@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p2RKQviH014805
+
+Hi Chris,
+
+I do think that we should treat n = 1 as a special case in which kf has units s^-1 in the equation kf * A - kr * B, otherwise we end up with Keq = kr/kr = 1.  As for whether we should be using the form kf * (Keq)^{n-2} * A^n - kr * B or kr * (Keq)^{n-1} * A^n - kr * B, I think either one is fine.   I can see why we might like having kf instead of kr in the forward rate term, though.
+
+Nic
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Friday, March 25, 2011 11:59 AM
+To: NICHOLAS ANDREW ROEHNER
+Cc: myers@ece.utah.edu
+Subject: Re: CHANGE: rate law for complex formation reaction (PR#5245)
+
+I tried out A->B, and I think it at least gives something with correct units
+though perhaps a bit counter-intuitive.  I think though that I like this form of
+the equation a little bit better (it is equivalent to the earlier form):
+
+kf * (Keq)^{n-2} * A^n - kr * B
+
+where kf has units of (mole^-1 s^-1) and kr has units of (s^-1) and Keq = kf/kr.
+ You may also give a simpler form for a couple of special cases:
+
+n=2: kf * A^2 - kr * B
+n=1: kr * A - kr * B
+
+I still find the n=1 case to be counter-intuitive, but units wise it is correct.
+ Namely, kr is the stand-in for (s^-1) units.  I guess another solution would be
+to treat this as a special case where you assume that kf has units (s^-1), and
+create a formula of: kf * A - kr * B.  In this case, Keq=kf/kr would be
+dimensionless.  What do you think?
+
+Chris
+

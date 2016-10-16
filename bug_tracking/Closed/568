@@ -1,0 +1,44 @@
+From peskin@cs.utah.edu  Thu Jun 28 10:37:48 2001
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA14095
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 28 Jun 2001 10:37:48 -0600
+Date: Thu, 28 Jun 2001 10:37:48 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200106281637.KAA14095@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: new CSC violation in old TEL
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag PR568
+OS: RedHat 7.0 Linux xia.elen.utah.edu 2.2.19-7.0.8 #1 Thu Jun 21 06:28:56 EDT
+2001 i686 unknown
+spec: /home/xia/peskin/atacs/examples/tel/pr568.tel
+log: /home/xia/peskin/atacs/examples/tel/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+Did you also change the state-space exploration?
+This TEL structure has a CSC violation as of cvs tag PR568,
+but worked fine as of cvs tag GOOD520.
+
+Here is a session under cvs tag PR568:
+
+306 xia:~> cd ~peskin/atacs/examples/tel/
+307 xia:examples/tel> ../../src/atacs -oXltys pr568
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exception handling now turned OFF.
+Loading timed event/level structure from:  pr568.tel
+Initializing 3 cycles ... done
+Using single-cube algortithm for synthesis.
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding reduced state graph ... done (states=843,time=0.292514)
+Projecting out dummy transitions ... done (0.018297)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+308 xia:examples/tel> 
+

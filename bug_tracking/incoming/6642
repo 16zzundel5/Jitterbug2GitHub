@@ -1,0 +1,103 @@
+From myers@eng.utah.edu  Mon Sep 12 15:29:26 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u8CLTQwZ032366
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Sep 2016 15:29:26 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.87 id 1bjYms-0009Zb-77)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Sep 2016 15:29:26 -0600
+Received: from chunqiu.ece.utah.edu ([155.98.27.219])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:ECDHE-RSA-AES256-SHA:256)
+	(Exim 4.87 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1bjYjs-000PCw-0d
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 12 Sep 2016 15:26:04 -0600
+From: Chris Myers <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_C8A7E502-9501-4E06-BB26-AC80B0EE4E6F"
+Subject: FEATURE: iBioSim logo
+Date: Mon, 12 Sep 2016 15:29:09 -0600
+References: <492b8ff7-1e51-c176-4cb5-906d0af79566@caltech.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <E0ECB2F6-B6AD-42F5-AD22-658C4D8B0030@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+X-Mailer: Apple Mail (2.3124)
+X-UCE-Score: -2.4 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_C8A7E502-9501-4E06-BB26-AC80B0EE4E6F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+iBioSim needs a logo
+
+> Begin forwarded message:
+>=20
+> From: Sarah Keating <skeating@caltech.edu>
+> Subject: iBioSim logo
+> Date: September 7, 2016 at 8:37:40 AM MDT
+> To: Chris Myers <myers@ece.utah.edu>
+>=20
+> Hi Chris
+>=20
+> Do you have a logo for iBioSim ?
+>=20
+> If not, how do you want to be represented (on a slide about simulators =
+that contribute to verifying results for the sbml test-suite) .
+>=20
+> Thanks
+>=20
+> Sarah
+
+
+--Apple-Mail=_C8A7E502-9501-4E06-BB26-AC80B0EE4E6F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D"">iBioSim needs a logo<br class=3D""><div><br =
+class=3D""><blockquote type=3D"cite" class=3D""><div class=3D"">Begin =
+forwarded message:</div><br class=3D"Apple-interchange-newline"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Sarah Keating &lt;<a =
+href=3D"mailto:skeating@caltech.edu" =
+class=3D"">skeating@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">iBioSim =
+logo</b><br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">September 7, 2016 at 8:37:40 AM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Chris Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+class=3D"">myers@ece.utah.edu</a>&gt;<br class=3D""></span></div><br =
+class=3D""><div class=3D""><div class=3D"">Hi Chris<br class=3D""><br =
+class=3D"">Do you have a logo for iBioSim ?<br class=3D""><br =
+class=3D"">If not, how do you want to be represented (on a slide about =
+simulators that contribute to verifying results for the sbml test-suite) =
+.<br class=3D""><br class=3D"">Thanks<br class=3D""><br =
+class=3D"">Sarah<br class=3D""></div></div></blockquote></div><br =
+class=3D""></body></html>=
+
+--Apple-Mail=_C8A7E502-9501-4E06-BB26-AC80B0EE4E6F--
+

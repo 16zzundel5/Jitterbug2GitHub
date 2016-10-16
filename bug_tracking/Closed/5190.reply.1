@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: BUG abstraction eliminates globals from list but not from reaction laws (PR#5190)
+Date: Wed Nov 17 18:58:54 2010
+
+Hi Nic,
+
+I think I have this fixed.  There were a couple of bugs.
+
+1) SBML output from reb2sac was not producing non-constant parameters.
+
+2) An abstraction called "inducer structure transformer" was corrupting modifier
+species references.  Actually, I cannot exactly remember what this abstraction
+does, so I'm curious if it is doing something correctly to your model.  So,
+please let me know if the abstracted model makes sense.  I don't think it
+changes much.
+
+Chris

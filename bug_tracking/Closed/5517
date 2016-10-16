@@ -1,0 +1,48 @@
+From curtis.madsen@utah.edu  Thu Aug 25 19:19:29 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7Q1JTCd022966
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 25 Aug 2011 19:19:29 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0EAHvzVk6bYbVo/2dsb2JhbABDDqh6gUABAQQBOj8FCwIBCDYQMiUBAQQOBYdysSOIf4VsYASHYYs4kENX
+X-IronPort-AV: E=Sophos;i="4.68,283,1312178400"; 
+   d="scan'208";a="378800711"
+Received: from h104.umail.utah.edu (HELO HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 25 Aug 2011 19:19:29 -0600
+Received: from C8V1.xds.umail.utah.edu ([169.254.2.136]) by
+ HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi; Thu, 25 Aug 2011
+ 19:19:29 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+CC: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Thu, 25 Aug 2011 19:19:27 -0600
+Subject: Re: CHANGE: no need to save model when exiting an analysis view
+Thread-Topic: CHANGE: no need to save model when exiting an analysis view
+Thread-Index: AcxjjjMyc6r/yTSPRbuIUinmIoFHhg==
+Message-ID: <22DED7EF-4F29-400B-BC84-876E77CED5D6@utah.edu>
+References: <8ED6F6B9-D848-4FB6-993C-D47EA295D3A4@ece.utah.edu>
+In-Reply-To: <8ED6F6B9-D848-4FB6-993C-D47EA295D3A4@ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p7Q1JTCd022966
+
+Yeah, I can fix this one.
+
+Curtis
+
+On Aug 25, 2011, at 7:04 PM, "Chris J. Myers" <myers@ece.utah.edu> wrote:
+
+> When you are exiting an analysis view or if you press save, you don't need to generate and save the model.  This is only necessary on a save and run.
+> 
+> Curtis: can you fix this one?
+> 
+> Chris
+> 
+

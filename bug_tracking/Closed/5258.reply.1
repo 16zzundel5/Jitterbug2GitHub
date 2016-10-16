@@ -1,0 +1,129 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: problem when viewing network of GCM converted to LPN (PR#5258)
+Date: Wed Feb  2 01:31:22 2011
+
+I am unable to reproduce this bug.  Could you send me the gcm and/or project
+that is causing you problems?
+
+> 
+> --Apple-Mail-24--79019203
+> Content-Type: text/plain;
+> 	charset=US-ASCII;
+> 	format=flowed;
+> 	delsp=yes
+> Content-Transfer-Encoding: 7bit
+> 
+> For the oscillator example, when I try to do logical abstraction with  
+> network selected, I expect to see the LPN generated.  However, I get  
+> this exception:
+> 
+> java.io.FileNotFoundException: /Users/myers/nobackup/Projects/DemoVBI/ 
+> simOSC/osc.lpn (No such file or directory)
+> 	at java.io.FileInputStream.open(Native Method)
+> 	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+> 	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+> 	at java.io.FileReader.<init>(FileReader.java:41)
+> 	at lhpn2sbml.parser.LhpnFile.load(LhpnFile.java:424)
+> 	at reb2sac.Run.execute(Run.java:889)
+> 	at reb2sac.Reb2Sac.run(Reb2Sac.java:3167)
+> 	at reb2sac.Reb2SacThread.run(Reb2SacThread.java:21)
+> Exception in thread "Thread-8" java.lang.IllegalStateException: Error  
+> opening file
+> 	at lhpn2sbml.parser.LhpnFile.load(LhpnFile.java:432)
+> 	at reb2sac.Run.execute(Run.java:889)
+> 	at reb2sac.Reb2Sac.run(Reb2Sac.java:3167)
+> 	at reb2sac.Reb2SacThread.run(Reb2SacThread.java:21)
+> 
+> 
+> --Apple-Mail-24--79019203
+> Content-Type: text/html;
+> 	charset=US-ASCII
+> Content-Transfer-Encoding: quoted-printable
+> 
+> <html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+> -webkit-line-break: after-white-space; ">For the oscillator example, =
+> when I try to do logical abstraction with network selected, I expect to =
+> see the LPN generated.  However, I get this =
+> exception:<div><br></div><div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> style=3D"text-decoration: underline ; color: =
+> #000080">java.io.FileNotFoundException</span>: =
+> /Users/myers/nobackup/Projects/DemoVBI/simOSC/osc.lpn (No such file or =
+> directory)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+> margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+> 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> java.io.FileInputStream.open(<span style=3D"text-decoration: underline ; =
+> color: #000080">Native Method</span>)</div><div style=3D"margin-top: =
+> 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+> normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> java.io.FileInputStream.<init>(<span style=3D"text-decoration: =
+> underline ; color: #000080">FileInputStream.java:106</span>)</div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+> style=3D"white-space:pre">	</span>at =
+> java.io.FileInputStream.<init>(<span style=3D"text-decoration: =
+> underline ; color: #000080">FileInputStream.java:66</span>)</div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+> style=3D"white-space:pre">	</span>at =
+> java.io.FileReader.<init>(<span style=3D"text-decoration: =
+> underline ; color: #000080">FileReader.java:41</span>)</div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+> style=3D"white-space:pre">	</span>at =
+> lhpn2sbml.parser.LhpnFile.load(<span style=3D"text-decoration: underline =
+> ; color: #000080">LhpnFile.java:424</span>)</div><div style=3D"margin-top:=
+>  0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+> normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Run.execute(<span style=3D"text-decoration: underline ; color: =
+> #000080">Run.java:889</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2Sac.run(<span style=3D"text-decoration: underline ; color: =
+> #000080">Reb2Sac.java:3167</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2SacThread.run(<span style=3D"text-decoration: underline ; =
+> color: #000080">Reb2SacThread.java:21</span>)</div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); ">Exception in thread "Thread-8" <span =
+> style=3D"text-decoration: underline ; color: =
+> #000080">java.lang.IllegalStateException</span>: Error opening =
+> file</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+> margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+> 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> lhpn2sbml.parser.LhpnFile.load(<span style=3D"text-decoration: underline =
+> ; color: #000080">LhpnFile.java:432</span>)</div><div style=3D"margin-top:=
+>  0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+> normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Run.execute(<span style=3D"text-decoration: underline ; color: =
+> #000080">Run.java:889</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2Sac.run(<span style=3D"text-decoration: underline ; color: =
+> #000080">Reb2Sac.java:3167</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2SacThread.run(<span style=3D"text-decoration: underline ; =
+> color: =
+> #000080">Reb2SacThread.java:21</span>)</div></div><div><br></div></body></=
+> html>=
+> 
+> --Apple-Mail-24--79019203--
+> 
+> 

@@ -1,0 +1,48 @@
+From ibiosim@gmail.com  Thu Apr 11 08:38:16 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f182.google.com (mail-pd0-f182.google.com [209.85.192.182])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r3BEcEaP011720
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 11 Apr 2013 08:38:14 -0600
+Received: by mail-pd0-f182.google.com with SMTP id 3so882905pdj.41
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 11 Apr 2013 07:38:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=xXe5cIQ07ue8UtgavxRd6mTsPY6nMjCB5ELCCgNGXFQ=;
+        b=BIrD1zAwMpLBSEQWbtIw2XLYsaT7hX+TWF1ZoSv7vzocBt0jL27v0N6oQzF65uNGAh
+         Ik7bJK+ejJvpkmUgfML8cVLTIfIdBbPceynFVXB8tAPONQtFl566/YoneW+T4lh+i0T5
+         8aDcP+XbDa8klPJSkUZVINrEnvDUDX6eAarDQ79S1Ppf8SbdtFit+bxD5JwNe7qENB+x
+         Mis9L32XyIM1w3/kqQHE3jugrwcz6AlFNXThAUEgWOa82OM6gN4e/blB927cuC89TAuQ
+         0EN3nzGHnTBSjmkgpjEC5bOKRR+nfLL64ivWgWFxP+3azeVfD76DNJzlGuPG+9iJD2Lk
+         XFdg==
+X-Received: by 10.66.162.161 with SMTP id yb1mr9973155pab.30.1365691094078;
+        Thu, 11 Apr 2013 07:38:14 -0700 (PDT)
+Received: from gargravarr (c-76-23-51-50.hsd1.ut.comcast.net. [76.23.51.50])
+        by mx.google.com with ESMTPS id z8sm4465322pbt.23.2013.04.11.07.38.11
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 11 Apr 2013 07:38:13 -0700 (PDT)
+Date: Thu, 11 Apr 2013 07:38:13 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <79793817.0.1365691088840.JavaMail.jeff@gargravarr>
+Subject: BUG: Dynamic event error version 2.4.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+When simulating symmetric division (or sometimes move random), with SSA-Direct (java), I run into this error during simulation and the simulation fails.
+
+Stack trace:
+java.lang.NullPointerException
+	at analysis.dynamicsim.Simulator.duplicateComponent(Simulator.java:542)
+	at analysis.dynamicsim.Simulator.fireEvents(Simulator.java:2134)
+	at analysis.dynamicsim.SimulatorSSADirect.simulate(SimulatorSSADirect.java:86)
+	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:85)
+	at analysis.Run.execute(Run.java:1280)
+	at analysis.AnalysisView.run(AnalysisView.java:2215)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

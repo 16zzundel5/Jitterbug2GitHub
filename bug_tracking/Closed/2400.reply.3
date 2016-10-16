@@ -1,0 +1,12 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: progress bar with sweeping (PR#2400)
+Date: Thu Jan 31 06:29:02 2008
+
+To fix this bug, I created a new class, Reb2SacThread, that extends the Thread
+class and passed it the name of the directory to simulate.  Then, when the
+thread is started, it calls a special version of the run method in the Reb2Sac
+class that takes the desired simulation directory as a parameter.  This way, the
+directory is passed as a parameter and simulated on instead of being set as a
+global variable that could potentially be changed by another thread before it is
+actually used.

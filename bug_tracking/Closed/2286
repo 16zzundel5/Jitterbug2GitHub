@@ -1,0 +1,35 @@
+From namphuon@cs.utah.edu  Wed Jul 18 12:48:09 2007
+Return-Path: <namphuon@cs.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=3.0 tests=BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from mail-svr1.cs.utah.edu (mail-svr1.cs.utah.edu [155.98.64.241])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l6IIm9mn028147
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 18 Jul 2007 12:48:09 -0600
+Received: from localhost (localhost [127.0.0.1])
+	by mail-svr1.cs.utah.edu (Postfix) with ESMTP id B0C8F6500D2
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+Received: from mail-svr1.cs.utah.edu ([127.0.0.1])
+ by localhost (mail-svr1.cs.utah.edu [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 12404-08 for <atacs-bugs@vlsigroup.ece.utah.edu>;
+ Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+Received: from trust.cs.utah.edu (trust.cs.utah.edu [155.98.65.28])
+	by mail-svr1.cs.utah.edu (Postfix) with ESMTP id 5D1AF6500BE
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+Received: by trust.cs.utah.edu (Postfix, from userid 3808)
+	id 3CD1EACE82; Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+Received: from localhost (localhost [127.0.0.1])
+	by trust.cs.utah.edu (Postfix) with ESMTP id 2EA1CB0DAF
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+Date: Wed, 18 Jul 2007 12:48:09 -0600 (MDT)
+From: Nam-Phuong Nguyen <namphuon@cs.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: Copy Reaction
+Message-ID: <Pine.LNX.4.61.0707181246240.20066@trust.cs.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Virus-Scanned: amavisd-new at cs.utah.edu
+
+Need ability to copy a reaction when making models.
+

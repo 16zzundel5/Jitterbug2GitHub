@@ -1,0 +1,54 @@
+From atacs-bugs  Sun Mar  9 15:04:13 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h29M4Dg05385
+	for atacs-bugs@shang.elen.utah.edu; Sun, 9 Mar 2003 15:04:13 -0700
+Received: from jiaqi.stanford.edu (SW-90-710-281-1.Stanford.EDU [171.66.154.15])
+	by chou.ece.utah.edu (8.11.6/8.11.6) with ESMTP id h29M4DZ05382
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 9 Mar 2003 15:04:13 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h29Ls1G03677
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 9 Mar 2003 13:54:01 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Sun, 9 Mar 2003 13:54:01 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: Eric Robert Peskin <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: Re: channel-level verification fails for MPEG example (PR#746)
+In-Reply-To: <200303032359.h23NxZZ09524@chou.ece.utah.edu>
+Message-ID: <Pine.LNX.4.44.0303091350210.3673-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+If you go to postproc.cc line 355 and uncomment as such:
+
+      if((fout_size==0)&&(fin_size>0)){
+	for(rule_lst::iterator iter=fanin.begin(); iter!=fanin.end(); 
+iter++)
+	  if(iter->second==true)
+	    S->Rp = rm_rules(S->Rp, iter->first);
+	  else
+	    S->R = rm_rules(S->R, iter->first);
+	// TODO: Need code to subtract event/action when no longer used 
+	//cout << "Subtracting " << cur_event->event->action->label << 
+endl;
+	S->O = subtract_events(S->O, create_event_set(cur_event->event));
+	//S->A = rm_action(S->A, cur_event->event->action);  
+	rm_conflict(S, cur_event->event);  
+	modified = true;
+      }
+      else if(fin_size==1 && fout_size==1){
+
+Your example will work. 
+
+However, what this code does is remove dummy transitions that have no 
+fanout transitions, but do have fanin transitions.  This transformation is 
+not safe, so that is why we commented it out.  For some reason, your 
+relying on this to get safety.  Namely, I suspect that there is a dangling 
+dummy transition in your net which is not safe.  Any ideas why you have 
+such a transition?
+
+Chris
+
+

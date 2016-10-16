@@ -1,0 +1,51 @@
+From ibiosim@gmail.com  Wed Apr 29 16:52:18 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f171.google.com (mail-pd0-f171.google.com [209.85.192.171])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t3TMqI2N017575
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Apr 2015 16:52:18 -0600
+Received: by pdbqd1 with SMTP id qd1so41347984pdb.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Apr 2015 15:52:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=hEb1adAIgISAmza1PAHXQ6qronCm/b+Hk/rDOaXMKVY=;
+        b=EtuHX3au7lcr0WZ9BCYL2fQPIpRoQ+iFpg5WVaF2WbPKTwOdTS9f9lSMEfsi/7eNOj
+         zyq6uWGAlLhNc4985f5RNrB++uJKH2BIXYaM/NrOKDnilE3y/InDBt4/FSSv7Z9K15mC
+         Pus9T9QglXfXsMmmJiTPI9mOu9lTov/+KGCqaFMpmzLdTrZaygVkqCpTcFFY417ELBOR
+         lBCIV4wYuYhXCNUt/m2U7EMlxLDjKfJ0aZ0aw2Ka4s29r+wQU8afZHzn0uv67kjXpZmZ
+         KzXCIdsHpPDgv/OYEM792gfqxrETqJLmWir9hqC49c9dQIz+XudokcGC52uPsHo9Dfj8
+         SloA==
+X-Received: by 10.68.97.131 with SMTP id ea3mr2312755pbb.165.1430347937950;
+        Wed, 29 Apr 2015 15:52:17 -0700 (PDT)
+Received: from Calli-pc.uconnect.utah.edu ([155.99.186.212])
+        by mx.google.com with ESMTPSA id m4sm218446pdo.78.2015.04.29.15.52.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 29 Apr 2015 15:52:15 -0700 (PDT)
+Date: Wed, 29 Apr 2015 15:52:15 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: calliclark24@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <11764164.0.1430347932498.JavaMail.calli_000@Calli-pc>
+Subject: BUG: fba bug
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.3
+
+Operating system: Windows 8.1
+
+Bug reported by: calliclark24@gmail.com
+
+Description:
+example fba model created from sbml code throws error
+
+Stack trace:
+java.lang.NullPointerException
+	at analysis.fba.FluxBalanceAnalysis.PerformFluxBalanceAnalysis(FluxBalanceAnalysis.java:77)
+	at analysis.main.Run.execute(Run.java:527)
+	at analysis.main.AnalysisView.run(AnalysisView.java:1114)
+	at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+

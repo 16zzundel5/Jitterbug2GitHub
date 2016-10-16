@@ -1,0 +1,67 @@
+From kjones5863@gmail.com  Tue Jun  2 15:47:41 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from mail-ew0-f212.google.com (mail-ew0-f212.google.com [209.85.219.212])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n52LlMsY026420;
+	Tue, 2 Jun 2009 15:47:23 -0600
+Received: by ewy8 with SMTP id 8so6098403ewy.45
+        for <multiple recipients>; Tue, 02 Jun 2009 14:47:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:date:message-id:subject
+         :from:to:content-type;
+        bh=MP+hw9LM4suKP67OgfrZyE3qqWMX296JiCMhj4fMjC4=;
+        b=EWNuwyTxOrGJqnlcvqf4VWdxLdVvGjssoIXIRBgmJKJcYlH9BXEv+TKB2EepIqivqv
+         3pWkQH46ci111Nz4HVS7NiUs7VrRWaeC56UjEjeqn+OO4Bmzm8/G8XpAPMXmnxmdi2fw
+         dP17jwv5wAvjt2hnc+he7te8lp4ufqpldAQpM=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        b=ecSfUThHYdzGkP6LXMkT5cv8xx98GnUXcATcf9ArwV1AHdTnNfSKA8+s9YGtbS6z+c
+         A9wKeWClPQa+J5ov20yxWjy0qllIvlSfVdi4aHarMmYLfNInmkQcWjrFnP9LBI/FMnm3
+         LSFRa8+DzOlS1LYLzdWkZKPYmTsFn8rZBFB4c=
+MIME-Version: 1.0
+Received: by 10.210.71.12 with SMTP id t12mr5103921eba.68.1243979242047; Tue, 
+	02 Jun 2009 14:47:22 -0700 (PDT)
+Date: Tue, 2 Jun 2009 15:47:22 -0600
+Message-ID: <2b601e3d0906021447o5d374f4oe2bd4da642035a3e@mail.gmail.com>
+Subject: BUG: Load using -cPllodpl fails
+From: Kevin Jones <kjones5863@gmail.com>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=000e0cd1d55ad48ad4046b647cf5
+
+--000e0cd1d55ad48ad4046b647cf5
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+When outputting the .dot file using the atacs -cPllodpl command, ATACS tries
+to load a .g file, by attempting to open a file with the name *.lpn.g,
+instead of a .lpn file and creates the following error message (when trying
+to load the file learn1.lpn):
+
+No longer using postprocessing during compilation.
+Loading LPN: learn1.lpn.g
+ERROR: learn1.lpn.g is not a valid g file!
+DOT now being used for display and print routines.
+Storing LPN to:  learn1.lpn.dot
+Executing command:  printdot learn1.lpn
+
+--000e0cd1d55ad48ad4046b647cf5
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+When outputting the .dot file using the atacs -cPllodpl command, ATACS trie=
+s to load a .g file, by attempting to open a file with the name *.lpn.g, in=
+stead of a .lpn file and creates the following error message (when trying t=
+o load the file learn1.lpn):<br>
+<br>No longer using postprocessing during compilation.<br>Loading LPN: lear=
+n1.lpn.g<br>ERROR: learn1.lpn.g is not a valid g file!<br>DOT now being use=
+d for display and print routines.<br>Storing LPN to:=A0 learn1.lpn.dot<br>
+Executing command:=A0 printdot learn1.lpn<br>
+
+--000e0cd1d55ad48ad4046b647cf5--
+

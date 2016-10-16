@@ -1,0 +1,37 @@
+From eemercer@elen.utah.edu  Wed Apr 11 15:36:54 2001
+Return-Path: <eemercer@elen.utah.edu>
+Received: from chen.elen.utah.edu (IDENT:root@chen.elen.utah.edu [155.99.23.216])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA04932
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 11 Apr 2001 15:36:54 -0600
+Received: from localhost (eemercer@localhost)
+	by chen.elen.utah.edu (8.11.0/8.11.0) with ESMTP id f3BLasF14459
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 11 Apr 2001 15:36:54 -0600
+X-Authentication-Warning: chen.elen.utah.edu: eemercer owned process doing -bs
+Date: Wed, 11 Apr 2001 15:36:53 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: <atacs-bugs@shang.elen.utah.edu>
+Subject: TIC Implementation in BAG and BAP
+Message-ID: <Pine.LNX.4.30.0104111505070.7772-100000@chen.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+The (T)ime (I)ndependent (C)hoice implementation in BAG and BAP do not
+appear to be working correctly.  Consider the example
+atacs/examples/er/TIC_test.er.  The events $a and $b conflict, and $c is
+concurrently enabled with $a and $b.  The time is set such that t($a) <
+t($c) < t($b).  In this case, TIC should produce the trace $a->$c->$sync
+or $c->$b->$sync.  BAP and BAG produce incorrect implementations of TIC at
+this point in time.
+
+egm
+
+-- 
+-----------------------------------------------------------------------------
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 3280 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+-----------------------------------------------------------------------------
+

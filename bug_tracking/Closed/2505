@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:13:54 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.186])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELDreN012393
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:13:54 -0700
+Received: by mu-out-0910.google.com with SMTP id w8so216542mue.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:13:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=Ucpvzgd+8Ey/xLcW2Etns1urEcRi45x/N0W2GWTs2FQ=;
+        b=ornuKvrNRutySBYeth60THqzf2ihSJ0JHKRiIGLr6cwF85UvDE3oqeyfTA6DxotvbwGcCezPug/navBWqGWvseNe2/MyD5D5dRuu59ms7dHIX9Tqt4ER6xZDfWCHBsDIykB0TxK5GiITiWoXTf1fLETyB9OJHh+63jN+HFsg1gQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=j8WiE0hIAq0k5H4zsr0rikkOXZfGSBswKLUrT9w8KYQ709HCYjq8mkK2zobB3TWThgSD+CcXqt6/pW968mDSQ7f5lI8Yk2M7R3zPmzcvX8oaVBGLdY9y9FlPZ2bkNZMo2SNoDDX2ono2OPzZeOubMu2HtDlH5t+TErHqk1A0Bp0=
+Received: by 10.82.138.6 with SMTP id l6mr3422385bud.13.1203023632316;
+        Thu, 14 Feb 2008 13:13:52 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:13:52 -0800 (PST)
+Message-ID: <eba119560802141313p600ae6cfna8a887691a53a8c3@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:13:52 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Alphabetize species list in drag down
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Alphabetize species list in drag down in GCM Editor
+

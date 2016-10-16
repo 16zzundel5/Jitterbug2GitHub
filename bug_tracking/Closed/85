@@ -1,0 +1,36 @@
+From stjung@ming.elen.utah.edu  Tue Mar 30 10:17:45 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA14506 for <atacs-bugs@ming.elen.utah.edu>; Tue, 30 Mar 1999 10:17:44 -0700 (MST)
+Date: Tue, 30 Mar 1999 10:17:44 -0700 (MST)
+Message-Id: <199903301717.KAA14506@yuan.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Orbits Verification Error
+
+Full_Name: Sungtae Jung
+Version: 4.1
+OS: Linux
+source: 
+log: 
+category: incoming
+Submission from: ming.elen.utah.edu (128.110.18.208)
+
+
+If I use the following commands then ATACS crashed with Segmentation
+Violations.
+It seems that ATACS have a problem generating ".ver" file for ".er"
+specification.
+ 
+
+The sequences of instruction causing an error.
+
+  In the directory "examples/g"
+
+    atacs> orbits
+    atacs> verify chu133  (Same with other .g files)
+
+
+Error messages:
+
+    ERROR : s+ is an undeclared event!
+    ERROR : ....
+

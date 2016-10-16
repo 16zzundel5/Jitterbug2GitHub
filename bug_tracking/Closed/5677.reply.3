@@ -1,0 +1,9 @@
+From: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG:  Unable to delete a model from a project (PR#5677)
+Date: Tue May 29 05:45:33 2012
+
+Somewhere during the process of loading these files for the deletion process the
+path is being saved without a "/" at the end of it (in other cases there is a
+"/").  I'm not sure where this is happening, but I've put in a workaround for
+the bit of code that was crashing.

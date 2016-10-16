@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: locks up while learning (PR#2330)
+Date: Thu Sep 27 02:34:01 2007
+CC: curtis.madsen@utah.edu
+
+Ching helped me find the solution to this.  See:
+
+http://www.javaworld.com/javaworld/jw-12-2000/jw-1229-traps.html?page=3
+
+Basically, I just moved the waitFor after the reading of the input stream.  This
+also allowed me to change things so that the input stream is immediately written
+into the command window.  Please check out what I have done, and when you are
+satisfied with it, then go ahead and close this issue.
+
+Cheers,
+
+Chris

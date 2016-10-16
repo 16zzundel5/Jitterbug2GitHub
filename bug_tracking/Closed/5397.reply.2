@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: BUG:  Abstracted Species Still Printed Due to Linked SBML (PR#5397)
+Date: Thu Aug 11 15:51:35 2011
+
+Call this function on species you wish to remove:
+
+sbml.getModel().removeSpecies(name);

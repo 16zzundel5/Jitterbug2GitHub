@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG: Error message when saving modified model (PR#5473)
+Date: Thu Aug 18 16:32:46 2011
+
+Problem is with abstraction.  Namely, if a complex is form with a genetic
+production also, it should be marked as unabstractable.
+
+Arguably, this should be disallowed, but since it is allowed we should avoid
+abstracting it.

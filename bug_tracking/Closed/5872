@@ -1,0 +1,46 @@
+From ibiosim@gmail.com  Thu Mar 28 18:58:17 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f170.google.com (mail-pd0-f170.google.com [209.85.192.170])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r2T0wDTH000715
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 28 Mar 2013 18:58:13 -0600
+Received: by mail-pd0-f170.google.com with SMTP id 4so46113pdd.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 28 Mar 2013 17:58:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=x0J8SfUvYNG94s0XXPeKdw1aWHfDmStGO8PpW+J+L70=;
+        b=hV5W9Wb95VYABbZNQdh1Dbt+YgquftFqZmgsxyH+f8ItSf14gp/CMmBOsUDAuTIA8G
+         TAHBHENqqzuNzhS/gXNdFw34HI53zoPyyvSX2jXTceioi+7ErGQAFkOVLIoNBzYVWVQs
+         wxYHS8yYtQVt6CVlqdZkgbLHcjfz8PviEgAJ6s238IIL+sww9kYy3bxd05IC+HclYNB8
+         6MtUgt+SNyfR6n1j6oQGezKHr4UBI4RfBVDZZrXU5UfVfpcIOQAN51QnDNbv+UeCDLyW
+         xPZCOj5Dc7ASQlNef8oquc5QBu+Wzh9cV391leQYxwwE6nWltscy+L/47eVe2FA9ydzl
+         OBuQ==
+X-Received: by 10.66.150.198 with SMTP id uk6mr1781626pab.57.1364518693261;
+        Thu, 28 Mar 2013 17:58:13 -0700 (PDT)
+Received: from 10.0.1.2 (dhcp206.sci.utah.edu. [155.98.20.206])
+        by mx.google.com with ESMTPS id tf8sm691442pbc.42.2013.03.28.17.58.11
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Thu, 28 Mar 2013 17:58:12 -0700 (PDT)
+Date: Thu, 28 Mar 2013 17:58:12 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1534846936.0.1364518689353.JavaMail.Ted@Quinoa.local>
+Subject: BUG: This error is thrown when trying to run a grid model with
+ diffusible species on Mountain Lion.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: tschomay@sci.utah.edu
+
+Description:
+The model runs fine if I make all species non-diffusible, even if I make it a grid.
+
+Stack trace:
+java.lang.NoSuchMethodError: org.sbml.jsbml.Reaction.setReversible(Z)V
+	at analysis.dynamicsim.Simulator.expandArrays(Simulator.java:1793)
+	at analysis.Run.execute(Run.java:1282)
+	at analysis.AnalysisView.run(AnalysisView.java:2214)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

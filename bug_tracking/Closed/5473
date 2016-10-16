@@ -1,0 +1,38 @@
+From curtis.madsen@utah.edu  Thu Aug 18 10:08:08 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7IG872K000799
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 18 Aug 2011 10:08:07 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApwEAAI4TU6bYbVm/2dsb2JhbABCDqlkgUc6UQE+QicEG6FDlzSIf4VpXwSHYIszkD1X
+X-IronPort-AV: E=Sophos;i="4.68,246,1312178400"; 
+   d="scan'208";a="374869364"
+Received: from h102.umail.utah.edu (HELO HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 18 Aug 2011 10:08:00 -0600
+Received: from C8V1.xds.umail.utah.edu ([169.254.3.7]) by
+ HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi; Thu, 18 Aug 2011
+ 10:07:59 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Thu, 18 Aug 2011 10:03:59 -0600
+Subject: BUG: Error message when saving modified model
+Thread-Topic: Error message when saving modified model
+Thread-Index: AQHMXcD/zhOpMx3JzU6TDjRNJ2qzPQ==
+Message-ID: <852B726894B07749AE9ABB4B055919AC83BA925274@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p7IG872K000799
+
+When I edit an open model by adding a new species and draw an influence to a species that is created through complex formation, I get the error message "The merged SBML files have inconsistencies." if the model is also open in an analysis view.  I also get a pop-up box with the following message in it:
+
+0:The value of a <speciesReference> 'species' attribute must be the identifier of an existing <species> in the model. 
+Reference: L3V1 Section 4.11.3
+ Species 'S3' is undefined. 
+

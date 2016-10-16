@@ -1,0 +1,26 @@
+From myers@eng.utah.edu  Wed Nov  9 08:42:19 2011
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id pA9FgJaO015070
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 9 Nov 2011 08:42:19 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ROAHz-000EOS-W2
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 09 Nov 2011 08:42:11 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: potential problem with sweep separator
+Date: Wed, 9 Nov 2011 08:42:15 -0700
+Message-Id: <2FAC997A-C9BC-4EC2-AAAF-770A8452A37A@ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1251.1)
+X-Mailer: Apple Mail (2.1251.1)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id pA9FgJaO015070
+
+The sweep feature of the analysis view separates sweep variables using "_" which can be part of an ID.  This can potentially cause a problem.  It appears there is code that handles this case, but it should be tested.  In either case, it may be better to consider a separator which cannot be part of an ID.
+
+

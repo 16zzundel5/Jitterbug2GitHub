@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: myers@jiaqi.elen.utah.edu
+Subject: Re: Project leaves duplicates in succ list. (PR#592)
+Date: Tue Apr 23 14:35:12 2002
+
+The problem was that when cs is merged with ns such that cs->ns, it looked at
+all predecessors of ns and added cs to its successors, but it did not check if
+cs was already there.  It now does check.

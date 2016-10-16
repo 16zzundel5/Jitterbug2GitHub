@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: stjung@ming.elen.utah.edu
+Subject: Re: loadg problem (PR#241)
+Date: Wed Nov  3 18:51:51 1999
+
+This is now fixed.  Problem was an array holding a event was allocated 1
+character
+too short.  Several memory leaks were fixed at the same time. loadg should now
+be
+100 percent leak free.

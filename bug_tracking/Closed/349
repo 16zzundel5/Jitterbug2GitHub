@@ -1,0 +1,52 @@
+From jyang@cs.utah.edu  Sun Feb  6 13:44:31 2000
+Return-Path: <jyang@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA04182
+	for <atacs-bugs@shang.elen.utah.edu>; Sun, 6 Feb 2000 13:44:31 -0700
+Date: Sun, 6 Feb 2000 13:44:31 -0700
+From: jyang@cs.utah.edu
+Message-Id: <200002062044.NAA04182@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: book
+
+Full_Name: Jung-Lin Yang
+Version: 
+OS: 
+source: 
+log: 
+Submission from: pub-dial162.aclis.utah.edu (128.110.251.164)
+Submitted by: jyang
+
+
+Problem set from chapter 3
+
+4. 
+--------------------------------- 
+receive(A,a,B,b);
+while (a>b) loop      <= (1)
+    if (a>b) then
+        a <= a - b;
+        wait for 5 ns;
+    else
+        b <= b - a;
+        wait for 5 ns;
+    end if;
+end loop;
+end if;              <== (2)
+send(C,a)            <== (3)
+---------------------------------
+
+(1) a=3 and b=8, this code will send back 3. Not the correct answer!
+         suggest:  replace (a>b) wiht (a>0 and b>0)
+
+(2) No coresponding 'if' 
+
+(3) a not always holding the gcd
+       suggest:  if (a=0) then
+                     send(C,b);
+                 else
+                     send(C,a);
+
+
+    -Yang  
+

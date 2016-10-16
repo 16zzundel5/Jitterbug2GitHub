@@ -1,0 +1,39 @@
+From christian.atheist@gmail.com  Tue May 20 04:15:39 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.175])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m4KAFdpv007444
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 20 May 2008 04:15:39 -0600
+Received: by wf-out-1314.google.com with SMTP id 28so1832373wfc.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 20 May 2008 03:15:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        bh=qTCPyiB+xL5MfsgfZik8FsBwvEwdzAptj5Eg4WNC4e8=;
+        b=W5KrHeWOpMs03vJIKguy2KQ2z0m6IlsDP8puRFNvFEa9u6QKMkvc7fTTuRT3rRcCZE7nb7gAOIYhk4JPrtn/b7KIu1AQOFPmX5nOCFoce2V3hYtRNZ20pQiBupbfOtvSKoU+h/ypyJFogSFSYwJXqxPhMOhackyHcxRRVkAnY34=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=cp18qPYsqlOaKwRbgmfKZGD5pVwxRl5/APhNDYm/YVqKlmefE3/KbUZ2Vind8+9ML98+02oTNmSt/fRj5Sm32+6Grx8eRsoKVPpkeoTdio3FAoFS2AmZIPoLiiB9m72Qb9P5IHC8Na+2Hb3K9X81Wf8Km/ILnme5O83udPRcwZE=
+Received: by 10.142.229.5 with SMTP id b5mr1786369wfh.310.1211278538455;
+        Tue, 20 May 2008 03:15:38 -0700 (PDT)
+Received: by 10.142.166.6 with HTTP; Tue, 20 May 2008 03:15:38 -0700 (PDT)
+Message-ID: <eba119560805200315yb5bb91cr63fb0a238ccd5123@mail.gmail.com>
+Date: Tue, 20 May 2008 04:15:38 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: GCM Influences are not labelled
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: ba880a1b05b9820d
+
+Influences of a GCM should be labeled with a promoter name.  Also, if
+the reaction is a biochemical reaction, there should be a notation to
+mark it as such.
+

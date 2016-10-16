@@ -1,0 +1,36 @@
+From christian.atheist@gmail.com  Mon Feb  4 08:07:42 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.189])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m14F7fLO003395
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Feb 2008 08:07:41 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so2162127fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 04 Feb 2008 07:07:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=84I2xSi8ha1If22KsNplk6z0rqee0zs8HlYLLjrcMVY=;
+        b=WbMVlYRYhOh4Wxn/StuJn9UK6SCZbKnukp/ytDVQrETWnBKCS0JgFePsINrLU4mD2JmVaS+S0V5KMC5fbSsyomuMIoDNy4Q8i1rrAxZcKs6Kd8JmXsMuVdNO6tKc8c3FQf1oWvdUIM67KLfob+P6ouXUhzA18eZ1ZThSp4fBY6Q=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=quo2IeDUG8tpcT8XEKtYnMKxeW0ke4ct44AH4+zHUfxCosYa9wmfYRnTT8I2fwmB9tLqoiZtz2Di6tFu1LlU6R6zsjzEHyqYaiai/bTNRlVGkh8SE5Wv9gu74yrKUt230gki68eMWb2faCgDGOhlhspO9AOwEkZftvpP72Ok4u4=
+Received: by 10.82.161.19 with SMTP id j19mr13216184bue.20.1202137659556;
+        Mon, 04 Feb 2008 07:07:39 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Mon, 4 Feb 2008 07:07:39 -0800 (PST)
+Message-ID: <eba119560802040707q7e953185l1068b8a504c90497@mail.gmail.com>
+Date: Mon, 4 Feb 2008 08:07:39 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Need to restructure promoter fields
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The promoter fields values must be copied into the influence data or
+it must be created into a 3rd type of data to be parsed.
+

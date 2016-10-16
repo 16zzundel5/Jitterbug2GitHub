@@ -1,0 +1,62 @@
+From sarbruis@gmail.com  Mon Aug 22 19:50:07 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7N1o66q006419
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 22 Aug 2011 19:50:07 -0600
+Received: by bkd19 with SMTP id 19so4743947bkd.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 22 Aug 2011 18:50:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc:content-type;
+        bh=N41nW4NJhyfaIdQplUmSOV4/KawcfXmOcoA00asWY5M=;
+        b=sAll5lnoWowfgu4eBS8YDICjFMRtpr8jKudODDRYvlV8FACl57q1iQqnLU0lw7KCyN
+         AKoJXSn6zC/7u30lscCmCiur4H1/q+FLIT6da/JGR9cNaBLXZsFFhm5Pkvys70yUmxLG
+         2e6rA2tGZ9m/alDjXGLd1qfm796Y+M+tsFmnk=
+Received: by 10.204.130.129 with SMTP id t1mr1217760bks.231.1314064206284;
+ Mon, 22 Aug 2011 18:50:06 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.136.129 with HTTP; Mon, 22 Aug 2011 18:49:26 -0700 (PDT)
+In-Reply-To: <F2EE23B3-A0B5-42D9-9870-E89B2EF8C35F@ece.utah.edu>
+References: <F2EE23B3-A0B5-42D9-9870-E89B2EF8C35F@ece.utah.edu>
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Mon, 22 Aug 2011 19:49:26 -0600
+Message-ID: <CAHb1wp2tXgOSOqhrZ5YGE1TWoM=xRz6SQFR37SwexL+1nwxy9A@mail.gmail.com>
+Subject: Re: BUG: appearances getting lost
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0015174736243a492e04ab226ac7
+
+--0015174736243a492e04ab226ac7
+Content-Type: text/plain; charset=ISO-8859-1
+
+This is probably because they aren't getting saved.  I was thinking about
+adding a "save appearances" button, but clicking on the normal save button
+will do it, too, I think.
+
+On Mon, Aug 22, 2011 at 7:43 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> It seems like when I load a different simulation that my appearance
+> selections are lost.
+>
+>
+
+--0015174736243a492e04ab226ac7
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+This is probably because they aren&#39;t getting saved. =A0I was thinking a=
+bout adding a &quot;save appearances&quot; button, but clicking on the norm=
+al save button will do it, too, I think.<br><br><div class=3D"gmail_quote">=
+On Mon, Aug 22, 2011 at 7:43 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a hr=
+ef=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<b=
+r>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex;">It seems like when I load a different simul=
+ation that my appearance selections are lost.<br>
+<br>
+</blockquote></div><br>
+
+--0015174736243a492e04ab226ac7--
+

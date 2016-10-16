@@ -1,0 +1,18 @@
+I went ahead and exacted the required changes.  The function bag_rsg is now
+able
+to solvecsc violations and generate error traces without segmenatation faults.
+
+12/12/00 -- egm
+
+NOTE: I changed timed_state::causal to be timed_state::rule.  timed_state::rule
+is
+the marking_index for the rule associated with the timed_state.  I changed it
+from
+causal because sometimes causal is related to a signal in a rules boolean
+expression.
+If this is the case, then rules[causal][event] may not be a valid rule!  Using
+the
+marking_index to the rule where the timing_bounds are derived for the
+timed_state 
+guarantees that the rule exists!
+

@@ -1,0 +1,36 @@
+From zhen.zhang@utah.edu  Sun Feb  8 14:01:53 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo6.cc.utah.edu (ipo6.cc.utah.edu [155.97.144.36])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t18L1rmd019369
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 8 Feb 2015 14:01:53 -0700
+X-IronPort-AV: E=Sophos;i="5.09,540,1418108400"; 
+   d="scan'208";a="3813068"
+Received: from mail-we0-f181.google.com ([74.125.82.181])
+  by ipo6smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 08 Feb 2015 14:01:52 -0700
+Received: by mail-we0-f181.google.com with SMTP id w62so5829981wes.12
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 08 Feb 2015 13:01:50 -0800 (PST)
+X-Received: by 10.194.92.243 with SMTP id cp19mr10210964wjb.32.1423429310169;
+ Sun, 08 Feb 2015 13:01:50 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.194.89.138 with HTTP; Sun, 8 Feb 2015 13:01:08 -0800 (PST)
+In-Reply-To: <201502081744.t18Hicq9010992@chou.ece.utah.edu>
+References: <201502081744.t18Hicq9010992@chou.ece.utah.edu>
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sun, 8 Feb 2015 14:01:08 -0700
+Message-ID: <CA+LVOvnN0m5Hqw2-+qAqYHNas2rPT10yd8_MO8ExnjQszTga4A@mail.gmail.com>
+Subject: Re: BUG: Variable "fail" not removed after failure transition is
+ removed (PR#6056)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+I tested directly on the most updated source code. This works now.
+Moved to Closed.
+
+On Sun, Feb 8, 2015 at 10:44 AM, Chris Myers
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+> This one working for you now?
+>
+> Chris
+>
+

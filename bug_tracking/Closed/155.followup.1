@@ -1,0 +1,274 @@
+From killpack@eng.utah.edu  Wed Jun 23 11:13:04 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA06178 for <atacs-bugs@yuan.elen.utah.edu>; Wed, 23 Jun 1999 11:13:04 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id 6B08D3AB6; Wed, 23 Jun 1999 11:13:19 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from song.elen.utah.edu (song.elen.utah.edu [128.110.18.207])
+	by ee.utah.edu (Postfix) with ESMTP id 998703AAA
+	for <atacs-bugs@elen.utah.edu>; Wed, 23 Jun 1999 11:13:18 -0600 (MDT)
+Received: from localhost (killpack@localhost)
+	by song.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA12090
+	for <atacs-bugs@elen.utah.edu>; Wed, 23 Jun 1999 11:13:17 -0600
+X-Authentication-Warning: song.elen.utah.edu: killpack owned process doing -bs
+Date: Wed, 23 Jun 1999 11:13:17 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@song.elen.utah.edu
+To: Eric Robert Peskin <atacs-bugs@elen.utah.edu>
+Subject: Re: VHDL compiler (PR#155)
+In-Reply-To: <199906230049.SAA02374@yuan.elen.utah.edu>
+Message-ID: <Pine.LNX.4.10.9906231110290.12076-100000@song.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+> ATACS now seems to compile the VHDL code you submitted fine... but the result
+> has CSC violations.  Is this correct behavior?
+
+no - I don't think so.  The problem is in the case statement in the
+comp1_testbench.  When I want to rais both A and B and then wait until
+both are high.
+
+Here is the code below - with that one case commented out - that will
+compile and 'doall' correctly.  If the 'when 3 ...' section is
+uncommented, there is CSC violations.  I think it is an issue with the way
+I wrote my vhdl - or how it is compiled.  How should I write this section?
+
+--Create Entity:
+--Library=async,Cell=comp1,View=entity
+--Time:Wed May 26 17:03:23 1999
+--By:killpack
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE work.nondeterminism.all;
+ENTITY comp1 IS
+    PORT(
+        ack : INOUT std_ulogic := '0';
+        eq : INOUT std_ulogic := '0';
+        gr : INOUT std_ulogic := '0';
+        le : INOUT std_ulogic := '0';
+        a : IN std_ulogic;
+        b : IN std_ulogic;
+        req : IN std_ulogic
+    );
+END comp1;
+
+-- Create Architecture:
+-- Library=async,Cell=comp1,View=behavior
+-- Time:May 26 16:48:13 1999
+-- By:killpack
+
+ARCHITECTURE behavior of comp1 IS
+BEGIN
+    comp1_pro: process
+    begin
+	-- wait for req to rise
+	if (req = '0') then
+	    wait until req = '1';
+	end if;
+	-- evaluate and set output accordingly
+	if ((A = '0' and B = '0') or (A = '1' and B = '1')) then
+	    eq <= '1' after delay(1,10);
+	    wait until eq = '1';
+	elsif (A = '1' and B = '0') then
+	    gr <= '1' after delay(1,10);
+	    wait until gr = '1';
+        else
+	    le <= '1' after delay(1,10);
+	    wait until le = '1';
+	end if;
+	-- raise ackknowlge
+	ack <= '1' after delay(1,10);
+	-- wait for req to fall
+	if (req = '1') then
+	    wait until req = '0';
+	end if;
+	-- lower proper signal
+	if (eq = '1') then
+	    eq <= '0' after delay(1,10);
+	    wait until eq = '0';
+	elsif (gr = '1') then
+	    gr <= '0' after delay(1,10);
+	    wait until gr = '0';
+	else
+	    le <= '0' after delay(1,10);
+	    wait until le = '0';
+	end if;
+	-- lower ack
+	ack <= '0' after delay(1,10);
+    end process comp1_pro;
+END behavior;
+
+
+--Create Entity:
+--Library=async,Cell=comp1_tb,View=entity
+--Time:Wed May 26 16:44:31 1999
+--By:killpack
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE work.nondeterminism.all;
+ENTITY comp1_tb IS
+    PORT(
+        a : INOUT std_ulogic := '0';
+        b : INOUT std_ulogic := '0';
+        req : INOUT std_ulogic := '0';
+        ack : IN std_ulogic
+    );
+END comp1_tb;
+
+-- Create Architecture:
+-- Library=async,Cell=comp1_tb,View=behavior
+-- Time:May 26 16:45:14 1999
+-- By:killpack
+
+ARCHITECTURE behavior of comp1_tb IS
+BEGIN
+    -- process to seed the random number generator
+    seed_proc: process
+    begin
+	dump_seed(124754,3243344); -- found in nondeterminism
+	wait;
+    end process seed_proc;
+
+    env1_proc: process
+	-- pick will be a rand number between 0 and 3 telling
+	-- the env what to set a and b as.
+	variable pick: integer := 0;
+    begin
+	-- randomly set A and B
+      pick := random(3); -- 0 means neither a nor b is raised
+      case pick is
+	  when 1 =>
+	      A <= '1' after delay(1,10);
+	      wait until A = '1';
+	  when 2 =>
+	      B <= '1' after delay(1,10);
+	      wait until B = '1';
+	--when 3 =>
+	--    A <= '1' after delay(1,10);
+	--    B <= '1' after delay(1,10);
+	--    wait until A = '1';
+	--    if (B = '0') then
+	--	wait until B = '1';
+	--    end if;
+	when others =>   -- 0 means neither a nor b is raised
+	end case;
+
+        -- raise req
+	req <= '1' after delay(1,10);
+	-- wait for ack to rise
+	if (ack = '0') then
+	    wait until ack = '1';
+	end if;
+	-- fix data to be all 0 again
+	if (A = '1') then
+	  A <= '0' after delay(1,10);
+	end if;
+	if (B = '1') then
+	  B <= '0' after delay(1,10);
+	end if;
+	if not ((A = '0') and (B = '0')) then
+	  wait until ((A = '0') and (B = '0'));
+	end if;
+	-- lower req
+	req <= '0' after delay(1,10);
+	-- wait for ack to fall
+	if (ack = '1') then
+	    wait until ack = '0';
+	end if;
+    end process env1_proc;
+END behavior;
+
+
+--Create Entity:
+--Library=async,Cell=comp1_top,View=entity
+--Time:Thu May 27 14:06:01 1999
+--By:killpack
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+ENTITY comp1_top IS
+    PORT(
+        e : INOUT std_ulogic := '0';
+        g : INOUT std_ulogic := '0';
+        l : INOUT std_ulogic := '0'
+    );
+END comp1_top;
+
+
+--Netlist:
+--Library=async,Cell=comp1_top,View=schematic
+--Time:Thu May 27 16:17:49 1999
+--By:killpack
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+ARCHITECTURE schematic OF comp1_top IS
+    COMPONENT comp1_tb
+        PORT(
+            a : INOUT std_ulogic;
+            b : INOUT std_ulogic;
+            req : INOUT std_ulogic;
+            ack : IN std_ulogic
+        );
+    END COMPONENT;
+    
+    COMPONENT comp1
+        PORT(
+            ack : INOUT std_ulogic;
+            eq : INOUT std_ulogic;
+            gr : INOUT std_ulogic;
+            le : INOUT std_ulogic;
+            a : IN std_ulogic;
+            b : IN std_ulogic;
+            req : IN std_ulogic
+        );
+    END COMPONENT;
+    
+    SIGNAL ack : std_ulogic;
+    SIGNAL req : std_ulogic;
+    SIGNAL b : std_ulogic;
+    SIGNAL a : std_ulogic;
+    
+    
+BEGIN
+    
+    
+    i1 : comp1_tb 
+        PORT MAP(
+            ack => ack,
+            req => req,
+            b => b,
+            a => a
+        );
+    
+    i0 : comp1 
+        PORT MAP(
+            le => l,
+            ack => ack,
+            req => req,
+            b => b,
+            a => a,
+            gr => g,
+            eq => e
+        );
+    
+END schematic;
+
+-- VHDL configuration created by Hierarchy Editor 1.0
+-- Source configuration: async config1_comp1_top config 
+library async;
+CONFIGURATION config1_comp1_top OF comp1_top IS
+  FOR schematic
+  FOR OTHERS : comp1_tb USE ENTITY async.comp1_tb(behavior);
+    FOR behavior
+    END FOR;
+  END FOR;
+  FOR OTHERS : comp1 USE ENTITY async.comp1(behavior);
+    FOR behavior
+    END FOR;
+  END FOR;
+END FOR;
+END config1_comp1_top;
+
+

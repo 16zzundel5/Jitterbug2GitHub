@@ -1,0 +1,57 @@
+From atacs-bugs  Mon Sep 11 14:20:11 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id OAA21675
+	for atacs-bugs@shang.elen.utah.edu; Mon, 11 Sep 2000 14:20:11 -0600
+Received: from shang.elen.utah.edu (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA21668
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 11 Sep 2000 14:20:10 -0600
+Received: from localhost (eemercer@localhost)
+	by shang.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA14516
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 11 Sep 2000 14:20:10 -0600
+X-Authentication-Warning: shang.elen.utah.edu: eemercer owned process doing -bs
+Date: Mon, 11 Sep 2000 14:20:10 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: Solve CSC Error in store.er
+Message-ID: <Pine.LNX.4.10.10009111412480.14508-100000@shang.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+If ATACS tries to solve a CSC violation ona file that includes constrain
+rules, then the ER file saved from CTextTel.c will be incorrect, as the ER
+file has wrong counts for the number or rules.
+
+Here is an example (jordi2) that reveals the bug.  I added the constraint
+rule to exploit the bug.
+
+/*****************************************************************************/
+/* Cortadella's CSC example (see async96)
+*/
+/*   Assassin requires 2 while Petrify and atacs requires 1 variable.
+*/
+/*****************************************************************************/
+module jordi2;
+
+output a;  /* Not solvable if this is an input */
+output b;
+
+process c;
+    *[ (a+ || b+); (a- || b-) ]
+endprocess
+
+constraint notfull1;
+    a -> b-
+endconstraint
+
+endmodule
+
+
+-----
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 4120 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+

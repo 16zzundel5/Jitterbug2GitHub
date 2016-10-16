@@ -1,0 +1,4 @@
+Chris
+To use the help documentation reader set the environment variable: ATACSHELP
+to point to the directory containing help files.  Then in atacs, type 
+help <command>.

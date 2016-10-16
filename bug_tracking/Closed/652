@@ -1,0 +1,30 @@
+From atacs-bugs  Mon Apr  1 01:33:16 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g318XGL19043
+	for atacs-bugs@shang.elen.utah.edu; Mon, 1 Apr 2002 01:33:16 -0700
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g318XFB19036
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 1 Apr 2002 01:33:15 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) with ESMTP id g3136C802084
+	for <atacs-bugs@vlsigroup>; Sun, 31 Mar 2002 20:06:12 -0700
+X-Authentication-Warning: jiaqi.elen.utah.edu: myers owned process doing -bs
+Date: Sun, 31 Mar 2002 20:06:12 -0700 (MST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender:  <myers@jiaqi.elen.utah.edu>
+To: <atacs-bugs@vlsigroup.elen.utah.edu>
+Subject: upper bounds on constraints on merge place don't work
+Message-ID: <Pine.LNX.4.33.0203312005020.2081-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Set the constraint between x0.t+ and ack1+ to be anything but infinite 
+upper bound, and use:
+
+atacs -on -tg -oq -va stari2
+
+And it will fail, but it should not.
+
+

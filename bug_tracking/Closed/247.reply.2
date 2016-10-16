@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@xia.elen.utah.edu
+Subject: Re: tag_level.csp draws a seg fault (PR#247)
+Date: Sat Nov  6 22:47:04 1999
+
+Ok, now it really works.  The problem was that as things are being removed from
+the successor list, it was also walking the list leading to it walking recently
+free'd links.

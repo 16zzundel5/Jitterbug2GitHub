@@ -1,0 +1,38 @@
+From peskin@cs.utah.edu  Mon May  3 14:22:48 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA01701 for <atacs-bugs@yuan.elen.utah.edu>; Mon, 3 May 1999 14:22:48 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id 71D5238DD; Mon,  3 May 1999 14:22:57 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by ee.utah.edu (Postfix) with ESMTP id 5747438DC
+	for <atacs-bugs@elen.utah.edu>; Mon,  3 May 1999 14:22:56 -0600 (MDT)
+Received: from [155.99.193.62] (peskinpb.cs.utah.edu [155.99.193.62])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id OAA21195
+	for <atacs-bugs@elen.utah.edu>; Mon, 3 May 1999 14:22:54 -0600 (MDT)
+X-Sender: peskin@pop.cs.utah.edu
+Message-Id: <v03020905b353b60595d2@[155.99.193.62]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Mon, 3 May 1999 14:23:13 -0600
+To: Chris Myers <atacs-bugs@elen.utah.edu>
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+Subject: Re: Stari has mysterious verification failure (PR#97)
+
+>Orbits cannot be used for verification of level-based specifications.
+>I'm not sure what the original error was, but it does not appear to
+>still be there.
+
+The seg fault is still there (see below).  I am moving this to Fatal error.
+
+115 xia:~atacs/examples/csp> pwd
+/home/ming/atacs/examples/csp
+116 xia:~atacs/examples/csp> which atacs
+/home/song/peskin/atacs/atacs
+117 xia:~atacs/examples/csp> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      10920022 May  3 12:23
+/home/song/peskin/atacs/atacs*
+118 xia:~atacs/examples/csp> atacs -ms -to stari > ~/output
+rm: stari.er: No such file or directory
+Segmentation fault
+
+

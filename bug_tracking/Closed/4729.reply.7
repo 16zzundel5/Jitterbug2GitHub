@@ -1,0 +1,41 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: Unable to select SBML file for GCM from GUI using mouse (PR#4729)
+Date: Thu Sep  9 21:36:25 2010
+
+These issues should be worked out now.  I'm crossing my fingers that we can
+finally lay this bug down to rest.  Moving to needs testing.
+
+> Hi Curtis,
+> 
+> It looks pretty good.  There are a couple of small issues.
+> 
+> 1) View Verilog/VHDL are no longer used, so I removed these.
+> 2) We do need a Save as SystemVerilog.  I've added a new bug report  
+> for this.  Satish: please take care of this one.
+> 3) When I view a learned model, the View -> Coverage Report grays out.
+> 4) The coverage report and log do not show up as available unless one  
+> exists in the learn directory, but the learned model does show up.  It  
+> does give an error message but better to not show up as available  
+> before a model has been learned.
+> 
+> Satish: please checkout and see if you see any other focus issues.
+> 
+> Thanks,
+> 
+> Chris
+> 
+> On Sep 1, 2010, at 4:56 PM, Curtis Madsen wrote:
+> 
+>> I changed how the view menu gets enabled in LEMA.  Namely, I added a  
+>> view
+>> learned model option to both iBioSim and LEMA, and I associated all  
+>> of the other
+>> learn menu items with the file tree (not the learn view tab).  I'm  
+>> not sure if
+>> this is the desired behavior since I don't use learn views in LEMA.   
+>> Let me know
+>> if this isn't correct and I'll fix the menu so each item is  
+>> associated correctly
+>> with either the file tree or the learn view tab.  Moving to needs  
+>> testing.

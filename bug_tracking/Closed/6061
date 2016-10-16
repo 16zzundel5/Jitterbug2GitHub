@@ -1,0 +1,43 @@
+From zhen.zhang@utah.edu  Fri Jun  6 12:58:06 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s56Iw6ku017731
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Jun 2014 12:58:06 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Aq8JAM8OklPRVYCy/2dsb2JhbABZDoJ/gSuCbKsQAZcKCBZ1g3oiEXQBAgU3AiQSAQUBIjWIIJ8NgxJqiyeaAIUxF5FlgUwEijGPbJFTGCmBMIJ8Xx4
+X-IPAS-Result: Aq8JAM8OklPRVYCy/2dsb2JhbABZDoJ/gSuCbKsQAZcKCBZ1g3oiEXQBAgU3AiQSAQUBIjWIIJ8NgxJqiyeaAIUxF5FlgUwEijGPbJFTGCmBMIJ8Xx4
+X-IronPort-AV: E=Sophos;i="4.98,990,1392188400"; 
+   d="scan'208";a="374143848"
+Received: from mail-ve0-f178.google.com ([209.85.128.178])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 06 Jun 2014 12:58:05 -0600
+Received: by mail-ve0-f178.google.com with SMTP id sa20so3750958veb.37
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 Jun 2014 11:58:04 -0700 (PDT)
+X-Received: by 10.221.29.137 with SMTP id ry9mr8031896vcb.6.1402081084722;
+ Fri, 06 Jun 2014 11:58:04 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.220.161.10 with HTTP; Fri, 6 Jun 2014 11:57:24 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Fri, 6 Jun 2014 12:57:24 -0600
+Message-ID: <CA+LVOvm3O7LSHx4n2T5vdO3a58CM272LfyGp+rE6hAvSW_HFmA@mail.gmail.com>
+Subject: CHANGE: Add scrollbar to Component Editor
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a1133935c0057b404fb2f7187
+
+--001a1133935c0057b404fb2f7187
+Content-Type: text/plain; charset=UTF-8
+
+Some of my components have long list of ports, and they stretch the editor
+window out of the screen, pushing the "Cancel" and "OK" buttons out of the
+screen.
+
+--001a1133935c0057b404fb2f7187
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Some of my components have long list of ports, and they st=
+retch the editor window out of the screen, pushing the &quot;Cancel&quot; a=
+nd &quot;OK&quot; buttons out of the screen.=C2=A0</div>
+
+--001a1133935c0057b404fb2f7187--
+

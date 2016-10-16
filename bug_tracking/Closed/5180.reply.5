@@ -1,0 +1,23 @@
+From: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: add support for constitutive promoters (PR#5180)
+Date: Fri Jan 21 01:05:15 2011
+
+> Do not label arc from species to promoter.
+> 
+> Cannot edit promoters.
+> 
+> Cannot edit any influences that are connected to promoters.  
+> 
+> Should only get the influence editor when clicking on influence between
+> promoters and species, never promoter editor.
+> 
+> Type of influences from promoter to species should be a new type
+"Production".
+> 
+> Type of species to promoter should not be allowed to be complex type.
+
+These should all be done with the possible exception of the "Production" type. I
+associated the edges to a new type in 
+GlobalConstants, but I think there was something else this was supposed to do, I
+just can't remember what.

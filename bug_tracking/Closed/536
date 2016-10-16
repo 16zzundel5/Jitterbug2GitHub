@@ -1,0 +1,25 @@
+From atacs-bugs  Tue Dec 19 11:58:17 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id LAA08721
+	for atacs-bugs@shang.elen.utah.edu; Tue, 19 Dec 2000 11:58:17 -0700
+Received: from jiaqi.elen.utah.edu (IDENT:root@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA08714
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Tue, 19 Dec 2000 11:58:17 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA01162
+	for <atacs-bugs@vlsigroup>; Tue, 19 Dec 2000 11:42:24 -0700
+Date: Tue, 19 Dec 2000 11:42:24 -0700 (MST)
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: Guard before probe?
+Message-ID: <Pine.LNX.4.10.10012191141490.1160-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+channels.tex and protocols.tex
+
+Should I add guard before probe?
+
+

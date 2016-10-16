@@ -1,0 +1,31 @@
+From peskin@xia.elen.utah.edu  Thu Nov 25 11:26:32 1999
+Received: from xia.elen.utah.edu (xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA23091
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 25 Nov 1999 11:26:32 -0700
+Received: (from peskin@localhost)
+	by xia.elen.utah.edu (8.9.3/8.9.3) id LAA01437
+	for atacs-bugs@shang.elen.utah.edu; Thu, 25 Nov 1999 11:26:31 -0700
+Date: Thu, 25 Nov 1999 11:26:31 -0700
+From: Eric Peskin <peskin@xia.elen.utah.edu>
+Message-Id: <199911251826.LAA01437@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Re: Add switch to determine of TELs table is cleared on compile. (PR#184)
+
+> A couple of ways this can be tested and used.  
+> 1) Comment out the include statements in a csp/hse file.  Then, load the files
+>    from the include line, followed by the top level file.  It should compile 
+>    fine and find all the needed modules.  If newtab is selected first though, 
+>    it will not be able to find the modules.
+
+Method 1 works fine now.
+
+
+
+> 2) Change the name of a vhdl file to not match the entity name.  Then, a
+> compile
+>    of the top level first will not work, but if you first compile the lower
+> level
+>    entities, followed by the top level, it will find the prior compilations.
+
+I cannot seem to get method 2 to work.  Could you show me an example?
+

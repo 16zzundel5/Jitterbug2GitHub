@@ -1,0 +1,20 @@
+From V.Dubikhin1@newcastle.ac.uk  Tue Aug 11 10:49:41 2015
+Return-Path: <V.Dubikhin1@newcastle.ac.uk>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t7BGneHr020516
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Aug 2015 10:49:40 -0600
+Date: Tue, 11 Aug 2015 10:49:40 -0600
+Message-Id: <201508111649.t7BGneHr020516@chou.ece.utah.edu>
+From: V.Dubikhin1@newcastle.ac.uk
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG Exception in debug print
+
+Full_Name: Vladimir Dubikhin
+Version: LEMA 2.8.4
+OS: Linux
+Submission from: (NULL) (128.240.225.110)
+
+
+Printing transitions list(function printTransList in Analysis.java, line 262)
+causes exception due to pointer to lhpn missing in tranList.
+

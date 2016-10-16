@@ -1,0 +1,59 @@
+From michael13162@gmail.com  Tue Jul  5 09:40:54 2016
+Return-Path: <michael13162@gmail.com>
+Received: from mail-io0-f181.google.com (mail-io0-f181.google.com [209.85.223.181])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u65FesdZ002687
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Jul 2016 09:40:54 -0600
+Received: by mail-io0-f181.google.com with SMTP id f30so176913216ioj.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Jul 2016 08:40:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=K7U7r9AZ2Nvm++1YNO3qe2cowFd6PcaoNAOkCGdrvCw=;
+        b=ph8MjjDtcOyJhmJseZ3EeFicA0vjcWclAPi+KateeJRUxSRlx511LfwN46IRA8OJcB
+         r6CPDc/8k/pSdJwryrqshAgtneF/pm+J0+Dbd/O8ZtYugivVwMCEA30UktyblR6QVSMp
+         notj8grFQnUIcaRIgG4OwdLj34oV4ef0RUZiBgUxmCfJ0EHF4QwXDL2ltiE841k2+1o2
+         sWAnf0/sbceTUS3DQT+u8Nzni4zUQbwpVnwuY77+9CR6hNH6+Bvrcdt6ltcRDt/+LnKB
+         vA4WCeNVxBl2uHuy8VJYtFnH5knzXxuHEmR/tXjfocbPL1DWj/LtcDmEn6deI4FIrvuV
+         b9Jw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=K7U7r9AZ2Nvm++1YNO3qe2cowFd6PcaoNAOkCGdrvCw=;
+        b=dsj6WH9CtV/TK29FJ80TcmwqLlZZ9Kml3tMYqsfzSHCyP/cD1hFTFm8F5SW4RYHhY5
+         QHpWPlyVhEvbNuGSWb07129RPPpFe6YRlsHC3IMxHRvOq1hihzNWuw8aL2FFcx48vDyY
+         uHbrrim9lGuXJo9nhzqA0viTgekauNmZKASEQIlrl+MZDBEQ2Dyi1OqTWU0A6K0b3B4R
+         l2TUZ2iXYlJAJg9Zouzbr8k4HEOKrBbcL/06Q068DmAMASf47c4wmzXTi0tveZztia4P
+         vA1U8gXkn48r6usZLMY/klsBDRQwDjHJ8jZ4xO4F0ing0y7mjyZSgjEJ4loAXsot+ffR
+         E7gw==
+X-Gm-Message-State: ALyK8tJCHPV60XJDh6DQb9NSsnnP4K3wTs77quVFFXSUslSuAtHFBacp6xjgBLxaZwHXBT2jai0pyaXpy7mpQQ==
+X-Received: by 10.107.3.104 with SMTP id 101mr14039651iod.40.1467733253452;
+ Tue, 05 Jul 2016 08:40:53 -0700 (PDT)
+MIME-Version: 1.0
+From: Michael Zhang <michael13162@gmail.com>
+Date: Tue, 05 Jul 2016 15:40:43 +0000
+Message-ID: <CADN0eexcBhNBnX7icR_gXPhnF3gLNky6x_az456TOjAu46mDvQ@mail.gmail.com>
+Subject: BUG
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113ec9f832797d0536e54791
+
+--001a113ec9f832797d0536e54791
+Content-Type: text/plain; charset=UTF-8
+
+Opening the singular SBOL file the first time should display "NewDesign".
+This means that the initial SBOL file should contain a template "NewDesign".
+-- 
+Thanks,
+Michael Zhang
+
+--001a113ec9f832797d0536e54791
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Opening the singular SBOL file the first time should displ=
+ay &quot;NewDesign&quot;.=C2=A0 This means that the initial SBOL file shoul=
+d contain a template &quot;NewDesign&quot;.</div><div dir=3D"ltr">-- <br></=
+div><div data-smartmail=3D"gmail_signature"><div dir=3D"ltr">Thanks,<div>Mi=
+chael Zhang</div></div></div>
+
+--001a113ec9f832797d0536e54791--
+

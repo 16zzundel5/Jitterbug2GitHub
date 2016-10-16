@@ -1,0 +1,53 @@
+From myers@ece.utah.edu  Tue Jul  3 16:46:46 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.6 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l63Mkkpu007334
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 Jul 2007 16:46:46 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1I5r9F-0001Jm-Sk)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 03 Jul 2007 16:47:07 -0600
+Received: from [192.168.1.100] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l63Mki51014224
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 Jul 2007 16:46:44 -0600
+Subject: BUG: Add mass action law creater
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Tue, 03 Jul 2007 16:44:50 -0600
+Message-Id: <1183502690.29078.16.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.2 (2.10.2-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 0.6 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Under kinetic law add the buttons:
+
+Use Mass Action AND Clear
+
+The use mass action button should create a formula of the following
+form:
+
+If reversible is false:
+
+kf*R1* ... *Ri* ... *Rn
+
+where Ri is the ith reactant if stochiometry is 1 OR pow(Ri,s) where s
+is the stochiometry value.
+
+If reversible is true:
+
+kf*R1* ... *Ri* ... *Rn - kr*P1* ... *Pi* ... *Pm 
+
+where Ri is the ith reactant if stochiometry is 1 OR pow(Ri,s) where s
+is the stochiometry value.  Similarly, Pi is the ith product or
+pow(Pi,s).
+
+

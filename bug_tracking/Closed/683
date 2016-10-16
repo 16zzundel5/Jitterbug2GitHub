@@ -1,0 +1,26 @@
+From atacs-bugs  Tue Jul 23 14:36:12 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g6NKaCA07444
+	for atacs-bugs@shang.elen.utah.edu; Tue, 23 Jul 2002 14:36:12 -0600
+Received: from jiaqi.ece.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g6NKaC507438
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 23 Jul 2002 14:36:12 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.ece.utah.edu (8.11.6/8.11.2) with ESMTP id g6NKbvI09149
+	for <atacs-bugs@vlsigroup>; Tue, 23 Jul 2002 14:37:57 -0600
+X-Authentication-Warning: jiaqi.ece.utah.edu: myers owned process doing -bs
+Date: Tue, 23 Jul 2002 14:37:57 -0600 (MDT)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: check_combinational/disjoint_check
+Message-ID: <Pine.LNX.4.44.0207231436260.9146-100000@jiaqi.ece.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+These functions no longer work, since they depend on symmetric_guard which 
+is bogus.  They should be updated or removed.
+
+

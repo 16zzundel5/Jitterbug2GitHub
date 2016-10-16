@@ -1,0 +1,40 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Extra dummy event in component abstraction. (PR#186)
+Date: Wed Jun 23 17:21:13 1999
+
+> elatchX elatch1
+> elatchX elatch2
+
+I can't even find this example.  Please check it in to the examples submodule.
+
+
+> fifoN2 fifo2
+
+On this pair, I still get a safety violation (see session below).
+I am moving this back to Incorrect Behavior.
+
+192 sanguo:~/atacs/examples> pwd
+/home/xia/peskin/atacs/examples
+193 sanguo:~/atacs/examples> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   utmp     11454019 Jun 22 12:58
+/home/xia/peskin/atacs/src/atacs*
+194 sanguo:~/atacs/examples>  atacs -ya fifoN2 fifo2
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling fifoN2.csp ... 
+Storing process seoutb to seoutb.er
+Storing process eout to eout.er
+Storing process fout to fout.er
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process fifo2 to fifo2.er
+Loading timed event-rule structure from:  fifo2.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 19 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... NOT safe
+ERROR:  Safety violation!

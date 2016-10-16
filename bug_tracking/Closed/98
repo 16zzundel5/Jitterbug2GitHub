@@ -1,0 +1,164 @@
+From peskin@sanguo.elen.utah.edu  Sun Apr  4 23:35:16 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id XAA24123 for <atacs-bugs@ming.elen.utah.edu>; Sun, 4 Apr 1999 23:35:16 -0600 (MDT)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id XAA11486
+	for atacs-bugs@ming.elen.utah.edu; Sun, 4 Apr 1999 23:35:22 -0600
+Date: Sun, 4 Apr 1999 23:35:22 -0600
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199904050535.XAA11486@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: For elatch, could not use @ to fix liveness, caused safety violation.
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /home/shang/peskin/examples/csp/show                
+WHEN:   Sun Apr  4 23:34:59 MDT 1999                
+WHAT:   -rwx------ 1 peskin 101 10559345 Apr 4 20:58 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -ya elatch            
+OUTPUT:                       
+                              
+file:///home/shang/peskin/examples/csp/show/atacs.log                 
+Compiling elatch.csp ... 
+Loading timed event-rule structure from:  elatch.er
+WARNING:  Duplicate rules ignored.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... NOT safe
+ERROR:  Safety violation!
+                              
+STATUS:  0       
+              
+file:///home/shang/peskin/examples/csp/show/elatch.csp
+/*****************************************************************************/
+/* Furber's enhanced dynamic pipeline latch controller.                      */
+/*****************************************************************************/
+module elatch;
+
+    delay	gatedelay	= < 20, 40; 20, 40 >;
+    delay	wiredelay	= < 0,1;0,1>;
+    
+    input	Rin	= {false,<20,inf; 20,50>};
+    input	Aout	= {false,<20,inf; 20,25>};
+    input	D	= {false,<40,500; 0,100>};
+    output	Ain	= {false,<0,1; 0,1>};
+    output	Rout	= {false,wiredelay};
+    output	E	= {false,gatedelay};
+    output	A	= {false,gatedelay};
+    output	Lt	= {false,gatedelay};
+
+process leftpart;
+    *[ [Rin+ & A-@]; E+; Ain+; [Rin- & Lt+]; E-; Ain- ]
+endprocess
+
+process rightpart;
+    *[ [D+]; A+; Rout+; [Aout+ & D-]; A-; Rout-; [Aout- & Lt-] ]
+endprocess
+
+process D;
+    *[ [E+]; D+; [E-]; D- ]
+endprocess
+
+process Lt;
+    *[ [A+]; Lt+; [Aout-]; Lt- ]
+endprocess
+
+process leftenv;
+    *[ Rin+; [Ain+]; Rin-; [Ain-] ]
+endprocess
+
+process rightenv;
+    *[ [Rout+]; Aout+; [Rout-]; Aout- ]
+endprocess
+endmodule
+              
+              
+file:///home/shang/peskin/examples/csp/show/elatch.er
+.e 17
+.i 6
+.r 41
+.n 0
+.d 0
+.c 0
+.s 00000000
+reset
+# 
+# INPUT EVENTS:
+# 
+D+/1 D-/1
+Aout+/1 Aout-/1
+Rin+/1 Rin-/1
+# 
+# OUTPUT EVENTS:
+# 
+Rout+/1 Rout-/1
+A+/1 A-/1
+Lt+/1 Lt-/1
+E+/1 E-/1
+Ain+/1 Ain-/1
+# 
+# DUMMY EVENTS:
+# 
+# 
+# RULES:
+# 
+Aout+/1 Aout-/1 0 20 25
+Rout-/1 Aout-/1 0 20 25
+Rout+/1 Aout+/1 0 20 inf
+reset Aout+/1 0 20 inf
+Lt+/1 Lt-/1 0 20 40
+Aout-/1 Lt-/1 0 20 40
+A+/1 Lt+/1 0 20 40
+reset Lt+/1 0 20 40
+Rout+/1 A-/1 0 20 40
+D-/1 A-/1 0 20 40
+Aout+/1 A-/1 0 20 40
+A+/1 Rout+/1 0 0 1
+D+/1 A+/1 0 20 40
+reset Rout-/1 0 0 1
+reset A+/1 0 20 40
+E-/1 Ain-/1 0 0 1
+reset E+/1 0 20 40
+Rin+/1 E+/1 0 20 40
+E+/1 Ain+/1 0 0 1
+Rin-/1 E-/1 0 20 40
+Lt+/1 E-/1 0 20 40
+Ain+/1 E-/1 0 20 40
+reset E+/1 0 20 40
+reset D+/1 0 40 500
+E+/1 D+/1 0 40 500
+E-/1 D-/1 0 0 100
+D+/1 D-/1 0 0 100
+reset Rin+/1 0 20 inf
+Rin+/1 Rin-/1 0 20 50
+Ain+/1 Rin-/1 0 20 50
+# 
+# INITIAL RULES:
+# 
+Aout-/1 Aout+/1 1 20 inf
+Lt-/1 Lt+/1 1 20 40
+A-/1 Rout-/1 1 0 1
+Rout-/1 A+/1 1 20 40
+Lt-/1 A+/1 1 20 40
+Aout-/1 A+/1 1 20 40
+A-/1 E+/1 1 20 40
+Ain-/1 E+/1 1 20 40
+D-/1 D+/1 1 40 500
+Ain-/1 Rin+/1 1 20 inf
+Rin-/1 Rin+/1 1 20 inf
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+# 
+# CONFLICTS:
+# 
+# 
+# LOOPING CONFLICTS:
+# 
+              

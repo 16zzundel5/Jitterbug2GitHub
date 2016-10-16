@@ -1,0 +1,37 @@
+From atacs-bugs  Tue Aug 27 18:05:38 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g7S05cK14263
+	for atacs-bugs@shang.elen.utah.edu; Tue, 27 Aug 2002 18:05:38 -0600
+Received: from shang (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g7S05cD14257
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 27 Aug 2002 18:05:38 -0600
+Date: Tue, 27 Aug 2002 18:05:38 -0600
+Message-Id: <200208280005.g7S05cD14257@chou.elen.utah.edu>
+From: yzhao@vlsigroup.elen.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: syntax errors for ATACS generated VHDL
+
+Full_Name: yanyi zhao
+spec: atacs/work/vhd/{a1,a2,a2a2,a3,a3a2,a4,mpegdecoder.ctrl_HSE_BESTS}.vhd
+Version: 
+OS: redhat 7.0
+command: 
+Submission from: lab1-10.eng.utah.edu (155.99.222.59)
+Submitted by: yzhao
+
+
+hi,
+There are serval syntax errors about ATACS generated VHDL code:
+1. All the ! and ? can not be compiled.
+2. The entity or architecture names cannot have " . " in it, such as
+   the name we have here "mpegdecoder.ctrl_HSE_BESTS" 
+3. There are some declarations which should be declared in the entity
+   instead of the architecture internal signal.  For some of the vhdl, 
+   there are no declarations in the entity, all of them are in the 
+   internal signal declaration part; for some of the vhdl, the declarations 
+   have been declared both in the entity and the internal signal.
+4. The time delay is too big to simulate. Such as (0,2147483647).
+
+thanks a lot. :)
+

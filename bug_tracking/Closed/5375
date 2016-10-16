@@ -1,0 +1,23 @@
+From myers@ece.utah.edu  Thu May 19 09:36:23 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4JFaN9I002775
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 19 May 2011 09:36:23 -0600
+Received: from jiaqi.ece.utah.edu ([155.98.27.199] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QN5Gw-00071R-Vg
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 19 May 2011 09:36:22 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: Browse SBOL to View
+Date: Thu, 19 May 2011 09:36:17 -0600
+Message-Id: <6298C017-30AD-4AC2-97A5-0843D58E7005@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1084)
+X-Mailer: Apple Mail (2.1084)
+
+On right-click of SBOL file, change "Browse" to "View".
+

@@ -1,0 +1,46 @@
+From atacs-bugs@chou.ece.utah.edu  Tue Oct 19 11:24:46 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i9JHOkJH009570
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 19 Oct 2004 11:24:46 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i9JHOkXs009568
+	for atacs-bugs@shang.elen.utah.edu; Tue, 19 Oct 2004 11:24:46 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.98.27.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i9JHOjJH009562
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Oct 2004 11:24:45 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i9JHPBLM027919
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Oct 2004 11:25:11 -0600
+Received: (from myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) id i9JHPBC4027917
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 19 Oct 2004 11:25:11 -0600
+Date: Tue, 19 Oct 2004 11:25:11 -0600
+From: Chris Myers <myers@localhost.localdomain>
+Message-Id: <200410191725.i9JHPBC4027917@localhost.localdomain>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: CSC problems
+
+
+Curt's files could not be solved:
+
+Run the following line to check timed verification:
+source tt filename
+ 
+dff - cannot solve CSC problems
+mmu - works ok
+mr0 - error in solving CSC problem
+mr1 - works ok
+tsend-bm - core dump.  Is this an acceptable .g file?
+vme - 6 csc violations, I ran out of patience
+ 
+Run the following line to check untimed verification:
+source uu filename
+ 
+dff - cannot solve CSC problems
+mmu - 52 csc violations
+mr0 - 108 csc violations
+mr1 - 51 csc violations
+tsend-bm - cannot solve 5 csc violations
+vme - 6 csc violations, I ran out of patience again
+

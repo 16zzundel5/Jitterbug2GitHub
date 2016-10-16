@@ -1,0 +1,28 @@
+From prvs=00163e40c=zhen.zhang@utah.edu  Tue Jul 19 01:05:10 2016
+Return-Path: <prvs=00163e40c=zhen.zhang@utah.edu>
+Received: from ipo9.cc.utah.edu (ipo9.cc.utah.edu [155.97.144.53])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6J759Hi029751
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2016 01:05:09 -0600
+X-IronPort-AV: E=Sophos;i="5.28,388,1464674400"; 
+   d="scan'208";a="737520"
+Received: from mail-oi0-f52.google.com ([209.85.218.52])
+  by ipo9smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 19 Jul 2016 01:05:08 -0600
+Received: by mail-oi0-f52.google.com with SMTP id l72so13320300oig.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2016 00:05:08 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJ3CqETnCAD+K3m5P/FsLuJecz2o9Lh0YuBeY3LTnuKD6OFerDYolE7xBUlilcaF2/KbdZKvcEOXMeJVg==
+X-Received: by 10.202.59.68 with SMTP id i65mr16669785oia.61.1468911908357;
+ Tue, 19 Jul 2016 00:05:08 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Tue, 19 Jul 2016 00:04:29 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 19 Jul 2016 01:04:29 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvnNaoLwyWMxtHrx0jC_e-9WeFKOi_uvA8OEj0AW7m-2MQ@mail.gmail.com>
+Message-ID: <CA+LVOvnNaoLwyWMxtHrx0jC_e-9WeFKOi_uvA8OEj0AW7m-2MQ@mail.gmail.com>
+Subject: CHANGE: Change reaction ID to R0 to match screenshots on iBioSim
+ Version 2.8 Systems Biology Tutoria
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+In Section 9, the only reaction is referred to as "R1" throughout this
+section, but screenshots show it as "R0".
+

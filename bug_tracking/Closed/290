@@ -1,0 +1,57 @@
+From eemercer@ee.elen.utah.edu  Mon Jan 24 11:08:46 2000
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA12218
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 24 Jan 2000 11:08:46 -0700
+Date: Mon, 24 Jan 2000 11:08:46 -0700
+Message-Id: <200001241808.LAA12218@chou.elen.utah.edu>
+From: eemercer@ee.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Feature Request
+
+Full_Name: Eric G. Mercer
+Version: Current
+OS: Linux
+source: 
+log: 
+Submission from: shang.elen.utah.edu (155.99.23.201)
+Submitted by: eemercer
+
+
+Create function used in HSE compiler to do the following:
+
+char* new_distribution(  int LOWERA, int UPPERA, char* distA,
+                         int LOWERB, int UPPERB, char* distb )
+
+Returns a new string representing a new distribution that is a combination
+of the two passed in distribution.  If the two distributions 'cannot' be
+combined,
+the function should return NULL.
+
+For distA and distb = Uniform:
+
+   new_distribution = U( distA.LOWER + distB.LOWER, distA.UPPER + distB.UPPER )
+
+For distA and distb NULL 
+
+   new_distribution = U( LOWERA + LOWERB, UPPERA + UPPERB )
+
+For distA or distb NULL AND distA or distB Uniform
+
+   dist = (distA==NULL) ? distB : distA;
+   LOWER = (distA==NULL) ? LOWERA : LOWERB;
+   UPPPER = (distA==NULL) ? UPPERA : UPPERB;
+   new_distribution = U( dist.LOWER + LOWER, dist.UPPER + UPPER )
+
+For distA and distB NORMAL
+
+   new_distribution = N( distA.mean + distB.mean, distA.std + distB.std )
+
+
+ELSE
+ 
+   new_distribution = NULL
+
+
+NOTE: It is not possible to combine Singular distributions with anything.  
+It is also not possible to combine a Normals with anything but normals.
+

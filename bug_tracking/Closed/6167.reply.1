@@ -1,0 +1,16 @@
+From: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: hierarchical simulator problems with genetic toggle simulation (PR#6167)
+Date: Sun Sep 28 01:30:19 2014
+
+I was debugging and I think the events are not quite working because there is a
+bug in the model. Namely, two 
+events are scheduled to take place at the same time (setting IPTG high and low)
+but there aren't priorities in these 
+events. So I believe the simulation picks the event to fire first arbitrarily.
+In my case, I was firing low then high, 
+which seemed the event IPTG_Low never fired. 
+
+For LacI initial amount, the species at the top level is replaced by a species
+in a sub model. I set the initial amount 
+to be the one in the sub model. Is that incorrect?

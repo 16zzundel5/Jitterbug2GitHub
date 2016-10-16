@@ -1,0 +1,44 @@
+From myers@ece.utah.edu  Thu Jan  3 08:11:22 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m03FBM6l012787
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 3 Jan 2008 08:11:22 -0700
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1JARk8-0005xY-1p)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 03 Jan 2008 08:12:26 -0700
+Received: from [192.168.0.8] (71-213-23-65.slkc.qwest.net [71.213.23.65])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m03FBJ7U025945
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 3 Jan 2008 08:11:20 -0700
+Subject: FEATURE: check unit definitions
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Thu, 03 Jan 2008 08:08:28 -0700
+Message-Id: <1199372908.13449.11.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.1 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Unit definition ID should not use a term from the set of base unit
+names.
+
+Unit definitions can be used to redefine built-in defaults, "substance",
+"volume", "area", "length", and "time" to redefine model-wide default
+units.  However, only one unit may be used and it is restricted to
+certain units.
+
+Must include one or more unit definition.
+
+Check exponent and scale are integers while multiplier is a double.
+
+Built-in units should be accessible choice for units.
+
+

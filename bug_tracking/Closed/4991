@@ -1,0 +1,310 @@
+From myers@ece.utah.edu  Mon May 24 16:02:12 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.7 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4OM2BRH019968;
+	Mon, 24 May 2010 16:02:11 -0600
+Received: from 75-169-174-153.slkc.qwest.net ([75.169.174.153] helo=[192.168.0.3])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OGfit-0006fG-9D; Mon, 24 May 2010 16:02:11 -0600
+Message-Id: <50AD22A0-DC4D-45D4-A46C-83BF9725FA8D@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: this model generates invalid model after abstraction
+Date: Mon, 24 May 2010 16:02:05 -0600
+Cc: kjones@vlsigroup.ece.utah.edu
+X-Mailer: Apple Mail (2.936)
+
+.outputs fail
+.dummy t75 t117 t100 t10 t118 t51 t95 t17 t119 t77 t50 t99 t94 t89  
+t110 t11 t22 t80 t57 t112 t49 t21 t98 t28 t52 t0 t60 t35 t79 t74 t53  
+t58 t38 t37 t108 t125 t39 t61 t36 t109 t47 t68 t8 t33 t32 t18 t29 t92  
+t64 t30 t73 t84 t45 t122 t129 t7 t72 t46 t3 t9 t71 t56 t40 t124 t135  
+t31 t91 t123 t54 t133 t59 t66 t126 t114 t96 t127 t82 t81 t120 t23 t86  
+t107 t65 t87 t26 t2 t15 t25 t14 t102 t132 t116 t78 t24 t4 t93 t67 t113  
+t131 t106 t44 t134 t1 t128 t43 t130 t103 t42 t115 t88 t63 t70 t105  
+t101 t121 t85
+#@.variables psi omega phi ctl
+#|.places p13 p100 p25 p101 p106 p85 p95 p113 p107 p21 p71 p41 p27 p46  
+p49 p1 p111 p79 p94 p117 p70 p118 p47 p75 p23 p53 p97 p104 p35 p93 p31  
+p45 p109 p89 p55 p112 p44 p119 p15 p102 p32 p4 p64 p65 p73 p56 p33  
+p103 p26 p34 p19 p69 p58 p110 p80 p28 p67 p59 p51 p52 p38 p86 p8 p68  
+p50 p57 p87 p43 p0 p29 p62 p92 p76 p83 p98 p99 p2 p77 p88 p22 p61 p108  
+p39 p37 p114 p74 p63 p7 p10 p16 p6 p116 p105 p40 p115 p81 p91 p20 p82
+#@.init_state [0]
+.graph
+p65 t75
+t75 p6
+p101 t117
+t117 p102
+p86 t100
+t100 p87
+p8 t10
+t10 p10
+p102 t118
+t118 p103
+p44 t51
+t51 p45
+t15 p15
+p82 t95
+t95 p83
+p15 t17
+t17 p16
+p103 t119
+t119 p104
+p6 t77
+t77 p67
+p43 t50
+t50 p44
+p85 t99
+t99 p86
+p81 t94
+t94 p82
+p77 t89
+t89 p6
+p95 t110
+t110 p6
+p10 t11
+p19 t22
+t22 p20
+p69 t80
+t80 p70
+p49 t57
+t57 p50
+p6 t112
+t112 p1
+p6 t49
+t49 p43
+t11 p6
+p6 t21
+t21 p19
+p6 t98
+t98 p85
+p6 t28
+t28 p25
+p45 t52
+t52 p46
+p0 t0
+t0 p1
+p52 t60
+t60 p53
+p6 t35
+t35 p31
+p68 t79
+t79 p69
+p64 t74
+t74 p65
+p46 t53
+t53 p47
+p50 t58
+t58 p51
+p33 t38
+t38 p34
+p32 t37
+t37 p33
+p93 t108
+t108 p94
+p109 t125
+t125 p110
+p34 t39
+t39 p35
+p53 t61
+t61 p6
+p31 t36
+t36 p32
+p94 t109
+t109 p95
+p41 t47
+t47 p6
+p59 t68
+t68 p6
+t18 p6
+p7 t8
+t8 p8
+p29 t33
+t33 p6
+p28 t32
+t32 p29
+p16 t18
+p25 t29
+t29 p26
+p79 t92
+t92 p80
+p55 t64
+t64 p56
+p26 t30
+t30 p27
+p63 t73
+t73 p64
+p6 t84
+t84 p73
+p39 t45
+t45 p40
+p106 t122
+t122 p107
+p113 t129
+t129 p98
+p6 t7
+t7 p7
+p62 t72
+t72 p63
+p40 t46
+t46 p41
+p2 t3
+t3 p4
+p61 t71
+t71 p62
+p6 t56
+t56 p49
+p35 t40
+t40 p6
+p108 t124
+t124 p109
+p119 t135
+t135 p118
+p27 t31
+t31 p28
+p6 t91
+t91 p79
+p107 t123
+t123 p108
+p47 t54
+t54 p6
+p117 t133
+t133 p118
+p51 t59
+t59 p52
+p57 t66
+t66 p58
+p110 t126
+t126 p111
+p98 t114
+t114 p99
+p83 t96
+t96 p6
+p111 t127
+t127 p112
+t4 p6
+p71 t82
+t82 p6
+p70 t81
+t81 p71
+p104 t120
+t120 p105
+p20 t23
+t23 p21
+p74 t86
+t86 p75
+p92 t107
+t107 p93
+p56 t65
+t65 p57
+p75 t87
+t87 p76
+p23 t26
+t26 p6
+p13 t15
+p22 t25
+t25 p23
+p6 t14
+t14 p13
+p88 t102
+t102 p89
+p116 t132
+t132 p115
+p100 t116
+t116 p101
+p67 t78
+t78 p68
+p21 t24
+t24 p22
+p4 t4
+p80 t93
+t93 p81
+p58 t67
+t67 p59
+p97 t113
+t113 p98
+p115 t131
+t131 p116
+p91 t106
+t106 p92
+p38 t44
+t44 p39
+p118 t134
+t134 p119
+p1 t1
+t1 p2
+p112 t128
+t128 p113
+p37 t43
+t43 p38
+p114 t130
+t130 p115
+p89 t103
+t103 p6
+p6 t42
+t42 p37
+p99 t115
+t115 p100
+p76 t88
+t88 p77
+p6 t63
+t63 p55
+p6 t70
+t70 p61
+p6 t105
+t105 p91
+p87 t101
+t101 p88
+p105 t121
+t121 p106
+p73 t85
+t85 p74
+.marking {p117 p97 p0 p114 }
+#@.init_vals  
+{< 
+psi 
+= 
+[-25000 
+,-25000]><omega=[17742,17743]><phi=[-25000,-25000]><ctl=[10000,10000]>}
+#@.enablings  
+{<t95=[~(phi>=-70)&~(psi>=-70)]><t50=[(ctl>=75000)&(phi>=-71)&(psi>=-71) 
+]><t99=[(ctl>=145000)&(phi>=-71)&(psi>=-71)]><t11=[~(phi>=-70)&~(psi>=-7 
+0)]><t22=[(ctl>=35000)&(phi>=-71)&(psi>=-71)]><t57=[(ctl>=85000)&(phi>=- 
+71)&(psi>=-71)]><t112=[~(ctl>=15000)&(phi>=-71)]><t0=[(phi>=-71)]><t60=[ 
+~(phi>=-70)&~(psi>=-70)]><t74=[~(phi>=-70)&~(psi>=-70)]><t53=[~(phi>=-70)&~(psi>=-70)]><t39=[~(phi>=-70)&~(psi>=-70)]><t36=[(ctl>=55000)&(phi>=-71)&(psi>=-71)]><t109=[~(phi>=-70)&~(psi>=-70)]><t8=[(ctl>=15000)&(phi>=-71)&(psi>=-71)]><t32=[~(phi>=-70)&~(psi>=-70)]><t18=[~(phi>=-70)&~(psi>=-70)]><t29=[(ctl>=45000)&(phi>=-71)&(psi>=-71)]><t92=[(ctl>=135000)&(phi>=-71)&(psi>=-71)]><t64=[(ctl>=95000)&(phi>=-71)&(psi>=-71)]><t46=[~(phi>=-70)&~(psi>=-70)]><t3=[~(phi>=-70)]><t71=[(ctl>=105000)&(phi>=-71)&(psi>=-71)]><t81=[~(phi>=-70)&~(psi>=-70)]><t15=[(ctl>=25000)&(phi>=-71)&(psi>=-71)]><t25=[~(phi>=-70)&~(psi>=-70)]><t102=[~(phi>=-70)&~(psi>=-70)]><t78=[(ctl>=115000)&(phi>=-71)&(psi>=-71)]><t4=[~(psi>=-70)]><t67=[~(phi>=-70)&~(psi>=-70)]><t106=[(ctl>=155000)&(phi>=-71)&(psi>=-71)]><t1=[(psi>=-71)]><t43=[(ctl>=65000)&(phi>=-71)&(psi>=-71)]><t88=[~(phi>=-70)&~(psi>=-70)]><t85=[(ctl>=125000)&(phi>=-71)&(psi>=-71)]>}
+#@.assignments  
+{<t74=[omega:=uniform(18459,18553)]><t117=[ctl:=uniform(60000,60000)]><t 
+99=[omega:=uniform(24629,24641)]><t118=[ctl:=70000]><t50=[omega:=uniform 
+(24599,24609)]><t15=[omega:=uniform(24638,24650)]><t119=[ctl:=uniform(80 
+000,80000)]><t88=[omega:=uniform(18413,18486)]><t109=[omega:=uniform(181 
+95,18357)]><t11=[omega:=uniform(18360,18394)]><t78=[omega:=uniform(24589 
+, 
+24603)]><t57=[omega:=uniform(24597,24601)]><t36=[omega:=uniform(24615,24 
+634)]><t125=[ctl:=uniform(140000,140000)]><t60=[omega:=uniform(18502,185 
+76)]><t46=[omega:=uniform(18510,18571)]><t67=[omega:=uniform(18479,18557 
+)]><t18=[omega:=uniform(18389,18439)]><t32=[omega:=uniform(18466,18519)] 
+ ><t29=[omega:=uniform(24630,24635)]><t122=[ctl:=uniform(110000,110000)] 
+ ><t129=[ctl:=uniform(20000,20000)]><t71=[omega:=uniform(24589,24599)]>< 
+t8=[omega:=uniform(24647,24655)]><t39=[omega:=uniform(18488,18542)]><t12 
+4=[ctl:=uniform(130000,130000)]><t135=[psi:=uniform(24912,24913)]><t123= 
+[ctl:=uniform(120000,120000)]><t53=[omega:=uniform(18516,18578)]><t133=[psi:=uniform(24912,24913)]><t126=[ctl:=uniform(150000,150000)]><t114=[ctl:=uniform(30000,30000)]><t95=[omega:=uniform(18366,18442)]><t127=[ctl:=uniform(160000,160000)]><t4=[omega:=uniform(18314,18374)]><t81=[omega:=uniform(18428,18512)]><t120=[ctl:=uniform(90000,90000)]><t22=[omega:=uniform(24635,24640)]><t85=[omega:=uniform(24602,24610)]><t106=[omega:=uniform(24656,24661)]><t64=[omega:=uniform(24600,24605)]><t25=[omega:=uniform(18430,18478)]><t1=[omega:=uniform(24650,24657)]><t132=[phi:=uniform(-24967,-24966)]><t116=[ctl:=uniform(50000,50000)]><t92=[omega:=uniform(24607,24615)]><t113=[ctl:=uniform(20000,20000)]><t131=[phi:=uniform(24912,24913)]><t43=[omega:=uniform(24610,24620)]><t134=[psi:=uniform(-24913,-24912)]><t128=[ctl:=uniform(10000,10000)]><t130=[phi:=uniform(-24967,-24966)]><t102=[omega:=uniform(18334,18409)]><t115=[ctl:=uniform(40000,40000)]><t121=[ctl:=uniform(100000,100000)]>}
+#@.delay_assignments  
+{<t74=uniform(445,450)><t117=uniform(11995,11995)><t99=uniform(40,50)><t 
+118=uniform(11995,11995)><t50=uniform(280,290)><t15=uniform(435,450)><t1 
+19=uniform(11995,11995)><t88=uniform(355,355)><t109=uniform(210,210)><t1 
+1=uniform(675,675)><t78=uniform(135,145)><t57=uniform(245,255)><t36=unif 
+orm(345,360)><t125=uniform(11995,11995)><t60=uniform(520,525)><t46=unifo 
+rm(580,580)><t67=uniform(485,490)><t18=uniform(660,660)><t32=uniform(625,625)><t29=uniform(380,390)><t122=uniform(11995,11995)><t129=uniform(11995,11995)><t71=uniform(175,185)><t8=uniform(465,480)><t39=uniform(605,605)><t124=uniform(11995,11995)><t135=uniform(1040,1075)><t123=uniform(11995,11995)><t53=uniform(555,555)><t133=uniform(935,935)><t126=uniform(11995,11995)><t114=uniform(11995,11995)><t95=uniform(305,305)><t127=uniform(11995,11995)><t4=uniform(690,690)><t81=uniform(400,405)><t120=uniform(11995,11995)><t22=uniform(410,420)><t85=uniform(105,115)><t106=uniform(15,25)><t64=uniform(210,220)><t25=uniform(645,645)><t1=uniform(490,505)><t132=uniform(1045,1075)><t116=uniform(11995,11995)><t92=uniform(70,80)><t113=uniform(12895,12895)><t131=uniform(1035,1055)><t43=uniform(315,325)><t134=uniform(1055,1075)><t128=uniform(11995,11995)><t130=uniform(1065,1065)><t102=uniform(255,255)><t115=uniform(11995,11995)><t121=uniform(11995,11995)>}
+#@.continuous
+.end
+

@@ -1,0 +1,55 @@
+From killpack@eng.utah.edu  Wed May  3 14:47:10 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (killpack@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA31199
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 May 2000 14:47:09 -0600
+X-Authentication-Warning: chou.elen.utah.edu: killpack owned process doing -bs
+Date: Wed, 3 May 2000 14:47:09 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@chou.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: vhdl support for gates (decomposing by hand)
+Message-ID: <Pine.LNX.4.10.10005031437310.31110-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Does atacs support gate specifications such as: 
+HSE:::::::::::::::::::::;:::::::::::::::::::::::::::::::::;
+gate aibar;
+  ( ~a0 & ~a1 ) -> aibar+
+  ( a0 | a1 ) -> aibar-
+endgate
+gate bibar;
+  ( ~b0 & ~b1 ) -> bibar+
+  ( b0 | b1 ) -> bibar-
+endgate
+
+this is the same as
+VHDL:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+aibar <= a0 nor a1;
+bibar <= b0 nor b1;
+
+Plus I want to specify c-element behavior as a gate - not a process.
+
+I attempted this:
+  creset : process
+  begin
+    if (c0 = '0') and (c1 = '0') then
+      assign(cr, '1', 200, 300);
+    else
+      assign(cr, '0', 200, 300);
+    end if;
+  end process;
+But it gives me:
+ERROR: cr_the_and2+/1 enabled but signal is not 0 or R in state 0R0RR11001
+
+I think I can specify gates in a process only if I have the vacuous assign
+statement.  But this may cause NO-WAIT deadlock when simulating vhdl
+because of the lack of wait statements when vacuous assigns are skipped
+over.
+
+I don't know how to specify plainjane vhdl gates in an ATACS-friendly way.
+
+Kip
+
+

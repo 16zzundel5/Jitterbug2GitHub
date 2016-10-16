@@ -1,0 +1,35 @@
+From myers@ece.utah.edu  Fri Feb  8 08:07:01 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m18F71Y0023228
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 8 Feb 2008 08:07:01 -0700
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1JNUpm-0001Sg-WB)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 08 Feb 2008 08:08:12 -0700
+Received: from [192.168.0.9] (71-213-43-190.slkc.qwest.net [71.213.43.190])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m18F6xXF005711
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 8 Feb 2008 08:06:59 -0700
+Subject: BUG: if you have a units problem in your parameters for a kinetic
+	law may crash
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 08 Feb 2008 08:03:37 -0700
+Message-Id: <1202483017.16760.7.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-7.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 0.5 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+When you get a units error due to the parameters of your kinetic law
+being wrong, it can crash.  It will also be possible to cancel and end
+up with a kinetic law with invalid units.
+
+

@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: interesting species must include non-input (PR#2338)
+Date: Mon Nov 12 06:44:01 2007
+
+The reason for this is that the default behavior is to remove no species by
+irrelevant species abstraction unless species are specified as interesting. 
+Therefore, an output species must be selected as interesting to keep the model
+from being abstracted to nothing.  
+
+Changed error message to say that there are no reactions in the model which is
+more clear.

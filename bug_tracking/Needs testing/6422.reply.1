@@ -1,0 +1,31 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: remove unused array namespace on export (PR#6422)
+Date: Mon Nov 30 15:43:10 2015
+
+Yes. I had these methods to expand every SBase object. You can cast TreeNode to
+SBase.
+
+  private static void convert (SBMLDocument doc, Model model, ArraysCompiler
+compiler, Map<String, 
+ASTNode> idToVector, List<Integer> indices) {
+    for (int i = doc.getChildCount() - 1; i >= 0; i--) {
+      TreeNode child = doc.getChildAt(i);
+      convert(model, child, compiler, idToVector, indices);
+    }
+  }
+  private static void convert(Model model, TreeNode node, ArraysCompiler
+compiler, Map<String, 
+ASTNode> idToVector, List<Integer> indices) {
+    boolean isExpanded;
+    for (int i = node.getChildCount() - 1; i >= 0; i--) {
+      TreeNode child = node.getChildAt(i);
+      isExpanded = expandDim(model, child, compiler.clone(), idToVector,
+indices);
+      if(!isExpanded) {
+        convert(model, child, compiler, idToVector, indices);
+      }
+    }
+  }
+
+Leandro

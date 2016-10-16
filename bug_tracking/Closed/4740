@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Fri May 29 12:05:49 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n4TI5nTl014458
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 29 May 2009 12:05:49 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MA6Sj-0004kQ-TI
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 29 May 2009 12:05:49 -0600
+Message-Id: <3AD6F7CA-5F84-4C7C-AAB2-C0045DCB0120@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: CHANGE: input/output in LEMA/ATACS
+Date: Fri, 29 May 2009 12:05:44 -0600
+X-Mailer: Apple Mail (2.929.2)
+
+In LEMA, default Boolean variables to be inputs, but in ATACS allow  
+the user to choose input/output.
+

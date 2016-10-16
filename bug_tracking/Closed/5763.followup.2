@@ -1,0 +1,116 @@
+From myers@eng.utah.edu  Mon Sep  3 22:51:24 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q844pOAH010306
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 3 Sep 2012 22:51:24 -0600
+Received: from mobile-198-228-214-079.mycingular.net ([198.228.214.79] helo=[10.198.73.76])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1T8l1a-000LkQ-QC; Mon, 03 Sep 2012 22:46:07 -0600
+References: <201209040356.q843uDAY009241@chou.ece.utah.edu> <CA+LVOvkWFLTcV=t75bJWR7TnC1QSM64xkKPTB4jBaMx-_WsFXA@mail.gmail.com>
+In-Reply-To: <CA+LVOvkWFLTcV=t75bJWR7TnC1QSM64xkKPTB4jBaMx-_WsFXA@mail.gmail.com>
+Mime-Version: 1.0 (1.0)
+Content-Type: text/plain;
+	charset=us-ascii
+Message-Id: <43548D55-3B95-44F7-A86F-1B2482403157@ece.utah.edu>
+Cc: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+X-Mailer: iPhone Mail (9B206)
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Subject: Re: FEATURE:Add support for initial values for continuous variables (PR#5763)
+Date: Mon, 3 Sep 2012 22:51:12 -0600
+To: Zhen Zhang <moschino21@gmail.com>
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q844pOAH010306
+
+We must scale them.
+
+Chris
+
+Sent from my iPhone
+
+On Sep 3, 2012, at 10:29 PM, Zhen Zhang <moschino21@gmail.com> wrote:
+
+> Okay. I see it now. But if I have a variable x whose initial value is,
+> say 0.5, and it has a constant rate of change of 0.03. In this case,
+> do we represent the values of x and its rate both as [0,1] when
+> converting into LPN? Or we have to scale them and other variable
+> values in the same model so that they become 50 and 3?
+> 
+> On Mon, Sep 3, 2012 at 9:56 PM, Chris Myers
+> <atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+>> The GUI should not support real numbers for initial values as LPNs ONLY support
+>> integers for initial values.  You
+>> are confusing the meaning of continuous variable.  A continuous variable does
+>> not mean a real variable, it
+>> means a variable that changes over time continuously.  While it can take on any
+>> real value, the representation of
+>> the value is always with a range bounded by integers.  Therefore, unless a
+>> variable has a rate rule, it is not a
+>> continuous variable.  It is a discrete variable.  Discrete variables are those
+>> which do not evolve continuously and
+>> their value is only changed by discrete transitions.
+>> 
+>> I should though likely convert a real initial value into a bounded range around
+>> that value.
+>> 
+>> Chris
+>> 
+>>> --e89a8f23433ba7fd8c04c8d71a95
+>>> Content-Type: text/plain; charset=ISO-8859-1
+>>> 
+>>> I agree. The initial value of a continuous variable in the graphical editor
+>>> in BioSim now supports rational numbers. We probably do not need to support
+>>> irrational numbers (like pi, sqareroot(2) etc). The converted LPN however
+>>> still accept integers as initial values. Also, unless a rate rule is
+>>> associated with a continuous variable in the graphical editor, the
+>>> converted LPN still treats a continuous variable as an integer.
+>>> 
+>>> On Mon, Sep 3, 2012 at 2:31 PM, Chris Myers <
+>>> atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+>>> 
+>>>> On second thought, there should be some error checking in LPN generation to
+>>>> ensure this meets the required
+>>>> form.
+>>>> 
+>>>> 
+>>> 
+>>> 
+>>> --
+>>> Zhen Zhang
+>>> 
+>>> --e89a8f23433ba7fd8c04c8d71a95
+>>> Content-Type: text/html; charset=ISO-8859-1
+>>> Content-Transfer-Encoding: quoted-printable
+>>> 
+>>> I agree. The initial value of a continuous variable in the graphical editor=
+>>> in BioSim now supports rational numbers. We probably do not need to suppor=
+>>> t irrational numbers (like pi, sqareroot(2) etc). The converted LPN however=
+>>> still accept integers as initial values. Also, unless a rate rule is assoc=
+>>> iated with a continuous variable in the graphical editor, the converted LPN=
+>>> still treats a continuous variable as an integer.=A0<br>
+>>> 
+>>> <br><div class=3D"gmail_quote">On Mon, Sep 3, 2012 at 2:31 PM, Chris Myers =
+>>> <span dir=3D"ltr"><<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" =
+>>> target=3D"_blank">atacs-bugs@vlsigroup.ece.utah.edu</a>></span> wrote:<b=
+>>> r><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:=
+>>> 1px #ccc solid;padding-left:1ex">
+>>> 
+>>> On second thought, there should be some error checking in LPN generation to=
+>>> <br>
+>>> ensure this meets the required<br>
+>>> form.<br>
+>>> <br>
+>>> </blockquote></div><br><br clear=3D"all"><div><br></div>-- <br>Zhen Zhang<b=
+>>> r>
+>>> 
+>>> --e89a8f23433ba7fd8c04c8d71a95--
+>>> 
+>>> 
+> 
+> 
+> 
+> -- 
+> Zhen Zhang
+

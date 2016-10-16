@@ -1,0 +1,38 @@
+From atacs-bugs  Thu May  9 14:17:55 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g49KHt421174
+	for atacs-bugs@shang.elen.utah.edu; Thu, 9 May 2002 14:17:55 -0600
+Received: from shang (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g49KHtP21168
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 9 May 2002 14:17:55 -0600
+Date: Thu, 9 May 2002 14:17:55 -0600
+Message-Id: <200205092017.g49KHtP21168@chou.elen.utah.edu>
+From: yzhao@vlsigroup.elen.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: segmentation fault
+
+Full_Name: yanyi zhao
+spec: /home/shang/yzhao/atacs/work/vhd/{a_matrix,a_DPcomp,a_display,a_ctrl,a_decoder_ch}.vhd
+Version: cvs tag bugbug
+OS: RedHat 7.1 Linux
+command: atacs -oq -ys a_matrix.vhd a_DPcomp.vhd a_display.vhd a_ctrl.vhd a_decoder_ch.vhd ctrl
+
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: yzhao
+
+
+ATACS not synthesis the while loop, assignment '<=', and also boolean
+expression, 
+such as "<, >, not".
+
+ATACS VERSION 5.1
+Logging session in:  atacs.log
+Compiling a_matrix.vhd ... 
+a_matrix.vhd: line 52: non-boolean expression used as condition
+Attributes not supported.
+a_matrix.vhd: 58: syntax error.
+Attributes not supported.
+a_matrix.vhd: 58: syntax error.
+Segmentation fault (core dumped)
+

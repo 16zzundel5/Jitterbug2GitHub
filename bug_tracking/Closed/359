@@ -1,0 +1,29 @@
+From peskin@vlsigroup.elen.utah.edu  Wed Feb 16 19:29:02 2000
+Return-Path: <peskin@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id TAA00353
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 16 Feb 2000 19:29:02 -0700
+Date: Wed, 16 Feb 2000 19:29:02 -0700
+Message-Id: <200002170229.TAA00353@chou.elen.utah.edu>
+From: peskin@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: tutorial
+
+Full_Name: Eric Robert Peskin
+Version: 
+OS: 
+source: http://shang.elen.utah.edu/~myers/book/appA.html
+log: 
+Submission from: qin.elen.utah.edu (155.99.23.203)
+
+
+>To do this, click on the button labeled with a white area to go into select
+mode.
+                                                      ^^^^
+                                    I think you mean "arrow" 
+
+> In this space, type in the VHDL model for the wine shop from Section . 
+                                                                      ^
+Which file(s) from what section?
+The HTML version of the tutorial should probably include a link to the file(s)
+

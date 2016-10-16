@@ -1,0 +1,30 @@
+From prvs=00055ee27=zhen.zhang@utah.edu  Mon Jul 18 15:00:10 2016
+Return-Path: <prvs=00055ee27=zhen.zhang@utah.edu>
+Received: from ipo2.cc.utah.edu (ipo2.cc.utah.edu [155.97.144.12])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6IL0A3t010635
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 15:00:10 -0600
+X-IronPort-AV: E=Sophos;i="5.28,385,1464674400"; 
+   d="scan'208";a="125254620"
+Received: from mail-oi0-f46.google.com ([209.85.218.46])
+  by ipo2smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 18 Jul 2016 15:00:01 -0600
+Received: by mail-oi0-f46.google.com with SMTP id j185so263740296oih.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 14:00:01 -0700 (PDT)
+X-Gm-Message-State: ALyK8tLedZc1Zgc2CZGvhN/YqoxTfc4FHVKZK1UirTK+ryG7XjNxP++7n/APccLBNMwFr81jXQmHDweiNwm4YA==
+X-Received: by 10.157.63.153 with SMTP id r25mr21904839otc.156.1468875601071;
+ Mon, 18 Jul 2016 14:00:01 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 13:59:21 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 18 Jul 2016 14:59:21 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvmdxZofJGeVSZ-p6kVYdqVxxH=__7G6LLsj6ZnibscMrw@mail.gmail.com>
+Message-ID: <CA+LVOvmdxZofJGeVSZ-p6kVYdqVxxH=__7G6LLsj6ZnibscMrw@mail.gmail.com>
+Subject: CHANGE: Should use the "State-based" abstraction instead of none on
+ iBioSim Version 2.8 Systems Biology Tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Section 7's title is "State-based Abstraction", but the instruction in
+its first paragraph says: "Go back to the Simulation Options tab and
+change abstraction back to none, ...". Should this be "State-based
+Abstraction" instead?
+

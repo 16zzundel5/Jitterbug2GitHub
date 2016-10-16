@@ -1,0 +1,275 @@
+From christian.atheist@gmail.com  Fri Oct 26 13:34:13 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from nf-out-0910.google.com (nf-out-0910.google.com [64.233.182.185])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l9QJYCxd019515
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 26 Oct 2007 13:34:13 -0600
+Received: by nf-out-0910.google.com with SMTP id e27so755513nfd
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 26 Oct 2007 12:34:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=rfKooyIEeyVh60285sbfI0GeXFDXOJJWIElEPmvFsWs=;
+        b=rzQfN5FyjvKH1Wa//CpZYHwDF8tn6SyZ53yMmPjhcb+PCBqkWU/5b+j4dNvcqQrwuY1aUkvL+pBJxc2JGq2xrMof/Cv4Ovcxg/tPRotE3059ho7D9CovsRlowD19rpQQuQHVcPfjRWlH5Osku37Ss5YCaP/amVJxuymauzxztCk=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=kzmrPh0kE5nAp2pP6bYznCe1kbzaKEZ+WnojOqAmGl8cQvKoZYCumxfHLGdgmNMnKL+d0+NYITbDOqXOBbNZ2rURgwUoIQrL4zSOKaLAGqD2A3s/4H6Fi5ZrrFTBPgPYFZ+/AT2IVQk1jp03ZF27+HMGH4RxbLfT4oyr3H/h7Ko=
+Received: by 10.82.156.12 with SMTP id d12mr6802481bue.1193427250024;
+        Fri, 26 Oct 2007 12:34:10 -0700 (PDT)
+Received: by 10.82.185.14 with HTTP; Fri, 26 Oct 2007 12:34:09 -0700 (PDT)
+Message-ID: <eba119560710261234q412a79d6s8730ece2b0173f6e@mail.gmail.com>
+Date: Fri, 26 Oct 2007 13:34:09 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Curtis Madsen" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Grapher Incorrectly Graphing
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+There is a bizarre bug when using the grapher to plot large data.  The
+behavior is almost random.  I will click on a species to graph, and it
+will not graph it.  I will do the same thing again, and it will
+correctly graph it.  I will then try unclicking a species, which
+causes the wrong species to be graphed.  Finally, I'll try clicking
+and unclicking something, and the program throws an error saying the
+data can't be read.
+
+You can find the zipped project containing this bug here:
+http://www.cs.utah.edu/~namphuon/temp/bugged.zip
+
+Open up the project, and open up analysis view
+si-h-low
+
+Click exactly in this order:
+It should automatically start with GFP graphed.  Click on H.
+Now unclick H and graph.
+Now, click H and graph again.
+
+You end up with only GFP graphed and it's not the right shape.
+
+Keep doing this enough times, and you'll get this in the terminal:
+
+[namphuon@shang ~]$ Exception in thread "AWT-EventQueue-0"
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.core.gui.Graph$3.actionPerformed(Graph.java:1140)
+        at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1995)
+        at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2318)
+        at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:387)
+        at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+        at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+        at java.awt.Component.processMouseEvent(Component.java:6038)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3986)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at reb2sac.core.gui.Reb2Sac.<init>(Reb2Sac.java:655)
+        at biomodelsim.core.gui.BioSim.openSim(BioSim.java:2098)
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1682)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at reb2sac.core.gui.Reb2Sac.<init>(Reb2Sac.java:655)
+        at biomodelsim.core.gui.BioSim.openSim(BioSim.java:2098)
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1682)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+        at biomodelsim.core.gui.BioSim.mousePressed(BioSim.java:1676)
+        at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+        at java.awt.Component.processMouseEvent(Component.java:6035)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+

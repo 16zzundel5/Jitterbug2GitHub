@@ -1,0 +1,26 @@
+From curtis.madsen@utah.edu  Thu May 24 11:11:05 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q4OHB4aM022428
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 May 2012 11:11:04 -0600
+Date: Thu, 24 May 2012 11:11:04 -0600
+Message-Id: <201205241711.q4OHB4aM022428@chou.ece.utah.edu>
+From: curtis.madsen@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG:  Unable to draw arcs from species to components
+
+Full_Name: Curtis Madsen
+Version: 2.1
+OS: Fedora 16 64-bit
+source: 
+log: 
+Submission from: tang.ece.utah.edu (155.98.27.207)
+Submitted by: cmadsen
+
+
+In the schematic editor, I am unable to draw arcs from species to components and
+vice versa.  The only way I can map species to ports is to double click on the
+component and edit the port map that way.  However, Hiro is running 64-bit
+Ubuntu and is unable to edit the port map even when double clicking on the
+component to edit it.
+

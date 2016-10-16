@@ -1,0 +1,8 @@
+From: Robert Allan Thacker <atacs-bugs@vlsigroup.ece.utah.edu>
+To: robert.a.thacker@us.army.mil
+Subject: Re: BUG: unread variable remains (PR#4945)
+Date: Fri Mar 26 18:46:32 2010
+
+in system.lpn, the variable ccrV should be elimnated by Write before write,
+remove unread variables, or written 
+never read.  Only written never read is catching it.

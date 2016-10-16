@@ -1,0 +1,33 @@
+From myers@ece.utah.edu  Tue Aug  7 11:24:30 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l77HOU8j030373
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 7 Aug 2007 11:24:30 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IISnh-0006or-EE)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 07 Aug 2007 11:24:59 -0600
+Received: from [192.168.1.101] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l77HOSg1010826
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 7 Aug 2007 11:24:28 -0600
+Subject: FEATURE: refresh graphs
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Tue, 07 Aug 2007 11:19:54 -0600
+Message-Id: <1186507194.5173.10.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.2 (2.10.2-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 0.8 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+After a simulation, refresh all graphs to use the new data.
+
+

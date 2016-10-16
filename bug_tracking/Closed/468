@@ -1,0 +1,37 @@
+From peskin@ming.elen.utah.edu  Tue May 16 14:54:08 2000
+Return-Path: <peskin@ming.elen.utah.edu>
+Received: from ming.elen.utah.edu (ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA13183
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 16 May 2000 14:54:07 -0600
+Received: (from peskin@localhost)
+	by ming.elen.utah.edu (8.9.3/8.9.3) id OAA13524
+	for atacs-bugs@shang.elen.utah.edu; Tue, 16 May 2000 14:54:07 -0600
+Date: Tue, 16 May 2000 14:54:07 -0600
+From: Eric Peskin <peskin@ming.elen.utah.edu>
+Message-Id: <200005162054.OAA13524@ming.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD113 broken repository!
+
+Linux ming.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387472 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	256 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+compare - There were 1 unmatched literals.
+make[1]: *** [cache_s3i3o1.PRS.ok] Error 1
+make: *** [unc/check.subDir] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

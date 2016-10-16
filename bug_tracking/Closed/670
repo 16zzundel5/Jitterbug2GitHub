@@ -1,0 +1,79 @@
+From atacs-bugs  Wed May 15 11:53:26 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g4FHrQO28717
+	for atacs-bugs@shang.elen.utah.edu; Wed, 15 May 2002 11:53:26 -0600
+Received: from shang (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g4FHrQP28711
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 15 May 2002 11:53:26 -0600
+Date: Wed, 15 May 2002 11:53:26 -0600
+Message-Id: <200205151753.g4FHrQP28711@chou.elen.utah.edu>
+From: peskin@cs.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: simcyc flags bogus deadlock
+
+Full_Name: Eric Robert Peskin
+spec: atacs/work/tel/control_myWoven.tel
+Version: cvs tag simdeath
+OS: Red Hat Linux release 7.1 (Seawolf) Linux ming.ece.utah.edu 2.4.9-31 #1 Tue Feb 26 07:11:02 EST 2002 i686 unknown
+command: echo 17'\n'17'\n'3'\n'17 | atacs -oqtsltas control_myWoven
+Submission from: ming.elen.utah.edu (155.99.23.210)
+Submitted by: peskin
+
+
+This example verifies with posets, bap, untimed, etc.
+However, simcyc can no longer handle this example.
+It thinks that there is a deadlock in this example.
+In particular, the test for deadlock at simtel.c:268, causes sim_tel()
+to return false.
+
+This started occurring some time between cvs tags GOOD676 and e0long.
+The problem must be that Eric's simulation code is not aware of the new 'S'
+marking.
+
+If you try the above command on cvs tag GOOD676, you will see all 17
+replications complete.  However, if you try the same command under cvs
+tag e0long, it aborts during the first replication.
+
+As of cvs tag simdeath (which is the latest, and which still exhibits
+the bug), I have added this example to
+atacs/work/tel/control_myWoven.tel
+
+A sample session is appended below.  Note that verification succeeds,
+but simulation aborts.
+---8<------8<------8<------8<------8<------8<------8<------8<------8<---
+465 ming:~> cd ~peskin
+466 ming:~> cd atacs/work/tel
+467 ming:work/tel> ../../bin/atacs 
+ATACS VERSION 5.1
+Logging session in:  atacs.log
+atacs> noparg
+PARG output on errors disabled.
+atacs> posets
+Using PO sets timing to obtain state graphs.
+atacs> loadtel control_myWoven
+Loading timed event/level structure from:  control_myWoven.tel
+Initializing 3 cycles ... done
+atacs> verify
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000052)
+Finding reduced state graph ... nodes = 527, dead = 10556
+memory: max=1299144 inuse=1285048 free=14096 
+done
+139 iterations, 82 regions, 74 new_regions, 47 states in 0.019544 seconds
+nodes in use = 527, dead = 10556
+memory: max=1299144 inuse=1285048 free=14096
+Found 82 zones in 47 states for control_myWoven (18d 1299144m 0.02u)
+Projecting out dummy transitions ... done (0.003010)
+Checking output semi-modularity ... output semi-modular
+Verification succeeded.
+atacs> 
+atacs> simcyc
+Enter event index to track(1,21): 17
+Enter number of cycles to consider: 17
+Enter cycle index to start from: 3
+Enter number of random experiments: 17
+Running simulation replication 1 ... atacs> atacs> 
+

@@ -1,0 +1,30 @@
+From prvs=00055ee27=zhen.zhang@utah.edu  Mon Jul 18 17:06:42 2016
+Return-Path: <prvs=00055ee27=zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.144.18])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6IN6ghL021269
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 17:06:42 -0600
+X-IronPort-AV: E=Sophos;i="5.28,386,1464674400"; 
+   d="scan'208";a="593308080"
+Received: from mail-oi0-f53.google.com ([209.85.218.53])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 18 Jul 2016 17:06:42 -0600
+Received: by mail-oi0-f53.google.com with SMTP id l65so2183348oib.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 16:06:42 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJ2dJ2gWuisiRbaNJOq8a07n6C+du4qG38VO0NANqCXrvjvpxOnwG9+XbHQJD3AZKM/3I6PO92sWE8ozQ==
+X-Received: by 10.157.1.111 with SMTP id 102mr21416731otu.155.1468883201793;
+ Mon, 18 Jul 2016 16:06:41 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 16:06:02 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 18 Jul 2016 17:06:02 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=tLf14CnpPqMXqePFKmAa94TJL1GErNi-EutJ14rCZmA@mail.gmail.com>
+Message-ID: <CA+LVOv=tLf14CnpPqMXqePFKmAa94TJL1GErNi-EutJ14rCZmA@mail.gmail.com>
+Subject: CHANGE: Update the first screenshot on learn tool on iBioSim Version
+ 2.8 Systems Biology Tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+The current one shows creation of a learn view from a different model
+than lambda.xml. It probably should be lambda.xml. Also, the menu
+appeared after right-clicking has also been updated since the
+screenshot was taken.
+

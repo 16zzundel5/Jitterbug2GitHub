@@ -1,0 +1,48 @@
+From myers@ece.utah.edu  Mon Oct 15 13:13:02 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l9FJD2Xu009941
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 15 Oct 2007 13:13:02 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IhVNq-0001A0-Ll); Mon, 15 Oct 2007 13:13:50 -0600
+Received: from [192.168.1.119] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l9FJCwu5011187;
+	Mon, 15 Oct 2007 13:12:58 -0600
+Subject: BUG: problem with full paths
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>,
+        Nam-Phuong Nguyen <namphuon@cs.utah.edu>,
+        Curtis Kendall Madsen <curtis.madsen@utah.edu>
+Content-Type: text/plain
+Date: Mon, 15 Oct 2007 13:11:37 -0600
+Message-Id: <1192475497.2863.21.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.0 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+I checked in corrections that should fix the sad and user-defined data
+path problems.  However, I'm not sure they completely work. 
+
+The problem is basically that the user-defined data file was getting
+loaded twice, but the second time was not using the full path.  For now,
+the second load is squashed.  However, it should read from the full
+path.  This would be useful if someone provided a properties file with a
+different name than user-defined.dat.  I tried checking this by changing
+the properties file to "temp.dat" and then moving the file to "temp.dat"
+but then I get a unable to load properties file error which seems really
+strange.  It seems that it is not happy to read a properties file that I
+have touched.  Or maybe I'm doing something wrong when I edit the file.
+
+Curtis: please see "CHECK" in Reb2Sac.java, and let me know if you see
+any problems.
+
+
+

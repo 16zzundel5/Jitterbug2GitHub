@@ -1,0 +1,59 @@
+From moschino21@gmail.com  Thu Jul 22 21:52:24 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-gw0-f42.google.com (mail-gw0-f42.google.com [74.125.83.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o6N3qONk008585
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 22 Jul 2010 21:52:24 -0600
+Received: by gwj15 with SMTP id 15so521672gwj.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 22 Jul 2010 20:52:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:from:date
+         :message-id:subject:to:content-type;
+        bh=VRsY5oWaXdQrJKmlGeB0cl0x/y1bK8mcfn3wzRfELlI=;
+        b=Y93rlwjwMYshEh9iJIMVZoaWzMcWFbEyEWqxZaAzQ/kEeOsnHuZiD0YO8lw8B7dkxO
+         d7yoo38XcLGGNDv7N1Wo55kun0/dl5UJ4mFGt2CWxCzLfVegB5LscxdDyQvZUuUp1np2
+         XS1m1UkiTDPPA658P2RJNOokiEgOJovB/3bQ0=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=MiQx8q4G4qKL77DOhCj6n4S6dlUYP/NDyYuCrhR14PynIOV5jjBvf7HfXu4gLjTyD7
+         vyhJQUx/IQPgCKntv/7FSvZyQ01qR92b9UBgYyrN96AQZd1yazX7nulgQaiuFjxVYUwV
+         ubpPSaKRNme0kf8F58mrNsQibvhrNBFu7NVdg=
+Received: by 10.90.102.2 with SMTP id z2mr3288928agb.84.1279857142254; Thu, 22 
+	Jul 2010 20:52:22 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.90.29.20 with HTTP; Thu, 22 Jul 2010 20:52:02 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Thu, 22 Jul 2010 21:52:02 -0600
+Message-ID: <AANLkTimC4cC-OMLcn7GxwplMtxlSN-u6gjnIPPsZt2im@mail.gmail.com>
+Subject: BUG: Property specification does not allow space
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0016361e84b053d811048c05f6f6
+
+--0016361e84b053d811048c05f6f6
+Content-Type: text/plain; charset=ISO-8859-1
+
+Property specification for LPN file does not allow space, otherwise the
+property expression gets lost if the lpn file is saved and closed, and open
+again in the LPN editor. One example is that ((q_max=q_max)PU[3,5](q=q_max))
+will not get erased but ((q_max =q_max)PU[3,5](q=q_max)) or ((q_max=q_max)
+PU[3,5] (q=q_max)) will be lost.
+
+--0016361e84b053d811048c05f6f6
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Property specification for LPN file does not allow space, otherwise the pro=
+perty expression gets lost if the lpn file is saved and closed, and open ag=
+ain in the LPN editor. One example is that ((q_max=3Dq_max)PU[3,5](q=3Dq_ma=
+x)) will not get erased but ((q_max =3Dq_max)PU[3,5](q=3Dq_max)) or ((q_max=
+=3Dq_max) PU[3,5] (q=3Dq_max)) will be lost. <br>
+
+
+
+--0016361e84b053d811048c05f6f6--
+

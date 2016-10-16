@@ -1,0 +1,65 @@
+From andrew.n.fisher@utah.edu  Thu Sep 20 22:16:46 2012
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q8L4GkM2009934
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 Sep 2012 22:16:46 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap4EAFrpW1CbYbVm/2dsb2JhbABFDoI9vE2CFwsFgQsBCwEeQxMmAQQbh32YGJgziQeQYmADiCGFAZhjgiw7ghc
+X-IronPort-AV: E=Sophos;i="4.80,458,1344232800"; 
+   d="scan'208,217";a="12779039"
+Received: from h102.umail.utah.edu (HELO X-HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 20 Sep 2012 22:16:45 -0600
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.67]) by
+ X-HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi id 14.02.0309.002;
+ Thu, 20 Sep 2012 22:16:11 -0600
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE : Being able to use uniform ( or give an interval) to
+ specify initial ranges of Cont. Var.
+Thread-Topic: FEATURE : Being able to use uniform ( or give an interval) to
+ specify initial ranges of Cont. Var.
+Thread-Index: Ac2Xr4vR2QGI+K2jTtaSO9bBrZTjlQ==
+Date: Fri, 21 Sep 2012 04:16:10 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED109ADE76@X-MB8.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [67.161.221.170]
+Content-Type: multipart/alternative;
+	boundary="_000_33C595BF585B104B8418E9E32A58C0ED109ADE76XMB8xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE76XMB8xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Once a continuous variable has been created, a statement like "uniform(1,2)=
+" does not translate to an initial range for the continuous variable. It wo=
+uld be nice if this was translated into an initial interval of [1,2] for th=
+e continuous variable.
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE76XMB8xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">Once a continuous variable has been created, a statement like &quot;=
+uniform(1,2)&quot; does not translate to an initial range for the continuou=
+s variable. It would be nice if this was translated
+ into an initial interval of [1,2] for the continuous variable.<br>
+</div>
+</body>
+</html>
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE76XMB8xdsumailuta_--
+

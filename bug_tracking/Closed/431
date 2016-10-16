@@ -1,0 +1,23 @@
+From myers@vlsigroup.elen.utah.edu  Sat Apr 29 23:55:13 2000
+Return-Path: <myers@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id XAA06559
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 29 Apr 2000 23:55:12 -0600
+Date: Sat, 29 Apr 2000 23:55:12 -0600
+Message-Id: <200004300555.XAA06559@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Bug in new multicube algorithm.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+The new multicube algorithm, activated when single and exception are used
+fails to find a cover for pchbMUX.hse.  It is probably non-distributive.
+

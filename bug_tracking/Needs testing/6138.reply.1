@@ -1,0 +1,245 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: new port map window (PR#6138)
+Date: Thu Oct 23 19:45:05 2014
+
+Hi Lucian,
+
+I'm trying to work out how comp and arrays will work together.  As the resident
+comp expert, I thought I would 
+bounce my thoughts off you to see what you think. Here is how I think each comp
+element works with arrays:
+
+1) Simple ports (i.e., idRef points to element in the model) - if the object
+being referenced is an array, then the 
+port must also be an array with the same dimensions. The indices for the port
+will index the idRef simply using 
+the dimension ids.  In other words, when you put an arrayed object on a port,
+you must put the entire array on 
+the port.  For example,
+
+Parameter n:=10
+Species S[n]
+Port species_S[n] where d0 is the dimension id 
+	idRef S[d0]
+
+Note that since you cannot have (I believe) multiple ports with the same idRef,
+then if we did allow you to just put 
+one element of an array on a port, then you could only put that one element on a
+port.  Therefore, I think this 
+restriction makes sense.
+
+NOTE: this also brings up an idea I have for next version of comp.  In SBOL, we
+decided to not have ports but 
+instead we have an attribute on an object to indicate "access" (public or
+private) and "direction" (input, output, 
+inout, none).  I think this actually is much cleaner than the Port class.  In
+this case, these would be attributes of 
+the element and it is then clear that they are shared with all members of the
+array.
+
+2) SubModels - a subModel can have dimensions indicating the instantiation of an
+array of subModels.  For 
+example,
+
+Parameter n:=10
+Parameter m:=5
+SubModel M[n][m] 
+	modelRef SM
+
+Instantiates 50 copies of SM.  This one is pretty clear.  In theory, we could
+allow one to have an index for 
+modelRef, but this would imply a ModelDefinition or ExternalModelDefinition
+which are arrays.  Currently, we 
+disallow Model to be an array.  Would we want to allow ModelDefinition and/or
+ExternalModelDefinition be an 
+array?  I think not as I cannot think of any use case.
+
+3) Deletions - there are three cases to consider.
+	a) Deletion of a object that is an array.  In this case, the deletion could
+have dimensions that match the 
+object being deleted, and indices that are simply the dimension ids.  This would
+delete the entire array.  It could 
+also just have an index, and delete one element of the array, but no other
+deletions on this object would be 
+allowed since you can only have one deletion for each reference.  For example:
+
+ModelDefinition MD
+Parameter n:=10
+Species S[n]
+Port species_S[n]
+	idRef S[d0]
+
+Model
+Parameter n:=10
+SubModel SM of MD
+	Deletion[n] where d0 is the dimension id
+		portRef species_S[d0]
+OR
+	Deletion
+		portRef species_S[2]
+
+	b) Deletion of a scalar object within an array of subModels.  In this case, the
+deletion would delete the object 
+from all instances of the array of subModels.  I cannot think of anyway to have
+it specify which subModel to delete 
+from, so it must simply delete from all.  I guess this goes with the argument
+that if you want such differences then 
+you should not put them in an array to begin with.
+
+	c) Deletions of an arrayed object within an array of subModels.  This case is
+essentially the same as (a) except 
+you could use the dimension id of the subModel in the index math if you want to
+create some strange deletion 
+patterns.
+
+4) Replacements - this one has many cases to consider since the object with the
+replacement can be an array, the 
+object being referenced in the subModel can be an array, and the subModel can
+also be an array.  
+	a) If the object with the replacement is an array and the reference object and
+its subModel are scalars, then 
+the replacement would apply to all elements of the array.  Again, I cannot see
+any other interpretation.  
+
+	b) If the referenced object is an array, then there are several possibilities:
+
+ModelDefinition MD
+Parameter n:=10
+Species S[n]
+Port species_S[n]
+	idRef S[d0]
+
+Model
+Parameter n:=10
+SubModel SM of MD
+Species T
+	// Replace all elements of the array with T
+	Replacement[n] where d0 is the dimension id
+		portRef species_S[d0]
+               subModelRef SM
+OR
+       // Replace a single element of the array with T
+	Replacement
+		portRef species_S[2]
+               subModelRef SM
+OR
+Species T[n] where d0 is the dimension id
+	// Replace one elements of the array S in SM with one element of the array T
+	Replacement
+		portRef species_S[d0]
+               subModelRef SM
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement
+		portRef species_S[2]
+               subModelRef SM
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement[n] where rd0 is the dimension id
+		portRef species_S[rd0]
+               subModelRef SM
+
+	c) If the referenced subModel is an array, then again there are several
+possibilities:
+
+ModelDefinition MD
+Species S
+Port species_S
+	idRef S
+
+Model
+Parameter n:=10
+SubModel SM[n] of MD
+Species T
+	// Replace species in each subModel in the array with T
+	Replacement[n] where d0 is the dimension id
+		portRef species_S
+               subModelRef SM[d0]
+OR
+       // Replace a single species in a specific subModel with T
+	Replacement
+		portRef species_S
+               subModelRef SM[2]
+OR
+Species T[n] where d0 is the dimension id
+	// Replace a species in each subModel in the array with one element of the
+array T
+	Replacement
+		portRef species_S
+               subModelRef SM[d0]
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement
+		portRef species_S
+               subModelRef SM[2]
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement[n] where rd0 is the dimension id
+		portRef species_S
+               subModelRef SM[rd0]
+
+	d) If both referenced object and subModel are arrays, then there are even more
+possibilities:
+
+ModelDefinition MD
+Parameter n:=10
+Species S[n]
+Port species_S[n]
+	idRef S[d0]
+
+Model
+Parameter n:=10
+SubModel SM[n] of MD
+Species T
+	// Replace all elements in all subModels with T
+	Replacement[n][n] where d0, d1 are the dimension ids
+		portRef species_S[d0]
+               subModelRef SM[d1]
+OR
+	// Replace one element of each subModel with T
+	Replacement[n] where d0 is the dimension id
+		portRef species_S[d0] (could be a constant, if d0 below)
+               subModelRef SM[d0] (could be a constant, if d0 above)
+OR
+       // Replace a single element in a single subModel with T
+	Replacement
+		portRef species_S[2]
+               subModelRef SM[2]
+OR
+Species T[n] where d0 is the dimension id
+	// Replace one element of the array S in SM with one element of the array T
+	Replacement
+		portRef species_S[d0]
+               subModelRef SM[d0]
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement
+		portRef species_S[2]
+               subModelRef SM[2]
+OR
+       // INVALID: would result in same object replaced multiple times
+	Replacement[n] where rd0 is the dimension id
+		portRef species_S[rd0]
+               subModelRef SM[rd0]
+
+NOTE: this brings up another idea I have for the next version of comp.  Namely,
+it seems to make more sense to 
+have replacements (like deletions) on subModels. The replacement would then have
+two references, one to the 
+local object and one to the remote object in the subModel.  This just seems more
+natural.  Indeed, this is how our 
+GUI presents the options to the user (namely subModel focused).  I haven't gone
+through all the options above for 
+this scenario, but it would be similar to deletions above.  This uniformity
+would be a big improvement, I think.
+
+Ok, this is a lot to digest, but it was good for me to write it up.  There are a
+few other issues especially more 
+complicated ports, but I think this is enough for one message :-).
+
+Thanks in advance for your feedback.
+
+Cheers,
+
+Chris

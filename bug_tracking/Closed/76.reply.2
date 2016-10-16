@@ -1,0 +1,38 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@elen.utah.edu
+Subject: Re: fifoN5.csp has mysterious deadlock (PR#76)
+Date: Wed May 12 11:08:48 1999
+CC: hao@vlsigroup.elen.utah.edu
+
+> The current version of the code does not have this problem.
+> Please verify that you have the latest code and the latest 
+> version of the example (~atacs/examples/bugs/fifoN5.csp).
+
+As of this morning, it does (still?  again?).
+Is this another result of the skunky build?
+I suspect it is, because it is a Liveness violation:
+
+116 xia:~> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      11799308 May 11 11:33
+/home/song/peskin/atacs/atacs*
+117 xia:~> cd ~atacs/examples/bugs/
+118 xia:~atacs/examples/bugs> atacs -mh -ya fifoN5.csp
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using heuristic timing analysis.
+Compiling fifoN5.csp ... 
+Storing process seoutb to seoutb.er
+Storing process fout to fout.er
+Storing process fout to fout.er
+Storing process fin to fin.er
+Storing process seinb to seinb.er
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process fifoN5 to fifoN5.er
+Loading timed event-rule structure from:  fifoN5.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 11 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... NOT live
+ERROR:  Liveness violation!
+119 xia:~atacs/examples/bugs> 

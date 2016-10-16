@@ -1,0 +1,82 @@
+From ibiosim@gmail.com  Thu Jan 31 23:25:28 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-da0-f41.google.com (mail-da0-f41.google.com [209.85.210.41])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r116PR84030311
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 31 Jan 2013 23:25:27 -0700
+Received: by mail-da0-f41.google.com with SMTP id e20so1614283dak.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 31 Jan 2013 22:25:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=eNgv6hxDSkvztPug+ya5dVqKh8D1ox8PFnLf87XPWng=;
+        b=uHe8HayxX5R36Nn+hK9mHBXU4hOXdVNMwq9iCkguus5o8ztic2TM/ZIasPV369QqgA
+         rv+wits7AQ3F1yzZDmkWMmI0W/gNXGsXgk6s+LPMY+WdZJA8kP40zTxXZpFZOfEdnyN7
+         gUYUeAZWIGz/yOHFQgZgf0U8/Svajn4Ez3cCJio0IlbhnsSnIh5+wnpKYrUe3AYve+0H
+         ZYFsYyA3NgL7K5+Cyz6XSAb/Kqorgal4XpJEmlVGb0/qkaZFuToT68aRmF0XQj5App9s
+         k5yfbxXnnAldDrT3v+XLJ18xJbrtEgecp56OYL+kWB4siLeezKqaMAjX5JfNRZghlHLc
+         ZFfQ==
+X-Received: by 10.68.135.99 with SMTP id pr3mr29363537pbb.151.1359699927044;
+        Thu, 31 Jan 2013 22:25:27 -0800 (PST)
+Received: from 192.168.1.103 (c-98-202-209-189.hsd1.ut.comcast.net. [98.202.209.189])
+        by mx.google.com with ESMTPS id qm9sm7447017pbc.10.2013.01.31.22.25.25
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Thu, 31 Jan 2013 22:25:26 -0800 (PST)
+Date: Thu, 31 Jan 2013 22:25:26 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <512280085.1.1359699923414.JavaMail.ted@Buckwheat.local>
+Subject: BUG:Added species and it threw the exception when I closed the edit
+ species dialouge box.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: tschomay@sci.utah.edu
+
+Description:
+This happened very shortly after the last bug report I submitted, so it could be related
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.parser.BioModel.changeSpeciesId(BioModel.java:2724)
+	at biomodel.gui.SpeciesPanel.handlePanelData(SpeciesPanel.java:912)
+	at biomodel.gui.SpeciesPanel.constructor(SpeciesPanel.java:610)
+	at biomodel.gui.SpeciesPanel.<init>(SpeciesPanel.java:66)
+	at biomodel.gui.ModelEditor.launchSpeciesPanel(ModelEditor.java:1947)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2239)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1155)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:273)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6382)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6147)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4744)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4619)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4280)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4210)
+	at java.awt.Container.dispatchEventImpl(Container.java:2127)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:704)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:663)
+	at java.awt.EventQueue$2.run(EventQueue.java:661)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:677)
+	at java.awt.EventQueue$3.run(EventQueue.java:675)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:674)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

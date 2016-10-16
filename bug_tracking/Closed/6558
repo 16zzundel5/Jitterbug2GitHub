@@ -1,0 +1,55 @@
+From ibiosim@gmail.com  Tue Jul  5 10:14:56 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f51.google.com (mail-pa0-f51.google.com [209.85.220.51])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u65GEtYE006098
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Jul 2016 10:14:55 -0600
+Received: by mail-pa0-f51.google.com with SMTP id uj8so8839207pab.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Jul 2016 09:14:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=TbZ956YY5B9iRHUqUMVaYjr4IIEU3JCdDJPdivJCfAE=;
+        b=aaQ0Ca1xT8gLzooCFNyyRdV8IEt7oxHKtON6qUOYhSFnjc3aAEu/wgRD0utOSzCFF9
+         LHhKPsftM2QqVbsMAtR9Q40RCweUk9VmllnhGuXxttwsP3wf1wIPMejb66KEJEu0hcsm
+         3XYMQUN0YVF6agkhhn/5iaqQqulVMCHhRcHgcSSt4UIJDdy5qVWU8FjPwnX4+7wSGslC
+         SY179rNGBMu9aOzzW1+2wk3xML9LE6GmKpOSJUvyTZx0diiwjys8hXz7IKkqYYGd5bEs
+         C3IkR0mqRJgiB/BkZPjaHt5lIjOFAkqW88j4osyR5+ivIeJ+xDU6LShxLC9cYIYcvmbv
+         TCxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=TbZ956YY5B9iRHUqUMVaYjr4IIEU3JCdDJPdivJCfAE=;
+        b=mn9pM8s42OKFPCVB9oAtQacE3T7gra5qSfW+MLvU2W1Y8cpfPo/VxBFzCe7UXyydbb
+         mlrhJprsVCZoy7hm/wFsYpkzIMJEWvYS4D1tc08OzD5mcsp/kUG+E960OAphDoZfo+ge
+         u9wid6mRc3QQDlIPbjHBk/S+WW51z+kkBf13CG9P9CnPbuZImLXOY7mJ0QcEq4J9yh0t
+         osxMJS3VffmHYq0FU3NDKd2cwP/2R5WJxPn5Y5jFQaVEyGwPlgyqPm/mN+xXrRtsRMNn
+         MXlJLyRLsC28W3/Uuv1MLcuWfDu2WcaXEJntSD5bGjx+mScUBb0DiSSpYs1cfdXaPyq8
+         Yrng==
+X-Gm-Message-State: ALyK8tJy4K0GlKbA9wc+JXki/4FLCJf8cqmAgJqvuiije+DRiIrxaVJqQ+8lMqR3MmY4dA==
+X-Received: by 10.66.254.73 with SMTP id ag9mr34112120pad.2.1467735295054;
+        Tue, 05 Jul 2016 09:14:55 -0700 (PDT)
+Received: from chings-air.uconnect.utah.edu ([128.110.79.195])
+        by smtp.gmail.com with ESMTPSA id yo10sm6468021pab.4.2016.07.05.09.14.54
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 05 Jul 2016 09:14:54 -0700 (PDT)
+Date: Tue, 05 Jul 2016 09:14:54 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: ccmyers98@yahoo.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <781379605.1.1467735297607.JavaMail.ching@chings-air.uconnect.utah.edu>
+Subject: BUG: Port Type Bug
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.5
+
+Operating system: Mac OS X
+
+Bug reported by: ccmyers98@yahoo.com
+
+Description:
+

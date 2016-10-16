@@ -1,0 +1,40 @@
+From peskin@vlsigroup.elen.utah.edu  Wed Sep  6 15:29:57 2000
+Return-Path: <peskin@vlsigroup.elen.utah.edu>
+Received: from vlsigroup.elen.utah.edu (xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA28181
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 6 Sep 2000 15:29:57 -0600
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <39B6B755.8C47DCF0@vlsigroup.elen.utah.edu>
+Date: Wed, 06 Sep 2000 15:29:57 -0600
+From: Eric Robert Peskin <peskin@vlsigroup.elen.utah.edu>
+Organization: University of Utah
+X-Mailer: Mozilla 4.75 [en] (X11; U; Linux 2.2.16-3 i686)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: atacs should look for include files in directory where... (PR#192)
+References: <199911101929.MAA07776@chou.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Chris Myers wrote:
+> 
+> If you consider gcc as a model, it cannot find include files unless they are in
+> your current working directory or in your include file path.
+
+Actually, I think it can also find an include file (at least one of the type
+#include "file") if it is in the same directory as the file doing the
+including.  For example, src/hse.cpp has 
+
+#include "hse.hpp"
+
+One level above, in the atacs directory, I can type
+
+580 xia:~/atacs> g++ -DDDEBUG -DXIF -DMEMSTATS -DTIMER -D__LINUX
+-I/usr/include/tcl -I/home/ming/software/include -I/usr/src/linux/include -Wall
+-g -c src/hse.cpp
+581 xia:~/atacs> 
+
+It compiles just fine, withOUT any -Isrc option.  Compare that behavior to the
+what ATACS did in my original submission.
+

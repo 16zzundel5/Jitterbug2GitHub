@@ -1,0 +1,52 @@
+From myers@jiaqi.elen.utah.edu  Mon May 17 10:55:46 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA01554 for <atacs-bugs@shang.elen.utah.edu>; Mon, 17 May 1999 10:55:45 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id KAA00679
+	for atacs-bugs@shang.elen.utah.edu; Mon, 17 May 1999 10:55:18 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905171655.KAA00679@jiaqi.elen.utah.edu>
+Subject: Re: Overly postprocess beta example (PR#109)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Mon, 17 May 1999 10:55:17 -0600 (MDT)
+In-Reply-To: <199905171637.KAA01148@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 17, 99 10:37:53 am
+Content-Type: text
+
+> 
+> The latest source does not even build:
+> 
+> 113 xia:~/atacs> pwd
+> /home/song/peskin/atacs
+> 114 xia:~/atacs> date
+> Mon May 17 10:40:34 MDT 1999
+> 115 xia:~/atacs> cvs update
+> cvs update: Updating .
+> ? parser.output
+> ? parser.tab.c
+> ? parser.tab.h
+> ? lex.yy.c
+> ? glex.c
+> ? gparse.c
+> ? atacs
+> ? atacs.log
+> ? Xatacs
+> 116 xia:~/atacs> make
+> g++ -O3 -DDDEBUG  -DXIF -DMEMSTATS -DTIMER  -D__LINUX -I/usr/include/tcl
+> -I/home/ming/software/include -Wall -g -c compile.c
+> compile.c: In function `bool csp2er(class
+> basic_string<char,string_char_traits<char>,__default_alloc_template<true,0> >,
+> class basic_string<char,string_char_traits<char>,__default_alloc_template<true,0>
+> >, char, int, bool, bool)':
+> compile.c:287: parse error before `('
+> compile.c:360: warning: passing `const char *' as argument 2 of `emitters(char
+> *, char *, terstruct_tag *)' discards const
+> compile.c:365: warning: passing `const char *' as argument 2 of `emitters(char
+> *, char *, terstruct_tag *)' discards const
+> make: *** [compile.o] Error 1
+> 117 xia:~/atacs> 
+> 
+> 
+Show this error to Hao.  We have seen it before, and he should know how to
+fix it.
+
+Chris
+

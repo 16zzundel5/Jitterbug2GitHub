@@ -1,0 +1,132 @@
+From kasundberg@gmail.com  Mon Jul 16 14:13:36 2007
+Return-Path: <kasundberg@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=3.0 tests=BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from wa-out-1112.google.com (wa-out-1112.google.com [209.85.146.181])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l6GKDZSL000788
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 16 Jul 2007 14:13:36 -0600
+Received: by wa-out-1112.google.com with SMTP id j40so1798954wah
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 16 Jul 2007 13:13:35 -0700 (PDT)
+DKIM-Signature: a=rsa-sha1; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type;
+        b=FbCE/6EqgCdL+qalI39lmf6xhDCxl/vPvOOUslN8Ted5OD2rG+D+Q9bzEdokQ4ErfWJr6aoICHOVdxbSOupNt4WVUM2mSyX6ZaeZuBHbYLHlCIO2JdKUNMq8tnOFbu6+2VP8eyiw45NH1kJ3EM0WKflFJBZ3spQPwXwwZjD20sc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type;
+        b=Yi8gY8QLehFWp7jKVU5tGJrn8dV6UsskV8hhx0hB080EFwErhIhaSyWEbVUyf5pRa/rIe7GON/O2LiI0LsUZPNysgn0hwJ/h1BtgftPFjL5aGkZYiDn9D4Gcu0TSp5Cz6VXVPuIFN13UhkxR3EqHch77PC/R1LUWCx6LgpIykPw=
+Received: by 10.114.149.2 with SMTP id w2mr4470576wad.1184616815010;
+        Mon, 16 Jul 2007 13:13:35 -0700 (PDT)
+Received: by 10.114.198.4 with HTTP; Mon, 16 Jul 2007 13:13:34 -0700 (PDT)
+Message-ID: <8eb083170707161313k3910a368t943cfc8f4f924940@mail.gmail.com>
+Date: Mon, 16 Jul 2007 14:13:34 -0600
+From: "Kenneth Sundberg" <kasundberg@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Concentrations wrong in simulation
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_67857_22794237.1184616814948"
+
+------=_Part_67857_22794237.1184616814948
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+In BioSim 0.2, I have a project where all of the initial
+concentrations are zero, but when a simulation runs, the concentration
+of species A starts at 1.0  The initial concentration of A had been
+1.0 at one time but I changed it to play with the user-defined
+concentrations file.  I have noticed that often even though I click on
+the Save button the changes don't always seem to propogate correctly.
+I've attached the project where this problem occurs.
+
+By the way I appreciate the new mass law button, I did have one fluke
+where BioSim said that there was a syntax error in the law produced,
+but I just reloaded the project and it went away.  I have not been
+able to reproduce that error as of yet.
+
+------=_Part_67857_22794237.1184616814948
+Content-Type: application/x-gzip; name=LawError.tar.gz
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_f47dqd1x
+Content-Disposition: attachment; filename="LawError.tar.gz"
+
+H4sICCXQm0YAAy5mci4zMDYzMy4wLkxhd0Vycm9yLnRhcgDtXNtyG0eS1bO+AoF58cSKQN0vDlET
+usw+7NgxE7PeD4DIpoUVCHABcGT//Z6qPMVLiRd7hqKkUZdDItDdpyor82RWZjblHxYf/rzdbrbz
+v/yw+DDfLU8PtsPZbP/L/snDDYURnMNPo40JV35y2PhE44kQXYzRPlE6BBefTNQDynDrON/tF9vJ
+5Mn7xe58ffx22P5883P33f9Kx0/vhsl+s1+sJvthe7pcL/bLzXpytDlf77+fqKefW7xxfOLxwzX/
+356vD/Rsvzt+0DXu8X9rje7936jR/x9lfPfddL88HabPpi/x5xX+vMafN+V7+evVm+kfn32nnl35
+D991991032333XXfffc9dN9j9z1133Mvz0cC9hLqXkTdy6h7IXUvpe7F1L2cuhdU95KaXlLzkS57
+SU0vqeklNb2kppfU9JKaXlLTS2rVM91d0c/MM3f1Qvlqr16w/ROuv+D7C6G/EPsLqb+QuwuufPBX
+L/SSOtM/YfsLvaSul9T1krrYz9FL6nL3hO8l9bq/0Evqe0m96y/4/kLoL/Q69b2kPj8r27u8EHpJ
+g+6MHUw3R+itH3pJQy9p6HUaYr9K6i/k7kJU3RyxlzT2ksZe0thbP/bWj72ksddp7HUae0mT6i/0
+1k+99VNv/dTrNPU6Tb31Uy9pSv0TPU9zb/3cS5p7SXMvaXbdbnMvae4lzb1H5V6nufd9ra4r9Y+f
++0D9ysb1/O98N2wPjoeT5Xo4nh0vHqgIvLf+06bL/6IPY/73KMOqmZq8nPyHfhRlj+NLG1399/7E
++QNUgQ9aA97t/9rZK/0fW57TUSk/+v9jjN9Y/7FKmel27OJzzM6UmmimIgyHgirOXMg2DgeqXvXJ
+wJrlkzVRlTx2plRW3qQgNeMshOSVL9OaFJG32JlzyQRMUC4qZ4NGsl8mSFnHsiao4azzUmPOfIo6
+lg86eNAHAmQf8gXeZq+Vlk9BlRpgpoxKKhipSWfeGiP4bLw8WfhoYiYKwlr55Hzdk9HWpSwl7Mxl
+p+tl0Flp2Z8y2HRJsGTR6AjXXlaP3hmpeKGsqHN5Er6gdRa41dm5urpTxkfDffhcl8fzwUapkKGr
+mKqgxgYTveAhfHBW8FCVaC8nlazgIYKWinoGv8vVPsZZnLeC9w46q0I7/DRGZgK8zq+TNdlIBT5z
+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
+AAA=
+------=_Part_67857_22794237.1184616814948--
+

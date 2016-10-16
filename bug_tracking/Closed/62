@@ -1,0 +1,198 @@
+From peskin@eng.utah.edu  Wed Mar 10 08:02:50 1999
+Received: from arachne.eng.utah.edu (arachne.eng.utah.edu [155.99.222.1]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id IAA22333 for <atacs-bugs@ming.elen.utah.edu>; Wed, 10 Mar 1999 08:02:50 -0700 (MST)
+Received: from cal.eng.utah.edu (cal.eng.utah.edu [155.99.222.12])
+	by arachne.eng.utah.edu (8.9.1a/8.9.1) with ESMTP id IAA03940
+	for <atacs-bugs@ming.elen.utah.edu>; Wed, 10 Mar 1999 08:02:52 -0700 (MST)
+From: Eric Peskin <peskin@eng.utah.edu>
+Received: (from peskin@localhost)
+	by cal.eng.utah.edu (8.9.1a/8.9.1) id IAA25293
+	for atacs-bugs@ming.elen.utah.edu; Wed, 10 Mar 1999 08:02:52 -0700 (MST)
+Date: Wed, 10 Mar 1999 08:02:52 -0700 (MST)
+Message-Id: <199903101502.IAA25293@cal.eng.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: choice.csp deadlocks, not sure why.
+
+SYSTEM: solaris (SunOS cal.eng.utah.edu 5.6 Generic_105181-05 sun4m sparc)
+WHO:    peskin               
+WHERE:  /a/home/cs/grad/peskin/safe/bugs/morning                 
+WHEN:   Wed Mar 10 08:01:27 MST 1999                
+WHAT:   /home/ee/prof/cmyers/ee547/bin/atacs -mu -ys choice               
+OUTPUT:                       
+ld.so.1: /home/ee/prof/cmyers/ee547/bin/atacs: warning: /usr/4lib/libX11.so.4.3: has older revision than expected 10
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using no timing analysis.
+Compiling choice.csp ... 
+Storing process choicectrl to choicectrl.er
+Storing process abenv to abenv.er
+Storing process cenv to cenv.er
+Storing process pre_process to pre_process.er
+Storing process choice to choice.er
+Storing process choice to choice.er
+Loading timed event-rule structure from:  choice.er
+WARNING:  Duplicate rules ignored.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph and storing to:  choice.rsg
+ERROR: Deadlock!
+                              
+STATUS:  0       
+              
+FILE: ./choice.csp:
+module choice;
+
+input ci;
+output co;
+input a;
+input b;
+
+process choicectrl;
+*[[ a+ -> co+; [ci+]; co-; [ci- & a-]
+  | b+ -> co+; [ci+]; co-; [ci- & b-]
+ ]]
+endprocess
+
+process abenv;
+*[[ skip -> a+; [co+]; a-
+  | skip -> b+; [co+]; b-
+ ]]
+endprocess
+
+process cenv;
+*[[ co+ -> ci+; [co-]; ci-
+  | co+ -> ci+; [co-]; ci-
+ ]]
+endprocess
+
+endmodule
+              
+              
+FILE: ./choice.er:
+.e 13
+.i 8
+.r 52
+.d 2
+.c 12
+.s 0000
+reset
+# 
+# INPUT EVENTS:
+# 
+b+/1 b-/1
+a+/1 a-/1
+ci+/1 ci-/1
+ci+/2 ci-/2
+# 
+# OUTPUT EVENTS:
+# 
+co+/1 co-/1
+co+/2 co-/2
+# 
+# DUMMY EVENTS:
+# 
+# 
+# RULES:
+# 
+co+/1 ci+/1 0 0 inf
+co-/1 ci-/1 0 0 inf
+ci+/1 ci-/1 0 0 inf
+co+/2 ci+/2 0 0 inf
+co-/2 ci-/2 0 0 inf
+ci+/2 ci-/2 0 0 inf
+reset ci+/2 0 0 inf
+reset ci+/1 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+reset co+/1 0 0 inf
+reset co+/2 0 0 inf
+ci+/2 co-/2 0 0 inf
+co+/2 co-/2 0 0 inf
+b+/1 co+/2 0 0 inf
+ci+/1 co-/1 0 0 inf
+co+/1 co-/1 0 0 inf
+a+/1 co+/1 0 0 inf
+reset a+/1 0 0 inf
+reset b+/1 0 0 inf
+b+/1 b-/1 0 0 inf
+co+/2 b-/1 0 0 inf
+a+/1 a-/1 0 0 inf
+co+/1 a-/1 0 0 inf
+# 
+# INITIAL RULES:
+# 
+ci-/1 ci+/2 1 0 inf
+ci-/1 ci+/1 1 0 inf
+ci-/2 ci+/2 1 0 inf
+ci-/2 ci+/1 1 0 inf
+ci-/2 co+/1 1 0 inf
+ci-/2 co+/2 1 0 inf
+b-/1 co+/1 1 0 inf
+b-/1 co+/2 1 0 inf
+co-/2 co+/1 1 0 inf
+co-/2 co+/2 1 0 inf
+ci-/1 co+/1 1 0 inf
+ci-/1 co+/2 1 0 inf
+a-/1 co+/1 1 0 inf
+a-/1 co+/2 1 0 inf
+co-/1 co+/1 1 0 inf
+co-/1 co+/2 1 0 inf
+b-/1 a+/1 1 0 inf
+b-/1 b+/1 1 0 inf
+a-/1 a+/1 1 0 inf
+a-/1 b+/1 1 0 inf
+# 
+# MERGERS:
+# 
+ci+/1 ci+/2 
+co+/1 co+/2 
+# 
+# CONFLICTS:
+# 
+ci+/1 ci+/2
+ci+/1 ci-/2
+ci-/1 ci+/2
+ci-/1 ci-/2
+co+/1 co+/2
+co+/1 co-/2
+co-/1 co+/2
+co-/1 co-/2
+a-/1 b-/1
+a-/1 b+/1
+a+/1 b-/1
+a+/1 b+/1
+# 
+# LOOPING CONFLICTS:
+# 
+              
+              
+FILE: ./choice.rsg:
+SG:
+STATEVECTOR:INP b INP a INP ci co 
+STATES:
+RR0R
+100R
+010R
+RRR1
+RRR1
+F0R1
+01R1
+RR1F
+F01F
+011F
+RRF0
+F0F0
+01F0
+RR00
+F000
+0100
+              

@@ -1,0 +1,41 @@
+From peskin@xia.elen.utah.edu  Tue Feb 13 12:09:04 2001
+Return-Path: <peskin@xia.elen.utah.edu>
+Received: from xia.elen.utah.edu (IDENT:root@xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id MAA11271
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 13 Feb 2001 12:09:04 -0700
+Received: (from peskin@localhost)
+	by xia.elen.utah.edu (8.11.0/8.11.0) id f1DJ94529404
+	for atacs-bugs@shang.elen.utah.edu; Tue, 13 Feb 2001 12:09:04 -0700
+Date: Tue, 13 Feb 2001 12:09:04 -0700
+From: Eric Peskin <peskin@xia.elen.utah.edu>
+Message-Id: <200102131909.f1DJ94529404@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD388 broken repository!
+
+Linux xia.elen.utah.edu 2.2.17-14 #1 Mon Feb 5 16:02:20 EST 2001 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	257144 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2048 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.lapb_pa.prs-mzmEmXmcmsmUmPmTmFmOmpya] Error 1
+make[1]: *** [csp/check.subDir] Error 2
+make: *** [hairy] Error 2
+make[2]: *** [.lapb_pa.prs-mzmEmXmcmsmUmPmTmFmOmpmzya] Error 1
+make[1]: *** [csp/check.subDir] Error 2
+make: *** [hairyNoPostProc] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./csp/lapb_pa.log:ERROR: CSC0-/1 enabled but signal is not 1 or F in state F001B
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

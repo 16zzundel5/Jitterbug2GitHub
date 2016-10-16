@@ -1,0 +1,23 @@
+From myers@ece.utah.edu  Thu Jul 21 10:16:55 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p6LGGsd4003143
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 21 Jul 2011 10:16:54 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Qjvvi-0007CU-NL
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 21 Jul 2011 10:16:54 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: ask for Id/Name/Description all at once
+Date: Thu, 21 Jul 2011 10:16:49 -0600
+Message-Id: <B63A337A-F9A1-4A81-9DED-EC26C6CB9ADA@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1084)
+X-Mailer: Apple Mail (2.1084)
+
+When saving or exporting SBOL, ask for Id/Name/Description all in one window.
+

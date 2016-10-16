@@ -1,0 +1,24 @@
+From myers@vlsigroup.elen.utah.edu  Sat Mar 27 10:28:13 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA29848 for <atacs-bugs@ming.elen.utah.edu>; Sat, 27 Mar 1999 10:28:12 -0700 (MST)
+Date: Sat, 27 Mar 1999 10:28:12 -0700 (MST)
+Message-Id: <199903271728.KAA29848@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: timing on etlatchP
+
+Full_Name: Chris Myers
+Version: 4.1
+OS: linux
+source: etlatchP.csp
+log: 
+category: Potential problem
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+Chris
+
+With etlatchP, the signal Ck- is not redundant for A+, but becomes redundant
+through state space exploration.  This is a little counterintuitive.  Should
+Ck- be a trigger signal?  If not, then it should be found to be redundant
+sooner.

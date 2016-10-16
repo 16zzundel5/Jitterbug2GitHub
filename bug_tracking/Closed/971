@@ -1,0 +1,91 @@
+From atacs-bugs@chou.ece.utah.edu  Tue May 24 14:19:30 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4OKJU6E026144
+	for <atacs-bugs@shang.ece.utah.edu>; Tue, 24 May 2005 14:19:30 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j4OKJUKm026139
+	for atacs-bugs@shang.ece.utah.edu; Tue, 24 May 2005 14:19:30 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4OKJRQC026127;
+	Tue, 24 May 2005 14:19:27 -0600
+Received: from ming.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by ming.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4OKJR1n014882;
+	Tue, 24 May 2005 14:19:27 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.13.1/8.13.1/Submit) id j4OKJRJW014881;
+	Tue, 24 May 2005 14:19:27 -0600
+Date: Tue, 24 May 2005 14:19:27 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200505242019.j4OKJRJW014881@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        peskin@vlsigroup.ece.utah.edu
+Subject: BAD1617 broken repository!
+X-Spam-Checker-Version: SpamAssassin 3.0.3 (2005-04-27) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.2 required=5.0 tests=ALL_TRUSTED,
+	DNS_FROM_RFC_ABUSE,LONGWORDS autolearn=unavailable version=3.0.3
+
+Linux ming.ece.utah.edu 2.6.11-1.14_FC3smp #1 SMP Thu Apr 7 19:38:19 EDT 2005 i686 i686 i386 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    10240 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 32 kbytes
+maxproc      16242 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.pchbASE.prs-tpG0-1ys] Error 143
+make[2]: *** [.pchbFA.prs-tpG0-1ys] Error 143
+make[2]: *** [.pchbFHAB.prs-tpG0-1ys] Error 143
+make[2]: *** [.tag_level.prs-tpG0-1ys] Error 143
+make[1]: *** [hse/check.subDir] Error 2
+make[2]: *** [.cache_s3i3o1.prs-obys] Error 143
+make[1]: *** [unc/check.subDir] Error 2
+make: *** [hairy] Error 2
+make[2]: *** [.alu1b.prs-tsys] Error 143
+make[1]: *** [csp/check.subDir] Error 2
+make: *** [posets] Error 2
+make[3]: *** [.wine934.THE_SHOP.prs-oioqtbG1-2ys] Error 143
+make[2]: *** [wine934/THE_SHOP.VHDLtest] Error 2
+make[3]: *** [.newMergex.newMerge.prs-oioqtbG1-2ys] Error 143
+make[2]: *** [newMergex/newMerge.VHDLtest] Error 2
+make[1]: *** [vhd/VHDLtests.subDir] Error 2
+make: *** [channelTests] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

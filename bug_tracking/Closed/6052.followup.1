@@ -1,0 +1,80 @@
+From zhen.zhang@utah.edu  Tue Jul 22 17:49:42 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s6MNngLX009837
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 22 Jul 2014 17:49:42 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: An0FAIz3zlPRVdUp/2dsb2JhbABZDoMAgSkEgnTLfQGBAggWdoQEAQEEEhFWEAsLAwoCAiYCAiISAQUBHAYTIoggnHhqiyiQYoZFF4EsinCCTREBUAeCeIFOBYpnkECSQhgpgTCDBGEeLwGBCw
+X-IPAS-Result: An0FAIz3zlPRVdUp/2dsb2JhbABZDoMAgSkEgnTLfQGBAggWdoQEAQEEEhFWEAsLAwoCAiYCAiISAQUBHAYTIoggnHhqiyiQYoZFF4EsinCCTREBUAeCeIFOBYpnkECSQhgpgTCDBGEeLwGBCw
+X-IronPort-AV: E=Sophos;i="5.01,713,1400047200"; 
+   d="scan'208";a="295580136"
+Received: from mail-yh0-f41.google.com ([209.85.213.41])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 22 Jul 2014 17:49:43 -0600
+Received: by mail-yh0-f41.google.com with SMTP id b6so300980yha.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 22 Jul 2014 16:49:41 -0700 (PDT)
+X-Received: by 10.236.129.115 with SMTP id g79mr54025060yhi.86.1406072981596;
+ Tue, 22 Jul 2014 16:49:41 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.170.68.134 with HTTP; Tue, 22 Jul 2014 16:49:01 -0700 (PDT)
+In-Reply-To: <201407222213.s6MMD8O1004314@chou.ece.utah.edu>
+References: <201407222213.s6MMD8O1004314@chou.ece.utah.edu>
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 22 Jul 2014 17:49:01 -0600
+Message-ID: <CA+LVOvk4cC0h5fO9w5oXkWVZ_KXr=6=g4dL5BpDpxCOpe_2Jbw@mail.gmail.com>
+Subject: Re: FEATURE: Color failure and persistent transition(s) in LEMA's (PR#6052)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+OK. The blue color is now on persistent transitions. But a persistent
+and failure transition (if selected both check boxes in the transition
+editor) generated the exception below.
+
+java.lang.NullPointerException
+    at biomodel.gui.sbmlcore.Events.eventEditor(Events.java:653)
+    at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2496)
+    at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1174)
+    at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+    at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+    at java.awt.Component.processMouseEvent(Component.java:6505)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3321)
+    at java.awt.Component.processEvent(Component.java:6270)
+    at java.awt.Container.processEvent(Container.java:2229)
+    at java.awt.Component.dispatchEventImpl(Component.java:4861)
+    at java.awt.Container.dispatchEventImpl(Container.java:2287)
+    at java.awt.Component.dispatchEvent(Component.java:4687)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4832)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+    at java.awt.Container.dispatchEventImpl(Container.java:2273)
+    at java.awt.Window.dispatchEventImpl(Window.java:2719)
+    at java.awt.Component.dispatchEvent(Component.java:4687)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:713)
+    at java.awt.EventQueue.access$000(EventQueue.java:104)
+    at java.awt.EventQueue$3.run(EventQueue.java:672)
+    at java.awt.EventQueue$3.run(EventQueue.java:670)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+    at java.awt.EventQueue$4.run(EventQueue.java:686)
+    at java.awt.EventQueue$4.run(EventQueue.java:684)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:683)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:244)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:163)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:151)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:147)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:139)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:97)
+
+On Tue, Jul 22, 2014 at 4:13 PM, Chris Myers
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+> Have you checked out the latest?  This is working for me.  If still not working,
+> please email me personally the
+> example having the problem.
+>
+> Chris
+>
+

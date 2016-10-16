@@ -1,0 +1,73 @@
+From moschino21@gmail.com  Tue Sep  3 10:17:10 2013
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bk0-f54.google.com (mail-bk0-f54.google.com [209.85.214.54])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id r83GGsbi020259
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 Sep 2013 10:16:55 -0600
+Received: by mail-bk0-f54.google.com with SMTP id mz12so2285424bkb.27
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 03 Sep 2013 09:16:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=1eyUEU+Kq765lW2m65qxyYifsTFj/FTZ4h+ip1RVErk=;
+        b=w9oC+TuZhAJx6OyLTKldJorHZY+OZMRcqq0nhQUgz2gjNL5a7ApbWW3RogUZhcUr8O
+         fnJm9mqg7KnJinuT2ndmZZb8B/CuSeZRpThufhNFGyQSWIuRc8o9z7c+/H9zjRijyy0s
+         Xq8xLeX1QlVvVSwQSl4piIiNC5m8UCQmliKodQk+PN4Vye2C4Sz6btTUCufZ0gFEfb2D
+         KcRPyngyPVhsIxtjyHvEmzsLW/2JBNxF9TeFiUxbnvI2Vq0Mo45MZlNpMQ+MXcY9GKp2
+         eHlaZKpYpI6B9jrGXqRN8gvtDMPB763x50VU21FQjlDkdut2DSzG7s2o7H25ZyM4xyt5
+         kg/Q==
+X-Received: by 10.204.123.70 with SMTP id o6mr13797576bkr.9.1378225013064;
+ Tue, 03 Sep 2013 09:16:53 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.205.99.72 with HTTP; Tue, 3 Sep 2013 09:16:12 -0700 (PDT)
+In-Reply-To: <201308302049.r7UKn3pw008225@chou.ece.utah.edu>
+References: <201308302049.r7UKn3pw008225@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Tue, 3 Sep 2013 18:16:12 +0200
+Message-ID: <CA+LVOvkXf23cvH6+PZ0idt97VsqwOXLXnChTsqeDFL6aEnFBGg@mail.gmail.com>
+Subject: Re: BUG: Unit Definitions editor does not allow changes on existing
+ units (PR#5158)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a1133541a5348e104e57d0411
+
+--001a1133541a5348e104e57d0411
+Content-Type: text/plain; charset=ISO-8859-1
+
+Fixed. Closing.
+
+
+On Fri, Aug 30, 2013 at 10:49 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Could you test this old bug when you get a chance and close if satisfied?
+>
+> Chris
+>
+>
+
+
+-- 
+Zhen Zhang
+
+--001a1133541a5348e104e57d0411
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Fixed. Closing.=A0</div><div class=3D"gmail_extra"><br><br=
+><div class=3D"gmail_quote">On Fri, Aug 30, 2013 at 10:49 PM, Chris Myers <=
+span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" t=
+arget=3D"_blank">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<br=
+>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">Could you test this old bug when you get a c=
+hance and close if satisfied?<br>
+<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></span></blockquote></div><br><br clear=3D"all"><div><br></div>-- <b=
+r>Zhen Zhang
+</div>
+
+--001a1133541a5348e104e57d0411--
+

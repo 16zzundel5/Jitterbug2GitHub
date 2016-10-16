@@ -1,0 +1,45 @@
+From prvs=97921db5b=zhen.zhang@utah.edu  Mon Jun 27 15:12:38 2016
+Return-Path: <prvs=97921db5b=zhen.zhang@utah.edu>
+Received: from ipo7.cc.utah.edu (ipo7.cc.utah.edu [155.97.144.42])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RLCbGZ031502
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 15:12:38 -0600
+X-IronPort-AV: E=Sophos;i="5.26,538,1459836000"; 
+   d="scan'208,217";a="484320177"
+Received: from mail-oi0-f48.google.com ([209.85.218.48])
+  by ipo7smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 27 Jun 2016 15:11:53 -0600
+Received: by mail-oi0-f48.google.com with SMTP id s66so218003311oif.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 14:11:53 -0700 (PDT)
+X-Gm-Message-State: ALyK8tLGYp0vbo8xbUKy3pKTSxzM4wwN/f3Adcfcy1FdfLX7njSEK2J7/SGK0lNunk8YItd5o3RB4cy5nWihOA==
+X-Received: by 10.202.222.5 with SMTP id v5mr2098474oig.104.1467061912900;
+ Mon, 27 Jun 2016 14:11:52 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.172.21 with HTTP; Mon, 27 Jun 2016 14:11:13 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 27 Jun 2016 15:11:13 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=6Hp65w=yV-xXJVhgPztg32qj7yn+zh7RKvddLVYME8g@mail.gmail.com>
+Message-ID: <CA+LVOv=6Hp65w=yV-xXJVhgPztg32qj7yn+zh7RKvddLVYME8g@mail.gmail.com>
+Subject: BUG: issues with the progress bar window for steady-state CTMC analysis
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113ce7a82e9d2d053648f8e0
+
+--001a113ce7a82e9d2d053648f8e0
+Content-Type: text/plain; charset=UTF-8
+
+For dual_feedback_oscillator and repressilator models (see
+stochastic_model_checking package sent separately), progress bar
+immediately shows full progress even though steady-state analysis is not
+complete. Also, the cancel button does not terminate the steady-state
+analysis.
+
+--001a113ce7a82e9d2d053648f8e0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">For dual_feedback_oscillator and repressilator models (see=
+ stochastic_model_checking package sent separately), progress bar immediate=
+ly shows full progress even though steady-state analysis is not complete. A=
+lso, the cancel button does not terminate the steady-state analysis.<br></d=
+iv>
+
+--001a113ce7a82e9d2d053648f8e0--
+

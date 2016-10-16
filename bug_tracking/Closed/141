@@ -1,0 +1,69 @@
+From myers@vlsigroup.elen.utah.edu  Sat May 15 15:00:01 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id PAA15530 for <atacs-bugs@shang.elen.utah.edu>; Sat, 15 May 1999 15:00:00 -0600 (MDT)
+Date: Sat, 15 May 1999 15:00:00 -0600 (MDT)
+Message-Id: <199905152100.PAA15530@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Create a help file.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+For the commands listed below, write a help file using the troff format
+(see example below).  If Help? says "yes", then you can find an old version 
+in help.c to start from.  
+
+Menu    Command  Switch Help?   X-i/f   Owner
+=================================================
+Display showstat  dx    No      Yes     Eric
+
+Print   printstat px    No      Yes     Eric
+
+Anal.   tpburst   ab    Yes     Yes     Eric
+        cycper    ap    Yes     Yes     Eric
+        tpsim     am    Yes     Yes     Eric
+        tprglin   al    Yes     Yes     Eric
+        tpexp     ae    Yes     Yes     Eric
+        dtmcrp    ar    Yes     Yes     Eric
+        ctmc      aC    Yes     Yes     Eric
+        simtel    as    Yes     Yes     Eric
+        simctmc   ac    Yes     Yes     Eric
+        trigprob  ag    Yes     Yes     Eric
+        trigsim   af    Yes     Yes     Eric
+        lttpsim   ai    Yes     No      Eric
+        simcyc    ay    Yes     No      Eric
+        medley    ad    Yes     No      Eric
+
+Default tolerance T     No      Yes     Eric
+
+Example format file:
+====================
+.XX
+command parameters <filename>
+.PP
+This is just a test.
+.PP
+Line 1
+.br
+Line 2
+
+Example help file:
+==================
+ 
+ATACS(4.1)                                             ATACS(4.1)
+ 
+  command parameters <filename>
+ 
+       This is just a test.
+ 
+       Line 1
+       Line 2
+ 
+                          March 28, 1999                        1
+

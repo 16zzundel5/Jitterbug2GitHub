@@ -1,0 +1,100 @@
+From ibiosim@gmail.com  Fri Jul  8 14:52:32 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f181.google.com (mail-pf0-f181.google.com [209.85.192.181])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u68KqWgE013240
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 8 Jul 2016 14:52:32 -0600
+Received: by mail-pf0-f181.google.com with SMTP id t190so15897892pfb.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 08 Jul 2016 13:52:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=cbOMqo7hJIFyrpsAAvtB6ToARKNrnHZ60Ryn2Rvsabk=;
+        b=Jjxt35rfaDauv3t1He0m/1oz5U+Lf715+tJByp/YWJW+iTpFbsL9MJmMde6w0QrQoP
+         1xnmUylrXrTdtbqz+EGSKw797jJjYdfAqVuQU+RjTfN9+5GwRfZELkUE36fJNRh5Crsz
+         O5eO5I+NHL7D4RjzEOhd0fLis2JGa0dPunOYaXKWxHbYqNJz6si9z5s+cGNA/0zpY0Un
+         xGx2+0p1NneI6gglcAC9rEVaMbN7E+l6Rlei4bhtcYBK1LwB6+8le2j64MhMgF6EYM68
+         /HldnvuT+oNd5SkxHDwymcFNaWO5LhTlrwO+aFPiNp39ODtNo3tf1PGkNrPAmhWvTeR5
+         Rmsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=cbOMqo7hJIFyrpsAAvtB6ToARKNrnHZ60Ryn2Rvsabk=;
+        b=Cftw2q9v8yVQ7R1DgLRLAPdnYM7sQnEciKOloYgJnBdo2+Ung/uWaZxG9M6bT60zLe
+         YCmHrPrf7wejkoU24MEBR3kn3Fy3ND178cwjXD3wivTJAHNJyG8j8W7XVSAm8Q0u0MBk
+         lex9bDZ81znDFpXq7a7VUs/Tfl+vOMoRyejEGSRJzIXpsmh70t0KL5avccKjA5rCkPhD
+         PbBLsswhDTz1c7e+a3vSVm7lxonRCj6dx/+qxx28GYJKj93zUGGRJOsLPqFsNczr36Ob
+         jDugd0cgFyi6QHDVwY4Q5RbYhsgOrbxB5e9c2thQk5xMnIcG1A5hLC7CbTS9ndocPplm
+         rIcA==
+X-Gm-Message-State: ALyK8tKiEsRrSPeUJOPFJl9GeF4DQuAVhmQsk5MekpdtS9UCDXuppK3RnAa+Bzsyhlf+qw==
+X-Received: by 10.98.205.79 with SMTP id o76mr12890756pfg.37.1468011151853;
+        Fri, 08 Jul 2016 13:52:31 -0700 (PDT)
+Received: from chings-air.uconnect.utah.edu ([128.110.79.184])
+        by smtp.gmail.com with ESMTPSA id lf11sm5644492pab.17.2016.07.08.13.52.31
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Fri, 08 Jul 2016 13:52:31 -0700 (PDT)
+Date: Fri, 08 Jul 2016 13:52:31 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: ccmyers98@yahoo.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <507751068.1.1468011150347.JavaMail.ching@chings-air.uconnect.utah.edu>
+Subject: BUG: Bug That Sometimes Happens
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.5
+
+Operating system: Mac OS X
+
+Bug reported by: ccmyers98@yahoo.com
+
+Description:
+Creating Hierarchical model for the LacI Inverter Gene and zooming into the TetR gene and inserting a RBS caused the exception
+
+Stack trace:
+java.lang.NullPointerException
+	at com.clarkparsia.sbol.editor.SBOLDesign.createComponentButton(SBOLDesign.java:786)
+	at com.clarkparsia.sbol.editor.SBOLDesign.addCD(SBOLDesign.java:734)
+	at com.clarkparsia.sbol.editor.SBOLDesign.addCD(SBOLDesign.java:719)
+	at com.clarkparsia.sbol.editor.PartsPanel$1.actionPerformed(PartsPanel.java:73)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+

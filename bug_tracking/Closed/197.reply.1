@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Add switch for findred during compilation. (PR#197)
+Date: Sun Jul 11 13:11:21 1999
+CC: hao@vlsigroup
+
+A switch "redchk" has been added to toggle a bool "redchk" which is in
+designADT.
+You should check this bool before running your new redundant rule checker.
+If true, you run it, if false, you should not.

@@ -1,0 +1,5 @@
+Note the ERROR: STUCK IN STATE=1RRRR1
+
+Actually, the error now makes sense.  An output gets disabled which is bad.
+If you change the signals to inputs there is no error.  The latest version
+reports the error more clearly.

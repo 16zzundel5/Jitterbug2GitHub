@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Fri Mar 18 08:49:27 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2IEnR1b016286
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Mar 2011 08:49:27 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Q0azW-0002JV-VW
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 18 Mar 2011 08:49:26 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: FEATURE: add support to generate a DNA sequence for a GCM
+Date: Fri, 18 Mar 2011 08:49:21 -0600
+Message-Id: <15470F60-287B-4019-B5E1-F13C92EDF53E@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p2IEnR1b016286
+
+When all genetic elements in a GCM have associated DNA components and/or sequence features, it is possible to construct a composite DNA sequence for the entire GCM.  The feature request is to add support (button and/or menu item) to construct such a DNA sequence.  When not elements are specified, an error should be produced.  When they are all specified, the user should be able to add the resulting DNA component to a specified SBOL library.  This DNA component would then be associated with this GCM and utilized when this GCM is later incorporated as a component in a higher-level GCM.
+
+

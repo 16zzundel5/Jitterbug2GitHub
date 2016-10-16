@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: implement choice in verilog using delay (PR#5034)
+Date: Thu Jul  1 18:53:25 2010
+
+Use the priority expression to modify the delay.
+
+Assuming d=l=u,
+
+assign #d + max_time_step / priority_expr
+
+Add to each transition, a priority expression during model generation.  This
+expression should default to some uniform random variable.
+

@@ -1,0 +1,24 @@
+From n.roehner@utah.edu  Mon Dec  2 09:43:25 2013
+Return-Path: <n.roehner@utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id rB2GhPNP002749
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 2 Dec 2013 09:43:25 -0700
+Date: Mon, 2 Dec 2013 09:43:25 -0700
+Message-Id: <201312021643.rB2GhPNP002749@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG Can't Register GeneralGlyph when Moving Parameter
+
+Full_Name: Nicholas Roehner
+Version: 
+OS: 
+source: 
+log: 
+Submission from: (NULL) (155.98.27.216)
+Submitted by: nroehner
+
+
+When I add a non-constant parameter to a model and then move within the
+schematic, I get an error that says "Cannot register generalGlyph." The error
+does not occur if I save the model after creating the parameter.
+

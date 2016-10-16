@@ -1,0 +1,5 @@
+Eric M.
+See PR#194
+As we talked about this should be fixed through a default path library path
+which
+has at the end ../lib.  The links need to be set properly for 5.2 operation.

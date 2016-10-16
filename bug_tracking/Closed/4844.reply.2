@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: problems with updating variables in LHPN learn view (PR#4844)
+Date: Thu Oct 22 16:25:18 2009
+
+I think I fixed it now.
+I commented your fix since it was adding additional nulls after I made few
+other
+required changes. The bins and inputs were not being stored in the .lrn file
+before, hence these were not properly integrated between the LHPN editor and
+Learn view.

@@ -1,0 +1,83 @@
+From ibiosim@gmail.com  Wed Jun 11 13:18:25 2014
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ig0-f175.google.com (mail-ig0-f175.google.com [209.85.213.175])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s5BJIOPx020823
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 11 Jun 2014 13:18:24 -0600
+Received: by mail-ig0-f175.google.com with SMTP id uq10so6817551igb.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 11 Jun 2014 12:18:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=77Rl+CmX9uCWzEZ7sNu7P8+ODg7ZCVhgm3Pa5D1//q0=;
+        b=QHFokVII95YNHLd+2OyyjA9Vi/4yBGq1ftmfq8p9NezXW8GX18/RVmN/QvxBTXUhwJ
+         RSO+8gYCWpvfkBZrzV4ajkUYA2BB8oWTVVuxRjWWdo1T7l2JWYmsbcUdfAnoy5wNgUYZ
+         NB+iQ+2DNImheJHcw0uIVUuLw8Nk+v2J6fBXeFKHl8p9vhVMXliHXde6NvM6UNrXLL8W
+         r4ohKfN7AGZyht13mJ+H41SSOivYf8Tzahus0mCMfWksQKt1AFUSaBLk7c0B9bopd9m4
+         EdrskySmkP6354xBPGE/RTtQvcOdL8jqxBEBL101BGD8iyb+ONCiigfAGfbhmx1pk1d+
+         Js0Q==
+X-Received: by 10.43.66.202 with SMTP id xr10mr30880665icb.77.1402514304270;
+        Wed, 11 Jun 2014 12:18:24 -0700 (PDT)
+Received: from 128-110-73-101.uconnect.utah.edu (128-110-73-101.uconnect.utah.edu. [128.110.73.101])
+        by mx.google.com with ESMTPSA id o19sm75634034igi.20.2014.06.11.12.18.21
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Wed, 11 Jun 2014 12:18:22 -0700 (PDT)
+Date: Wed, 11 Jun 2014 12:18:22 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: zhen.zhang@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1162027706.0.1402514299390.JavaMail.zhangz@yohjiyamamoto>
+Subject: BUG: Exception occurs after clicking OK on place editor
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+LEMA Version 2.0
+
+Operating system: Mac OS X
+
+Bug reported by: zhen.zhang@utah.edu
+
+Description:
+After dropping a new place in the LEMA's schematic editor, clicking on it to open its editor, if OK is pressed, this exception occurs.
+
+Stack trace:
+java.lang.NoSuchMethodError: org.sbml.jsbml.ext.arrays.ArraysSBasePlugin.removeDimensionByArrayDimension(I)Lorg/sbml/jsbml/ext/arrays/Dimension;
+	at biomodel.gui.sbmlcore.Parameters.parametersEditor(Parameters.java:822)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2383)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1174)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:273)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6414)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6179)
+	at java.awt.Container.processEvent(Container.java:2084)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2142)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4618)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4279)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4209)
+	at java.awt.Container.dispatchEventImpl(Container.java:2128)
+	at java.awt.Window.dispatchEventImpl(Window.java:2492)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

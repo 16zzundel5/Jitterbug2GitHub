@@ -1,0 +1,36 @@
+From atacs-bugs@chou.ece.utah.edu  Tue Feb 21 11:01:06 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.4/8.13.1) with ESMTP id k1LI16VP007311
+	for <atacs-bugs@shang.ece.utah.edu>; Tue, 21 Feb 2006 11:01:06 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.4/8.13.1/Submit) id k1LI16GW007310
+	for atacs-bugs@shang.ece.utah.edu; Tue, 21 Feb 2006 11:01:06 -0700
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.13.4/8.13.1) with ESMTP id k1LI13ZH007301
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 21 Feb 2006 11:01:03 -0700
+Date: Tue, 21 Feb 2006 11:01:03 -0700
+Message-Id: <200602211801.k1LI13ZH007301@chou.ece.utah.edu>
+From: kjones@vlsigroup.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Railroad compiler problem
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=ALL_TRUSTED,NO_REAL_NAME 
+	autolearn=unavailable version=3.0.4
+
+Full_Name: Kevin Jones
+spec: atacs/work/vhdlams/railroadcontroller.vhd
+Version: 
+OS: Linux song.ece.utah.edu 2.6.14-1.1656_FC4smp #1 SMP Thu Jan 5 22:24:06 EST 2006 i686 i686 i386 GNU/Linux
+command: atacs -cPlvsgll railroadcontroller.vhd
+Submission from: song.ece.utah.edu (155.98.27.208)
+Submitted by: kjones
+
+
+When railroadcontroller.vhd is compiled by the tools developed by the group, the
+multiple signal conditions are not correctly processed if two signal conditions
+exist in the same line of a process, viz., in the form <condition_1> and
+<condition_2>,.  The second condition is ignored, and the parentheses are
+incorrectly matched in railroadcontroller.tel.
+

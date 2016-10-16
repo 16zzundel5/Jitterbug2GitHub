@@ -1,0 +1,50 @@
+From moschino21@gmail.com  Sun Feb 13 16:35:26 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p1DNZO04024467
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 13 Feb 2011 16:35:25 -0700
+Received: by bwz13 with SMTP id 13so8564042bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 13 Feb 2011 15:35:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=lq6WqZFf6nhET6Jo7YziOQ/HYMc+lnj2ZMnyQA47Stc=;
+        b=u/PXq58ruFZ7bi3WYlwuD2pGuOCzI+owBQv8JY6wZk5KXGiucCqMKz1McQoJpcoZxO
+         vgB1ty1JpMnKuak0ceAxSmBp3SGiITeaf/c67S7Ky5WFZjVN+AcBuIsfWD/kZFLdSoH1
+         u0Lc3iL8apBTAwya/5Mmshy1MSIus4FvZmO2c=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=SMGjavN0MLqCvDALI2I8GMOVdqe/miRMitPiM0gBX4kos39hsZ45wKNCzkmS6CF+vu
+         Gpi44orrxQekTW3yNY+1xVrnXshrryt0btCdAIShbfE3DQeJK3u8HVykxT7tvGEOsVe3
+         s2nMETqyS+adl+vaZkezfgHLJ+LiI9h4iadJ0=
+Received: by 10.204.128.200 with SMTP id l8mr2829058bks.60.1297640123805; Sun,
+ 13 Feb 2011 15:35:23 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.204.123.134 with HTTP; Sun, 13 Feb 2011 15:35:03 -0800 (PST)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Sun, 13 Feb 2011 16:35:03 -0700
+Message-ID: <AANLkTimX=wWNYfgfkYX-3a9HRBrP-MW8m9K4d-e_=xCt@mail.gmail.com>
+Subject: FEATURE: Add persistent notation to the dot file
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=00151747be58a03276049c32620b
+
+--00151747be58a03276049c32620b
+Content-Type: text/plain; charset=ISO-8859-1
+
+When viewing a LPN model, it would be nice to have labels on persistent
+transitions.
+
+-- 
+Zhen Zhang
+
+--00151747be58a03276049c32620b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+When viewing a LPN model, it would be nice to have labels on=A0persistent t=
+ransitions.=A0<br clear=3D"all"><br>-- <br>Zhen Zhang<br>
+
+--00151747be58a03276049c32620b--
+

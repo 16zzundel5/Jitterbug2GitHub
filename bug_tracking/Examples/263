@@ -1,0 +1,22 @@
+From myers@vlsigroup.elen.utah.edu  Wed Nov 10 09:22:18 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA07373
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 10 Nov 1999 09:22:18 -0700
+Date: Wed, 10 Nov 1999 09:22:18 -0700
+Message-Id: <199911101622.JAA07373@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: File deadlocks.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: accum.csp
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+An example which previously synthesized now deadlocks due to a rule not being
+made redundant.  The problem has to do with redundant rules with conflicts.
+

@@ -1,0 +1,21 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: background knowledge (PR#2275)
+Date: Thu Jan 24 00:24:08 2008
+
+The data structures that are used were trying to match what we said
+they were in the conference paper, and then, extended somewhat to the
+dissertation structures.
+
+However, some things are still confusing because they are not renamed.
+
+For example, a set represents species that influence a species of
+interest.  A double set represents the set of possible species that
+influence a species of interest.  NetCon contains all the connections
+for the network.  So, to add background knowledge, you probably need
+to create a set containing the background knowledge, then stick it
+into the appropriate species' set or double set.
+
+I hope that helps a little.
+
+Nathan

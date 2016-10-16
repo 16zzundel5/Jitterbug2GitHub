@@ -1,0 +1,250 @@
+From kjones5863@gmail.com  Thu Mar 19 11:04:15 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.174])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2JH4EUf001302;
+	Thu, 19 Mar 2009 11:04:14 -0600
+Received: by wf-out-1314.google.com with SMTP id 23so743448wfg.24
+        for <multiple recipients>; Thu, 19 Mar 2009 10:04:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=wSYNS9aMiAEHk+5jYIAmG1iJpdmW8lu3reTiwCICVsg=;
+        b=nJ9wByTqelFr0QNKIn3K/Hi21jxqfH3qhrFgxbO8/2LI7rxVX/gn2qgzuyjhMtqGXk
+         tps2lsGZkAhzTCmABXFNJ/h+NMXaGaSBpgUIgWJQnovIll8tI1ZGkUcWRgODP7AIS4wJ
+         2v82ghyLtPCu30ouzNCIJDxOCae0HNyS5j8Aw=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=cyM9ok3UZYsIdiKBEM3wJfgXlyghCqBKlT3s7mv9ymD54NgjR77sZcVRyBxZPvByc5
+         0RKC7cqnLaQ0l4hiVv+bO9mDTy3tEIjZ8DR9TtK0w6f2pksbeMjrLUd6k55GpZ8MN3Kt
+         OdoZEww9gZWiPxIOuUgynb8Rc3cP+RrCNVoKQ=
+MIME-Version: 1.0
+Received: by 10.143.32.7 with SMTP id k7mr1025310wfj.162.1237482254211; Thu, 
+	19 Mar 2009 10:04:14 -0700 (PDT)
+In-Reply-To: <35961AC0-666D-434E-9002-CAC65A39BFD8@ece.utah.edu>
+References: <200903182057.n2IKvlHd024312@chou.ece.utah.edu>
+	 <35961AC0-666D-434E-9002-CAC65A39BFD8@ece.utah.edu>
+Date: Thu, 19 Mar 2009 11:04:14 -0600
+Message-ID: <2b601e3d0903191004u71715779md4a18f5a6f0c11a5@mail.gmail.com>
+Subject: Re: BUG: problem editing flow relation (PR#4715)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=00504502dd6c2d9a4b04657bca41
+
+--00504502dd6c2d9a4b04657bca41
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+This example works now.  Apparently there was an parsing error when the file
+was being read in.  Again, let me know if you find anything else.
+
+Kevin Jones
+
+On Wed, Mar 18, 2009 at 4:47 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> For this file:
+>
+> .dummy t t2
+> #@.variables x
+> #|.places p p2
+> .graph
+> t p2
+> p t
+> t2 p
+> p2 t2
+> .marking {p }
+> #@.init_vals {<x=0>}
+> #@.delay_assignments {<t=[0,inf]><t2=[0,inf]>}
+> #@.transition_rates {<t=[3*x]><t2=[x^2]>}
+> .end
+>
+> I open this in the LPHN editor and try to change the (t,p2) edge to (t,p)
+> edge and I get this exception:
+>
+> java.lang.NullPointerException
+>        at lhpn2sbml.parser.LHPNFile.removeControlFlow(LHPNFile.java:700)
+>        at lhpn2sbml.gui.ControlFlowPanel.openGui(ControlFlowPanel.java:214)
+>        at lhpn2sbml.gui.ControlFlowPanel.<init>(ControlFlowPanel.java:159)
+>        at lhpn2sbml.gui.LHPNEditor$EditCommand.run(LHPNEditor.java:482)
+>        at lhpn2sbml.gui.LHPNEditor$EditButton.run(LHPNEditor.java:319)
+>        at lhpn2sbml.gui.LHPNEditor.actionPerformed(LHPNEditor.java:375)
+>        at
+> javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1882)
+>        at
+> javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2202)
+>        at
+> javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:420)
+>        at
+> javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:258)
+>        at
+> javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+>        at java.awt.Component.processMouseEvent(Component.java:5602)
+>        at javax.swing.JComponent.processMouseEvent(JComponent.java:3135)
+>        at java.awt.Component.processEvent(Component.java:5367)
+>        at java.awt.Container.processEvent(Container.java:2010)
+>        at java.awt.Component.dispatchEventImpl(Component.java:4068)
+>        at java.awt.Container.dispatchEventImpl(Container.java:2068)
+>        at java.awt.Component.dispatchEvent(Component.java:3903)
+>        at biomodelsim.BioSim.mouseReleased(BioSim.java:7197)
+>        at java.awt.Component.processMouseEvent(Component.java:5602)
+>        at javax.swing.JComponent.processMouseEvent(JComponent.java:3135)
+>        at java.awt.Component.processEvent(Component.java:5367)
+>        at java.awt.Container.processEvent(Container.java:2010)
+>        at java.awt.Component.dispatchEventImpl(Component.java:4068)
+>        at java.awt.Container.dispatchEventImpl(Container.java:2068)
+>        at java.awt.Component.dispatchEvent(Component.java:3903)
+>        at
+> java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4256)
+>        at
+> java.awt.LightweightDispatcher.processMouseEvent(Container.java:3936)
+>        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3866)
+>        at java.awt.Container.dispatchEventImpl(Container.java:2054)
+>        at java.awt.Window.dispatchEventImpl(Window.java:1801)
+>        at java.awt.Component.dispatchEvent(Component.java:3903)
+>        at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+>        at
+> java.awt.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java:269)
+>        at
+> java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:190)
+>        at
+> java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:184)
+>        at
+> java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:176)
+>        at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+>
+>
+> Again, not sure if this is a check in issue.
+>
+> On Mar 18, 2009, at 2:57 PM, Kevin Jones wrote:
+>
+>  This should be fixed now.  Let me know if you find any other problems with
+>> it.
+>>
+>
+>
+
+--00504502dd6c2d9a4b04657bca41
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+This example works now.=A0 Apparently there was an parsing error when the f=
+ile was being read in.=A0 Again, let me know if you find anything else.<br>=
+<br>Kevin Jones<br><br><div class=3D"gmail_quote">On Wed, Mar 18, 2009 at 4=
+:47 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.ut=
+ah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">For this file:<br=
+>
+<br>
+.dummy t t2<br>
+#@.variables x<br>
+#|.places p p2<br>
+.graph<br>
+t p2<br>
+p t<br>
+t2 p<br>
+p2 t2<br>
+.marking {p }<br>
+#@.init_vals {&lt;x=3D0&gt;}<br>
+#@.delay_assignments {&lt;t=3D[0,inf]&gt;&lt;t2=3D[0,inf]&gt;}<br>
+#@.transition_rates {&lt;t=3D[3*x]&gt;&lt;t2=3D[x^2]&gt;}<br>
+.end<br>
+<br>
+I open this in the LPHN editor and try to change the (t,p2) edge to (t,p) e=
+dge and I get this exception:<br>
+<br>
+java.lang.NullPointerException<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.parser.LHPNFile.removeControlFlow(LHPNFile.jav=
+a:700)<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.gui.ControlFlowPanel.openGui(ControlFlowPanel.=
+java:214)<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.gui.ControlFlowPanel.&lt;init&gt;(ControlFlowP=
+anel.java:159)<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.gui.LHPNEditor$EditCommand.run(LHPNEditor.java=
+:482)<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.gui.LHPNEditor$EditButton.run(LHPNEditor.java:=
+319)<br>
+ =A0 =A0 =A0 =A0at lhpn2sbml.gui.LHPNEditor.actionPerformed(LHPNEditor.java=
+:375)<br>
+ =A0 =A0 =A0 =A0at javax.swing.AbstractButton.fireActionPerformed(AbstractB=
+utton.java:1882)<br>
+ =A0 =A0 =A0 =A0at javax.swing.AbstractButton$Handler.actionPerformed(Abstr=
+actButton.java:2202)<br>
+ =A0 =A0 =A0 =A0at javax.swing.DefaultButtonModel.fireActionPerformed(Defau=
+ltButtonModel.java:420)<br>
+ =A0 =A0 =A0 =A0at javax.swing.DefaultButtonModel.setPressed(DefaultButtonM=
+odel.java:258)<br>
+ =A0 =A0 =A0 =A0at javax.swing.plaf.basic.BasicButtonListener.mouseReleased=
+(BasicButtonListener.java:236)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.processMouseEvent(Component.java:5602=
+)<br>
+ =A0 =A0 =A0 =A0at javax.swing.JComponent.processMouseEvent(JComponent.java=
+:3135)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.processEvent(Component.java:5367)<br>
+ =A0 =A0 =A0 =A0at java.awt.Container.processEvent(Container.java:2010)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.dispatchEventImpl(Component.java:4068=
+)<br>
+ =A0 =A0 =A0 =A0at java.awt.Container.dispatchEventImpl(Container.java:2068=
+)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.dispatchEvent(Component.java:3903)<br=
+>
+ =A0 =A0 =A0 =A0at biomodelsim.BioSim.mouseReleased(BioSim.java:7197)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.processMouseEvent(Component.java:5602=
+)<br>
+ =A0 =A0 =A0 =A0at javax.swing.JComponent.processMouseEvent(JComponent.java=
+:3135)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.processEvent(Component.java:5367)<br>
+ =A0 =A0 =A0 =A0at java.awt.Container.processEvent(Container.java:2010)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.dispatchEventImpl(Component.java:4068=
+)<br>
+ =A0 =A0 =A0 =A0at java.awt.Container.dispatchEventImpl(Container.java:2068=
+)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.dispatchEvent(Component.java:3903)<br=
+>
+ =A0 =A0 =A0 =A0at java.awt.LightweightDispatcher.retargetMouseEvent(Contai=
+ner.java:4256)<br>
+ =A0 =A0 =A0 =A0at java.awt.LightweightDispatcher.processMouseEvent(Contain=
+er.java:3936)<br>
+ =A0 =A0 =A0 =A0at java.awt.LightweightDispatcher.dispatchEvent(Container.j=
+ava:3866)<br>
+ =A0 =A0 =A0 =A0at java.awt.Container.dispatchEventImpl(Container.java:2054=
+)<br>
+ =A0 =A0 =A0 =A0at java.awt.Window.dispatchEventImpl(Window.java:1801)<br>
+ =A0 =A0 =A0 =A0at java.awt.Component.dispatchEvent(Component.java:3903)<br=
+>
+ =A0 =A0 =A0 =A0at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)<b=
+r>
+ =A0 =A0 =A0 =A0at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Ev=
+entDispatchThread.java:269)<br>
+ =A0 =A0 =A0 =A0at java.awt.EventDispatchThread.pumpEventsForHierarchy(Even=
+tDispatchThread.java:190)<br>
+ =A0 =A0 =A0 =A0at java.awt.EventDispatchThread.pumpEvents(EventDispatchThr=
+ead.java:184)<br>
+ =A0 =A0 =A0 =A0at java.awt.EventDispatchThread.pumpEvents(EventDispatchThr=
+ead.java:176)<br>
+ =A0 =A0 =A0 =A0at java.awt.EventDispatchThread.run(EventDispatchThread.jav=
+a:110)<br>
+<br>
+<br>
+Again, not sure if this is a check in issue.<br>
+<br>
+On Mar 18, 2009, at 2:57 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+This should be fixed now. =A0Let me know if you find any other problems wit=
+h it.<br>
+</blockquote>
+<br>
+</blockquote></div><br>
+
+--00504502dd6c2d9a4b04657bca41--
+

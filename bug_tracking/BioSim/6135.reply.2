@@ -1,0 +1,48 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: use mass action button support for arrays (PR#6135)
+Date: Tue Aug 12 19:07:15 2014
+
+Hi Leandro,
+
+I've added partial support for arrays to the use mass action button for
+reactions.  What it does is add the index for 
+the species reference to the species and specie reference ids.  Currently, this
+method requires there to be no 
+dimensions on the species references, and it gives an error message when this
+occurs.  Please test and let me 
+know what you think.
+
+In order to support dimensions on the species references, I have two solutions,
+and I was wondering your opinion 
+on which one to pursue.
+
+1) Flatten each species reference into a list of species references:
+
+	Reaction R
+		Reactant 
+			id: a[n] with dimension id rd0
+			species: s[rd0]
+		KineticLaw
+			kf * pow(s[0],a[0]) * pow(s[1],a[1])
+
+	Note I must flatten because "rd0" is not within the reaction scope.  
+
+2) Uses the product function:
+
+	KineticLaw
+		kf * product(pow(s[rd0],a[rd0]), rd0, 0, n-1)
+
+	This would compile to this mathml:
+ <apply><product/>
+  <bvar><ci> rd0 </ci></bvar>
+  <lowlimit><cn> 0 </cn></lowlimit>
+  <uplimit><apply><minus/><ci>n</ci><cn>1</cn></apply></uplimit>
+  <apply>
+    <power/><apply><selector/><ci>s</ci><ci>rd0</ci></apply>
+      <apply><selector><ci>a</ci><ci>rd0</ci></apply>
+  </apply>
+</apply>
+Which approach do you think is better?
+
+Chris

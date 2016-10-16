@@ -1,0 +1,3 @@
+Hao
+Fixed syntax errors in both files below, but dp_pre_dec.vhd now seg faults.
+Problem seems to be with std_logic_vectors.

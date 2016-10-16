@@ -1,0 +1,111 @@
+From myers@eng.utah.edu  Mon Aug 27 12:48:51 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q7RImpNA018788
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Aug 2012 12:48:51 -0600
+Received: from jiaqi.ece.utah.edu ([155.98.27.199] helo=[192.168.1.103])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1T64Hf-0008Pn-Qq; Mon, 27 Aug 2012 12:43:35 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_D5F9A944-CA70-47E3-A1E0-84E86C902CE7"
+Subject: BUG: exception when trying to simulate
+Date: Mon, 27 Aug 2012 12:48:32 -0600
+Message-Id: <AE1A4BF2-57DD-4A88-BE9C-E81EEB0149AF@ece.utah.edu>
+Cc: Jason Stevens <sarbruis@gmail.com>
+To: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1278)
+X-Mailer: Apple Mail (2.1278)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_D5F9A944-CA70-47E3-A1E0-84E86C902CE7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+When I try to simulate any model, I get this exception:
+
+Exception in thread "Thread-6" java.lang.NoClassDefFoundError: =
+org/apache/log4j/Logger
+	at =
+org.sbml.jsbml.xml.parsers.SBMLCoreParser.<init>(SBMLCoreParser.java:99)
+	at =
+org.sbml.jsbml.xml.stax.SBMLReader.<clinit>(SBMLReader.java:110)
+	at org.sbml.jsbml.SBMLReader.readSBML(SBMLReader.java:201)
+	at =
+analysis.dynamicsim.Simulator.expandArrays(Simulator.java:1386)
+	at analysis.Run.execute(Run.java:1235)
+	at analysis.AnalysisView.run(AnalysisView.java:1985)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+
+I wonder if you perhaps need to check in another library.
+
+
+--Apple-Mail=_D5F9A944-CA70-47E3-A1E0-84E86C902CE7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">When =
+I try to simulate any model, I get this =
+exception:<div><br></div><div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 23, 39); ">Exception =
+in thread "Thread-6" java.lang.NoClassDefFoundError: =
+org/apache/log4j/Logger</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 23, 39); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+org.sbml.jsbml.xml.parsers.SBMLCoreParser.&lt;init&gt;(<span =
+style=3D"text-decoration: underline ; color: =
+#002290">SBMLCoreParser.java:99</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 23, 39); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at org.sbml.jsbml.xml.stax.SBMLReader.&lt;clinit&gt;(<span =
+style=3D"text-decoration: underline ; color: =
+#002290">SBMLReader.java:110</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 23, 39); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+org.sbml.jsbml.SBMLReader.readSBML(<span style=3D"text-decoration: =
+underline ; color: #002290">SBMLReader.java:201</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 23, 39); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+analysis.dynamicsim.Simulator.expandArrays(<span style=3D"text-decoration:=
+ underline ; color: #002290">Simulator.java:1386</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 23, 39); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at analysis.Run.execute(<span =
+style=3D"text-decoration: underline ; color: =
+#002290">Run.java:1235</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 23, 39); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+analysis.AnalysisView.run(<span style=3D"text-decoration: underline ; =
+color: #002290">AnalysisView.java:1985</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 23, 39); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+analysis.AnalysisThread.run(<span style=3D"text-decoration: underline ; =
+color: #002290">AnalysisThread.java:24</span>)</div></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 23, 39); "><br></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; "><font class=3D"Apple-style-span" =
+face=3D"Helvetica" size=3D"3">I wonder if you perhaps need to check in =
+another library.</font></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; "><font class=3D"Apple-style-span" =
+face=3D"Helvetica" size=3D"3"><br></font></div></body></html>=
+
+--Apple-Mail=_D5F9A944-CA70-47E3-A1E0-84E86C902CE7--
+

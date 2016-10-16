@@ -1,0 +1,148 @@
+From peskin@cs.utah.edu  Sat May 13 09:13:29 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA24889
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 13 May 2000 09:13:29 -0600
+Date: Sat, 13 May 2000 09:13:29 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200005131513.JAA24889@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: new state assignment code breaks chantal and glc.  Film at 11.
+
+Full_Name: Eric Robert Peskin
+Version: CVS tag BAD104
+OS: Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+spec: ~peskin/atacs/examples/{csp/chantal.csp,g/glc.g}
+log: ~peskin/atacs/examples/{csp/chantal,g/glc}.log
+Submission from: slip87.cs.utah.edu (155.99.200.87)
+Submitted by: peskin
+
+
+See PR#457
+121 xia:examples/csp> whoami
+peskin
+122 xia:examples/csp> pwd
+/home/xia/peskin/atacs/examples/csp
+123 xia:examples/csp> ../../src/atacs chantal.csp -mEmXmcmsmUmPmTmFmOmpya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Compiling chantal.csp ...
+Storing process ro to ro.er
+Storing process ri to ri.er
+Storing process x to x.er
+Storing process chantal to chantal.er
+Loading timed event-rule structure from:  chantal.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done (0.000148)
+Finding reduced state graph ... nodes = 186, dead = 1713
+memory: max=454672 inuse=450904 free=3768
+done
+28 iterations, 19 regions, 18 new_regions, 12 states in 0.00852001 seconds
+nodes in use = 186, dead = 1713
+memory: max=454672 inuse=450904 free=3768
+Projecting out dummy transitions ... done (0.000746)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 4 CSC violation(s)
+Solution costing 0 + 0 used
+Signal named CSC0 being added
+IP: ro+/1 ai-/1 <-> ai+/1  ===== ri-/1 ro-/1 <-> ri+/1
+
+Storing TEL to file: chantal.er
+Loading timed event-rule structure from:  chantal.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Fixing marking of first CSC transition
+Storing timed event-rule structure to:  chantal.er
+Loading timed event-rule structure from:  chantal.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Fixing marking of second CSC transition
+Storing timed event-rule structure to:  chantal.er
+Loading timed event-rule structure from:  chantal.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  chantal.rr
+Graph brought back to life
+Finding reduced state graph and storing to:  chantal.rsg
+ERROR!
+ERROR: CSC0+/1 enabled but signal is not 0 or R in state 000F
+Storing constraint graph to:  deadlock.grf
+Executing command:  parg deadlock.grf &
+Storing error trace state graph to:  chantal.grf
+Executing command:  parg chantal.grf &
+Storing error trace in VHDL to:  trace.vhd
+Initial: 4 + 0
+Predicted: 0 + 0
+Actual: 0 + 0
+124 xia:examples/csp>
+=====================================================================
+128 xia:examples/g> whoami
+peskin
+129 xia:examples/g> pwd
+/home/xia/peskin/atacs/examples/g
+130 xia:examples/g> ../../src/atacs glc.g -mEmXmcya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Now using combinational optimization.
+Converting Petri net to ER and storing to:  glc.er
+Loading timed event-rule structure from:  glc.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done (states=17,time=0.004125)
+Projecting out dummy transitions ... done (0.000693)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 1 CSC violation(s)
+Solution costing 0 + 0 used
+Signal named CSC0 being added
+IP: h- <-> h+  ===== rout- h+ <-> rout+
+
+Storing TEL to file: glc.er
+Loading timed event-rule structure from:  glc.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Fixing marking of first CSC transition
+Storing timed event-rule structure to:  glc.er
+Loading timed event-rule structure from:  glc.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Fixing marking of second CSC transition
+Storing timed event-rule structure to:  glc.er
+Loading timed event-rule structure from:  glc.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Checking for cycles in acyclic constraint graph ... ERROR!
+ERROR:  Cycle detected in acyclic constraint graph.
+Initial: 1 + 0
+Predicted: 0 + 0
+Actual: 0 + 0
+131 xia:examples/g>
+

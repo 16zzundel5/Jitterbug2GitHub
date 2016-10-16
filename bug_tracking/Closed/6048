@@ -1,0 +1,93 @@
+From ibiosim@gmail.com  Tue May 27 11:56:58 2014
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f181.google.com (mail-ie0-f181.google.com [209.85.223.181])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s4RHuwGc016213
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 27 May 2014 11:56:58 -0600
+Received: by mail-ie0-f181.google.com with SMTP id rp18so7632477iec.40
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 27 May 2014 10:56:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=TPbid9x3yqCfgxp3MmHJzwALWVszMGF/HGLtfZAsH9g=;
+        b=uclShGaT9mZoDYfYhu1LfR0YYsCmoxmv1JtD/rj//YEzYnUiHOUGp9aCZiwQWsnvcc
+         kt9T6J/0woaXJFCyoz/ozCjH82hgudtRv0sseR1JhJi017eZRATUBMjEOmymTQ1ZFaW5
+         9ZifipvDcOnpgi7JcrIoP7Of0UPrGw7Kjg0irBsa/1CiT8B8N4zs4XFPAz378BFSZw/9
+         ovHylTBj+jp0CZ9ZdNktLC2HAUqwbym6eIEc8EsYL6fohN2dXCC24n4IFwSODRSbvP0n
+         8UeQBBkHFQZkBgLL3+Qo1+KL0KIktZIY5N4vfxyUIUNZPSPcQ077m3qJ21SHY3D4EvEj
+         RuBA==
+X-Received: by 10.51.17.99 with SMTP id gd3mr36067853igd.2.1401213417906;
+        Tue, 27 May 2014 10:56:57 -0700 (PDT)
+Received: from 128-110-81-11.uconnect.utah.edu (128-110-81-11.uconnect.utah.edu. [128.110.81.11])
+        by mx.google.com with ESMTPSA id m1sm9256377ige.22.2014.05.27.10.56.55
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Tue, 27 May 2014 10:56:57 -0700 (PDT)
+Date: Tue, 27 May 2014 10:56:57 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: zhen.zhang@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <595755354.0.1401213413260.JavaMail.zhangz@yohjiyamamoto>
+Subject: BUG: type error
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+LEMA Version 2.0
+
+Operating system: Mac OS X
+
+Bug reported by: zhen.zhang@utah.edu
+
+Description:
+arb_status was added as a Boolean to the model. The exception occurred when I put ~arb_status as an enabling condition of a transition.
+
+Stack trace:
+org.sbml.jsbml.text.parser.TokenMgrError: Lexical error at line 1, column 1.  Encountered: "~" (126), after : ""
+	at org.sbml.jsbml.text.parser.FormulaParserLL3TokenManager.getNextToken(FormulaParserLL3TokenManager.java:735)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.jj_ntk(FormulaParserLL3.java:773)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.Primary(FormulaParserLL3.java:379)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.TermLvl3(FormulaParserLL3.java:184)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.TermLvl2(FormulaParserLL3.java:210)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.TermLvl1(FormulaParserLL3.java:275)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.Expression(FormulaParserLL3.java:163)
+	at org.sbml.jsbml.text.parser.FormulaParserLL3.parse(FormulaParserLL3.java:156)
+	at org.sbml.jsbml.ASTNode.parseFormula(ASTNode.java:922)
+	at biomodel.util.SBMLutilities.myParseFormula(SBMLutilities.java:555)
+	at biomodel.gui.sbmlcore.Events.eventEditor(Events.java:564)
+	at biomodel.gui.schematic.Schematic.addTransition(Schematic.java:552)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1158)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:273)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6414)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6179)
+	at java.awt.Container.processEvent(Container.java:2084)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2142)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4618)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4279)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4209)
+	at java.awt.Container.dispatchEventImpl(Container.java:2128)
+	at java.awt.Window.dispatchEventImpl(Window.java:2492)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

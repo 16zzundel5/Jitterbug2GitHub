@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Wed Apr  8 12:34:36 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n38IYaRp021976
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 8 Apr 2009 12:34:36 -0600
+Received: from 75-169-170-159.slkc.qwest.net ([75.169.170.159] helo=[192.168.0.2])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1LrcXF-0004o1-Dz
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 08 Apr 2009 12:30:05 -0600
+Message-Id: <21C6126C-5531-4B25-B0C2-FD1A3D7CF63C@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: CHANGE: in windows call dotty directly rather than use cmd/c start
+Date: Wed, 8 Apr 2009 12:34:24 -0600
+X-Mailer: Apple Mail (2.929.2)
+
+cmd/c start does not work for dot files, so call dot files using dotty  
+command directly on Windows.
+

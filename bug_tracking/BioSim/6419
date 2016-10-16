@@ -1,0 +1,22 @@
+From myers@ece.utah.edu  Sun Oct 11 10:31:22 2015
+Return-Path: <myers@ece.utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t9BGVLYt013386
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 11 Oct 2015 10:31:21 -0600
+Date: Sun, 11 Oct 2015 10:31:21 -0600
+Message-Id: <201510111631.t9BGVLYt013386@chou.ece.utah.edu>
+From: myers@ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: bug reporter broken
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+Submission from: (NULL) (155.99.154.100)
+Submitted by: myers
+
+
+http://stackoverflow.com/questions/18379238/send-email-with-php-from-html-form-on-submit-with-the-same-script
+
+http://stackoverflow.com/questions/4205980/java-sending-http-parameters-via-post-method-easily
+

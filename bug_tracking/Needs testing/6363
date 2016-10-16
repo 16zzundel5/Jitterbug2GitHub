@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Mon Aug 24 11:06:10 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t7OH6A3I027752
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 24 Aug 2015 11:06:10 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZTvCC-000Fhl-Vq)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 24 Aug 2015 11:06:10 -0600
+Received: from [155.99.176.72] (helo=jiaqi.uconnect.utah.edu)
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZTvCC-000DFm-Un
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 24 Aug 2015 11:06:08 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: FEATURE: add connection to PRISM for SMC
+Message-Id: <922C76EC-52F0-4A6B-9C9C-3C446B45F21F@ece.utah.edu>
+Date: Mon, 24 Aug 2015 11:06:08 -0600
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.5 (--)
+X-spam-level: --
+
+Export PRISM code and run on PRISM or STORM.
+

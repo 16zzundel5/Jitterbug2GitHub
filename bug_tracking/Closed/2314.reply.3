@@ -1,0 +1,9 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: importing and compressing data (PR#2314)
+Date: Sun Dec 16 17:43:44 2007
+
+This should be working.  BioSim checks the sbml file or gcm file for the list of
+species then creates a background.gcm file to be used by GeneNet for species and
+background information.  GeneNet only loads experimental data for specified
+species.

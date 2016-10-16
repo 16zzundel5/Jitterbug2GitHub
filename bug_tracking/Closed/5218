@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Tue Nov 30 10:50:00 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.1 required=5.0 tests=AWL,BAYES_00,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oAUHo0eY016222
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 30 Nov 2010 10:50:00 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PNUL2-0002GJ-0N
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 30 Nov 2010 10:50:00 -0700
+Message-Id: <D48E0FBF-D3FE-489A-B9CA-2128CAFCBD88@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: merge transitions abstraction safe with non-disabling transitions
+Date: Tue, 30 Nov 2010 10:49:59 -0700
+X-Mailer: Apple Mail (2.936)
+
+The merge transitions abstraction can be safely used when all  
+transitions are non-disabling.  Otherwise, it is not a safe abstraction.
+

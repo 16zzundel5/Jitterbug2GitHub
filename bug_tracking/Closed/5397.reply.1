@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: BUG:  Abstracted Species Still Printed Due to Linked SBML (PR#5397)
+Date: Fri Jul  1 00:23:04 2011
+
+Need a function to check if a species is in use.  If it is use, then it should
+be marked as interesting and not abstracted.
+
+If it is abstracted, you should be safe now in removing it from the list of
+species in the document.

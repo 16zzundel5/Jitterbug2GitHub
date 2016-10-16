@@ -1,0 +1,418 @@
+From myers@eng.utah.edu  Wed Oct  2 09:27:45 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id r92FRjOF026193
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 2 Oct 2013 09:27:45 -0600
+Received: from c-98-202-13-26.hsd1.ut.comcast.net ([98.202.13.26] helo=[10.0.0.11])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1VROEN-00092A-Ae
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 02 Oct 2013 09:20:51 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_D0906410-09FC-46E2-A2D6-CE87FA879918"
+Subject: CHANGE: add better import and export support for SED-ML L1V2
+Date: Wed, 2 Oct 2013 09:27:45 -0600
+References: <CADizRjgyaBfdPbtZ=PUyYeT53FYiu6E33gA-ejBEjwGF7p+-qQ@mail.gmail.com>
+To: Leandro Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <66D89BF6-4483-45D4-B870-F1AB9B3249F9@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.5 \(1508\))
+X-Mailer: Apple Mail (2.1508)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_D0906410-09FC-46E2-A2D6-CE87FA879918
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+
+
+Begin forwarded message:
+
+> From: David Nickerson <david.nickerson@gmail.com>
+> Subject: Discussion on SED-ML future from COMBINE 2013
+> Date: October 1, 2013 10:00:53 PM MDT
+> To: sed-ml-discuss@lists.sourceforge.net
+> Cc: Chris Myers <myers@ece.utah.edu>
+>=20
+> Hi all,
+>=20
+> At the recent COMBINE meeting in Paris we had a session where we
+> discussed some potential future features and requirements that may be
+> needed in SED-ML to make it more able to encode the requirements of
+> various user communities. Slides and video from the session will
+> (soon) be available at: http://co.mbine.org/events/COMBINE_2013/agenda
+>=20
+> The latter part of the session looked into some issues raised by Chris
+> Meyers and his experiences in evaluating SED-ML for use with the
+> iBioSim tool (http://www.async.ece.utah.edu/iBioSim/). As Chris was
+> unable to attend the session at COMBINE, and because these issues are
+> likely of wider interest to the SED-ML community, I provide here a
+> summary of the discussion from that session (my recollection, at
+> least, please correct me if I get anything wrong!). Everything is, of
+> course, open for discussion :)
+>=20
+>> About a year ago, we implemented support for importing SED-ML files =
+into iBioSim.  More specifically, the subset of SED-ML that is used in =
+the SBML test suite.  This worked reasonably well, and we then =
+considered potentially using SED-ML to describe internally the =
+information that we store about our simulations, but we ran into several =
+snags and have abandoned this for now.  Note that my comments are at =
+least a year old, so some of these items may have been addressed, and =
+others may have been our own ignorance of how to use SED-ML.  Also, this =
+is likely not a complete list and some things are very specific to =
+iBioSim.  However, you may find some of the limitations useful to know =
+about.  Here are the items that we could not describe in SED-ML without =
+using custom annotations:
+>>=20
+>> 1) Our SBML models are often converted to new models at various =
+levels of abstraction.  Describing this process of conversion would not =
+be easy to express.  We need to be able to say though which abstraction =
+we are using.  This is likely a custom annotation.
+>>=20
+>=20
+> agreed, this is a custom annotation. It would be nice to see these
+> kinds of annotations and how they are used in SED-ML to see if anyone
+> else uses this sort of information when performing simulation
+> experiments. I wonder if this is somewhat similar to the idea of
+> having a template simulation experiment which can be applied to many
+> different models, as long as there is some systematic manner by which
+> to identify the required data from the model... if so, there may be
+> some overlap with Jonathan's functional curation work and some of the
+> extensions he has been using with SED-ML might be worth investigating
+> to see if there is any common ground that could be standardised and
+> exchanged?
+>=20
+>> 2) It would be nice to know a general class of analysis algorithm =
+being used (i.e., ODE, monte carlo, markovian, FBA, etc.)  as well as =
+the more specific type of analyzer used.  Ideally, this can be handled =
+by KISAO, but the support for KISAO did not make this very easy to do.  =
+This may have been fixed by now.
+>>=20
+>=20
+> This should now be handled by KiSAO and libKiSAO
+> (http://biomodels.net/kisao/libkisao.html). If not, feature requests
+> (or code!) should be submitted there.
+>=20
+>> 3) Since we develop new simulation methodologies, we are often =
+creating new ones.  This would require a lot of back in forth with KISAO =
+which is not very appealing especially since we abandon or consolidate =
+methods as time goes by.  Perhaps, it is good to have custom analysis =
+method term with a string for the custom method.  We also have methods =
+like produce GraphViz file or xHTML file, etc.  Are these analysis =
+methods for KISAO?  Not so sure that custom with string is not better =
+for those as well.  Or in those, maybe term for display model and then a =
+custom field for type of display.
+>>=20
+>=20
+> Everyone agreed that being able to have a custom simulation algorithm
+> would be a useful feature. I have added a feature request to the
+> SED-ML tracker for this
+> (https://sourceforge.net/p/sed-ml/feature-requests/5/). It would be
+> good to get feedback from the community on this issue.
+>=20
+>> 4) We also have several options for an analysis that there is no =
+field for, such as whether runs should be generated or just statistics, =
+whether to use number of steps or a print interval (also have a minimal =
+print interval for non-uniform stepping).  We need to be able to specify =
+both minimum and maximum allowed time steps, absolute error, random =
+seed, and number of runs.  Some of these may be supported but I pretty =
+sure they are not all supported.
+>>=20
+>=20
+> Some of these are possible in SED-ML L1V2 using the simulation
+> algorithm parameters now available in KiSAO (http://goo.gl/Bg8Pm1).
+> These can be specified in the new <algorithmParameter> construct
+> introduced in SED-ML L1V2. Others can be implemented making use of the
+> new nested tasks and simulation classes that will also be available in
+> SED-ML L1V2. Others, such as random seed, might need extensions to
+> KiSAO or SED-ML to be completely supported. Similar features may also
+> be supported by the post-processing of simulation results in the
+> SED-ML data generators.
+>=20
+> In any case, if there are specific use-cases not supported by any of
+> the above we are very keen to hear about them and see them in action.
+>=20
+>> 5) I mentioned that we have various model abstraction techniques, =
+things like applying steady state approximations, etc.  There is no way =
+to specify these and their corresponding parameters.
+>>=20
+>=20
+> SED-ML L1V2 introduces the steady-state simulation class which might
+> address some of your requirements here. It would be great to see if
+> you could encode your other abstraction techniques in SED-ML, perhaps
+> using the custom simulation algorithm mentioned above along with some
+> custom algorithm parameters.
+>=20
+>> 6) We have means to modify parameters and initial values for =
+simulation, but I was not enamored with the method for this in SED-ML.  =
+I feel like something like replacements and deletions in comp may work =
+better.
+>>=20
+>=20
+> People involved in the COMBINE discussion agreed that it would not be
+> a good idea to make use of SBML's comp package directly and that the
+> current methods available in SED-ML worked sufficiently well to meet
+> peoples needs. If you have specific examples where something closer to
+> the comp constructs might be better, then it would be great to discuss
+> them here.
+>=20
+>> 7) We have a visualization tool that allows us to play back a =
+simulation on a schematic, so we need a way to associate colors =
+gradients to values from the simulation.
+>>=20
+>> 8) The graphing support in SED-ML is lacking things like colors to =
+use, shapes to use, whether the points should be connected or not, or =
+the shapes should be visible or filled.  Also, how to scale the plots, =
+whether to have a log axis, should the legend be visible.  How about =
+using an x-axis other than time?  We also support histograms for some =
+types of data like the probability of each type of constraint being =
+violated, and I don't think there is support for that.
+>>=20
+>=20
+> SED-ML provides a method to encode the application of a simulation
+> algorithm to a model to produce some data, along with pre- and
+> post-processing steps. It doesn't have any concept for the graphical
+> representation of the data, other than the possibly badly named plot*,
+> curve, and surface elements. People at COMBINE feel that this is a
+> good scope for SED-ML and that we don't want to start getting in to
+> describing the graphical rendering of the resultant data. The output
+> classes currently available in SED-ML are aimed at producing the
+> required data, rather than what to actually do with that data - other
+> than the hints provided by the element names such as plotting a curve
+> on a set of axes. During the meeting, Nicolas pointed out the Charts
+> Ontology (http://data.lirmm.fr/ontologies/chart), which might be
+> useful if we want to extend the output classes in SED-ML in future
+> versions if the community agrees that this is something we do need to
+> address.
+>=20
+> Things like an x-axis other than time, scaling of data, and log axes
+> are already a part of SED-ML.
+>=20
+> Issues like producing the data for a histogram or other more detailed
+> post-processing are likely beyond the scope of the current data
+> generators in SED-ML. One way to address this is by being able to link
+> the results from one simulation as the inputs to another simulation,
+> which would allow arbitrary complexity in the post-processing inasmuch
+> as the modelling language you use to encode the model supports it.
+> Feature requests and proposals for extensions to SED-ML are always
+> welcome :)
+>=20
+>> I should probably look at SED-ML again and re-evaluate, but last time =
+it seemed like our SED-ML file would be more custom annotation than =
+SED-ML file which is why we abandoned it.  I'm not sure which items =
+above are common across tools, but it would be interesting to see if =
+there is at least some commonality that can be weaved into SED-ML.
+>>=20
+>=20
+> It would be great if iBioSim were to be able to export SED-ML,
+> especially given that you support (or will support) a large number of
+> the SBML L3 packages and will therefore provide a great test-case for
+> the usefulness of SED-ML with a wide range of types of SBML models. If
+> you, or anyone out there, have any further questions or points for
+> discussion, I'm sure there are people on this list happy to help out
+> where possible.
+>=20
+> Stay tuned for the release of SED-ML L1V2 :)
+>=20
+>=20
+> Cheers,
+> David.
+
+
+--Apple-Mail=_D0906410-09FC-46E2-A2D6-CE87FA879918
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">David Nickerson =
+&lt;<a =
+href=3D"mailto:david.nickerson@gmail.com">david.nickerson@gmail.com</a>&gt=
+;<br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Subject: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Discussion on SED-ML future from COMBINE =
+2013</b><br></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">October 1, 2013 10:00:53 PM MDT<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;"><a =
+href=3D"mailto:sed-ml-discuss@lists.sourceforge.net">sed-ml-discuss@lists.=
+sourceforge.net</a><br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Cc: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">Chris Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><br><div>Hi all,<br><br>At the recent COMBINE meeting in Paris we =
+had a session where we<br>discussed some potential future features and =
+requirements that may be<br>needed in SED-ML to make it more able to =
+encode the requirements of<br>various user communities. Slides and video =
+from the session will<br>(soon) be available at: <a =
+href=3D"http://co.mbine.org/events/COMBINE_2013/agenda">http://co.mbine.or=
+g/events/COMBINE_2013/agenda</a><br><br>The latter part of the session =
+looked into some issues raised by Chris<br>Meyers and his experiences in =
+evaluating SED-ML for use with the<br>iBioSim tool (<a =
+href=3D"http://www.async.ece.utah.edu/iBioSim/">http://www.async.ece.utah.=
+edu/iBioSim/</a>). As Chris was<br>unable to attend the session at =
+COMBINE, and because these issues are<br>likely of wider interest to the =
+SED-ML community, I provide here a<br>summary of the discussion from =
+that session (my recollection, at<br>least, please correct me if I get =
+anything wrong!). Everything is, of<br>course, open for discussion =
+:)<br><br><blockquote type=3D"cite">About a year ago, we implemented =
+support for importing SED-ML files into iBioSim. &nbsp;More =
+specifically, the subset of SED-ML that is used in the SBML test suite. =
+&nbsp;This worked reasonably well, and we then considered potentially =
+using SED-ML to describe internally the information that we store about =
+our simulations, but we ran into several snags and have abandoned this =
+for now. &nbsp;Note that my comments are at least a year old, so some of =
+these items may have been addressed, and others may have been our own =
+ignorance of how to use SED-ML. &nbsp;Also, this is likely not a =
+complete list and some things are very specific to iBioSim. =
+&nbsp;However, you may find some of the limitations useful to know =
+about. &nbsp;Here are the items that we could not describe in SED-ML =
+without using custom annotations:<br><br>1) Our SBML models are often =
+converted to new models at various levels of abstraction. =
+&nbsp;Describing this process of conversion would not be easy to =
+express. &nbsp;We need to be able to say though which abstraction we are =
+using. &nbsp;This is likely a custom =
+annotation.<br><br></blockquote><br>agreed, this is a custom annotation. =
+It would be nice to see these<br>kinds of annotations and how they are =
+used in SED-ML to see if anyone<br>else uses this sort of information =
+when performing simulation<br>experiments. I wonder if this is somewhat =
+similar to the idea of<br>having a template simulation experiment which =
+can be applied to many<br>different models, as long as there is some =
+systematic manner by which<br>to identify the required data from the =
+model... if so, there may be<br>some overlap with Jonathan's functional =
+curation work and some of the<br>extensions he has been using with =
+SED-ML might be worth investigating<br>to see if there is any common =
+ground that could be standardised and<br>exchanged?<br><br><blockquote =
+type=3D"cite">2) It would be nice to know a general class of analysis =
+algorithm being used (i.e., ODE, monte carlo, markovian, FBA, etc.) =
+&nbsp;as well as the more specific type of analyzer used. &nbsp;Ideally, =
+this can be handled by KISAO, but the support for KISAO did not make =
+this very easy to do. &nbsp;This may have been fixed by =
+now.<br><br></blockquote><br>This should now be handled by KiSAO and =
+libKiSAO<br>(<a =
+href=3D"http://biomodels.net/kisao/libkisao.html">http://biomodels.net/kis=
+ao/libkisao.html</a>). If not, feature requests<br>(or code!) should be =
+submitted there.<br><br><blockquote type=3D"cite">3) Since we develop =
+new simulation methodologies, we are often creating new ones. &nbsp;This =
+would require a lot of back in forth with KISAO which is not very =
+appealing especially since we abandon or consolidate methods as time =
+goes by. &nbsp;Perhaps, it is good to have custom analysis method term =
+with a string for the custom method. &nbsp;We also have methods like =
+produce GraphViz file or xHTML file, etc. &nbsp;Are these analysis =
+methods for KISAO? &nbsp;Not so sure that custom with string is not =
+better for those as well. &nbsp;Or in those, maybe term for display =
+model and then a custom field for type of =
+display.<br><br></blockquote><br>Everyone agreed that being able to have =
+a custom simulation algorithm<br>would be a useful feature. I have added =
+a feature request to the<br>SED-ML tracker for this<br>(<a =
+href=3D"https://sourceforge.net/p/sed-ml/feature-requests/5/">https://sour=
+ceforge.net/p/sed-ml/feature-requests/5/</a>). It would be<br>good to =
+get feedback from the community on this issue.<br><br><blockquote =
+type=3D"cite">4) We also have several options for an analysis that there =
+is no field for, such as whether runs should be generated or just =
+statistics, whether to use number of steps or a print interval (also =
+have a minimal print interval for non-uniform stepping). &nbsp;We need =
+to be able to specify both minimum and maximum allowed time steps, =
+absolute error, random seed, and number of runs. &nbsp;Some of these may =
+be supported but I pretty sure they are not all =
+supported.<br><br></blockquote><br>Some of these are possible in SED-ML =
+L1V2 using the simulation<br>algorithm parameters now available in KiSAO =
+(<a href=3D"http://goo.gl/Bg8Pm1">http://goo.gl/Bg8Pm1</a>).<br>These =
+can be specified in the new &lt;algorithmParameter&gt; =
+construct<br>introduced in SED-ML L1V2. Others can be implemented making =
+use of the<br>new nested tasks and simulation classes that will also be =
+available in<br>SED-ML L1V2. Others, such as random seed, might need =
+extensions to<br>KiSAO or SED-ML to be completely supported. Similar =
+features may also<br>be supported by the post-processing of simulation =
+results in the<br>SED-ML data generators.<br><br>In any case, if there =
+are specific use-cases not supported by any of<br>the above we are very =
+keen to hear about them and see them in action.<br><br><blockquote =
+type=3D"cite">5) I mentioned that we have various model abstraction =
+techniques, things like applying steady state approximations, etc. =
+&nbsp;There is no way to specify these and their corresponding =
+parameters.<br><br></blockquote><br>SED-ML L1V2 introduces the =
+steady-state simulation class which might<br>address some of your =
+requirements here. It would be great to see if<br>you could encode your =
+other abstraction techniques in SED-ML, perhaps<br>using the custom =
+simulation algorithm mentioned above along with some<br>custom algorithm =
+parameters.<br><br><blockquote type=3D"cite">6) We have means to modify =
+parameters and initial values for simulation, but I was not enamored =
+with the method for this in SED-ML. &nbsp;I feel like something like =
+replacements and deletions in comp may work =
+better.<br><br></blockquote><br>People involved in the COMBINE =
+discussion agreed that it would not be<br>a good idea to make use of =
+SBML's comp package directly and that the<br>current methods available =
+in SED-ML worked sufficiently well to meet<br>peoples needs. If you have =
+specific examples where something closer to<br>the comp constructs might =
+be better, then it would be great to discuss<br>them =
+here.<br><br><blockquote type=3D"cite">7) We have a visualization tool =
+that allows us to play back a simulation on a schematic, so we need a =
+way to associate colors gradients to values from the =
+simulation.<br><br>8) The graphing support in SED-ML is lacking things =
+like colors to use, shapes to use, whether the points should be =
+connected or not, or the shapes should be visible or filled. &nbsp;Also, =
+how to scale the plots, whether to have a log axis, should the legend be =
+visible. &nbsp;How about using an x-axis other than time? &nbsp;We also =
+support histograms for some types of data like the probability of each =
+type of constraint being violated, and I don't think there is support =
+for that.<br><br></blockquote><br>SED-ML provides a method to encode the =
+application of a simulation<br>algorithm to a model to produce some =
+data, along with pre- and<br>post-processing steps. It doesn't have any =
+concept for the graphical<br>representation of the data, other than the =
+possibly badly named plot*,<br>curve, and surface elements. People at =
+COMBINE feel that this is a<br>good scope for SED-ML and that we don't =
+want to start getting in to<br>describing the graphical rendering of the =
+resultant data. The output<br>classes currently available in SED-ML are =
+aimed at producing the<br>required data, rather than what to actually do =
+with that data - other<br>than the hints provided by the element names =
+such as plotting a curve<br>on a set of axes. During the meeting, =
+Nicolas pointed out the Charts<br>Ontology (<a =
+href=3D"http://data.lirmm.fr/ontologies/chart">http://data.lirmm.fr/ontolo=
+gies/chart</a>), which might be<br>useful if we want to extend the =
+output classes in SED-ML in future<br>versions if the community agrees =
+that this is something we do need to<br>address.<br><br>Things like an =
+x-axis other than time, scaling of data, and log axes<br>are already a =
+part of SED-ML.<br><br>Issues like producing the data for a histogram or =
+other more detailed<br>post-processing are likely beyond the scope of =
+the current data<br>generators in SED-ML. One way to address this is by =
+being able to link<br>the results from one simulation as the inputs to =
+another simulation,<br>which would allow arbitrary complexity in the =
+post-processing inasmuch<br>as the modelling language you use to encode =
+the model supports it.<br>Feature requests and proposals for extensions =
+to SED-ML are always<br>welcome :)<br><br><blockquote type=3D"cite">I =
+should probably look at SED-ML again and re-evaluate, but last time it =
+seemed like our SED-ML file would be more custom annotation than SED-ML =
+file which is why we abandoned it. &nbsp;I'm not sure which items above =
+are common across tools, but it would be interesting to see if there is =
+at least some commonality that can be weaved into =
+SED-ML.<br><br></blockquote><br>It would be great if iBioSim were to be =
+able to export SED-ML,<br>especially given that you support (or will =
+support) a large number of<br>the SBML L3 packages and will therefore =
+provide a great test-case for<br>the usefulness of SED-ML with a wide =
+range of types of SBML models. If<br>you, or anyone out there, have any =
+further questions or points for<br>discussion, I'm sure there are people =
+on this list happy to help out<br>where possible.<br><br>Stay tuned for =
+the release of SED-ML L1V2 =
+:)<br><br><br>Cheers,<br>David.<br></div></blockquote></div><br></body></h=
+tml>=
+
+--Apple-Mail=_D0906410-09FC-46E2-A2D6-CE87FA879918--
+

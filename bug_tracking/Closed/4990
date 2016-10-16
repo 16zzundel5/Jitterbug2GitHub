@@ -1,0 +1,39 @@
+From myers@ece.utah.edu  Thu May 20 12:23:21 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.6 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4KINLWp032617
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 May 2010 12:23:21 -0600
+Received: from [192.102.209.8] (helo=[10.251.8.107])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OFAOv-0006p7-Of
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 20 May 2010 12:23:21 -0600
+Message-Id: <454C7F1E-4957-42B8-B03F-C52820E124BC@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: expressions on transitions need to be complete states
+Date: Thu, 20 May 2010 12:23:15 -0600
+X-Mailer: Apple Mail (2.936)
+
+The transitions in the generated LHPN should be labeled with  
+expressions over all input variables.  Should use equals for DMV  
+variables.  This also means that DMV variables need to be assigned to  
+a single value consistently.  In other words, move away from DMV  
+thresholds and instead have DMV values.
+
+In the future, we may want the ability represent DMV thresholds with  
+uniform distributed values for more precision.
+
+
+
+
+
+

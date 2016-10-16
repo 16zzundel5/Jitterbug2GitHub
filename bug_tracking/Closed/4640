@@ -1,0 +1,38 @@
+From rat103070@hotmail.com  Fri Jan 16 12:52:06 2009
+Return-Path: <rat103070@hotmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from bay0-omc1-s29.bay0.hotmail.com (bay0-omc1-s29.bay0.hotmail.com [65.54.246.101])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n0GJq6Nh011337
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 16 Jan 2009 12:52:06 -0700
+Received: from hotmail.com ([207.46.8.20]) by bay0-omc1-s29.bay0.hotmail.com with Microsoft SMTPSVC(6.0.3790.3959);
+	 Fri, 16 Jan 2009 11:52:05 -0800
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Fri, 16 Jan 2009 11:52:05 -0800
+Message-ID: <BAY117-DAV108038A057213F7D684207ADD40@phx.gbl>
+Received: from 155.98.26.227 by BAY117-DAV10.phx.gbl with DAV;
+	Fri, 16 Jan 2009 19:52:03 +0000
+X-Originating-IP: [155.98.26.227]
+X-Originating-Email: [rat103070@hotmail.com]
+X-Sender: rat103070@hotmail.com
+Message-Id: <7DC37178-E9AA-45B8-8507-2237FC5393C6@hotmail.com>
+From: Robert Thacker <rat103070@hotmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+In-Reply-To: <B52A4ACC-6F0A-4E78-A620-D9E1F9266CBC@gmail.com>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Subject: BUG: seg fault
+Date: Fri, 16 Jan 2009 12:52:01 -0700
+References: <B52A4ACC-6F0A-4E78-A620-D9E1F9266CBC@gmail.com>
+X-Mailer: Apple Mail (2.930.3)
+X-OriginalArrivalTime: 16 Jan 2009 19:52:05.0630 (UTC) FILETIME=[E87281E0:01C97813]
+
+>
+> The file work/int/reactor.g will segfault if  rartes are set to 4/-4.
+>
+
+
+

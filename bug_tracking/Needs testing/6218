@@ -1,0 +1,86 @@
+From ibiosim@gmail.com  Wed Feb  4 19:20:38 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f48.google.com (mail-pa0-f48.google.com [209.85.220.48])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t152KcWt030175
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 4 Feb 2015 19:20:38 -0700
+Received: by mail-pa0-f48.google.com with SMTP id ey11so6688341pad.7
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 04 Feb 2015 18:20:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=uYnQci4rco5rnCSBtcxDunvFDcqihZHNt+2CHWlkBwQ=;
+        b=HM6kSWL4p47xSQaNLARfCdMZM6bBTIKKI5VMSjBTZERtYsDlT91+fO2G3GCfk2Mseu
+         KPBOyq2IeqUjg7z/nU4fR9CsoQRV/4aWBkLAxd3zR2FMkeTYZOSwZROIn4VJmANRMakJ
+         b4PHAQZ76xM33eVqcj/mPAYWiRRZjubKiHaBWJjCLcqvPoNYn8FID+NJltb07o7sxIyQ
+         DVEDX4i6rI/qbqnv91GEnKDaEy3AleC0qYmQmatuHd7eHbVpC6oc024tNOrzZNgQ/HPH
+         hs1llb/bk1KhA3RDbMyV5fA0RsmsKJe5RkO5sNW/XpolR3L4V9eYF5ZyNyoGgpmi6Swf
+         cNaA==
+X-Received: by 10.66.118.168 with SMTP id kn8mr743572pab.45.1423102838110;
+        Wed, 04 Feb 2015 18:20:38 -0800 (PST)
+Received: from Calli-pc.uconnect.utah.edu ([155.99.187.204])
+        by mx.google.com with ESMTPSA id ah1sm3355059pad.16.2015.02.04.18.20.35
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 04 Feb 2015 18:20:37 -0800 (PST)
+Date: Wed, 04 Feb 2015 18:20:37 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: calliclark24@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <3329296.1.1423102840283.JavaMail.calli_000@Calli-pc>
+Subject: BUG: Editing rules
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.1
+
+Operating system: Windows 8.1
+
+Bug reported by: calliclark24@gmail.com
+
+Description:
+I renamed a variable used in a rule and now I cannot edit that rule
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.util.SBMLutilities.getArraysSBasePlugin(SBMLutilities.java:3788)
+	at biomodel.gui.sbmlcore.Rules.ruleEditor(Rules.java:249)
+	at biomodel.gui.sbmlcore.Rules.actionPerformed(Rules.java:1067)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+

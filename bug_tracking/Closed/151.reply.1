@@ -1,0 +1,58 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Should give error message on duplicate process name. (PR#151)
+Date: Wed Jun  9 14:40:56 1999
+
+I still do not see any error message.
+For example, consider the original alpha example:
+
+136 ming:examples/bugs> pwd
+/home/ming/atacs/examples/bugs
+137 ming:examples/bugs> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      10413510 Jun  8 17:07
+/home/xia/peskin/atacs/src/atacs*
+138 ming:examples/bugs> atacs -ya alpha 
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling alpha.csp ... 
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process a to a.er
+Storing process alpha to alpha.er
+Loading timed event-rule structure from:  alpha.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done
+Projecting out dummy transitions ... done
+Checking CSC ... complete state coded
+Finding regions ... done
+Finding conflicts ... done
+Finding cover ... done
+Storing production rules to:  alpha.prs
+Total Area = 0 literals 0 transistors
+139 ming:examples/bugs> 

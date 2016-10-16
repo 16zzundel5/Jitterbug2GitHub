@@ -1,0 +1,57 @@
+From ibiosim@gmail.com  Tue Feb 24 18:29:31 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f46.google.com (mail-pa0-f46.google.com [209.85.220.46])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1P1TVxS010102
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Feb 2015 18:29:31 -0700
+Received: by pabkx10 with SMTP id kx10so983627pab.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Feb 2015 17:29:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=8BVca/N75TXqgBLj5rPTn4ib9bLAeDR7Nutjmbq4VbY=;
+        b=o67eMODPkUDl7nDRZWkgatJTHFHMZoZVAJoEfEBJD1/XU+V15vQur8vRUak11rzR7P
+         tYUNyCFrBoUamPpTH3NADpKdEvaEEtws1OPiH5HUb7ETzl8PgXL6RiGQyuwl/eEGuBBx
+         hWepezqAb4vE4TO0+cGzGpbwdB79Rakt5skSmr7xnX+Rkwnzc+XsI4BL++3mGDn7X9eK
+         H2UseLbDoPte/MoqpqN59vmjhh5TmuPz8IuPJ3qd+//HYjqqE3OlPhTh21rr5DSv/uld
+         RLW/eoXcizaSmtBEl8bzzPqW30/tULibYhu58z5YvuZEy26L71d19MtjFMNYZM9kdCPU
+         ET7A==
+X-Received: by 10.70.127.196 with SMTP id ni4mr1093241pdb.29.1424827770848;
+        Tue, 24 Feb 2015 17:29:30 -0800 (PST)
+Received: from Ute-Red.uconnect.utah.edu ([155.99.165.244])
+        by mx.google.com with ESMTPSA id wq9sm39319642pbc.85.2015.02.24.17.29.28
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Tue, 24 Feb 2015 17:29:29 -0800 (PST)
+Date: Tue, 24 Feb 2015 17:29:29 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: adrian.shimpi@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1570814564.0.1424827767425.JavaMail.Adrian@Ute-Red>
+Subject: BUG: Array exception thrown when running the FBA analysis.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Antivirus: avast! (VPS 150224-1, 02/24/2015), Outbound message
+X-Antivirus-Status: Clean
+
+iBioSim Version 2.8.3
+
+Operating system: Windows 8.1
+
+Bug reported by: adrian.shimpi@utah.edu
+
+Description:
+When running a FBA analysis with an None as the abstraction the error is thrown out.
+
+Stack trace:
+java.lang.ArrayIndexOutOfBoundsException: 8
+	at analysis.fba.FluxBalanceAnalysis.PerformFluxBalanceAnalysis(FluxBalanceAnalysis.java:95)
+	at analysis.main.Run.execute(Run.java:527)
+	at analysis.main.AnalysisView.run(AnalysisView.java:1114)
+	at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+
+---
+This email has been checked for viruses by Avast antivirus software.
+http://www.avast.com
+

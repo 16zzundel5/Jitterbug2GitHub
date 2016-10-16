@@ -1,0 +1,88 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: crash during sweep (PR#5333)
+Date: Thu Apr 14 23:56:24 2011
+
+The threads interact with each other with a lock now, so you shouldn't get a
+null pointer exception anymore.  Moving to needs testing.
+
+> 
+> --Apple-Mail-32-226605640
+> Content-Type: text/plain;
+> 	charset=US-ASCII;
+> 	format=flowed;
+> 	delsp=yes
+> Content-Transfer-Encoding: 7bit
+> 
+> When doing sweep of a variable, sometimes during calculations of the  
+> average/stddev an exception is generated:
+> 
+> Exception in thread "Thread-8" java.lang.NullPointerException
+> 	at graph.Graph.calculateAverageVarianceDeviation(Graph.java:5526)
+> 	at graph.Graph.readData(Graph.java:529)
+> 	at reb2sac.Run.execute(Run.java:2436)
+> 	at reb2sac.Reb2Sac.run(Reb2Sac.java:3175)
+> 	at reb2sac.Reb2SacThread.run(Reb2SacThread.java:21)
+> 
+> The progress window does not close and aggregates are not all  
+> calculated.  Perhaps a race condition.
+> 
+> 
+> --Apple-Mail-32-226605640
+> Content-Type: text/html;
+> 	charset=US-ASCII
+> Content-Transfer-Encoding: quoted-printable
+> 
+> <html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+> -webkit-line-break: after-white-space; ">When doing sweep of a variable, =
+> sometimes during calculations of the average/stddev an exception is =
+> generated:<div><br></div><div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); ">Exception in =
+> thread "Thread-8" <span style=3D"text-decoration: underline ; color: =
+> #000080">java.lang.NullPointerException</span></div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+> style=3D"white-space:pre">	</span>at =
+> graph.Graph.calculateAverageVarianceDeviation(<span =
+> style=3D"text-decoration: underline ; color: =
+> #000080">Graph.java:5526</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> graph.Graph.readData(<span style=3D"text-decoration: underline ; color: =
+> #000080">Graph.java:529</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Run.execute(<span style=3D"text-decoration: underline ; color: =
+> #000080">Run.java:2436</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2Sac.run(<span style=3D"text-decoration: underline ; color: =
+> #000080">Reb2Sac.java:3175</span>)</div><div style=3D"margin-top: 0px; =
+> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+> reb2sac.Reb2SacThread.run(<span style=3D"text-decoration: underline ; =
+> color: #000080">Reb2SacThread.java:21</span>)</div></div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><br></div><div style=3D"margin-top: 0px; margin-right: =
+> 0px; margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+> 11px/normal Monaco; color: rgb(255, 0, 0); "><font =
+> class=3D"Apple-style-span" color=3D"#000000" face=3D"Helvetica"><span =
+> class=3D"Apple-style-span" style=3D"font-size: medium;">The progress =
+> window does not close and aggregates are not all calculated. =
+>  Perhaps a race condition.</span></font></div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+> rgb(255, 0, 0); "><font class=3D"Apple-style-span" color=3D"#000000" =
+> face=3D"Helvetica"><span class=3D"Apple-style-span" style=3D"font-size: =
+> medium;"><br></span></font></div></body></html>=
+> 
+> --Apple-Mail-32-226605640--
+> 
+> 

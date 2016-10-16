@@ -1,0 +1,34 @@
+From myers@ece.utah.edu  Fri Jul  6 13:46:02 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.4 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l66Jk2do011124
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Jul 2007 13:46:02 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1I6tl0-0002UX-3B)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 Jul 2007 13:46:25 -0600
+Received: from [192.168.1.100] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l66JjwjU013804
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Jul 2007 13:45:58 -0600
+Subject: FEATURE: Data entry
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 06 Jul 2007 13:43:52 -0600
+Message-Id: <1183751033.6318.50.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.2 (2.10.2-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 0.4 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Create a table editor to input experimental data and/or view simulation
+data.
+
+

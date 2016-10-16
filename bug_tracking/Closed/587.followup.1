@@ -1,0 +1,30 @@
+From peskin@cs.utah.edu  Tue Jan  8 16:40:49 2002
+Return-Path: <peskin@cs.utah.edu>
+Received: from cs.utah.edu (IDENT:peskin@ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g08Nenh32021
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 8 Jan 2002 16:40:49 -0700
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <3C3B8381.1E487869@cs.utah.edu>
+Date: Tue, 08 Jan 2002 16:40:49 -0700
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+Organization: University of Utah
+X-Mailer: Mozilla 4.77 [en] (X11; U; Linux 2.4.9-12 i686)
+X-Accept-Language: en, zh-TW, zh
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: redundant rule removal goes to sleep? (PR#587)
+References: <200112092144.fB9Li4h01033@chou.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Chris Myers wrote:
+> 
+> Now has not valid .g file error.
+
+Indeed.  (It actually printed that error before, but it used to sail right past
+it and attempt post processing).  The new version does seem correct.  The only
+thing that puzzles me is that I thought you said this was the way to force
+ATACS to post process examples that began as ER or TEL structures. 
+Nevertheless, the particular problem I was reporting is no longer exercised by
+this example.  Therefore, I will now close this bug report.
+

@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: zhen.zhang@utah.edu
+Subject: Re: BUG: Abstraction option not saved correctly between tasks in analysis view (PR#6609)
+Date: Sat Jul 23 16:35:03 2016
+
+The issue with this one is that anything not stored in SED-ML comes from the
+properties file, and there is only one 
+of these.  Therefore, the solution is to make sure that everything in the
+properties file is getting added as 
+annotations to the SED-ML.
+
+Chris

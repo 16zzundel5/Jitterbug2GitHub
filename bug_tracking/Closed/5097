@@ -1,0 +1,380 @@
+From myers@ece.utah.edu  Wed Sep  8 09:05:52 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o88F5qBe002628
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 8 Sep 2010 09:05:52 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OtMDg-0003on-9b
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 08 Sep 2010 09:05:52 -0600
+Message-Id: <DF15D186-FB4E-465A-B38C-0672E5898C0F@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-21-708474370
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: exception when moving species
+Date: Wed, 8 Sep 2010 09:05:52 -0600
+X-Mailer: Apple Mail (2.936)
+
+
+--Apple-Mail-21-708474370
+Content-Type: text/plain;
+	charset=US-ASCII;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+
+Get the following exception when I try to move a species.
+
+java.io.NotSerializableException: gcm2sbml.gui.modelview.BioGraph 
+$CellValueObject
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java: 
+1081)
+	at  
+java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java: 
+1375)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java: 
+1347)
+	at  
+java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java: 
+1290)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java: 
+1079)
+	at java.io.ObjectOutputStream.writeArray(ObjectOutputStream.java:1251)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java: 
+1075)
+	at  
+java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java: 
+1375)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java: 
+1347)
+	at  
+java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java: 
+1290)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java: 
+1079)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:302)
+	at  
+sun 
+.awt 
+.datatransfer.TransferableProxy.getTransferData(TransferableProxy.java: 
+66)
+	at java.awt.dnd.DropTargetContext 
+$TransferableProxy.getTransferData(DropTargetContext.java:359)
+	at com.mxgraph.swing.handler.mxGraphHandler.dragEnter(Unknown Source)
+	at javax.swing.TransferHandler 
+$SwingDropTarget.dragEnter(TransferHandler.java:578)
+	at  
+sun 
+.awt 
+.dnd 
+.SunDropTargetContextPeer 
+.processEnterMessage(SunDropTargetContextPeer.java:307)
+	at sun.awt.dnd.SunDropTargetContextPeer.access 
+$500(SunDropTargetContextPeer.java:54)
+	at sun.awt.dnd.SunDropTargetContextPeer 
+$EventDispatcher.dispatchEnterEvent(SunDropTargetContextPeer.java:771)
+	at sun.awt.dnd.SunDropTargetContextPeer 
+$EventDispatcher.dispatchEvent(SunDropTargetContextPeer.java:739)
+	at sun.awt.dnd.SunDropTargetEvent.dispatch(SunDropTargetEvent.java:29)
+	at java.awt.Component.dispatchEventImpl(Component.java:3926)
+	at java.awt.Container.dispatchEventImpl(Container.java:2068)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java: 
+4256)
+	at java.awt.LightweightDispatcher.trackMouseEnterExit(Container.java: 
+4061)
+	at  
+java.awt.LightweightDispatcher.processDropTargetEvent(Container.java: 
+3999)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2054)
+	at java.awt.Window.dispatchEventImpl(Window.java:1801)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java: 
+269)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java: 
+190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+184)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+176)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+--Apple-Mail-21-708474370
+Content-Type: text/html;
+	charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; "><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+style=3D"text-decoration: underline ; color: #000080">Get the following =
+exception when I try to move a species.</span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span style=3D"text-decoration: underline ; color: =
+#000080"><br></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+style=3D"text-decoration: underline ; color: =
+#000080">java.io.NotSerializableException</span>: =
+gcm2sbml.gui.modelview.BioGraph$CellValueObject</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeObject0(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:1081</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.defaultWriteFields(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">ObjectOutputStream.java:1375</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeSerialData(<span style=3D"text-decoration:=
+ underline ; color: =
+#000080">ObjectOutputStream.java:1347</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeOrdinaryObject(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">ObjectOutputStream.java:1290</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeObject0(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:1079</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeArray(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:1251</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeObject0(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:1075</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.defaultWriteFields(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">ObjectOutputStream.java:1375</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeSerialData(<span style=3D"text-decoration:=
+ underline ; color: =
+#000080">ObjectOutputStream.java:1347</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeOrdinaryObject(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">ObjectOutputStream.java:1290</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeObject0(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:1079</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.io.ObjectOutputStream.writeObject(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">ObjectOutputStream.java:302</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sun.awt.datatransfer.TransferableProxy.getTransferData(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">TransferableProxy.java:66</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.dnd.DropTargetContext$TransferableProxy.getTransferData(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">DropTargetContext.java:359</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+com.mxgraph.swing.handler.mxGraphHandler.dragEnter(Unknown =
+Source)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.TransferHandler$SwingDropTarget.dragEnter(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">TransferHandler.java:578</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+sun.awt.dnd.SunDropTargetContextPeer.processEnterMessage(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">SunDropTargetContextPeer.java:307</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sun.awt.dnd.SunDropTargetContextPeer.access$500(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">SunDropTargetContextPeer.java:54</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sun.awt.dnd.SunDropTargetContextPeer$EventDispatcher.dispatchEnterEvent(<s=
+pan style=3D"text-decoration: underline ; color: =
+#000080">SunDropTargetContextPeer.java:771</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sun.awt.dnd.SunDropTargetContextPeer$EventDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">SunDropTargetContextPeer.java:739</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sun.awt.dnd.SunDropTargetEvent.dispatch(<span style=3D"text-decoration: =
+underline ; color: #000080">SunDropTargetEvent.java:29</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:3926</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Container.java:2068</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:3903</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.retargetMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:4256</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.trackMouseEnterExit(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:4061</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.processDropTargetEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:3999</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:3861</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Container.java:2054</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Window.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Window.java:1801</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:3903</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">EventQueue.java:463</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpOneEventForHierarchy(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">EventDispatchThread.java:269</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForHierarchy(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">EventDispatchThread.java:190</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:184</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:176</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.run(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:110</span>)</div></body></html>=
+
+--Apple-Mail-21-708474370--
+

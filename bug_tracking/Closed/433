@@ -1,0 +1,100 @@
+From atacs-bugs  Tue May  2 14:25:21 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id OAA24002
+	for atacs-bugs@shang.elen.utah.edu; Tue, 2 May 2000 14:25:20 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA23999
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Tue, 2 May 2000 14:25:18 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id OAA01744
+	for atacs-bugs@vlsigroup; Tue, 2 May 2000 14:28:20 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200005022028.OAA01744@jiaqi.elen.utah.edu>
+Subject: RE: The book (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Tue, 2 May 2000 14:28:19 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From jyang@cs.utah.edu  Sun Apr 30 23:48:28 2000
+Return-Path: <jyang@cs.utah.edu>
+Received: from yoop.oz.cc.utah.edu (yoop.oz.cc.utah.edu [155.99.2.5])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id XAA12319
+	for <myers@vlsigroup.elen.utah.edu>; Sun, 30 Apr 2000 23:48:28 -0600
+Received: from jly (slip79.cs.utah.edu [155.99.200.79])
+	by yoop.oz.cc.utah.edu (8.9.2/8.9.2) with SMTP id XAA26872
+	for <myers@vlsigroup.elen.utah.edu>; Sun, 30 Apr 2000 23:48:26 -0600 (MDT)
+From: "Jung-Lin Yang" <jyang@cs.utah.edu>
+To: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Subject: RE: The book
+Date: Sun, 30 Apr 2000 23:45:34 -0600
+Message-ID: <EOEJIKIMEHKPNEKKPFKCKEIMCAAA.jyang@cs.utah.edu>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2910.0)
+Importance: Normal
+In-Reply-To: <200005010452.WAA01888@jiaqi.elen.utah.edu>
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2919.6700
+
+Says "how wonderful your book is!" won't help anything, right?
+
+I will directly point out what I don't like and my opinion:
+
+	1. I think you may try to extract out your example from the text,
+	   and make it more like a "Problem with solution." Sometimes, it's
+	   really hard for me to catch the information you want to explain
+	   in a several paragraphs or even pages.
+
+		Example 1: .............
+
+			Solution:
+				1. ......
+
+				2. ......
+
+	   In such style, for myself, it's more easy for me to read and
+	   review the idea in the future as a reference book.
+
+	2. The ultimate goal is knowing the algorithm and synthesis procedures
+	   in the book, right? I think pseudo codes will be more helpful than
+	   those math equations. I know some people like equations, but some
+	   others like me are thinking in programming language way all the time.
+	   Thus, a couple lines of pseudo code would be more understandable to
+	   me.
+
+	3. If possible, all the algorithm in the book should be implemented.
+	   When the reader not able to attend your class, these programs
+	   will help a lot for people who try to read your book for learning
+	   what's Asynchronous synthesis about.
+
+	4. Not every body is super smart, I am the one not in the smart group!
+	   More examples and more steps to explain the idea you want to say
+         would be very helpful. I really don't think that only smart person
+	   can have the chance to learn asynchronous design. You might try
+	   to scalar your book down to a certain level. Thus, your book will
+	   be more readable to those non-asynchronous designers or undergraduate
+	   students. Attracting more people involves in asynchronous world, which
+	   is a very import goal for the book writer like you.
+
+
+Overall, I like your book. It contains lots of information I used to look
+for in
+the very hard way. I am think to print a more mature copy of your book
+before you
+publish it (hopefully it still free them). Could you sent me notice when you
+think
+you are done with the final revise. Thanks.
+
+
+	-Yang
+
+
+
+

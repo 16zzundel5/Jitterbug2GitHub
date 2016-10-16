@@ -1,0 +1,35 @@
+From myers@ece.utah.edu  Mon Jun  2 13:20:38 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=5.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m52JKcMp023644
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 2 Jun 2008 13:20:38 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1K3FaV-0002BB-0x); Mon, 02 Jun 2008 13:21:03 -0600
+Received: from [192.168.1.100] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m52JKXU2016000;
+	Mon, 2 Jun 2008 13:20:34 -0600
+Subject: BUG: errors/warnings in SBML printed when creating an analysis view
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: Nam-Phuong Nguyen <namphuon@cs.utah.edu>
+Content-Type: text/plain
+Date: Mon, 02 Jun 2008 13:20:14 -0600
+Message-Id: <1212434414.18660.16.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-9.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.3 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+When you create an analysis view from a GCM combined with an SBML file
+that has SBML errors/warnings, these messages are printed to the text
+window.  They should either be suppressed or a window should be opened
+showing these messages.
+
+

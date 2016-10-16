@@ -1,0 +1,26 @@
+From atacs-bugs  Fri Nov 22 13:06:44 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id gAMK6hX27085
+	for atacs-bugs@shang.elen.utah.edu; Fri, 22 Nov 2002 13:06:43 -0700
+Received: from jiaqi.stanford.edu (DNab4046b0.Stanford.EDU [171.64.70.176])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id gAMK6h127082
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 22 Nov 2002 13:06:43 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id gAMK5VT03005
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 22 Nov 2002 12:05:31 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Fri, 22 Nov 2002 12:05:31 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Event still enabled function for curt.
+Message-ID: <Pine.LNX.4.44.0211221204440.2189-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Provide to curt a magic function which takes a state(marking,state,event) 
+returns if that event is still enabled or not.
+
+

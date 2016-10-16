@@ -1,0 +1,63 @@
+From ibiosim@gmail.com  Mon Jun 27 12:39:45 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f44.google.com (mail-pa0-f44.google.com [209.85.220.44])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RIdjGw017933
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:39:45 -0600
+Received: by mail-pa0-f44.google.com with SMTP id b13so61451093pat.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:39:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=mAGBupKKuBk5o4o/EId494UPWvh6UUj0coNDh45w0v8=;
+        b=TTeyP8SsGQLhm16LPqzSXRaAhu1S1escaz+3CuVqpRMjPq5SDob5oF8OfEveWzWV7q
+         ATRSQ5c5EEtA4E5LrF1eaW25Cc+75M66NFuKVRaaq/WQP6TVzSp8m/LAJHPFQbcSRDnS
+         m498FoXYOi4xAiNeuhNfTOU9+JFM1DmpaD1CN+x9JPpAW5KwCuWTQh0iAfiz8TanPsQx
+         hfuTeLutSdsfoi2BN7N+u6Xi8hrr/os+VDnE7B9gh59HRtnR5Fu7b0jWqG97peraX2eV
+         3n6Jp22xRhaBJW6WOHbjLg4QW+/Ouj2d3uM12a6l+JfazwJLJw05GSvvnB0Xbd5lJtK8
+         McQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=mAGBupKKuBk5o4o/EId494UPWvh6UUj0coNDh45w0v8=;
+        b=FZDfrL0mpvGNwjp3NhMFVz97KFmKfTOVLbkpQEXfKlt6ZehZDUv1IpF7wA90t8KXEn
+         w9pd1atjfbdI6GOOfv/g+0gkaancp0z8lf7Qksid5Aep8+0AVvPDeI9KthCSYQTwk4Uq
+         N4UoRle27el393tzhqaPwAEjhIDI0FfH/TrQt45Z0kPfLtRd4EQhVV2TzG9DLQiNOyoj
+         wE+luwqmoCtszx4AGfHZEpiFoj8DCnccLHk40JkkbMwBa6MkOLWmc8b00aTuoTrXPh2J
+         rGE8VMwAFnr4Uq841SRQQW8YTc5dkD8+EylFJ9WQeJlCc2x4MTC8k/YLwv9zw88kUPfs
+         tUBQ==
+X-Gm-Message-State: ALyK8tL5uhKAqdVfUaAQ0QptZP0mnDyC9DNtGYohLFhGEbhqEE7tVeETEvyZGLsQizbymA==
+X-Received: by 10.66.16.133 with SMTP id g5mr36388198pad.145.1467052784706;
+        Mon, 27 Jun 2016 11:39:44 -0700 (PDT)
+Received: from chou.ece.utah.edu (vlsimail.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id p129sm1370055pfb.73.2016.06.27.11.39.44
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:39:44 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:39:44 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1771277770.1.1467052783680.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Not saving learned model throws exception
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I tried to learn a model, if you cancel the save option for the resulting model, an exception is thrown
+
+Stack trace:
+java.lang.NullPointerException
+	at learn.GCM.LearnGCM.saveModel(LearnGCM.java:1223)
+	at learn.GCM.LearnGCM.runGeneNet(LearnGCM.java:1776)
+	at learn.GCM.LearnGCM.run(LearnGCM.java:1437)
+	at java.lang.Thread.run(Thread.java:745)
+

@@ -1,0 +1,26 @@
+From nicholas.roehner@gmail.com  Mon Mar 10 20:49:36 2014
+Return-Path: <nicholas.roehner@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s2B2nZ8l032293
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Mar 2014 20:49:36 -0600
+Date: Mon, 10 Mar 2014 20:49:35 -0600
+Message-Id: <201403110249.s2B2nZ8l032293@chou.ece.utah.edu>
+From: nicholas.roehner@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG Reactant disappears from kinetic law
+
+Full_Name: Nicholas Roehner
+Version: 2.6
+OS: Windows
+source: 
+log: 
+Submission from: (NULL) (50.186.117.95)
+Submitted by: nroehner
+
+
+I created a reaction with two reactants, A and B, and one product, C. I then
+opened the reaction editor and set the kinetic law to kf*A*B - kr*C. After
+clicking OK and re-opening the reaction editor, the kinetic law had changed to
+((kf*S1) - (kr*S2)). Could this be related to changes in processing the text
+differently based on whether it's a kinetic law or flux bound?
+

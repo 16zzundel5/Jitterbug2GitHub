@@ -1,0 +1,327 @@
+From peskin@cs.utah.edu  Wed Nov  3 16:28:10 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA12561
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 Nov 1999 16:28:09 -0700
+Date: Wed, 3 Nov 1999 16:28:09 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911032328.QAA12561@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: tag_level.csp draws a seg fault
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12759842 Oct 28 14:29 ../../src/atacs*
+OS: RedHat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+source: /home/xia/peskin/atacs/examples/csp/tag_level.csp
+log: /home/xia/peskin/atacs/examples/csp/tag_level.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+Here is a sample session:
+
+341 xia:examples/csp> pwd
+/home/xia/peskin/atacs/examples/csp
+342 xia:examples/csp> ../../src/atacs tag_level.csp -msmUmPmTmFmOmp -yp
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Compiling tag_level.csp ... 
+Storing process rdy to rdy.er
+Storing process tagrdy to tagrdy.er
+Storing process tagarrived to tagarrived.er
+Storing process tagout1 to tagout1.er
+Storing process tagout2 to tagout2.er
+Storing process tagout3 to tagout3.er
+Storing process tagout4 to tagout4.er
+Storing process tagout5 to tagout5.er
+Storing process tagout6 to tagout6.er
+Storing process tagout7 to tagout7.er
+Storing process ld to ld.er
+Storing process xbrdy to xbrdy.er
+Storing process tag to tag.er
+Storing process tag_level to tag_level.er
+Loading timed event-rule structure from:  tag_level.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 55 iterations 50 regions, 50 new_reg, 49 states
+(stack_depth = 29)
+nodes = 1267, dead = 27798
+memory: max=5604176 inuse=5597464 free=6712 
+116 iterations 100 regions, 100 new_reg, 99 states (stack_depth = 56)
+nodes = 1267, dead = 27798
+memory: max=6112080 inuse=6107512 free=4568 
+180 iterations 150 regions, 150 new_reg, 149 states (stack_depth = 84)
+nodes = 1267, dead = 27798
+memory: max=6636368 inuse=6630368 free=6000 
+273 iterations 200 regions, 200 new_reg, 199 states (stack_depth = 98)
+nodes = 1267, dead = 27798
+memory: max=7009104 inuse=7004264 free=4840 
+375 iterations 250 regions, 250 new_reg, 249 states (stack_depth = 109)
+nodes = 1267, dead = 27798
+memory: max=7361360 inuse=7346304 free=15056 
+504 iterations 300 regions, 326 new_reg, 299 states (stack_depth = 127)
+nodes = 1267, dead = 27798
+memory: max=7783248 inuse=7777496 free=5752 
+608 iterations 350 regions, 382 new_reg, 349 states (stack_depth = 131)
+nodes = 1267, dead = 27798
+memory: max=8061776 inuse=8046872 free=14904 
+694 iterations 400 regions, 432 new_reg, 399 states (stack_depth = 129)
+nodes = 1267, dead = 27798
+memory: max=8258384 inuse=8245488 free=12896 
+815 iterations 450 regions, 482 new_reg, 449 states (stack_depth = 128)
+nodes = 1267, dead = 27798
+memory: max=8471376 inuse=8457552 free=13824 
+1006 iterations 500 regions, 569 new_reg, 499 states (stack_depth = 130)
+nodes = 1267, dead = 27798
+memory: max=8778576 inuse=8709416 free=69160 
+1128 iterations 550 regions, 637 new_reg, 549 states (stack_depth = 143)
+nodes = 1267, dead = 27798
+memory: max=9089872 inuse=9084376 free=5496 
+1245 iterations 600 regions, 694 new_reg, 599 states (stack_depth = 146)
+nodes = 1267, dead = 27798
+memory: max=9368400 inuse=9342936 free=25464 
+1360 iterations 650 regions, 748 new_reg, 649 states (stack_depth = 147)
+nodes = 1267, dead = 27798
+memory: max=9585488 inuse=9579696 free=5792 
+1440 iterations 700 regions, 798 new_reg, 699 states (stack_depth = 150)
+nodes = 1267, dead = 27798
+memory: max=9847632 inuse=9835960 free=11672 
+1544 iterations 750 regions, 848 new_reg, 749 states (stack_depth = 149)
+nodes = 1267, dead = 27798
+memory: max=10052432 inuse=10046592 free=5840 
+1750 iterations 800 regions, 946 new_reg, 799 states (stack_depth = 156)
+nodes = 1267, dead = 27798
+memory: max=10376016 inuse=10360416 free=15600 
+1751 iterations 800 regions, 947 new_reg, 800 states (stack_depth = 156)
+nodes = 1267, dead = 27798
+memory: max=10376016 inuse=10360472 free=15544 
+1752 iterations 800 regions, 948 new_reg, 800 states (stack_depth = 156)
+nodes = 1267, dead = 27798
+memory: max=10376016 inuse=10360416 free=15600 
+1879 iterations 850 regions, 1005 new_reg, 849 states (stack_depth = 153)
+nodes = 1267, dead = 27798
+memory: max=10597200 inuse=10549848 free=47352 
+1987 iterations 900 regions, 1059 new_reg, 899 states (stack_depth = 158)
+nodes = 1267, dead = 27798
+memory: max=10838864 inuse=10833552 free=5312 
+2149 iterations 950 regions, 1138 new_reg, 949 states (stack_depth = 161)
+nodes = 1267, dead = 27798
+memory: max=11109200 inuse=11098096 free=11104 
+2268 iterations 1000 regions, 1192 new_reg, 999 states (stack_depth = 160)
+nodes = 1267, dead = 27798
+memory: max=11338576 inuse=11310984 free=27592 
+2383 iterations 1050 regions, 1246 new_reg, 1049 states (stack_depth = 161)
+nodes = 1267, dead = 27798
+memory: max=11572048 inuse=11547648 free=24400 
+2461 iterations 1100 regions, 1296 new_reg, 1099 states (stack_depth = 171)
+nodes = 1267, dead = 27798
+memory: max=11899728 inuse=11889736 free=9992 
+2550 iterations 1150 regions, 1346 new_reg, 1149 states (stack_depth = 169)
+nodes = 1267, dead = 27798
+memory: max=12092240 inuse=12087016 free=5224 
+2686 iterations 1200 regions, 1396 new_reg, 1199 states (stack_depth = 167)
+nodes = 1267, dead = 27798
+memory: max=12301136 inuse=12287328 free=13808 
+2889 iterations 1250 regions, 1512 new_reg, 1249 states (stack_depth = 176)
+nodes = 1267, dead = 27798
+memory: max=12653392 inuse=12625624 free=27768 
+3001 iterations 1300 regions, 1566 new_reg, 1299 states (stack_depth = 177)
+nodes = 1267, dead = 27798
+memory: max=12878672 inuse=12862664 free=16008 
+3123 iterations 1350 regions, 1620 new_reg, 1349 states (stack_depth = 173)
+nodes = 1267, dead = 27798
+memory: max=13046608 inuse=13039144 free=7464 
+3262 iterations 1400 regions, 1682 new_reg, 1399 states (stack_depth = 168)
+nodes = 1267, dead = 27798
+memory: max=13226832 inuse=13204088 free=22744 
+3334 iterations 1450 regions, 1732 new_reg, 1449 states (stack_depth = 179)
+nodes = 1267, dead = 27798
+memory: max=13583184 inuse=13559624 free=23560 
+3431 iterations 1500 regions, 1782 new_reg, 1499 states (stack_depth = 177)
+nodes = 1267, dead = 27798
+memory: max=13771600 inuse=13756432 free=15168 
+3572 iterations 1550 regions, 1832 new_reg, 1549 states (stack_depth = 175)
+nodes = 1267, dead = 27798
+memory: max=13964112 inuse=13957752 free=6360 
+3790 iterations 1600 regions, 1958 new_reg, 1599 states (stack_depth = 179)
+nodes = 1267, dead = 27798
+memory: max=14254928 inuse=14232264 free=22664 
+3872 iterations 1650 regions, 2008 new_reg, 1649 states (stack_depth = 180)
+nodes = 1267, dead = 27798
+memory: max=14472016 inuse=14466480 free=5536 
+3988 iterations 1700 regions, 2058 new_reg, 1699 states (stack_depth = 177)
+nodes = 1267, dead = 27798
+memory: max=14668624 inuse=14651424 free=17200 
+4255 iterations 1750 regions, 2184 new_reg, 1749 states (stack_depth = 169)
+nodes = 1267, dead = 27798
+memory: max=14820176 inuse=14780976 free=39200 
+4349 iterations 1800 regions, 2241 new_reg, 1798 states (stack_depth = 174)
+nodes = 1267, dead = 27798
+memory: max=15086416 inuse=15068864 free=17552 
+4440 iterations 1850 regions, 2291 new_reg, 1848 states (stack_depth = 172)
+nodes = 1267, dead = 27798
+memory: max=15283024 inuse=15266392 free=16632 
+4584 iterations 1900 regions, 2347 new_reg, 1897 states (stack_depth = 158)
+nodes = 1267, dead = 27798
+memory: max=15405904 inuse=15320696 free=85208 
+4690 iterations 1950 regions, 2397 new_reg, 1947 states (stack_depth = 160)
+nodes = 1267, dead = 27798
+memory: max=15586128 inuse=15569944 free=16184 
+4803 iterations 2000 regions, 2451 new_reg, 1997 states (stack_depth = 161)
+nodes = 1267, dead = 27798
+memory: max=15840080 inuse=15806640 free=33440 
+4913 iterations 2050 regions, 2505 new_reg, 2047 states (stack_depth = 161)
+nodes = 1267, dead = 27798
+memory: max=16057168 inuse=16031216 free=25952 
+5062 iterations 2100 regions, 2559 new_reg, 2097 states (stack_depth = 154)
+nodes = 1267, dead = 27798
+memory: max=16196432 inuse=16172360 free=24072 
+5191 iterations 2150 regions, 2623 new_reg, 2147 states (stack_depth = 150)
+nodes = 1267, dead = 27798
+memory: max=16384848 inuse=16351288 free=33560 
+5303 iterations 2200 regions, 2677 new_reg, 2197 states (stack_depth = 151)
+nodes = 1267, dead = 27798
+memory: max=16601936 inuse=16588208 free=13728 
+5425 iterations 2250 regions, 2731 new_reg, 2247 states (stack_depth = 147)
+nodes = 1267, dead = 27798
+memory: max=16773968 inuse=16764832 free=9136 
+5549 iterations 2300 regions, 2785 new_reg, 2297 states (stack_depth = 141)
+nodes = 1267, dead = 27798
+memory: max=16950096 inuse=16917576 free=32520 
+5665 iterations 2350 regions, 2839 new_reg, 2347 states (stack_depth = 143)
+nodes = 1267, dead = 27798
+memory: max=17179472 inuse=17165712 free=13760 
+5784 iterations 2400 regions, 2895 new_reg, 2397 states (stack_depth = 138)
+nodes = 1267, dead = 27798
+memory: max=17343312 inuse=17331456 free=11856 
+5898 iterations 2450 regions, 2949 new_reg, 2447 states (stack_depth = 139)
+nodes = 1267, dead = 27798
+memory: max=17572688 inuse=17567928 free=4760 
+6022 iterations 2500 regions, 3003 new_reg, 2497 states (stack_depth = 134)
+nodes = 1267, dead = 27798
+memory: max=17744720 inuse=17735192 free=9528 
+6145 iterations 2550 regions, 3057 new_reg, 2547 states (stack_depth = 129)
+nodes = 1267, dead = 27798
+memory: max=17941328 inuse=17902504 free=38824 
+6259 iterations 2600 regions, 3111 new_reg, 2597 states (stack_depth = 130)
+nodes = 1267, dead = 27798
+memory: max=18162512 inuse=18138112 free=24400 
+6419 iterations 2650 regions, 3195 new_reg, 2647 states (stack_depth = 127)
+nodes = 1267, dead = 27798
+memory: max=18342736 inuse=18330840 free=11896 
+6532 iterations 2700 regions, 3249 new_reg, 2697 states (stack_depth = 128)
+nodes = 1267, dead = 27798
+memory: max=18572112 inuse=18567312 free=4800 
+6656 iterations 2750 regions, 3303 new_reg, 2747 states (stack_depth = 123)
+nodes = 1267, dead = 27798
+memory: max=18740048 inuse=18734440 free=5608 
+6780 iterations 2800 regions, 3357 new_reg, 2797 states (stack_depth = 117)
+nodes = 1267, dead = 27798
+memory: max=18924368 inuse=18890464 free=33904 
+6895 iterations 2850 regions, 3411 new_reg, 2847 states (stack_depth = 119)
+nodes = 1267, dead = 27798
+memory: max=19157840 inuse=19137232 free=20608 
+7008 iterations 2900 regions, 3465 new_reg, 2897 states (stack_depth = 120)
+nodes = 1267, dead = 27798
+memory: max=19403600 inuse=19374408 free=29192 
+7131 iterations 2950 regions, 3521 new_reg, 2947 states (stack_depth = 114)
+nodes = 1267, dead = 27798
+memory: max=19538768 inuse=19530600 free=8168 
+7255 iterations 3000 regions, 3575 new_reg, 2997 states (stack_depth = 109)
+nodes = 1267, dead = 27798
+memory: max=19710800 inuse=19698928 free=11872 
+7376 iterations 3050 regions, 3629 new_reg, 3047 states (stack_depth = 106)
+nodes = 1267, dead = 27798
+memory: max=19919696 inuse=19889776 free=29920 
+7490 iterations 3100 regions, 3683 new_reg, 3097 states (stack_depth = 107)
+nodes = 1267, dead = 27798
+memory: max=20153168 inuse=20124976 free=28192 
+7605 iterations 3150 regions, 3737 new_reg, 3147 states (stack_depth = 110)
+nodes = 1267, dead = 27798
+memory: max=20411216 inuse=20384408 free=26808 
+7713 iterations 3200 regions, 3789 new_reg, 3197 states (stack_depth = 111)
+nodes = 1267, dead = 27798
+memory: max=20636496 inuse=20620192 free=16304 
+7872 iterations 3250 regions, 3871 new_reg, 3247 states (stack_depth = 89)
+nodes = 1267, dead = 27798
+memory: max=20677456 inuse=20601568 free=75888 
+7998 iterations 3300 regions, 3929 new_reg, 3297 states (stack_depth = 89)
+nodes = 1267, dead = 27798
+memory: max=20845392 inuse=20827808 free=17584 
+7999 iterations 3300 regions, 3930 new_reg, 3298 states (stack_depth = 90)
+nodes = 1267, dead = 27798
+memory: max=20849488 inuse=20839296 free=10192 
+8001 iterations 3300 regions, 3931 new_reg, 3298 states (stack_depth = 90)
+nodes = 1267, dead = 27798
+memory: max=20861776 inuse=20839224 free=22552 
+8111 iterations 3350 regions, 3981 new_reg, 3347 states (stack_depth = 87)
+nodes = 1267, dead = 27798
+memory: max=21070672 inuse=21029872 free=40800 
+8219 iterations 3400 regions, 4035 new_reg, 3397 states (stack_depth = 92)
+nodes = 1267, dead = 27798
+memory: max=21316432 inuse=21310512 free=5920 
+8332 iterations 3450 regions, 4089 new_reg, 3447 states (stack_depth = 93)
+nodes = 1267, dead = 27798
+memory: max=21554000 inuse=21546464 free=7536 
+8456 iterations 3500 regions, 4143 new_reg, 3497 states (stack_depth = 88)
+nodes = 1267, dead = 27798
+memory: max=21721936 inuse=21714936 free=7000 
+8580 iterations 3550 regions, 4197 new_reg, 3547 states (stack_depth = 81)
+nodes = 1267, dead = 27798
+memory: max=21906256 inuse=21861440 free=44816 
+8695 iterations 3600 regions, 4251 new_reg, 3597 states (stack_depth = 83)
+nodes = 1267, dead = 27798
+memory: max=22127440 inuse=22108016 free=19424 
+9012 iterations 3650 regions, 4313 new_reg, 3642 states (stack_depth = 2)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21467832 free=684184 
+9014 iterations 3650 regions, 4314 new_reg, 3642 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21478144 free=673872 
+9017 iterations 3650 regions, 4315 new_reg, 3642 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21478144 free=673872 
+9235 iterations 3700 regions, 4401 new_reg, 3643 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21682992 free=469024 
+9237 iterations 3700 regions, 4402 new_reg, 3643 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21683080 free=468936 
+9239 iterations 3700 regions, 4403 new_reg, 3643 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21683424 free=468592 
+9465 iterations 3750 regions, 4491 new_reg, 3644 states (stack_depth = 1)
+nodes = 1267, dead = 27798
+memory: max=22152016 inuse=21867952 free=284064 
+9691 iterations 3800 regions, 4581 new_reg, 3646 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22156112 inuse=22093208 free=62904 
+9914 iterations 3850 regions, 4669 new_reg, 3647 states (stack_depth = 2)
+nodes = 1267, dead = 27798
+memory: max=22360912 inuse=22287688 free=73224 
+9916 iterations 3850 regions, 4670 new_reg, 3647 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22360912 inuse=22298000 free=62912 
+9919 iterations 3850 regions, 4671 new_reg, 3647 states (stack_depth = 3)
+nodes = 1267, dead = 27798
+memory: max=22365008 inuse=22298016 free=66992 
+10161 iterations 3900 regions, 4753 new_reg, 3654 states (stack_depth = 0)
+nodes = 1267, dead = 27798
+memory: max=22549328 inuse=22476968 free=72360 
+nodes = 1267, dead = 27798
+memory: max=22549328 inuse=22477408 free=71920 
+done
+10168 iterations, 3900 regions, 4753 new_regions, 3655 states in 85.502 seconds
+nodes in use = 1267, dead = 27798
+memory: max=22549328 inuse=22477408 free=71920
+Projecting out dummy transitions and storing to:  tag_level.rsg
+Segmentation fault
+

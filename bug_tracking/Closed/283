@@ -1,0 +1,71 @@
+From peskin@cs.utah.edu  Thu Dec  2 21:35:27 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id VAA09988
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 2 Dec 1999 21:35:27 -0700
+Date: Thu, 2 Dec 1999 21:35:27 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199912030435.VAA09988@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: findsv: Unable to solve CSC -- Possible error
+
+Full_Name: Eric Robert Peskin
+Version: 12894974 Nov 24 17:32 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/clean/choice.csp
+log: /home/xia/peskin/clean/atacs.log
+Submission from: slip87.cs.utah.edu (155.99.200.87)
+Submitted by: peskin
+
+
+The CSC solver gives up on this example.  See sample session below.
+See also PR#62.
+
+211 xia:~/clean> pwd
+/home/xia/peskin/clean
+212 xia:~/clean> diff ~/atacs/examples/csp/ choice.csp
+213 xia:~/clean> ls -l `which atacs`
+-rwxr-x---   1 peskin   async    12894974 Nov 24 17:32
+/home/xia/peskin/atacs/src/atacs*
+214 xia:~/clean> atacs choice.csp -msmUmPmTmFmOmpmEmcmX -ya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Compiling choice.csp ...
+Storing process choicectrl to choicectrl.er
+Storing process abenv to abenv.er
+Storing process cenv to cenv.er
+Storing process choice to choice.er
+Loading timed event-rule structure from:  choice.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done (0.000263)
+Finding reduced state graph ... 76 iterations 50 regions, 50 new_reg, 37 states
+(stack_depth = 4)
+nodes = 266, dead = 966
+memory: max=419216 inuse=414568 free=4648
+nodes = 266, dead = 966
+memory: max=423312 inuse=419040 free=4272
+done
+95 iterations, 59 regions, 59 new_regions, 43 states in 0.077418 seconds
+nodes in use = 266, dead = 966
+memory: max=423312 inuse=419040 free=4272
+Projecting out dummy transitions ... done (0.001824)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 2 CSC violation(s)
+No solution found
+findsv: Unable to solve CSC -- Possible error
+
+

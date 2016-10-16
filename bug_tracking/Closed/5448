@@ -1,0 +1,41 @@
+From n.roehner@utah.edu  Mon Aug  8 15:38:26 2011
+Return-Path: <n.roehner@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p78LcPMZ016379
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 8 Aug 2011 15:38:25 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AvgGAC9WQE6bYbVo/2dsb2JhbABDqBgHgUc6PxIBPi8TJwQODb4HiH+FZ18Eh1yDeocskQc
+X-IronPort-AV: E=Sophos;i="4.67,339,1309759200"; 
+   d="scan'208";a="540944231"
+Received: from h104.umail.utah.edu (HELO HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 08 Aug 2011 15:38:20 -0600
+Received: from C5V2.xds.umail.utah.edu ([169.254.2.91]) by
+ HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi; Mon, 8 Aug 2011
+ 15:38:20 -0600
+From: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+To: "sarbruis@gmail.com" <sarbruis@gmail.com>
+CC: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Mon, 8 Aug 2011 15:36:12 -0600
+Subject: BUG:  GCM Species Editor Won't Open
+Thread-Topic: GCM Species Editor Won't Open
+Thread-Index: AQHMVhMxKF7w9PlHvEOm8eJ7pH9B8g==
+Message-ID: <F3FE734CBA37DE4989B91D55FAAB78B5990534B3D7@C5V2.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p78LcPMZ016379
+
+Hi Jason,
+
+Just did an update recently and it looks like your changes to the movie stuff have left us unable to open species for editing.
+
+Happy hunting,
+
+Nic
+

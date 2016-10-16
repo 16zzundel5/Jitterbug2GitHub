@@ -1,0 +1,15 @@
+From: Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: swap dimensions (PR#6134)
+Date: Mon Aug  4 16:48:52 2014
+
+I'm going to need clarification on this one. I don't think this can be settled
+in checkSizeParameters and checkIndices. My understanding is that the String
+inputted in the ID textbox goes like this:
+id[dim n][dim n-1]...[dim 0]
+
+Is this correct?
+
+I think you wanted me to take this input and reverse it so that it still works
+for my storage code. However, I believe that I must also adjust my reading code
+so that when an object is opened the user sees it in the format matching above.

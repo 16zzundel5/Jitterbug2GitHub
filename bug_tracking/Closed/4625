@@ -1,0 +1,29 @@
+From kjones@vlsigroup.ece.utah.edu  Mon Jan 12 10:55:34 2009
+Return-Path: <kjones@vlsigroup.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.3 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n0CHtYGR012433
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Jan 2009 10:55:34 -0700
+Date: Mon, 12 Jan 2009 10:55:34 -0700
+Message-Id: <200901121755.n0CHtYGR012433@chou.ece.utah.edu>
+From: kjones@vlsigroup.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: CHANGE: DMV variables
+
+Full_Name: Kevin Jones
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: kjones
+
+
+Find Discrete Multi-Valued variables in the autogenT.py script and allow the
+user to select which variables are DMV.  Suggest should also suggest which
+variables appear to be DMV.
+

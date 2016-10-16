@@ -1,0 +1,4 @@
+BAP now correctly implements TIC.  The version it came on line is tagged:
+BAPTIC
+The worst-case test examples are: atacs/examples/er/TIC_test.er and
+atacs/examples/er/TIC_test_2.er.

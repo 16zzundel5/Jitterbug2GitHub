@@ -1,0 +1,78 @@
+From myers@ece.utah.edu  Fri Aug 20 13:19:15 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7KJJFT9006662
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 Aug 2010 13:19:15 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OmX7T-0000en-FL
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 20 Aug 2010 13:19:15 -0600
+Message-Id: <DCCD31BE-00A6-426B-8D25-98C9C9E1A6BD@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: Create a LEMA tutorial 
+Date: Fri, 20 Aug 2010 13:19:06 -0600
+X-Mailer: Apple Mail (2.936)
+
+Using the information below create a LEMA tutorial:
+
+1)Type LEMA to bring up LEMA gui.
+2)File -> New -> Project (Enter name)
+3)File -> New -> Labeled Petri Net (Enter name, say one). After this,  
+you'll see one.lpn in the left sidebar.
+4)Right click on one.lpn (or whichever lpn you created in step 3) and  
+choose "Create Learn View". Enter a name (say learn).
+5)The learn view has 3 tabs - Data Manager, Learn, and TSD Graph. Data  
+manager is used to import/view the raw simulation data. learn tab is  
+used for model generation from the simulation data provided in data  
+manager. TSD graph tab is used to view the data that's imported in the  
+data manager.
+You should see the data manager by default. Click "Import" at the  
+bottom and point to the simulation data file in csv/dat/tsd or any  
+other format. Import all the simulation data files that you have for  
+the circuit being modeled.
+6)Click the learn tab. Here, you can configure the parameters used for  
+model generation through the basic options and advanced options tabs.  
+A brief description of some of the parameters:
+Number of bins (in the top portion) - Useful if the number of bins is  
+the same for all the variables.
+Scale Factor for Values/Time - Optional. If not mentioned, it chooses  
+automatically.
+Port - can be NA (not applicable to the model), Input, or Output.
+Mode - Control signal which is capable of destabilizing the delays/ 
+values on transitions. This causes an internal state variable to be  
+generated for each output variable.
+Care - Care sequence. If a variable is not selected as a care, it will  
+not be included in the state variables list for places. However, it'll  
+be used in the enabling conditions.
+Epsilon and the options on the advanced options tab can be adjusted  
+for configuring a variable to be as either "continuous" or "DMV". DMV  
+variables are discrete-valued variables.
+Selecting "Use User Generated Levels" and clicking "Suggest Levels"  
+lets you see the auto-generated thresholds. Choosing "Auto" in the  
+"number of bins" drop-down menu of a variable causes the number of  
+bins to be auto-determined for dmv variables.
+7) After configuring the parameters, click the green "Play" button on  
+top left or click File -> Save and Learn.
+8) Once you see the "Learning Complete" pop-up, go to File->Save  
+Models and enter a name to see the generated lpn file in the left  
+sidebar. Double click to see the raw lpn file. Right click and select  
+"View Model" to convert it to a dot file which can be viewed using a  
+graph viewer software like Graphviz. You can view the generated lpn  
+file in graph format by typing dotty path/filename.dot from the  
+terminal.
+9) Right click the lpn file on the left sidebar and click "Convert to  
+Verilog" to see the SystemVerilog file (with the same name and .sv  
+extension) in the left sidebar.
+
+Questions? Contact myers@ece.utah.edu or satish.batchu@utah.edu
+

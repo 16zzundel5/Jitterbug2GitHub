@@ -1,0 +1,29 @@
+From myers@ece.utah.edu  Fri Dec  5 13:52:15 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.6 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id mB5KqFu1030814
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 5 Dec 2008 13:52:15 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1L8hJs-0005HN-5R
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 05 Dec 2008 13:30:36 -0700
+Message-Id: <1FE48AAC-5E17-4541-9D5C-983EC84B3F2F@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: BUG: toolbar/menus syn/ver views
+Date: Fri, 5 Dec 2008 13:51:39 -0700
+X-Mailer: Apple Mail (2.929.2)
+
+Toolbars and menus not working on synthesis and verification views.
+
+Once they are, remove buttons.
+

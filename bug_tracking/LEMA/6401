@@ -1,0 +1,72 @@
+From zhen.zhang@utah.edu  Thu Sep 24 14:25:46 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo4.cc.utah.edu (ipo4.cc.utah.edu [155.97.144.24])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8OKPjYc029763
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 Sep 2015 14:25:45 -0600
+X-IronPort-AV: E=Sophos;i="5.17,582,1437458400"; 
+   d="scan'208";a="515477539"
+Received: from mail-ob0-f176.google.com ([209.85.214.176])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 24 Sep 2015 14:25:45 -0600
+Received: by obbmp4 with SMTP id mp4so67406445obb.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 Sep 2015 13:25:45 -0700 (PDT)
+X-Received: by 10.60.139.37 with SMTP id qv5mr1015751oeb.59.1443126345149;
+ Thu, 24 Sep 2015 13:25:45 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Thu, 24 Sep 2015 13:25:05 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Thu, 24 Sep 2015 14:25:05 -0600
+Message-ID: <CA+LVOvk+FHEueaxvtyrNT3GroHjSQVAoJr3WhqSk=GgW9_7yKw@mail.gmail.com>
+Subject: CHANGE: Make net transformations preserve data for the VHDL compiler
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Problem: When compiling the example VHDL code below, for each
+nondeterministic choice branch, two transitions are generated. The
+first one has an enabling condition of "true" (originally generated as
+"may" or "~(maybe)), with 0 delay, and the second transition has no
+enabling condition (same as "true") and an assignment to the data1
+variable.
+
+Currently, the postprocessing net transformations can remove the first
+redundant transition, but they are not aware of the data though, so
+they mess it up. They should be modified to preserve data.
+
+VHDL code:
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use work.channel.all;
+
+entity producer_consumer is
+end producer_consumer;
+
+architecture behavior of producer_consumer is
+ signal producer_to_buf1:channel:=init_channel;
+ signal data1 : std_logic_vector(1 downto 0);
+ signal data2 : std_logic_vector(1 downto 0);
+begin
+ producer:process
+   variable z : integer;
+ begin
+   --data1 <= selection(4,2);
+   --wait for delay(5,10);
+   z := selection(4);                  -- returns 1, 2, 3, or 4
+   if (z = 1) then
+     assign(data1,"11",1,1);
+    elsif (z = 2) then
+     assign(data1,"01",1,1);
+   elsif (z = 3) then
+     assign(data1,"10",1,1);
+   else
+     assign(data1,"00",1,1);
+   end if;
+   send(producer_to_buf1,data1);
+ end process producer;
+ buf1:process
+ begin
+   receive(producer_to_buf1,data2);
+ end process buf1;
+end behavior;
+

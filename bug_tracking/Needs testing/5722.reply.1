@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: FEATURE: add support for general biochemical reactions in logical abstraction (PR#5722)
+Date: Fri Jan 11 00:15:19 2013
+
+I got the following exception when I tried this (will send example in separate
+message).
+
+Exception in thread "Thread-9" java.lang.NullPointerException
+	at biomodel.parser.BioModel.replaceParams(BioModel.java:966)
+	at biomodel.parser.BioModel.convertToLHPN(BioModel.java:861)
+	at analysis.Run.execute(Run.java:687)
+	at analysis.AnalysisView.run(AnalysisView.java:2207)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)

@@ -1,0 +1,33 @@
+From prvs=997a1750e=zhen.zhang@utah.edu  Fri Jul 15 13:47:24 2016
+Return-Path: <prvs=997a1750e=zhen.zhang@utah.edu>
+Received: from ipo2.cc.utah.edu (ipo2.cc.utah.edu [155.97.144.12])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6FJlOcB001070
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Jul 2016 13:47:24 -0600
+X-IronPort-AV: E=Sophos;i="5.28,369,1464674400"; 
+   d="scan'208";a="124852267"
+Received: from mail-oi0-f50.google.com ([209.85.218.50])
+  by ipo2smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 15 Jul 2016 13:47:24 -0600
+Received: by mail-oi0-f50.google.com with SMTP id l65so91850002oib.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Jul 2016 12:47:24 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJCYmZ826Zbrv4e6c0JFfTJGjbKnsnKfJcNnytYGd4k+fA63Qw4IIyEOtjWl9FWKDmDqEtXDRoSjsI9Ig==
+X-Received: by 10.202.59.68 with SMTP id i65mr8766538oia.61.1468612043509;
+ Fri, 15 Jul 2016 12:47:23 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Fri, 15 Jul 2016 12:46:44 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Fri, 15 Jul 2016 13:46:44 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=bMP7_8KMyQSd2GETgjFoo4PYG+P7oNPRJt30rOx8NeQ@mail.gmail.com>
+Message-ID: <CA+LVOv=bMP7_8KMyQSd2GETgjFoo4PYG+P7oNPRJt30rOx8NeQ@mail.gmail.com>
+Subject: CHANGE: Mention simulator selection for Monte Carlo stochastic
+ analysis on iBioSim Version 2.8 Systems Biology Tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+The stochastic analysis on this tutorial (Section 5) describes the
+setup for stochastic analysis. The simulator type is only indicated on
+the screenshot, "SSA-Direct", but not mentioned in the text. But the
+default stochastic simulator for iBioSim is "gillespie". Also,
+screenshot needs to be updated for this one too, as SSA-Direct in
+version 2.9 has been replaced by three separate simulators: Dynamic,
+Flatten, and Hierarchical.
+

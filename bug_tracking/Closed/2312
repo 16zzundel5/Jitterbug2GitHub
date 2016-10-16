@@ -1,0 +1,47 @@
+From christian.atheist@gmail.com  Mon Aug 13 16:11:48 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=3.0 tests=BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.187])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l7DMBlhS003187
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 13 Aug 2007 16:11:48 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so1655455fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 13 Aug 2007 15:11:47 -0700 (PDT)
+DKIM-Signature: a=rsa-sha1; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=fpheVi1dDPMDZ82QXWC2pT/wpikkW/iMiuAc4d3KoYO1WO9C2cv+BgSw0+YtmguQ5C6nPc/lLQr4TiHvJra97yzRQ0eaVDZrjVGBfofZuWe3wqhhaDNC0ytIsoL/QTm6U80Q7CXoQK1gL6yelpi+ubaI9k1VNbFCP9vzpyCRVBg=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=iLtMIzVfem0fUhiPHAxotyEHRumOpb80JjaMG47nSnCH7XG71YBFw9PPQkbcMxw/z1Iw4nK4U7XOcPqlvgB9+vhW1h8pFzd++4KtI6/v4QCe7bNTdn8ak1hQAuPzvy43VmVM+2UiP824UJZC2wByqX5/dY7FCr4+UlruKdJbBrI=
+Received: by 10.82.126.5 with SMTP id y5mr9043815buc.1187043106802;
+        Mon, 13 Aug 2007 15:11:46 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Mon, 13 Aug 2007 15:11:46 -0700 (PDT)
+Message-ID: <eba119560708131511q30258ba8l353df4d174dac42@mail.gmail.com>
+Date: Mon, 13 Aug 2007 16:11:46 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: Better Error Messages
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: 8e335762aecbb369
+
+When the SBML file fails to run, it would be nice if we could get
+better error messages.  Here is the current error message:
+
+  34: (1600) A Reaction must contain at least one SpeciesReference in
+its list of reactants or products.
+ :  : 	input file error
+
+It would be better if it was:
+
+  34: (1600) Reaction <name of reaction> must contain at least one
+SpeciesReference in its list of reactants or products.
+ :  : 	input file error
+

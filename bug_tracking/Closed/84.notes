@@ -1,0 +1,7 @@
+Chris
+Now, it creates merges but may have problems if the number of falling
+transitions exceeds the number of rising.
+
+See sbuf-send-pkt2.g file for an example.
+
+Merges now created correctly.

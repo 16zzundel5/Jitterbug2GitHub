@@ -1,0 +1,24 @@
+From stjung@ming.elen.utah.edu  Mon Dec  6 15:19:56 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA21413
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 6 Dec 1999 15:19:56 -0700
+Date: Mon, 6 Dec 1999 15:19:56 -0700
+Message-Id: <199912062219.PAA21413@chou.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Automatic Generation of Gate Library for Verification
+
+Full_Name: Sung Tae Jung
+Version: 
+OS: 
+source: 
+log: 
+Submission from: ming.elen.utah.edu (155.99.23.210)
+Submitted by: stjung
+
+
+
+It is necessary to generate gate library for a given specification
+for gatelevel circuit verification.
+
+

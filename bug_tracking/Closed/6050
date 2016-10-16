@@ -1,0 +1,25 @@
+From scottg@san.rr.com  Thu May 29 10:42:03 2014
+Return-Path: <scottg@san.rr.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s4TGg2BT004724
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 29 May 2014 10:42:02 -0600
+Date: Thu, 29 May 2014 10:42:02 -0600
+Message-Id: <201405291642.s4TGg2BT004724@chou.ece.utah.edu>
+From: scottg@san.rr.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE - 
+
+Full_Name: Scott Glass
+Version: BioSIm 2.7
+OS: 
+source: 
+log: 
+Submission from: (NULL) (66.27.83.108)
+Submitted by: glass
+
+
+Two operands must have the same number of dimensions with the same size or one 
+operand must be scalar
+
+-Scott
+

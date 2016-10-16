@@ -1,0 +1,39 @@
+From sarbruis@gmail.com  Tue Jul 19 15:27:15 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-ew0-f42.google.com (mail-ew0-f42.google.com [209.85.215.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p6JLREsZ008101
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2011 15:27:14 -0600
+Received: by ewy2 with SMTP id 2so310308ewy.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2011 14:27:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        bh=iaxLiNlHFSYDih8sZNh9fNBjPLFS2PiBw0AvRenH3rw=;
+        b=b2vM6kM6d0DSsMRaL2FF+gGkmm9q97l0te2SD9iFTXYlfn4ILYf6Bm4xv31+Ex7K/d
+         OGfpUBVEK7JH2vUfLFqB/ZnyCr4xUaAy+gQyI3CJ/TNgt8kzL/tGg6dMxajbRbKhbJbP
+         Yl2IjTxVz8AEDEKnN0JqjbRGbcZve75FpxlFo=
+Received: by 10.204.135.206 with SMTP id o14mr2310932bkt.143.1311110833200;
+ Tue, 19 Jul 2011 14:27:13 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.145.143 with HTTP; Tue, 19 Jul 2011 14:26:33 -0700 (PDT)
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Tue, 19 Jul 2011 15:26:33 -0600
+Message-ID: <CAHb1wp17XLMs+W5u8zM_fWzziy6YyxkhYwci4ARG1huoCRa9aw@mail.gmail.com>
+Subject: BUG: SbolField bug when changing a species with the species panel
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=000e0cd6e2fe795dc504a872c76d
+
+--000e0cd6e2fe795dc504a872c76d
+Content-Type: text/plain; charset=ISO-8859-1
+
+In the isValidText method in SbolField, String featId =
+sbolText.getText().split("/")[1]; is throwing an out of bounds exception. I
+get this when I'm trying to change a species from the species panel.
+
+--000e0cd6e2fe795dc504a872c76d
+Content-Type: text/html; charset=ISO-8859-1
+
+In the isValidText method in SbolField, String featId = sbolText.getText().split(&quot;/&quot;)[1]; is throwing an out of bounds exception.  I get this when I&#39;m trying to change a species from the species panel.<br>
+
+--000e0cd6e2fe795dc504a872c76d--
+

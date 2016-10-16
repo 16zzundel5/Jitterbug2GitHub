@@ -1,0 +1,36 @@
+From root@xia.elen.utah.edu  Sat Sep 22 04:05:08 2001
+Return-Path: <root@xia.elen.utah.edu>
+Received: from xia.elen.utah.edu (IDENT:root@xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id f8MA58i17277
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 22 Sep 2001 04:05:08 -0600
+Received: (from root@localhost)
+	by xia.elen.utah.edu (8.11.6/8.11.6) id f8MA57F05502
+	for atacs-bugs@shang.elen.utah.edu; Sat, 22 Sep 2001 04:05:07 -0600
+Date: Sat, 22 Sep 2001 04:05:07 -0600
+From: root <root@xia.elen.utah.edu>
+Message-Id: <200109221005.f8MA57F05502@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD584 broken repository!
+
+Linux xia.elen.utah.edu 2.2.19-7.0.8 #1 Thu Jun 21 06:28:56 EDT 2001 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	261340 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2040 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[1]: *** [atacs] Error 1
+make: *** [build] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

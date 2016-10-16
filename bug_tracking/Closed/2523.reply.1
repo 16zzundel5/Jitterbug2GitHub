@@ -1,0 +1,24 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: namphuon@cs.utah.edu
+Subject: Re: BUG: Reaction ID overwritten by parameter editor (PR#2523)
+Date: Wed Mar 26 22:45:11 2008
+CC: cmadsen@vlsigroup.ece.utah.edu
+
+I think I fixed this one.
+
+Chris
+
+> Download this project:
+> www.async.ece.utah.edu/~namphuon/temp/test.zip
+> 
+> 1) Open up not analysis view.
+> 2) Edit R_repression_binding_Promoter_B_A
+> 3) Change the parameter of rep to custom, and value of 1
+> 4) Hit okay
+> 5) R_repression_binding_Promoter_B_A is now renamed as Degradation B
+> Modified.  The
+> project will not save due to the error, and any attempts to edit the
+> reaction results in null
+> point exception.
+> 
+> 

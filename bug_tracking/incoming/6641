@@ -1,0 +1,103 @@
+From ibiosim@gmail.com  Fri Sep  9 15:50:16 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f176.google.com (mail-pf0-f176.google.com [209.85.192.176])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u89LoGtO014923
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Sep 2016 15:50:16 -0600
+Received: by mail-pf0-f176.google.com with SMTP id 128so33042881pfb.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 09 Sep 2016 14:50:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=z55hHOIt9tU5A635bpxjlthsq88XfT9DM4o+M3weh3A=;
+        b=ddORJZ5b5oo8gygk0KXLzEjA9auSwvcZRFg/pbRAmqJAtWml88R7evZWlt5WomqQiS
+         10NrXJQ7KHYGYxLtavNrqBL5QfqqI9zBFceCBBofLE2G2xYEtdItjAJwmvc5nUATW3JJ
+         AcolfQzIge+9zOwxyW+dpPsFSiL3yWsSP4NC2no4KO2ogjPq7xMAbqVpqWhpY8lpXzKL
+         AJ2zYAGqyTxHeVdV08gB63h41n42UPxatSY+srPwPnyu2/27ghBhM/y8uGPl7iaol0JN
+         iyq+RKDbvUwqcdOx22Zm0FROUYS2vsZpTsGo/CDqlEch1iSIgZr5einN9OvFEPD5uNxb
+         oStA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=z55hHOIt9tU5A635bpxjlthsq88XfT9DM4o+M3weh3A=;
+        b=XgakCgKFl8cxF76w6aNIASgVkvuPcaNzaP1reCJNfiuk5gv+KlG7AXH4WDL+Cjkkgh
+         yF68pFEA92ZRTibX50ILNeMlfeKZpkiZA5ZVl7hLiU4NoODobZf3JjrzB4xGIW908InR
+         eDkDGIBDVbBb4LD/HNaF3BDJwgjrLaEX4ZGbpUMnafaMLu388fZwl5ZsLnOBOvDPjKHs
+         PuJ8dYB1AqXJmNXCqdX1RxDHv/wWRAa2Sx5n5I8e+jpW6LsVdga3YaPwTu5qMque1Ftv
+         EBOQ2A+4Smn7nzMmz0dNrt9d6whovTYuFm+d/4Q02fLAL0pVuuAUA4GrOy2g96+2yQFq
+         tNSQ==
+X-Gm-Message-State: AE9vXwOIe0jQNUVy1AU3MF2j0rYeKMjS0UXrRK6F232xXQyjrga24fSBqZyPCRc9N9Q4PA==
+X-Received: by 10.98.98.193 with SMTP id w184mr10299921pfb.120.1473457815372;
+        Fri, 09 Sep 2016 14:50:15 -0700 (PDT)
+Received: from neurocan.campus.utah.edu ([155.98.229.155])
+        by smtp.gmail.com with ESMTPSA id d9sm7459050pan.7.2016.09.09.14.50.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Fri, 09 Sep 2016 14:50:14 -0700 (PDT)
+Date: Fri, 09 Sep 2016 14:50:14 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: dtrang.tran@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1891853861.0.1473457813526.JavaMail.trang@neurocan>
+Subject: BUG: Browser option in Analysis view not working
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.9.1
+
+Operating system: Linux
+
+Bug reported by: dtrang.tran@utah.edu
+
+Description:
+An unhandled exception popping out saying java.lang.IllegalArgumentException: Invalid SId: neg-ssa_sim
+
+Stack trace:
+java.lang.IllegalArgumentException: Invalid SId: neg-ssa_sim
+	at org.jlibsedml.SId.<init>(SId.java:9)
+	at org.jlibsedml.AbstractIdentifiableElement.<init>(AbstractIdentifiableElement.java:69)
+	at org.jlibsedml.Simulation.<init>(Simulation.java:29)
+	at org.jlibsedml.SteadyState.<init>(SteadyState.java:6)
+	at analysis.main.AnalysisView.saveSEDML(AnalysisView.java:1698)
+	at analysis.main.AnalysisView.executeRun(AnalysisView.java:3049)
+	at main.Gui.actionPerformed(Gui.java:3439)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+

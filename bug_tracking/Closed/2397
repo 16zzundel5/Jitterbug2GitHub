@@ -1,0 +1,42 @@
+From christian.atheist@gmail.com  Mon Dec 10 13:12:29 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.8 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from nf-out-0910.google.com (nf-out-0910.google.com [64.233.182.190])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lBAKCSHZ005160
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Dec 2007 13:12:29 -0700
+Received: by nf-out-0910.google.com with SMTP id e27so1113268nfd
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Dec 2007 12:12:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=0AW2OiuIYxdq2mTr4vA0Km6xXdJhQr70Es10NnCBjYk=;
+        b=GMkXQOZ8NWbyt8VYRUp6oCaKJglk5IZildtIjKuHKNkfycTc3003PDzru9lPyeshxitiuCiYwUA1qSmyMqOCUnYx3ijqDIgrJ+4AOlDlNXbyybeyJ5yhPebCA7GJOA7XOtZWAl+EPTKWTLqixmQy78Sy7dAhXPMC2ZykHESzh9o=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=WeiUfEA1JbjCg+wPesmyjS35tUyI7tYUJezxXWsgYTjwPHXpzKt43R4EHxnNr7/jrR2KOazuhgxR/tit6ddesxsmqwlG2wbrNBvfrRDAmaABF3QYJ7q7B8LAkc1l3exlOSW7C9oJZy6h89cqWa8iU7NuxFI51XtGIq+SGSbwXd4=
+Received: by 10.82.167.5 with SMTP id p5mr7981150bue.1197317537347;
+        Mon, 10 Dec 2007 12:12:17 -0800 (PST)
+Received: by 10.82.149.9 with HTTP; Mon, 10 Dec 2007 12:12:17 -0800 (PST)
+Message-ID: <eba119560712101212s463a9bfbp8a209736bfb2539b@mail.gmail.com>
+Date: Mon, 10 Dec 2007 13:12:17 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Curtis Madsen" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Recent projects does not work
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+When I open BioSim, I get the following error message:
+
+[namphuon@shang BioSimProjects]$ Dec 10, 2007 10:01:12 AM
+java.util.prefs.FileSystemPreferences$7 run
+WARNING: Prefs file removed in background
+/home/shang/namphuon/.java/.userPrefs/prefs.xml
+
+My recent projects also does not work.
+

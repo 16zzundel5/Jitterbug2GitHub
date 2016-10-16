@@ -1,0 +1,82 @@
+From moschino21@gmail.com  Mon Oct  4 15:40:54 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-ew0-f42.google.com (mail-ew0-f42.google.com [209.85.215.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o94LerWR024917
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Oct 2010 15:40:54 -0600
+Received: by ewy2 with SMTP id 2so3222637ewy.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 04 Oct 2010 14:40:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:in-reply-to
+         :references:from:date:message-id:subject:to:content-type;
+        bh=lwyv2eJF20M3MNao+FnijiRz326KxCRMficwcpwjReA=;
+        b=KW0LsnBV0d0h5/ofr6+JrdiOoD+h0u3DCZaJtKtQqJgg8y9pbG7eqH4llEHU1QQR5j
+         XVpzUSbhBfnPyZqei7oBzM3r3FdlasLUyREIxsalvQkj4SqJZV9BBhXJIM27ZtTm0zOd
+         VYc/7BDeA42Ol/MTpS7tB/db9bsaxO6YaXUIU=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        b=ZsyOWGevB6dGcio+1OGwU+15FyXnWg8UwgFx/D/Q6sjn7FI1B/RMfaCFCtb3BPX+vu
+         9dh/EaYp5V1KqKRGw5oqaOFg1u13FaUB4mKnufz0fC48PlVe+ASOSZdvRe6wJ6ZNDmwQ
+         1OZMSMpg7l28qj377xeutwwMZtoQupx2V35h4=
+Received: by 10.213.45.194 with SMTP id g2mr365024ebf.0.1286228452557; Mon, 04
+ Oct 2010 14:40:52 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.14.125.4 with HTTP; Mon, 4 Oct 2010 14:40:32 -0700 (PDT)
+In-Reply-To: <201010042115.o94LFIHM024097@chou.ece.utah.edu>
+References: <201010042115.o94LFIHM024097@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Mon, 4 Oct 2010 15:40:32 -0600
+Message-ID: <AANLkTi=jKvCZgqAtdnDQ3au=J5zFyrcYY5jRkgGunppE@mail.gmail.com>
+Subject: Re: BUG: Unit Definitions editor does not allow changes on existing
+ units (PR#5158)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001485e9a56203d0740491d166fb
+
+--001485e9a56203d0740491d166fb
+Content-Type: text/plain; charset=ISO-8859-1
+
+I was trying to define the following units: per_second, per_mole and
+per_second_mole.
+
+On Mon, Oct 4, 2010 at 3:15 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> What exactly are you trying to do?  You cannot change units, if it will
+> cause
+> unit errors.  This is an effort to prevent you from creating invalid SBML.
+>
+> Chris
+>
+>
+
+
+-- 
+Zhen Zhang
+
+--001485e9a56203d0740491d166fb
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I was trying to define the following units: per_second, per_mole and per_se=
+cond_mole.<br><br><div class=3D"gmail_quote">On Mon, Oct 4, 2010 at 3:15 PM=
+, Chris Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.=
+ece.utah.edu">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin: 0pt 0pt 0pt 0.8ex; borde=
+r-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;">What exactly are =
+you trying to do? =A0You cannot change units, if it will cause<br>
+unit errors. =A0This is an effort to prevent you from creating invalid SBML=
+.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br><br clear=3D"all"><br>-- <br>Zhen Zhang<br>
+
+--001485e9a56203d0740491d166fb--
+

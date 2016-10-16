@@ -1,0 +1,68 @@
+From Jeffrey.Theisen@utah.edu  Tue Jan 29 19:24:28 2013
+Return-Path: <Jeffrey.Theisen@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r0U2OSXw020152
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 29 Jan 2013 19:24:28 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap8EAOWDCFGbYbVl/2dsb2JhbABEDr8Nc4IeAQEBBDo/EAIBCA4DBAEBCxQQHxMdCAIEDgUIiAmzOIUHiQmQKGEDi1KBaY8uiW+COTENgiQ
+X-IPAS-Result: Ap8EAOWDCFGbYbVl/2dsb2JhbABEDr8Nc4IeAQEBBDo/EAIBCA4DBAEBCxQQHxMdCAIEDgUIiAmzOIUHiQmQKGEDi1KBaY8uiW+COTENgiQ
+X-IronPort-AV: E=Sophos;i="4.84,564,1355122800"; 
+   d="scan'208";a="154450595"
+Received: from h101.umail.utah.edu (HELO X-HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 29 Jan 2013 19:24:27 -0700
+Received: from X-MB1.xds.umail.utah.edu ([169.254.1.185]) by
+ X-HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi id 14.02.0318.001;
+ Tue, 29 Jan 2013 19:25:23 -0700
+From: JEFFREY MARTIN THEISEN <Jeffrey.Theisen@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+CC: u0030884 <myers@ece.utah.edu>
+Subject: RE: BUG:boolean does not delete from schematic (PR#5828)
+Thread-Topic: BUG:boolean does not delete from schematic (PR#5828)
+Thread-Index: AQHN/o/+k/wRf6vy50+81W3o71uxOZhhJNqM
+Date: Wed, 30 Jan 2013 02:25:23 +0000
+Message-ID: <DA7280BB9D2E724593F88E5A0922D5F52C701AB2@X-MB1.xds.umail.utah.edu>
+References: <201301300216.r0U2GeR5019896@chou.ece.utah.edu>
+In-Reply-To: <201301300216.r0U2GeR5019896@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [76.23.51.50]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r0U2OSXw020152
+
+Hi Dr. Myers,
+
+I could not remember how I got it into the state, I wasn't really paying that close attention until I noticed that it would not get removed from the schematic and it was somewhat annoying.  A while after I submitted the bug I closed the project and reopened it, and when it reopened the boolean was still on the schematic; however, I was now able to delete it without problem.  I hope this helps.
+
+-Jeff
+
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Tuesday, January 29, 2013 7:16 PM
+To: JEFFREY MARTIN THEISEN
+Cc: u0030884
+Subject: Re: BUG:boolean does not delete from schematic (PR#5828)
+
+Hi Jeff,
+
+I'm not able to reproduce this though I think I've seen it before.  Are you able
+to reproduce it?  If so, what are the
+steps to do so?  When I add then delete Booleans, it comes off with no
+incident.
+
+When you close and reopen the model, is the Boolean you deleted gone?  My
+suspicion is that the Boolean did get
+deleted but somehow did not get removed from the schematic.  Then, when you
+tried to edit it, it was in some
+strange state.
+
+Thanks for your help.
+
+Chris
+
+P.S. Please use reply all to keep the "paper trail".
+

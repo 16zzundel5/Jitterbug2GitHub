@@ -1,0 +1,13 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: killpack@eng.utah.edu
+Subject: Re: core dump with vhdl files (PR#443)
+Date: Mon Jul 10 17:57:55 2000
+CC: hao@vlsigroup
+
+The problem is that in the function new_expression in auxilary.c there are two 
+fixed size strings id_vec and operaters which were size 100 when this example
+needs 162.  I up'ed them 1000.  Still a potential problem here.  Should make
+them
+dynamic.  Moving to potential problem.
+
+Chris

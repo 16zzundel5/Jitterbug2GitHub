@@ -1,0 +1,53 @@
+From Jeffrey.Theisen@utah.edu  Sun Feb 10 14:59:46 2013
+Return-Path: <Jeffrey.Theisen@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1ALxjbt015497
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 10 Feb 2013 14:59:45 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap8EAFgXGFGbYbVo/2dsb2JhbABFDsEac4IfAQEBBDo4FwIBCA4DBAEBCxQQHxMdCAIEEwiICrYPiQ+RKWEDjUSZM4JHP4Ik
+X-IPAS-Result: Ap8EAFgXGFGbYbVo/2dsb2JhbABFDsEac4IfAQEBBDo4FwIBCA4DBAEBCxQQHxMdCAIEEwiICrYPiQ+RKWEDjUSZM4JHP4Ik
+X-IronPort-AV: E=Sophos;i="4.84,639,1355122800"; 
+   d="scan'208";a="158600716"
+Received: from h104.umail.utah.edu (HELO X-HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 10 Feb 2013 14:59:44 -0700
+Received: from X-MB1.xds.umail.utah.edu ([169.254.1.119]) by
+ X-HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi id 14.02.0318.001;
+ Sun, 10 Feb 2013 15:00:22 -0700
+From: JEFFREY MARTIN THEISEN <Jeffrey.Theisen@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: RE: CHANGE: Logical and Relational function syntax (PR#5842)
+Thread-Topic: CHANGE: Logical and Relational function syntax (PR#5842)
+Thread-Index: AQHOB77iHuolE8yx6EatHv1Ch9a9GZhzof1H
+Date: Sun, 10 Feb 2013 22:00:21 +0000
+Message-ID: <DA7280BB9D2E724593F88E5A0922D5F52CCD0ED3@X-MB1.xds.umail.utah.edu>
+References: <201302101845.r1AIjSMU010338@chou.ece.utah.edu>
+In-Reply-To: <201302101845.r1AIjSMU010338@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [76.23.51.50]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r1ALxjbt015497
+
+Hi Dr. Myers,
+
+I doubled checked and I do have the Use Infix Expression Parse checked.  I played around with it checked vs. unchecked and it seems that the difference is this:  Either way, I will always get a "Formula is not valid" error if I try to use the infix notation.  However, if the box is checked, once I enter a formula such as "eq(a,b)", it will accept the formula but the next time that I open the function to edit it the formula will be rewritten as "a == b".  Since it is now rewritten using infix notation I must change it back to "eq(a,b)" if I want to make any slight changes.  Is this different from how it is working on your computer?
+
+-Jeff
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Sunday, February 10, 2013 11:45 AM
+To: JEFFREY MARTIN THEISEN
+Subject: Re: CHANGE: Logical and Relational function syntax (PR#5842)
+
+Please go to the preferences and make sure that "Use Infix Expression Parser" is
+selected.  If not, please select it
+and you should be able to use the infix notation.
+
+Chris
+
+

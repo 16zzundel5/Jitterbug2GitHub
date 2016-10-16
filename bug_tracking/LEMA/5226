@@ -1,0 +1,64 @@
+From satish4frienz@gmail.com  Thu Dec  9 00:20:07 2010
+Return-Path: <satish4frienz@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE,RCVD_IN_DNSWL_LOW
+	autolearn=no version=3.2.5
+Received: from mail-qw0-f42.google.com (mail-qw0-f42.google.com [209.85.216.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oB97K7B0002378
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 9 Dec 2010 00:20:07 -0700
+Received: by qwj8 with SMTP id 8so2909001qwj.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 08 Dec 2010 23:20:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:sender:reply-to:received
+         :date:x-google-sender-auth:message-id:subject:from:to:cc
+         :content-type;
+        bh=n2FOTABeqtAWeJt1sWgrmDzXJhCDC+h96d6mLpdBFuc=;
+        b=B9BV+I7QDlEQj0udUTPajPPs7VwUUIDLZcTCrQdrLMvVJGuZi5VzD6UkXc79+93HkE
+         q//QvGWoBPpmXjbzgb6KPj9+Bq59geURd9D8A34cAeA5J2UaSaJl67caI6tV7clZFl5A
+         QvwL8VZhCtnyfGfSP2MQGdjpmC2GYKkF1eSTg=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:sender:reply-to:date:x-google-sender-auth:message-id
+         :subject:from:to:cc:content-type;
+        b=M6Om5kGo6wCpAbe1IL9s8pyuOKU0mCJnvmFpmr+272bNtHFbWt0NurpNDHzKYAgFG9
+         jUN57sYAj97IXOQJs/T6cHsryz7FfbFzqQPI3LkqlAdWGqn1bmOm/pBmM5awkR2tJyTA
+         Z5/KEZBa59WpJEg2hkcn5YZ6/ZygtCi+TuSFs=
+MIME-Version: 1.0
+Received: by 10.224.47.67 with SMTP id m3mr7270720qaf.234.1291879205353; Wed,
+ 08 Dec 2010 23:20:05 -0800 (PST)
+Sender: satish4frienz@gmail.com
+Reply-To: satish.batchu@utah.edu
+Received: by 10.220.6.76 with HTTP; Wed, 8 Dec 2010 23:20:05 -0800 (PST)
+Date: Thu, 9 Dec 2010 00:20:05 -0700
+X-Google-Sender-Auth: ppLkKo3bFRBaWWg51ULbQGk9hxU
+Message-ID: <AANLkTingiS7n0bg9HNoraBzh9ob5SKO9T-q1fB4X-Oc+@mail.gmail.com>
+Subject: CHANGE: duplicated transitions for PI output centric model
+From: Satish Batchu <satish.batchu@utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary=00151750ea4620b8010496f511f6
+
+--00151750ea4620b8010496f511f6
+Content-Type: text/plain; charset=ISO-8859-1
+
+Should take the min,max range of delays/values/rates for such duplicated
+transitions in functional approach. Transitions are duplicated because the
+entry points are different (For eg: one comes due to ctl > 10 when phi > 0,
+and other comes due to phi > 0 when ctl >10. Both end up having the same
+enabling conditions but as different transitions.
+
+--00151750ea4620b8010496f511f6
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Should take the min,max range of delays/values/rates for such duplicated tr=
+ansitions in functional approach. Transitions are duplicated because the en=
+try points are different (For eg: one comes due to ctl &gt; 10 when phi &gt=
+; 0, and other comes due to phi &gt; 0 when ctl &gt;10. Both end up having =
+the same enabling conditions but as different transitions.=A0
+
+--00151750ea4620b8010496f511f6--
+

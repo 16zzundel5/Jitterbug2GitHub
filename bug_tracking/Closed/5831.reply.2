@@ -1,0 +1,20 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: tschomay@sci.utah.edu
+Subject: Re: BUG:Not sure what happened, but I was moving a species that was in (PR#5831)
+Date: Fri Feb  1 17:02:04 2013
+
+Hi,
+
+I think I figured this one out.  I get the same exception when I create two
+species with a complex formation 
+reaction between them.  Then, I create a third species and try to move it over
+the complex formation reaction.  If I 
+drop it while the complex formation reaction is highlighted, it tries to connect
+this species in which causes it to 
+crash.  I've added a check to prevent this from happening which will be in the
+new version released soon.  Please 
+let me know if this is fixed in version 2.4.2.
+
+Thanks for finding this subtle bug.
+
+Chris

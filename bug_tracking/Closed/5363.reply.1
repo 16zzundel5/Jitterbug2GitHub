@@ -1,0 +1,67 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: rodrigue@ebi.ac.uk
+Subject: Re: BUG : iBioSim 'import Biomodels' problems (PR#5363)
+Date: Fri May 13 15:33:57 2011
+CC: myers@ece.utah.edu
+
+Hi Nicolas,
+
+The problem with this one appears to be because we used a hard coded web address
+to find the biomodels online.  However, at some point they moved.  I've now
+changed it so that is uses the web service code to get the file which should
+solve this problem in the next release.  For now, you will need to use import. 
+By the way, if you see problems with this in the future, please let us know.
+
+iBioSim will load any level/version combination of SBML file, but it immediately
+converts it to either L2V4 or L3V1.  The decision of which to convert to is set
+in the preferences under the SBML Preferences tab.  Note that we up-convert
+only.  This means if you import a L3V1 file even in L2V4 mode, it will not
+attempt to down convert and instead leave it as an L3V1 file.  Therefore, when
+we save an SBML file, it will always save in either L2V4 or L3V1 depending on
+the mode and the original file type.  
+
+The "Save SBML File" menu option is only supposed to be active for GCM files. 
+It allows you to convert a GCM file to an SBML file.  Therefore, it is not
+intended for your desired purpose.  We have actually removed this option, and
+the GCM to SBML translation is now done through the analysis view.  
+
+We could easily add an export option for older SBML level/versions, but we do
+not currently support this.
+
+Cheers,
+
+Chris
+
+
+> Hello,
+> 
+> I tried to import a Biomodels model, when I clicked on it I got a 
+> windows with the list of Biomodels ID, I can get the names of the 
+> models, 'Get Description' or 'Get Reference' work properly and open a 
+> new browser window.
+> But when I select a model and click on the 'ok' button, I am getting an 
+> error message that say 'BIOMD0000000327.xml not found'.
+> 
+> Also if I tried to import directly an 'SBML Model', it works most of the 
+> time fine. Once, I got an exception about a wrong level and version 
+> combination and iBiosim stopped/crashed but I am not sure what exactly I 
+> did and I could not reproduce it.
+> 
+> 
+> If I tried to use the 'save SBML model' menu item, I am getting an 
+> exception :
+> 
+> Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException: 
+> sbmleditor.SBML_Editor cannot be cast to gcm2sbml.gui.GCM2SBMLEditor
+>          at biomodelsim.BioSim.actionPerformed(BioSim.java:2401)
+> 
+> It seems that you are supporting mainly SBML level 3 core, I wanted to 
+> try to save a SBML model to see if I was able to save it as l2v4. Would 
+> that be possible in the current version of iBioSim ?
+> 
+> 
+> Thanks,
+> Nico
+> 
+> 
+> 

@@ -1,0 +1,64 @@
+From peskin@cs.utah.edu  Wed Aug  2 15:51:51 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA13233
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 2 Aug 2000 15:51:50 -0600
+Date: Wed, 2 Aug 2000 15:51:50 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200008022151.PAA13233@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: atacs -h seg faults
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag helpCore
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: 
+log: 
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+See the sample session below:
+
+632 xia:~/atacs/src> pwd
+/home/xia/peskin/atacs/src
+633 xia:~/atacs/src> atacs -h
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Usage: atacs [OPTIONS] f1 ... fn
+        -l? : load from
+(c=CSP,h=HSE,v=VHDL,g=GRAPH,x=XBM,e=ER,t=TEL,s=RSG,p=PRS
+)
+        -s? : store to (g=GRAPH,e=ER,s=RSG,m=SG,p=PRS,n=NET,v=VHDL)
+        -d? : display (e=ER,s=RSG,z=STATS,n=NET)
+        -p? : print (e=ER,s=RSG,z=STATS,r=REG,n=NET)
+        -y? : synthesis (d=findred,s=findrsg,p=project,r=findreg,v=findviol)
+                         c=findcover,a=doall)
+        -e? : exceptions (C=connect,O=addord,P=addpers,S=findsv,V=solvecsc,
+                          R=resolve,B=breakup)
+        -t? : tools (s=delaycalc,v=simulate,o=verify)
+        -a? : analysis (t=findtd,w=findwctd,k=findslack,
+                        b=tpburst,m=tpsim,l=tprglin,e=tpexp,
+                        s=simtel,g=trigprob,c=simctmc,
+                        r=dtmcrp,C=ctmc,d=medley,p=cycper,
+                        i=lttpsim,y=simcyc,f=trigsim,u=unroll)
+        -m? : compilation options (n=newtab,z=postproc,r=redchk,e=abstract)
+        -m? : timing methods (i=si,u=untimed,h=heuristic,o=orbits,g=geometric,
+                              a=poapprox,s=posets)
+        -m? : timing options
+(R=genrg,U=subsets,P=supersets,F=infopt,O=orbmatch,
+                              T=interleav,p=prune,f=disabling)
+        -m? : synthesis methods (S=single,M=multicube,B=bdd,d=heursyn
+                                 Y=syn,l=sis)
+        -m? : synthesis options
+(H=sharegate,c=combo,E=exact,N=manual,I=inponly)
+        -m? : technology options (A=atomic,C=gc,G=gatelevel,b=burst)
+        -m? : other options (D=dot,X=exception,V=verbose)
+        -C#  : change number of cycles (cycles)
+        -M#  : change maximum fan-in for a gate (maxsize)
+        -G#/#: change default gate delay (gatedelay)
+        -L#  : change size of BDD linkspace (linkspace)
+        -T#  : change tolerance for convergence checks (tolerance)
+Segmentation fault
+634 xia:~/atacs/src> 
+

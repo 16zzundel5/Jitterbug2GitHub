@@ -1,0 +1,47 @@
+From ibiosim@gmail.com  Sat Mar 23 09:13:39 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f45.google.com (mail-pa0-f45.google.com [209.85.220.45])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r2NFDaem007662
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 23 Mar 2013 09:13:37 -0600
+Received: by mail-pa0-f45.google.com with SMTP id kl13so373126pab.32
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 23 Mar 2013 08:13:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=2VOinXvoG2iBJO7f1Sy8JwtfHGF0Ssx3azP5N9DjJHk=;
+        b=ixHfr8OACe3GH8WqjMwS/uy4+7zXkzDaAkA93KLrtXl6kxiYPG9icQP7bZPcEjgNpp
+         zQOEmFCMUDOaFE6BuH2tHMZzdOpHDVshwDDiNxMtUAlFIOcdhKgvNq4ZYX1wFoN/3pLw
+         KdgJIXT7kb9DJTf5DMTpLcTMEQxTnC+u0RAd2syU1g8QzJmoChsONZkm7dkAUPkBoma5
+         TQWGzqaILA1mFkr6BO492zQKNZ0fup7UikOkNtZHPtN75bhj15zGJhIxn1AD9FZF5Iq9
+         gGN8SHIU7q4i/B/mTPqrZiJSA8Pn5KVxdc63Uvn1rYx9AzF9bW+56nVzxS92cz8VeM39
+         5ySQ==
+X-Received: by 10.66.246.168 with SMTP id xx8mr8938996pac.107.1364051616634;
+        Sat, 23 Mar 2013 08:13:36 -0700 (PDT)
+Received: from gargravarr (155-99-106-138.uconnect.utah.edu. [155.99.106.138])
+        by mx.google.com with ESMTPS id wl14sm7325437pac.18.2013.03.23.08.13.34
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Sat, 23 Mar 2013 08:13:35 -0700 (PDT)
+Date: Sat, 23 Mar 2013 08:13:35 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <229886921.0.1364051612138.JavaMail.jeff@gargravarr>
+Subject: BUG: Move Random error rkf45 (java)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+When I simulate a cell with random movement in the rkf45 (java) simulator it comes up with a NullPointerException.  This error does not come up when using the SSA-Direct (java) simulator.
+
+Stack trace:
+java.lang.NullPointerException
+	at analysis.dynamicsim.Simulator.fireEvents(Simulator.java:2183)
+	at analysis.dynamicsim.SimulatorODERK.simulate(SimulatorODERK.java:285)
+	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:85)
+	at analysis.Run.execute(Run.java:1266)
+	at analysis.AnalysisView.run(AnalysisView.java:2214)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

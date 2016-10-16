@@ -1,0 +1,19 @@
+From: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: default values for min/max in movie view (PR#5240)
+Date: Fri Feb 11 02:06:19 2011
+
+> When a species or component is selected and the min/max are not set,  
+> then find the global min/max in the selected simulation file, and make  
+> them the default.
+> 
+> In the case of a species when no simulation file is set, make the  
+> default 0 to 100 for now.
+> 
+> 
+
+This should be working. In order to see the global min/max from the simulation
+file you 
+have to have a TSD file chosen. and edit a species that has never been edited
+before. 
+Also you can't have pressed "apply to all" while that species existed either.

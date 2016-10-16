@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: timing methods mask CSC violation in untimed example (PR#519)
+Date: Sun Apr 21 16:03:50 2002
+
+The problem appears to be in project.  In the untimed case, project creates a
+CSC violations.  In the timed case, it folds the two states together which have
+the CSC violation.  While no longer a CSC violations, the state 110R0R
+introduces a output choice which should be marked as a failure also.  This
+should be checked for, but is likely not a common issue.  Moving to potential
+problem.

@@ -1,0 +1,29 @@
+From zhen.zhang@utah.edu  Wed Jul  2 18:55:33 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s630tX5t007189
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 2 Jul 2014 18:55:33 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AkcKAMqotFPRVYC2/2dsb2JhbABaDoJ/gSyCbqtyAZhCCBZ1hBwRfA8CJgIkEgEFASIbGoggnECDEmqLJ5V/hg8XgSyQdIFMBYpOkB+SGRgpgTCDAWEe
+X-IPAS-Result: AkcKAMqotFPRVYC2/2dsb2JhbABaDoJ/gSyCbqtyAZhCCBZ1hBwRfA8CJgIkEgEFASIbGoggnECDEmqLJ5V/hg8XgSyQdIFMBYpOkB+SGRgpgTCDAWEe
+X-IronPort-AV: E=Sophos;i="5.01,591,1400047200"; 
+   d="scan'208";a="384208227"
+Received: from mail-ve0-f182.google.com ([209.85.128.182])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 02 Jul 2014 18:55:33 -0600
+Received: by mail-ve0-f182.google.com with SMTP id oy12so12246492veb.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 02 Jul 2014 17:55:32 -0700 (PDT)
+X-Received: by 10.52.84.162 with SMTP id a2mr691311vdz.23.1404348932606; Wed,
+ 02 Jul 2014 17:55:32 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.220.78.139 with HTTP; Wed, 2 Jul 2014 17:54:52 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Wed, 2 Jul 2014 18:54:52 -0600
+Message-ID: <CA+LVOvm0NAYOD-6rLD6JmEf1tVeYPoyUZT2f5TfR3STazLk_7A@mail.gmail.com>
+Subject: BUG: Place marking not changing
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+After updating BioSim today, the SSA-Direct simulation does not seem
+to change the place markings.
+

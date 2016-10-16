@@ -1,0 +1,16 @@
+From: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: allow sequestering even with complex degrades (PR#5378)
+Date: Thu May 26 02:49:16 2011
+
+This should be done, moving to needs testing.  I've modified the form
+
+kd_LacI * LacI_total/(1+Kc*IPTG_total) + kd_complex * LacI_total * (1 -
+1/(1+Kc*IPTG_total))
+
+to the equivalent form
+
+(kd_LacI + kd_complex * Kc * IPTG_total) * LacI_total / (1 + Kc * IPTG_total)
+
+which is much easier to generate when our example is expanded to multiple
+sequestering species.

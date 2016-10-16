@@ -1,0 +1,23 @@
+From: Eric G. Mercer <atacs-bugs@shang.elen.utah.edu>
+To: eemercer@elen.utah.edu
+Subject: Re: Solve CSC Error in store.er (PR#514)
+Date: Wed Sep 13 11:42:38 2000
+CC: myers@vlsigroup.elen.utah.edu
+
+It looks like the parser is not treating the constraint rule correctly in the
+CSP file.  The constraint rule turns into this in the jordi2wc.er file:
+
+# RULES:
+# 
+reset b-/1 0 0 inf
+
+When it should be:
+
+# RULES:
+# 
+b-/1 b-/1 [a]d 1 0 inf
+
+Not sure why it only happens here.  Maybe it something to do with the fact that
+this is a CSP file, and it should not have levels in it.
+
+egm

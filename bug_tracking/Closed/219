@@ -1,0 +1,23 @@
+From eemercer@ee.utah.edu  Thu Aug  5 09:59:35 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id JAA29537 for <atacs-bugs@shang.elen.utah.edu>; Thu, 5 Aug 1999 09:59:34 -0600 (MDT)
+Date: Thu, 5 Aug 1999 09:59:34 -0600 (MDT)
+From: eemercer@ee.utah.edu
+Message-Id: <199908051559.JAA29537@yuan.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: clag.hse Deadlocks!
+
+Full_Name: Eric G. Mercer
+Version: 
+OS: Linux
+source: /home/shang/eemercer/research/atacs/examples/clag.hse
+log: 
+Submission from: shang.elen.utah.edu (128.110.18.216)
+Submitted by: eemercer
+
+
+This is a gate level version of a 4-bit comparitor that was previously verified
+
+hazard free and functional by ATACS (April).  It no longer verifies and in fact
+deadlocks early on.  This may be related to bad initial markings but I am not 
+sure.  The source is checked into the examples directory.
+

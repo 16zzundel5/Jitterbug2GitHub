@@ -1,0 +1,11 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: Unable to select SBML file for GCM from GUI using mouse (PR#4729)
+Date: Wed Sep  1 22:56:38 2010
+
+I changed how the view menu gets enabled in LEMA.  Namely, I added a view
+learned model option to both iBioSim and LEMA, and I associated all of the other
+learn menu items with the file tree (not the learn view tab).  I'm not sure if
+this is the desired behavior since I don't use learn views in LEMA.  Let me know
+if this isn't correct and I'll fix the menu so each item is associated correctly
+with either the file tree or the learn view tab.  Moving to needs testing.

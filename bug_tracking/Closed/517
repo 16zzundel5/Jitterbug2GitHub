@@ -1,0 +1,26 @@
+From eemercer@elen.utah.edu  Fri Sep 29 13:50:58 2000
+Return-Path: <eemercer@elen.utah.edu>
+Received: from localhost (eemercer@localhost)
+	by shang.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA09159
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 29 Sep 2000 13:50:58 -0600
+X-Authentication-Warning: shang.elen.utah.edu: eemercer owned process doing -bs
+Date: Fri, 29 Sep 2000 13:50:57 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Potential Memory Leak in geom.rsg
+Message-ID: <Pine.LNX.4.10.10009291349560.9154-100000@shang.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Who frees the anti_causal_list anti stored in the clockkey?
+
+egm
+
+-----
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 3280 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+

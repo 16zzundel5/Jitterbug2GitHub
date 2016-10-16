@@ -1,0 +1,84 @@
+From ibiosim@gmail.com  Wed Jul  2 14:38:47 2014
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-oa0-f43.google.com (mail-oa0-f43.google.com [209.85.219.43])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s62KckJ7022580
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 2 Jul 2014 14:38:47 -0600
+Received: by mail-oa0-f43.google.com with SMTP id o6so12927477oag.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 02 Jul 2014 13:38:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=GkbytBPgtt7ECj/MJ4chwLts7CiqCpVcXwS708mZSDE=;
+        b=08FtmQbwYb41D7pPbakN+33lg+0r1sGarnHzJZG+4Kp5ydeGwrTayqxuYt+eYLk9ET
+         Ru6gQpJ24up/MnKXgFTAgpRLrtq5mktc69FHBviI9Xwxt10VCWhQNAS+11l6ndsriSUc
+         WEfQPb2A02KRl7Hs6S5/+Cp7mHlzFUtcIT+txT3Z50+cFB/ctXChNYI1XK5zK/kHMQtu
+         LpVCGQYjsYGu4ix1tYXXv5m2i7ICJrhgdNjCHD5n2fXaYB6L90fr6rRgrM87xOigpoT/
+         C7q+QZ+0/Q5sP3lOg1pYLRA0EoKt3PKywu1bi7cuXVr+kTJ1fF/2a5LZfx8YNpHeUa1Z
+         95tg==
+X-Received: by 10.182.102.194 with SMTP id fq2mr339349obb.38.1404333525693;
+        Wed, 02 Jul 2014 13:38:45 -0700 (PDT)
+Received: from 128-110-75-165.uconnect.utah.edu (128-110-75-165.uconnect.utah.edu. [128.110.75.165])
+        by mx.google.com with ESMTPSA id by10sm93441473oec.3.2014.07.02.13.38.37
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 02 Jul 2014 13:38:44 -0700 (PDT)
+Date: Wed, 02 Jul 2014 13:38:44 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: zhen.zhang@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <395250200.0.1404333513608.JavaMail.javamailuser@localhost>
+Subject: BUG: Using ! as the logical NOT symbol caused exceptions
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+LEMA Version 2.0
+
+Operating system: Mac OS X
+
+Bug reported by: zhen.zhang@utah.edu
+
+Description:
+Tried to put "!(one_flit)" as the enabling condition of a new transition, but it seems it is not allowed anymore. All existing ones where the NOT symbol are used have "not" as the symbol.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.util.SBMLutilities.returnsBoolean(SBMLutilities.java:2776)
+	at biomodel.gui.sbmlcore.Events.eventEditor(Events.java:568)
+	at biomodel.gui.schematic.Schematic.addTransition(Schematic.java:552)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1158)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6516)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3320)
+	at java.awt.Component.processEvent(Component.java:6281)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Component.dispatchEventImpl(Component.java:4872)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4832)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+	at java.awt.Container.dispatchEventImpl(Container.java:2273)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:708)
+	at java.awt.EventQueue$4.run(EventQueue.java:706)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+

@@ -1,0 +1,58 @@
+From robert.a.thacker@us.army.mil  Fri Sep 25 13:30:15 2009
+Return-Path: <robert.a.thacker@us.army.mil>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.2 required=5.0 tests=AWL,BAYES_00,
+	RCVD_IN_DNSWL_MED autolearn=ham version=3.2.5
+Received: from mxoutdr1.us.army.mil (mxoutdr1.us.army.mil [143.69.242.38])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8PJUDRB017623
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 25 Sep 2009 13:30:14 -0600
+DomainKey-Signature: s=ako; d=us.army.mil; c=nofws; q=dns;
+  h=From:X-AKO:X-AKO-AuthID:X-IronPort-AV:Received:
+   Message-Id:To:Content-Type:Content-Transfer-Encoding:
+   Mime-Version:Subject:Date:X-Mailer;
+  b=qiMG9ekF7WsSBdTNlJ0r6Hhr6qUn++hEsh6trzCMPgCU/G5nc2IURb14
+   JTVCvHIdneXjh+LcojpKSwJ2AJHBIw==;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=us.army.mil; i=robert.a.thacker@us.army.mil;
+  q=dns/txt; s=akodkim; t=1253907015; x=1285443015;
+  h=from:sender:reply-to:subject:date:message-id:to:cc:
+   mime-version:content-transfer-encoding:content-id:
+   content-description:resent-date:resent-from:resent-sender:
+   resent-to:resent-cc:resent-message-id:in-reply-to:
+   references:list-id:list-help:list-unsubscribe:
+   list-subscribe:list-post:list-owner:list-archive;
+  z=From:=20"Thacker,=20Robert=20A=20CPT=20RES=20USAR=20USAR
+   C"=20<robert.a.thacker@us.army.mil>|Subject:=20FEATURE:
+   =20abstraction,=20redundant=20transitions|Date:=20Fri,=20
+   25=20Sep=202009=2013:30:09=20-0600|Message-Id:=20<6C7235A
+   7-C861-4E75-968F-694E3AFF2892@us.army.mil>|To:=20Chris=20
+   Myers=20<atacs-bugs@vlsigroup.ece.utah.edu>|Mime-Version:
+   =201.0=20(Apple=20Message=20framework=20v936)
+   |Content-Transfer-Encoding:=207bit;
+  bh=Mae2C3g5imkOEd+8xMXFHvBjJFUqyeWrMCNzVvY7dio=;
+  b=mqmBhL0OvWq1kPXHsNML+qvt98UGmmy7ePyhHJP7LSb6dbNeva6dPRLl
+   DaQ1RvpyDn5zAUf4QLn9lvxALj49f6HSumIj6priVfhXK9wM9OdDxvr/o
+   oI9h/3jy0LBltczFUeW2OGPSs4Bv18akVA8I5crvU1/kwg+FkfyQR+1OI
+   g=;
+From: "Thacker, Robert A CPT RES USAR USARC" <robert.a.thacker@us.army.mil>
+X-AKO: 74969576:155.98.26.227:25 Sep 2009 19:30:12 +0000:$AuthSMTP:None
+X-AKO-AuthID: robert.a.thacker
+X-IronPort-AV: E=Sophos;i="4.44,453,1249257600"; 
+   d="scan'208";a="74969576"
+Received: from changcheng.ece.utah.edu (HELO zorac.ece.utah.edu) ([155.98.26.227])
+  by mxoutdr1.us.army.mil with ESMTP; 25 Sep 2009 19:30:11 +0000
+Message-Id: <6C7235A7-C861-4E75-968F-694E3AFF2892@us.army.mil>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: abstraction, redundant transitions
+Date: Fri, 25 Sep 2009 13:30:09 -0600
+X-Mailer: Apple Mail (2.936)
+
+Condition:  (1) place p has 2 transitions, t1 and t2, with the same  
+enabling condition e and timing bounds [l1,u1] and [l2,u2], and (2) u1  
+< l2
+Action: delete transition t2
+

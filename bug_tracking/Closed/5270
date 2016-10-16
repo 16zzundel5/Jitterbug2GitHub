@@ -1,0 +1,20 @@
+From myers@chou.ece.utah.edu  Sat Jan 29 17:11:19 2011
+Return-Path: <myers@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (chou.ece.utah.edu [127.0.0.1])
+	by yuan.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p0U0BJaP003993
+	for <atacs-bugs@chou.ece.utah.edu>; Sat, 29 Jan 2011 17:11:19 -0700
+Received: (from root@localhost)
+	by chou.ece.utah.edu (8.14.4/8.14.4/Submit) id p0U0BJdQ003992
+	for atacs-bugs@chou.ece.utah.edu; Sat, 29 Jan 2011 17:11:19 -0700
+From: Chris Myers <myers@chou.ece.utah.edu>
+Message-Id: <201101300011.p0U0BJdQ003992@chou.ece.utah.edu>
+Date: Sat, 29 Jan 2011 17:11:19 -0700
+To: atacs-bugs@chou.ece.utah.edu
+Subject: BUG: test 3
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by yuan.ece.utah.edu id p0U0BJaP003993
+
+

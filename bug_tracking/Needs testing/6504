@@ -1,0 +1,59 @@
+From ibiosim@gmail.com  Wed Jun  1 13:20:53 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f178.google.com (mail-pf0-f178.google.com [209.85.192.178])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u51JKr2g005278
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 1 Jun 2016 13:20:53 -0600
+Received: by mail-pf0-f178.google.com with SMTP id 62so20615616pfd.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 01 Jun 2016 12:20:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=CZMnoU9qzadOMTXTWQp76wTLz3ZI5Iw8l41eq1VIBdw=;
+        b=Zuveu8aRhPDFwnxMN+3CrrLJRhxoN4+I3XddP0/FvrkWUyFmLyOipXFsS3z9lVdmvc
+         D9kOSbhC6gLvqIMDIMZYFoJb+RFF/LcQENN03Jzo87lXRcHYIXZ7ElVHmNDmPOsv8i8V
+         OKHFZ9zRT5LY2Jel24ZbAoXPtKpyx8qDXttqUalMxZbCpAiVcBXJ3f5C6s3oKXxnu27C
+         YujmXEmNnQI8ZTccVrx7RSYr8uqnQjxaWy5t5UDQdpliaidtM4A8dLHrJ4N1FhZKkyYw
+         c7Nm7xcB3VPDwqkmnXZCFcCgSDeNVhFCsj+HbWk2obZBODUAm4szdkuD+9cMdYIdk80U
+         F3Lg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=CZMnoU9qzadOMTXTWQp76wTLz3ZI5Iw8l41eq1VIBdw=;
+        b=RqV1S/QusJ0dJHGXMDma6r34UiJymbrNbXdH1ZXyGvzl/8e5WRV6hAYXzWJ6ITkwEu
+         rFj3aZRxKcHn4QPO86eSLtiYvFPMiWpf+iBTfENdyDMX14e1jWASnbsxIQqMTiP5YPiA
+         tVJgHHysbQ8ty1frYoSDqfwfLqhlWtbksv08FyXXn5cicvRFsdhSaoVwKM1BPceTdJo5
+         p5zgw1rRNBJNI2BVk9Msg/HcGPdcWxRMZ8vrn/5vJXiMp1qx1vITUjNat6ITtKwgIzAk
+         p7BLcmWO90swcKuMu1GMB64Xiz0LN5LHpeGxyKGrpin/dGJI7JWVEYUqFC8nm+xiXppe
+         Y3hg==
+X-Gm-Message-State: ALyK8tK7kXo5qTHQD77v0FsyHVPo5VqL60ebsj5+WtcpERk9SS4x/kB+keQYP6v9JhA3kg==
+X-Received: by 10.98.94.135 with SMTP id s129mr11920671pfb.43.1464808852869;
+        Wed, 01 Jun 2016 12:20:52 -0700 (PDT)
+Received: from MichaelZhang (liang.ece.utah.edu. [155.98.27.215])
+        by smtp.gmail.com with ESMTPSA id ke3sm56827601pad.41.2016.06.01.12.20.51
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Wed, 01 Jun 2016 12:20:52 -0700 (PDT)
+Date: Wed, 01 Jun 2016 12:20:52 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: michael13162@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1717735303.0.1464808846543.JavaMail.Michael@MichaelZhang>
+Subject: BUG: Trying to get the reference for a Biomodel in the import
+ Biomodel dialog doesn't work for most models.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Windows 10
+
+Bug reported by: michael13162@gmail.com
+
+Description:
+The result is either a page not found or:
+
+[Fatal Error] :16:26: Invalid byte 2 of 3-byte UTF-8 sequence.
+

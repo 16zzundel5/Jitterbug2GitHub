@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: remove vacuous transitions is broken (PR#4964)
+Date: Sat May  8 18:18:12 2010
+CC: kjones@vlsigroup.ece.utah.edu
+
+I spoke to soon.  This still seems to have a problem with the system model with
+the following abstractions chosen:
+
+Local assignment propagation
+Remove dead places
+Remove dead transitions
+Remove written never read
+correlated variables
+Remove arc after failure transition
+Remove vacuous transitions (simplification)
+Constant false enabling conditions
+Remove write before write

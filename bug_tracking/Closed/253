@@ -1,0 +1,53 @@
+From peskin@cs.utah.edu  Fri Nov  5 09:40:39 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA18564
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 5 Nov 1999 09:40:39 -0700
+Date: Fri, 5 Nov 1999 09:40:39 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911051640.JAA18564@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: burst-mode machines without CSC
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12790650 Nov  4 19:31 ../../src/atacs*
+OS: RedHat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+source: /home/xia/peskin/atacs/examples/bm/hp-ir-rf-control.unc
+log: /home/xia/peskin/atacs/examples/bm/hp-ir-rf-control.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following burst-mode examples have CSC violations:
+
+hp-ir-rf-control.log:EXCEPTION:  CSC violation!
+iccd-scsi.log:EXCEPTION:  CSC violation!
+pe-send-ifc.log:EXCEPTION:  CSC violation!
+pscsi-isend.log:EXCEPTION:  CSC violation!
+pscsi-pscsi.log:EXCEPTION:  CSC violation!
+pscsi-tsend.log:EXCEPTION:  CSC violation!
+sbuf-read-ctl.log:EXCEPTION:  CSC violation!
+
+
+Here is a sample session:
+
+150 xia:examples/bm> pwd
+/home/xia/peskin/atacs/examples/bm
+151 xia:examples/bm> ../../src/perl/xbm2csg hp-ir-rf-control.unc 
+Fri Nov  5 09:35:07 MST 1999
+xbm2csg - translating file hp-ir-rf-control.unc
+xbm2csg - xbm states:   13
+xbm2csg - csg states:   26
+xbm2csg - state vector: 10
+xbm2csg - Compacted state graph written to file hp-ir-rf-control.rsg
+Fri Nov  5 09:35:07 MST 1999
+152 xia:examples/bm> ../../src/atacs hp-ir-rf-control.rsg -mEmbmX -ya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Now generating burst-mode implementations.
+Exception handling now turned ON.
+Loading reduced state graph from:  hp-ir-rf-control.rsg
+states = 9 transitions = 28
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+

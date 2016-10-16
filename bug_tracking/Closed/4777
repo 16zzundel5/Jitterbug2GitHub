@@ -1,0 +1,27 @@
+From myers@ece.utah.edu  Fri Sep 11 16:32:41 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8BMWf1Y013485
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 11 Sep 2009 16:32:41 -0600
+Received: from 75-169-163-120.slkc.qwest.net ([75.169.163.120] helo=[192.168.0.8])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MmEfY-0001dU-Oy; Fri, 11 Sep 2009 16:32:41 -0600
+Message-Id: <7A22F701-1661-456F-8329-FEE20643530F@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v935.3)
+Subject: BUG: cancel does not seem to work for Markov analysis
+Date: Fri, 11 Sep 2009 16:32:04 -0600
+Cc: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+X-Mailer: Apple Mail (2.935.3)
+
+The cancel button does not seem to work for Markov analysis.
+

@@ -1,0 +1,39 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: Xatacs File->Load (PR#118)
+Date: Sat May 22 11:02:18 1999
+
+> Full_Name: Eric Robert Peskin
+> Version: Xatacs (from /home/shang/peskin/atacs/-rwxr-xr-x   1 peskin   101    
+ 
+>      31 Apr 26 14:08 Xatacs*
+> -rwxr-xr-x   1 peskin   101      10594936 Apr 26 13:25 atacs*
+> lrwxrwxrwx   1 peskin   101             5 Apr 26 14:03 xatacs -> atacs*
+> 
+> OS: Xatacs Linux shang.elen.utah.edu 2.0.36 #1 Tue Oct 13 22:17:11 EDT 1998
+i586
+> unknown
+> source: 
+> log: 
+> Submission from: erp.cs.utah.edu (155.99.193.91)
+> Submitted by: peskin
+> 
+> 
+> It would help to have the full path name given in the "Filename:" field of
+> the main window.  Similarly, it would help if the current directory path
+> were listed in the "fileselect" dialog box.  Speaking of that dialog box,
+> maybe the Ext->CSP filter should be the default if you arrive at the box
+> via File->Load->CSP (and similarly for each other format).  Also, it might
+> be nice to have a version of the File->Load commands that would
+>
+I have added the directory to the top of the fileselect window and into the
+filename field on the window.  The default filter for loadcsp is CSP and
+similarly
+for other types of load.  Now, all commands will pull up a fileselect window
+when no design is currently selected.  This allows a doall for example to 
+be same as "doall <filename>" in atacs interactive.  There is a NEW button that
+is used to clear the current working design.
+
+> automatically do a Synthesize->Do All after loading the file.
+> 
+> 

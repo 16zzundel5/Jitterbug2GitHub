@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Sun Feb 15 16:58:30 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1FNwUIE009060
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 15 Feb 2015 16:58:30 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.82 id 1YN950-000Dgm-0H)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 15 Feb 2015 16:58:30 -0700
+Received: from c-50-186-113-219.hsd1.ut.comcast.net ([50.186.113.219] helo=[10.0.0.3])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YN97n-000Jxr-Ki
+	for atacs-bugs@vlsigroup.ece.utah.edu; Sun, 15 Feb 2015 17:01:19 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: BUG: initial rate not set by model generation
+Message-Id: <3826459A-8A02-4571-90DA-EB9B894FA8F4@ece.utah.edu>
+Date: Sun, 15 Feb 2015 16:58:25 -0700
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+The initial rate is not set during model generation.
+

@@ -1,0 +1,49 @@
+From rodrigue@ebi.ac.uk  Thu May 12 04:37:13 2011
+Return-Path: <rodrigue@ebi.ac.uk>
+Received: from spike.ebi.ac.uk (spike.ebi.ac.uk [193.62.196.9])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4CAbBVf026181
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 May 2011 04:37:12 -0600
+Received: from swallowtail.ebi.ac.uk (swallowtail.ebi.ac.uk [172.22.8.255])
+	by spike.ebi.ac.uk (8.13.8/8.13.8) with ESMTP id p4CAbArM028751
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 May 2011 11:37:11 +0100
+Message-ID: <4DCBB856.8090204@ebi.ac.uk>
+Date: Thu, 12 May 2011 11:37:10 +0100
+From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+User-Agent: Thunderbird 2.0.0.22 (X11/20090625)
+MIME-Version: 1.0
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG : iBioSim 'import Biomodels' problems
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+I tried to import a Biomodels model, when I clicked on it I got a 
+windows with the list of Biomodels ID, I can get the names of the 
+models, 'Get Description' or 'Get Reference' work properly and open a 
+new browser window.
+But when I select a model and click on the 'ok' button, I am getting an 
+error message that say 'BIOMD0000000327.xml not found'.
+
+Also if I tried to import directly an 'SBML Model', it works most of the 
+time fine. Once, I got an exception about a wrong level and version 
+combination and iBiosim stopped/crashed but I am not sure what exactly I 
+did and I could not reproduce it.
+
+
+If I tried to use the 'save SBML model' menu item, I am getting an 
+exception :
+
+Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException: 
+sbmleditor.SBML_Editor cannot be cast to gcm2sbml.gui.GCM2SBMLEditor
+         at biomodelsim.BioSim.actionPerformed(BioSim.java:2401)
+
+It seems that you are supporting mainly SBML level 3 core, I wanted to 
+try to save a SBML model to see if I was able to save it as l2v4. Would 
+that be possible in the current version of iBioSim ?
+
+
+Thanks,
+Nico
+
+

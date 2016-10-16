@@ -1,0 +1,25 @@
+From atacs-bugs  Tue Jan 28 14:29:32 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h0SLTWZ08277
+	for atacs-bugs@shang.elen.utah.edu; Tue, 28 Jan 2003 14:29:32 -0700
+Received: from jiaqi.stanford.edu (DNab40465e.Stanford.EDU [171.64.70.94])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id h0SLTWm08274
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jan 2003 14:29:32 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h0SLPDv01837
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jan 2003 13:25:14 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Tue, 28 Jan 2003 13:25:13 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: ruletype for event->place
+Message-ID: <Pine.LNX.4.44.0301281324340.1834-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Add separate ruletype for event to place connections.
+
+

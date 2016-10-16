@@ -1,0 +1,39 @@
+From satish.batchu@utah.edu  Mon Jul  6 12:39:36 2009
+Return-Path: <satish.batchu@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.2 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n66Idacu024086
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 6 Jul 2009 12:39:36 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApoEAOThUUqbYbVo/2dsb2JhbADBHYVJiE2EEgWCZIY2
+X-IronPort-AV: E=Sophos;i="4.42,358,1243836000"; 
+   d="scan'208";a="170845890"
+Received: from h104.umail.utah.edu (HELO HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 06 Jul 2009 12:39:36 -0600
+Received: from C1V2.xds.umail.utah.edu ([169.254.1.117]) by
+ HUB4.xds.umail.utah.edu ([2002:9b61:b568::9b61:b568]) with mapi; Mon, 6 Jul
+ 2009 12:39:36 -0600
+From: SATISH BATCHU <satish.batchu@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Mon, 6 Jul 2009 12:39:35 -0600
+Subject: FEATURE: Specific Assignments on the transitions
+Thread-Topic: FEATURE: Specific Assignments on the transitions
+Thread-Index: AQHJ/mkcLi0AjacaMk+99EKIkqhpyg==
+Message-ID: <C496AC5F89F0C543BC12113C829A409F480D79098D@C1V2.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Should make assignments on only specific variables on each transition as ag=
+ainst the current version which assigns rates on all non-dmvc variables on =
+every transition.=
+

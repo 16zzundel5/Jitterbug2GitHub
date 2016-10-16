@@ -1,0 +1,21 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@chou.elen.utah.edu
+Subject: Re: BAD108 broken repository! (PR#461)
+Date: Fri May 12 13:58:29 2000
+
+> 
+> CHECK THESE ERRORS FROM MAKE FIRST:
+> vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+> make[1]: *** [chantal.PRS] Error 1
+> make: *** [csp/check.subDir] Error 2
+> make[1]: *** [glc.PRS] Error 1
+> make: *** [g/check.subDir] Error 2
+> compare - There were 1 unmatched literals.
+> make[1]: *** [cache_s3i3o1.PRS.ok] Error 1
+> make: *** [unc/check.subDir] Error 2
+> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 
+Please remove chantal.csp and glc.g from night test and log a bug report.
+
+Please also log a bug report for cache_s3i3o1, and copy it to hans.  This
+may not be a bug, but I would like Hans to take a look and see.

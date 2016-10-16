@@ -1,0 +1,57 @@
+From myers@ece.utah.edu  Fri Sep 28 08:56:27 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l8SEuRu8012742
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 28 Sep 2007 08:56:27 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IbHH6-0005ml-Ui); Fri, 28 Sep 2007 08:57:09 -0600
+Received: from [192.168.1.101] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l8SEuMi3019250;
+	Fri, 28 Sep 2007 08:56:22 -0600
+Subject: CHANGE: output by GeneNet
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: Nathan Barker <nathan.barker@gmail.com>
+Cc: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 28 Sep 2007 08:55:59 -0600
+Message-Id: <1190991359.30696.5.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.0 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Hi Nathan,
+
+If you get a chance, could you reduce the amount of output by GeneNet?
+At debug level 0, I would like it to just report one line as it finishes
+learning each gene like:
+
+"Completed learning for gene X."
+
+The current output could then be hidden under debug level 1.  For larger
+designs, the amount of output is very large and fills up the log
+buffer.  
+
+Another option would be to redirect your current output into a log file
+and then provide a mechanism in BioSim to look at that log file if
+something goes wrong.  Actually, this is likely preferred as it will not
+clutter the command part of the window.  You could do this for the
+higher debug levels as well, and we could then just have an option on
+the learn tab that says view log and bring that up in a text window
+popup.
+
+Hope things are going well for you.
+
+Cheers,
+
+Chris
+  
+

@@ -1,0 +1,23 @@
+From myers@vlsigroup.elen.utah.edu  Wed Feb  9 23:46:02 2000
+Return-Path: <myers@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id XAA12885
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 9 Feb 2000 23:46:02 -0700
+Date: Wed, 9 Feb 2000 23:46:02 -0700
+Message-Id: <200002100646.XAA12885@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Petri-nets in chapter 4
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+The petri-nets in chapter 4 for the wine shop are wrong.  The first one should
+connect req_patron- to ack_wine+.  The second does not sample the shelf.
+

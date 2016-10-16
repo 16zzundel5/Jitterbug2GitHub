@@ -1,0 +1,26 @@
+From myers@jiaqi.elen.utah.edu  Wed May 19 13:44:55 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA12978 for <atacs-bugs@shang.elen.utah.edu>; Wed, 19 May 1999 13:44:53 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id NAA00531
+	for atacs-bugs@shang.elen.utah.edu; Wed, 19 May 1999 13:44:27 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905191944.NAA00531@jiaqi.elen.utah.edu>
+Subject: Re: dinvd2c.csp deadlocks under posets but not geometric (PR#47)
+To: atacs-bugs@shang.elen.utah.edu (Wendy Belluomini)
+Date: Wed, 19 May 1999 13:44:27 -0600 (MDT)
+In-Reply-To: <199905182118.PAA08156@yuan.elen.utah.edu> from "Wendy Belluomini" at May 18, 99 03:18:43 pm
+Content-Type: text
+
+> 
+> The core dump is a result of trying
+> to create a trace after the deadlock is detected, so that is not 
+> main problem here the problem.  I think this is a compiler bug.
+> The example is deadlocking since y- is firing when it should not
+> be.  This is a result of a rule from clk-/2 -> y-.  clk-/2 conflicts
+> with a+, and so y- can fire when either clk-/2 fires or a+ fires.
+> However, the csp indicates that y- should only fire when a+ fires.
+> When I remove the rule, clk-2/ -> y-, from the er it works fine.
+> 
+Not so much as a compiler bug as a semantic gotcha for "skip".  
+Right now, skip compiles to an empty TERS (or TEL), but perhaps,
+it should be a dummy event.  I will move this to Hao's responsibility.

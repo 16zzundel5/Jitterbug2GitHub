@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: rat103070@gmail.com
+Subject: Re: BUG: simulator assignment error (PR#5052)
+Date: Wed Jul 21 23:15:20 2010
+
+The behavior is actually correct.  If you zoom in you find that MemData is
+actually set to 0.008 at time 10.  This comes to 2 when multiplied by 256 at
+time 17.
+
+Chris

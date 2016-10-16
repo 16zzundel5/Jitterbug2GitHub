@@ -1,0 +1,19 @@
+From myers@vlsigroup.elen.utah.edu  Tue Jun  8 12:32:43 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id MAA01542 for <atacs-bugs@shang.elen.utah.edu>; Tue, 8 Jun 1999 12:32:42 -0600 (MDT)
+Date: Tue, 8 Jun 1999 12:32:42 -0600 (MDT)
+Message-Id: <199906081832.MAA01542@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add support for decomposition.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+Implement decomposition procedure described in Burns async paper.
+

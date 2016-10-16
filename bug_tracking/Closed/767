@@ -1,0 +1,28 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jan 12 15:01:43 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i0CM1hEN014653
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 12 Jan 2004 15:01:43 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i0CM1gpR014651
+	for atacs-bugs@shang.elen.utah.edu; Mon, 12 Jan 2004 15:01:42 -0700
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i0CM1gEN014645
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Jan 2004 15:01:42 -0700
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i0CM1ZAw006837
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Jan 2004 15:01:35 -0700
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i0CM1Zsl006833
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Jan 2004 15:01:35 -0700
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 12 Jan 2004 15:01:35 -0700 (MST)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: add CTL formula to g file
+Message-ID: <Pine.LNX.4.44.0401121501210.6832-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+

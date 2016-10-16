@@ -1,0 +1,47 @@
+From curtis.madsen@utah.edu  Wed May 30 22:12:52 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q4V4Cqt0021870
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 May 2012 22:12:52 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AskFAAjvxk+bYbVo/2dsb2JhbABEDoN3sReCFwEBAQQ6PxACAQgOAwQBAQsUEDIdCAIEDgUIiAOwFIkEiwgJhF1gA547BIZMgic5gVY
+X-IronPort-AV: E=Sophos;i="4.75,688,1330930800"; 
+   d="scan'208";a="56385908"
+Received: from h104.umail.utah.edu (HELO X-HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 30 May 2012 22:12:52 -0600
+Received: from X-MB4.xds.umail.utah.edu ([169.254.9.101]) by
+ X-HUB4.xds.umail.utah.edu ([155.97.181.234]) with mapi id 14.02.0298.004;
+ Wed, 30 May 2012 22:12:52 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+CC: "JASON T. STEVENS" <sarbruis@gmail.com>
+Subject: RE: BUG:  Unable to delete a model from a project (PR#5677)
+Thread-Topic: BUG:  Unable to delete a model from a project (PR#5677)
+Thread-Index: AQHNPV5CXXGBxp0zMUytNVWqW+CbVZbjTDQF
+Date: Thu, 31 May 2012 04:12:52 +0000
+Message-ID: <F96A0BC7D9EC7641BD926A332F7A2F9D0F8EF753@X-MB4.xds.umail.utah.edu>
+References: <201205290545.q4T5jW6V020924@chou.ece.utah.edu>
+In-Reply-To: <201205290545.q4T5jW6V020924@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.98.27.207]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q4V4Cqt0021870
+
+Your workaround appears to have fixed the problem.  Closing.
+________________________________________
+From: Jason Stevens [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Monday, May 28, 2012 11:45 PM
+To: Curtis Kendall Madsen
+Subject: Re: BUG:  Unable to delete a model from a project (PR#5677)
+
+Somewhere during the process of loading these files for the deletion process the
+path is being saved without a "/" at the end of it (in other cases there is a
+"/").  I'm not sure where this is happening, but I've put in a workaround for
+the bit of code that was crashing.
+

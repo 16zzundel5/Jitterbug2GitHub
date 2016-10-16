@@ -1,0 +1,63 @@
+From nroehner@comcast.net  Thu Aug 12 15:54:39 2010
+Return-Path: <nroehner@comcast.net>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from qmta01.emeryville.ca.mail.comcast.net (qmta01.emeryville.ca.mail.comcast.net [76.96.30.16])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7CLsZLP024634
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2010 15:54:35 -0600
+Received: from omta07.emeryville.ca.mail.comcast.net ([76.96.30.59])
+	by qmta01.emeryville.ca.mail.comcast.net with comcast
+	id tQPy1e0021GXsucA1ZubFE; Thu, 12 Aug 2010 21:54:35 +0000
+Received: from sz0128.ev.mail.comcast.net ([76.96.26.192])
+	by omta07.emeryville.ca.mail.comcast.net with comcast
+	id tZua1e00B48h5108UZuaHy; Thu, 12 Aug 2010 21:54:34 +0000
+Date: Thu, 12 Aug 2010 21:54:34 +0000 (UTC)
+From: nroehner@comcast.net
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1423520967.952607.1281650074682.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>
+Subject: BUG: orginal sets parameter to default value
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_952604_875397255.1281650074681"
+X-Originating-IP: [155.98.26.227]
+X-Mailer: Zimbra 6.0.5_GA_2420.RHEL4 (ZimbraWebClient - FF3.0 (Linux)/6.0.5_GA_2420.RHEL4)
+
+------=_Part_952604_875397255.1281650074681
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+When modifying parameters in analysis view, setting a parameter to original=
+ changes it to the GCM=E2=80=99s default value rather than to the original =
+value. For instance, I had a GCM in which species B was set to a custom cou=
+nt of 10, and it was my expectation that setting B=E2=80=99s species count =
+to original in analysis view would set it back to 10. Instead, doing so set=
+ B to the GCM=E2=80=99s default count of 0. I think =E2=80=9Coriginal=E2=80=
+=9D should either do what I think it should or be changed to =E2=80=9Cdefau=
+lt,=E2=80=9D since that=E2=80=99s a more apt description of its current fun=
+ctionality.=20
+
+Nic=20
+
+------=_Part_952604_875397255.1281650074681
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style type=3D'text/css'>p { margin: 0; }</style></head><body><=
+div style=3D'font-family: Arial; font-size: 12pt; color: #000000'><font><fo=
+nt size=3D"2">When modifying parameters in analysis view, setting a
+parameter to original changes it to the GCM=E2=80=99s default value rather =
+than
+to the original value.&nbsp; For instance, I had a GCM in which species B
+was set to a custom count of 10, and it was my expectation that setting
+B=E2=80=99s species count to original in analysis view would set it back to
+10.&nbsp; Instead, doing so set B to the GCM=E2=80=99s default count of 0.&=
+nbsp; I think
+=E2=80=9Coriginal=E2=80=9D should either do what I think it should or be ch=
+anged to
+=E2=80=9Cdefault,=E2=80=9D since that=E2=80=99s a more apt description of i=
+ts current
+functionality.<br><br>Nic<br></font></font></div></body></html>
+------=_Part_952604_875397255.1281650074681--
+

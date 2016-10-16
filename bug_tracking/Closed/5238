@@ -1,0 +1,33 @@
+From myers@ece.utah.edu  Thu Jan 13 09:13:42 2011
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.4 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0DGDglL019251
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 13 Jan 2011 09:13:42 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PdPny-0008Er-Ce
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 13 Jan 2011 09:13:42 -0700
+Message-Id: <C79A401D-A856-4BE2-B1D8-69007C2EA7DB@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: update influence panel
+Date: Thu, 13 Jan 2011 09:13:37 -0700
+X-Mailer: Apple Mail (2.936)
+
+Remove input, output, biochemical, and N-mer.
+
+Add a button to open the editor promoter window.
+
+Change name of "Degree of cooperativity" to "Stoichiometry".
+
+Also need to change this name in the global parameters.
+

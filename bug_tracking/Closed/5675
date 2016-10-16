@@ -1,0 +1,23 @@
+From curtis.madsen@utah.edu  Thu May 24 11:31:18 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q4OHVHSp023033
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 May 2012 11:31:17 -0600
+Date: Thu, 24 May 2012 11:31:17 -0600
+Message-Id: <201205241731.q4OHVHSp023033@chou.ece.utah.edu>
+From: curtis.madsen@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG:  64-bit Fedora install is pointing to the 32-bit iBioSim executable
+
+Full_Name: Curtis Madsen
+Version: 2.1
+OS: 64-bit Fedora 16
+source: 
+log: 
+Submission from: tang.ece.utah.edu (155.98.27.207)
+Submitted by: cmadsen
+
+
+The 64-bit Fedora installer installs iBioSim and creates a link that will try to
+launch the 32-bit version of iBioSim instead of the 64-bit version.
+

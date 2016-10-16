@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: timing method finds new CSC violation in old TEL (PR#570)
+Date: Thu Jul 12 12:33:53 2001
+
+Problem was some dummy events not projected in state graph.  Besides identical
+states
+it requires consistent links (i.e., in statecmp in project.c).  Links seem to
+have
+a problem so skipping this check solves the problem. Other problems could show
+up
+but doubtful in non-contrived examples.

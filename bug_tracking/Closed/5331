@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Wed Apr 13 15:46:35 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p3DLkZGm007940
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 13 Apr 2011 15:46:35 -0600
+Received: from wlan.dagstuhl.de ([192.76.146.51] helo=[192.168.10.156])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QA7tS-0000FR-SI; Wed, 13 Apr 2011 15:46:35 -0600
+Message-Id: <78E3694E-9EC6-4A4B-AA95-D5D04C583514@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: add none to list of properties in the analysis view
+Date: Wed, 13 Apr 2011 15:46:27 -0600
+Cc: ZHEN ZHANG <zhen.zhang@utah.edu>,
+        Curtis Kendall Madsen <curtis.madsen@utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+Add "none" to the list of properties in the analysis view to allow  
+analysis without a property being used.
+

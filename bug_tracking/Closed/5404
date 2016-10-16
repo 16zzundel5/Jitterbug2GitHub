@@ -1,0 +1,24 @@
+From myers@ece.utah.edu  Wed Jun 29 10:42:29 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p5TGgTsI008285
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Jun 2011 10:42:29 -0600
+Received: from 75-169-165-168.slkc.qwest.net ([75.169.165.168] helo=[192.168.0.2])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QbxqP-00085q-4T
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 29 Jun 2011 10:42:29 -0600
+Message-Id: <FE1A6F1C-715F-4A8A-9DAB-C0A746A1F1F7@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: add an export SBML option
+Date: Wed, 29 Jun 2011 10:42:16 -0600
+X-Mailer: Apple Mail (2.936)
+
+Add the ability to export a GCM as a flattened SBML file to the file  
+system.
+

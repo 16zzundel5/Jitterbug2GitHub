@@ -1,0 +1,129 @@
+From atacs-bugs  Fri Apr  6 13:53:53 2001
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id NAA29064
+	for atacs-bugs@shang.elen.utah.edu; Fri, 6 Apr 2001 13:53:53 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:root@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA29053;
+	Fri, 6 Apr 2001 13:53:53 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA01261;
+	Fri, 6 Apr 2001 13:55:19 -0600
+Date: Fri, 6 Apr 2001 13:55:19 -0600 (MDT)
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+cc: hao@vlsigroup.elen.utah.edu
+Subject: VHDL compiler (fwd)
+Message-ID: <Pine.LNX.4.10.10104061355060.1231-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Any ideas?
+
+Chris
+
+---------- Forwarded message ----------
+Date: Fri, 06 Apr 2001 19:33:30 +0900
+From: Tomohiro Yoneda <yoneda@yt.cs.titech.ac.jp>
+To: myers@vlsigroup.elen.utah.edu
+Cc: yoneda@cs.titech.ac.jp
+Subject: VHDL compiler
+
+
+Chris,
+
+It seems that the initialization of signal values does not work in the
+VHDL compiler, i.e., an initial value of every wire is set to 0, even
+if we have := '1' for it. Do you already know this? Or, I'm using it
+in a wrong way? I put an example in this mail.
+
+Best regards,
+Tomohiro.
+
+--------
+
+entity pipe is
+  port(c0,s1 : in std_logic;
+       s0 : out std_logic := '1';
+       c1 : out std_logic := '0';
+       ds : out std_logic := '0'
+       );
+end pipe;
+
+architecture hse of pipe is
+begin
+pipeP:process
+begin
+  guard(c0,'1');
+  s0 <= '0' after delay(10,10);
+  guard(s1,'1');
+  c1 <= '1' after delay(20,20);
+  ds <= '1' after delay(10,10);
+  guard_and(c0,'0',s1,'0');
+  s0 <= '1' after dealy(10,10);
+  c1 <= '0' after delay(20,20);
+  ds <= '0' after delay(10,10);
+end process;
+end hse;
+
+-------------------------------------------------------------------------------
+
+entity env is
+  port(s0,c1 : in std_logic;
+       c0 : out std_logic := '0';
+       s1 : out std_logic := '1');
+end env;
+
+architecture hse of env is
+begin
+sender:process
+begin
+  assign(c0,'1',10,20);
+  guard(s0,'0');
+  assign(c0,'0',30,40);
+  guard(s0,'1');
+end process;
+receiver:process
+begin
+  guard(c1,'1');
+  s1 <='0' after delay(50,60);
+  guard_and(c1,'0',s1,'0');
+  assign(s1,'1',70,80);
+end process;
+end hse;   
+
+-------------------------------------------------------------------------------
+
+entity test is
+  port(ds : out std_logic);
+end test;
+
+architecture test of test is
+    -- Component declarations
+    component pipe
+      port(c0,s1 : in std_logic;
+           s0 : out std_logic;
+           c1 : out std_logic;
+           ds : out std_logic);
+    end component;
+    component env
+      port(s0,c1 : in std_logic;
+           c0 : out std_logic;
+           s1 : out std_logic);
+    end component;
+    -- Signal declarations
+    signal c0 : std_logic := 0;      --@in
+    signal s1 : std_logic := 1;      --@in
+    signal c1 : std_logic := 0;      --@out
+    signal s0 : std_logic := 1;      --@out
+begin
+    -- Signal assignments
+    -- Component instances
+    pipe1 : pipe
+        port map(c0,s1,s0,c1,ds);
+    env1 : env
+        port map(s0,c1,c0,s1);
+end test;
+
+-------------------------------------------------------------------------------
+

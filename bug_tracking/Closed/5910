@@ -1,0 +1,75 @@
+From root@ming.ece.utah.edu  Fri May 31 03:33:10 2013
+Return-Path: <root@ming.ece.utah.edu>
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r4V9X45M006010;
+	Fri, 31 May 2013 03:33:04 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [127.0.0.1])
+	by ming.ece.utah.edu (8.14.5/8.14.5) with ESMTP id r4V9X4SV009320;
+	Fri, 31 May 2013 03:33:04 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.14.5/8.14.5/Submit) id r4V9X4vx009319;
+	Fri, 31 May 2013 03:33:04 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <201305310933.r4V9X4vx009319@ming.ece.utah.edu>
+Date: Fri, 31 May 2013 03:33:04 -0600
+To: peskin@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG:BAD3921 broken repository!
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Linux ming.ece.utah.edu 3.6.11-5.fc17.x86_64 #1 SMP Tue Jan 8 21:40:51 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    8192 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 64 kbytes
+maxproc      1024 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.pchbASE.prs-cPtpG0-1ys] Error 139
+make[1]: *** [hse/check.subDir] Error 2
+make: *** [hairy] Error 2
+make[3]: *** [.newMergex.newMerge.prs-oioqtbG1-2ys] Error 139
+make[2]: *** [newMergex/newMerge.VHDLtest] Error 2
+make[1]: *** [vhd/VHDLtests.subDir] Error 2
+make: *** [channelTests] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

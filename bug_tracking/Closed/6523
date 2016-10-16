@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Mon Jun 27 12:20:18 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f175.google.com (mail-pf0-f175.google.com [209.85.192.175])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RIKIbZ015297
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:20:18 -0600
+Received: by mail-pf0-f175.google.com with SMTP id i123so64203894pfg.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:20:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=R9yiwLFWb9emLgIlDekFXgtoP+RnGq0aeNQ/q2DEiCs=;
+        b=Nk2+2U8t/Bn7+0Bd0Uk8q5FTD+FvADqyQF7eiFmQMVlUGiH3K/KTwZLGU5bIwcKIEw
+         Vfwi1pVNTqjJuUioWbtBebUuKmtVK5B5dnlQt1f4JO5Q8XH09lvG8nkqraKdEKgn9aH0
+         dqjxM2GltjPVw0BtGhxoPbHojv0imrYpBQuuVzJL9eERrsEez5JvTmjfveNKy+iUTkaJ
+         rEDTgWT9BDzTyseGfDXVleS2RA3OlsApyWfzO6/rJYhbezSI9K2XwDCIbBffSI+pFY7H
+         qqX4HmZA+uQD+m/BgZHKBY1mvDoiqn/3Vss/khM16GkqTyH4mBs32H9AkwdXeP6eucjU
+         J7BQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=R9yiwLFWb9emLgIlDekFXgtoP+RnGq0aeNQ/q2DEiCs=;
+        b=R+ONPqo2mnPIR45HNq/C1SGvZ3xPM0gHLWnFqw0eYOOBj+lAWZKrBUju6z/cCuoRBg
+         IG45Ihgzf76zBCRsWmiSjHASS2sKxFW+maiSoj1ierr7Twj4axi96f7KKIqzHM06H4Vk
+         TFSCCONpy/OxL2M5yB0cE1dFrXDmNwwewyLF0UAU1xq57xOEtGX/RAOWfHm/E31HqRgD
+         vIe8TTcQBtkKz4fEvydeGPQl56EZt9wJ8MDZ048Dc7clPnESz8IWk+reON46Ni861Wbr
+         u6XyWfrhOpXVl/r00lVu/cj9lGnIKkI3ClNpPnNOQ3k8nP71BA9msAVV0PW4y+vxs5WU
+         R01g==
+X-Gm-Message-State: ALyK8tIApbJszfksOdqnKSEMUgvTayOQDZMKdqoV2QGEwES7l7tr7Uhb4n7nBHZmyWSY9Q==
+X-Received: by 10.98.102.66 with SMTP id a63mr35964588pfc.32.1467051618145;
+        Mon, 27 Jun 2016 11:20:18 -0700 (PDT)
+Received: from chou.ece.utah.edu (chou.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id j8sm3491416paj.22.2016.06.27.11.20.17
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:20:17 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:20:17 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <376950934.1.1467051617143.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Sweeping parameter not generated all plots
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I sweep parameter, it is not generating all the output files. For the systems biology tutorial, only two output plots are generated whereas the range specified in the tutorial should have four.
+

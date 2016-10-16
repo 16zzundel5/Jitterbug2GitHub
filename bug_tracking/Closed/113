@@ -1,0 +1,364 @@
+From stjung@ming.elen.utah.edu  Mon Apr 12 10:22:00 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA25763 for <atacs-bugs@ming.elen.utah.edu>; Mon, 12 Apr 1999 10:21:59 -0600 (MDT)
+Date: Mon, 12 Apr 1999 10:21:59 -0600 (MDT)
+Message-Id: <199904121621.KAA25763@yuan.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Loading Error
+
+Full_Name: Sungtae Jung
+Version: 4.1
+OS: Linux
+source: 
+log: 
+Submission from: ming.elen.utah.edu (128.110.18.208)
+Submitted by: stjung
+
+
+The following two csp files can not be loaded.
+
+1) scsiSVN70.csp
+
+/*****************************************************************************/
+/* Chu's SCSI Protocol Controller (with state variable added by hand)        */
+/*****************************************************************************/
+module scsi;
+
+delay gatedelay = <0,5>;
+delay envdelay = <20,50>;
+
+input ack = {true,envdelay};
+input go = {false,envdelay};
+output req = {true,gatedelay};
+output rdy = {false,gatedelay};
+output q = {true,gatedelay};
+
+process scsi2;
+*[ req-; rdy+; q-; [go+]; rdy-; [ack-]; req+; [go-]; q+; [ack+] ]  
+endprocess
+
+process ack;
+*[ [req-]; ack-; [req+]; ack+ ]
+endprocess
+
+process go;
+*[ [rdy+]; go+; [rdy-]; go- ]
+endprocess
+
+endmodule
+
+module main;
+
+input ack = {true,<20,50>};
+input go = {false,<20,50>};
+
+scsi scsi1(req => req1, ack => ack, go => go, rdy => rdy1);
+scsi scsi2(req => req2, ack => ack, go => go, rdy => rdy2);
+scsi scsi3(req => req3, ack => ack, go => go, rdy => rdy3);
+scsi scsi4(req => req4, ack => ack, go => go, rdy => rdy4);
+scsi scsi5(req => req5, ack => ack, go => go, rdy => rdy5);
+scsi scsi6(req => req6, ack => ack, go => go, rdy => rdy6);
+scsi scsi7(req => req7, ack => ack, go => go, rdy => rdy7);
+scsi scsi8(req => req8, ack => ack, go => go, rdy => rdy8);
+scsi scsi9(req => req9, ack => ack, go => go, rdy => rdy9);
+scsi scsi10(req => req10, ack => ack, go => go, rdy => rdy10);
+scsi scsi11(req => req11, ack => ack, go => go, rdy => rdy11);
+scsi scsi12(req => req12, ack => ack, go => go, rdy => rdy12);
+scsi scsi13(req => req13, ack => ack, go => go, rdy => rdy13);
+scsi scsi14(req => req14, ack => ack, go => go, rdy => rdy14);
+scsi scsi15(req => req15, ack => ack, go => go, rdy => rdy15);
+scsi scsi16(req => req16, ack => ack, go => go, rdy => rdy16);
+scsi scsi17(req => req17, ack => ack, go => go, rdy => rdy17);
+scsi scsi18(req => req18, ack => ack, go => go, rdy => rdy18);
+scsi scsi19(req => req19, ack => ack, go => go, rdy => rdy19);
+scsi scsi20(req => req20, ack => ack, go => go, rdy => rdy20);
+scsi scsi21(req => req21, ack => ack, go => go, rdy => rdy21);
+scsi scsi22(req => req22, ack => ack, go => go, rdy => rdy22);
+scsi scsi23(req => req23, ack => ack, go => go, rdy => rdy23);
+scsi scsi24(req => req24, ack => ack, go => go, rdy => rdy24);
+scsi scsi25(req => req25, ack => ack, go => go, rdy => rdy25);
+scsi scsi26(req => req26, ack => ack, go => go, rdy => rdy26);
+scsi scsi27(req => req27, ack => ack, go => go, rdy => rdy27);
+scsi scsi28(req => req28, ack => ack, go => go, rdy => rdy28);
+scsi scsi29(req => req29, ack => ack, go => go, rdy => rdy29);
+scsi scsi30(req => req30, ack => ack, go => go, rdy => rdy30);
+scsi scsi31(req => req31, ack => ack, go => go, rdy => rdy31);
+scsi scsi32(req => req32, ack => ack, go => go, rdy => rdy32);
+scsi scsi33(req => req33, ack => ack, go => go, rdy => rdy33);
+scsi scsi34(req => req34, ack => ack, go => go, rdy => rdy34);
+scsi scsi35(req => req35, ack => ack, go => go, rdy => rdy35);
+scsi scsi36(req => req36, ack => ack, go => go, rdy => rdy36);
+scsi scsi37(req => req37, ack => ack, go => go, rdy => rdy37);
+scsi scsi38(req => req38, ack => ack, go => go, rdy => rdy38);
+scsi scsi39(req => req39, ack => ack, go => go, rdy => rdy39);
+scsi scsi40(req => req40, ack => ack, go => go, rdy => rdy40);
+scsi scsi41(req => req41, ack => ack, go => go, rdy => rdy41);
+scsi scsi42(req => req42, ack => ack, go => go, rdy => rdy42);
+scsi scsi43(req => req43, ack => ack, go => go, rdy => rdy43);
+scsi scsi44(req => req44, ack => ack, go => go, rdy => rdy44);
+scsi scsi45(req => req45, ack => ack, go => go, rdy => rdy45);
+scsi scsi46(req => req46, ack => ack, go => go, rdy => rdy46);
+scsi scsi47(req => req47, ack => ack, go => go, rdy => rdy47);
+scsi scsi48(req => req48, ack => ack, go => go, rdy => rdy48);
+scsi scsi49(req => req49, ack => ack, go => go, rdy => rdy49);
+scsi scsi50(req => req50, ack => ack, go => go, rdy => rdy50);
+scsi scsi51(req => req51, ack => ack, go => go, rdy => rdy51);
+scsi scsi52(req => req52, ack => ack, go => go, rdy => rdy52);
+scsi scsi53(req => req53, ack => ack, go => go, rdy => rdy53);
+scsi scsi54(req => req54, ack => ack, go => go, rdy => rdy54);
+scsi scsi55(req => req55, ack => ack, go => go, rdy => rdy55);
+scsi scsi56(req => req56, ack => ack, go => go, rdy => rdy56);
+scsi scsi57(req => req57, ack => ack, go => go, rdy => rdy57);
+scsi scsi58(req => req58, ack => ack, go => go, rdy => rdy58);
+scsi scsi59(req => req59, ack => ack, go => go, rdy => rdy59);
+scsi scsi60(req => req60, ack => ack, go => go, rdy => rdy60);
+scsi scsi61(req => req61, ack => ack, go => go, rdy => rdy61);
+scsi scsi62(req => req62, ack => ack, go => go, rdy => rdy62);
+scsi scsi63(req => req63, ack => ack, go => go, rdy => rdy63);
+scsi scsi64(req => req64, ack => ack, go => go, rdy => rdy64);
+scsi scsi65(req => req65, ack => ack, go => go, rdy => rdy65);
+scsi scsi66(req => req66, ack => ack, go => go, rdy => rdy66);
+scsi scsi67(req => req67, ack => ack, go => go, rdy => rdy67);
+scsi scsi68(req => req68, ack => ack, go => go, rdy => rdy68);
+scsi scsi69(req => req69, ack => ack, go => go, rdy => rdy69);
+scsi scsi70(req => req70, ack => ack, go => go, rdy => rdy70);
+
+process left;
+*[ 
+[req1- & req2- & req3- & req4- & req5- & req6- & req7- & req8- & req9- & req10-
+& 
+req11- & req12- & req13- & req14- & req15- & req16- & req17- & req18- & req19- &
+req20- & 
+req21- & req22- & req23- & req24- & req25- & req26- & req27- & req28- & req29- &
+req30- & 
+req31- & req32- & req33- & req34- & req35- & req36- & req37- & req38- & req39- &
+req40- &
+req41- & req42- & req43- & req44- & req45- & req46- & req47- & req48- & req49- &
+req50- &
+req51- & req52- & req53- & req54- & req55- & req56- & req57- & req58- & req59- &
+req60- &
+req61- & req62- & req63- & req64- & req65- & req66- & req67- & req68- & req69- &
+req70-
+]; 
+   ack-; 
+[req1+ & req2+ & req3+ & req4+ & req5+ & req6+ & req7+ & req8+ & req9+ & 
+req10+ & req11+ & req12+ & req13+ & req14+ & req15+ & req16+ & req17+ & req18+ &
+req19+ & req20+ & 
+req21+ & req22+ & req23+ & req24+ & req25+ & req26+ & req27+ & req28+ & req29+ &
+req30+ &
+req31+ & req32+ & req33+ & req34+ & req35+ & req36+ & req37+ & req38+ & req39+ &
+req40+ &
+req41+ & req42+ & req43+ & req44+ & req45+ & req46+ & req47+ & req48+ & req49+ &
+req50+ &
+req51+ & req52+ & req53+ & req54+ & req55+ & req56+ & req57+ & req58+ & req59+ &
+req60+ &
+req61+ & req62+ & req63+ & req64+ & req65+ & req66+ & req67+ & req68+ & req69+ &
+req70+
+]; 
+   ack+ ]
+endprocess
+
+process right;
+*[ 
+[rdy1+ & rdy2+ & rdy3+ & rdy4+ & rdy5+ & rdy6+ & rdy7+ & rdy8+ & rdy9+ & 
+rdy10+ & rdy11+ & rdy12+ & rdy13+ & rdy14+ & rdy15+ & rdy16+ & rdy17+ & rdy18+ &
+rdy19+ & rdy20+ & 
+rdy21+ & rdy22+ & rdy23+ & rdy24+ & rdy25+ & rdy26+ & rdy27+ & rdy28+ & rdy29+ &
+rdy30+ &
+rdy31+ & rdy32+ & rdy33+ & rdy34+ & rdy35+ & rdy36+ & rdy37+ & rdy38+ & rdy39+ &
+rdy40+ &
+rdy41+ & rdy42+ & rdy43+ & rdy44+ & rdy45+ & rdy46+ & rdy47+ & rdy48+ & rdy49+ &
+rdy50+ &
+rdy51+ & rdy52+ & rdy53+ & rdy54+ & rdy55+ & rdy56+ & rdy57+ & rdy58+ & rdy59+ &
+rdy60+ &
+rdy61+ & rdy62+ & rdy63+ & rdy64+ & rdy65+ & rdy66+ & rdy67+ & rdy68+ & rdy69+ &
+rdy70+
+]; 
+   go+; 
+[rdy1- & rdy2- & rdy3- & rdy4- & rdy5- & rdy6- & rdy7- & rdy8- & rdy9- & 
+rdy10- & rdy11- & rdy12- & rdy13- & rdy14- & rdy15- & rdy16- & rdy17- & rdy18- &
+rdy19- & rdy20- & 
+rdy21- & rdy22- & rdy23- & rdy24- & rdy25- & rdy26- & rdy27- & rdy28- & rdy29- &
+rdy30- &
+rdy31- & rdy32- & rdy33- & rdy34- & rdy35- & rdy36- & rdy37- & rdy38- & rdy39- &
+rdy40-  &
+rdy41- & rdy42- & rdy43- & rdy44- & rdy45- & rdy46- & rdy47- & rdy48- & rdy49- &
+rdy50-  &
+rdy51- & rdy52- & rdy53- & rdy54- & rdy55- & rdy56- & rdy57- & rdy58- & rdy59- &
+rdy60- &
+rdy61- & rdy62- & rdy63- & rdy64- & rdy65- & rdy66- & rdy67- & rdy68- & rdy69- &
+rdy70- 
+]; 
+   go-]
+endprocess
+endmodule
+
+2) fifoN47.csp
+
+include sunfifo2;
+
+/*****************************************************************************/
+/* A collection of N FIFO stages using SUN's FIFO (see ASYNC97)              */
+/* 	In order to add a stage, simply copy a fifo instance and increment   */
+/*      all the numbers.  Also, increment the numbers in the rightenv.       */
+/*****************************************************************************/
+
+module main;
+
+input i1 = {<180,inf;180,260>};
+input o49 = {true,<90,110;90,inf>};
+
+fifo fifo1(fin => i1, seoutb => o1, eout => x1, eoutb => x1b,
+	   fout => i2, foutb => i2b, seinb => o2);
+
+fifo fifo2(fin => i2, seoutb => o2, eout => x2, eoutb => x2b,
+	   fout => i3, foutb => i3b, seinb => o3);
+
+fifo fifo3(fin => i3, seoutb => o3, eout => x3, eoutb => x3b,
+	   fout => i4, foutb => i4b, seinb => o4);
+
+fifo fifo4(fin => i4, seoutb => o4, eout => x4, eoutb => x4b,
+	   fout => i5, foutb => i5b, seinb => o5);
+
+fifo fifo5(fin => i5, seoutb => o5, eout => x5, eoutb => x5b,
+	   fout => i6, foutb => i6b, seinb => o6);
+
+fifo fifo6(fin => i6, seoutb => o6, eout => x6, eoutb => x6b,
+	   fout => i7, foutb => i7b, seinb => o7);
+
+fifo fifo7(fin => i7, seoutb => o7, eout => x7, eoutb => x7b,
+	   fout => i8, foutb => i8b, seinb => o8);
+
+fifo fifo8(fin => i8, seoutb => o8, eout => x8, eoutb => x8b,
+	   fout => i9, foutb => i9b, seinb => o9);
+
+fifo fifo9(fin => i9, seoutb => o9, eout => x9, eoutb => x9b,
+	   fout => i10, foutb => i10b, seinb => o10);
+
+fifo fifo10(fin => i10, seoutb => o10, eout => x10, eoutb => x10b,
+	   fout => i11, foutb => i11b, seinb => o11);
+
+fifo fifo11(fin => i11, seoutb => o11, eout => x11, eoutb => x11b,
+	   fout => i12, foutb => i12b, seinb => o12);
+
+fifo fifo12(fin => i12, seoutb => o12, eout => x12, eoutb => x12b,
+	   fout => i13, foutb => i13b, seinb => o13);
+
+fifo fifo13(fin => i13, seoutb => o13, eout => x13, eoutb => x13b,
+	   fout => i14, foutb => i14b, seinb => o14);
+
+fifo fifo14(fin => i14, seoutb => o14, eout => x14, eoutb => x14b,
+	   fout => i15, foutb => i15b, seinb => o15);
+
+fifo fifo15(fin => i15, seoutb => o15, eout => x15, eoutb => x15b,
+	   fout => i16, foutb => i16b, seinb => o16);
+
+fifo fifo16(fin => i16, seoutb => o16, eout => x16, eoutb => x16b,
+	   fout => i17, foutb => i17b, seinb => o17);
+
+fifo fifo17(fin => i17, seoutb => o17, eout => x17, eoutb => x17b,
+	   fout => i18, foutb => i18b, seinb => o18);
+
+fifo fifo18(fin => i18, seoutb => o18, eout => x18, eoutb => x18b,
+	   fout => i19, foutb => i19b, seinb => o19);
+
+fifo fifo19(fin => i19, seoutb => o19, eout => x19, eoutb => x19b,
+	   fout => i20, foutb => i20b, seinb => o20);
+
+fifo fifo20(fin => i20, seoutb => o20, eout => x20, eoutb => x20b,
+	   fout => i21, foutb => i21b, seinb => o21);
+
+fifo fifo21(fin => i21, seoutb => o21, eout => x21, eoutb => x21b,
+	   fout => i22, foutb => i22b, seinb => o22);
+
+fifo fifo22(fin => i22, seoutb => o22, eout => x22, eoutb => x22b,
+	   fout => i23, foutb => i23b, seinb => o23);
+
+fifo fifo23(fin => i23, seoutb => o23, eout => x23, eoutb => x23b,
+	   fout => i24, foutb => i24b, seinb => o24);
+
+fifo fifo24(fin => i24, seoutb => o24, eout => x24, eoutb => x24b,
+	   fout => i25, foutb => i25b, seinb => o25);
+
+fifo fifo25(fin => i25, seoutb => o25, eout => x25, eoutb => x25b,
+	   fout => i26, foutb => i26b, seinb => o26);
+
+fifo fifo26(fin => i26, seoutb => o26, eout => x26, eoutb => x26b,
+	   fout => i27, foutb => i27b, seinb => o27);
+
+fifo fifo27(fin => i27, seoutb => o27, eout => x27, eoutb => x27b,
+	   fout => i28, foutb => i28b, seinb => o28);
+
+fifo fifo28(fin => i28, seoutb => o28, eout => x28, eoutb => x28b,
+	   fout => i29, foutb => i29b, seinb => o29);
+
+fifo fifo29(fin => i29, seoutb => o29, eout => x29, eoutb => x29b,
+	   fout => i30, foutb => i30b, seinb => o30);
+
+fifo fifo30(fin => i30, seoutb => o30, eout => x30, eoutb => x30b,
+	   fout => i31, foutb => i31b, seinb => o31);
+
+fifo fifo31(fin => i31, seoutb => o31, eout => x31, eoutb => x31b,
+	   fout => i32, foutb => i32b, seinb => o32);
+
+fifo fifo32(fin => i32, seoutb => o32, eout => x32, eoutb => x32b,
+	   fout => i33, foutb => i33b, seinb => o33);
+
+fifo fifo33(fin => i33, seoutb => o33, eout => x33, eoutb => x33b,
+	   fout => i34, foutb => i34b, seinb => o34);
+
+fifo fifo34(fin => i34, seoutb => o34, eout => x34, eoutb => x34b,
+	   fout => i35, foutb => i35b, seinb => o35);
+
+fifo fifo35(fin => i35, seoutb => o35, eout => x35, eoutb => x35b,
+	   fout => i36, foutb => i36b, seinb => o36);
+
+fifo fifo36(fin => i36, seoutb => o36, eout => x36, eoutb => x36b,
+	   fout => i37, foutb => i37b, seinb => o37);
+
+fifo fifo37(fin => i37, seoutb => o37, eout => x37, eoutb => x37b,
+	   fout => i38, foutb => i38b, seinb => o38);
+
+fifo fifo38(fin => i38, seoutb => o38, eout => x38, eoutb => x38b,
+	   fout => i39, foutb => i39b, seinb => o39);
+
+fifo fifo39(fin => i39, seoutb => o39, eout => x39, eoutb => x39b,
+	   fout => i40, foutb => i40b, seinb => o40);
+
+fifo fifo40(fin => i40, seoutb => o40, eout => x40, eoutb => x40b,
+	   fout => i41, foutb => i41b, seinb => o41);
+
+fifo fifo41(fin => i41, seoutb => o41, eout => x41, eoutb => x41b,
+	   fout => i42, foutb => i42b, seinb => o42);
+
+fifo fifo42(fin => i42, seoutb => o42, eout => x42, eoutb => x42b,
+	   fout => i43, foutb => i43b, seinb => o43);
+
+fifo fifo43(fin => i43, seoutb => o43, eout => x43, eoutb => x43b,
+	   fout => i44, foutb => i44b, seinb => o44);
+
+fifo fifo44(fin => i44, seoutb => o44, eout => x44, eoutb => x44b,
+	   fout => i45, foutb => i45b, seinb => o45);
+
+fifo fifo45(fin => i45, seoutb => o45, eout => x45, eoutb => x45b,
+	   fout => i46, foutb => i46b, seinb => o46);
+
+fifo fifo46(fin => i46, seoutb => o46, eout => x46, eoutb => x46b,
+	   fout => i47, foutb => i47b, seinb => o47);
+
+fifo fifo47(fin => i47, seoutb => o47, eout => x47, eoutb => x47b,
+	   fout => i48, foutb => i48b, seinb => o48);
+
+fifo fifo48(fin => i48, seoutb => o48, eout => x48, eoutb => x48b,
+	   fout => i49, foutb => i49b, seinb => o49);
+
+process leftenv;
+*[ i1+; [o1-]; i1-; [o1+] ]
+endprocess
+
+process rightenv;
+*[ [i49+]; o49-; [i49-]; o49+ ]
+endprocess
+
+endmodule
+

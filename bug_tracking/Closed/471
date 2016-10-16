@@ -1,0 +1,23 @@
+From wendy@ee.elen.utah.edu  Thu May 18 16:10:01 2000
+Return-Path: <wendy@ee.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA24279
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 18 May 2000 16:10:01 -0600
+Date: Thu, 18 May 2000 16:10:01 -0600
+Message-Id: <200005182210.QAA24279@chou.elen.utah.edu>
+From: wendy@ee.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: dangling rules
+
+Full_Name: Wendy Belluomini
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: s05.austin.ibm.com (192.35.232.115)
+Submitted by: wendy
+
+
+Add a way to tell the complier NOT to create a rule
+between 2 specified events.
+

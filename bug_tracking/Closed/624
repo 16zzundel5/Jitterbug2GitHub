@@ -1,0 +1,21 @@
+From atacs-bugs  Thu Oct 25 12:43:15 2001
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id f9PIhF503460
+	for atacs-bugs@shang.elen.utah.edu; Thu, 25 Oct 2001 12:43:15 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id f9PIhEt03453
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Thu, 25 Oct 2001 12:43:14 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) id f9PIhh701955
+	for atacs-bugs@vlsigroup; Thu, 25 Oct 2001 12:43:43 -0600
+Date: Thu, 25 Oct 2001 12:43:43 -0600
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+Message-Id: <200110251843.f9PIhh701955@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: Storevhd and xbm
+
+
+storevhd after synthesizing an xbm machine core dumps because the statestate
+variable has not been initialized.
+

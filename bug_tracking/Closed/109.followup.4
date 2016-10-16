@@ -1,0 +1,30 @@
+From atacs-bugs  Tue May 18 14:39:41 1999
+Received: (from atacs-bugs@localhost) by yuan.elen.utah.edu (8.7.1/8.7.1) id OAA07979 for atacs-bugs@shang.elen.utah.edu; Tue, 18 May 1999 14:39:41 -0600 (MDT)
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA02473 for <atacs-bugs@shang.elen.utah.edu>; Mon, 17 May 1999 13:21:31 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id NAA00929
+	for atacs-bugs@shang.elen.utah.edu; Mon, 17 May 1999 13:21:04 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905171921.NAA00929@jiaqi.elen.utah.edu>
+Subject: Re: Overly postprocess beta example (PR#109)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Mon, 17 May 1999 13:21:03 -0600 (MDT)
+In-Reply-To: <199905171745.LAA01995@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 17, 99 11:45:44 am
+Content-Type: text
+
+> 
+> OK, Rob fixed the source, so atacs compiles again.
+> I tried again and still got the same seg fault -->  SEE MY NEW BUG REPORT
+> However, if I copy beta.csp to my own space first, I do not get the seg fault, 
+> BUT I still get the original postprocessing bug:  
+> 
+Actually, your report seems that it worked.  You should do the following to
+test this bug:
+
+loadcsp beta
+shower
+
+If you see a graph, the bug is gone.  This example is a silly one with no
+outputs, so there is no logic generated.
+
+

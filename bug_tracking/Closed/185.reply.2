@@ -1,0 +1,15 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: If a component is not found terminate compile with error. (PR#185)
+Date: Thu Nov 11 19:13:22 1999
+
+This seems to work now (see below).  I will now close this report.
+
+290 xia:atacs/examples> atacs -ya csp/lapbN
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling csp/lapbN.csp ... 
+csp/lapbN.csp: line 1: cannot open 'lapbsv.csp'
+csp/lapbN.csp: line 16: module 'lapb' not found
+ERROR: Compilation failed due to above errors.
+291 xia:atacs/examples> 

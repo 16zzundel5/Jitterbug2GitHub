@@ -1,0 +1,21 @@
+From myers@vlsigroup.elen.utah.edu  Tue May 11 16:51:46 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id QAA17809 for <atacs-bugs@shang.elen.utah.edu>; Tue, 11 May 1999 16:51:45 -0600 (MDT)
+Date: Tue, 11 May 1999 16:51:45 -0600 (MDT)
+Message-Id: <199905112251.QAA17809@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Dummy events should be projected out of conflicts by postprocess.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: vlsi.elen.utah.edu (128.110.18.217)
+Submitted by: myers
+
+
+See example compare2.csp which uses compare.csp and compver.csp.
+It has undeclared dummy events showing up in conflicts preventing
+the ER from being loaded.
+

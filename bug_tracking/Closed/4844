@@ -1,0 +1,30 @@
+From myers@ece.utah.edu  Mon Oct 19 10:03:31 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n9JG3Vv1026825
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 19 Oct 2009 10:03:31 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Mzuhn-0002SJ-0C
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 19 Oct 2009 10:03:31 -0600
+Message-Id: <2BBC6E45-BED4-4DD2-BB16-B82C6E7F1443@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: problems with updating variables in LHPN learn view
+Date: Mon, 19 Oct 2009 10:03:25 -0600
+X-Mailer: Apple Mail (2.936)
+
+When adding/removing variables, I was getting some exceptions which I  
+fixed.  However, when adding/removing variables the input selection  
+and level values can get messed up as they seem to be position rather  
+than name based.
+

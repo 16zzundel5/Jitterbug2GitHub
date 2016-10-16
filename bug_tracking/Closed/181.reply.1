@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: stjung@ming.elen.utah.edu
+Subject: Re: Verification Error (PR#181)
+Date: Tue Jun  8 11:40:23 1999
+
+In the case of dlatch.csp, CLK should be set to be intially true.
+
+For all the other cases, the problem is that for some reason orbits does not
+like
+the signal name "s".  If you change them to "ss", it works.  I will add code to
+detect a signal named "s" and change its name for verification.

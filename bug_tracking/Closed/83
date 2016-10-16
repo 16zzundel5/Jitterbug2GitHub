@@ -1,0 +1,227 @@
+From peskin@sanguo.elen.utah.edu  Sun Mar 28 16:59:29 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id QAA05646 for <atacs-bugs@ming.elen.utah.edu>; Sun, 28 Mar 1999 16:59:29 -0700 (MST)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id QAA23238
+	for atacs-bugs@ming.elen.utah.edu; Sun, 28 Mar 1999 16:59:34 -0700
+Date: Sun, 28 Mar 1999 16:59:34 -0700
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199903282359.QAA23238@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: sbuf-send-pkt2.g has strange safety violation
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /.automount/shang/root/home/shang/peskin/examples/g/ignore                 
+WHEN:   Sun Mar 28 16:57:31 MST 1999                
+WHAT:   -rwx------ 1 peskin 101 10435411 Mar 28 16:05 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -lg -yd sbuf-send-pkt2            
+OUTPUT:                       
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Converting Petri net to ER and storing to:  sbuf-send-pkt2.er
+WARNING: Petri net has choice places
+WARNING: Petri net has choice places
+WARNING: Petri net has choice places
+WARNING: Petri net has choice places
+WARNING: Petri net has choice places
+WARNING: Petri net has choice places
+ERROR: sbuf-send-pkt2.g is not a valid g file!
+Compiling sbuf-send-pkt2.csp ... 
+ERROR: Cannot access sbuf-send-pkt2.csp!
+Loading timed event-rule structure from:  sbuf-send-pkt2.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 3 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 21
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 21
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 1
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 25
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 22
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 2
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 26
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 21
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 9
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 23
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 20
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 10
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 17
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 12
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 24
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 16
+NOT safe
+ERROR:  Safety violation!
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 7
+ERROR:  Cycle detected in acyclic constraint graph.
+e = 7  f = 7
+                              
+STATUS:  0       
+              
+FILE: ./sbuf-send-pkt2.g:
+# sbuf-send-pkt2
+# HP controller, by K. Stevens
+# One-hot encoding (even meat needs 3 state vars...)
+.inputs req rejpkt ackline done 
+.outputs ack sendline y2_sbufsendpkt2 y1_sbufsendpkt2 y0_sbufsendpkt2
+#@.init_state [000000000]
+.graph
+# 0
+place_0 rejpkt+/1 req+/1
+rejpkt+/1 y2_sbufsendpkt2+/1
+
+req+/1 sendline+/1
+# -> 6
+# -> 1
+# not quite correct, but the closest SAFE approximation...
+sendline+/1 place_1_0
+place_1_0 ackline+/1 rejpkt+/2
+
+# 1
+rejpkt+/2 y0_sbufsendpkt2+/1
+y0_sbufsendpkt2+/1 sendline-/1
+
+ackline+/1 y1_sbufsendpkt2+/1
+y1_sbufsendpkt2+/1 sendline-/2
+sendline-/2 place_1_1
+place_1_1 ackline-/1 done+
+
+done+ ack+/1
+# -> 2
+sendline-/1 rejpkt-/2
+# -> 4
+ack+/1 req-/2 ackline-/2 done-
+# -> 5
+
+# 2
+rejpkt-/2 ack+/2
+# -> 3
+ack+/2 req-/1
+
+# 3
+req-/1 y0_sbufsendpkt2-/1
+y0_sbufsendpkt2-/1 ack-/1
+# -> 0
+ack-/1 place_0
+
+# 4
+req-/2 y1_sbufsendpkt2-/2
+ackline-/2 y1_sbufsendpkt2-/2
+done- y1_sbufsendpkt2-/2
+y1_sbufsendpkt2-/2 ack-/2
+# -> 0
+ack-/2 place_0
+
+# 5
+ackline-/1 y1_sbufsendpkt2-/1
+y1_sbufsendpkt2-/1 sendline+/2
+# -> 1
+sendline+/2 place_1_0
+
+# 6
+y2_sbufsendpkt2+/1 rejpkt-/1
+# -> 0
+rejpkt-/1 y2_sbufsendpkt2-/1
+y2_sbufsendpkt2-/1 place_0 
+
+.marking { place_0 }
+.end
+              
+              
+FILE: ./sbuf-send-pkt2.er:
+.e 31
+.i 14
+.r 35
+.c 7
+.s 000000000
+reset
+ackline+/1
+ackline-/1
+ackline+/2
+ackline-/2
+done+
+done-
+rejpkt+/1
+rejpkt-/1
+rejpkt+/2
+rejpkt-/2
+req+/1
+req-/1
+req+/2
+req-/2
+ack+/1
+ack-/1
+ack+/2
+ack-/2
+sendline+/1
+sendline-/1
+sendline+/2
+sendline-/2
+y0_sbufsendpkt2+/1
+y0_sbufsendpkt2-/1
+y1_sbufsendpkt2+/1
+y1_sbufsendpkt2-/1
+y1_sbufsendpkt2+/2
+y1_sbufsendpkt2-/2
+y2_sbufsendpkt2+/1
+y2_sbufsendpkt2-/1
+ack+/1 req-/2 0 0 inf
+ack+/1 ackline-/2 0 0 inf
+ack+/1 done- 0 0 inf
+ack+/2 req-/1 0 0 inf
+ack-/1 rejpkt+/1 1 0 inf
+ack-/1 req+/1 1 0 inf
+ack-/2 rejpkt+/1 1 0 inf
+ack-/2 req+/1 1 0 inf
+done+ ack+/1 0 0 inf
+req+/1 sendline+/1 0 0 inf
+done- y1_sbufsendpkt2-/2 0 0 inf
+req-/1 y0_sbufsendpkt2-/1 0 0 inf
+req-/2 y1_sbufsendpkt2-/2 0 0 inf
+y0_sbufsendpkt2+/1 sendline-/1 0 0 inf
+y1_sbufsendpkt2+/1 sendline-/2 0 0 inf
+y2_sbufsendpkt2+/1 rejpkt-/1 0 0 inf
+y0_sbufsendpkt2-/1 ack-/1 0 0 inf
+y1_sbufsendpkt2-/1 sendline+/2 0 0 inf
+y1_sbufsendpkt2-/2 ack-/2 0 0 inf
+y2_sbufsendpkt2-/1 rejpkt+/1 1 0 inf
+y2_sbufsendpkt2-/1 req+/1 1 0 inf
+rejpkt+/1 y2_sbufsendpkt2+/1 0 0 inf
+rejpkt+/2 y0_sbufsendpkt2+/1 0 0 inf
+rejpkt-/1 y2_sbufsendpkt2-/1 0 0 inf
+rejpkt-/2 ack+/2 0 0 inf
+ackline+/1 y1_sbufsendpkt2+/1 0 0 inf
+ackline-/1 y1_sbufsendpkt2-/1 0 0 inf
+ackline-/2 y1_sbufsendpkt2-/2 0 0 inf
+sendline+/1 ackline+/1 0 0 inf
+sendline+/1 rejpkt+/2 0 0 inf
+sendline+/2 ackline+/1 0 0 inf
+sendline+/2 rejpkt+/2 0 0 inf
+sendline-/1 rejpkt-/2 0 0 inf
+sendline-/2 ackline-/1 0 0 inf
+sendline-/2 done+ 0 0 inf
+rejpkt+/1 req+/1
+ack-/1 ack-/2
+ack-/1 y2_sbufsendpkt2-/1
+ack-/2 y2_sbufsendpkt2-/1
+ackline+/1 rejpkt+/2
+sendline+/1 sendline+/2
+ackline-/1 done+
+              

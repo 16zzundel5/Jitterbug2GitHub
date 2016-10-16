@@ -1,0 +1,39 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jul 26 12:23:24 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QINOwO017365
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 26 Jul 2004 12:23:24 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i6QINOW5017363
+	for atacs-bugs@shang.elen.utah.edu; Mon, 26 Jul 2004 12:23:24 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QINOwO017357
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:23:24 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i6QINeaL029166
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:23:40 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i6QINewH029162
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:23:40 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 26 Jul 2004 12:23:40 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: dimerazation
+Message-ID: <Pine.LNX.4.44.0407261220430.29114-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+The current dimeration adjustment is ([S_tot]/2), should actually be
+
+((4Kd[S_tot]+1) - sqrt(8Kd[S_tot]+1))/8Kd
+
+Or possibly:
+
+(S_tot)/2 * (1 - 1/sqrt(2Kd[S_tot]))
+
+Chris
+
+

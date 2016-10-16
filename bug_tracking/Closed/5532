@@ -1,0 +1,160 @@
+From sarbruis@gmail.com  Fri Sep  9 13:43:52 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p89Jhp0h006897
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Sep 2011 13:43:52 -0600
+Received: by bkar4 with SMTP id r4so1700625bka.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 09 Sep 2011 12:43:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc:content-type;
+        bh=tozjvTzSTO5Jb9dQOY0MK9mmlat3wruc+i+a74W4F3s=;
+        b=v1CBnyb1CTuQ8+J/bWC/vDifd5gTiXOJtnVdcz6uaQ36Eb1P5fwVf8azdJnr9xWQtE
+         leDyI9ZdyNM6xvMxbOv9hQN6PfG4P5/LiLXwyThK+NAVwez+o/9D3FpRmDd4pFIighqi
+         jZa4Y9NE5M84IgQhfTDOIZKVCIyUo1h5D9TXM=
+Received: by 10.204.156.211 with SMTP id y19mr464007bkw.381.1315597431414;
+ Fri, 09 Sep 2011 12:43:51 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.39.14 with HTTP; Fri, 9 Sep 2011 12:43:11 -0700 (PDT)
+In-Reply-To: <BA150DAB-9A3E-4E33-BF39-0E1D2EA517F2@ece.utah.edu>
+References: <43704723-B183-40F1-B60D-1F453ED3562B@ece.utah.edu>
+ <CAHb1wp0QAk0iaCKT5NU47qdKN7h_a-GzXxVQG6YiBhOhBupMUg@mail.gmail.com>
+ <FD793690-3CE9-48BF-BD0A-5CE957F3E7CA@ece.utah.edu> <CAHb1wp1n=Cg5o0+8ZW1XtHLh8zY4Fh1POo2WLD9oraTUZX8cbg@mail.gmail.com>
+ <BA150DAB-9A3E-4E33-BF39-0E1D2EA517F2@ece.utah.edu>
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Fri, 9 Sep 2011 13:43:11 -0600
+Message-ID: <CAHb1wp1p6nj0XKUVnZeqzmrf023Kp39NaEcywLNng0eeL7i+mw@mail.gmail.com>
+Subject: Re: CHANGE: move make movie into export options
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0015175d01ee9120cf04ac8765f4
+
+--0015175d01ee9120cf04ac8765f4
+Content-Type: text/plain; charset=ISO-8859-1
+
+Okay, sounds good.  I think MP4 is probably the best default.  It looks like
+even windows media player supports it, and I know something like VLC or MPC,
+etc. support MP4 just fine on Windows.
+
+On Fri, Sep 9, 2011 at 1:37 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> This is what we do for graphs already.  For graphs, if it does not
+> recognize the extension, it assumes pdf and adds that extension.
+>
+> Chris
+>
+>
+> On Sep 9, 2011, at 12:12 PM, Jason Stevens wrote:
+>
+> So, in the save file dialog, if the user supplies a format, try to use that
+> one; and if the format isn't supported by ffmpeg or if the user doesn't
+> supply one, then use a default format?
+>
+> On Fri, Sep 9, 2011 at 11:39 AM, Chris J. Myers <myers@ece.utah.edu>wrote:
+>
+>> What I mean is that if in the file browser, you say <file>.avi then create
+>> an avi, if <file>.mp4 then an mp4.  It can default to whichever one you
+>> think is best if no extension is provided.  I was reading that perhaps mp4
+>> will not be available on windows, not sure though.
+>>
+>> Chris
+>>
+>> On Sep 9, 2011, at 11:30 AM, Jason Stevens wrote:
+>>
+>> "It should also be possible to click on the export icon and have it use
+>> the file extension to know which file type to use."
+>>
+>> I'm not sure what you mean by this.  What file extension?
+>>
+>> On Fri, Sep 9, 2011 at 9:16 AM, Chris J. Myers <myers@ece.utah.edu>wrote:
+>>
+>>> Move the make movie option into the export menu option and add the
+>>> supported file types.  It should also be possible to click on the export
+>>> icon and have it use the file extension to know which file type to use.
+>>>
+>>> Chris
+>>>
+>>>
+>>
+>>
+>
+>
+
+--0015175d01ee9120cf04ac8765f4
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Okay, sounds good. =A0I think MP4 is probably the best default. =A0It looks=
+ like even windows media player supports it, and I know something like VLC =
+or MPC, etc. support MP4 just fine on Windows.<br><br><div class=3D"gmail_q=
+uote">
+
+On Fri, Sep 9, 2011 at 1:37 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a hre=
+f=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br=
+><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1=
+px #ccc solid;padding-left:1ex;">
+
+<div style=3D"word-wrap:break-word">This is what we do for graphs already. =
+=A0For graphs, if it does not recognize the extension, it assumes pdf and a=
+dds that extension.<div><br></div><div><font color=3D"#888888">Chris</font>=
+<div>
+
+<div class=3D"h5"><br><div><br><div><div>On Sep 9, 2011, at 12:12 PM, Jason=
+ Stevens wrote:</div><br><blockquote type=3D"cite">So, in the save file dia=
+log, if the user supplies a format, try to use that one; and if the format =
+isn&#39;t supported by ffmpeg or if the user doesn&#39;t supply one, then u=
+se a default format?<br>
+
+<br><div class=3D"gmail_quote">
+
+On Fri, Sep 9, 2011 at 11:39 AM, Chris J. Myers <span dir=3D"ltr">&lt;<a hr=
+ef=3D"mailto:myers@ece.utah.edu" target=3D"_blank">myers@ece.utah.edu</a>&g=
+t;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0=
+ .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+<div style=3D"word-wrap:break-word">What I mean is that if in the file brow=
+ser, you say &lt;file&gt;.avi then create an avi, if &lt;file&gt;.mp4 then =
+an mp4. =A0It can default to whichever one you think is best if no extensio=
+n is provided. =A0I was reading that perhaps mp4 will not be available on w=
+indows, not sure though. =A0<div>
+
+
+
+<br></div><div><font color=3D"#888888">Chris<br></font><div><br><div><div><=
+div>On Sep 9, 2011, at 11:30 AM, Jason Stevens wrote:</div><br></div><div><=
+div><blockquote type=3D"cite"><div>&quot;It should also be possible to clic=
+k on the export icon and have it use the file extension to know which file =
+type to use.&quot;<br>
+
+
+
+</div><div><br></div><div>I&#39;m not sure what you mean by this. =A0What f=
+ile extension?</div>
+
+<br><div class=3D"gmail_quote">On Fri, Sep 9, 2011 at 9:16 AM, Chris J. Mye=
+rs <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu" target=3D"_b=
+lank">myers@ece.utah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left=
+:1ex">
+
+
+
+
+
+Move the make movie option into the export menu option and add the supporte=
+d file types. =A0It should also be possible to click on the export icon and=
+ have it use the file extension to know which file type to use.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br>
+</blockquote></div></div></div><br></div></div></div></blockquote></div><br=
+>
+</blockquote></div><br></div></div></div></div></div></blockquote></div><br=
+>
+
+--0015175d01ee9120cf04ac8765f4--
+

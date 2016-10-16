@@ -1,0 +1,24 @@
+From sarbruis@gmail.com  Wed Nov 16 12:46:03 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id pAGJk3Qw005178
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 16 Nov 2011 12:46:03 -0700
+Date: Wed, 16 Nov 2011 12:46:03 -0700
+Message-Id: <201111161946.pAGJk3Qw005178@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: schematics get dropped during SBML conversion of existing analysis views
+
+Full_Name: jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 146.83.218.209.transedge.com (209.218.83.146)
+Submitted by: jstev
+
+
+When a model with an existing analysis view is converted (ie, automatically)
+there is no longer a schematic in the analysis view.  If I create an analysis
+view then there is a schematic as expected.
+

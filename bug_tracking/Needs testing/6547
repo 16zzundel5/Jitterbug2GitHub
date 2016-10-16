@@ -1,0 +1,33 @@
+From myers@eng.utah.edu  Sun Jul  3 17:15:56 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u63NFuFH027377
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 3 Jul 2016 17:15:56 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86_2 id 1bJqcB-000Glb-SQ)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 03 Jul 2016 17:15:56 -0600
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.88])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:ECDHE-RSA-AES256-SHA:256)
+	(Exim 4.87 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1bJqc8-0000cj-I9
+	for atacs-bugs@vlsigroup.ece.utah.edu; Sun, 03 Jul 2016 17:15:48 -0600
+From: Chris Myers <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: all SBOL in project in single file
+Message-Id: <73777027-06AB-4233-A3E4-D4912D86CB00@ece.utah.edu>
+Date: Sun, 3 Jul 2016 17:15:30 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+X-Mailer: Apple Mail (2.3124)
+X-UCE-Score: -2.9 (--)
+X-spam-level: --
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id u63NFuFH027377
+
+All SBOL in project should be in a single file.
+
+This means all assembled SBOL, SBOL generated from SBML, part SBOL should save into this project file.
+
+

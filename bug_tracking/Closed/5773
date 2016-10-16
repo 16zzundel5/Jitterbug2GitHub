@@ -1,0 +1,26 @@
+From myers@eng.utah.edu  Mon Oct 15 11:18:52 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q9FHIqxU013465
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 15 Oct 2012 11:18:52 -0600
+Received: from jiaqi.ece.utah.edu ([155.98.27.199] helo=[192.168.1.100])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1TNoEu-000PUp-K5
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 15 Oct 2012 11:14:04 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: re-mint SBOL URI any time its component changes
+Date: Mon, 15 Oct 2012 11:18:47 -0600
+Message-Id: <A888354D-3088-40D8-9B75-141FAC714730@ece.utah.edu>
+To: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1283)
+X-Mailer: Apple Mail (2.1283)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q9FHIqxU013465
+
+Any time a DNA component is changed, the URI must also be changed to ensure they stay unique.
+
+

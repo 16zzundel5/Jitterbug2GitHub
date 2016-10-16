@@ -1,0 +1,339 @@
+From myers@eng.utah.edu  Thu Nov 12 13:24:35 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id tACKOZCC027557
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Nov 2015 13:24:35 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZwyQ2-000H6y-RE)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Nov 2015 13:24:34 -0700
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.232])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZwyQ0-0003aP-C3
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 12 Nov 2015 13:24:28 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_2B2F46A3-9876-4BAE-A273-FE23A31F4A8E"
+Subject: CHANGE: Release of libSBML-5.12.0
+Date: Thu, 12 Nov 2015 13:24:23 -0700
+References: <564469DC.6090601@caltech.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <B2EAD767-B96F-42BB-83FF-F2DB779356EC@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.2 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_2B2F46A3-9876-4BAE-A273-FE23A31F4A8E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+> Begin forwarded message:
+>=20
+> From: Sarah Keating <skeating@caltech.edu>
+> Subject: [sbml-discuss] Release of libSBML-5.12.0
+> Reply-To: sbml-discuss@googlegroups.com
+> To: SBML Discussion List <sbml-discuss@googlegroups.com>, LibSBML =
+Development List <libsbml-development@googlegroups.com>
+> Date: November 12, 2015 at 3:28:44 AM MST
+>=20
+> ----------------------
+> libSBML-5.12.0
+> ----------------------
+>=20
+> We are pleased to announce the release of libSBML-5.12.0 which is
+> available for download from
+>=20
+> https://sourceforge.net/projects/sbml/files/libsbml/5.12.0/
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> 5.12.0 (2015-11-12)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> STABLE RELEASE
+>=20
+> * New features
+>=20
+>  - In SBML Level 2, some units were defined by default and did not
+>    need to be explicitly included in a model. The
+>    SBMLLevelVersionConverter adds these units explicitly when
+>    converting to SBML Level 3. We have an added an option to
+>    disable this functionality and return Level 3 models without
+>    the units implied by Level 2.
+>=20
+>  - Sourceforge libSBML Tracker #242: 'addProduct etc using a species'
+>    We have added functions addProduct/addReactant/addModifier that
+>    take a Species as argument, along with a number of other optional
+>    values to completely specify the SpeciesReference object being
+>    created. This is a slight divergence from the direction libSBML
+>    usually takes and we would be grateful for any feedback
+>    on these functions.
+> =09
+>  - Validation speed has been dramatically improved for models that
+>    make use of FunctionDefinitions and in particular nested
+>    FunctionDefinitions.=09
+> =09
+>  - 'comp' package-specific updates:
+>=20
+>    - The 'flattening' routines have been expanded to correctly deal
+> 	  with FBC V2.
+> =09
+>  - 'fbc' package-specific updates:
+>=20
+>    - The FBC Version 2 package has been accepted by the SBML Editors.
+>      The code supporting this is now available as part of the stable
+>      release.
+>=20
+>=20
+> * Bug fixes
+>=20
+>  - There was a very subtle bug in unit checking that incorrectly
+>    applied a multiplication factor. Thanks to Mike Cooling for
+>    the detailed example and anaylysis that revealed this. It
+>    has now been fixed.
+>=20
+>  - In the new math code using the children of an ASTNode could result
+>    in the math namespace declaration being unecessarily written out
+>    in many places. This has been sorted out.
+>=20
+>  - Sourceforge libSBML Tracker #414: "A missing break statement" was
+>    added.
+>=20
+>=20
+> * Configuration/build system changes
+>=20
+>  - The CMake files have added an option to dynamically link to a
+>    python version on Mac OSX systems rather than automatically link.
+>    Thanks to Kyle Medley for supplying the initial patch for this.
+>=20
+>  - The test code has been tweaked to build and run with MSVC 2015.
+>    Fortunately the main code base worked with no issues.
+>=20
+>=20
+> * Miscellaneous
+>=20
+>  - Further documentation improvements have been added, especially for
+>    the FBC package.
+>=20
+>=20
+> EXPERIMENTAL RELEASE
+>=20
+> * New features
+>=20
+>  - 'multi' package-specific updates:
+>=20
+>    - Full validation has been added to the multi package code.
+>      Thanks to Fengkai Zhang for his continued efforts on this.
+>=20
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Please report any problems you encounter using libSBML either to the
+> mailing list libsbml-team@caltech.edu or using the issue tracker
+> for libSBML at
+>=20
+> https://sourceforge.net/tracker/?group_id=3D71971&atid=3D942737
+>=20
+> Thanks
+>=20
+> the LibSBMLTeam
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "libsbml-development" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to libsbml-development+unsubscribe@googlegroups.com.
+> To post to this group, send email to =
+libsbml-development@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/libsbml-development/55263B95.3040909%40c=
+altech.edu.
+> For more options, visit https://groups.google.com/d/optout.
+>=20
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "sbml-discuss" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbml-discuss+unsubscribe@googlegroups.com.
+> To post to this group, send email to sbml-discuss@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/564469DC.6090601%40caltech.=
+edu.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_2B2F46A3-9876-4BAE-A273-FE23A31F4A8E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Sarah Keating &lt;<a =
+href=3D"mailto:skeating@caltech.edu" =
+class=3D"">skeating@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-discuss] =
+Release of libSBML-5.12.0</b><br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">SBML Discussion List &lt;<a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a>&gt;, LibSBML Development =
+List &lt;<a href=3D"mailto:libsbml-development@googlegroups.com" =
+class=3D"">libsbml-development@googlegroups.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">November 12, 2015 at 3:28:44 AM =
+MST<br class=3D""></span></div><br class=3D""><div =
+class=3D"">----------------------<br class=3D"">libSBML-5.12.0<br =
+class=3D"">----------------------<br class=3D""><br class=3D"">We are =
+pleased to announce the release of libSBML-5.12.0 which is<br =
+class=3D"">available for download from<br class=3D""><br class=3D""><a =
+href=3D"https://sourceforge.net/projects/sbml/files/libsbml/5.12.0/" =
+class=3D"">https://sourceforge.net/projects/sbml/files/libsbml/5.12.0/</a>=
+<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D"">5.12.0 (2015-11-12)<br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">STABLE RELEASE<br class=3D""><br class=3D"">* =
+New features<br class=3D""><br class=3D""> &nbsp;- In SBML Level 2, some =
+units were defined by default and did not<br class=3D""> =
+&nbsp;&nbsp;&nbsp;need to be explicitly included in a model. The<br =
+class=3D""> &nbsp;&nbsp;&nbsp;SBMLLevelVersionConverter adds these units =
+explicitly when<br class=3D""> &nbsp;&nbsp;&nbsp;converting to SBML =
+Level 3. We have an added an option to<br class=3D""> =
+&nbsp;&nbsp;&nbsp;disable this functionality and return Level 3 models =
+without<br class=3D""> &nbsp;&nbsp;&nbsp;the units implied by Level =
+2.<br class=3D""><br class=3D""> &nbsp;- Sourceforge libSBML Tracker =
+#242: 'addProduct etc using a species'<br class=3D""> =
+&nbsp;&nbsp;&nbsp;We have added functions =
+addProduct/addReactant/addModifier that<br class=3D""> =
+&nbsp;&nbsp;&nbsp;take a Species as argument, along with a number of =
+other optional<br class=3D""> &nbsp;&nbsp;&nbsp;values to completely =
+specify the SpeciesReference object being<br class=3D""> =
+&nbsp;&nbsp;&nbsp;created. This is a slight divergence from the =
+direction libSBML<br class=3D""> &nbsp;&nbsp;&nbsp;usually takes and we =
+would be grateful for any feedback<br class=3D""> &nbsp;&nbsp;&nbsp;on =
+these functions.<br class=3D""><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span><br class=3D""> &nbsp;- =
+Validation speed has been dramatically improved for models that<br =
+class=3D""> &nbsp;&nbsp;&nbsp;make use of FunctionDefinitions and in =
+particular nested<br class=3D""> =
+&nbsp;&nbsp;&nbsp;FunctionDefinitions.<span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span><br class=3D""><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><br =
+class=3D""> &nbsp;- 'comp' package-specific updates:<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;&nbsp;- The 'flattening' routines have been =
+expanded to correctly deal<br class=3D""><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span> &nbsp;with FBC V2.<br =
+class=3D""><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span><br class=3D""> &nbsp;- 'fbc' package-specific updates:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- The FBC Version 2 package =
+has been accepted by the SBML Editors.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The code supporting this is now available =
+as part of the stable<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release.<br class=3D""><br class=3D""><br =
+class=3D"">* Bug fixes<br class=3D""><br class=3D""> &nbsp;- There was a =
+very subtle bug in unit checking that incorrectly<br class=3D""> =
+&nbsp;&nbsp;&nbsp;applied a multiplication factor. Thanks to Mike =
+Cooling for<br class=3D""> &nbsp;&nbsp;&nbsp;the detailed example and =
+anaylysis that revealed this. It<br class=3D""> &nbsp;&nbsp;&nbsp;has =
+now been fixed.<br class=3D""><br class=3D""> &nbsp;- In the new math =
+code using the children of an ASTNode could result<br class=3D""> =
+&nbsp;&nbsp;&nbsp;in the math namespace declaration being unecessarily =
+written out<br class=3D""> &nbsp;&nbsp;&nbsp;in many places. This has =
+been sorted out.<br class=3D""><br class=3D""> &nbsp;- Sourceforge =
+libSBML Tracker #414: "A missing break statement" was<br class=3D""> =
+&nbsp;&nbsp;&nbsp;added.<br class=3D""><br class=3D""><br class=3D"">* =
+Configuration/build system changes<br class=3D""><br class=3D""> &nbsp;- =
+The CMake files have added an option to dynamically link to a<br =
+class=3D""> &nbsp;&nbsp;&nbsp;python version on Mac OSX systems rather =
+than automatically link.<br class=3D""> &nbsp;&nbsp;&nbsp;Thanks to Kyle =
+Medley for supplying the initial patch for this.<br class=3D""><br =
+class=3D""> &nbsp;- The test code has been tweaked to build and run with =
+MSVC 2015.<br class=3D""> &nbsp;&nbsp;&nbsp;Fortunately the main code =
+base worked with no issues.<br class=3D""><br class=3D""><br class=3D"">* =
+Miscellaneous<br class=3D""><br class=3D""> &nbsp;- Further =
+documentation improvements have been added, especially for<br class=3D""> =
+&nbsp;&nbsp;&nbsp;the FBC package.<br class=3D""><br class=3D""><br =
+class=3D"">EXPERIMENTAL RELEASE<br class=3D""><br class=3D"">* New =
+features<br class=3D""><br class=3D""> &nbsp;- 'multi' package-specific =
+updates:<br class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- Full =
+validation has been added to the multi package code.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to Fengkai Zhang for his continued =
+efforts on this.<br class=3D""><br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">Please report any problems you encounter using =
+libSBML either to the<br class=3D"">mailing list =
+libsbml-team@caltech.edu or using the issue tracker<br class=3D"">for =
+libSBML at<br class=3D""><br =
+class=3D"">https://sourceforge.net/tracker/?group_id=3D71971&amp;atid=3D94=
+2737<br class=3D""><br class=3D"">Thanks<br class=3D""><br class=3D"">the =
+LibSBMLTeam<br class=3D""><br class=3D"">-- <br class=3D"">You received =
+this message because you are subscribed to the Google Groups =
+"libsbml-development" group.<br class=3D"">To unsubscribe from this =
+group and stop receiving emails from it, send an email to =
+libsbml-development+unsubscribe@googlegroups.com.<br class=3D"">To post =
+to this group, send email to libsbml-development@googlegroups.com.<br =
+class=3D"">To view this discussion on the web visit =
+https://groups.google.com/d/msgid/libsbml-development/55263B95.3040909%40c=
+altech.edu.<br class=3D"">For more options, visit =
+https://groups.google.com/d/optout.<br class=3D""><br class=3D""><br =
+class=3D"">-- <br class=3D"">You received this message because you are =
+subscribed to the Google Groups "sbml-discuss" group.<br class=3D"">To =
+unsubscribe from this group and stop receiving emails from it, send an =
+email to sbml-discuss+unsubscribe@googlegroups.com.<br class=3D"">To =
+post to this group, send email to sbml-discuss@googlegroups.com.<br =
+class=3D"">To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/564469DC.6090601%40caltech.=
+edu.<br class=3D"">For more options, visit =
+https://groups.google.com/d/optout.<br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_2B2F46A3-9876-4BAE-A273-FE23A31F4A8E--
+

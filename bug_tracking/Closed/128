@@ -1,0 +1,20 @@
+From myers@vlsigroup.elen.utah.edu  Sun May  9 18:08:57 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id SAA08890 for <atacs-bugs@shang.elen.utah.edu>; Sun, 9 May 1999 18:08:56 -0600 (MDT)
+Date: Sun, 9 May 1999 18:08:56 -0600 (MDT)
+Message-Id: <199905100008.SAA08890@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add ability to select component to synthesize.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+After a filename is selected, a component can be added to select which 
+component to synthesize.
+

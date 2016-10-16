@@ -1,0 +1,484 @@
+From christian.atheist@gmail.com  Wed Oct  3 16:49:15 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.185])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l93MnEQx019796
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 3 Oct 2007 16:49:15 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so4517333fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 03 Oct 2007 15:49:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=qm5hQ0k6p03GosvnRVH44h/c0ES8/nW3vaWbVlQKPjo=;
+        b=YQO714rUrxg1ClG21bdOrHkHvxAuocamSmU3A21211SnYnPeBD/bUd77PlRCHhRmDgAX8eh8zzqC0LiI9LrqEK1sh0/NDtPI7tGrn22/TnYt7q8hfDXfacOXz3pRxKmlG2/+SX8VtattpL5M2DcXDPYvjCI4xNBbYqvPq8ScRyM=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=PQ3yZtyQ7p1mU4ssJpmpSqC7e2uQNqi0ixTY3yRO1wRdATbBiH7qSKQm8JsljdSZPpghdG0kBvkAFLeKeJcXrZy/ybaicgfwZRwgdVSox4Mz8ozFT4vEskbETBfz9LS8y4YD3xYFEujjsD6dMq7WLSbYi9IcvM6qNW1ahrB/AAk=
+Received: by 10.82.134.12 with SMTP id h12mr9147915bud.1191451739519;
+        Wed, 03 Oct 2007 15:48:59 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Wed, 3 Oct 2007 15:48:59 -0700 (PDT)
+Message-ID: <eba119560710031548i11843626j4ab0c364ea5fc9b0@mail.gmail.com>
+Date: Wed, 3 Oct 2007 16:48:59 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Exception while running file
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I get an exception in my shell when I run an sbml file:
+
+java.io.IOException: Bad file descriptor
+        at java.io.FileInputStream.read(Native Method)
+        at reb2sac.core.gui.Run.execute(Run.java:322)
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1608)
+        at java.lang.Thread.run(Thread.java:619)
+
+I'm not sure if this hangs my simulation, but the progressable bar
+jumps to 1 run completed and stays there.
+
+The following SBML file generates the error:
+-------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model id="myAnd.dot">
+    <listOfCompartments>
+      <compartment id="default"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="B" name="B" compartment="default" initialAmount="0"/>
+      <species id="A" name="A" compartment="default" initialAmount="0"/>
+      <species id="D" name="D" compartment="default" initialAmount="40"/>
+      <species id="C" name="C" compartment="default" initialAmount="0"/>
+      <species id="Complex_A_B" name="Complex_A_B"
+compartment="default" initialAmount="0"/>
+      <species id="Promoter_1" name="Promoter_1" compartment="default"
+initialAmount="5"/>
+      <species id="rnap_Promoter_1" name="rnap_Promoter_1"
+compartment="default" initialAmount="0"/>
+      <species id="rnap_D_aPromoter_1" name="rnap_D_aPromoter_1"
+compartment="default" initialAmount="0"/>
+      <species id="P1" name="P1" compartment="default" initialAmount="5"/>
+      <species id="rnap_P1" name="rnap_P1" compartment="default"
+initialAmount="0"/>
+      <species id="rnap_Complex_A_B_aP1" name="rnap_Complex_A_B_aP1"
+compartment="default" initialAmount="0"/>
+      <species id="Promoter_0" name="Promoter_0" compartment="default"
+initialAmount="5"/>
+      <species id="rnap_Promoter_0" name="rnap_Promoter_0"
+compartment="default" initialAmount="0"/>
+      <species id="rnap_D_aPromoter_0" name="rnap_D_aPromoter_0"
+compartment="default" initialAmount="0"/>
+      <species id="rnap" name="RNAP" compartment="default" initialAmount="30"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="degradation_B" reversible="false">
+        <listOfReactants>
+          <speciesReference species="B"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_deg </ci>
+              <ci> B </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k_deg" name="k_deg" value="0.0075"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="degradation_A" reversible="false">
+        <listOfReactants>
+          <speciesReference species="A"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_deg </ci>
+              <ci> A </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k_deg" name="k_deg" value="0.0075"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="degradation_C" reversible="false">
+        <listOfReactants>
+          <speciesReference species="C"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_deg </ci>
+              <ci> C </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="k_deg" name="k_deg" value="0.0075"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="complex_formation_Complex_A_B">
+        <listOfReactants>
+          <speciesReference species="A"/>
+          <speciesReference species="B"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Complex_A_B"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf_d </ci>
+                <ci> A </ci>
+                <ci> B </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> Complex_A_B </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf_d" name="kf_d" value="0.5"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_Promoter_1">
+        <listOfReactants>
+          <speciesReference species="rnap"/>
+          <speciesReference species="Promoter_1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Promoter_1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> Promoter_1 </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_Promoter_1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.033"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_pro_Promoter_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_Promoter_1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Promoter_1"/>
+          <speciesReference species="B"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_Promoter_1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.001"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Activate_D_Promoter_1">
+        <listOfReactants>
+          <speciesReference species="D"/>
+          <speciesReference species="Promoter_1"/>
+          <speciesReference species="rnap"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_D_aPromoter_1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> Promoter_1 </ci>
+                <ci> D </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_D_aPromoter_1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.5"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_act_D_Promoter_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_D_aPromoter_1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_D_aPromoter_1"/>
+          <speciesReference species="B"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_D_aPromoter_1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_P1">
+        <listOfReactants>
+          <speciesReference species="rnap"/>
+          <speciesReference species="P1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_P1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> P1 </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_P1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.033"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_pro_P1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_P1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_P1"/>
+          <speciesReference species="C"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_P1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.001"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Activate_Complex_A_B_P1">
+        <listOfReactants>
+          <speciesReference species="Complex_A_B"/>
+          <speciesReference species="P1"/>
+          <speciesReference species="rnap"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Complex_A_B_aP1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> P1 </ci>
+                <ci> Complex_A_B </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_Complex_A_B_aP1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.5"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_act_Complex_A_B_P1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_Complex_A_B_aP1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Complex_A_B_aP1"/>
+          <speciesReference species="C"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_Complex_A_B_aP1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_Promoter_0">
+        <listOfReactants>
+          <speciesReference species="rnap"/>
+          <speciesReference species="Promoter_0"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Promoter_0"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> Promoter_0 </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_Promoter_0 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.033"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_pro_Promoter_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_Promoter_0"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_Promoter_0"/>
+          <speciesReference species="A"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_Promoter_0 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.001"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Activate_D_Promoter_0">
+        <listOfReactants>
+          <speciesReference species="D"/>
+          <speciesReference species="Promoter_0"/>
+          <speciesReference species="rnap"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_D_aPromoter_0"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kf </ci>
+                <ci> Promoter_0 </ci>
+                <ci> D </ci>
+                <ci> rnap </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kr </ci>
+                <ci> rnap_D_aPromoter_0 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="kf" name="kf" value="0.5"/>
+            <parameter id="kr" name="kr" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_rnap_act_D_Promoter_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="rnap_D_aPromoter_0"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="rnap_D_aPromoter_0"/>
+          <speciesReference species="A"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> koc </ci>
+              <ci> rnap_D_aPromoter_0 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="koc" name="koc" value="0.2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
+

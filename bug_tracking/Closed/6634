@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Sun Aug  7 15:04:52 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-io0-f180.google.com (mail-io0-f180.google.com [209.85.223.180])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u77L4paO005504
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 7 Aug 2016 15:04:51 -0600
+Received: by mail-io0-f180.google.com with SMTP id m101so342099916ioi.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 07 Aug 2016 14:04:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=4P5879pU6wc2SB5SEF2UD7vEYE+m9eS+Xv74NDqHD1U=;
+        b=LLVekB+avFmMueTQ2J/TA0OMSN2SXaNM1rFXpyf3nw1aTWnlM2GZlQdpcsAGtiyLhY
+         9bbFaltrZsqrUhOzgRpZV3SdofeG5JDIffYNaDYATFZh0R1wSHjb2yGrA/ZHGvAErNop
+         IRMdr9PfjS3cyZ+73hQVjrbcjlKb2YOFJ8veO+wa2gehDanRQLL0ZKxDr4RDKnqYpdb0
+         3WRdRo5BqiwvACE3VwG41/pUIJRbOTdHKreKtr5YyupUQJcK0L5PI+nUHzG9ows0F7V8
+         0yzS4HpmbWz6SpjBQQq4ZMzM3SRmWilAN/xLTWBE3jKDFOsP5dVoBTbYvSGYHRJdCKAm
+         ihkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=4P5879pU6wc2SB5SEF2UD7vEYE+m9eS+Xv74NDqHD1U=;
+        b=f+/roIuGY+hQTzo/J8bSZbyqJ5vneb5LPx+eMwZ5auc27wxEkzamueKs49XfYEBZWu
+         Fr5dS1oRxKU+/WD6L+pX0CYONZJyoL6o2cE02SaW/Jast9CamHpXoC9s1pK+rv6fjhtm
+         bujibXiUjxDL5/7Z5O5B3PZwn8SkWMNpw+LIBk2DP24qCRBeakMoIfAz4Ic90dEeitmR
+         taZUVNxj8HDswiMvRUvnTXzsj2SZEqAODtv2PXdeezgCef7hqvQfd30AV4ybRTJ9JuEa
+         sGbsvvYutTbcTTEaDXET/8wH6MHunfxtsu51Ha2GLCOwvq90Dmhdi8yy92dR1uHl43c5
+         jEGQ==
+X-Gm-Message-State: AEkooutL4aYBHh8ude0UeBiH0IlJEmgc+4i7f1p43yc1VPVGCruL4JNN3wL/IuBTSf+k/w==
+X-Received: by 10.107.9.42 with SMTP id j42mr86899936ioi.33.1470603890467;
+        Sun, 07 Aug 2016 14:04:50 -0700 (PDT)
+Received: from 192.168.0.105 (c-67-177-31-34.hsd1.ut.comcast.net. [67.177.31.34])
+        by smtp.gmail.com with ESMTPSA id b135sm12875642ioa.13.2016.08.07.14.04.49
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Sun, 07 Aug 2016 14:04:49 -0700 (PDT)
+Date: Sun, 07 Aug 2016 14:04:49 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <749766640.0.1470603887696.JavaMail.lwatanabe@Leandros-MacBook-Pro.local>
+Subject: BUG: Can't instantiate arrays of submodels
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.9.1
+
+Operating system: Mac OS X
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I try to make a submodel an array it complains that submodelRef needs indices.
+

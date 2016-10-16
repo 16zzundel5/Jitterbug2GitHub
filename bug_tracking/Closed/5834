@@ -1,0 +1,183 @@
+From tschomay@gmail.com  Fri Feb  1 09:24:08 2013
+Return-Path: <tschomay@gmail.com>
+Received: from mail-lb0-f173.google.com (mail-lb0-f173.google.com [209.85.217.173])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r11GO72j021455
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 1 Feb 2013 09:24:08 -0700
+Received: by mail-lb0-f173.google.com with SMTP id gf7so4657800lbb.4
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 01 Feb 2013 08:24:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:mime-version:sender:in-reply-to:references:from:date
+         :x-google-sender-auth:message-id:subject:to:content-type;
+        bh=aNL+adfrGaJBAcyhD2ek5m60d/1z/Z/DGggOTCQ7GQs=;
+        b=m0UeXNwVnD3lyaAuUK6fEruLcEerBJSgG6kzXnn2zBkL0YaHPAZrUbOH5OIjnx4hq/
+         ktjPbKxOJAdGU6nxcxgZ4knz6yk5PsLuOBz7uos9VnnsYwSIIRrbV0CWc+gm57Cs1sZj
+         E5ljD93SJIkN1ET8FSL/LozguxUq+yM98cLdCz0l+HzzUdKE0SJsnypQVjZAohBClzxh
+         zMTYMBBHpgttAj6quA4dpTEHZMiY09oR65G2EL78ZLGHVwa82Xt2ywAmASDQ4+tYscNe
+         /nRFv/lxtELzxdFz3xnvF+M5qUdmdfupPTfwBsyqwjLPmPOMXSk1EfKQWXfwhOTYzlDT
+         mlDQ==
+X-Received: by 10.152.105.103 with SMTP id gl7mr11681178lab.41.1359735846114;
+ Fri, 01 Feb 2013 08:24:06 -0800 (PST)
+MIME-Version: 1.0
+Sender: tschomay@gmail.com
+Received: by 10.112.61.101 with HTTP; Fri, 1 Feb 2013 08:23:45 -0800 (PST)
+In-Reply-To: <201302011509.r11F9CZZ019040@chou.ece.utah.edu>
+References: <201302011509.r11F9CZZ019040@chou.ece.utah.edu>
+From: Ted Schomay <tschomay@sci.utah.edu>
+Date: Fri, 1 Feb 2013 09:23:45 -0700
+X-Google-Sender-Auth: Oq8lpl4sN1_Wn03D41qt0PDzCso
+Message-ID: <CAKz=6V_nB2z06vJ7gKXs2T5gyY3+rW2dSBrFvBwZ=qhxWVO7AQ@mail.gmail.com>
+Subject: Re: BUG:Not sure what happened, but I was moving a species that was
+ in (PR#5831)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=f46d040714a718969504d4ac2c4b
+
+--f46d040714a718969504d4ac2c4b
+Content-Type: text/plain; charset=ISO-8859-1
+
+Hi Professor,
+Thank you for the reply.  I think you are exactly right.  The file is
+'Working.xml' in the project that I submitted on canvas last night.   I see
+a reaction 'Complex_16' in the tabular view that does not exist in the
+graphical view.  When I attempt to remove it, I get the same exception and
+it doesn't delete the reaction.
+
+I'm not actually sure that what I did is going to accomplish my goal.
+ Basically I need to model formation of 7-mers of DnaA_ATP binding
+cooperatively to 4 distinct sites.  The cooperation is based on how many
+many molecules are bound individually at each site as well as the number
+bound at the other 3 sites.  I was going to attempt this using events to
+set the rate constants, but I'm not sure that's possible.  Perhaps I should
+come to your office hours to discuss it?
+
+I have a vague idea of how the error happened, but no idea if I could
+recreate it.  In that file, I have DnaA_ATP polymerizing at 4 different
+sites (R1-R4).  I had already entered the formation arrows for all the
+reactions at R1 and the species at R2.  When I clicked one of the species
+in the R2 polymerization, I think I accidentally got an arrow that was
+behind it and got an error that I couldn't move that edge.  However, after
+closing the error message I saw a complex formation arrow from DnaA_ATP to
+the species I tried to move.  After adding arrows to the other species in
+the R2 polymerization, I noticed that the magically created arrow had gone
+missing, and recreated it.  I am guessing that 'Complex_16' is the
+mysterious arrow.
+
+Thank you,
+- Ted
+
+
+On Fri, Feb 1, 2013 at 8:09 AM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Hi,
+>
+> Looking at the stack traces you sent, I think I have a rough idea of how
+> this
+> happened.  It appears that you were
+> adding a complex formation connection between two species.  Somehow the
+> species
+> you were connecting too
+> seems to have no longer existed in the model.  I wonder if perhaps you
+> deleted
+> the species, but it was somehow
+> still showing up in the schematic.  When you tried to make this complex
+> connection to this missing species, the
+> addition of the complex formation reaction failed.  This created a partial
+> complex formation reaction.
+> Unfortunately, this partial reaction is causing problems, and it is why the
+> other two exceptions occurred.  The
+> model can likely be fixed by switching to tabular editor (right click on
+> the
+> model file to do this and select
+> view/edit (tabular).  Then, you can go to the reaction tab and find a
+> reaction
+> named Complex_<speciesId> and
+> remove this reaction.  My guess is that <speciesId> is missing in the
+> species
+> tab.
+>
+> Curious though how you got into this situation.
+>
+> Thanks,
+>
+> Chris
+>
+
+--f46d040714a718969504d4ac2c4b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi Professor,<div style>Thank you for the reply. =A0I thin=
+k you are exactly right. =A0The file is &#39;Working.xml&#39; in the projec=
+t that I submitted on canvas last night. =A0 I see a reaction &#39;Complex_=
+16&#39; in the tabular view that does not exist in the graphical view. =A0W=
+hen I attempt to remove it, I get the same exception and it doesn&#39;t del=
+ete the reaction.</div>
+
+<div style><br></div><div style>I&#39;m not actually sure that what I did i=
+s going to accomplish my goal. =A0Basically I need to model formation of 7-=
+mers of DnaA_ATP binding cooperatively to 4 distinct sites. =A0The cooperat=
+ion is based on how many many molecules are bound individually at each site=
+ as well as the number bound at the other 3 sites. =A0I was going to attemp=
+t this using events to set the rate constants, but I&#39;m not sure that&#3=
+9;s possible. =A0Perhaps I should come to your office hours to discuss it?<=
+/div>
+
+<div style><br></div><div style>I have a vague idea of how the error happen=
+ed, but no idea if I could recreate it. =A0In that file, I have DnaA_ATP po=
+lymerizing at 4 different sites (R1-R4). =A0I had already entered the forma=
+tion arrows for all the reactions at R1 and the species at R2. =A0When I cl=
+icked one of the species in the R2 polymerization, I think I accidentally g=
+ot an arrow that was behind it and got an error that I couldn&#39;t move th=
+at edge. =A0However, after closing the error message I saw a complex format=
+ion arrow from DnaA_ATP to the species I tried to move. =A0After adding arr=
+ows to the other species in the R2 polymerization, I noticed that the magic=
+ally created arrow had gone missing, and recreated it. =A0I am guessing tha=
+t &#39;Complex_16&#39; is the mysterious arrow.</div>
+
+<div style><br></div><div style>Thank you,</div><div style>- Ted</div></div=
+><div class=3D"gmail_extra"><br><br><div class=3D"gmail_quote">On Fri, Feb =
+1, 2013 at 8:09 AM, Chris Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:ata=
+cs-bugs@vlsigroup.ece.utah.edu" target=3D"_blank">atacs-bugs@vlsigroup.ece.=
+utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">Hi,<br>
+<br>
+Looking at the stack traces you sent, I think I have a rough idea of how th=
+is<br>
+happened. =A0It appears that you were<br>
+adding a complex formation connection between two species. =A0Somehow the s=
+pecies<br>
+you were connecting too<br>
+seems to have no longer existed in the model. =A0I wonder if perhaps you de=
+leted<br>
+the species, but it was somehow<br>
+still showing up in the schematic. =A0When you tried to make this complex<b=
+r>
+connection to this missing species, the<br>
+addition of the complex formation reaction failed. =A0This created a partia=
+l<br>
+complex formation reaction.<br>
+Unfortunately, this partial reaction is causing problems, and it is why the=
+<br>
+other two exceptions occurred. =A0The<br>
+model can likely be fixed by switching to tabular editor (right click on th=
+e<br>
+model file to do this and select<br>
+view/edit (tabular). =A0Then, you can go to the reaction tab and find a rea=
+ction<br>
+named Complex_&lt;speciesId&gt; and<br>
+remove this reaction. =A0My guess is that &lt;speciesId&gt; is missing in t=
+he species<br>
+tab.<br>
+<br>
+Curious though how you got into this situation.<br>
+<br>
+Thanks,<br>
+<br>
+Chris<br>
+</blockquote></div><br></div>
+
+--f46d040714a718969504d4ac2c4b--
+

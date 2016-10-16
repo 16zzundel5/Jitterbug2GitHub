@@ -1,0 +1,38 @@
+From curtis.madsen@utah.edu  Mon Jun 15 15:52:10 2009
+Return-Path: <curtis.madsen@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=5.0 tests=BAYES_50 autolearn=ham
+	version=3.2.4
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n5FLqAXk011927
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 15 Jun 2009 15:52:10 -0600
+X-SBRS: None
+X-IronPort-AV: E=Sophos;i="4.42,224,1243836000"; 
+   d="scan'208";a="225798579"
+Received: from h103.umail.utah.edu (HELO HUB2.xds.umail.utah.edu) ([155.97.181.103])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 15 Jun 2009 15:52:09 -0600
+Received: from C8V1.xds.umail.utah.edu ([fe80::583d:fcfd:7eda:76a2]) by
+ HUB2.xds.umail.utah.edu ([2002:9b61:b567::9b61:b567]) with mapi; Mon, 15 Jun
+ 2009 15:52:09 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Mon, 15 Jun 2009 15:52:08 -0600
+Subject: FEATURE: Demo Projects
+Thread-Topic: FEATURE: Demo Projects
+Thread-Index: AQHJ7gOHyrZ0BSFfB0+FXDy3dcuQHQ==
+Message-ID: <852B726894B07749AE9ABB4B055919AC2A3506C032@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+While the online Tutorial provides instructions for building a model of the=
+ lambda switch, it would be useful to have on the iBioSim website a demo pr=
+oject of a well-known gene circuit (lambda switch, toggle switch, repressil=
+ator) that users can download and analyze right away.=
+

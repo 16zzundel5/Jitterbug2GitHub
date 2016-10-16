@@ -1,0 +1,44 @@
+From ibiosim@gmail.com  Thu Feb  5 12:28:36 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f195.google.com (mail-pd0-f195.google.com [209.85.192.195])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t15JSani010980
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 5 Feb 2015 12:28:36 -0700
+Received: by pdbfp1 with SMTP id fp1so5341792pdb.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 05 Feb 2015 11:28:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=pYewQrX67cizH5nJMRmBVXfgg9rrSIyK4kJfKU2k0sE=;
+        b=d+lt7xk9Sf0V2JfLi7diIMwZJUPckf2hBJRya4s/V6a+rRsr1rhjFfFNEk0ALe5L7G
+         7HqFMREOO0MdMFZVJyIT/PxYCNkK74/RXBoQ9X4g3rzamBbjbkwaR07kxCXZIjKojkZB
+         UYV6dJj4hSqmWi5GaXLeNCBQgc09d3n+Zcqi156mEkkuyKKw8bsOLJZbsZ2xVEx+5Vf8
+         BIerc9wMQXg1WnFjeExTJ5XDafL8eaI7DcXuvVem8z5qXocdBHIY5WNMuTfhBk1MCt1X
+         4HJV1ZKSMnxn9exzsXztF6yET5Xujhm+xMxaTrNK+ASyNPvrEJMGhf3gCXGXc5QcTcES
+         vKjw==
+X-Received: by 10.66.120.129 with SMTP id lc1mr7506640pab.86.1423164516167;
+        Thu, 05 Feb 2015 11:28:36 -0800 (PST)
+Received: from lab5-70.users.coe.utah.edu (lab5-70.eng.utah.edu. [155.98.108.170])
+        by mx.google.com with ESMTPSA id pr5sm640443pdb.92.2015.02.05.11.28.33
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 05 Feb 2015 11:28:34 -0800 (PST)
+Date: Thu, 05 Feb 2015 11:28:34 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: avery.gardner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <92576817.0.1423164511795.JavaMail.averyg@lab5-70>
+Subject: FEATURE: Change Lines
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.1
+
+Operating system: Windows 7
+
+Bug reported by: avery.gardner@utah.edu
+
+Description:
+It would be nice to be able to move the connection lines, especially the outputs of promoters.
+

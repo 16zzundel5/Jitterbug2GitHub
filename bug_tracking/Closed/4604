@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Fri Dec  5 13:30:18 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.5 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id mB5KUIeb030420
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 5 Dec 2008 13:30:18 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1L8gyd-00054T-AC
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 05 Dec 2008 13:08:39 -0700
+Message-Id: <CCA327AB-ECC5-477D-8BF3-A5FD3EC21631@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: CHANGE: view -> model should not be highlighted when no entries highlighted
+Date: Fri, 5 Dec 2008 13:29:42 -0700
+X-Mailer: Apple Mail (2.929.2)
+
+view->model over graph file should not be highlighted.
+
+

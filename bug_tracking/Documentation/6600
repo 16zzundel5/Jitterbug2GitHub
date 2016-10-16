@@ -1,0 +1,31 @@
+From prvs=994e416b9=zhen.zhang@utah.edu  Tue Jul 12 11:46:41 2016
+Return-Path: <prvs=994e416b9=zhen.zhang@utah.edu>
+Received: from ipo7.cc.utah.edu (ipo7.cc.utah.edu [155.97.144.42])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6CHkfep016196
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Jul 2016 11:46:41 -0600
+X-IronPort-AV: E=Sophos;i="5.28,352,1464674400"; 
+   d="scan'208";a="488035130"
+Received: from mail-oi0-f52.google.com ([209.85.218.52])
+  by ipo7smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 12 Jul 2016 11:46:40 -0600
+Received: by mail-oi0-f52.google.com with SMTP id w18so33693202oiw.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Jul 2016 10:46:40 -0700 (PDT)
+X-Gm-Message-State: ALyK8tLoKJH38SbOe3qXH0n43BpeeIIvnoNkub2zA65hF4TyivoDu6kSrUh5KHOuhVu8AkiV6XKFApiBx7E/QA==
+X-Received: by 10.202.59.68 with SMTP id i65mr12596219oia.61.1468345599573;
+ Tue, 12 Jul 2016 10:46:39 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.172.21 with HTTP; Tue, 12 Jul 2016 10:46:00 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 12 Jul 2016 11:46:00 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvkoYP5SfnQL0AdCJpw6S6o+xLPtZ8O=DjCYomn3_uXETw@mail.gmail.com>
+Message-ID: <CA+LVOvkoYP5SfnQL0AdCJpw6S6o+xLPtZ8O=DjCYomn3_uXETw@mail.gmail.com>
+Subject: CHANGE: Update screen shot for analysis view on iBioSim Version 2.8
+ Systems Biology Tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+The screen shot showing "Simulation Options" needs to be updated.
+Specifically, there are now two analyzers for Runge-Kutta_Fehlberg in
+iBioSim, but the screen shot was taken when there was only one. Also,
+BioSim now uses Task ID instead of the previous Simulation ID shown on
+the current screen shot.
+

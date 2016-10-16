@@ -1,0 +1,18 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: sweep graph for constraint termination (PR#5181)
+Date: Thu Feb 10 00:00:38 2011
+
+This can get complicated when more than one species is swept, especially if they
+are swept on different levels.  In this case, there isn't one definitive species
+to put in place of time in the tsd file.  Shall we only generate this constraint
+termination file if only one species is swept or should we think about how to
+generate one or more tsd files for all swept species?
+
+> When a parameter is swept on a model with constraints, each  
+> subdirectory will contain a sim-rep.txt file.  It would be useful to  
+> create from these a tsd file that has the sweep parameter in place of  
+> the time variable and the percent terminated for each reason as the  
+> values plotted.
+> 
+> 

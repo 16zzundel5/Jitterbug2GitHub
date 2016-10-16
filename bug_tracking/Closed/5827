@@ -1,0 +1,330 @@
+From myers@eng.utah.edu  Mon Jan 28 13:06:36 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r0SK6ZSo026725
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 28 Jan 2013 13:06:35 -0700
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1TzuqG-0009Qc-Ae
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 28 Jan 2013 12:58:08 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_FD846D90-D1AC-4F18-890F-2F0E380B6735"
+Subject: FEATURE: add support for libsbmlSIM
+Date: Mon, 28 Jan 2013 13:06:26 -0700
+References: <CAN3sUaVH+jgZ_ebRJ=rEPN_XJ65Se6SQh2WT3dnjmJ-B9Y+bfA@mail.gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <5C51E0F5-9E44-4B17-82BD-4C1433FDF484@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.2 \(1499\))
+X-Mailer: Apple Mail (2.1499)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_FD846D90-D1AC-4F18-890F-2F0E380B6735
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: Akira Funahashi <funa@bio.keio.ac.jp>
+> Subject: [sbml-discuss] Release of LibSBMLSim-1.1.0
+> Date: January 27, 2013 2:00:09 PM MST
+> To: sbml-discuss@caltech.edu
+> Reply-To: SBML Discussion List <sbml-discuss@caltech.edu>
+>=20
+> We are pleased to announce the release of LibSBMLSim-1.1.0,
+> which is a library for simulating SBML models.
+> LibSBMLSim is available from:
+> http://fun.bio.keio.ac.jp/software/libsbmlsim/
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D
+> Version 1.1.0 (2013-01-08)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D
+>=20
+> * New features
+>  - New integrators (5th order Runge-Kutta Fehlberg, 5th order =
+Cash-Karp)
+>    are included in this release. Both new integrators support variable
+>    step size integration.
+>     =3D 5th order Runge-Kutta Fehlberg : MTHD_RUNGE_KUTTA_FEHLBERG_5
+>     =3D 5th order Cash-Karp : MTHD_NAME_CASH_KARP
+>=20
+>  - The C# bindings functions are include in this release. Please see
+>    examples/csharp/Test.cs for the sample code.
+>=20
+>  - Both 32bit(x86) and 64bit(x86_64) build for Windows are available.
+>=20
+>  - Binary Installer is available for Windows, MacOSX and Linux.
+>=20
+> * Bug fixes
+>  - Memory leaks in free_mySBML_objects() have been fixed.
+>=20
+> * API changes
+>  - myResult* simulateSBMLModel() now requires 3 additional parameters =
+for
+>    variable step integration.
+>    myResult* simulateSBMLModel(Model_t *m, double sim_time, double dt,
+>                                int print_interval, int print_amount,
+>                                int method, int use_lazy_method,
+>                                double atol, double rtol, double =
+facmax);
+>     =3D double atol;  Absolute error tolernace
+>     =3D double rtol;  Relative error tolerance
+>     =3D double facmax; Maximum acceptable increasing factor
+>    If you don't know the exact value for above 3 values, please just =
+assign
+>    "0.0" for all 3 values, then libsbmlsim will use the default values =
+for
+>    the integration.
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D
+>=20
+> LibSBMLSim can be used to create your own SBML capable simulator,
+> plug-in, web based application and web services. The API is quite
+> straight forward. You can run a simulation and generate a result
+> file in Comma Separated Values (CSV) with a few lines of codes.
+>=20
+> =3D=3D=3D C code =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> #include "libsbmlsim/libsbmlsim.h"
+> ...
+>  myResult *r =3D simulateSBMLFromFile("sbml.xml", 20, 0.1, 10, 0,
+>                                                        =
+MTHD_RUNGE_KUTTA, 0);
+>  write_csv(r, "result.csv");
+>  free_myResult(r);
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> =3D=3D=3D Python =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> from libsbmlsim import *
+> r =3D simulateSBMLFromFile('sbml.xml', 20.0, 0.1, 10, 0, =
+MTHD_RUNGE_KUTTA, 0)
+> write_csv(r, 'result.csv')
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> =3D=3D=3D Java =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> import jp.ac.keio.bio.fun.libsbmlsim.*;
+> ...
+>  System.loadLibrary("sbmlsimj");
+>  myResult r =3D libsbmlsim.simulateSBMLFromFile("sbml.xml", 20.0, 0.1, =
+10, 0,
+>=20
+> libsbmlsim.MTHD_RUNGE_KUTTA, 0);
+>  libsbmlsim.write_csv(r, "result.csv");
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> =3D=3D=3D Ruby =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> require 'libsbmlsim'
+> r =3D Libsbmlsim::simulateSBMLFromFile('sbml.xml', 20.0, 0.1, 10, 0,
+>                                       Libsbmlsim::MTHD_RUNGE_KUTTA, 0)
+> Libsbmlsim::write_csv(r, 'result.csv')
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> =3D=3D=3D C# =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> using System;
+> public class Test {
+>  static void Main() {
+>      myResult result =3D libsbmlsim.simulateSBMLFromFile("sbml.xml", =
+20.0, 0.1,
+>                                                 10, 0,
+> libsbmlsim.MTHD_RUNGE_KUTTA, 0);
+>      libsbmlsim.write_csv(result, "test.csv");
+>  }
+> }
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Please see the 'API.txt' and 'examples' directory for further =
+information
+> on libSBMLSim APIs.
+>=20
+> If you have any questions / comments, please send an email to
+> LibSBMLSim development team: <sbmlsim@fun.bio.keio.ac.jp>
+> We appreciate your feedback!
+>=20
+> Thanks,
+> --=20
+> Akira
+> ____________________________________________________________
+> To manage your sbml-discuss list subscription, visit=20
+> https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss
+>=20
+> For a web interface to the sbml-discuss mailing list, visit
+> http://sbml.org/Forums/
+>=20
+> For questions or feedback about the sbml-discuss list,
+> contact sbml-team@caltech.edu
+
+
+--Apple-Mail=_FD846D90-D1AC-4F18-890F-2F0E380B6735
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Akira Funahashi =
+&lt;<a =
+href=3D"mailto:funa@bio.keio.ac.jp">funa@bio.keio.ac.jp</a>&gt;<br></span>=
+</div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>[sbml-discuss] Release of =
+LibSBMLSim-1.1.0</b><br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">January 27, 2013 2:00:09 PM MST<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;"><a =
+href=3D"mailto:sbml-discuss@caltech.edu">sbml-discuss@caltech.edu</a><br><=
+/span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">SBML Discussion List &lt;<a =
+href=3D"mailto:sbml-discuss@caltech.edu">sbml-discuss@caltech.edu</a>&gt;<=
+br></span></div><br><div>We are pleased to announce the release of =
+LibSBMLSim-1.1.0,<br>which is a library for simulating SBML =
+models.<br>LibSBMLSim is available from:<br> <a =
+href=3D"http://fun.bio.keio.ac.jp/software/libsbmlsim/">http://fun.bio.kei=
+o.ac.jp/software/libsbmlsim/</a><br><br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br>Version =
+1.1.0 =
+(2013-01-08)<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>* New features<br> &nbsp;- New =
+integrators (5th order Runge-Kutta Fehlberg, 5th order Cash-Karp)<br> =
+&nbsp;&nbsp;&nbsp;are included in this release. Both new integrators =
+support variable<br> &nbsp;&nbsp;&nbsp;step size integration.<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;=3D 5th order Runge-Kutta Fehlberg : =
+MTHD_RUNGE_KUTTA_FEHLBERG_5<br> &nbsp;&nbsp;&nbsp;&nbsp;=3D 5th order =
+Cash-Karp : MTHD_NAME_CASH_KARP<br><br> &nbsp;- The C# bindings =
+functions are include in this release. Please see<br> =
+&nbsp;&nbsp;&nbsp;examples/csharp/Test.cs for the sample code.<br><br> =
+&nbsp;- Both 32bit(x86) and 64bit(x86_64) build for Windows are =
+available.<br><br> &nbsp;- Binary Installer is available for Windows, =
+MacOSX and Linux.<br><br>* Bug fixes<br> &nbsp;- Memory leaks in =
+free_mySBML_objects() have been fixed.<br><br>* API changes<br> &nbsp;- =
+myResult* simulateSBMLModel() now requires 3 additional parameters =
+for<br> &nbsp;&nbsp;&nbsp;variable step integration.<br> =
+&nbsp;&nbsp;&nbsp;myResult* simulateSBMLModel(Model_t *m, double =
+sim_time, double dt,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int print_interval, int =
+print_amount,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int method, int =
+use_lazy_method,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double atol, double rtol, double =
+facmax);<br> &nbsp;&nbsp;&nbsp;&nbsp;=3D double atol; &nbsp;Absolute =
+error tolernace<br> &nbsp;&nbsp;&nbsp;&nbsp;=3D double rtol; =
+&nbsp;Relative error tolerance<br> &nbsp;&nbsp;&nbsp;&nbsp;=3D double =
+facmax; Maximum acceptable increasing factor<br> &nbsp;&nbsp;&nbsp;If =
+you don't know the exact value for above 3 values, please just =
+assign<br> &nbsp;&nbsp;&nbsp;"0.0" for all 3 values, then libsbmlsim =
+will use the default values for<br> &nbsp;&nbsp;&nbsp;the =
+integration.<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>LibSBMLSim can be used to =
+create your own SBML capable simulator,<br>plug-in, web based =
+application and web services. The API is quite<br>straight forward. You =
+can run a simulation and generate a result<br>file in Comma Separated =
+Values (CSV) with a few lines of codes.<br><br>=3D=3D=3D C code =
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D<br>#include "libsbmlsim/libsbmlsim.h"<br>...<br> =
+&nbsp;myResult *r =3D simulateSBMLFromFile("sbml.xml", 20, 0.1, 10, =
+0,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MTHD_RUNGE_KUTTA, 0);<br> =
+&nbsp;write_csv(r, "result.csv");<br> =
+&nbsp;free_myResult(r);<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>=3D=
+=3D=3D Python =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D<br>from libsbmlsim import *<br>r =3D =
+simulateSBMLFromFile('sbml.xml', 20.0, 0.1, 10, 0, MTHD_RUNGE_KUTTA, =
+0)<br>write_csv(r, =
+'result.csv')<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>=3D=3D=3D =
+Java =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D<br>import =
+jp.ac.keio.bio.fun.libsbmlsim.*;<br>...<br> =
+&nbsp;System.loadLibrary("sbmlsimj");<br> &nbsp;myResult r =3D =
+libsbmlsim.simulateSBMLFromFile("sbml.xml", 20.0, 0.1, 10, =
+0,<br><br>libsbmlsim.MTHD_RUNGE_KUTTA, 0);<br> =
+&nbsp;libsbmlsim.write_csv(r, =
+"result.csv");<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>=3D=3D=
+=3D Ruby =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D<br>require 'libsbmlsim'<br>r =3D =
+Libsbmlsim::simulateSBMLFromFile('sbml.xml', 20.0, 0.1, 10, 0,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;Libsbmlsim::MTHD_RUNGE_KUTTA, 0)<br>Libsbmlsim::write_csv(r, =
+'result.csv')<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>=3D=3D=
+=3D C# =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br>using System;<br>public class Test =
+{<br> &nbsp;static void Main() {<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myResult result =3D =
+libsbmlsim.simulateSBMLFromFile("sbml.xml", 20.0, 0.1,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10, =
+0,<br>libsbmlsim.MTHD_RUNGE_KUTTA, 0);<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libsbmlsim.write_csv(result, =
+"test.csv");<br> =
+&nbsp;}<br>}<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>Please =
+see the 'API.txt' and 'examples' directory for further information<br>on =
+libSBMLSim APIs.<br><br>If you have any questions / comments, please =
+send an email to<br>LibSBMLSim development team: &lt;<a =
+href=3D"mailto:sbmlsim@fun.bio.keio.ac.jp">sbmlsim@fun.bio.keio.ac.jp</a>&=
+gt;<br>We appreciate your feedback!<br><br>Thanks,<br>-- =
+<br>Akira<br>____________________________________________________________<=
+br>To manage your sbml-discuss list subscription, visit <br><a =
+href=3D"https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss">https=
+://utils.its.caltech.edu/mailman/listinfo/sbml-discuss</a><br><br>For a =
+web interface to the sbml-discuss mailing list, =
+visit<br>http://sbml.org/Forums/<br><br>For questions or feedback about =
+the sbml-discuss list,<br>contact =
+sbml-team@caltech.edu<br></div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_FD846D90-D1AC-4F18-890F-2F0E380B6735--
+

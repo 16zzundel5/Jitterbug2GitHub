@@ -1,0 +1,24 @@
+From myers@vlsigroup.elen.utah.edu  Thu Jan 27 14:05:00 2000
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA02680
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 27 Jan 2000 14:04:59 -0700
+Date: Thu, 27 Jan 2000 14:04:59 -0700
+Message-Id: <200001272104.OAA02680@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Diverge during timed state space exploration.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+The following examples diverge during state space exploration when posets
+(with or without other timing options) is turned on.
+
+ack-barcode.g ack-cdp-p1.g gcd.g cache-ctrl-*.g
+

@@ -1,0 +1,38 @@
+From satish.batchu@utah.edu  Fri Jul 10 18:58:02 2009
+Return-Path: <satish.batchu@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n6B0w2kV024778
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 10 Jul 2009 18:58:02 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApoEAEWAV0qbYbVl/2dsb2JhbAC/F4dqiEyECQWCaIZB
+X-IronPort-AV: E=Sophos;i="4.42,381,1243836000"; 
+   d="scan'208";a="3483960"
+Received: from h101.umail.utah.edu (HELO HUB3.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 10 Jul 2009 18:58:02 -0600
+Received: from C1V2.xds.umail.utah.edu ([169.254.1.117]) by
+ HUB3.xds.umail.utah.edu ([2002:9b61:b565::9b61:b565]) with mapi; Fri, 10 Jul
+ 2009 18:58:02 -0600
+From: SATISH BATCHU <satish.batchu@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Fri, 10 Jul 2009 18:56:00 -0600
+Subject: FEATURE: Changes related to coverage
+Thread-Topic: FEATURE: Changes related to coverage
+Thread-Index: AQHKAcKk9rFtMUriTUinVQv7kqAI/Q==
+Message-ID: <C496AC5F89F0C543BC12113C829A409F480D790994@C1V2.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+All the coverage related functionality/code has to be imported from data2lh=
+pn.py=
+

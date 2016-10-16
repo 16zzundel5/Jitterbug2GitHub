@@ -1,0 +1,23 @@
+From sarbruis@gmail.com  Fri Nov 18 14:50:46 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id pAILojog012026
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Nov 2011 14:50:45 -0700
+Date: Fri, 18 Nov 2011 14:50:45 -0700
+Message-Id: <201111182150.pAILojog012026@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: layout info and external model definitions aren't deleted
+
+Full_Name: jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: b008.catapulsion.net (70.36.82.8)
+Submitted by: jstev
+
+
+The layout information and external model definitions for grid components don't
+get deleted when components are deleted.
+

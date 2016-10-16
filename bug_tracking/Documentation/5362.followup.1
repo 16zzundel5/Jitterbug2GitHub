@@ -1,0 +1,92 @@
+From rodrigue@ebi.ac.uk  Mon May 16 05:06:58 2011
+Return-Path: <rodrigue@ebi.ac.uk>
+Received: from spike.ebi.ac.uk (spike.ebi.ac.uk [193.62.196.9])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4GB6vTP008570
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 16 May 2011 05:06:57 -0600
+Received: from swallowtail.ebi.ac.uk (swallowtail.ebi.ac.uk [172.22.8.255])
+	by spike.ebi.ac.uk (8.13.8/8.13.8) with ESMTP id p4GB6ppI022460;
+	Mon, 16 May 2011 12:06:51 +0100
+Message-ID: <4DD1054B.6060504@ebi.ac.uk>
+Date: Mon, 16 May 2011 12:06:51 +0100
+From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+User-Agent: Thunderbird 2.0.0.22 (X11/20090625)
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+CC: myers@ece.utah.edu
+Subject: Re: FEATURE/CHANGE : iBioSim pre-compiled program (PR#5362)
+References: <201105131647.p4DGlMIH009087@chou.ece.utah.edu>
+In-Reply-To: <201105131647.p4DGlMIH009087@chou.ece.utah.edu>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Chris Myers wrote:
+> Hi Nico,
+>
+> I've tried unsuccessfully to construct a static build of reb2sac.  This would be
+> simplest to distribute to avoid the hassle of making people build this locally. 
+> Do you know of any way to tell gcc to construct an executable that is compatible
+> with earlier version of linux?  If we were to compile for an earlier version,
+> which version or versions would we need to target?  Any suggestions on the best
+> way to make the install more linux distribution flexible would be very happily
+> received.
+>
+> Perhaps, the only solution is to distribute source for both our C/C++ programs
+> and libsbml on linux and make compilation part of the installation.  However, I
+> would love to avoid this hassle, if at all possible.
+>
+>   
+
+Having the option to download the sources is always a nice option, even 
+if the default package distributed tried to
+do everything for the users. You can have a section at the end of the 
+installation instructions with a link to the sources
+and some basic instructions of what to do. Some people like me could 
+have problems to run the default pre-compiled libraries,
+some other people might want to re-compile the programs themselves to 
+optimized the compilation for their system. And having that
+option remove some burden on your back to have packages that can run 
+anywhere.
+
+Lisbml, the sources are available elsewhere, so that is not a problem, 
+we can easily replace the pre-compiled libraries with some other.
+That was nice to have the version numbers of libsbml at least in the .so 
+files, as I was about to complain again that I could not find anywhere 
+the libsbml version
+that needed to be used with iBioSim, as at first I saw only the jar file 
+and I tried to find some indications in the documentation without 
+success, that's only when I
+found the .so file that I found out the version of libsbml to use.
+
+Thanks,
+Nico
+
+>   
+>> Hello,
+>>
+>> While trying to use IBioSim, I noticed that some programs did not work 
+>> on our setup (Centos 5.4), which I was expecting as the compilation 
+>> seems to have been made for Fedora 13.
+>>
+>> Is it possible to get the sources of the programs to be able to compile 
+>> them locally which would be the best for us or to get a version compiled 
+>> for an earlier version of Linux ?
+>>
+>> Here is the error I am getting in the 'command log' frame :
+>>
+>> --------------------------------------
+>> Executing:
+>> reb2sac --target.encoding=rkf45 /homes/rodrigue/sbmlData/iBiosim/1/Test1.xml
+>>
+>> Errors:
+>> reb2sac: /lib64/libc.so.6: version `GLIBC_2.7' not found (required by 
+>> reb2sac)
+>> --------------------------------------
+>>
+>>
+>> Thanks,
+>> Nico
+>>
+>>
+>>
+>>     
+

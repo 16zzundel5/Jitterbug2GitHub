@@ -1,0 +1,28 @@
+From myers@eng.utah.edu  Fri Jun  8 15:47:06 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q58Ll5cg013882
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 8 Jun 2012 15:47:06 -0600
+Received: from 75-169-169-156.slkc.qwest.net ([75.169.169.156] helo=[192.168.0.14])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Sd70O-000KMv-98
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 08 Jun 2012 15:46:04 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: BUG: implicit reactions should be in the same compartment as reactants/products
+Date: Fri, 8 Jun 2012 15:47:00 -0600
+Message-Id: <4B3462D0-02F6-4641-8350-46E7B49D193B@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1257)
+X-Mailer: Apple Mail (2.1257)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q58Ll5cg013882
+
+Implicit reactions should always stay in the same compartment as their reactant or product.
+
+Which one?  Likely product.  Perhaps they should be required to all be in the same compartment.
+
+

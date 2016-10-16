@@ -1,0 +1,62 @@
+From MAILER-DAEMON  Mon May  3 13:02:01 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA01362 for <atacs-bugs@yuan.elen.utah.edu>; Mon, 3 May 1999 13:02:01 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id 87C8C38E0; Mon,  3 May 1999 13:02:09 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: by ee.utah.edu (Postfix) via BOUNCE
+	id 8AEB038DF; Mon,  3 May 1999 13:02:08 -0600 (MDT)
+Date: Mon,  3 May 1999 13:02:08 -0600 (MDT)
+From: MAILER-DAEMON@ee.utah.edu (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: atacs-bugs@elen.utah.edu
+Message-Id: <19990503190208.8AEB038DF@ee.utah.edu>
+
+This is the Postfix program at host ee.utah.edu.
+
+I'm sorry to have to inform you that the message returned
+below could not be delivered to one or more destinations.
+
+For further assistance, please contact <postmaster@ee.utah.edu>
+
+If you do so, please include this problem report. You can
+delete your own text from the message returned below.
+
+			The Postfix program
+
+	--- Delivery error report follows ---
+
+<myers@ching.elen.utah>: Name service error for domain ching.elen.utah: Host
+    not found
+
+	--- Undelivered message follows ---
+
+Received: from yuan.elen.utah.edu (yuan.elen.utah.edu [128.110.18.206])
+	by ee.utah.edu (Postfix) with ESMTP
+	id 8639B38DC; Mon,  3 May 1999 13:02:01 -0600 (MDT)
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA01353; Mon, 3 May 1999 13:01:49 -0600 (MDT)
+Date: Mon, 3 May 1999 13:01:49 -0600 (MDT)
+Message-Id: <199905031901.NAA01353@yuan.elen.utah.edu>
+From: Eric Robert Peskin <atacs-bugs@elen.utah.edu>
+To: wendy@ee.utah.edu
+Subject: Re: Example udding.csp deadlocks under any (PR#108)
+Cc: myers@ching.elen.utah
+X-Loop: atacs-bugs@shang.elen.utah.edu
+Return-Path: <atacs-bugs@elen.utah.edu>
+
+Chris says this bug is fixed, and my testing seems to confirm that.
+I am moving this to Closed, but let us know you think otherwise.
+
+> Full_Name: Wendy Belluomini
+> Version: 4.1
+> OS: Linux
+> source: ~atacs/examples/bugs/udding.csp
+> log: 
+> Submission from: yuan.elen.utah.edu (128.110.18.206)
+> Submitted by: wendy
+> 
+> 
+> This example deadlocks under any options, including untimed.  This either
+means
+> the specification does, in fact, deadlock, or there is a compiler
+> bug.
+> 

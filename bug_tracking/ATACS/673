@@ -1,0 +1,32 @@
+From atacs-bugs  Fri May 24 10:16:48 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g4OGGmr19253
+	for atacs-bugs@shang.elen.utah.edu; Fri, 24 May 2002 10:16:48 -0600
+Received: from shang (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g4OGGmP19247
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 24 May 2002 10:16:48 -0600
+Date: Fri, 24 May 2002 10:16:48 -0600
+Message-Id: <200205241616.g4OGGmP19247@chou.elen.utah.edu>
+From: eemercer@ee.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Combinatorial Search has Bug
+
+Full_Name: Eric G. Mercer
+spec: 
+Version: May 24, 2001 10:15 AM
+OS: Linux RedHat 7.1
+command: No Command
+Submission from: chen.elen.utah.edu (155.99.23.216)
+Submitted by: eemercer
+
+
+The combinatorial search in bap.cc has a potential bug.
+If in a causal grouping for a given transition in the
+enabled set there does not exists any matching transitions
+in the zone, then prematurly teminates the recursion.
+
+I am not sure if this can ever happen or not.  If it does
+happen, then I suspect it is the result of incorrect
+prunning.
+

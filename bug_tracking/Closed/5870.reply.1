@@ -1,0 +1,21 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: yueqi.wang@utah.edu
+Subject: Re: CHANGE: Clear memory after each simulation (PR#5870)
+Date: Fri Mar 29 22:29:00 2013
+
+Just curious which simulator you were running.  If one of the java ones, it
+should garbage collect at some point.
+
+Chris
+
+> Bug reported by: yueqi.wang@utah.edu
+> 
+> Description:
+> When I'm simulating grid models, each simulation takes several gigabytes of
+> memory. After running a simulation, the memory taken by iBioSim doesn't seem
+to
+> decrease. It would be great if the program could clear some memory after
+running
+> each simulation, otherwise it crashes a lot.
+> 
+> 

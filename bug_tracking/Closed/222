@@ -1,0 +1,26 @@
+From wendy@ee.utah.edu  Fri Aug 13 18:40:02 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id SAA18911 for <atacs-bugs@shang.elen.utah.edu>; Fri, 13 Aug 1999 18:40:02 -0600 (MDT)
+Date: Fri, 13 Aug 1999 18:40:02 -0600 (MDT)
+From: wendy@ee.utah.edu
+Message-Id: <199908140040.SAA18911@yuan.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: timing bounds on constraint rules
+
+Full_Name: Wendy Belluomini
+Version: checked out 8/11
+OS: linux
+source: stari.csp
+log: 
+Submission from: yuan.elen.utah.edu (128.110.18.206)
+Submitted by: wendy
+
+
+When the compiler generates constraint rules
+it needs to specify bounds of [0, infinity] if
+no bounds are given.  Currently it is generating
+bounds of 0,0, which causes a verification failure.
+The problem can be avoided with postprocessing in 
+this example, so it needs to be run with postprocess
+off.
+
+-wendy

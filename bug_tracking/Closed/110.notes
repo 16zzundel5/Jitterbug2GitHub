@@ -1,0 +1,22 @@
+Chris
+Modern ATACS allows level-sensitive guards in the specification.
+However, many pieces of ATACS still assume that they only need to
+handle events.  As specifications with level-sensitive guards are fed
+through such pieces of ATACS, various strange behavior results.  One
+example is included in this bug report message: hw4 draws
+	EXCEPTION:  Connectivity violation!
+even though there is nothing wrong with hw4.
+
+For another example, see bug report 55.
+
+In general, it would be helpful if the compiler could set a flag when
+it detects a level-sensitive guard in the specification.  This flag
+would be passed on to all subsequent stages of ATACS, and each stage
+would be responsible to modify its behavior accordingly.
+(For example, messages about connectivity would be suppressed.
+For another example, storeg would either be disabled or augmented to do the
+...
+>nasty graph transformation in order to convert the levels to a petri-net 
+>representation.
+...
+)

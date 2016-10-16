@@ -1,0 +1,20 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: problem connecting to a component (PR#5488)
+Date: Mon Aug 22 22:56:51 2011
+CC: sarbruis@gmail.com
+
+> I'm trying to connect an internal species to the input of a component.  I get
+an
+> error message that the species type much match.  It should agree on
+diffusible
+> and constitutive but it does not need to match the mode.  Namely, I should be
+> able to connect internal species to inputs and/or outputs.
+> 
+> Chris
+> 
+> 
+> 
+Fixed.  Just need to remove INTERNAL as well from type.
+
+Chris

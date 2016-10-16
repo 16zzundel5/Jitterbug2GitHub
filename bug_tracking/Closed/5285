@@ -1,0 +1,26 @@
+From myers@ece.utah.edu  Thu Feb 10 10:39:07 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p1AHd6o2016035
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Feb 2011 10:39:06 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PnaTy-0001jx-TP
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 10 Feb 2011 10:39:06 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: FEATURE: add tiling option to component instantiatiation
+Date: Thu, 10 Feb 2011 10:39:01 -0700
+Message-Id: <48CA2566-1B59-41AC-B11F-EC185A3F3B94@ece.utah.edu>
+To: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p1AHd6o2016035
+
+When adding a component allow it to be tiled and specify a number of rows and columns, stride between, and origin.
+
+
+

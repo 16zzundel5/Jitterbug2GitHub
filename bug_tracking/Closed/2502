@@ -1,0 +1,32 @@
+From ali@seis.utah.edu  Tue Feb 12 17:01:03 2008
+Return-Path: <ali@seis.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from uuss.seis.utah.edu (uuss.seis.utah.edu [128.110.129.2])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1D013Mi027040
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 17:01:03 -0700
+Received: from pion.seis.utah.edu (pion.seis.utah.edu [128.110.129.34])
+	by uuss.seis.utah.edu (8.9.3/8.9.3) with ESMTP id RAA24414;
+	Tue, 12 Feb 2008 17:00:50 -0700 (MST)
+From: Ali Moeinvaziri <ali@seis.utah.edu>
+Received: (from ali@localhost)
+	by pion.seis.utah.edu (8.9.3/8.9.3) id RAA26730;
+	Tue, 12 Feb 2008 17:00:50 -0700 (MST)
+Date: Tue, 12 Feb 2008 17:00:50 -0700 (MST)
+Message-Id: <200802130000.RAA26730@pion.seis.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Re: FEATURE: gcm parameter edit
+Cc: myers@ece.utah.edu, ali@seis.utah.edu
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+
+
+
+It would be useful to show the value of each parameter in front of
+its name inside the 'List of Parameters:' window of GCM editor. This
+way, we don't have to click on 'Edit Parameter' to see the value.
+
+-AM
+

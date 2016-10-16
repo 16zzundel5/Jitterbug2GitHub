@@ -1,0 +1,16 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: killpack@eng.utah.edu
+Subject: Re: multi-cube redundant terms in prs. (PR#440)
+Date: Fri May 12 14:30:43 2000
+
+The problem is that without gatelevel switch all region functions are
+implemented
+at the same time.  Therefore, the same result comes for each excitation region
+and
+gets printed once for each excitation region.
+
+Now, I have it so that it will only print for the first region when gatelevel is
+
+not on.
+
+Will check in tomorrow.

@@ -1,0 +1,194 @@
+From peskin@vlsigroup.ece.utah.edu  Sat Apr 20 15:32:04 2002
+Return-Path: <peskin@vlsigroup.ece.utah.edu>
+Received: from vlsigroup.ece.utah.edu (IDENT:peskin@ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g3KLW4j13742
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 20 Apr 2002 15:32:04 -0600
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <3CC1DE54.2E8ABD8B@vlsigroup.ece.utah.edu>
+Date: Sat, 20 Apr 2002 15:32:04 -0600
+From: Eric Peskin <peskin@vlsigroup.ece.utah.edu>
+X-Mailer: Mozilla 4.77 [en] (X11; U; Linux 2.4.9-31 i686)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: BAD503 broken repository! (PR#563)
+References: <200204202051.g3KKpvj12788@chou.elen.utah.edu>
+Content-Type: text/plain; charset=EUC-KR
+Content-Transfer-Encoding: 7bit
+
+I still (as of cvs tag PR563followup2) see the same behavior.
+The example is now in the atacs/work/hse directory.
+I've done my best to translate the flags from the old atacs form.
+
+The following command works:
+	../../bin/atacs -cPoqtsys deco1
+
+while this one does not:
+	../../bin/atacs -oqtsys -de deco1
+
+Therefore the post-processing code is (still) causing the problem.
+See the sample session below.
+
+I will move this bug report back to Incorrect Behavior, pending resolution.
+
+---8<------8<------8<------8<------8<------8<------8<------8<---
+
+674 ming:~> cd ~peskin/atacs/work/hse/
+675 ming:work/hse> ../../bin/atacs -cPoqtsys deco1
+ATACS VERSION 5.1
+Logging session in:  atacs.log
+No longer using postprocessing during compilation.
+PARG output on errors disabled.
+Using PO sets timing to obtain state graphs.
+Using single-cube algorithm for synthesis.
+Compiling deco1.hse ... 
+Compiled process main
+Compiled process a
+Compiled process b
+Compiled process c
+Storing module deco1 to ./deco1.tel
+Loading timed event/level structure from:  deco1.tel
+WARNING:  Dropped 1 unconnected nodes.
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.001936)
+Finding reduced state graph ... nodes = 1464, dead = 43324
+memory: max=7155240 inuse=7143600 free=11640 
+done
+1232 iterations, 972 regions, 984 new_regions, 850 states in 1.63374 seconds
+nodes in use = 1464, dead = 43324
+memory: max=7155240 inuse=7143600 free=11640
+Found 972 zones in 850 states for deco1 (25d 7155240m 1.63u)
+Projecting out dummy transitions ... done (0.008567)
+Checking CSC ... complete state coded
+Finding regions ... done (0.005723)
+Finding conflicts ... done (0.084281)
+Finding covers ... EXCEPTION!
+EXCEPTION:  Unresolved conflicts!
+Resolving remaining covers ... done (0.004202)
+Storing production rules to:  deco1.prs
+EXCEPTION: Storing guards with fanin > 4 to:  deco1.err
+Synthesis succeeded with area = 54 literals 97 transistors
+676 ming:work/hse> 
+676 ming:work/hse> 
+676 ming:work/hse> 
+676 ming:work/hse> ../../bin/atacs -oqtsys -de deco1
+ATACS VERSION 5.1
+Logging session in:  atacs.log
+PARG output on errors disabled.
+Using PO sets timing to obtain state graphs.
+Using single-cube algorithm for synthesis.
+Compiling deco1.hse ... 
+Compiled process main
+Compiled process a
+Compiled process b
+Compiled process c
+Post processing ...Storing module preproc to preproc.tel
+update 1 $41+/1 
+Storing module 0 to 0.tel
+new conflictO: $30+ # ci+
+new conflictO: $31+ # ci+
+new conflictO: $32+ # ci+
+new conflictO: $33+ # ci+
+new conflictO: $34+ # ci+
+new conflictO: $35+ # ci+
+new conflictO: $36+ # ci+
+new conflictO: $37+ # ci+
+new conflictO: shift0- # ci+
+new conflictO: $42+ # ci+
+new conflictO: $43+ # ci+
+new conflictO: $44+ # ci+
+new conflictO: $45+ # ci+
+update 1 $40+/1 
+Storing module 1 to 1.tel
+update 1 $39+/1 
+Storing module 2 to 2.tel
+new conflictO: shift1+ # ci+
+update 1 $38+/1 
+Storing module 3 to 3.tel
+new conflictO: ci+ # shift1-
+update 1 $31+/1 
+Storing module 4 to 4.tel
+new conflictO: ci+ # shift0-
+update 1 $33+/1 
+Storing module 5 to 5.tel
+new conflictO: ci+ # shift1-
+update 1 $35+/1 
+Storing module 6 to 6.tel
+new conflictO: ci+ # shift0+
+update 1 $37+/1 
+Storing module 7 to 7.tel
+new conflictO: ci+ # shift1+
+update 1 $43+/1 
+Storing module 8 to 8.tel
+new conflictO: ci+ # shift0+
+update 1 $45+/1 
+Storing module 9 to 9.tel
+update 1 $46+/1 
+Storing module 10 to 10.tel
+update 1 $17+/1 
+Storing module 11 to 11.tel
+update 1 $28+/1 
+Storing module 12 to 12.tel
+update 1 $27+/1 
+Storing module 13 to 13.tel
+update 1 $25+/1 
+Storing module 14 to 14.tel
+new conflictO: full1- # bi+
+new conflictO: full0- # bi+
+update 1 $26+/1 
+Storing module 15 to 15.tel
+update 1 $21+/1 
+Storing module 16 to 16.tel
+update 1 $24+/1 
+Storing module 17 to 17.tel
+update 1 $15+/1 
+Storing module 18 to 18.tel
+update 1 $1+/1 
+Storing module 19 to 19.tel
+update 1 $0+/1 
+Storing module 20 to 20.tel
+update 1 $3+/1 
+Storing module 21 to 21.tel
+update 1 $7+/1 
+Storing module 22 to 22.tel
+update 1 $5+/1 
+Storing module 23 to 23.tel
+update 1 $6+/1 
+Storing module 24 to 24.tel
+update 1 $8+/1 
+Storing module 25 to 25.tel
+update 1 $4+/1 
+Storing module 26 to 26.tel
+update 1 $9+/1 
+Storing module 27 to 27.tel
+update 1 $11+/1 
+Storing module 28 to 28.tel
+update 1 $12+/1 
+Storing module 29 to 29.tel
+update 1 $10+/1 
+Storing module 30 to 30.tel
+update 1 $13+/1 
+Storing module 31 to 31.tel
+update 1 $14+/1 
+Storing module 32 to 32.tel
+update 3 $16+/1 
+Storing module 33 to 33.tel
+Storing module deco1 to ./deco1.tel
+Loading timed event/level structure from:  deco1.tel
+WARNING:  Dropped 1 unconnected nodes.
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000577)
+Finding reduced state graph ... System deadlocked in state 001101110001100
+Storing error trace state graph to:  deco1.trace
+ao+/1 -> full2+/1 -> full0+/1 -> full1+/1 -> full3+/1 -> ai+/1 -> x+/1 ->
+ao-/1                                                                                 
+-> ai-/1 -> bo+/1 -> full0-/1 -> FAIL!
+Storing constraint graph to:  deco1.grf
+677 ming:work/hse>
+

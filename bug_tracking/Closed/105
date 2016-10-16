@@ -1,0 +1,20 @@
+From hao  Mon Apr  5 17:17:28 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id RAA08688 for <atacs-bugs@ming.elen.utah.edu>; Mon, 5 Apr 1999 17:17:28 -0600 (MDT)
+Date: Mon, 5 Apr 1999 17:17:28 -0600 (MDT)
+From: Hao Zheng <hao>
+Message-Id: <199904052317.RAA08688@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Create a command for post process.
+
+Full_Name: 
+Version: 
+OS: 
+source: 
+log: 
+Submission from: vlsi.elen.utah.edu (128.110.18.217)
+Submitted by: hao
+
+
+Chris
+Separate post process into its own separate command.
+ 

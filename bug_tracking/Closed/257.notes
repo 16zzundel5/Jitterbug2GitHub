@@ -1,0 +1,3 @@
+Chris
+This is now checked up front, and the error message is printed once and halts 
+synthesis.

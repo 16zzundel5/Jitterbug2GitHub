@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:17:46 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.191])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELHjjY012507
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:17:46 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so527287fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:17:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=fc/L1xgFstnyAZGWBi2ua08kr/Gssqbnxmx5HkWV7kQ=;
+        b=PcYBnH7jg2hpMKimNrXPHu7tNB0UhZHYITJGBnJaylw0XBZ/x2OyY/m9YNlj0Oo6FtYjWYsKuAc2OLcQwnGcJQoXNkbl6lP2bK8feliRGc5YkpEfUQX5JOecb0vDUmhhMx6NTXH9TGydYxD4u8gprV6aDR+cNIVFguIKnKdmZTE=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=phFhH76+cmSKbLymNrS35fsdy8BtoXX5887OTwlfrNrYuqRW65nCUmPeWq1BGiG64UPtnulYSFH6EqOzJ31Z2Xp1ZLguGvnk1wI4QLlXxYTam8BQBpUb4DYTj9w0SSBJwSfbZWjzY00Bzm4QgpQhzcLXyiNTcySvvzms9BfAVzU=
+Received: by 10.82.140.20 with SMTP id n20mr3409720bud.24.1203023864610;
+        Thu, 14 Feb 2008 13:17:44 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:17:44 -0800 (PST)
+Message-ID: <eba119560802141317g1a4b091elf58abd049ea40646@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:17:44 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE: Use capital K for equilibrium constant
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Use capital K for equilibrium constant
+

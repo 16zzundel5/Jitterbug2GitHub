@@ -1,0 +1,36 @@
+From myers@ece.utah.edu  Fri Apr 15 01:32:21 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p3F7WLCS025827
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Apr 2011 01:32:21 -0600
+Received: from wlan.dagstuhl.de ([192.76.146.51] helo=[192.168.10.156])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QAdVs-0003SZ-VM; Fri, 15 Apr 2011 01:32:21 -0600
+Cc: ZHEN ZHANG <zhen.zhang@utah.edu>
+Message-Id: <482A48EC-BFED-45A4-A075-99B5AAAC3744@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <201104131244.p3DCiXLh002996@chou.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: BUG: need support for ranges of initial rates (PR#5298)
+Date: Fri, 15 Apr 2011 01:32:12 -0600
+References: <201104131244.p3DCiXLh002996@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+It is specified as a range, for example, "[1,3]" not in the uniform  
+notation.  I tried this, and I get "nan".  You should convert, "[1,3]"  
+into an initial assignment on the variable of the form "uniform(1,3)".
+
+Chris
+
+On Apr 13, 2011, at 6:44 AM, Zhen Zhang wrote:
+
+> The LPN editor only allows integer initial values for both variables  
+> and rates
+> to be entered. Changes need to be
+> made to VariablesPanel.java to allow initial ranges to be entered.
+

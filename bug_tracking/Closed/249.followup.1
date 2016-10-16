@@ -1,0 +1,28 @@
+From peskin@vlsigroup.ece.utah.edu  Tue Apr 23 19:44:32 2002
+Return-Path: <peskin@vlsigroup.ece.utah.edu>
+Received: from vlsigroup.ece.utah.edu (IDENT:peskin@ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g3O1iWj25806
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 23 Apr 2002 19:44:32 -0600
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <3CC60E00.B518C8D1@vlsigroup.ece.utah.edu>
+Date: Tue, 23 Apr 2002 19:44:32 -0600
+From: Eric Peskin <peskin@vlsigroup.ece.utah.edu>
+X-Mailer: Mozilla 4.77 [en] (X11; U; Linux 2.4.9-31 i686)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: If spec is an ER,...  (PR#249)
+References: <200204231812.g3NICbj13366@chou.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Yes, that works.  Thanks!
+The bad news is that for the example of that bug report, which is now:
+	/home/ming/peskin/atacs/work/er/selector1.er
+the CSC solver causes deadlock.  (At least using atacs -ys selector1.er)
+But I'll save that for another bug report.
+As for whether other exception handling can overwrite ER or TEL structures, I
+can't remember any other case off hand.
+So for now, I will close this bug report.  If it comes up again, we can always
+submit a new one.
+

@@ -1,0 +1,89 @@
+From ibiosim@gmail.com  Fri Sep  6 09:48:22 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f172.google.com (mail-ie0-f172.google.com [209.85.223.172])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id r86FmL1d027984
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Sep 2013 09:48:21 -0600
+Received: by mail-ie0-f172.google.com with SMTP id c10so7342116ieb.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 Sep 2013 08:48:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=SDN73kyMhhaaZrWC6tAXaBmryQBXsgdiCXV837VFeuE=;
+        b=mzZlDKxnMLA6yBxwO4MlRUacQMGycOzZ/I+sx6F2aOm+D5EVmN764NpD2+xKnvbt8U
+         7M0ZjTnV8wYYPVxqSHnl3g/gmqOt3aEkIbo2TfxT2WuCnj10xkTNTFsPpVDfJlXpNLiN
+         /qfyJBPTlwfPWuhlJIhWsjpEW4aLG+nO9jcu8xds2tg8dJd6pIv+FlTpnhGp2tXVYihV
+         wXFBUaoYj58S5kX3kzqFeI+DdfnDX3mW53q5HHPavmAPcorVjAdk//q+HkplGsJ956+s
+         Z7hjAmGC0he9ocvDmlV60Uvvaq84zB/tuDig3MU0vExeczSFF6DJHGCm6WLem0jCmWC9
+         91jg==
+X-Received: by 10.50.61.137 with SMTP id p9mr10465352igr.45.1378482500963;
+        Fri, 06 Sep 2013 08:48:20 -0700 (PDT)
+Received: from 10.0.0.11 (c-98-202-13-26.hsd1.ut.comcast.net. [98.202.13.26])
+        by mx.google.com with ESMTPSA id lp9sm3786043igb.9.1969.12.31.16.00.00
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Fri, 06 Sep 2013 08:48:20 -0700 (PDT)
+Date: Fri, 06 Sep 2013 08:48:20 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <813306895.0.1378482496702.JavaMail.myers@jiaqi>
+Subject: BUG: Crash saving file with no SBOL annotations.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.5.1
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+I get this crash working with SBML test suite example 01190.  When I edit a reaction, cancel the edit, then save the file.  There is no SBOL, so it should not try to save SBOL.
+
+Stack trace:
+java.lang.NullPointerException
+	at sbol.SBOLAssemblyGraph.parseInputHelper(SBOLAssemblyGraph.java:354)
+	at sbol.SBOLAssemblyGraph.parseReactionSbol(SBOLAssemblyGraph.java:257)
+	at sbol.SBOLAssemblyGraph.constructGraph(SBOLAssemblyGraph.java:86)
+	at sbol.SBOLAssemblyGraph.<init>(SBOLAssemblyGraph.java:65)
+	at biomodel.gui.ModelEditor.saveSBOL(ModelEditor.java:436)
+	at biomodel.gui.ModelEditor.save(ModelEditor.java:364)
+	at main.Gui.actionPerformed(Gui.java:2599)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2028)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2351)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:387)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6414)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6179)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4619)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4280)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4210)
+	at java.awt.Container.dispatchEventImpl(Container.java:2127)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

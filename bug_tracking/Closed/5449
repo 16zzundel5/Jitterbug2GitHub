@@ -1,0 +1,67 @@
+From sarbruis@gmail.com  Mon Aug  8 15:39:42 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-fx0-f42.google.com (mail-fx0-f42.google.com [209.85.161.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p78LdfkS016414
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 8 Aug 2011 15:39:41 -0600
+Received: by fxe23 with SMTP id 23so3756593fxe.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 08 Aug 2011 14:39:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc:content-type;
+        bh=BcqGb0o9a+/M0zJqdeF4HJdZIHNsCvrsRuk5Nw550bc=;
+        b=PsQbD+1ThoAWL7Vbqj+fKecrpEs1NbVQq8O+97aXMA+/84qSahlOfAUmWETYchy55K
+         WC+t0ci4CK3LBXT88iBI/7A0PZfg4HCo1KRlvJ6Q4C4pQZDU06jiUcOpregLlF4ZYcYE
+         1uQOgIg58+GOFVK+cQAVJgiLlEJOY4Qd0rN5Y=
+Received: by 10.204.146.142 with SMTP id h14mr1846368bkv.31.1312839579236;
+ Mon, 08 Aug 2011 14:39:39 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.39.5 with HTTP; Mon, 8 Aug 2011 14:38:59 -0700 (PDT)
+In-Reply-To: <F3FE734CBA37DE4989B91D55FAAB78B5990534B3D7@C5V2.xds.umail.utah.edu>
+References: <F3FE734CBA37DE4989B91D55FAAB78B5990534B3D7@C5V2.xds.umail.utah.edu>
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Mon, 8 Aug 2011 15:38:59 -0600
+Message-ID: <CAHb1wp0KNcKreH6LvA04_FJp=D6GYuOYzjNzERGQ_aWuo0hxqg@mail.gmail.com>
+Subject: Re: BUG: GCM Species Editor Won't Open
+To: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+Cc: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=00151747b51cc479c804aa05489f
+
+--00151747b51cc479c804aa05489f
+Content-Type: text/plain; charset=ISO-8859-1
+
+in the schematic?
+
+On Mon, Aug 8, 2011 at 3:36 PM, NICHOLAS ANDREW ROEHNER
+<n.roehner@utah.edu>wrote:
+
+> Hi Jason,
+>
+> Just did an update recently and it looks like your changes to the movie
+> stuff have left us unable to open species for editing.
+>
+> Happy hunting,
+>
+> Nic
+
+--00151747b51cc479c804aa05489f
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+in the schematic?<br><br><div class=3D"gmail_quote">On Mon, Aug 8, 2011 at =
+3:36 PM, NICHOLAS ANDREW ROEHNER <span dir=3D"ltr">&lt;<a href=3D"mailto:n.=
+roehner@utah.edu">n.roehner@utah.edu</a>&gt;</span> wrote:<br><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;=
+padding-left:1ex;">
+
+Hi Jason,<br>
+<br>
+Just did an update recently and it looks like your changes to the movie stu=
+ff have left us unable to open species for editing.<br>
+<br>
+Happy hunting,<br>
+<br>
+Nic</blockquote></div><br>
+
+--00151747b51cc479c804aa05489f--
+

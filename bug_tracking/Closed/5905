@@ -1,0 +1,35 @@
+From l.watanabe@utah.edu  Mon May 13 13:54:13 2013
+Return-Path: <l.watanabe@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r4DJsDPj002636
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 13 May 2013 13:54:13 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AlEVAM9DkVGbYbVn/2dsb2JhbABaDokig3W2SoEhbQeCIQUZIVEBKhQvEyYBBBuIBJ0ek3WDeocjjneDLGEDjhuaRoJQP4In
+X-IPAS-Result: AlEVAM9DkVGbYbVn/2dsb2JhbABaDokig3W2SoEhbQeCIQUZIVEBKhQvEyYBBBuIBJ0ek3WDeocjjneDLGEDjhuaRoJQP4In
+X-IronPort-AV: E=Sophos;i="4.87,663,1363154400"; 
+   d="scan'208";a="199007737"
+Received: from h103.umail.utah.edu (HELO X-HUB3.xds.umail.utah.edu) ([155.97.181.103])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 13 May 2013 13:54:13 -0600
+Received: from X-MB11.xds.umail.utah.edu ([169.254.3.121]) by
+ X-HUB3.xds.umail.utah.edu ([155.97.181.233]) with mapi id 14.02.0318.001;
+ Mon, 13 May 2013 13:56:12 -0600
+From: LEANDRO HIKIJI WATANABE <l.watanabe@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE: add rules to hierarchical simulator
+Thread-Topic: FEATURE: add rules to hierarchical simulator
+Thread-Index: Ac5QE+Y4qV1vsmTWTBybjYNzj2Sl3w==
+Date: Mon, 13 May 2013 19:56:11 +0000
+Message-ID: <DDDF61188CC80F41AF904098A2BD0A511D3D72D0@X-MB11.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [128.110.233.23]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r4DJsDPj002636
+
+
+

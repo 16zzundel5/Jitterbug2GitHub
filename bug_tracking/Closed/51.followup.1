@@ -1,0 +1,63 @@
+From peskin@xia.elen.utah.edu  Thu Nov 11 18:43:39 1999
+Received: from xia.elen.utah.edu (xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id SAA12415
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 11 Nov 1999 18:43:39 -0700
+Received: (from peskin@localhost)
+	by xia.elen.utah.edu (8.9.3/8.9.3) id SAA17865
+	for atacs-bugs@shang.elen.utah.edu; Thu, 11 Nov 1999 18:43:33 -0700
+Date: Thu, 11 Nov 1999 18:43:33 -0700
+From: Eric Peskin <peskin@xia.elen.utah.edu>
+Message-Id: <199911120143.SAA17865@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Re: BUG.csp diverges during state space exploration (PR#51)
+
+I get a CSC violation.  The command
+  ../../src/atacs BUG.hse -msmUmPmTmFmOmpmEmcmXmV -ya
+produces the following log:
+===========================================================================
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Verbose mode now turned ON.
+Compiling BUG.hse ... 
+Storing process seoutb to seoutb.tel
+Storing process eout to eout.tel
+Storing process fout to fout.tel
+Storing process fin to fin.tel
+Storing process seinb to seinb.tel
+Storing process BUG to BUG.tel
+Loading timed event/level structure from:  BUG.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules and storing to:  BUG.rr
+Finding reduced state graph and storing to:  BUG.rsg
+61 iterations 50 regions, 55 new_reg, 47 states (stack_depth = 39)
+nodes = 162, dead = 453
+memory: max=466416 inuse=465656 free=760 
+137 iterations 100 regions, 106 new_reg, 94 states (stack_depth = 59)
+nodes = 162, dead = 453
+memory: max=544240 inuse=538760 free=5480 
+262 iterations 150 regions, 159 new_reg, 130 states (stack_depth = 53)
+nodes = 162, dead = 453
+memory: max=568816 inuse=562840 free=5976 
+nodes = 162, dead = 453
+memory: max=568816 inuse=477784 free=91032 
+done
+371 iterations, 166 regions, 177 new_regions, 142 states in 0.364192 seconds
+nodes in use = 162, dead = 453
+memory: max=568816 inuse=477784 free=91032
+Projecting out dummy transitions and storing to:  BUG.rsg
+Checking CSC ... NOT complete state coded
+EXCEPTION:  Storing CSC violations to:  BUG.err
+ERROR: Cannot use state assignment on level-based specifications.

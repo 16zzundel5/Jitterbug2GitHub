@@ -1,0 +1,60 @@
+From eemercer@yuan.elen.utah.edu  Fri May 12 10:13:17 2000
+Return-Path: <eemercer@yuan.elen.utah.edu>
+Received: from localhost (eemercer@localhost)
+	by shang.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA23145
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 12 May 2000 10:13:17 -0600
+X-Authentication-Warning: shang.elen.utah.edu: eemercer owned process doing -bs
+Date: Fri, 12 May 2000 10:13:17 -0600 (MDT)
+From: Eric Mercer <eemercer@yuan.elen.utah.edu>
+X-Sender: eemercer@shang.elen.utah.edu
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: ATACS Cores on Syntax Errors (PR#426)
+In-Reply-To: <200005120440.WAA09515@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.10.10005121007200.23098-100000@shang.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Oops, I spoke to soon.  It is repeatable.  If you give ATACS the following
+command line on a file with a syntax error:
+
+atacs -lv -msmEmX -ya -sv lab_hse wineshop
+
+Then first, the syntax error is correctly identified.  However, ATACS does
+not stop execution once it finds the syntax error.  Rather, it moves
+forward to finish processing the command list.  Thus, it cores when the
+TEL for the wineshop is incomplete.
+
+Here is the output from ATACS:
+
+shang:~/work/vhdl> atacs -lv -msmEmX -ya -sv lab_hse wineshop
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling lab_hse.vhd ... 
+Storing process communication to communication.tel
+wineshop.vhd: 17: syntax error.
+ERROR: Compilation failed due to above errors.
+ERROR:  Cannot access lab_hse.tel!
+Using PO sets timing to obtain state graphs.
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Compiling lab_hse.vhd ... 
+lab_hse.vhd: line 14: error: multiple declaration of entity 'lab_hse'
+Storing process commnication to commnication.tel
+Segmentation fault
+
+You can use any hierarchical file in VHDL inserting a syntax error into
+the module you are trying to synthesize to recreate the core.
+
+egm
+
+-----
+Eric G Mercer                                   eemercer@ee.utah.edu
+MEB 4120 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+
+On Thu, 11 May 2000, Chris Myers wrote:
+
+> Is this repeatable under linux?
+> 
+

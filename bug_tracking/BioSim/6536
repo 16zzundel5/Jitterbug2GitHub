@@ -1,0 +1,58 @@
+From prvs=97921db5b=zhen.zhang@utah.edu  Mon Jun 27 17:13:12 2016
+Return-Path: <prvs=97921db5b=zhen.zhang@utah.edu>
+Received: from ipo1.cc.utah.edu (ipo1.cc.utah.edu [155.97.144.6])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RNDCLP009676
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 17:13:12 -0600
+X-IronPort-AV: E=Sophos;i="5.26,538,1459836000"; 
+   d="scan'208,217";a="121745983"
+Received: from mail-oi0-f44.google.com ([209.85.218.44])
+  by ipo1smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 27 Jun 2016 17:13:11 -0600
+Received: by mail-oi0-f44.google.com with SMTP id s66so221542146oif.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 16:13:11 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJA0t0m3v88d3pwveVWyHqk0xpScSaEBFLdkj87QkX0LPViujMz12pLWABlPaD0lMjzoUZSlmN5JzJG5Q==
+X-Received: by 10.157.8.225 with SMTP id 88mr2394785otf.157.1467069191432;
+ Mon, 27 Jun 2016 16:13:11 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.172.21 with HTTP; Mon, 27 Jun 2016 16:12:31 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 27 Jun 2016 17:12:31 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvmkaSKiE6x3XOSYQxSWUqJVZXBCKsdr4LijaZi26MSn5A@mail.gmail.com>
+Message-ID: <CA+LVOvmkaSKiE6x3XOSYQxSWUqJVZXBCKsdr4LijaZi26MSn5A@mail.gmail.com>
+Subject: BUG: null pointer exception for the steady-state and reachability
+ analysis on repressilator
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113cf70604327605364aaa17
+
+--001a113cf70604327605364aaa17
+Content-Type: text/plain; charset=UTF-8
+
+Steady-state analysis and reachability analysis for the repressilator (see
+stochastic_model_checking package sent separately) generated the following
+exception:
+
+java.lang.NullPointerException
+    at biomodel.util.SBMLutilities.fillBlankMetaIDs(SBMLutilities.java:1823)
+    at biomodel.parser.BioModel.setSBMLDocument(BioModel.java:454)
+    at biomodel.parser.BioModel.flattenModel(BioModel.java:6953)
+    at analysis.main.Run.execute(Run.java:943)
+    at analysis.main.AnalysisView.run(AnalysisView.java:1124)
+    at analysis.main.AnalysisThread.run(AnalysisThread.java:24).
+
+--001a113cf70604327605364aaa17
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Steady-state analysis and reachability analysis for the re=
+pressilator (see=20
+stochastic_model_checking package sent separately) generated the following =
+exception:<br><div><div><br>java.lang.NullPointerException<br>=C2=A0=C2=A0 =
+=C2=A0at biomodel.util.SBMLutilities.fillBlankMetaIDs(SBMLutilities.java:18=
+23)<br>=C2=A0=C2=A0 =C2=A0at biomodel.parser.BioModel.setSBMLDocument(BioMo=
+del.java:454)<br>=C2=A0=C2=A0 =C2=A0at biomodel.parser.BioModel.flattenMode=
+l(BioModel.java:6953)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.Run.execute(Ru=
+n.java:943)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisView.run(Analysi=
+sView.java:1124)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisThread.run(=
+AnalysisThread.java:24).</div></div></div>
+
+--001a113cf70604327605364aaa17--
+

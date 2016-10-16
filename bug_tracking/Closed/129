@@ -1,0 +1,21 @@
+From hao@vlsigroup.elen.utah.edu  Mon May 10 16:47:08 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id QAA13300 for <atacs-bugs@shang.elen.utah.edu>; Mon, 10 May 1999 16:47:07 -0600 (MDT)
+Date: Mon, 10 May 1999 16:47:07 -0600 (MDT)
+Message-Id: <199905102247.QAA13300@yuan.elen.utah.edu>
+From: hao@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: component name convention
+
+Full_Name: Hao Zheng
+Version: 
+OS: 
+source: 
+log: 
+Submission from: tang.elen.utah.edu (128.110.18.209)
+Submitted by: hao
+
+
+The component name should look like the following:
+   module_name.component_name1
+
+And also, the module_name should be the file name.

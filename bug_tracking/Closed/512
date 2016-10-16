@@ -1,0 +1,32 @@
+From peskin@cs.utah.edu  Sat Sep  2 10:25:58 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA03354
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 2 Sep 2000 10:25:58 -0600
+Date: Sat, 2 Sep 2000 10:25:58 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200009021625.KAA03354@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: handshake example draws a seg fault
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag handFault
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+
+spec: /home/xia/peskin/atacs/examples/vhd/direct.vhd
+log: /home/xia/peskin/atacs/examples/vhd/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+381 xia:examples/vhd> pwd
+/home/xia/peskin/atacs/examples/vhd
+382 xia:examples/vhd> ../../src/atacs -ya X Y direct X
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling X.vhd ... 
+Compiled process X
+Checking redundant rules ... done
+Storing module X to X.tel
+Segmentation fault
+

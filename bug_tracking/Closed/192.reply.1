@@ -1,0 +1,13 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: atacs should look for include files in directory where it found main source (PR#192)
+Date: Wed Nov 10 12:29:41 1999
+
+If you consider gcc as a model, it cannot find include files unless they are in
+your current working directory or in your include file path.  
+
+If this is considered a good model, then we should add some sort of include
+file
+path mechanism.  
+
+I'm moving this to feature request.

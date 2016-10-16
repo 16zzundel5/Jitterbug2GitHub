@@ -1,0 +1,38 @@
+From zhen.zhang@utah.edu  Wed Sep 23 15:59:08 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo1.cc.utah.edu (ipo1.cc.utah.edu [155.97.144.6])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8NLx8tA026234
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 23 Sep 2015 15:59:08 -0600
+X-IronPort-AV: E=Sophos;i="5.17,579,1437458400"; 
+   d="scan'208";a="53259880"
+Received: from mail-ob0-f173.google.com ([209.85.214.173])
+  by ipo1smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 23 Sep 2015 15:59:07 -0600
+Received: by obbbh8 with SMTP id bh8so44580903obb.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 23 Sep 2015 14:59:07 -0700 (PDT)
+X-Received: by 10.60.43.105 with SMTP id v9mr20259820oel.6.1443045547333; Wed,
+ 23 Sep 2015 14:59:07 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Wed, 23 Sep 2015 14:58:28 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Wed, 23 Sep 2015 15:58:28 -0600
+Message-ID: <CA+LVOvnfmp7RLwDMZ0yCdQhbhYYcPO1iF1aObD_bdWdP5HcKWQ@mail.gmail.com>
+Subject: CHANGE: Differentiate delay assignments between immediate and
+ non-immediate transitions
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Currently, the VHDL compiler assigns a 0 delay for both types of
+transitions, if no delay is specified in the VHDL file. We should
+differentiate these two kinds of transitions with different delay
+assignments. In my thesis, a transition with 0 delay is immediate, and
+the one with unbounded delay is not immediate. It would be nice to
+change the VHDL compiler to generate 0 delays for all transitions
+compiled from a pair of send and receive statements, and generate
+unbounded delay for other transitions.
+
+The other option is to have a "null" delay for an immediate
+transition. But I am not sure if the LPN simulator handles it. Also,
+is a null delay allowed for timed state exploration, which uses the
+untimed one?
+

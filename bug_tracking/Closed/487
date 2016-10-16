@@ -1,0 +1,86 @@
+From atacs-bugs  Thu Jun 15 00:24:23 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id AAA31878
+	for atacs-bugs@shang.elen.utah.edu; Thu, 15 Jun 2000 00:24:22 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id AAA31872
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Thu, 15 Jun 2000 00:24:20 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id AAA01213
+	for atacs-bugs@vlsigroup; Thu, 15 Jun 2000 00:28:03 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200006150628.AAA01213@jiaqi.elen.utah.edu>
+Subject: Re: can't meet today afternoon (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Thu, 15 Jun 2000 00:28:03 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From elb@cs.utah.edu  Tue Jun 13 13:26:13 2000
+Return-Path: <elb@cs.utah.edu>
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA24853
+	for <myers@vlsigroup.elen.utah.edu>; Tue, 13 Jun 2000 13:26:13 -0600
+Received: from telemark.cs.utah.edu (telemark.cs.utah.edu [155.99.210.117])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id NAA02371
+	for <myers@vlsigroup.elen.utah.edu>; Tue, 13 Jun 2000 13:26:12 -0600 (MDT)
+Received: from localhost (elb@localhost)
+	by telemark.cs.utah.edu (8.8.8/8.8.8) with SMTP id NAA19328
+	for <myers@vlsigroup.elen.utah.edu>; Tue, 13 Jun 2000 13:24:53 -0600 (MDT)
+X-Authentication-Warning: telemark.cs.utah.edu: elb owned process doing -bs
+Date: Tue, 13 Jun 2000 13:24:53 -0600 (MDT)
+From: Erik Brunvand <elb@cs.utah.edu>
+To: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Subject: Re: can't meet today afternoon
+In-Reply-To: <200006131920.NAA01233@jiaqi.elen.utah.edu>
+Message-ID: <Pine.SOL.3.96.1000613132122.19207E-100000@telemark.cs.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+I have looked at 1-3, but haven't made detailed comments yet. Overall my
+impression is that the conversational introduction is interesting. I can
+see where it might be a gentle way to introduce things, but it might get
+tedious if carried too far. Also, I would suggest using timing diagrams to
+explain the different choices in signalling protocols, or some other
+graphical means, in addition to just the permuted VHDL text. It's
+sometimes hard to see what's different from one batch of VHDL to another,
+and I think that protocols are one place where timing diagrams or other
+graphical ideas really do help. 
+
+But, those are just first impressions. I'm hoping to have some more
+detailed comments based on a careful reading in a week or so (I have to
+blaze through Ravi's thesis today and tomorrow...)
+
+				-Erik
+
+
+On Tue, 13 Jun 2000, Chris J. Myers wrote:
+
+> > 
+> > OK - how about 4:00 on Wednesday? Meet in my office. I should have some
+> > projected numbers by then.
+> > 
+> Sounds good.
+> >
+> > Chris - do we have a placeholder web site yet? Remind me of the URL.
+> > Thanks. 
+> > 
+> www.async.elen.utah.edu/~async01
+> >
+> > It looks like Linda Williams has moved to a different position. I got a
+> > reply from her that asked someone else to follow up on the conference. Her
+> > signature file was from Outreach and Distance Ed or something like that.
+> > I'll follow up and see what the poop is. 
+> > 
+> Sounds like it.  Hope this isn't a problem.
+> 
+> Chris
+> 
+> P.S. Erik: Any feedback on chap 1-3 yet?
+>  
+> 
+

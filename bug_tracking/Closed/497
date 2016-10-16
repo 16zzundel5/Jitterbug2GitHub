@@ -1,0 +1,25 @@
+From myers@vlsigroup.elen.utah.edu  Fri Jul  7 14:16:18 2000
+Return-Path: <myers@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA27994
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 7 Jul 2000 14:16:18 -0600
+Date: Fri, 7 Jul 2000 14:16:18 -0600
+Message-Id: <200007072016.OAA27994@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: genrg and superset incompatible
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+When genrg is selected, superset switch is ignored.  This is because it is 
+difficult to deal with the links correctly.  Should either make this
+restriction
+explicit or fix it.
+

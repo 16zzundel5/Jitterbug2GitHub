@@ -1,0 +1,75 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Aug 12 11:04:31 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i7CH4UwO003425
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 12 Aug 2004 11:04:30 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i7CH4UJi003423
+	for atacs-bugs@shang.elen.utah.edu; Thu, 12 Aug 2004 11:04:30 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i7CH4UwO003417
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2004 11:04:30 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i7CH4ggH003249
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2004 11:04:42 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i7CH4grN003245
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2004 11:04:42 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Thu, 12 Aug 2004 11:04:42 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Re: ATACS Questions (fwd)
+Message-ID: <Pine.LNX.4.44.0408121104351.2863-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+
+---------- Forwarded message ----------
+Date: Mon, 26 Jul 2004 08:43:41 -0400
+From: Michael Boyer <boyerm@union.edu>
+To: Chris Myers <myers@vlsigroup.ece.utah.edu>
+Subject: Re: ATACS Questions
+
+Chris,
+
+I definitely think that this would be helpful.  One of the constraints that we
+have for our circuits is that the data signal must be updated before the phase
+signal, so it sounds like we could use this to check.  So if there is some way
+to do it in VHDL, it would be very helpful.
+
+Thanks,
+Michael Boyer
+
+
+Quoting Chris Myers <myers@vlsigroup.ece.utah.edu>:
+
+> > > Unfortunately, we cannot handle symbolic delay values and equations.  We
+> > > can handle ordering relationships though.  For example, you can make
+> > > assumptions like a goes high before b goes high.  Does this help?
+> >
+> > I'm not sure if that would help for what I described to you, but it might
+> help
+> > for something else we are trying to do.  Are you referring to the property
+> > checking that you described in an earlier e-mail, or is this something
+> > different?
+> >
+> It is different.  See the attached example.  The assumption at the bottom
+> says yb is high before y goes high and yb is low before y goes low.  There
+> is currently no way to specify this in VHDL, but we can likely think of
+> some way if it is useful to you.
+> 
+> Cheers,
+> 
+> Chris
+> 
+> 
+
+
+
+
+-------------------------------------------------
+This mail sent through IMP: http://horde.org/imp/
+

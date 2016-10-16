@@ -1,0 +1,29 @@
+From zhen.zhang@utah.edu  Sun May 17 21:44:24 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo6.cc.utah.edu (ipo6.cc.utah.edu [155.97.144.36])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t4I3iO5a020405
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 17 May 2015 21:44:24 -0600
+X-IronPort-AV: E=Sophos;i="5.13,450,1427781600"; 
+   d="scan'208";a="27186841"
+Received: from mail-oi0-f48.google.com ([209.85.218.48])
+  by ipo6smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 17 May 2015 21:44:24 -0600
+Received: by oiko83 with SMTP id o83so119771781oik.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 17 May 2015 20:44:23 -0700 (PDT)
+X-Received: by 10.202.3.66 with SMTP id 63mr17043881oid.41.1431920663467; Sun,
+ 17 May 2015 20:44:23 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.212.202 with HTTP; Sun, 17 May 2015 20:43:43 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sun, 17 May 2015 21:43:43 -0600
+Message-ID: <CA+LVOvkNCgHMJr+9_7HhxZkwHfKrqg4RLRpnRnCovmr_PDh2eg@mail.gmail.com>
+Subject: BUG: VHDL compiler drops std_logic_vector that has more than 1 bit
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Refer to the example noc2by2_livelock_free.tar.gz.
+
+The r_E_01.vhd module defines a two bit std_logic_vector "one_flit".
+It stores data received from the "in_e" channel. The compiled LPN
+(top_r_E_01_NEW.lpn) does not have this variable.
+

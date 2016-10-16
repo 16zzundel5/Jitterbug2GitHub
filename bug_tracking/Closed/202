@@ -1,0 +1,23 @@
+From myers@vlsigroup.elen.utah.edu  Mon Jul 26 14:51:06 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA12214 for <atacs-bugs@shang.elen.utah.edu>; Mon, 26 Jul 1999 14:51:06 -0600 (MDT)
+Date: Mon, 26 Jul 1999 14:51:06 -0600 (MDT)
+Message-Id: <199907262051.OAA12214@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add timing support for constraint rules.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+Currently constraint rules only check untimed ordering relationships.
+They should also check time separations.  In other words, when an enabled 
+event fires it must meet its lower bound for all constraint rules.  Also,
+the upper bound of no constraint rule can be allowed to exceed its upper
+bound.
+

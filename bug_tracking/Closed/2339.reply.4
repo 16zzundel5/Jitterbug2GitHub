@@ -1,0 +1,13 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu,namphuon@vlsigroup.ece.utah.edu
+Subject: Re: BUG: user-defined species should not be abstracted (PR#2339)
+Date: Wed Dec 19 21:46:40 2007
+
+I think this is fixed.  Namely, it will not allow you to remove interesting
+species when in use by active user-defined data or termination conditions.  It
+will also restore them when you select to use user-defined data and/or
+termination conditions.
+
+Please test.
+
+Chris

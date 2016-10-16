@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Fri Oct 10 13:43:04 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.4 required=5.0 tests=AWL,BAYES_00,
+	DNS_FROM_SECURITYSAGE autolearn=no version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m9AJh413025701
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 10 Oct 2008 13:43:04 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1KoNqN-0005bM-CV
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 10 Oct 2008 13:40:11 -0600
+Message-Id: <A82F4FB9-766B-4D16-B005-06C84078900E@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: FEATURE: scrollable tabs
+Date: Fri, 10 Oct 2008 13:42:58 -0600
+X-Mailer: Apple Mail (2.929.2)
+
+Would be nice to have tabs scroll rather than wrap, but this currently  
+has a problem with closing tabs.
+

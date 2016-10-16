@@ -1,0 +1,51 @@
+From peskin@cs.utah.edu  Thu Dec  2 21:03:32 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id VAA09943
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 2 Dec 1999 21:03:32 -0700
+Date: Thu, 2 Dec 1999 21:03:32 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199912030403.VAA09943@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: component not found in uno1.vhd
+
+Full_Name: Eric Robert Peskin
+Version: 12894974 Nov 24 17:32 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/atacs/examples/vhd/uno1.vhd
+log: /home/xia/peskin/atacs/examples/vhd/uno1.vhd
+Submission from: slip87.cs.utah.edu (155.99.200.87)
+Submitted by: peskin
+
+
+The VHDL compiler chokes on uno1.vhd.
+A sample session is appended below:
+
+188 xia:~/clean> pwd
+/home/xia/peskin/clean
+189 xia:~/clean> ls -l `which atacs`
+-rwxr-x---   1 peskin   async    12894974 Nov 24 17:32
+/home/xia/peskin/atacs/src/atacs*
+190 xia:~/clean> atacs uno1.vhd -msmUmPmTmFmOmpmEmcmX -ya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Compiling uno1.vhd ...
+uno1.vhd: line 29: cannot open 'Mult.vhd'
+uno1.vhd: line 35: error: something weird happening
+uno1.vhd: line 37: cannot open 'latch.vhd'
+uno1.vhd: line 42: error: something weird happening
+uno1.vhd: line 44: cannot open 'uno_ctrl.vhd'
+uno1.vhd: line 55: error: something weird happening
+uno1.vhd: line 67: error: component 'latch' not found
+ERROR: Compilation failed due to above errors.
+191 xia:~/clean>
+

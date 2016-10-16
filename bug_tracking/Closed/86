@@ -1,0 +1,41 @@
+From stjung@ming.elen.utah.edu  Tue Mar 30 10:26:39 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA14535 for <atacs-bugs@ming.elen.utah.edu>; Tue, 30 Mar 1999 10:26:38 -0700 (MST)
+Date: Tue, 30 Mar 1999 10:26:38 -0700 (MST)
+Message-Id: <199903301726.KAA14535@yuan.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Orbits Verification Error
+
+Full_Name: Sungtae Jung
+Version: 4.1
+OS: Linux
+source: 
+log: 
+category: incoming
+Submission from: ming.elen.utah.edu (128.110.18.208)
+
+
+When I use the following commands, ATACS seems to produce wrong ".ver" file
+for some ".er" specifications converted from ".g" files.
+
+Commands :
+   atacs> heuristic
+   atacs> doall chu133
+   atacs> orbits
+   atacs> verify
+
+The errors can be classified as 3 groups as follows:
+
+1) For the following specifications, ORBITS produces verification error trace.
+   chu133.g, chu150.g, converta.g, hazard.g, ram-read-sbuf.g, vbe5b.g
+   wrdata.g
+
+2) For the master-read.g
+   ORBITS did not complete.
+   Error message is "not a wire! : di "
+
+3) For the sbuf-ram-write.g
+   ORBITS did not complete.
+   Error message is " (wire done 1) 'wire arelady has a different value' "
+
+

@@ -1,0 +1,68 @@
+From christian.atheist@gmail.com  Fri Feb  1 13:05:49 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=3.0 tests=AWL,BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.185])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m11K5mLt023586
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 1 Feb 2008 13:05:48 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so1297971fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 01 Feb 2008 12:05:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=J0IZfAAa0Y5nBsw3oi221w4VEHF+IFiPjknlY7aguEs=;
+        b=XcxGOMYl/9iPomAOGOhtoVC8EE5hh83w5q/WUMDcHIr++W1IqUP9xfXbsIeNs5TqtmRkhvWfMeVRCkDrRh3Kf/rhgIvVtm+zn4ejErx+HCuap7oMr+PkCmEw/FR40iiivmnVp83Adfeob/TEFXjpyDX0SEJlshNbec7zPg8jtRc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=lQfMiIuGCc4ONb9D0EWKCFgXqGqU668Vbx/uFfCJ6W+ZKqe6+aZZEl7SmYuBmYmPqulXdwNNZFZuqYl+jHvILBpO9nztXuELKoOnrw+LHjyeHy2A+3Y5v3DwXnfDAJBCtrua4Cda1SUOd4VbTW2KAVyFFqncrB+ragiE6zPrGt0=
+Received: by 10.82.186.5 with SMTP id j5mr7059522buf.12.1201896345455;
+        Fri, 01 Feb 2008 12:05:45 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Fri, 1 Feb 2008 12:05:45 -0800 (PST)
+Message-ID: <eba119560802011205x7d2e21d5r702848adb4838244@mail.gmail.com>
+Date: Fri, 1 Feb 2008 13:05:45 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Grapher does not graph species
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I ran an ODE simulation of an sbml file, and when I try to graph the
+results, I get an array out of bounds error.
+
+Exception in thread "AWT-EventQueue-0"
+java.lang.IndexOutOfBoundsException: Index: 11, Size: 11
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.Graph.editGraph(Graph.java:1426)
+        at graph.Graph.mouseClicked(Graph.java:573)
+        at java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:253)
+        at java.awt.Component.processMouseEvent(Component.java:6041)
+        at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+        at java.awt.Component.processEvent(Component.java:5803)
+        at java.awt.Container.processEvent(Container.java:2058)
+        at java.awt.Component.dispatchEventImpl(Component.java:4410)
+        at java.awt.Container.dispatchEventImpl(Container.java:2116)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+        at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3995)
+        at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+        at java.awt.Container.dispatchEventImpl(Container.java:2102)
+        at java.awt.Window.dispatchEventImpl(Window.java:2429)
+        at java.awt.Component.dispatchEvent(Component.java:4240)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+        at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+        at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+        at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+        at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+        at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+
+The file can be found here.
+
+http://www.async.ece.utah.edu/~namphuon/temp/nand3.sbml
+

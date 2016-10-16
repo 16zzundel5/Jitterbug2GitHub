@@ -1,0 +1,111 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: add a check for your model before Markovian analysis (PR#5023)
+Date: Thu Sep  9 20:53:29 2010
+
+The model you tried to perform Markov chain analysis on will now pop up an error
+window because it contains transitions without exponential delay, which I
+believe is the expected result.  Moving to needs testing.
+
+> Hi,
+> 
+> I tried to do Markov analysis on this example:
+> 
+> .inputs coin
+> .outputs
+> .dummy t11 t1 t8 t12 t10 t7 t2 t16 t15 t17 t6 t3 t14 t0 t9 t18 t4 t5 t13
+> #@.variables dice
+> #|.places p6 p3 p1 p0 p7 p5 p4 p2 coin_false coin_true
+> #@.init_state [X]
+> .graph
+> p6 t11
+> t11 p7
+> p1 t1
+> t1 p3
+> p5 t8
+> t8 p7
+> p6 t12
+> t12 p2
+> p2 t10
+> t10 p6
+> p2 t7
+> t7 p5
+> p3 t2
+> t2 p1
+> coin_true t16
+> t16 coin_true
+> coin_false t15
+> t15 coin_true
+> coin_false t17
+> t17 coin_false
+> p0 t6
+> t6 p2
+> p3 t3
+> t3 p7
+> coin_true t14
+> t14 coin_false
+> p0 t0
+> t0 p1
+> p5 t9
+> t9 p7
+> p7 t18
+> t18 p7
+> p1 t4
+> t4 p4
+> p4 t5
+> t5 p7
+> p4 t13
+> t13 p7
+> .marking {p0 coin_true }
+> #@.init_vals {<dice=0>}
+> #@.enablings  
+> {<t11=[coin=false]><t1=[coin=true]><t8=[coin=true]><t12=[coin=true]>
+> < 
+> t10 
+> = 
+> [coin 
+> =true]><t7=[coin=false]><t2=[coin=true]><t6=[coin=false]><t3=[coin=fals
+> e 
+> ]> 
+> < 
+> t0 
+> = 
+> [coin 
+> =true]><t9=[coin=false]><t4=[coin=false]><t5=[coin=true]><t13=[coin=f
+> alse]>}
+> #@.assignments  
+> {<t11=[dice:=6]><t8=[dice:=4]><t3=[dice:=1]><t9=[dice:=5]><t5=[dic
+> e:=2]><t13=[dice:=3]>}
+> #@.delay_assignments {<t0=[1]>}
+> #@.boolean_assignments  
+> {<t16=[coin:=true]><t15=[coin:=true]><t17=[coin:=false]><t
+> 14=[coin:=false]>}
+> #@.continuous
+> .end
+> 
+> And I got this exception:
+> 
+>   Exception in thread "Thread-6" java.lang.NullPointerException
+> 	at stategraph.StateGraph.canPerformMarkovianAnalysis(StateGraph.java: 
+> 224)
+> 	at stategraph.StateGraph.performMarkovianAnalysis(StateGraph.java:261)
+> 	at  
+> stategraph 
+> .PerfromMarkovAnalysisThread.run(PerfromMarkovAnalysisThread.java:22)
+> 
+> 
+> On Aug 25, 2010, at 3:48 PM, Curtis Madsen wrote:
+>
+>> This should be working now.  Moving to needs testing.
+>>
+>>> Before doing Markov analysis, check if the LPN can be analyzed.
+>>>
+>>> All transitions must have an exponential delay (or possibly 0 delay,
+>>> but support is needed for immediate transitions).
+>>>
+>>> All assignments should not include random functions.
+>>>
+>>> No continuous variables.
+>>>
+>>>
+>>>

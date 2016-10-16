@@ -1,0 +1,47 @@
+From moschino21@gmail.com  Fri May 13 16:42:02 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4DMg0bm011819
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 May 2011 16:42:01 -0600
+Received: by bwz18 with SMTP id 18so3740117bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 May 2011 15:42:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=nfAd0Z9EMtpS/nc4YfY9ZDnSyUleivQQ8sJwyztINug=;
+        b=LxirH6o7TWh++TCtKherLKD3cId56HPjZ7iyCK20haztVbHDFiVR4iTYDUtfCHp7kY
+         Y8GxP3dHOqLTxrI5uqQeBZAy17Vee+Hc1iRoQgqYBqlW9B68nPvg3+sHVSM2hJxZPWY+
+         EWl6GEfZ25VefEzmE+l/JwQnY3T+VGtVTogV0=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=QKaLquOIj1kQ+FbrI9REHsnfcLuwSKu8ydsNTAp8cY7lCMblhJzxdLbeIFSkHX8KyU
+         XqKA85nCbq/3IC3M6d2aqwpTMuhtwmG2AYXhbt1n3o+XZXybz28pviFoQY8J0yBeQcoT
+         NdvIwskot+H4kOzQCqcwso5Nj60I+mDt0AcmA=
+Received: by 10.204.19.83 with SMTP id z19mr1139315bka.191.1305326520106; Fri,
+ 13 May 2011 15:42:00 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.205.65.76 with HTTP; Fri, 13 May 2011 15:41:40 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Fri, 13 May 2011 16:41:40 -0600
+Message-ID: <BANLkTinH2O-cSKWj68g8UYFau7eYNH9yUw@mail.gmail.com>
+Subject: FEATURE: add support for ">=" and "<=" for expressions in the VHDL compiler
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=00032555a3da8bfe3104a3300309
+
+--00032555a3da8bfe3104a3300309
+Content-Type: text/plain; charset=ISO-8859-1
+
+Add support for converting ">=" and "<=" in bool_relation in auxilary.c.
+
+-- 
+Zhen Zhang
+
+--00032555a3da8bfe3104a3300309
+Content-Type: text/html; charset=ISO-8859-1
+
+Add support for converting &quot;&gt;=&quot; and &quot;&lt;=&quot; in bool_relation in auxilary.c.<br clear="all"><br>-- <br>Zhen Zhang<br>
+
+--00032555a3da8bfe3104a3300309--
+

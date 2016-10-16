@@ -1,0 +1,23 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: need to check math dimensions (PR#6124)
+Date: Sun Sep 28 17:06:05 2014
+
+Hi Chris,
+
+The method checkVectorMath returns a boolean and tells if a vector is ragged or
+not. 
+
+We agreed that event assignment, rules, initial assignment, etc must have index
+objects for array operations so 
+they all return a scalar value. I think the only case where we need to check if
+the vector size matches the 
+dimensions of an object is for event. Trigger, Priority, and Delay are not
+allowed to have ListtOfDimensions, but 
+they can be vectors as far as I remember. 
+
+I don’t remember where these checks are called. I remember only checking if
+the math is statically computable 
+and array bounds.
+
+Leandro

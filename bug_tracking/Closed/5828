@@ -1,0 +1,77 @@
+From ibiosim@gmail.com  Mon Jan 28 19:41:59 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pb0-f53.google.com (mail-pb0-f53.google.com [209.85.160.53])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r0T2fxTN006812
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 28 Jan 2013 19:41:59 -0700
+Received: by mail-pb0-f53.google.com with SMTP id un1so1853287pbc.26
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 28 Jan 2013 18:41:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=8Xy4K8ATURn8WE49p1Nit54gfJYibdB0ZrQXnxTsq6E=;
+        b=sp0Ut1gMUsisojZJg/NMsyzQBFas0eCfTeJooIQbp06TLtEgZp+IkXgBthrsH7Q+Gi
+         zd10tCBBFyL4oxUDTANNIf4bNuuPQWubBvoaYnOZ4j7N834Wg4cM+SJH/ajgFOQ/RBqO
+         68Tquskh/lrzqWiodKYIW999x+Y/UmNiUPwlewHrQ96uUMk3QFXQlW3bD5l3oYxq38EQ
+         0s/TXUmv/ycp7d+h+gML/17f+4Q1Xibrb+1+225fHbO62Gt6YA+7qR8JBQbXyBchg8MJ
+         s3hpfa+Usac8a98InFBysJEN5zan7GLDZxpeVZO/+R0xaKSJP/xKqTXAvF7adaGsYqrG
+         pZ8A==
+X-Received: by 10.68.211.42 with SMTP id mz10mr43021382pbc.100.1359427318754;
+        Mon, 28 Jan 2013 18:41:58 -0800 (PST)
+Received: from gargravarr (c-76-23-51-50.hsd1.ut.comcast.net. [76.23.51.50])
+        by mx.google.com with ESMTPS id pc9sm6265967pbc.1.2013.01.28.18.41.56
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Mon, 28 Jan 2013 18:41:57 -0800 (PST)
+Date: Mon, 28 Jan 2013 18:41:57 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1112785237.0.1359427313188.JavaMail.jeff@gargravarr>
+Subject: BUG:boolean does not delete from schematic
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+I created a boolean and some time later decided to delete it.  I right clicked and hit delete from the schematic, however the boolean did not get removed from the schematic.  Then, when I doubled clicked the boolean to see what had happened, it no longer had an ID.  I tried to give it an ID, but when I hit OK I got an error message.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.gui.textualeditor.Parameters.parametersEditor(Parameters.java:657)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2336)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1155)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6389)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3268)
+	at java.awt.Component.processEvent(Component.java:6154)
+	at java.awt.Container.processEvent(Container.java:2045)
+	at java.awt.Component.dispatchEventImpl(Component.java:4750)
+	at java.awt.Container.dispatchEventImpl(Container.java:2103)
+	at java.awt.Component.dispatchEvent(Component.java:4576)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4633)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4297)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4227)
+	at java.awt.Container.dispatchEventImpl(Container.java:2089)
+	at java.awt.Window.dispatchEventImpl(Window.java:2518)
+	at java.awt.Component.dispatchEvent(Component.java:4576)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:672)
+	at java.awt.EventQueue.access$400(EventQueue.java:96)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.awt.EventQueue$2.run(EventQueue.java:629)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:105)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:116)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.awt.EventQueue$3.run(EventQueue.java:643)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:105)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:642)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:275)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:200)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:185)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:177)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:138)
+

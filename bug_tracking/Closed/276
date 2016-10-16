@@ -1,0 +1,31 @@
+From peskin@cs.utah.edu  Thu Dec  2 17:46:49 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id RAA09604
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 2 Dec 1999 17:46:49 -0700
+Date: Thu, 2 Dec 1999 17:46:49 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199912030046.RAA09604@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Verification failures
+
+Full_Name: Eric Robert Peskin
+Version: 12894974 Nov 24 17:32 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/atacs/examples/hse/domino2.hse
+log: /home/xia/peskin/atacs/examples/hse/domino2.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following examples have Verification failures:
+
+	stari10.csp {domino2,stari}.hse
+
+See also PR#200
+
+314 xia:~/atacs/examples> grep Verification */*.log
+csp/stari10.log:Finding reduced state graph ... Verification failure: 
+hse/domino2.log:Finding reduced state graph ... Verification failure: 
+hse/stari.log:Finding reduced state graph ... Verification failure: 
+315 xia:~/atacs/examples> 
+

@@ -1,0 +1,114 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: eemercer@ee.utah.edu
+Subject: Re: doall always refinds the state sapce (PR#220)
+Date: Tue Aug 24 16:49:18 1999
+
+This seems to work now (see below).  I am closing this report.
+
+1282 xia:examples/csp> pwd
+/home/xia/peskin/atacs/examples/csp
+1283 xia:examples/csp> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   async    12515428 Aug 24 15:59
+/home/xia/peskin/atacs/src/atacs*
+1284 xia:examples/csp> atacs -mcmsmUmPmT -ya -eR -ya CTRL
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Compiling CTRL.csp ... 
+Storing process ctrl to ctrl.er
+Storing process inpenv to inpenv.er
+Storing process outpenv to outpenv.er
+Storing process addenv to addenv.er
+Storing process cmpenv to cmpenv.er
+Storing process plantenv to plantenv.er
+Storing process CTRL to CTRL.er
+Loading timed event-rule structure from:  CTRL.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 4 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 76 iterations 50 regions, 37 new_reg, 24 states
+(stack_depth = 16)
+nodes = 607, dead = 5964
+memory: max=1249692 inuse=1238052 free=11640 
+245 iterations 100 regions, 92 new_reg, 37 states (stack_depth = 16)
+nodes = 607, dead = 5964
+memory: max=1323420 inuse=1316588 free=6832 
+247 iterations 100 regions, 93 new_reg, 37 states (stack_depth = 17)
+nodes = 607, dead = 5964
+memory: max=1323420 inuse=1320084 free=3336 
+419 iterations 150 regions, 153 new_reg, 60 states (stack_depth = 19)
+nodes = 607, dead = 5964
+memory: max=1417628 inuse=1414252 free=3376 
+472 iterations 200 regions, 199 new_reg, 105 states (stack_depth = 45)
+nodes = 607, dead = 5964
+memory: max=1614236 inuse=1610012 free=4224 
+548 iterations 250 regions, 244 new_reg, 130 states (stack_depth = 52)
+nodes = 607, dead = 5964
+memory: max=1724828 inuse=1720860 free=3968 
+677 iterations 300 regions, 281 new_reg, 143 states (stack_depth = 49)
+nodes = 607, dead = 5964
+memory: max=1786268 inuse=1781084 free=5184 
+905 iterations 350 regions, 352 new_reg, 153 states (stack_depth = 44)
+nodes = 607, dead = 5964
+memory: max=1851804 inuse=1841204 free=10600 
+1072 iterations 400 regions, 405 new_reg, 162 states (stack_depth = 45)
+nodes = 607, dead = 5964
+memory: max=1941916 inuse=1921788 free=20128 
+1305 iterations 450 regions, 476 new_reg, 171 states (stack_depth = 45)
+nodes = 607, dead = 5964
+memory: max=2011548 inuse=1993524 free=18024 
+1306 iterations 450 regions, 477 new_reg, 171 states (stack_depth = 46)
+nodes = 607, dead = 5964
+memory: max=2011548 inuse=1998804 free=12744 
+1310 iterations 450 regions, 478 new_reg, 171 states (stack_depth = 46)
+nodes = 607, dead = 5964
+memory: max=2011548 inuse=1998812 free=12736 
+1499 iterations 500 regions, 542 new_reg, 184 states (stack_depth = 43)
+nodes = 607, dead = 5964
+memory: max=2068892 inuse=2058684 free=10208 
+1625 iterations 550 regions, 593 new_reg, 198 states (stack_depth = 30)
+nodes = 607, dead = 5964
+memory: max=2134428 inuse=2084012 free=50416 
+1738 iterations 600 regions, 634 new_reg, 211 states (stack_depth = 22)
+nodes = 607, dead = 5964
+memory: max=2138524 inuse=2127884 free=10640 
+1897 iterations 650 regions, 687 new_reg, 221 states (stack_depth = 24)
+nodes = 607, dead = 5964
+memory: max=2236828 inuse=2213700 free=23128 
+2127 iterations 700 regions, 755 new_reg, 229 states (stack_depth = 24)
+nodes = 607, dead = 5964
+memory: max=2306460 inuse=2283980 free=22480 
+2324 iterations 750 regions, 823 new_reg, 243 states (stack_depth = 21)
+nodes = 607, dead = 5964
+memory: max=2367900 inuse=2348740 free=19160 
+2424 iterations 800 regions, 870 new_reg, 259 states (stack_depth = 20)
+nodes = 607, dead = 5964
+memory: max=2433436 inuse=2419852 free=13584 
+2558 iterations 850 regions, 914 new_reg, 268 states (stack_depth = 4)
+nodes = 607, dead = 5964
+memory: max=2474396 inuse=2439852 free=34544 
+nodes = 607, dead = 5964
+memory: max=2478492 inuse=2460684 free=17808 
+done
+2655 iterations, 879 regions, 922 new_regions, 269 states in 4.05072 seconds
+nodes in use = 607, dead = 5964
+memory: max=2478492 inuse=2460684 free=17808
+Projecting out dummy transitions ... done
+Checking CSC ... complete state coded
+Finding regions ... done
+Finding conflicts ... done
+Finding cover ... EXCEPTION!
+EXCEPTION:  Unresolved conflicts!
+Finding cover ... EXCEPTION!
+EXCEPTION:  Unresolved conflicts!
+Resolving remaining conflicts and storing context rules to:  CTRL.rcr
+Storing production rules to:  CTRL.prs
+Total Area = 30 literals 64 transistors

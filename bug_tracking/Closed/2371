@@ -1,0 +1,40 @@
+From myers@ece.utah.edu  Thu Nov 15 14:00:19 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lAFL0Jbn017515
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 15 Nov 2007 14:00:19 -0700
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1Islpm-0001rG-PX)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 15 Nov 2007 14:01:14 -0700
+Received: from [192.168.1.103] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id lAFL0Gph032344
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 15 Nov 2007 14:00:16 -0700
+Subject: FEATURE: compartments / species
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Thu, 15 Nov 2007 13:57:25 -0700
+Message-Id: <1195160245.22251.4.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.1 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+In the SBML editor you can create different compartments, but when you
+put species into different compartments it still displays all species in
+the box on the right.  It would be nice for organizational purposes to
+be able to click on a particular compartment and just see the species in
+that compartment, and if you want to look at all of the species, then
+click on a compartment called 'all'.  
+
+Ryan Rigby
+
+
+

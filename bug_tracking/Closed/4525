@@ -1,0 +1,29 @@
+From myers@ece.utah.edu  Sat Jul 19 17:55:44 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.1 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m6JNtith020560
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 19 Jul 2008 17:55:44 -0600
+Received: from 75-169-162-133.slkc.qwest.net ([75.169.162.133] helo=[192.168.0.5])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1KKMDk-0000rn-O0
+	for atacs-bugs@vlsigroup.ece.utah.edu; Sat, 19 Jul 2008 17:52:12 -0600
+Message-Id: <D4D35381-4885-4C3C-8CCB-2A2E18C531E8@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v924)
+Subject: CHANGE: update times for reactions 
+Date: Sat, 19 Jul 2008 17:55:30 -0600
+X-Mailer: Apple Mail (2.924)
+
+When compartment sizes or parameters change value, only reaction  
+update times that depend on these values should be updated.   
+Currently, if they change, all reaction updated times are updated.
+

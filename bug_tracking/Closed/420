@@ -1,0 +1,37 @@
+From killpack@eng.utah.edu  Thu Apr 27 16:04:08 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA21260
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 27 Apr 2000 16:04:07 -0600
+Date: Thu, 27 Apr 2000 16:04:07 -0600
+From: killpack@eng.utah.edu
+Message-Id: <200004272204.QAA21260@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: vhdl support in atacs
+
+Full_Name: Kip Killpack
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: chou.elen.utah.edu (155.99.23.202)
+Submitted by: killpack
+
+
+I want to do assigns with 0 to inf.  Hao says assign(sig, '1') should do it,
+but
+This line causes a compiler syntax error.
+
+The workaround hack is to type assign(sig, '1', 0, inf);
+However - this won't compile and simulate in a VHDL simulator.
+
+There are three types of assigns that need support...
+assign(sig, '1');               -- possibly 0 to inf interpretation
+assign(sig, '1', 20);          -- constant delay number
+assign(sig, '1', 24, 50);       -- the usual lower upper.
+
+Of course my favorite (from the renegade handshake package) is
+assign(sig, '1', 24, 50, 1 ps);    -- but maybe I'm the only one who likes it.
+
+Kip
+

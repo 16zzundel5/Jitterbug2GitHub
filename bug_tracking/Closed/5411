@@ -1,0 +1,986 @@
+From myers@ece.utah.edu  Tue Jul 12 09:31:14 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p6CFVDYd025363
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Jul 2011 09:31:13 -0600
+Received: from jiaqi.ece.utah.edu ([155.98.27.199] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QgevZ-0007CH-9i
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 12 Jul 2011 09:31:13 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-13--682496619
+Subject: BUG: pressing OK on SBOL browser causes exception
+Date: Tue, 12 Jul 2011 09:31:08 -0600
+Message-Id: <89647448-9D36-4674-9674-13E9A1F4D711@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1084)
+X-Mailer: Apple Mail (2.1084)
+
+
+--Apple-Mail-13--682496619
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Pressing OK without selecting anything causes this exception:
+
+Exception in thread "AWT-EventQueue-0" =
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at sbol.SbolBrowser.browserOpen(SbolBrowser.java:70)
+	at sbol.SbolBrowser.<init>(SbolBrowser.java:62)
+	at gcm.gui.SbolField.actionPerformed(SbolField.java:65)
+	at =
+javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2028)
+	at =
+javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:235=
+1)
+	at =
+javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java=
+:387)
+	at =
+javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+	at =
+javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListen=
+er.java:236)
+	at java.awt.Component.processMouseEvent(Component.java:6373)
+	at =
+javax.swing.JComponent.processMouseEvent(JComponent.java:3267)
+	at java.awt.Component.processEvent(Component.java:6138)
+	at java.awt.Container.processEvent(Container.java:2085)
+	at java.awt.Component.dispatchEventImpl(Component.java:4735)
+	at java.awt.Container.dispatchEventImpl(Container.java:2143)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at =
+java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4621)
+	at =
+java.awt.LightweightDispatcher.processMouseEvent(Container.java:4282)
+	at =
+java.awt.LightweightDispatcher.dispatchEvent(Container.java:4212)
+	at java.awt.Container.dispatchEventImpl(Container.java:2129)
+	at java.awt.Window.dispatchEventImpl(Window.java:2478)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:679)
+	at java.awt.EventQueue.access$000(EventQueue.java:85)
+	at java.awt.EventQueue$1.run(EventQueue.java:638)
+	at java.awt.EventQueue$1.run(EventQueue.java:636)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:98)
+	at java.awt.EventQueue$2.run(EventQueue.java:652)
+	at java.awt.EventQueue$2.run(EventQueue.java:650)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:649)
+	at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.ja=
+va:296)
+	at =
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:=
+211)
+	at =
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:=
+205)
+	at java.awt.Dialog$1.run(Dialog.java:1046)
+	at java.awt.Dialog$3.run(Dialog.java:1098)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.Dialog.show(Dialog.java:1096)
+	at =
+javax.swing.JOptionPane.showOptionDialog(JOptionPane.java:853)
+	at gcm.gui.PromoterPanel.openGui(PromoterPanel.java:288)
+	at gcm.gui.PromoterPanel.<init>(PromoterPanel.java:269)
+	at =
+gcm.gui.GCM2SBMLEditor.launchPromoterPanel(GCM2SBMLEditor.java:1605)
+	at =
+gcm.gui.InfluencePanel.actionPerformed(InfluencePanel.java:369)
+	at =
+javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2028)
+	at =
+javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:235=
+1)
+	at =
+javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java=
+:387)
+	at =
+javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+	at =
+javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListen=
+er.java:236)
+	at java.awt.Component.processMouseEvent(Component.java:6373)
+	at =
+javax.swing.JComponent.processMouseEvent(JComponent.java:3267)
+	at java.awt.Component.processEvent(Component.java:6138)
+	at java.awt.Container.processEvent(Container.java:2085)
+	at java.awt.Component.dispatchEventImpl(Component.java:4735)
+	at java.awt.Container.dispatchEventImpl(Container.java:2143)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at =
+java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4621)
+	at =
+java.awt.LightweightDispatcher.processMouseEvent(Container.java:4282)
+	at =
+java.awt.LightweightDispatcher.dispatchEvent(Container.java:4212)
+	at java.awt.Container.dispatchEventImpl(Container.java:2129)
+	at java.awt.Window.dispatchEventImpl(Window.java:2478)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:679)
+	at java.awt.EventQueue.access$000(EventQueue.java:85)
+	at java.awt.EventQueue$1.run(EventQueue.java:638)
+	at java.awt.EventQueue$1.run(EventQueue.java:636)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:98)
+	at java.awt.EventQueue$2.run(EventQueue.java:652)
+	at java.awt.EventQueue$2.run(EventQueue.java:650)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:649)
+	at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.ja=
+va:296)
+	at =
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:=
+211)
+	at =
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:=
+205)
+	at java.awt.Dialog$1.run(Dialog.java:1046)
+	at java.awt.Dialog$3.run(Dialog.java:1098)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.Dialog.show(Dialog.java:1096)
+	at =
+javax.swing.JOptionPane.showOptionDialog(JOptionPane.java:853)
+	at gcm.gui.InfluencePanel.openGui(InfluencePanel.java:218)
+	at gcm.gui.InfluencePanel.<init>(InfluencePanel.java:204)
+	at =
+gcm.gui.GCM2SBMLEditor.launchInfluencePanel(GCM2SBMLEditor.java:1660)
+	at =
+gcm.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:464)
+	at =
+gcm.gui.schematic.Schematic$1.mouseReleased(Schematic.java:431)
+	at =
+java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:273)
+	at =
+java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6373)
+	at =
+javax.swing.JComponent.processMouseEvent(JComponent.java:3267)
+	at java.awt.Component.processEvent(Component.java:6138)
+	at java.awt.Container.processEvent(Container.java:2085)
+	at java.awt.Component.dispatchEventImpl(Component.java:4735)
+	at java.awt.Container.dispatchEventImpl(Container.java:2143)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at =
+java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4621)
+	at =
+java.awt.LightweightDispatcher.processMouseEvent(Container.java:4282)
+	at =
+java.awt.LightweightDispatcher.dispatchEvent(Container.java:4212)
+	at java.awt.Container.dispatchEventImpl(Container.java:2129)
+	at java.awt.Window.dispatchEventImpl(Window.java:2478)
+	at java.awt.Component.dispatchEvent(Component.java:4565)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:679)
+	at java.awt.EventQueue.access$000(EventQueue.java:85)
+	at java.awt.EventQueue$1.run(EventQueue.java:638)
+	at java.awt.EventQueue$1.run(EventQueue.java:636)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:98)
+	at java.awt.EventQueue$2.run(EventQueue.java:652)
+	at java.awt.EventQueue$2.run(EventQueue.java:650)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControl=
+Context.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:649)
+	at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.ja=
+va:296)
+	at =
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:=
+211)
+	at =
+java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.ja=
+va:201)
+	at =
+java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at =
+java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at =
+java.awt.EventDispatchThread.run(EventDispatchThread.java:122)=
+
+--Apple-Mail-13--682496619
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+">Pressing OK without selecting anything causes this =
+exception:<div><br></div><div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); ">Exception =
+in thread "AWT-EventQueue-0" <span style=3D"text-decoration: underline ; =
+color: #101d91">java.lang.ArrayIndexOutOfBoundsException</span>: =
+0</div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px; font: normal normal normal 11px/normal Monaco; =
+color: rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+sbol.SbolBrowser.browserOpen(<span style=3D"text-decoration: underline ; =
+color: #101d91">SbolBrowser.java:70</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at sbol.SbolBrowser.&lt;init&gt;(<span style=3D"text-decoration: =
+underline ; color: #101d91">SbolBrowser.java:62</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.SbolField.actionPerformed(<span style=3D"text-decoration: =
+underline ; color: #101d91">SbolField.java:65</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.AbstractButton.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AbstractButton.java:2028</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at javax.swing.AbstractButton$Handler.actionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AbstractButton.java:2351</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at javax.swing.DefaultButtonModel.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">DefaultButtonModel.java:387</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.DefaultButtonModel.setPressed(<span style=3D"text-decoration: =
+underline ; color: =
+#101d91">DefaultButtonModel.java:242</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.plaf.basic.BasicButtonListener.mouseReleased(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">BasicButtonListener.java:236</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6373</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.JComponent.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">JComponent.java:3267</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6138</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2085</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4735</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2143</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.retargetMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4621</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.processMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4282</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4212</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2129</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Window.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Window.java:2478</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:679</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.access$000(<span style=3D"text-decoration: underline =
+; color: #101d91">EventQueue.java:85</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$1.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:638</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$1.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:636</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:98</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$2.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:652</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$2.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:650</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:649</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:296</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForFilter(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:211</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForFilter(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:205</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at java.awt.Dialog$1.run(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1046</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Dialog$3.run(<span style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1098</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Dialog.show(<span style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1096</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.JOptionPane.showOptionDialog(<span style=3D"text-decoration: =
+underline ; color: #101d91">JOptionPane.java:853</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.PromoterPanel.openGui(<span style=3D"text-decoration: underline =
+; color: #101d91">PromoterPanel.java:288</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.PromoterPanel.&lt;init&gt;(<span style=3D"text-decoration: =
+underline ; color: #101d91">PromoterPanel.java:269</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.GCM2SBMLEditor.launchPromoterPanel(<span style=3D"text-decoration:=
+ underline ; color: #101d91">GCM2SBMLEditor.java:1605</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.InfluencePanel.actionPerformed(<span style=3D"text-decoration: =
+underline ; color: #101d91">InfluencePanel.java:369</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.AbstractButton.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AbstractButton.java:2028</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at javax.swing.AbstractButton$Handler.actionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AbstractButton.java:2351</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at javax.swing.DefaultButtonModel.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">DefaultButtonModel.java:387</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.DefaultButtonModel.setPressed(<span style=3D"text-decoration: =
+underline ; color: =
+#101d91">DefaultButtonModel.java:242</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.plaf.basic.BasicButtonListener.mouseReleased(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">BasicButtonListener.java:236</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6373</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.JComponent.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">JComponent.java:3267</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6138</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2085</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4735</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2143</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.retargetMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4621</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.processMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4282</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4212</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2129</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Window.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Window.java:2478</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:679</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.access$000(<span style=3D"text-decoration: underline =
+; color: #101d91">EventQueue.java:85</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$1.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:638</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$1.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:636</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:98</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$2.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:652</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$2.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:650</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:649</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:296</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForFilter(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:211</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForFilter(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:205</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at java.awt.Dialog$1.run(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1046</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Dialog$3.run(<span style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1098</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Dialog.show(<span style=3D"text-decoration: underline ; color: =
+#101d91">Dialog.java:1096</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.JOptionPane.showOptionDialog(<span style=3D"text-decoration: =
+underline ; color: #101d91">JOptionPane.java:853</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.InfluencePanel.openGui(<span style=3D"text-decoration: underline =
+; color: #101d91">InfluencePanel.java:218</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.InfluencePanel.&lt;init&gt;(<span style=3D"text-decoration: =
+underline ; color: #101d91">InfluencePanel.java:204</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+gcm.gui.GCM2SBMLEditor.launchInfluencePanel(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">GCM2SBMLEditor.java:1660</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at gcm.gui.schematic.Schematic.bringUpEditorForCell(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Schematic.java:464</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm.gui.schematic.Schematic$1.mouseReleased(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Schematic.java:431</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.AWTEventMulticaster.mouseReleased(<span style=3D"text-decoration:=
+ underline ; color: =
+#101d91">AWTEventMulticaster.java:273</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.AWTEventMulticaster.mouseReleased(<span style=3D"text-decoration:=
+ underline ; color: =
+#101d91">AWTEventMulticaster.java:272</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6373</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.JComponent.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">JComponent.java:3267</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:6138</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.processEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2085</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4735</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2143</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.retargetMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4621</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.processMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4282</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">Container.java:4212</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Container.java:2129</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Window.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">Window.java:2478</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">Component.java:4565</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:679</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.access$000(<span style=3D"text-decoration: underline =
+; color: #101d91">EventQueue.java:85</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$1.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:638</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$1.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:636</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:98</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue$2.run(<span style=3D"text-decoration: underline ; =
+color: #101d91">EventQueue.java:652</span>)</div><div style=3D"margin-top:=
+ 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(254, 43, 23); =
+"><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>at java.awt.EventQueue$2.run(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:650</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.security.AccessController.doPrivileged(<span =
+style=3D"text-decoration: underline ; color: #101d91">Native =
+Method</span>)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(254, 43, 23); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.security.AccessControlContext$1.doIntersectionPrivilege(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">AccessControlContext.java:87</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #101d91">EventQueue.java:649</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpOneEventForFilters(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:296</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForFilter(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:211</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForHierarchy(<span =
+style=3D"text-decoration: underline ; color: =
+#101d91">EventDispatchThread.java:201</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#101d91">EventDispatchThread.java:196</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#101d91">EventDispatchThread.java:188</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(254, 43, 23); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.run(<span style=3D"text-decoration: =
+underline ; color: =
+#101d91">EventDispatchThread.java:122</span>)</div></div></body></html>=
+
+--Apple-Mail-13--682496619--
+

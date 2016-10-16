@@ -1,0 +1,28 @@
+From prvs=00163e40c=zhen.zhang@utah.edu  Tue Jul 19 00:30:17 2016
+Return-Path: <prvs=00163e40c=zhen.zhang@utah.edu>
+Received: from ipo6.cc.utah.edu (ipo6.cc.utah.edu [155.97.144.36])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6J6UHHx027015
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2016 00:30:17 -0600
+X-IronPort-AV: E=Sophos;i="5.28,388,1464674400"; 
+   d="scan'208";a="124695023"
+Received: from mail-oi0-f41.google.com ([209.85.218.41])
+  by ipo6smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 19 Jul 2016 00:30:16 -0600
+Received: by mail-oi0-f41.google.com with SMTP id l72so12411272oig.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 23:30:16 -0700 (PDT)
+X-Gm-Message-State: ALyK8tIIGNglYVDUXcnJ27FSfhuPLg4zFEPkSgyxuOw+Mc8IWTna2ronbm4xKV/9fdePLtrb67uByXIp8KE+/Q==
+X-Received: by 10.157.51.8 with SMTP id f8mr23348285otc.157.1468909816385;
+ Mon, 18 Jul 2016 23:30:16 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 23:29:37 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 19 Jul 2016 00:29:37 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvmBuVKVSgSJxfV4XE2H61Kesn2Bz=t9e9dxPjc7CKrdvA@mail.gmail.com>
+Message-ID: <CA+LVOvmBuVKVSgSJxfV4XE2H61Kesn2Bz=t9e9dxPjc7CKrdvA@mail.gmail.com>
+Subject: FEATURE: add stochastic model checking features in iBioSim's tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+It should describe what CTMC does, how to write a CSL property, and
+how to interpret results, with the help of an example. Also, it should
+mention the conversion to PRISM CTMC models.
+

@@ -1,0 +1,101 @@
+From ibiosim@gmail.com  Thu Feb 14 17:53:18 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f171.google.com (mail-ie0-f171.google.com [209.85.223.171])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1F0rGqA014619
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2013 17:53:17 -0700
+Received: by mail-ie0-f171.google.com with SMTP id 10so4110884ied.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2013 16:53:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=5PjfWVHB53y3TYYPr9My7o7R45CtkzkpbTGqsGPh0nE=;
+        b=nnChoXP9EfY8OkXbmu1YPRbECWl6b5tD2VPVtL03jzX2XEHWjIlVWplqFfAE+RWEVr
+         ADTeI6E5kq7GCMA4A4ejHrO+vDslMCH5uegGIKvpyx9Zy1ecIo4S4f8BezE2nTAfRtxN
+         89cxNV9qmrMlG17sylES9aQwPw35pzHCnDyYqmDpALYwYzLrQ8llI3tkaV7kdPyFVZw2
+         5U/1CtlpmYc9tekOXXKC/vA/udEryz+7KXpykS3OsM8QERxDIRu6ybZoSOaNi2dFMv7a
+         3+bYzZmoMchvEbVNEn5bmuxGVpU/b3EGZVJeBy+Eaqug24tfr9D/zWn4K49Gg8afMDkF
+         FFlg==
+X-Received: by 10.43.7.7 with SMTP id om7mr432773icb.25.1360889596221;
+        Thu, 14 Feb 2013 16:53:16 -0800 (PST)
+Received: from 192.168.1.37 ([155.98.23.44])
+        by mx.google.com with ESMTPS id dm10sm1885650igb.3.2013.02.14.16.53.14
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Thu, 14 Feb 2013 16:53:15 -0800 (PST)
+Date: Thu, 14 Feb 2013 16:53:15 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1805366459.0.1360889598708.JavaMail.ted@Buckwheat.local>
+Subject: BUG: In attempt to assign a boolean value to a variable based on a
+ mathematical expression, I created a rule that looked like 'expression==1'.
+  I got the error when I saved this rule.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: tschomay@sci.utah.edu
+
+Description:
+It appears that I shouldn't have done that for any reason.  It's just something that I tried.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.gui.textualeditor.SBMLutilities.removeBoolean(SBMLutilities.java:2175)
+	at biomodel.gui.textualeditor.SBMLutilities.removeBoolean(SBMLutilities.java:2180)
+	at biomodel.parser.BioModel.removeBooleans(BioModel.java:7638)
+	at biomodel.gui.textualeditor.Rules.refreshRulesPanel(Rules.java:161)
+	at biomodel.gui.ModelEditor.refresh(ModelEditor.java:266)
+	at biomodel.gui.schematic.Schematic.addRule(Schematic.java:571)
+	at biomodel.gui.ModelEditor.addRule(ModelEditor.java:2146)
+	at main.Gui.actionPerformed(Gui.java:3306)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2028)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2351)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:387)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:389)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:337)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Actions.actionPerformed(BasicMenuItemUI.java:778)
+	at javax.swing.SwingUtilities.notifyAction(SwingUtilities.java:1645)
+	at javax.swing.JComponent.processKeyBinding(JComponent.java:2859)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:670)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:678)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:678)
+	at javax.swing.JMenuBar.processKeyBinding(JMenuBar.java:649)
+	at javax.swing.KeyboardManager.fireBinding(KeyboardManager.java:267)
+	at javax.swing.KeyboardManager.fireKeyboardAction(KeyboardManager.java:254)
+	at javax.swing.JComponent.processKeyBindingsForAllComponents(JComponent.java:2936)
+	at javax.swing.JComponent.processKeyBindings(JComponent.java:2928)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2822)
+	at java.awt.Component.processEvent(Component.java:6159)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4744)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4616)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:704)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:663)
+	at java.awt.EventQueue$2.run(EventQueue.java:661)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:677)
+	at java.awt.EventQueue$3.run(EventQueue.java:675)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:674)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

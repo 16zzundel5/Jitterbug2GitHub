@@ -1,0 +1,77 @@
+From moschino21@gmail.com  Thu Mar 10 15:15:00 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2AMEwaP006012
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Mar 2011 15:14:59 -0700
+Received: by bwz13 with SMTP id 13so3661884bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Mar 2011 14:14:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=KsVditn8RH4Sx3510iYbKYhsW7DDCyptGZU20YSRIQw=;
+        b=hD0N5ewC1DqBGPAm2vlJEPPtsOvWQhahlCthoE9IUV0bdamCWNCutDi5ALHK0limNW
+         pAQ8CTIDQUDdbr0OYjikZ4ImQ6DWbYWoS9dhwgIvhj4SCL5/IjSoLXf7T20lsVK9+2Or
+         aRA+Vq43YNTl0zMYWh+LasOl0N11/kCUSeDxA=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=DBlezs/ni/kZmUBUxZzGOtQBYQbfVT7jN4lbWzfsQ9ped4sItGOLqMTj2EhN4qT9LK
+         EMbjbqPZCkQIV3thOO3TKbuw/QlusunwDYDSN+Vclic9jr1b3l3lkaR9sE3Go7WYoZDW
+         S0mTovjK7Y1Cj8QQur+5+0Uf0+0SRMM8a78fY=
+Received: by 10.204.229.193 with SMTP id jj1mr1509510bkb.21.1299795296830;
+ Thu, 10 Mar 2011 14:14:56 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.204.35.147 with HTTP; Thu, 10 Mar 2011 14:14:28 -0800 (PST)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Thu, 10 Mar 2011 15:14:28 -0700
+Message-ID: <AANLkTikVC3yh2PHwhgHd_S-L_5Wec=SD-1SpqcmpW3xO@mail.gmail.com>
+Subject: BUG: Discrete variables treated as Boolean if used as input/output
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=485b395e7ae9f2c65f049e282c53
+
+--485b395e7ae9f2c65f049e282c53
+Content-Type: text/plain; charset=ISO-8859-1
+
+The mode (input/output/internal) affects the variable type. In the attached
+LPN file, variables x, y and z are internal, input and output separately.
+They are all discrete variables and have the same initial values. But the
+LPN parser treats y and z as Boolean instead of integer, and only x is
+treated as integer.
+
+.inputs y
+.outputs z
+.internal x
+.dummy t2 t1 t0
+#@.variables z y x
+#|.places p2 p1 p0
+.graph
+p2 t2
+p1 t1
+p0 t0
+.marking {p2 p1 p0 }
+#@.init_vals {<z=5><y=5><x=5>}
+#@.enablings {<t2=[z>3]><t1=[y>3]><t0=[x>3]>}
+#@.delay_assignments {<t2=[3]><t1=[3]><t0=[3]>}
+#@.continuous
+.end
+
+
+-- 
+Zhen Zhang
+
+--485b395e7ae9f2c65f049e282c53
+Content-Type: text/html; charset=ISO-8859-1
+
+The mode (input/output/internal) affects 
+the variable type. In the
+ attached LPN file, variables x, y and z are internal, input and output separately. They are all discrete variables and have the same initial values. But the LPN parser treats y and z as Boolean instead of integer, and only x is treated as integer.<br>
+
+<br>.inputs y <br>.outputs z <br>.internal x <br>.dummy t2 t1 t0 <br>#@.variables z y x <br>#|.places p2 p1 p0 <br>.graph<br>p2 t2<br>
+p1 t1<br>p0 t0<br>.marking {p2 p1 p0 }<br>#@.init_vals {&lt;z=5&gt;&lt;y=5&gt;&lt;x=5&gt;}<br>#@.enablings {&lt;t2=[z&gt;3]&gt;&lt;t1=[y&gt;3]&gt;&lt;t0=[x&gt;3]&gt;}<br>#@.delay_assignments {&lt;t2=[3]&gt;&lt;t1=[3]&gt;&lt;t0=[3]&gt;}<br>
+
+
+#@.continuous <br>.end<br><br><br>-- <br>Zhen Zhang<br>
+
+--485b395e7ae9f2c65f049e282c53--
+

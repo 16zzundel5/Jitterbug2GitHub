@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Tue Mar  9 13:55:20 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.3 required=5.0 tests=AWL,BAYES_00,FH_DATE_PAST_20XX
+	autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o29KtJ44026234;
+	Tue, 9 Mar 2010 13:55:20 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Np6SV-0006YW-U3; Tue, 09 Mar 2010 13:55:19 -0700
+Message-Id: <8CAFCB38-1400-4E40-AFF9-D0386A4FCA94@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: some options do not appear to be sticky in verification view
+Date: Tue, 9 Mar 2010 13:55:11 -0700
+Cc: kjones@vlsigroup.ece.utah.edu
+X-Mailer: Apple Mail (2.936)
+
+When I change the timing method or normalization amount, these do not  
+appear to save for the next time the view is opened.
+

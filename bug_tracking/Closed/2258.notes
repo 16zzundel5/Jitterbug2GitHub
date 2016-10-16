@@ -1,0 +1,4 @@
+0.3
+Grey'ed out when no run files.
+Grey out time limit and print interval when using append.
+Changing to append, restore time limit and print interval from last simulation.

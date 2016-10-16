@@ -1,0 +1,224 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: satish.batchu@utah.edu
+Subject: Re: BUG: problems with abstraction of parallel transitions (PR#5071)
+Date: Thu Sep  2 16:32:08 2010
+
+
+Is this one fixed?
+
+Chris
+
+> --Apple-Mail-47--927863734
+> Content-Type: text/plain;
+> 	charset=US-ASCII;
+> 	format=flowed;
+> 	delsp=yes
+> Content-Transfer-Encoding: quoted-printable
+> 
+> 
+> 
+> Begin forwarded message:
+> 
+>> From: Satish Batchu <satish.batchu@utah.edu>
+>> Date: August 6, 2010 10:58:40 AM MDT
+>> To: Kevin Jones <kjones5863@gmail.com>
+>> Cc: "Chris J. Myers" <myers@ece.utah.edu>
+>> Subject: issues with abstraction
+>> Reply-To: satish.batchu@utah.edu
+>>
+>> Hi Kevin,
+>>
+>> I think there's some problem with the mergeTransitionSimp method. =20
+>> When I tried to use this method on the attached LPN, it converted =20
+>> the original one to final2.lpn (attached).
+>> I used his method this way:
+>>
+>> Abstraction a new Abstraction(g, new =20
+>> AbstPane(directory,lhpnFile,log,biosim,true,false));
+>> a.mergeTransitionsSimp(true);
+>>
+>> I changed the method from private to public locally.
+>> The lpn generated after calling this method has this at one place:
+>> t149=20
+>> =3D=20
+>> [uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform((uniform((uniform((uniform((uniform((uniform((uniform((unifo=20=
+> 
+>> rm=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> ((uniform=20
+>> =
+> ((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((=
+> uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((un=
+> iform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((unif=
+> orm(((clk>=3D5)&(dacsel>=3D5)&~(dacsel> =
+> )&(muxsel>u)&~(muxsel>=105))*60+((clk>=3D5)&(dacsel>$5750)&~(muxsel>E))*13=
+> 0+(~(clk>=3D5)&(dacsel>=1910)&~(dacsel>830)&~(muxsel>E))*190+((clk>=3D5)&(=
+> dacsel>$5750)&(muxsel>u)&~(muxsel>=105))*130+((clk>=3D5)&(dacsel>=122870)&=
+> ~(dacsel>$5750)&~(muxsel>E))*140
+>>
+>> I think there's something wrong with the recursion. Please correct =20
+>> me if I'm doing something wrong.
+>>
+>> Thanks,
+>> Satish
+>>
+>>
+>> [The attachment learnPIfinalOpCentric.lpn has been manually removed]
+>>
+>>
+>>
+>> [The attachment final2.lpn has been manually removed]
+>>
+> 
+> 
+> --Apple-Mail-47--927863734
+> Content-Type: text/html;
+> 	charset=US-ASCII
+> Content-Transfer-Encoding: quoted-printable
+> 
+> <html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+> -webkit-line-break: after-white-space; "><br><div><br><div>Begin =
+> forwarded message:</div><br =
+> class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+> style=3D"font: 12.0px Helvetica; color: #000000"><b>From: =
+> </b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+> Helvetica">Satish Batchu <<a =
+> href=3D"mailto:satish.batchu@utah.edu">satish.batchu@utah.edu</a>></fon=
+> t></div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+> 0px; margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" =
+> color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+> #000000"><b>Date: </b></font><font face=3D"Helvetica" size=3D"3" =
+> style=3D"font: 12.0px Helvetica">August 6, 2010 10:58:40 AM =
+> MDT</font></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+> margin-bottom: 0px; margin-left: 0px; "><font face=3D"Helvetica" =
+> size=3D"3" color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+> #000000"><b>To: </b></font><font face=3D"Helvetica" size=3D"3" =
+> style=3D"font: 12.0px Helvetica">Kevin Jones <<a =
+> href=3D"mailto:kjones5863@gmail.com">kjones5863@gmail.com</a>></font></=
+> div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+> 0px; margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" =
+> color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+> #000000"><b>Cc: </b></font><font face=3D"Helvetica" size=3D"3" =
+> style=3D"font: 12.0px Helvetica">"Chris J. Myers" <<a =
+> href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>></font></div>=
+> <div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+> style=3D"font: 12.0px Helvetica; color: #000000"><b>Subject: =
+> </b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+> Helvetica"><b>issues with abstraction</b></font></div><div =
+> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+> margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+> style=3D"font: 12.0px Helvetica; color: #000000"><b>Reply-To: =
+> </b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+> Helvetica"><a =
+> href=3D"mailto:satish.batchu@utah.edu">satish.batchu@utah.edu</a></font></=
+> div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+> 0px; margin-left: 0px; min-height: 14px; "><br></div> </div><span =
+> class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; =
+> font-size: 13px; border-collapse: collapse; "><div>Hi =
+> Kevin,</div><div><br></div><div>I think there's some problem with the =
+> mergeTransitionSimp method. When I tried to use this method on the =
+> attached LPN, it converted the original one to final2.lpn =
+> (attached). </div> <div>I used his method this =
+> way:</div><div><div><br></div><div>Abstraction a  new Abstraction(g, new =
+> AbstPane(directory,lhpnFile,log,biosim,true,false));</div><div>a.mergeTran=
+> sitionsSimp(true);</div></div><div><br></div> <div>I changed the method =
+> from private to public locally.</div><div>The lpn generated after =
+> calling this method has this at one place:</div><div><span =
+> style=3D"font-size: 10.5pt; line-height: 16px; font-family: 'Courier =
+> New'; =
+> ">t149=3D[uniform((uniform((uniform((uniform((uniform((uniform((uniform((u=
+> niform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uni=
+> form((uniform((uniform((uniform((uniform((uniform((uniform((uniform((unifo=
+> rm((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform=
+> ((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((=
+> uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((un=
+> iform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((unif=
+> orm((uniform((uniform((uniform((uniform((uniform((uniform((uniform((unifor=
+> m((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform(=
+> (uniform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((u=
+> niform((uniform((uniform((uniform((uniform((uniform((uniform((uniform((uni=
+> form((uniform((uniform(((clk>=3D5)&(dacsel>=3D5)&~(dacsel>=
+> ; =
+> )&(muxsel>u)&~(muxsel>=105))*60+((clk>=3D5)&(dacsel&g=
+> t;$5750)&~(muxsel>E))*130+(~(clk>=3D5)&(dacsel>=1910)&=
+> ;~(dacsel>830)&~(muxsel>E))*190+((clk>=3D5)&(dacsel>$5=
+> 750)&(muxsel>u)&~(muxsel>=105))*130+((clk>=3D5)&(dacs=
+> el>=122870)&~(dacsel>$5750)&~(muxsel>E))*140</span></div>=
+>  <div><font face=3D"'Courier New'" size=3D"4"><span style=3D"font-size: =
+> 14px; line-height: 16px; "><br></span></font></div><div><font =
+> face=3D"'Courier New'" size=3D"4"><span style=3D"font-size: 14px; =
+> line-height: 16px; ">I think there's something wrong with the recursion. =
+> Please correct me if I'm doing something =
+> wrong. </span></font></div> <div><font face=3D"'Courier New'" =
+> size=3D"4"><span style=3D"font-size: 14px; line-height: 16px; =
+> "><br></span></font></div><div><font face=3D"'Courier New'" =
+> size=3D"4"><span style=3D"font-size: 14px; line-height: 16px; =
+> ">Thanks,<br> <font =
+> color=3D"#888888">Satish</font></span></font></div></span> <br><br>[The =
+> attachment learnPIfinalOpCentric.lpn has been manually =
+> removed]<br><br><br><br>[The attachment final2.lpn has been manually =
+> removed]<br><br></blockquote></div><br></body></html>=
+> 
+> --Apple-Mail-47--927863734--
+> 
+> 

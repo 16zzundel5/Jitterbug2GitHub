@@ -1,0 +1,56 @@
+From atacs-bugs  Tue Jan 28 21:53:04 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h0T4r4I09924
+	for atacs-bugs@shang.elen.utah.edu; Tue, 28 Jan 2003 21:53:04 -0700
+Received: from 12-254-176-225.client.attbi.com (12-255-48-123.client.attbi.com [12.255.48.123])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id h0T4r3m09921
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jan 2003 21:53:03 -0700
+Received: from 12-254-176-225.client.attbi.com (localhost.localdomain [127.0.0.1])
+	by 12-254-176-225.client.attbi.com (8.12.5/8.12.5) with ESMTP id h0T4mUIA001522
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jan 2003 21:48:31 -0700
+Received: (from peskin@localhost)
+	by 12-254-176-225.client.attbi.com (8.12.5/8.12.5/Submit) id h0T4mTB8001520;
+	Tue, 28 Jan 2003 21:48:29 -0700
+X-Authentication-Warning: 12-254-176-225.client.attbi.com: peskin set sender to peskin@cs.utah.edu using -f
+Subject: Re: BAD820 broken repository! (PR#738)
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <200301271937.h0RJbgm02189@chou.elen.utah.edu>
+References: <200301271937.h0RJbgm02189@chou.elen.utah.edu>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Mailer: Ximian Evolution 1.0.8 (1.0.8-10) 
+Date: 28 Jan 2003 21:48:28 -0700
+Message-Id: <1043815708.1288.23.camel@12-254-176-225.client.attbi.com>
+Mime-Version: 1.0
+
+You were right:  the difference between what you saw on your local build
+and what the nighttime tests saw was because the nighttime tests did not
+do a make clean before proceeding.  I've changed it so that they do now.
+
+By the way, the reason make clean came up here had to do with a flaw in
+my automatic prerequisite generation in the atacs/src/Makefile. Curt and
+renamed a header file.  Several of the .d files (the files that track
+those prerequisites) depended on the old header file name, which no
+longer existed.  make got in a bind where it knew that it had to remake
+those .d files, but it thought that it could not because it needed the
+old file name.  I've fixed it such that the .d files only depend on the
+files that actually exist.  
+
+Note:  Just doing a cvs update won't change any .d files by itself -- it
+will just change the way they get remade.  So if you have old .d files
+around and a header file gets renamed again, you could see the same
+error:
+	No rule to make <file> which is needed by <something>.d
+If that happens, just remove the .d file (or all the .d files if you
+want to get it over with) and try again.  Once all the .d files are
+updated, you shouldn't get the problem again, even if people rename
+header files willy-nilly.  Knock on wood.
+
+Let me know if there are any problems with the new scheme.
+
+The nighttime regression tests seem to be working now.  
+I will close this report.
+
+

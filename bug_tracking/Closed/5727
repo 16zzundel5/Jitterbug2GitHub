@@ -1,0 +1,26 @@
+From myers@eng.utah.edu  Wed Jul 18 18:45:53 2012
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q6J0jr9i018272
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 18 Jul 2012 18:45:53 -0600
+Received: from 75-169-164-249.slkc.qwest.net ([75.169.164.249] helo=[192.168.0.14])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Srej7-0002eL-CX
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 18 Jul 2012 18:36:21 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: default compartment should likely not be enclosing
+Date: Wed, 18 Jul 2012 17:15:51 -0600
+Message-Id: <67C3756A-5D47-4121-A254-AB30E6C928FA@ece.utah.edu>
+To: Curtis Kendall Kendall Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1278)
+X-Mailer: Apple Mail (2.1278)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q6J0jr9i018272
+
+The default compartment should likely not be enclosing meaning that it is mapped to a port.
+
+

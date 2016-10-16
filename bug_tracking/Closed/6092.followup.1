@@ -1,0 +1,51 @@
+From myers@eng.utah.edu  Fri Jul 18 09:33:58 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s6IFXwD2031200
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Jul 2014 09:33:58 -0600
+Received: from 99-42-67-233.lightspeed.irvnca.sbcglobal.net ([99.42.67.233] helo=[192.168.0.89])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1X8AOo-000M5q-Hx; Fri, 18 Jul 2014 09:48:42 -0600
+Content-Type: multipart/alternative; boundary="Apple-Mail=_7C2841DA-B3FC-486E-A4DE-AC8F1038D9B3"
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+Subject: Re: CHANGE: dimensions set in id field for constraint (PR#6092)
+From: "Chris J. Myers" <myers@ece.utah.edu>
+In-Reply-To: <201407171647.s6HGloUd007368@chou.ece.utah.edu>
+Date: Fri, 18 Jul 2014 09:33:42 -0600
+Cc: "<scottg@san.rr.com>" <scottg@san.rr.com>
+Message-Id: <52D39E52-8A54-42A1-86FC-F46E5D3AA12E@ece.utah.edu>
+References: <201407171647.s6HGloUd007368@chou.ece.utah.edu>
+To: Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_7C2841DA-B3FC-486E-A4DE-AC8F1038D9B3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+This one causes an exception.  The problem is the line below which is =
+referring to the complete text rather than just the id part (i.e., after =
+stripping off the dimensions).  Please make sure all places like this =
+are updated:
+
+						=
+SBMLutilities.setMetaId(c, consID.getText().trim());
+
+On Jul 17, 2014, at 10:47 AM, Scott Glass =
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Ready for testing
+
+
+--Apple-Mail=_7C2841DA-B3FC-486E-A4DE-AC8F1038D9B3
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv="Content-Type" content="text/html charset=us-ascii"></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><div>This one causes an exception. &nbsp;The problem is the line below which is referring to the complete text rather than just the id part (i.e., after stripping off the dimensions). &nbsp;Please make sure all places like this are updated:</div><div><br></div><div><div style="margin: 0px; font-size: 11px; font-family: Monaco;"><span class="Apple-tab-span" style="white-space:pre">						</span>SBMLutilities.setMetaId(c, consID.getText().trim());</div></div><br><div><div>On Jul 17, 2014, at 10:47 AM, Scott Glass &lt;<a href="mailto:atacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt; wrote:</div><br class="Apple-interchange-newline"><blockquote type="cite">Ready for testing<br></blockquote></div><br></body></html>
+--Apple-Mail=_7C2841DA-B3FC-486E-A4DE-AC8F1038D9B3--
+

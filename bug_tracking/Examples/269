@@ -1,0 +1,38 @@
+From peskin@cs.utah.edu  Thu Nov 18 16:09:41 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA04894
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 18 Nov 1999 16:09:40 -0700
+Date: Thu, 18 Nov 1999 16:09:40 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911182309.QAA04894@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: examples with Safety Violations
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12803128 Nov 15 15:39 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/atacs/examples/csp/accum2.csp
+log: /home/xia/peskin/atacs/examples/csp/accum2.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following examples have safety violations:
+
+277 xia:~/atacs/examples> g Safety */*.log | g viol
+csp/accum2.log:Finding reduced state graph ... WARNING: Safety violation for
+rule eof-/1 -> addo+/1.
+csp/dinvd2c.log:Finding reduced state graph ... WARNING: Safety violation for
+rule clk+/1 -> $0+/1.
+csp/jordi3.log:Finding reduced state graph ... WARNING: Safety violation for
+rule b+/1 -> a-/1.
+csp/stariE2.log:WARNING: Safety violation for rule ackZ-/2 -> xfZ-/1.
+csp/stariE3.log:WARNING: Safety violation for rule ackZ+/2 -> xtZ+/1.
+g/glc.log:WARNING: Safety violation for rule h+ -> CSC0-/1.
+g/meng7.log:Finding reduced state graph ... WARNING: Safety violation for rule
+Ao+ -> Ro+.
+g/meng9.log:Finding reduced state graph ... WARNING: Safety violation for rule
+Ri+ -> Ro+.
+g/pe-send-ifc2.log:Finding reduced state graph ... WARNING: Safety violation for
+rule tack-/5 -> reqsend-.
+

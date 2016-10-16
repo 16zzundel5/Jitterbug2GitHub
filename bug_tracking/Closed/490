@@ -1,0 +1,44 @@
+From peskin@ming.elen.utah.edu  Sat Jul  1 23:41:33 2000
+Return-Path: <peskin@ming.elen.utah.edu>
+Received: from ming.elen.utah.edu (ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id XAA09960
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 1 Jul 2000 23:41:32 -0600
+Received: (from peskin@localhost)
+	by ming.elen.utah.edu (8.9.3/8.9.3) id XAA10071
+	for atacs-bugs@shang.elen.utah.edu; Sat, 1 Jul 2000 23:41:32 -0600
+Date: Sat, 1 Jul 2000 23:41:32 -0600
+From: Eric Peskin <peskin@ming.elen.utah.edu>
+Message-Id: <200007020541.XAA10071@ming.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD161 broken repository!
+
+Linux ming.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387220 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2048 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[1]: *** [FIFO.PRS] Error 139
+make[1]: *** [lapb_pa.PRS] Error 139
+make[1]: *** [seq.PRS] Error 139
+make: *** [csp/check.subDir] Error 2
+make[1]: *** [domino_comparitor_e.PRS] Error 139
+make[1]: *** [tag4.PRS] Error 139
+make[1]: *** [tag5.PRS] Error 139
+make[1]: *** [tag6.PRS] Error 139
+make[1]: *** [tag7.PRS] Error 139
+make: *** [er/check.subDir] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

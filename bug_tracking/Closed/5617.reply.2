@@ -1,0 +1,19 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: scripting the java simulator (PR#5617)
+Date: Fri Aug  3 20:31:26 2012
+
+I've finally got internet again, so here are some belated instructions
+for doing command line things with the dynamic simulator.  Let me know
+if you have any trouble with it (or if my instructions are confusing).
+
+1.  Get the ant build.xml (File -> Export -> Runnable JAR -> (Launch
+config: DynSim, Save as ANT Script ("build.xml")) -- don't worry about
+errors with the jar creation; you just want the ant file.
+2.  Run "ant" in the same directory as the build.xml file to build the
+runnable jar file
+3.  Use jar file (java -jar file.jar) + these parameters: 1) model
+dir, 2) output dir, 3) properties file dir
+
+You can look at DynSim.java to see what happens.  I think all of the
+properties are supported and stuff (in the readProperties method).

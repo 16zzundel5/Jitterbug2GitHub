@@ -1,0 +1,105 @@
+From kjones5863@gmail.com  Wed May 12 13:51:15 2010
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.8 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-ww0-f42.google.com (mail-ww0-f42.google.com [74.125.82.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4CJpDXh009570;
+	Wed, 12 May 2010 13:51:14 -0600
+Received: by wwf26 with SMTP id 26so183953wwf.15
+        for <multiple recipients>; Wed, 12 May 2010 12:51:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:in-reply-to
+         :references:date:message-id:subject:from:to:cc:content-type;
+        bh=pjvB44SvJ6eun9jUw4QqirDztrJAtTr21ndWarV8OTc=;
+        b=aKUv952RLuqzhxv+DqT2m42duZyOUzN5QRruKZmAEssCu5byl1sVPaNHndvBL8GdhP
+         44y1KSbUNdPx5VFpzbgFV+s+jvimBU9Ya43KNG2vkChDxrCmYY9ZUS56daJHb5S0FFvE
+         kvBtrRF72UO6e6FXu0F4L23jw95PszjFuVkWI=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=WGcWnpWB/KrRQsU50XFUSW6fB+P0i/RAQTh2kY8eZ3vY7zY5/eoSMKppuaoJS/X+Xt
+         ThcsySDnX66SmCLPV4IaU9PpwxpOLCev2vzl9gFGsDSLvgXdgZe7Wuj0rPjJJ2weyeG0
+         tDkIohTNqV4C3aimuhtw1jBwSqkNmoPlOvBhY=
+MIME-Version: 1.0
+Received: by 10.216.181.8 with SMTP id k8mr4933427wem.41.1273693872055; Wed, 
+	12 May 2010 12:51:12 -0700 (PDT)
+Received: by 10.216.39.130 with HTTP; Wed, 12 May 2010 12:51:12 -0700 (PDT)
+In-Reply-To: <E529196F-C7E7-4723-83C8-0F57D8AE8088@ece.utah.edu>
+References: <201005121911.o4CJBmG4008355@chou.ece.utah.edu>
+	 <E529196F-C7E7-4723-83C8-0F57D8AE8088@ece.utah.edu>
+Date: Wed, 12 May 2010 13:51:12 -0600
+Message-ID: <AANLkTimkhABg0a58W6DOBVyjefuMwsZZPsxQG_EUWWSw@mail.gmail.com>
+Subject: Re: BUG: ranges in assignments should be converted to uniform 
+	distributions (PR#4966)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu,
+        Robert Thacker <thacker@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001485f1e264cbe83a04866af685
+
+--001485f1e264cbe83a04866af685
+Content-Type: text/plain; charset=ISO-8859-1
+
+OK.  I will leave  it as is then and move it into needs testing.
+
+Kevin Jones
+
+On Wed, May 12, 2010 at 1:49 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+>
+> On May 12, 2010, at 1:11 PM, Kevin Jones wrote:
+>
+>  This is now done for continuous, discrete and rate assignments.  Should it
+>> be
+>> done for
+>> boolean assignments?
+>>
+>
+> I just checked, and I don't think ranges on Boolean assignments is legal.
+>  One potential way to handle the unknown case is to use a bernoulli random
+> function which returns 0 or 1 with a given probability.  Assuming, 0 and 1
+> are mapped to false and true, this essentially represents an unknown Boolean
+> state.
+>
+> Chris
+>
+>
+
+--001485f1e264cbe83a04866af685
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+OK. =A0I will leave =A0it as is then and move it into needs testing.<div><b=
+r></div><div>Kevin Jones<br><br><div class=3D"gmail_quote">On Wed, May 12, =
+2010 at 1:49 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:mye=
+rs@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex;"><br>
+On May 12, 2010, at 1:11 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+This is now done for continuous, discrete and rate assignments. =A0Should i=
+t be<br>
+done for<br>
+boolean assignments?<br>
+</blockquote>
+<br>
+I just checked, and I don&#39;t think ranges on Boolean assignments is lega=
+l. =A0One potential way to handle the unknown case is to use a bernoulli ra=
+ndom function which returns 0 or 1 with a given probability. =A0Assuming, 0=
+ and 1 are mapped to false and true, this essentially represents an unknown=
+ Boolean state.<br>
+<font color=3D"#888888">
+<br>
+Chris<br>
+<br>
+</font></blockquote></div><br></div>
+
+--001485f1e264cbe83a04866af685--
+

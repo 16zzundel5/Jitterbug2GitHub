@@ -1,0 +1,62 @@
+From ibiosim@gmail.com  Thu Jul  7 13:21:15 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f171.google.com (mail-pf0-f171.google.com [209.85.192.171])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u67JLFpb012741
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 7 Jul 2016 13:21:15 -0600
+Received: by mail-pf0-f171.google.com with SMTP id h14so8595510pfe.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 07 Jul 2016 12:21:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=qqPnsXoF5cKUvhie52YUVvX8QwYjay5ck6GdsjJDKxM=;
+        b=TlKYFiyRpI8qPbibgWIYeNN/Y5iOglpwY3qg1iMWA1/sextf4GPktp3LnqL5ZfuZu6
+         UNfeNXSX0PnuDuCEsq149Pbt3fmos7p+8Df2Gw8oURrTd1tWjkZLuI+kb+zzr5dFp/Lc
+         fvOKoCc7IOXk4u6NOJSXUAogtUschfmIvPPH3WzasxIAS2Qbd8hRqEjbmCwkmwC6XDzB
+         egNwFrW84m6zX/zUn9vk75mgeYIDzzK/je9bmVvJRqJyTkm1Gb7z1AGeL7bq3rlpQqrE
+         Z51XUh1PyZeb6tr12z1OB1r6n5LTmtEipCrFfb0OHu5Qz6hxBhEWqVxi8c+nVJ0Q4bzk
+         9crw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=qqPnsXoF5cKUvhie52YUVvX8QwYjay5ck6GdsjJDKxM=;
+        b=YAcjQyYgu/Z9TUgFnMM/dLt3l8d2U/nltkN05KW4cYoZ01i+50k0ymWt4Ur6rTozBX
+         lM+ryBt0ToWEFAD0ldcpMnH4w6rG/3+nHBoJ2MVem7Xj7Aqxz3j5DWqDCkw8czwikg3u
+         7NPnqj77yTGMnFzj289qRWMIk7E3R90Ox1mKF62zvEkZw/xGlTUyPP4qnA9DmncM/17P
+         3X9ntre+XpUE4p8b3hCg4bANr/EyTrRwPJyn+UtuWGre3gRfTvnnaxW12F7iK6QaHxTW
+         L9bR2Or6MAjb4Og9lOZuua7VUH/gDxvO3Dt+EO7YMzyItqdUELp3fDMrecayWUYywKEh
+         yBsw==
+X-Gm-Message-State: ALyK8tJcTq3DB0BsNYQLo22enZJIwKtELbLnzHKmQSCix/3LjXIEa4XvdDTOcNI0rbm/cw==
+X-Received: by 10.98.104.68 with SMTP id d65mr3102229pfc.34.1467919274703;
+        Thu, 07 Jul 2016 12:21:14 -0700 (PDT)
+Received: from chou.ece.utah.edu (chou.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id z127sm5836590pfz.20.2016.07.07.12.21.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Thu, 07 Jul 2016 12:21:14 -0700 (PDT)
+Date: Thu, 07 Jul 2016 12:21:14 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <820139422.0.1467919272949.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Error message when loading old projects
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.5
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+I get this message when I open up old projects:
+
+13:20:21 [AWT-EventQueue-0] WARN  org.jlibsedml.SEDMLReader - Unexpected [Element: <annotation [Namespace: http://sed-ml.org/sed-ml/level1/version2]/>]
+13:20:21 [AWT-EventQueue-0] WARN  org.jlibsedml.SEDMLReader - Unexpected [Element: <annotation [Namespace: http://sed-ml.org/sed-ml/level1/version2]/>]
+13:20:21 [AWT-EventQueue-0] WARN  org.jlibsedml.SEDMLReader - Unexpected [Element: <annotation [Namespace: http://sed-ml.org/sed-ml/level1/version2]/>]
+13:20:21 [AWT-EventQueue-0] WARN  org.jlibsedml.SEDMLReader - Unexpected [Element: <annotation [Namespace: http://sed-ml.org/sed-ml/level1/version2]/>]
+13:20:21 [AWT-EventQueue-0] WARN  org.jlibsedml.SEDMLReader - Unexpected [Element: <annotation [Namespace: http://sed-ml.org/sed-ml/level1/version2]/>]
+

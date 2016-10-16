@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: l.watanabe@utah.edu
+Subject: Re: BUG: layout arrays are not stripped out when arrays are removed (PR#6485)
+Date: Mon Jul 11 20:01:22 2016
+
+Remove arrays from layout, since they are not very meaningful.  However, this
+means that array flattening 
+MUST remove layout first.

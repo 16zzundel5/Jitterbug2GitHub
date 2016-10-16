@@ -1,0 +1,22 @@
+From: Eric G. Mercer <atacs-bugs@shang.elen.utah.edu>
+To: eemercer@elen.utah.edu
+Subject: Re: Solve CSC Error in store.er (PR#514)
+Date: Tue Sep 12 11:36:26 2000
+CC: myers@vlsigroup.elen.utah.edu
+
+I do not know what the difference is between what you did and what I am doing,
+but this example still breaks things.  I have a fresh update (cvs update -A from
+the top level.)  You may want to look at this again.  There must be something
+wrong with the way the constraint is being handled with the flags on, because
+this constraint rule should fail, but it does not!
+
+I have checked in the skunky example in ./example/csp/jordi2wc.csp and tagged my
+version of atacs with the name SOLVECSCERROR.  The command line I am using that
+breaks things is:
+
+atacs -mEmXmcmsmUmPmTmFmOmpya jordi2wc.csp
+
+
+This will cause a ERROR:45: Unexpected end of line!
+
+on loading the TEL

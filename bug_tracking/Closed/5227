@@ -1,0 +1,60 @@
+From satish4frienz@gmail.com  Thu Dec  9 13:05:10 2010
+Return-Path: <satish4frienz@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.8 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE,RCVD_IN_DNSWL_LOW
+	autolearn=no version=3.2.5
+Received: from mail-qw0-f42.google.com (mail-qw0-f42.google.com [209.85.216.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oB9K5ANE013678
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 9 Dec 2010 13:05:10 -0700
+Received: by qwj8 with SMTP id 8so3787872qwj.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 09 Dec 2010 12:05:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:date:message-id
+         :subject:from:to:cc:content-type;
+        bh=UV6256E4FgxB32zKmqcvFPYh51pwnVw5h58zPlPpPQA=;
+        b=Vzof4H+D9yOfEDPV+2IM+Pokf+TRPZc7jRa43l8ECOe+I9fsqGGUH03OThYG3MnVmr
+         mIg0mnMxg/+Lzi8We2qUV2JEppVZNtSTXDiOr1qrHin8VFKbuqLyPl+d7jtCzTXSBsxA
+         Y0OM888jtQIT/UcZl5j1q0YAHw+9pjx78oo9s=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:date:message-id:subject:from:to:cc:content-type;
+        b=uJ191tM0qLByDnfg4eJTA76owDUptKBxo5hitY2+pEsZgczct0KUvwiPOdnq9X1rZ8
+         HKoJQ1DMP0UGHOcuvJcDb36SP0DryO77ztQ6e3BnV3ZJZRcbd6ukpJlwt5l8SmRWsYh9
+         /pOeYRMIMelGM0OgWKYwmRtqs9XpQrwQHEJLY=
+MIME-Version: 1.0
+Received: by 10.229.236.8 with SMTP id ki8mr8312055qcb.116.1291925109747; Thu,
+ 09 Dec 2010 12:05:09 -0800 (PST)
+Received: by 10.220.6.76 with HTTP; Thu, 9 Dec 2010 12:05:09 -0800 (PST)
+Date: Thu, 9 Dec 2010 13:05:09 -0700
+Message-ID: <AANLkTinjNJPMw+=iioxZJYPwHARQUxRJKUjB4Z5EcXQn@mail.gmail.com>
+Subject: BUG: Missing paranthesis around enabling conditions while performing
+ OR operation
+From: Satish Batchu <satish4frienz@gmail.com>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>, Kevin Jones <kjones5863@gmail.com>
+Content-Type: multipart/alternative; boundary=0016e64ddcea3e31510496ffc1cc
+
+--0016e64ddcea3e31510496ffc1cc
+Content-Type: text/plain; charset=ISO-8859-1
+
+MergeTransitions missing a paranthesis while doning OR operation for
+enabling condition.
+For example - In ((ctl>=3.5)||!(ctl>=2.5)||*(*(ctl>=2.5)&&!(ctl>=3.5)*)*),
+the paranthesis around the last enabling condition (highlighted in bold) was
+missing.
+
+--0016e64ddcea3e31510496ffc1cc
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+MergeTransitions missing a paranthesis while doning OR operation for enabli=
+ng condition. =A0<div>For example - In ((ctl&gt;=3D3.5)||!(ctl&gt;=3D2.5)||=
+<b>(</b>(ctl&gt;=3D2.5)&amp;&amp;!(ctl&gt;=3D3.5)<b>)</b>), the paranthesis=
+ around the last enabling condition (highlighted in bold) was missing.</div=
+>
+
+--0016e64ddcea3e31510496ffc1cc--
+

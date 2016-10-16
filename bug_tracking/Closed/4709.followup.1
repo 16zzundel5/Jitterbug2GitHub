@@ -1,0 +1,90 @@
+From kjones5863@gmail.com  Thu Mar 19 13:46:26 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.174])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2JJkQS0002738;
+	Thu, 19 Mar 2009 13:46:26 -0600
+Received: by wf-out-1314.google.com with SMTP id 23so812127wfg.24
+        for <multiple recipients>; Thu, 19 Mar 2009 12:46:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=2J/ziOI/Gf4pKNFn4EIn3SqBLWogSw3M8XGrshAC1vk=;
+        b=hpoufNjfCUaJaCq8hssA0hFkzhbo56t13tlubMlXTY9Q3fFzm/tDdkkyf+jAXvBl4k
+         LW1k4w/pxTSyP70sNNO2YEWH/QETPzR3wTcK3ASdYxiyRJGEY4CM7T3Q6lvFJQR34DTP
+         q/fLd0sqaSBxT3PgqXmtaa18hUpQOB9s8o+nc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=pMmYqkr+fFgmv0chWqa7ivFc5d/Bx1uZ6/cMgl0ALPC7OwxZsOggi0XdFA+NcBlOeJ
+         6KYlm84HGYXjQ6K2tCOE0Yh3PTWGcszrqguq9OaafIGIKUhvdlQP5ZyvQhbzPktV72+c
+         LcLBCpBxpkmQ+ncGarIHVcgnenbxh4kTy0opY=
+MIME-Version: 1.0
+Received: by 10.142.169.4 with SMTP id r4mr1083851wfe.262.1237491986130; Thu, 
+	19 Mar 2009 12:46:26 -0700 (PDT)
+In-Reply-To: <200903191728.n2JHSKVg001499@chou.ece.utah.edu>
+References: <200903191728.n2JHSKVg001499@chou.ece.utah.edu>
+Date: Thu, 19 Mar 2009 13:46:26 -0600
+Message-ID: <2b601e3d0903191246r5755534co119dd128a8220284@mail.gmail.com>
+Subject: Re: FEATURE: add components to a synthesis view (PR#4709)
+From: Kevin Jones <kjones5863@gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=000e0cd331dc3ee61a04657e0ef7
+
+--000e0cd331dc3ee61a04657e0ef7
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+These changes have been made.  Let me know if there is anything else you
+would like changed.
+
+On Thu, Mar 19, 2009 at 11:28 AM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> This is close just a couple changes.  First, the last file on the atacs
+> command
+> line should be the main file.  In other words:
+>
+> atacs <switches> <component1> ... <componentn> <main vhdl file> <component>
+>
+> Second, do not use a general file browser for adding to the components.
+>  Only
+> allow vhd files in the current project to be allowed components.
+>
+> Chris
+>
+>
+
+--000e0cd331dc3ee61a04657e0ef7
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+These changes have been made.=A0 Let me know if there is anything else you =
+would like changed.<br><br><div class=3D"gmail_quote">On Thu, Mar 19, 2009 =
+at 11:28 AM, Chris Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs=
+@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> w=
+rote:<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">This is close jus=
+t a couple changes. =A0First, the last file on the atacs command<br>
+line should be the main file. =A0In other words:<br>
+<br>
+atacs &lt;switches&gt; &lt;component1&gt; ... &lt;componentn&gt; &lt;main v=
+hdl file&gt; &lt;component&gt;<br>
+<br>
+Second, do not use a general file browser for adding to the components. =A0=
+Only<br>
+allow vhd files in the current project to be allowed components.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br>
+
+--000e0cd331dc3ee61a04657e0ef7--
+

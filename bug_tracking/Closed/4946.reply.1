@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: random initial values (PR#4946)
+Date: Thu Apr 29 17:10:06 2010
+
+Short term fix is to extract the lower and upper bounds and set the initial
+value to the mean.
+
+Anything that involves infinity, take either the lower or upper bound which is
+not infinity.  If both are infinity, set to 0.

@@ -1,0 +1,24 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: sarbruis@gmail.com
+Subject: Re: CHANGE: Change when SBML saving/generating occurs (PR#5499)
+Date: Thu Aug 25 06:46:39 2011
+CC: myers@ece.utah.edu
+
+I removed the calls that would generate SBML when an analysis view is opened. 
+The SBML should now only be generated when the save and run button is selected. 
+Moving to needs testing.
+
+> Full_Name: Jason
+> Version: 
+> OS: 
+> source: 
+> log: 
+> Submission from: 155-99-196-200.uconnect.utah.edu (155.99.196.200)
+> Submitted by: jstev
+> 
+> 
+> Currently, opening an analysis view generates SBML, even if it's already
+there. 
+> Also, running a simulation does not update the SBML (I think).
+> 
+> 

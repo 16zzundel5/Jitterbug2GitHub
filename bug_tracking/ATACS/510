@@ -1,0 +1,162 @@
+From eemercer@elen.utah.edu  Tue Aug 15 16:56:32 2000
+Return-Path: <eemercer@elen.utah.edu>
+Received: from localhost (eemercer@localhost)
+	by shang.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA05679
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 15 Aug 2000 16:56:32 -0600
+X-Authentication-Warning: shang.elen.utah.edu: eemercer owned process doing -bs
+Date: Tue, 15 Aug 2000 16:56:28 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Interleave Optimization Issue
+Message-ID: <Pine.LNX.4.10.10008151649370.5660-400000@shang.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: MULTIPART/MIXED; BOUNDARY="1671153943-608059664-966380188=:5660"
+
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+  Send mail to mime@docserver.cac.washington.edu for more info.
+
+--1671153943-608059664-966380188=:5660
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+It appears that the interleave command may be removing reachable states.
+This issue was reveled running the regression test as follows:
+
+ make Extras=mT
+
+The Extras=mT flag toggles the interleave optimization off.  The PRS
+missmatch was found on the file go.csp.  The go.prs file generated without
+the interleave option has a CSC variable to solve a violation that does
+not appear when interleave is turned on.  This file has appended the bad
+PRS file with the GOLD file, as well as atacs.log for the run.
+
+egm
+
+- -----
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 4120 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.0.2 (GNU/Linux)
+Comment: For info see http://www.gnupg.org
+
+iD8DBQE5mcqfYF0yrENAwtkRAsrUAKCAWGPUAY1yns5ZJWs5OPFwdbMWgACZAbzM
+qO+x3beH+2K2CX66gj7W0dM=
+=i24D
+-----END PGP SIGNATURE-----
+
+--1671153943-608059664-966380188=:5660
+Content-Type: TEXT/PLAIN; charset=US-ASCII; name="go.PRS.gold"
+Content-Transfer-Encoding: BASE64
+Content-ID: <Pine.LNX.4.10.10008151656280.5660@shang.elen.utah.edu>
+Content-Description: 
+Content-Disposition: attachment; filename="go.PRS.gold"
+
+WytnbzE6IChyZWFkeSAmIH5pcmR5ICYgfnNlbGluKV0NClstZ28xOiAoaXJk
+eSldDQpbK2dvMjogKHJlYWR5ICYgfnNlbGluKV0NClstZ28yOiAoc2VsaW4g
+JiB+Z28xKV0NCg==
+--1671153943-608059664-966380188=:5660
+Content-Type: TEXT/PLAIN; charset=US-ASCII; name="go.PRS"
+Content-Transfer-Encoding: BASE64
+Content-ID: <Pine.LNX.4.10.10008151656281.5660@shang.elen.utah.edu>
+Content-Description: 
+Content-Disposition: attachment; filename="go.PRS"
+
+WytnbzE6IChyZWFkeSAmIH5pcmR5ICYgfnNlbGluKV0NClstZ28xOiAoaXJk
+eSldDQpbK2dvMjogKHJlYWR5ICYgfnNlbGluKV0NClstZ28yOiAoc2VsaW4g
+JiB+Z28xKV0NClsrQ1NDMDogKHNlbGluICYgfmdvMildDQpbLUNTQzA6IChy
+ZWFkeSAmIH5zZWxpbildDQo=
+--1671153943-608059664-966380188=:5660
+Content-Type: TEXT/PLAIN; charset=US-ASCII; name="atacs.log"
+Content-Transfer-Encoding: BASE64
+Content-ID: <Pine.LNX.4.10.10008151656282.5660@shang.elen.utah.edu>
+Content-Description: 
+Content-Disposition: attachment; filename="atacs.log"
+
+Tm93IHVzaW5nIGludGVybGVhdmluZyBvcHRpbWl6YXRpb24uDQpFeGFjdCBj
+eWNsaWMgdGFibGUgcmVzb2x1dGlvbiBtb2RlIG5vdyB0dXJuZWQgT04uDQpF
+eGNlcHRpb24gaGFuZGxpbmcgbm93IHR1cm5lZCBPTi4NCk5vdyB1c2luZyBj
+b21iaW5hdGlvbmFsIG9wdGltaXphdGlvbi4NClVzaW5nIFBPIHNldHMgdGlt
+aW5nIHRvIG9idGFpbiBzdGF0ZSBncmFwaHMuDQpVc2luZyBzdWJzZXQgcmVn
+aW9uIG1hdGNoIGR1cmluZyBzdGF0ZSBzcGFjZSBleHBsb3JhdGlvbi4NClVz
+aW5nIHN1cGVyc2V0IHJlZ2lvbiBtYXRjaCBkdXJpbmcgc3RhdGUgc3BhY2Ug
+ZXhwbG9yYXRpb24uDQpObyBsb25nZXIgdXNpbmcgaW50ZXJsZWF2aW5nIG9w
+dGltaXphdGlvbi4NCk5vdyB1c2luZyBpbmZpbml0eSBvcHRpbWl6YXRpb24u
+DQpOb3cgdXNpbmcgb3JiaXRzIG1hdGNoLg0KTm93IHVzaW5nIHN0YWNrIHBy
+dW5pbmcgb24gc3VwZXJzZXQgb3B0aW1pemF0aW9uLg0KQ29tcGlsaW5nIGdv
+LmNzcCAuLi4gDQpDb21waWxlZCBwcm9jZXNzIGdvDQpDb21waWxlZCBwcm9j
+ZXNzIHJlYWR5DQpDb21waWxlZCBwcm9jZXNzIGlyZHkNCkNvbXBpbGVkIHBy
+b2Nlc3Mgc2VsaW4NCkxvYWRpbmcgdGltZWQgZXZlbnQtcnVsZSBzdHJ1Y3R1
+cmUgZnJvbTogIGdvLmVyDQpJbml0aWFsaXppbmcgMyBjeWNsZXMgLi4uIGRv
+bmUNCkNoZWNraW5nIGZvciBjeWNsZXMgaW4gYWN5Y2xpYyBjb25zdHJhaW50
+IGdyYXBoIC4uLiBkb25lLg0KQ2hlY2tpbmcgbGl2ZW5lc3MgLi4uIGxpdmUN
+CkNoZWNraW5nIGNvbm5lY3Rpdml0eSAuLi4gc3Ryb25nbHkgY29ubmVjdGVk
+DQpDaGVja2luZyBzYWZldHkgLi4uIHNhZmUNCkZpbmRpbmcgcmVkdW5kYW50
+IHJ1bGVzIC4uLiBkb25lICgwLjAwMDA5MikNCkZpbmRpbmcgcmVkdWNlZCBz
+dGF0ZSBncmFwaCAuLi4gbm9kZXMgPSAzMjUsIGRlYWQgPSA0NDQ0DQptZW1v
+cnk6IG1heD04OTc1ODQgaW51c2U9ODYwOTg0IGZyZWU9MzY2MDAgDQpkb25l
+DQoxMjk2IGl0ZXJhdGlvbnMsIDM3OSByZWdpb25zLCAxMDcgbmV3X3JlZ2lv
+bnMsIDE5IHN0YXRlcyBpbiAwLjMyMzYzOCBzZWNvbmRzDQpub2RlcyBpbiB1
+c2UgPSAzMjUsIGRlYWQgPSA0NDQ0DQptZW1vcnk6IG1heD04OTc1ODQgaW51
+c2U9ODYwOTg0IGZyZWU9MzY2MDANClByb2plY3Rpbmcgb3V0IGR1bW15IHRy
+YW5zaXRpb25zIC4uLiBkb25lICgwLjAwMDg2MSkNCkNoZWNraW5nIENTQyAu
+Li4gTk9UIGNvbXBsZXRlIHN0YXRlIGNvZGVkDQpFWENFUFRJT046ICBDU0Mg
+dmlvbGF0aW9uIQ0KTG9hZGluZyB0aW1lZCBldmVudC1ydWxlIHN0cnVjdHVy
+ZSBmcm9tOiAgZ28uZXINCldBUk5JTkc6ICBHcmFwaCBub3QgY29ubmVjdGVk
+IQ0KSW5pdGlhbGl6aW5nIDMgY3ljbGVzIC4uLiBkb25lDQpDaGVja2luZyBm
+b3IgY3ljbGVzIGluIGFjeWNsaWMgY29uc3RyYWludCBncmFwaCAuLi4gZG9u
+ZS4NCkNoZWNraW5nIGxpdmVuZXNzIC4uLiBsaXZlDQpDaGVja2luZyBjb25u
+ZWN0aXZpdHkgLi4uIE5PVCBzdHJvbmdseSBjb25uZWN0ZWQNCkVYQ0VQVElP
+TjogIENvbm5lY3Rpdml0eSB2aW9sYXRpb24hDQpDaGVja2luZyBzYWZldHkg
+Li4uIHNhZmUNCkZpbmRpbmcgcmVkdW5kYW50IHJ1bGVzIGFuZCBzdG9yaW5n
+IHRvOiAgZ28ucnINClN0b3JpbmcgdGltZWQgZXZlbnQtcnVsZSBzdHJ1Y3R1
+cmUgdG86ICBnby5lcg0KTG9hZGluZyB0aW1lZCBldmVudC1ydWxlIHN0cnVj
+dHVyZSBmcm9tOiAgZ28uZXINCldBUk5JTkc6ICBHcmFwaCBub3QgY29ubmVj
+dGVkIQ0KSW5pdGlhbGl6aW5nIDMgY3ljbGVzIC4uLiBkb25lDQpDaGVja2lu
+ZyBmb3IgY3ljbGVzIGluIGFjeWNsaWMgY29uc3RyYWludCBncmFwaCAuLi4g
+ZG9uZS4NCkNoZWNraW5nIGxpdmVuZXNzIC4uLiBsaXZlDQpDaGVja2luZyBj
+b25uZWN0aXZpdHkgLi4uIE5PVCBzdHJvbmdseSBjb25uZWN0ZWQNCkVYQ0VQ
+VElPTjogIENvbm5lY3Rpdml0eSB2aW9sYXRpb24hDQpDaGVja2luZyBzYWZl
+dHkgLi4uIHNhZmUNCkZpbmRpbmcgcmVkdW5kYW50IHJ1bGVzIGFuZCBzdG9y
+aW5nIHRvOiAgZ28ucnINClN0b3JpbmcgdGltZWQgZXZlbnQtcnVsZSBzdHJ1
+Y3R1cmUgdG86ICBnby5lcg0KTG9hZGluZyB0aW1lZCBldmVudC1ydWxlIHN0
+cnVjdHVyZSBmcm9tOiAgZ28uZXINCldBUk5JTkc6ICBHcmFwaCBub3QgY29u
+bmVjdGVkIQ0KSW5pdGlhbGl6aW5nIDMgY3ljbGVzIC4uLiBkb25lDQpDaGVj
+a2luZyBmb3IgY3ljbGVzIGluIGFjeWNsaWMgY29uc3RyYWludCBncmFwaCAu
+Li4gZG9uZS4NCkNoZWNraW5nIGxpdmVuZXNzIC4uLiBsaXZlDQpDaGVja2lu
+ZyBjb25uZWN0aXZpdHkgLi4uIE5PVCBzdHJvbmdseSBjb25uZWN0ZWQNCkVY
+Q0VQVElPTjogIENvbm5lY3Rpdml0eSB2aW9sYXRpb24hDQpDaGVja2luZyBz
+YWZldHkgLi4uIHNhZmUNCkZpbmRpbmcgcmVkdW5kYW50IHJ1bGVzIGFuZCBz
+dG9yaW5nIHRvOiAgZ28ucnINCkNoZWNraW5nIGZvciBjeWNsZXMgaW4gYWN5
+Y2xpYyBjb25zdHJhaW50IGdyYXBoIC4uLiBkb25lLg0KQ2hlY2tpbmcgbGl2
+ZW5lc3MgLi4uIGxpdmUNCkNoZWNraW5nIGNvbm5lY3Rpdml0eSAuLi4gTk9U
+IHN0cm9uZ2x5IGNvbm5lY3RlZA0KRVhDRVBUSU9OOiAgQ29ubmVjdGl2aXR5
+IHZpb2xhdGlvbiENCkNoZWNraW5nIHNhZmV0eSAuLi4gc2FmZQ0KRmluZGlu
+ZyByZWR1Y2VkIHN0YXRlIGdyYXBoIGFuZCBzdG9yaW5nIHRvOiAgZ28ucnNn
+DQpub2RlcyA9IDM0NCwgZGVhZCA9IDU5MjENCm1lbW9yeTogbWF4PTEwMDgx
+NzYgaW51c2U9OTY4MTQ0IGZyZWU9NDAwMzIgDQpkb25lDQoxMDE3IGl0ZXJh
+dGlvbnMsIDMxMiByZWdpb25zLCAxMTkgbmV3X3JlZ2lvbnMsIDE5IHN0YXRl
+cyBpbiAwLjI0ODAzIHNlY29uZHMNCm5vZGVzIGluIHVzZSA9IDM0NCwgZGVh
+ZCA9IDU5MjENCm1lbW9yeTogbWF4PTEwMDgxNzYgaW51c2U9OTY4MTQ0IGZy
+ZWU9NDAwMzINCkNoZWNraW5nIGZvciBjeWNsZXMgaW4gYWN5Y2xpYyBjb25z
+dHJhaW50IGdyYXBoIC4uLiBkb25lLg0KQ2hlY2tpbmcgbGl2ZW5lc3MgLi4u
+IGxpdmUNCkNoZWNraW5nIGNvbm5lY3Rpdml0eSAuLi4gTk9UIHN0cm9uZ2x5
+IGNvbm5lY3RlZA0KRVhDRVBUSU9OOiAgQ29ubmVjdGl2aXR5IHZpb2xhdGlv
+biENCkNoZWNraW5nIHNhZmV0eSAuLi4gc2FmZQ0KUHJvamVjdGluZyBvdXQg
+ZHVtbXkgdHJhbnNpdGlvbnMgLi4uIGRvbmUgKDAuMDAwNjAyKQ0KQ2hlY2tp
+bmcgQ1NDIC4uLiBjb21wbGV0ZSBzdGF0ZSBjb2RlZA0KRmluZGluZyByZWdp
+b25zIC4uLiBkb25lICgwLjAwMDMyMykNCkZpbmRpbmcgY29uZmxpY3RzIC4u
+LiBkb25lICgwLjAwMDMzNCkNCkZpbmRpbmcgY292ZXJzIC4uLiBkb25lICgw
+LjAwMDE1OSkNCnN5bnRoZXNpcyB0b29rIDAuMDAxMDkxIHNlY29uZHMuDQpT
+dG9yaW5nIHByb2R1Y3Rpb24gcnVsZXMgdG86ICBnby5wcnMNClRvdGFsIEFy
+ZWEgPSAxMiBsaXRlcmFscyAyNyB0cmFuc2lzdG9ycw0Kc3ludGhlc2lzIHRv
+b2sgNS4wMDY3OWUtMDYgc2Vjb25kcy4NCg==
+--1671153943-608059664-966380188=:5660--
+

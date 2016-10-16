@@ -1,0 +1,82 @@
+From moschino21@gmail.com  Sat Jun  5 15:34:06 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-yw0-f202.google.com (mail-yw0-f202.google.com [209.85.211.202])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o55LY5he006515
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 5 Jun 2010 15:34:06 -0600
+Received: by ywh40 with SMTP id 40so1578061ywh.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 05 Jun 2010 14:34:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:in-reply-to
+         :references:from:date:message-id:subject:to:content-type;
+        bh=R73yUennQzTqHN+Lp59nNPH6oQ1orjLLeDamEI0E7pE=;
+        b=Llve4ixbdYRH9cXiACp/YGLpYpDxTdEDhHUXNxNuNeNOZHE9gc9BXjC8Pig8H5HaEi
+         RFlU4N3Vu4dVOkvYcoXe513o5Zt709wIG36DfOGmaRVACRgRjAzjKA4e8g2t9PRPnhg6
+         3023K6L6pt2k7fi7eCa8pwqvEZpdiveL0Mf/k=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        b=EBT3COo5zuguWcVvXJ+724/w58e4wRDNRD2wMLP6aHomVRiquMd3SOCCc+e2tFfHKP
+         wlY/TArClhj7QNAvmSQtlmLO7Z0LMrdS56NV0mbLd/40sAvxucyXkx/ire7e27SAQUJX
+         a38dvB/g7iBduOZvJbXl9QAjvRu9/egvVjGIk=
+Received: by 10.90.147.14 with SMTP id u14mr6701201agd.207.1275773645095; Sat, 
+	05 Jun 2010 14:34:05 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.90.103.8 with HTTP; Sat, 5 Jun 2010 14:33:45 -0700 (PDT)
+In-Reply-To: <201006050129.o551T2cc018468@chou.ece.utah.edu>
+References: <201006050129.o551T2cc018468@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Sat, 5 Jun 2010 15:33:45 -0600
+Message-ID: <AANLkTilYdekdNapva2ojvCfMDfP-NokBYVXchLf1yZHD@mail.gmail.com>
+Subject: Re: BUG: Enabling condition can not be cleared in LPN editor 
+	(PR#5006)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001636164987ee023504884f3202
+
+--001636164987ee023504884f3202
+Content-Type: text/plain; charset=ISO-8859-1
+
+Hi Chris,
+I just updated my BioSim, but it seems the problem still exists. Did you
+commit to the repository?
+
+Zhen
+
+On Fri, Jun 4, 2010 at 7:29 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> I think I fixed this.
+>
+> Chris
+>
+>
+
+
+-- 
+Zhen Zhang
+
+--001636164987ee023504884f3202
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hi Chris,<br>I just updated my BioSim, but it seems the problem still exist=
+s. Did you commit to the repository?<br><br>Zhen<br><br><div class=3D"gmail=
+_quote">On Fri, Jun 4, 2010 at 7:29 PM, Chris Myers <span dir=3D"ltr">&lt;<=
+a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ec=
+e.utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">I think I fixed t=
+his.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br><br clear=3D"all"><br>-- <br>Zhen Zhang<br>
+
+--001636164987ee023504884f3202--
+

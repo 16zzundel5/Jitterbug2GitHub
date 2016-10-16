@@ -1,0 +1,116 @@
+From satish4frienz@gmail.com  Mon Jul 26 17:05:03 2010
+Return-Path: <satish4frienz@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-vw0-f42.google.com (mail-vw0-f42.google.com [209.85.212.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o6QN53hg026604;
+	Mon, 26 Jul 2010 17:05:03 -0600
+Received: by vws18 with SMTP id 18so3188546vws.15
+        for <multiple recipients>; Mon, 26 Jul 2010 16:05:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:date:message-id
+         :subject:from:to:cc:content-type;
+        bh=3zGzvOntivEa+6bV6QsCmseXmDcwzXJVefjIj4ahXRs=;
+        b=G7bbt8Y280pbLyl7gm2rUFKEo6b7dfgdyn6JYVqly+tDMVmS896pQRlCzV5ln4y9Sc
+         UJShvL92A+OiLU1/R67jWYrNzHkQBLoRA0hc2uqv8q3Ep0jKd6FHJue4gv2bhW6YQn3H
+         BrHkb4ySQVaJ6+REePyQfUZi3MF/J3wVKWqE0=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:date:message-id:subject:from:to:cc:content-type;
+        b=dJP2toPZ98g9WteIgV7IvZpge1pLpBVOnJkzPsLkFAsndJgMxOA8OWDZoGnEV74J/X
+         YT65KN3y/bwOMXO69dLe2ZN/bDk2gHX/WE4CCpW2p0r9fkMGmR9vjQ/GxvGoqWkkjHsC
+         X17QbBMHpR3RS5y4eJjaQngzvfF3chP1CjTzc=
+MIME-Version: 1.0
+Received: by 10.220.127.73 with SMTP id f9mr4489473vcs.258.1280185502180; Mon, 
+	26 Jul 2010 16:05:02 -0700 (PDT)
+Received: by 10.220.186.138 with HTTP; Mon, 26 Jul 2010 16:05:02 -0700 (PDT)
+Date: Mon, 26 Jul 2010 16:05:02 -0700
+Message-ID: <AANLkTi=35p_vYPzOtZ-vATCtTd=VVLaud50=CB4H5zvv@mail.gmail.com>
+Subject: BUG: errors with delay expressions
+From: Satish Batchu <satish4frienz@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Cc: kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/mixed; boundary=0016e68eef2b1aa6dc048c526ac6
+
+--0016e68eef2b1aa6dc048c526ac6
+Content-Type: multipart/alternative; boundary=0016e68eef2b1aa6d6048c526ac4
+
+--0016e68eef2b1aa6d6048c526ac4
+Content-Type: text/plain; charset=ISO-8859-1
+
+I'm getting these errors when I'm loading the lpn into data structure.
+R:ERROR: Expected a ID, Number, (, or -
+L:ERROR: Expected a ID, Number, (, or -
+
+When I removed complex delay expressions, it worked. In the Simple.lpn,
+there's just a simple delay expression (ctl>=23)*80. Even that is giving
+errors.
+
+Satish
+
+--0016e68eef2b1aa6d6048c526ac4
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<span class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; f=
+ont-size: 13px; border-collapse: collapse; "><div>I&#39;m getting these err=
+ors when I&#39;m loading the lpn into data structure.=A0</div><div><div>R:E=
+RROR: Expected a ID, Number, (, or -</div>
+<div>L:ERROR: Expected a ID, Number, (, or -</div></div><div><br></div><div=
+>When I removed complex delay expressions, it worked. In the Simple.lpn, th=
+ere&#39;s just a simple delay expression (ctl&gt;=3D23)*80. Even that is gi=
+ving errors.</div>
+<div><br>Satish</div></span>
+
+--0016e68eef2b1aa6d6048c526ac4--
+--0016e68eef2b1aa6dc048c526ac6
+Content-Type: application/octet-stream; name="PI4prop.lpn"
+Content-Disposition: attachment; filename="PI4prop.lpn"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_gc3xcidb0
+
+LmR1bW15IHRGYWlsTWluIHRDaGVja01pbjIgdEZhaWxNYXgyIHRDbGsgdENoZWNrTWF4IA0KI0Au
+dmFyaWFibGVzIHN0YWJsZV9vdXQgb3V0IHBzaSBjdGwgb21lZ2EgcGhpIA0KI0AuZmFpbHRyYW5z
+IHRGYWlsTWluIHRGYWlsTWF4MiANCiN8LnBsYWNlcyBwQ2hlY2tNYXggcENoZWNrIHBDbGsgcENo
+ZWNrTWluIA0KLmdyYXBoDQpwQ2hlY2tNaW4gdEZhaWxNaW4NCnBDaGVja01pbiB0Q2hlY2tNaW4y
+DQp0Q2hlY2tNaW4yIHBDaGVjaw0KcENoZWNrTWF4IHRGYWlsTWF4Mg0KcENsayB0Q2xrDQp0Q2xr
+IHBDaGVja01pbg0KdENsayBwQ2hlY2tNYXgNCnBDaGVjayB0Q2hlY2tNYXgNCnBDaGVja01heCB0
+Q2hlY2tNYXgNCnRDaGVja01heCBwQ2xrDQoubWFya2luZyB7cENsayB9DQojQC5pbml0X3ZhbHMg
+ezxzdGFibGVfb3V0PTA+PG91dD0wPjxwc2k9Wy0yNTAsLTI1MF0+PGN0bD1bMTAwLDEwMF0+PG9t
+ZWdhPVsxNzcsMTc4XT48cGhpPVstMjUwLC0yNTBdPn0NCiNALmluaXRfcmF0ZXMgezxzdGFibGVf
+b3V0PTA+PG91dD0wPn0NCiNALmVuYWJsaW5ncyB7PHRGYWlsTWluPVsob3V0Pj0yOCldPjx0Q2hl
+Y2tNaW4yPVsoc3RhYmxlX291dD49NSldPjx0RmFpbE1heDI9WyhzdGFibGVfb3V0Pj01KV0+PHRD
+bGs9W34ob3V0Pj0xNykmKHN0YWJsZV9vdXQ+PTUpXT48dENoZWNrTWF4PVsob3V0Pj0yOCldPn0N
+CiNALmRlbGF5X2Fzc2lnbm1lbnRzIHs8dEZhaWxNaW49WzBdPjx0Q2hlY2tNaW4yPVsofihjdGw+
+PTExKSkqODUrKGN0bD49MjMpKjgwKygoY3RsPj0xMCkmKH4oY3RsPj0xNSkpKSo4NSsoKGN0bD49
+MTkpJih+KGN0bD49MjQpKSkqODErKChjdGw+PTE1KSYofihjdGw+PTIwKSkpKjgyXT48dEZhaWxN
+YXgyPVsofihjdGw+PTExKSkqODYrKChjdGw+PTIzKSkqODErKChjdGw+PTEwKSYofihjdGw+PTE1
+KSkpKjg2KygoY3RsPj0xOSkmKH4oY3RsPj0yNCkpKSo4MisoKGN0bD49MTUpJih+KGN0bD49MjAp
+KSkqODNdPjx0Q2xrPVswXT48dENoZWNrTWF4PVswXT59DQojQC5jb250aW51b3VzIHN0YWJsZV9v
+dXQgb3V0IA0KLmVuZA0K
+--0016e68eef2b1aa6dc048c526ac6
+Content-Type: application/octet-stream; name="PI4propSimple.lpn"
+Content-Disposition: attachment; filename="PI4propSimple.lpn"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_gc3xdzkc1
+
+LmR1bW15IHRGYWlsTWluIHRDaGVja01pbjIgdEZhaWxNYXgyIHRDbGsgdENoZWNrTWF4IA0KI0Au
+dmFyaWFibGVzIHN0YWJsZV9vdXQgb3V0IHBzaSBjdGwgb21lZ2EgcGhpIA0KI0AuZmFpbHRyYW5z
+IHRGYWlsTWluIHRGYWlsTWF4MiANCiN8LnBsYWNlcyBwQ2hlY2tNYXggcENoZWNrIHBDbGsgcENo
+ZWNrTWluIA0KLmdyYXBoDQpwQ2hlY2tNaW4gdEZhaWxNaW4NCnBDaGVja01pbiB0Q2hlY2tNaW4y
+DQp0Q2hlY2tNaW4yIHBDaGVjaw0KcENoZWNrTWF4IHRGYWlsTWF4Mg0KcENsayB0Q2xrDQp0Q2xr
+IHBDaGVja01pbg0KdENsayBwQ2hlY2tNYXgNCnBDaGVjayB0Q2hlY2tNYXgNCnBDaGVja01heCB0
+Q2hlY2tNYXgNCnRDaGVja01heCBwQ2xrDQoubWFya2luZyB7cENsayB9DQojQC5pbml0X3ZhbHMg
+ezxzdGFibGVfb3V0PTA+PG91dD0wPjxwc2k9Wy0yNTAsLTI1MF0+PGN0bD1bMTAwLDEwMF0+PG9t
+ZWdhPVsxNzcsMTc4XT48cGhpPVstMjUwLC0yNTBdPn0NCiNALmluaXRfcmF0ZXMgezxzdGFibGVf
+b3V0PTA+PG91dD0wPn0NCiNALmVuYWJsaW5ncyB7PHRGYWlsTWluPVsob3V0Pj0yOCldPjx0Q2hl
+Y2tNaW4yPVsoc3RhYmxlX291dD49NSldPjx0RmFpbE1heDI9WyhzdGFibGVfb3V0Pj01KV0+PHRD
+bGs9W34ob3V0Pj0xNykmKHN0YWJsZV9vdXQ+PTUpXT48dENoZWNrTWF4PVsob3V0Pj0yOCldPn0N
+CiNALmRlbGF5X2Fzc2lnbm1lbnRzIHs8dEZhaWxNaW49WzBdPjx0Q2hlY2tNaW4yPVsoY3RsPj0y
+MykqODBdPjx0Q2xrPVswXT48dENoZWNrTWF4PVswXT59DQojQC5jb250aW51b3VzIHN0YWJsZV9v
+dXQgb3V0IA0KLmVuZA0K
+--0016e68eef2b1aa6dc048c526ac6--
+

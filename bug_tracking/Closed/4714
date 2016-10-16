@@ -1,0 +1,107 @@
+From kjones5863@gmail.com  Mon Mar 16 13:42:14 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.3 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from an-out-0708.google.com (an-out-0708.google.com [209.85.132.248])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2GJgDtM000476;
+	Mon, 16 Mar 2009 13:42:13 -0600
+Received: by an-out-0708.google.com with SMTP id d40so136414and.18
+        for <multiple recipients>; Mon, 16 Mar 2009 12:42:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=HcK4P1pE7oYYNScRfa/22oPp/JKOCB/NhdkfUkrjHFQ=;
+        b=cfLiSClfu8dwoAmrkSpq7eOLpqkweb3CaWXFUGSpseamdW1JthOnw2CfbE50G5SKHn
+         yThCHxByeHNOHroFsfLc1lYratJFp5pLGF0xEW3LPGDSJU/QkOCpDraMS/wO0S+aPyt2
+         6Mr4DIvv9PFFEPt6znTz9bsxx6KvqDTh8vREE=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=ww6wgYcoGL7YSckLOh0lmfdLHm6dAxZ9kTdlQqDaSwQo/7T/tUGNnnih1XXmlAdylC
+         FrNIu597tLRFzoJEUKWU7SAAyWVGcPjf6FaRtK45FV75iAJdyGNHf9WD5VF9+JhjXYTg
+         CeITahB2PSdBkXh4ZkhE31LfnDhusy92F+zdA=
+MIME-Version: 1.0
+Received: by 10.142.157.6 with SMTP id f6mr2323503wfe.257.1237232532665; Mon, 
+	16 Mar 2009 12:42:12 -0700 (PDT)
+In-Reply-To: <9E5E5FFD-6E1A-4BC4-B02A-AFDF8438AEC4@ece.utah.edu>
+References: <946FFF19-57B8-467F-982B-57A3844EA53A@ece.utah.edu>
+	 <2b601e3d0903131520t554fc674u29d9bdd4d5d82af4@mail.gmail.com>
+	 <9E5E5FFD-6E1A-4BC4-B02A-AFDF8438AEC4@ece.utah.edu>
+Date: Mon, 16 Mar 2009 13:42:12 -0600
+Message-ID: <2b601e3d0903161242w4e482252wb10cf13c3c680944@mail.gmail.com>
+Subject: Re: BUG: transition rates appear to be required
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: kjones@vlsigroup.ece.utah.edu,
+        Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=000e0cd241fc9d37dd046541a5b3
+
+--000e0cd241fc9d37dd046541a5b3
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+These should be fixed now.
+
+On Mon, Mar 16, 2009 at 1:26 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> If you create a transition rate on two separate transitions.  Then, close
+> and reopen the file, remove one of the rates.  Then, close and reopen, the
+> old rate is still there as an empty string causing a parse problem.
+>
+> Also, please change the syntax for transition rates to allow strings and
+> output as:
+>
+> #@.transition_rates {<t=[expr]>}
+>
+> Chris
+>
+> On Mar 13, 2009, at 4:20 PM, Kevin Jones wrote:
+>
+> Fixed.
+>
+> On Fri, Mar 13, 2009 at 4:06 PM, Chris J. Myers <myers@ece.utah.edu>wrote:
+>
+>> I can no longer create a transition without a transition rate.  It says
+>> illegal values are entered.
+>>
+>> Chris
+>>
+>>
+>
+>
+
+--000e0cd241fc9d37dd046541a5b3
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+These should be fixed now.<br><br><div class=3D"gmail_quote">On Mon, Mar 16=
+, 2009 at 1:26 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:m=
+yers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br><blockquote =
+class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, 204, 204); m=
+argin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+<div style=3D""><div>If you create a transition rate on two separate transi=
+tions. =A0Then, close and reopen the file, remove one of the rates. =A0Then=
+, close and reopen, the old rate is still there as an empty string causing =
+a parse problem.</div>
+<div><br></div><div>Also, please change the syntax for transition rates to =
+allow strings and output as:</div><div><br></div><div>#@.transition_rates {=
+&lt;t=3D[expr]&gt;}</div><div><br></div><font color=3D"#888888"><div>Chris<=
+/div>
+</font><div><div></div><div class=3D"h5"><br><div><div>On Mar 13, 2009, at =
+4:20 PM, Kevin Jones wrote:</div><br><blockquote type=3D"cite">Fixed.<br><b=
+r><div class=3D"gmail_quote">On Fri, Mar 13, 2009 at 4:06 PM, Chris J. Myer=
+s <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu" target=3D"_bl=
+ank">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;"> I can no longer =
+create a transition without a transition rate. =A0It says illegal values ar=
+e entered.<br>
+<font color=3D"#888888"> <br> Chris<br> <br> </font></blockquote></div><br>=
+</blockquote></div><br></div></div></div></blockquote></div><br>
+
+--000e0cd241fc9d37dd046541a5b3--
+

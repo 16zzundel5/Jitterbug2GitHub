@@ -1,0 +1,62 @@
+From ibiosim@gmail.com  Sun Jan 26 12:11:30 2014
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f175.google.com (mail-ie0-f175.google.com [209.85.223.175])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s0QJBELT005076
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 26 Jan 2014 12:11:14 -0700
+Received: by mail-ie0-f175.google.com with SMTP id ar20so4927687iec.34
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 26 Jan 2014 11:11:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=wFk4/CLdfjj1dVWt8PxxIwIoCELUHOnX17b616/oBzY=;
+        b=dXonsrAcyxTA/H7tsa5ToPv+r2vLZSVU+UiYvws6zbsFsa3DnDE2FdZAEVlyzIiSk2
+         pTYmq1Q6tk5gTPvwiyJ03fAJiBKZ0PaZ1nNqE7yO9chchJ4t9u5XNkwQsaTLywQQldBd
+         XDfH4AQBN1ehR0no9VcO/pO/Yh5ZrGZNg83/ZBB8a25NuESQCpfX01rzfjZudPbYz/XW
+         ZQURjAfHM6AT5tu1pC3o2ZscbzlKtgVRMjLN4ucH/UkBnnVsxx4sv7kSml8MQzWg2hQ0
+         Q1hUABDwUz+5FWXx4Vc4xGKa8hPMnGHv3d/KN26aOlmKYvNXFQq1JPW1aMU2TR+7jqLI
+         IfhQ==
+X-Received: by 10.42.250.132 with SMTP id mo4mr19161956icb.34.1390763473509;
+        Sun, 26 Jan 2014 11:11:13 -0800 (PST)
+Received: from 192.168.1.10 ([50.141.67.1])
+        by mx.google.com with ESMTPSA id f2sm35693230igt.6.2014.01.26.11.11.10
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Sun, 26 Jan 2014 11:11:12 -0800 (PST)
+Date: Sun, 26 Jan 2014 11:11:12 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <225005258.0.1390763465913.JavaMail.myers@jiaqi>
+Subject: BUG: Crash trying to import virtual part
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.5.1
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+I got this exception trying to import a virtual part.
+
+Stack trace:
+java.lang.UnsupportedClassVersionError: virtualparts/serialize/Serializer : Unsupported major.minor version 51.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:637)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:621)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at virtualparts.PartsHandler.GetSummaryData(PartsHandler.java:338)
+	at virtualparts.PartsHandler.GetPartsSummary(PartsHandler.java:120)
+	at main.Gui$9.run(Gui.java:3733)
+	at java.lang.Thread.run(Thread.java:695)
+

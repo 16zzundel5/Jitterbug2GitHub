@@ -1,0 +1,72 @@
+From peskin@cs.utah.edu  Mon Oct 18 19:13:40 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id TAA17315
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 18 Oct 1999 19:13:40 -0600
+Date: Mon, 18 Oct 1999 19:13:40 -0600
+From: peskin@cs.utah.edu
+Message-Id: <199910190113.TAA17315@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: build broken wrt pe-send-ifc
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12759398 Oct 18 16:41 /home/xia/peskin/atacs/src/atacs*
+OS: Red Hat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+source: /home/xia/peskin/atacs/examples/g/pe-send-ifc.g
+log: /home/xia/peskin/atacs/examples/g/pe-send-ifc.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+It is no longer possible to get prs out of examples/g/pe-send-ifc.g
+I believe this slipped through a loop-hole in examples/Makefile
+I have plugged this loophole in my local copy of examples/Makefile, 
+but I am unable to check anything in until the repository is fixed.
+
+Here is a sample session:
+
+504 xia:examples/g> pwd
+/home/xia/peskin/atacs/examples/g
+505 xia:examples/g> ../../src/atacs -mEmcmXmV -ya pe-send-ifc
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Verbose mode now turned ON.
+Converting Petri net to ER and storing to:  pe-send-ifc.er
+Loading timed event-rule structure from:  pe-send-ifc.er
+WARNING:  Duplicate conflicts ignored.
+WARNING:  No arcs into or out of treq-/2.
+WARNING:  No arcs into or out of treq+/3.
+WARNING:  No arcs into or out of treq-/4.
+WARNING:  No arcs into or out of treq+/5.
+WARNING:  No arcs into or out of rdiq-/3.
+WARNING:  No arcs into or out of adbldout-/2.
+WARNING:  No arcs into or out of adbldout+/3.
+WARNING:  No arcs into or out of ackpkt-/2.
+WARNING:  No arcs into or out of ackpkt+/3.
+WARNING:  No arcs into or out of tack-/1.
+WARNING:  No arcs into or out of tack+/2.
+WARNING:  No arcs into or out of tack+/4.
+WARNING:  No arcs into or out of peack-/2.
+WARNING:  No arcs into or out of peack+/5.
+WARNING:  No arcs into or out of adbld-/3.
+WARNING:  No arcs into or out of y0_pesendifc-/4.
+WARNING:  No arcs into or out of y0_pesendifc-/5.
+WARNING:  Dropped 17 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph and storing to:  pe-send-ifc.rsg
+WARNING: safety violation for rule tack-/5 -> reqsend-.
+ERROR: reqsend- enabled but signal is not 1 or F in state 0R000000FF
+Storing constraint graph to:  deadlock.grf
+Executing command:  parg deadlock.grf &
+Storing error trace state graph to:  pe-send-ifc.grf
+Executing command:  parg pe-send-ifc.grf &
+Warning:  dropped 17 unconnected nodes
+layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+Storing error trace in VHDL to:  trace.vhd
+506 xia:examples/g> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+

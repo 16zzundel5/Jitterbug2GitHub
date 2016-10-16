@@ -1,0 +1,85 @@
+From atacs-bugs  Thu Jun 15 00:23:54 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id AAA31844
+	for atacs-bugs@shang.elen.utah.edu; Thu, 15 Jun 2000 00:23:54 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id AAA31837
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Thu, 15 Jun 2000 00:23:51 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id AAA01199
+	for atacs-bugs@vlsigroup; Thu, 15 Jun 2000 00:27:34 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200006150627.AAA01199@jiaqi.elen.utah.edu>
+Subject: Comments on Chapter 1 (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Thu, 15 Jun 2000 00:27:34 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From ganesh@cs.utah.edu  Mon Jun 12 16:48:51 2000
+Return-Path: <ganesh@cs.utah.edu>
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA21508
+	for <myers@ching.elen.utah.edu>; Mon, 12 Jun 2000 16:48:51 -0600
+Received: from ee.elen.utah.edu (Z8hYpR6kdRjFqo7mafdVrfTq11u5xP+Y@ee.elen.utah.edu [128.110.18.3])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id QAA21831
+	for <cmyers@cs.utah.edu>; Mon, 12 Jun 2000 16:48:50 -0600 (MDT)
+Received: by ee.elen.utah.edu (Postfix)
+	id B34ED5439; Mon, 12 Jun 2000 16:48:50 -0600 (MDT)
+Delivered-To: myers@ee.elen.utah.edu
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by ee.elen.utah.edu (Postfix) with ESMTP id 88EA8540B
+	for <myers@ee.elen.utah.edu>; Mon, 12 Jun 2000 16:48:50 -0600 (MDT)
+Received: from durga.cs.utah.edu (durga.cs.utah.edu [155.99.203.104])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id QAA21824;
+	Mon, 12 Jun 2000 16:48:50 -0600 (MDT)
+Received: (from ganesh@localhost)
+	by durga.cs.utah.edu (8.9.3/8.9.3) id QAA03269;
+	Mon, 12 Jun 2000 16:48:49 -0600 (MDT)
+Date: Mon, 12 Jun 2000 16:48:49 -0600 (MDT)
+From: "Ganesh C. Gopalakrishnan" <ganesh@cs.utah.edu>
+Message-Id: <200006122248.QAA03269@durga.cs.utah.edu>
+To: myers@elen.utah.edu
+Subject: Comments on Chapter 1
+Cc: ganesh@cs.utah.edu
+
+
+Hi Chris,
+
+I read Chapter 1 enough to get a gist.
+The contents of that chapter is very good - nowhere
+else have I seen so many concepts illustrated at such
+an intuitive level. Given the high importance of this
+chapter we must make sure that the majority of the
+readers will like its style. Here is where I personally
+feel torn: on one hand, humor and conversational style
+is good; however, jokes and light-heartedness can
+sometimes hinder the process of understanding. Sometimes
+it tends to short-change you of valuable space to 
+elaborate on something too. E.g. on page 8 you say
+ ". ... postponing this wait until this point potentially
+	increases concurrency...". Such points are
+best elaborated as your text will probably be the only
+
+good reference a student can find such material clearly
+explained. 
+
+Given all this, I would carry the Utah Wine Store story
+only for 2 or 3 pages only. After that I'd switch to
+the classical objective dull (but precise and notationally
+economic) style. Also, I'd use VHDL only for a few pages
+ After that, the use of  a textual syntax hinders readability.
+An automaton diagram would crisply illustrate the ideas
+
+To summarize, given that you have such a good collection
+of ideas in Chapter 1, I would be very skeptical of adopting
+a humor-only style. But of course please have others read
+thru it and see what they say.
+
+I'm now moving onto Chapter 8.
+
+Ganesh
+

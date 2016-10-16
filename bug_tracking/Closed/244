@@ -1,0 +1,42 @@
+From peskin@cs.utah.edu  Wed Nov  3 14:11:52 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA11514
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 Nov 1999 14:11:52 -0700
+Date: Wed, 3 Nov 1999 14:11:52 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911032111.OAA11514@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: safe2.csp core dumps finding RSG
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12759842 Oct 28 14:29 ../../src/atacs*
+OS: RedHat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+source: /home/xia/peskin/atacs/examples/csp/safe2.csp
+log: /home/xia/peskin/atacs/examples/csp/safe2.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+Here is a sample session:
+
+280 xia:examples/csp> pwd
+/home/xia/peskin/atacs/examples/csp
+281 xia:examples/csp> ../../src/atacs safe2.csp -ms -ys
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Compiling safe2.csp ... 
+Storing process safe to safe.er
+Storing process safeenv to safeenv.er
+Storing process safe2 to safe2.er
+Loading timed event-rule structure from:  safe2.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph and storing to:  safe2.rsg
+ERROR: a+/1 enabled but signal is not 0 or R in state 10
+Segmentation fault
+282 xia:examples/csp> 
+

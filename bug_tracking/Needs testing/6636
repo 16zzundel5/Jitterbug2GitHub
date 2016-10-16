@@ -1,0 +1,53 @@
+From tramy.nguy@gmail.com  Mon Aug  8 17:03:04 2016
+Return-Path: <tramy.nguy@gmail.com>
+Received: from mail-yw0-f172.google.com (mail-yw0-f172.google.com [209.85.161.172])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u78N34Rn030477
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 8 Aug 2016 17:03:04 -0600
+Received: by mail-yw0-f172.google.com with SMTP id z8so313928838ywa.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 08 Aug 2016 16:03:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=v/+9wCWW0opVHAgV7cwFXDDXnT0Ykn8bKRR5+OsxKqQ=;
+        b=fOS3XRuBR5PR6d9ylpJBHlvVX9wO3gEGdG1QNxHBt2T6XiGKVfcZdEIUKO5hx2KXaM
+         H4RwkhsLvBrGVYW9fJGQ+j0yU7vD4jEKHhDRXAohgn5e40qaN+mvhQJHbKKxo20QNewA
+         ei/ZRmnHSgw4dfYdElx6vFUX1vELWaeDzrTwTWKcTVPglikXBICnaSS5QpxOKCw6Bbbr
+         tnMv6LG3Uw0+QEEU2UhW85ezdSawFcvQQNBv2MU5IbNn0YZbMwIdc4HM6tbiTYqlsOpD
+         BPd5yNcmKhgKnZK0NbU+LLp3XoFlG30HRVCUk6G6oU7MFX77VuAmS3u/WJvJsXRm66eQ
+         g55w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=v/+9wCWW0opVHAgV7cwFXDDXnT0Ykn8bKRR5+OsxKqQ=;
+        b=bRousHm/uMquIZqJ6Kdr4BmuoSucTBFLFcQumJf9eGBGTJOWFhxMSPcJGIeO3DeX0d
+         r69NWTrNULhINNzLn6WUYQKi5G5g/tv9atGCSLT4z1JGmUlx8PpoFc3pM3lH8DROJVlJ
+         lMdC1MJ8jny+7GfRoMXe8/4HM8iCcqmmBcgW8X3UjPHiDADnBg9I8Bms7qBoNVqlyuBm
+         KfJZM7gqbmh/S2uFuMtqtKG6k9OIoI1cQMV2MkeYGaveANlhtARviINtXVZjROvbF1QD
+         pzfeTQQBrYv0G+XseBLIUqOJA2wIoLwmk5umSY4DO86CN3XyEC8uvj6rhzXIg7O4euFJ
+         94eg==
+X-Gm-Message-State: AEkoousIvKbftu6bo682KD4wQcmKn/8fY6jS5hKvMQvio50KA/1BTGvVJ3lD1u6Y0zzgBg0y7JK7AsoqFSvuTA==
+X-Received: by 10.129.81.4 with SMTP id f4mr70049340ywb.216.1470697382618;
+ Mon, 08 Aug 2016 16:03:02 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.37.230.132 with HTTP; Mon, 8 Aug 2016 16:03:02 -0700 (PDT)
+From: Tramy Nguyen <tramy.nguy@gmail.com>
+Date: Mon, 8 Aug 2016 17:03:02 -0600
+Message-ID: <CAJxZzr7AKrC-_sPxcL53+62WLKk3ss=jfWc2F1sMVqJG62i15w@mail.gmail.com>
+Subject: FEATURE
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a11463926102bb30539976bcc
+
+--001a11463926102bb30539976bcc
+Content-Type: text/plain; charset=UTF-8
+
+It would be nice to have the ability to select multiple xml files at once
+and be able to delete the entire SBML files in one go rather than clicking
+each xml file one by one and deleting them.
+
+--001a11463926102bb30539976bcc
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr">It would be nice to have the ability to select multiple xml files at once and be able to delete the entire SBML files in one go rather than clicking each xml file one by one and deleting them.<div><br></div><div><br></div></div>
+
+--001a11463926102bb30539976bcc--
+

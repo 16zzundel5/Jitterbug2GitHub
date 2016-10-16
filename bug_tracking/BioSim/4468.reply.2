@@ -1,0 +1,9 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: combine ODE and Monte Carlo methods (PR#4468)
+Date: Fri Jan 22 17:45:24 2010
+
+When you reach \tau, find reaction as follows:
+
+\Sum_{i=1}^{k-1} \alpha_i(t+\tau) < p2 * \alpha_0(t+\tau) <= \sum_{i=1}^k
+\alpha_i(t + \tau)

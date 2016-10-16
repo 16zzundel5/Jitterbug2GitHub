@@ -1,0 +1,52 @@
+From ibiosim@gmail.com  Fri Apr 19 11:14:56 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ob0-f181.google.com (mail-ob0-f181.google.com [209.85.214.181])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r3JHEsTT015123
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 19 Apr 2013 11:14:54 -0600
+Received: by mail-ob0-f181.google.com with SMTP id wo10so3735992obc.12
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 19 Apr 2013 10:14:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=qaArPTdrYO1yT6Vr56D+rr2VOVk19FK5UYktjF97CFY=;
+        b=Pc4b8yGEJgB3HjE57yYFt8doYAmIztx8+fDsR27inYo2tEpliKju1ds5Bghc/SYrkX
+         C0gZToC6dpdR4btGBH9CTJO+bBfkGplslGGSD9Ot6mXE6lVCY6oJlHTWRvfVq6EdFcx/
+         LCb3uFhM8sC0vsZvXhOyvMQVuxDF5cZBQtG0/An0SPoyWQxoJGS8jlo3+TsweycA6Sdv
+         7CkanzMdbKgdCX280zpri+YmjSMIhHGdz4tTLsMIoNUEn5u1IeDuBXtk4mLj7lQNopzJ
+         Dmj0WvoFTDpS1uN5fo0owUPwKHz7z/XozK9o1rw7OHjm2r95ZfP8Rha6hFXfl0RzSWF8
+         41QA==
+X-Received: by 10.60.37.36 with SMTP id v4mr4462243oej.53.1366391693670;
+        Fri, 19 Apr 2013 10:14:53 -0700 (PDT)
+Received: from gargravarr ([128.110.231.103])
+        by mx.google.com with ESMTPS id s8sm7185407obf.2.2013.04.19.10.14.51
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Fri, 19 Apr 2013 10:14:52 -0700 (PDT)
+Date: Fri, 19 Apr 2013 10:14:52 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1827738990.0.1366391689333.JavaMail.jeff@gargravarr>
+Subject: BUG: Symmetric Division error on 2.4.6
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.4.6
+
+Operating system: Linux
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+Symmetric division still runs into a null pointer exception on version 2.4.6.
+
+Stack trace:
+java.lang.NullPointerException
+	at analysis.dynamicsim.Simulator.duplicateComponent(Simulator.java:544)
+	at analysis.dynamicsim.Simulator.fireEvents(Simulator.java:2137)
+	at analysis.dynamicsim.SimulatorSSADirect.simulate(SimulatorSSADirect.java:86)
+	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:87)
+	at analysis.Run.execute(Run.java:1280)
+	at analysis.AnalysisView.run(AnalysisView.java:2215)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

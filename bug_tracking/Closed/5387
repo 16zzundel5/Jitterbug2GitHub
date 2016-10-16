@@ -1,0 +1,36 @@
+From n.roehner@utah.edu  Mon Jun 13 12:34:14 2011
+Return-Path: <n.roehner@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p5DIYD3h029532
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 13 Jun 2011 12:34:13 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ar8EAEhX9k2bYbVl/2dsb2JhbABSEKcOB6kxlg6Id4YkBIcNg0+GWI8oVA
+X-IronPort-AV: E=Sophos;i="4.65,359,1304316000"; 
+   d="scan'208";a="344267297"
+Received: from h101.umail.utah.edu (HELO HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 13 Jun 2011 12:34:12 -0600
+Received: from C5V2.xds.umail.utah.edu ([169.254.1.107]) by
+ HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi; Mon, 13 Jun 2011
+ 12:34:12 -0600
+From: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Mon, 13 Jun 2011 12:29:50 -0600
+Subject: BUG:  Drawing complex formation arc between explicit promoter and
+ species causes error in SBML generation
+Thread-Topic: Drawing complex formation arc between explicit promoter and
+ species causes error in SBML generation
+Thread-Index: AQHMKfh9ZN53TuL0QEWiUW3/yPZqLw==
+Message-ID: <F3FE734CBA37DE4989B91D55FAAB78B596A4B40522@C5V2.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p5DIYD3h029532
+
+If the complex influence button is selected when drawing an influence between an explicit promoter P1 and species S1, then SBML generated from the GCM will have a complex formation reaction between species "none" and S1 instead of the proper promoter binding and production reactions.
+

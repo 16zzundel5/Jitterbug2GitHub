@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: checks on species (PR#2426)
+Date: Sun Jan  6 21:26:17 2008
+
+These issues remain:
+
+Only one of initialAmount or initialConcentration but none is also okay.
+In this case, hasOnlySubstanceUnits must be used.
+
+units of initialAmount are substanceUnits while initialConcentration are
+substanceUnits/size with size defined by its compartment.

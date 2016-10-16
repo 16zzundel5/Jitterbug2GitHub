@@ -1,0 +1,76 @@
+From andrew.n.fisher@utah.edu  Thu Nov 20 12:18:31 2014
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id sAKJIVh5006316
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 Nov 2014 12:18:31 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqYEAP49blSbYbVn/2dsb2JhbABaDoI6gXjTIAKBHgEBAQEBfYN5CwWBCwELAQoUQxMmAQQbiDmvC6A7AYYDAR+QV4NlgR4Fi1+GfaMAgztAgjWBAwEBAQ
+X-IPAS-Result: AqYEAP49blSbYbVn/2dsb2JhbABaDoI6gXjTIAKBHgEBAQEBfYN5CwWBCwELAQoUQxMmAQQbiDmvC6A7AYYDAR+QV4NlgR4Fi1+GfaMAgztAgjWBAwEBAQ
+X-IronPort-AV: E=Sophos;i="5.07,425,1413266400"; 
+   d="scan'208,217";a="349793521"
+Received: from h103.umail.utah.edu (HELO X-HUB3.xds.umail.utah.edu) ([155.97.181.103])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/AES256-SHA; 20 Nov 2014 12:18:21 -0700
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.230]) by
+ X-HUB3.xds.umail.utah.edu ([155.97.181.103]) with mapi id 14.03.0195.001;
+ Thu, 20 Nov 2014 12:18:21 -0700
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: Bug Report <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: On linux, error in bring up external resources.
+Thread-Topic: On linux, error in bring up external resources.
+Thread-Index: AdAE9r8v0Nh5uLEuRaizn1DRas90ug==
+Date: Thu, 20 Nov 2014 19:18:21 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED2FE2AE93@X-MB8.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.97.183.136]
+Content-Type: multipart/alternative;
+	boundary="_000_33C595BF585B104B8418E9E32A58C0ED2FE2AE93XMB8xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_33C595BF585B104B8418E9E32A58C0ED2FE2AE93XMB8xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+When you click anything that requires an external source (for example click=
+ing on the help manual which brings up an external PDF viewer), you get an =
+error: Unable to open...
+
+The error is related to:
+Executing:
+gnome-open /home/fedoralaptop/workspace/BioSim/docs/LEMA.html
+
+The root cause is that gnome-open is no longer always available. I believe =
+it is mostly replaced as well.
+
+--_000_33C595BF585B104B8418E9E32A58C0ED2FE2AE93XMB8xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">When you click anything that requires an external source (for exampl=
+e clicking on the help manual which brings up an external PDF viewer), you =
+get an error: Unable to open...<br>
+<br>
+The error is related to:<br>
+Executing:<br>
+gnome-open /home/fedoralaptop/workspace/BioSim/docs/LEMA.html<br>
+<br>
+The root cause is that gnome-open is no longer always available. I believe =
+it is mostly replaced as well.<br>
+</div>
+</body>
+</html>
+
+--_000_33C595BF585B104B8418E9E32A58C0ED2FE2AE93XMB8xdsumailuta_--
+

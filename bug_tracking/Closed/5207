@@ -1,0 +1,28 @@
+From n.roehner@utah.edu  Wed Nov 24 11:37:46 2010
+Return-Path: <n.roehner@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oAOIbkq8009548
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 24 Nov 2010 11:37:46 -0700
+Date: Wed, 24 Nov 2010 11:37:46 -0700
+Message-Id: <201011241837.oAOIbkq8009548@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG can't open explicit promoters or associated arcs in schematic editor
+
+Full_Name: Nicholas Roehner
+tool: BioSim
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: nroehner
+
+
+This may already be known, but in case it isn't:  we can't open explicit
+promoters or any arcs leading into or out of them in the schematic editor.
+

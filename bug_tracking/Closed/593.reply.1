@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: Xatacs is broken (PR#593)
+Date: Fri Sep 21 15:28:05 2001
+
+Should be fixed now.  To use it, you must do the following:
+
+setenv ATACS <path to top of your atacs tree>
+cd <path to top of atacs tree>/src
+touch atacs.o
+make
+cd ../examples/<someplace fun>
+Xatacs
+
+Enjoy!
+
+Note that only atacs -h commands are and will be supported from this
+interface.  Now, I will go update all the help for just these commands.

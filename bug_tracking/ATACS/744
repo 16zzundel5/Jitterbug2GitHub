@@ -1,0 +1,51 @@
+From atacs-bugs  Thu Feb 13 16:34:28 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h1DNYSx03729
+	for atacs-bugs@shang.elen.utah.edu; Thu, 13 Feb 2003 16:34:28 -0700
+Received: from jiaqi.stanford.edu (DNab40467e.Stanford.EDU [171.64.70.126])
+	by chou.ece.utah.edu (8.11.6/8.11.6) with ESMTP id h1DNYRq03726
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 13 Feb 2003 16:34:27 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h1DNRds02715
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 13 Feb 2003 15:27:39 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Thu, 13 Feb 2003 15:27:39 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: potential bug in postprocess
+Message-ID: <Pine.LNX.4.44.0302131527170.2712-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+---------- Forwarded message ----------
+Date: Fri, 24 Jan 2003 14:22:35 -0700 (MST)
+From: Hao Zheng <hao@chen.elen.utah.edu>
+To: Chris J. Myers <myers@vlsigroup.ece.utah.edu>
+Subject: Re: bug in doc
+
+Well, in that transformation, both t2 and t3 are dummies, so we shouldn't 
+care how many times t2 fires. This should be pointed out and the code 
+should be modified.
+
+Thanks
+Hao
+
+
+On Fri, 24 Jan 2003, Chris J. Myers wrote:
+
+> 
+> Hi,
+> 
+> Figure 2 in your doc has a problem.  In net 2(a), t2 can fire an infinite 
+> number of times before t4 fires, but in 2(b) it can fire only once.  
+> What's wrong here?
+> 
+> Cheers,
+> 
+> Chris
+> 
+> 
+

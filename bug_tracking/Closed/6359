@@ -1,0 +1,19 @@
+From V.Dubikhin1@newcastle.ac.uk  Tue Aug 11 10:56:04 2015
+Return-Path: <V.Dubikhin1@newcastle.ac.uk>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t7BGu30t021386
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Aug 2015 10:56:04 -0600
+Date: Tue, 11 Aug 2015 10:56:03 -0600
+Message-Id: <201508111656.t7BGu30t021386@chou.ece.utah.edu>
+From: V.Dubikhin1@newcastle.ac.uk
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE Enable DBM printing in state graph
+
+Full_Name: Vladimir Dubikhin
+Version: LEMA 2.8.4
+OS: Linux
+Submission from: (NULL) (128.240.225.110)
+
+
+Please, add the ability to print DBM information inside state graph.
+

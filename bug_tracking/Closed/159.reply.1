@@ -1,0 +1,29 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Add support for concurrent signal assignment statements from VHDL. (PR#159)
+Date: Tue Jul 20 09:22:27 1999
+CC: hao
+
+I am not convinced this works.  
+I have cvs added and commited some VHDL code that I think should test it:
+
+	atacs/examples/csa.vhd and
+	atacs/examples/csa_tb.vhd
+
+The compiler rejects it:
+
+176 song:~/atacs/examples> pwd
+/home/xia/peskin/atacs/examples
+177 song:~/atacs/examples> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   utmp     12385566 Jul 20 08:28
+/home/xia/peskin/atacs/src/atacs*
+178 song:~/atacs/examples> atacs -ya csa_tb
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling csa_tb.vhd ... 
+csa.vhd: 16: syntax error.
+ERROR:  Cannot access csa_tb.tel!
+179 song:~/atacs/examples>
+
+Am I missing something about how to code this?
+For now, I will move this to Incorrect Behavior.

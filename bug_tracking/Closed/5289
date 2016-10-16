@@ -1,0 +1,29 @@
+From myers@ece.utah.edu  Wed Feb 16 11:47:15 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p1GIlEZP002867
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 16 Feb 2011 11:47:14 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PpmPC-0003zy-LL
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 16 Feb 2011 11:47:14 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: change all assignments in always blocks to be non-blocking
+Date: Wed, 16 Feb 2011 11:47:09 -0700
+Message-Id: <0AEF6146-A9B5-4CD7-A615-2B4FC02E79F3@ece.utah.edu>
+To: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+
+a = 1
+
+Should be 
+
+a <= 1
+
+in all cases.
+

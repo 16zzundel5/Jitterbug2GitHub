@@ -1,0 +1,15 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.ece.utah.edu
+Subject: Re: Postprocess problem (PR#654)
+Date: Sat Apr 20 14:46:29 2002
+
+The problem was that abstraction would allow postprocessing of the nets of the
+following form:
+
+a -> $ -> b
+a -> c -> b
+
+where $ and c conflict.  This is not allowed in a PN, and it eventually gets you
+in trouble in a TEL also.
+
+This is now no longer allowed and mm1 works again.

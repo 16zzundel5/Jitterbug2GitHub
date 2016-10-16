@@ -1,0 +1,20 @@
+From V.Dubikhin1@newcastle.ac.uk  Mon Mar 23 09:57:06 2015
+Return-Path: <V.Dubikhin1@newcastle.ac.uk>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t2NFv5J7026449
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 Mar 2015 09:57:06 -0600
+Date: Mon, 23 Mar 2015 09:57:05 -0600
+Message-Id: <201503231557.t2NFv5J7026449@chou.ece.utah.edu>
+From: V.Dubikhin1@newcastle.ac.uk
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: removing a place/transiotion, used in control flow.
+
+Full_Name: Vladimir Dubikhin
+Version: LEMA 
+OS: Linux
+Submission from: (NULL) (128.240.225.110)
+
+
+Please, add ability to remove a place/transition, used in control flow. Now it
+is not possible without manually removing control flow relations first.
+

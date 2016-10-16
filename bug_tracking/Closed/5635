@@ -1,0 +1,23 @@
+From sarbruis@gmail.com  Mon Apr  9 17:32:04 2012
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q39NW3mp009326
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 9 Apr 2012 17:32:03 -0600
+Date: Mon, 9 Apr 2012 17:32:03 -0600
+Message-Id: <201204092332.q39NW3mp009326@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: files not being deleted
+
+Full_Name: jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 174-27-204-227.slkc.qwest.net (174.27.204.227)
+Submitted by: jstev
+
+
+When I delete a model from a project, the analysis view folder and a
+***.xml.temp file still remain.
+

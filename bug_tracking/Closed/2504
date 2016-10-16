@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:13:20 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.191])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELCnff012365
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:13:19 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so525909fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:13:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=Bc2qkZkd/hq4q0Mbg4Gkr1JxbekPph13gLhbtDRLMSE=;
+        b=ESKE6h8HkV48qKG7diNNj2YQ6kdghjcOaR28WhF16BGyBKXiV5vfjZ6/GgW9YNZg7LyBtZce4wOdqe3lfU9mRjGKotllF/ayIhi5ZSuOy7EGnKh5s/VhIQMSKRZkT/fKbt4u43cndHWxxSEtbqUdVIPN2B3llyUdWWMBBp5ny+8=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=fT8zqliYX34kKDcHGcegIl8P6Zd1bukK4X51CvIgnr/9X9Tn0PyM9SaUhdsqOnh8TbzwdXtzOjqfZRyQu3ATmZ8jKTyIX0gH5jU/aD6Celcjhuy99rj1Xk7y2447o3bHYIjEgpO/xnjSS5q98f+yo0f5TGykNVI9ybDOU2LCcGo=
+Received: by 10.82.187.2 with SMTP id k2mr3405941buf.16.1203023599235;
+        Thu, 14 Feb 2008 13:13:19 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:13:19 -0800 (PST)
+Message-ID: <eba119560802141313r2b894be2ufe217db08fea2c88@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:13:19 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Link GCM to Analysis
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Link a GCM file to an analysis view.
+

@@ -1,0 +1,16 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: add support to SystemVerilog for continuous models (PR#5324)
+Date: Wed May  4 18:25:30 2011
+
+
+Add a reset variable which is 1 then set to 0 after 1 time unit.
+
+ 
+assign #delta step = (!step)&(!reset);
+ 
+always @(step) begin
+ 	<cont_var> <= <cont_var> + rate_<cont_var>
+end
+
+Note that the change and entryTime variable no longer needed.

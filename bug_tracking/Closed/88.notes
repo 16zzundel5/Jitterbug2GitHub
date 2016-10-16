@@ -1,0 +1,11 @@
+The timing constraints given in module main of main.csp don't appear in
+main.er.
+
+Furthermore, this makes it difficult to distinguish inputs and outputs.
+In this example, module main of main.csp wanted a to be an input, but main.er
+treats it as an output.
+
+This also shows that the current convention for declaring inputs makes it
+difficult to have environment processes.  By declaring a as an input, module
+main was trying to specify that buf1 was the circuit and inv1 was the
+environment.  But that information is missing from main.er.

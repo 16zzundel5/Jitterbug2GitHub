@@ -1,0 +1,161 @@
+From atacs-bugs  Mon Jun  5 09:31:34 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id JAA24636
+	for atacs-bugs@shang.elen.utah.edu; Mon, 5 Jun 2000 09:31:33 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA24632
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 5 Jun 2000 09:31:33 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id JAA01001
+	for atacs-bugs@vlsigroup; Mon, 5 Jun 2000 09:35:08 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200006051535.JAA01001@jiaqi.elen.utah.edu>
+Subject: Re: ATACS (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Mon, 5 Jun 2000 09:35:08 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From jordic@lsi.upc.es  Sat Dec 11 02:17:05 1999
+Return-Path: <jordic@lsi.upc.es>
+Received: from lsi.upc.es (pon-hme0.lsi.upc.es [147.83.20.159])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id BAA00792
+	for <myers@vlsigroup.elen.utah.edu>; Sat, 11 Dec 1999 01:18:32 -0700
+Received: from petri (jordic@infovia12.upc.es [147.83.116.12])
+	by lsi.upc.es (8.8.5/8.8.5) with SMTP id JAA24371;
+	Sat, 11 Dec 1999 09:18:22 +0100 (MET)
+Sender: jordic@lsi.upc.es
+Message-ID: <385208DA.35144EA6@lsi.upc.es>
+Date: Sat, 11 Dec 1999 09:18:34 +0100
+From: Jordi Cortadella <jordic@lsi.upc.es>
+Organization: Universitat Politecnica de Catalunya
+X-Mailer: Mozilla 3.01 (X11; I; Linux 1.2.13 i586)
+MIME-Version: 1.0
+To: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+CC: jordic@lsi.upc.es
+Subject: Re: ATACS
+References: <199912101826.LAA04282@jiaqi.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Chris J. Myers wrote:
+
+> A newer version should be there now.
+
+Yes, but I was supposed to receive a login account and a
+password, right ? I did not receive it yet ...
+Do I need it ?
+
+> 
+> Can you give me a little more information about what you are trying to do
+> to help me craft a suitable example?
+> 
+
+We are currently working on a verifier based on relative timing. We want
+to use
+ATACS for two reasons: (1) comparison of results, (2) double check that
+the
+results given by both verifiers are consistent.
+
+Let me give you a simple example on the type of things we would like to
+verify
+with ATACS. Let us take the xyz example:
+
+Assume that x,y are inputs and z is output.
+We implement z with the following netlist:
+
+yb = y
+w = z * yb
+z = x + w
+
+This implementation is hazardous under the unbounded gate delay model
+(i.e. it is not speed independent). However it might be hazard free by
+assuming some realistic delays on the gates.
+
+The way we typically do verification is by calculating the synchronous
+product of two processes: the environment and the circuit. It works
+as follows: we have two processes, they run concurrently.
+A common event can only fire when it is enabled in both processes. When
+it fires, it simultaneously fires in both processes. This is the
+classical synchronous product in Petri nets or in transition systems.
+
+The usual property we want to verify is that no output event can
+be enabled in the circuit but not enabled in the environment (this means
+that the circuit can produce something not expected by the environment).
+
+We would like to model both processes as a list of guarded commands.
+Moreover, we would like to model any type of (safe) Petri net by
+mimicking
+places with signals. Let me know if something like this would work
+(I tried to use the syntax described in the ATACS manual):
+
+================================================================================
+
+model xyz;
+
+input x={false}, y={false};
+output z={false},yb={false},w={false}; /* Outputs of the gates */
+output
+p1={true},p2={false},p3={false},p4={false},p5={false},p6={false},p7={false};
+/* These are the places of the safe Petri net. {true} indicates "marked"
+*/
+
+process circuit;
+*[ y & yb -> yb-
+ | y' & yb' -> yb+
+ | yb & z & w' -> w+
+ | (yb' | z') & w -> w-
+ | (w | x) & z' -> z+
+ | w' & x' & z -> z-
+ ]
+endprocess;
+
+process environment;
+*[ p1 -> x+; p1-; p2+; p5+;   /* p1 is predecessor of x+, p2 and p3 are
+successors */
+ | p2 -> [z+]; p2-; p3+;      /* For the environment, [z+] is an INPUT
+event */
+ | p3 -> x-; p3-; p4+;
+ | p5 -> y+; p5-; p6+;
+ | p4 & p6 -> [z-]; p4-; p6-; p7+;
+ | p7 -> y-; p7-; p1+
+]
+endprocess
+endmodule
+
+===================================================================================
+
+The failure states would be those in which the following predicates
+hold:
+
+(w | x) & z' & p2'    /* z+ enabled in the circuit byt not in the
+environment */
+w' & x' & z & (p4' | p6')  /* Similarly for z- */
+
+For simplicity, I did not use any delay assumptions yet. But I guess
+this should
+not be difficult to incorporate in the model.
+
+Question on guarded commands: imagine that p2=p5=true in the environment
+process.
+In this situation, there are two enabled guards. One of them waits for
+[z+], the other
+produces y+. Is the choice of the guard done non-deterministically
+before knowing
+the enabledness of [z+] in the circuit ? In other words, could the
+process choose
+the guard "p2" and wait for [z+] (even if not enabled) for any arbitrary
+amount of
+time (maybe infinite) for [z+] to fire ? 
+
+Could you please give me some assessment on how to model this example
+correctly in ATACS ?
+That would probably give an answer to most of my questions.
+
+Thanks a lot !
+
+--Jordi
+

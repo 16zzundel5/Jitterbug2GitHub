@@ -1,0 +1,90 @@
+From peskin@xia.elen.utah.edu  Wed Aug  4 16:21:54 1999
+Received: from xia.elen.utah.edu (xia.elen.utah.edu [128.110.18.236]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id QAA14356 for <atacs-bugs@shang.elen.utah.edu>; Wed, 4 Aug 1999 16:21:54 -0600 (MDT)
+Received: (from peskin@localhost)
+	by xia.elen.utah.edu (8.9.3/8.9.3) id QAA01033
+	for atacs-bugs@shang.elen.utah.edu; Wed, 4 Aug 1999 16:22:15 -0600
+Date: Wed, 4 Aug 1999 16:22:15 -0600
+From: Eric Peskin <peskin@xia.elen.utah.edu>
+Message-Id: <199908042222.QAA01033@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Re: Add switch to determine of TELs table is cleared on compile. (PR#184)
+
+It still looks broken to me.  Try the following sequence of commands:
+
+
+180 xia:~/atacs/examples> pwd
+/home/xia/peskin/atacs/examples
+181 xia:~/atacs/examples> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   console  12419349 Aug  4 11:25 /home/xia/peskin/atacs/src/atacs*
+182 xia:~/atacs/examples> make clean
+rm -f `cat .cvsignore`
+183 xia:~/atacs/examples> cvs diff lapb2.csp
+Index: lapb2.csp
+===================================================================
+RCS file: /home/ming/cvsroot/atacs/examples/lapb2.csp,v
+retrieving revision 1.1
+diff -r1.1 lapb2.csp
+2c2
+< include lapbsv;
+---
+> /*include lapbsv;*/
+184 xia:~/atacs/examples> atacs -msmUmPmTmc -lc lapbsv -ya lapb2
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using combinational optimization.
+Compiling lapbsv.csp ... 
+Storing process lapbctrl to lapbctrl.er
+error: Component 'lapb2' not found.
+ERROR:  Cannot access lapb2.er!
+Compiling lapb2.csp ... 
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process lapb2 to lapb2.er
+Loading timed event-rule structure from:  lapb2.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 75 iterations 50 regions, 55 new_reg, 36 states (stack_depth = 16)
+nodes = 247, dead = 688
+memory: max=431836 inuse=425556 free=6280 
+76 iterations 50 regions, 56 new_reg, 37 states (stack_depth = 16)
+nodes = 247, dead = 688
+memory: max=431836 inuse=426220 free=5616 
+154 iterations 100 regions, 111 new_reg, 73 states (stack_depth = 27)
+nodes = 247, dead = 688
+memory: max=505564 inuse=501428 free=4136 
+269 iterations 150 regions, 173 new_reg, 82 states (stack_depth = 17)
+nodes = 247, dead = 688
+memory: max=546524 inuse=527948 free=18576 
+nodes = 247, dead = 688
+memory: max=546524 inuse=521308 free=25216 
+done
+364 iterations, 182 regions, 202 new_regions, 82 states in 0.227101 seconds
+nodes in use = 247, dead = 688
+memory: max=546524 inuse=521308 free=25216
+Projecting out dummy transitions ... done
+Checking CSC ... complete state coded
+Finding regions ... done
+Finding conflicts ... done
+Finding cover ... done
+Storing production rules to:  lapb2.prs
+Total Area = 8 literals 22 transistors
+185 xia:~/atacs/examples> diff lapb2.prs.gold lapb2.prs
+0a1,2
+> [+o2: (~x_lapb2 & ~i3)]
+> [-o2: (i2 & x_lapb2)]
+4,11d5
+< [+o1: (~i1 & ~x_lapb1 & ~i2)]
+< [-o1: (i1)]
+< [+o2: (~x_lapb2 & ~i3)]
+< [-o2: (x_lapb2 & i2)]
+< [+x_lapb1: (o1)]
+< [-x_lapb1: (i2)]
+< [+i2: (~o1 & o2 & x_lapb1)]
+< [-i2: (~o2 & ~x_lapb1)]

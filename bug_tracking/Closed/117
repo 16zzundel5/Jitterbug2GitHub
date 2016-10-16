@@ -1,0 +1,28 @@
+From peskin@cs.utah.edu  Mon Apr 26 16:04:18 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id QAA17429 for <atacs-bugs@ming.elen.utah.edu>; Mon, 26 Apr 1999 16:04:17 -0600 (MDT)
+Date: Mon, 26 Apr 1999 16:04:17 -0600 (MDT)
+From: peskin@cs.utah.edu
+Message-Id: <199904262204.QAA17429@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: X interface fonts
+
+Full_Name: Eric Robert Peskin
+Version: Xatacs (from /home/shang/peskin/atacs  -rwxr-xr-x   1 peskin   101            31 Apr 26 14:08 Xatacs*
+-rwxr-xr-x   1 peskin   101      10594936 Apr 26 13:25 atacs*
+lrwxrwxrwx   1 peskin   101             5 Apr 26 14:03 xatacs -> atacs*
+
+OS: Linux shang.elen.utah.edu 2.0.36 #1 Tue Oct 13 22:17:11 EDT 1998 i586 unknown
+source: 
+log: 
+Submission from: erp.cs.utah.edu (155.99.193.91)
+Submitted by: peskin
+
+
+In the X interface,
+I would use a monospaced font (e.g., Courier) for any window that displays
+state vectors, cubes, or tables.  That way columns would line up.  Also
+currently each such window has a default size and shape that does not let
+you see all of its report (without first changing the size).  In cases
+where it is possible to do so, I'd open the window to an initial size and
+shape for which all its contents are visible.
+

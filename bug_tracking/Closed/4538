@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Wed Jul 23 10:58:28 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.1 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m6NGwS5A010054
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 23 Jul 2008 10:58:28 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.105])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1KLhb0-0003RN-LJ
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 23 Jul 2008 10:53:46 -0600
+Message-Id: <7B64B010-82AD-4FB8-948B-071635DE0026@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v926)
+Subject: FEATURE: give option for gcm to sbml direct abstractions
+Date: Wed, 23 Jul 2008 10:58:22 -0600
+X-Mailer: Apple Mail (2.926)
+
+Allow user to select dimerization and biochemical abstractions when  
+generating an SBML.
+

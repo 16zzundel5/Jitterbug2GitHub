@@ -1,0 +1,31 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: tschomay@sci.utah.edu
+Subject: Re: BUG:Not sure what happened, but I was moving a species that was in (PR#5831)
+Date: Fri Feb  1 16:09:46 2013
+
+Hi, 
+
+Looking at the stack traces you sent, I think I have a rough idea of how this
+happened.  It appears that you were 
+adding a complex formation connection between two species.  Somehow the species
+you were connecting too 
+seems to have no longer existed in the model.  I wonder if perhaps you deleted
+the species, but it was somehow 
+still showing up in the schematic.  When you tried to make this complex
+connection to this missing species, the 
+addition of the complex formation reaction failed.  This created a partial
+complex formation reaction.  
+Unfortunately, this partial reaction is causing problems, and it is why the
+other two exceptions occurred.  The 
+model can likely be fixed by switching to tabular editor (right click on the
+model file to do this and select 
+view/edit (tabular).  Then, you can go to the reaction tab and find a reaction
+named Complex_<speciesId> and 
+remove this reaction.  My guess is that <speciesId> is missing in the species
+tab.  
+
+Curious though how you got into this situation.
+
+Thanks,
+
+Chris

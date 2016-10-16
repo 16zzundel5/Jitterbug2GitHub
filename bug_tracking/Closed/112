@@ -1,0 +1,61 @@
+From stjung@ming.elen.utah.edu  Mon Apr 12 10:14:50 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA25736 for <atacs-bugs@ming.elen.utah.edu>; Mon, 12 Apr 1999 10:14:49 -0600 (MDT)
+Date: Mon, 12 Apr 1999 10:14:49 -0600 (MDT)
+Message-Id: <199904121614.KAA25736@yuan.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Verification Error
+
+Full_Name: Sungtae Jung
+Version: 4.1
+OS: Linux
+source: 
+log: 
+Submission from: ming.elen.utah.edu (128.110.18.208)
+Submitted by: stjung
+
+
+I made a STG example. ATACS has a problem to verify the synthesized circuit
+for the specification with "orbits"
+
+1) Verification did not complete error for the following commands:
+    > heuristic
+    > loadg *.g
+    > doall
+    > verify
+
+2) Segmentation error 
+    > heuristic
+    > loadg *.g
+    > gatelevel
+    > doall
+    > verify
+
+The STG is as follows:
+
+    
+
+.inputs a d e f s x
+.outputs z
+#@.init_state [1000000]
+.graph
+a+ z+
+z+ x+
+x+ s+/1 d+
+s+/1 e+
+d+ e+
+e+ x-
+x- s-/1
+s-/1 f+ d-
+f+ e-
+d- e-
+e- s+/2
+s+/2 f- z-
+f- a+
+z- a-
+a- s-/2
+s-/2 a+
+.marking {<a+,z+>}
+.end
+
+

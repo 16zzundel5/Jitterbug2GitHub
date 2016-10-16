@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: Remove component does not remove it from the list (PR#5100)
+Date: Wed Sep  8 15:26:24 2010
+
+Removing a component before removing its connections causes it to not be removed
+from the list.
+
+Therefore, should change the remove component method to remove both the
+component and its connections at the same time.

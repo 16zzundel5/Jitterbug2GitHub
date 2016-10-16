@@ -1,0 +1,80 @@
+From christian.atheist@gmail.com  Fri Sep 21 09:25:42 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.186])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l8LFPfZD032628
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 21 Sep 2007 09:25:42 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so817352fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 21 Sep 2007 08:25:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=/2An2gHId4giRCanJBhpFiDmTOSRKMkIAUaONlARvXk=;
+        b=CPqV3afrK+PNQBte8r5Uy9Fz8i2V2UnkYtiaDu5XQMcJoO4lxVdmpfAOZ3W5xd413m3lmCdGoltZbBhTOE+JaUPb3dq5odjbxEqmNt4+wO0SDpOnvL5oZjXnmoxgeXVmWjsMJ0jNplq55ycFW7wHe50/dqpiWRdGqDd/zxMR9z4=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=SdEtXrDrI6UAB997htksWlTFbd7D1bOQgcW06/kBwyvwRVQsv1RDrIFiAzR7U5Wa/5EwC5Z2PsAhAc57T99KR1rYHlihZD0WoW2RI5FGj/A08n3XfaYNuv7zHUzHMn0XBivlLOyEXyfloyL/wqA/VZeb0kIHhDUfsDBmLylSppI=
+Received: by 10.82.190.2 with SMTP id n2mr436753buf.1190388340305;
+        Fri, 21 Sep 2007 08:25:40 -0700 (PDT)
+Received: by 10.82.148.1 with HTTP; Fri, 21 Sep 2007 08:25:40 -0700 (PDT)
+Message-ID: <eba119560709210825jea5deealc4324ac524e20f4c@mail.gmail.com>
+Date: Fri, 21 Sep 2007 09:25:40 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Out of Memory Error
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I get an out of memory exception trying to bring up the graph widget.
+This is reproducible.
+
+Exception in thread "AWT-EventQueue-0" java.lang.OutOfMemoryError:
+Java heap space
+        at javax.swing.plaf.metal.MetalScrollBarUI.createDecreaseButton(MetalScrollBarUI.java:117)
+        at javax.swing.plaf.basic.BasicScrollBarUI.installComponents(BasicScrollBarUI.java:179)
+        at javax.swing.plaf.basic.BasicScrollBarUI.installUI(BasicScrollBarUI.java:131)
+        at javax.swing.JComponent.setUI(JComponent.java:668)
+        at javax.swing.JScrollBar.setUI(JScrollBar.java:190)
+        at javax.swing.JScrollBar.updateUI(JScrollBar.java:210)
+        at javax.swing.JScrollBar.<init>(JScrollBar.java:144)
+        at javax.swing.JScrollBar.<init>(JScrollBar.java:159)
+        at javax.swing.JScrollPane$ScrollBar.<init>(JScrollPane.java:701)
+        at javax.swing.JScrollPane.createVerticalScrollBar(JScrollPane.java:855)
+        at javax.swing.JScrollPane.<init>(JScrollPane.java:284)
+        at javax.swing.plaf.basic.BasicComboPopup.createScroller(BasicComboPopup.java:541)
+        at javax.swing.plaf.basic.BasicComboPopup.<init>(BasicComboPopup.java:316)
+        at javax.swing.plaf.basic.BasicComboBoxUI.createPopup(BasicComboBoxUI.java:393)
+        at javax.swing.plaf.metal.MetalComboBoxUI.createPopup(MetalComboBoxUI.java:148)
+        at javax.swing.plaf.basic.BasicComboBoxUI.installUI(BasicComboBoxUI.java:217)
+        at javax.swing.JComponent.setUI(JComponent.java:668)
+        at javax.swing.JComboBox.setUI(JComboBox.java:238)
+        at javax.swing.JComboBox.updateUI(JComboBox.java:247)
+        at javax.swing.JComboBox.init(JComboBox.java:212)
+        at javax.swing.JComboBox.<init>(JComboBox.java:178)
+        at graph.core.gui.Graph.fixGraphCoices(Graph.java:1985)
+        at graph.core.gui.Graph.access$700(Graph.java:38)
+        at graph.core.gui.Graph$2.valueChanged(Graph.java:825)
+        at javax.swing.JTree.fireValueChanged(JTree.java:2825)
+        at javax.swing.JTree$TreeSelectionRedirector.valueChanged(JTree.java:3196)
+        at javax.swing.tree.DefaultTreeSelectionModel.fireValueChanged(DefaultTreeSelectionModel.java:629)
+        at javax.swing.tree.DefaultTreeSelectionModel.notifyPathChange(DefaultTreeSelectionModel.java:1078)
+        at javax.swing.tree.DefaultTreeSelectionModel.setSelectionPaths(DefaultTreeSelectionModel.java:287)
+        at javax.swing.JTree.setSelectionPaths(JTree.java:1613)
+        at javax.swing.JTree.setSelectionRows(JTree.java:1686)
+        at javax.swing.JTree.setSelectionRow(JTree.java:1661)
+
+The following file at the link contains the zip that recreates the
+error.  Unzip the project, open up the toggle analysis view and click
+on the graph.
+
+http://www.eng.utah.edu/~namphuon/temp/outOfMemory.zip
+
+Cheers,
+Nam
+

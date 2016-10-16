@@ -1,0 +1,30 @@
+From n.roehner@utah.edu  Wed Nov 24 17:12:54 2010
+Return-Path: <n.roehner@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oAP0CsMY014118
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 24 Nov 2010 17:12:54 -0700
+Date: Wed, 24 Nov 2010 17:12:54 -0700
+Message-Id: <201011250012.oAP0CsMY014118@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG no port mapping for species in SBML associated with component
+
+Full_Name: Nicholas Roehner
+tool: BioSim
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: nroehner
+
+
+I have species in an SBML file associated with a component and these species
+share names with species that have been port mapped to/from the component.  When
+I generate SBML from a GCM containing this component, the duplicate species in
+the component's associated SBML file are not removed via port mapping.
+

@@ -1,0 +1,20 @@
+From myers@vlsigroup.elen.utah.edu  Wed Sep 22 09:36:16 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id JAA06746 for <atacs-bugs@shang.elen.utah.edu>; Wed, 22 Sep 1999 09:36:15 -0600 (MDT)
+Date: Wed, 22 Sep 1999 09:36:15 -0600 (MDT)
+Message-Id: <199909221536.JAA06746@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Redundant rules with conflict
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: MMU.csp
+log: 
+Submission from: jiaqi.elen.utah.edu (128.110.18.217)
+Submitted by: myers
+
+
+For the example, MMU.csp, it overly removes redundant rules.  This problem has
+to do with redundant rules in the presense of conflict.
+

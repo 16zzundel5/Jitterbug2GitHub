@@ -1,0 +1,313 @@
+From myers@eng.utah.edu  Thu Dec  3 17:24:51 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id tB40OoMX002975
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 3 Dec 2015 17:24:50 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1a4eB5-000P2X-FG)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 03 Dec 2015 17:24:50 -0700
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.232])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1a4eB1-000OB9-FT
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 03 Dec 2015 17:24:43 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_45400BF7-1942-47A7-9DB3-3D940C033732"
+Subject: CHANGE: remove array namespace on export when unused
+Date: Thu, 3 Dec 2015 17:24:40 -0700
+References: <76194179-CD27-4647-887D-CC219064C72E@gmail.com>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <875EC162-D292-4B59-9B58-9B4FA5537CCF@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.2 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_45400BF7-1942-47A7-9DB3-3D940C033732
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> Subject: Re: [jsbml-development] Re: [jsbml-team] List of all SBase
+> From: Leandro Watanabe <leandrohw@gmail.com>
+> Date: December 2, 2015 at 2:57:37 PM MST
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+>=20
+>=20
+>> On Nov 23, 2015, at 5:39 AM, Nicolas Rodriguez <rodrigue@ebi.ac.uk> =
+wrote:
+>>=20
+>> Hi Chris,
+>>=20
+>> Forwarding to the public list as this information could be =
+interesting for others.
+>> Answers inline below.
+>>=20
+>> On 23/11/15 09:12, Andreas Dr=C3=A4ger wrote:
+>>>> Am 22.11.2015 um 22:40 schrieb Chris J. Myers <myers@ece.utah.edu>:
+>>>>=20
+>>>> Hi,
+>>>>=20
+>>>> Is there a method to obtain all SBase objects in JSBML?  The reason =
+I ask is that I would like to be able to examine every SBase object =
+whether in core or an extension and see if it has a dimension or index.  =
+If none do have this, I would like to remove the arrays namespace on =
+export.  This way a tool that does not understand arrays would be able =
+to analyze the file.
+>>>>=20
+>>>> BTW, I think perhaps a method to remove unused namespaces from a =
+document would be very helpful to have in JSBML itself.
+>>=20
+>> If you call the method SBMLDocument#disablePackage("arrays") all of =
+the array elements, including the namespace declaration should
+>> not be written out.
+>> Also, we did not add yet a removeDeclaredNamespace method but you can =
+get the map with getDeclaredNamespaces() and remove
+>> namespace directly on the map but you have to know what you are =
+doing.
+>>=20
+>>=20
+>>>>=20
+>>>> Thanks,
+>>>>=20
+>>>> Chris
+>>>=20
+>>> Hi Chris,
+>>>=20
+>>> Yes, there is. I just commited a new example class that recursively =
+traverses an entire SBMLDocument and collects all SBases in a Set data =
+structure. You can modify it for your needs.
+>>>=20
+>>> See =
+http://sourceforge.net/p/jsbml/code/2405/tree//trunk/examples/test/src/org=
+/sbml/jsbml/test/RecursiveSBMLDocumentExploration.java
+>>=20
+>> To add to Andreas answer, you can always make use of the filter =
+methods available on SBase to get a set of objects that correspond to
+>> a specific condition.
+>>=20
+>> Here is an example for all SBase:
+>>=20
+>>     SBMLDocument doc =3D new SBMLReader().readSBML(inputFile);
+>>=20
+>>     @SuppressWarnings("unchecked")
+>>     Set<SBase> allSBaseInstances =3D (Set<SBase>) doc.filter(new =
+Filter() {
+>>=20
+>>       @Override
+>>       public boolean accepts(Object o) {
+>>=20
+>>         if (o instanceof SBase) {
+>>           // do your additional checks here and return true only if =
+they pass
+>>           return true;
+>>         }
+>>=20
+>>         return false;
+>>       }
+>>     });
+>>=20
+>> And here for you specific question:
+>>=20
+>>     @SuppressWarnings("unchecked")
+>>     List<SBase> allArrayInstances =3D (List<SBase>) doc.filter(new =
+Filter() {
+>>=20
+>>       @Override
+>>       public boolean accepts(Object o) {
+>>=20
+>>         if (o instanceof SBase) {
+>>           // do your additional checks here and return true only if =
+they pass
+>>           SBase sbase =3D (SBase) o;
+>>=20
+>>           if (sbase.isSetPlugin("arrays")) {
+>>             ArraysSBasePlugin arrayPlugin =3D  (ArraysSBasePlugin) =
+sbase.getPlugin("arrays");
+>>=20
+>>             if (arrayPlugin.getDimensionCount() > 0 || =
+arrayPlugin.getIndexCount() > 0) {
+>>               return true;
+>>             }
+>>           }
+>>         }
+>>=20
+>>         return false;
+>>       }
+>>     });
+>>=20
+>>=20
+>> cheers,
+>> Nico
+>>=20
+>> --=20
+>> You received this message because you are subscribed to the Google =
+Groups "jsbml-development" group.
+>> To unsubscribe from this group and stop receiving emails from it, =
+send an email to jsbml-development+unsubscribe@googlegroups.com.
+>> To post to this group, send email to =
+jsbml-development@googlegroups.com.
+>> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/jsbml-development/56530905.7070108%40ebi=
+.ac.uk.
+>> For more options, visit https://groups.google.com/d/optout.
+>=20
+
+
+--Apple-Mail=_45400BF7-1942-47A7-9DB3-3D940C033732
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Re: =
+[jsbml-development] Re: [jsbml-team] List of all SBase</b><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Leandro Watanabe &lt;<a =
+href=3D"mailto:leandrohw@gmail.com" =
+class=3D"">leandrohw@gmail.com</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">December 2, 2015 at 2:57:37 PM =
+MST<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+class=3D"">myers@ece.utah.edu</a>&gt;<br class=3D""></span></div><br =
+class=3D""><div class=3D""><br class=3D""><blockquote type=3D"cite" =
+class=3D"">On Nov 23, 2015, at 5:39 AM, Nicolas Rodriguez &lt;<a =
+href=3D"mailto:rodrigue@ebi.ac.uk" class=3D"">rodrigue@ebi.ac.uk</a>&gt; =
+wrote:<br class=3D""><br class=3D"">Hi Chris,<br class=3D""><br =
+class=3D"">Forwarding to the public list as this information could be =
+interesting for others.<br class=3D"">Answers inline below.<br =
+class=3D""><br class=3D"">On 23/11/15 09:12, Andreas Dr=C3=A4ger =
+wrote:<br class=3D""><blockquote type=3D"cite" class=3D""><blockquote =
+type=3D"cite" class=3D"">Am 22.11.2015 um 22:40 schrieb Chris J. Myers =
+&lt;<a href=3D"mailto:myers@ece.utah.edu" =
+class=3D"">myers@ece.utah.edu</a>&gt;:<br class=3D""><br class=3D"">Hi,<br=
+ class=3D""><br class=3D"">Is there a method to obtain all SBase objects =
+in JSBML? &nbsp;The reason I ask is that I would like to be able to =
+examine every SBase object whether in core or an extension and see if it =
+has a dimension or index. &nbsp;If none do have this, I would like to =
+remove the arrays namespace on export. &nbsp;This way a tool that does =
+not understand arrays would be able to analyze the file.<br class=3D""><br=
+ class=3D"">BTW, I think perhaps a method to remove unused namespaces =
+from a document would be very helpful to have in JSBML itself.<br =
+class=3D""></blockquote></blockquote><br class=3D"">If you call the =
+method SBMLDocument#disablePackage("arrays") all of the array elements, =
+including the namespace declaration should<br class=3D"">not be written =
+out.<br class=3D"">Also, we did not add yet a removeDeclaredNamespace =
+method but you can get the map with getDeclaredNamespaces() and =
+remove<br class=3D"">namespace directly on the map but you have to know =
+what you are doing.<br class=3D""><br class=3D""><br =
+class=3D""><blockquote type=3D"cite" class=3D""><blockquote type=3D"cite" =
+class=3D""><br class=3D"">Thanks,<br class=3D""><br class=3D"">Chris<br =
+class=3D""></blockquote><br class=3D"">Hi Chris,<br class=3D""><br =
+class=3D"">Yes, there is. I just commited a new example class that =
+recursively traverses an entire SBMLDocument and collects all SBases in =
+a Set data structure. You can modify it for your needs.<br class=3D""><br =
+class=3D"">See <a =
+href=3D"http://sourceforge.net/p/jsbml/code/2405/tree//trunk/examples/test=
+/src/org/sbml/jsbml/test/RecursiveSBMLDocumentExploration.java" =
+class=3D"">http://sourceforge.net/p/jsbml/code/2405/tree//trunk/examples/t=
+est/src/org/sbml/jsbml/test/RecursiveSBMLDocumentExploration.java</a><br =
+class=3D""></blockquote><br class=3D"">To add to Andreas answer, you can =
+always make use of the filter methods available on SBase to get a set of =
+objects that correspond to<br class=3D"">a specific condition.<br =
+class=3D""><br class=3D"">Here is an example for all SBase:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;SBMLDocument doc =3D =
+new SBMLReader().readSBML(inputFile);<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;SBase&gt; allSBaseInstances =3D =
+(Set&lt;SBase&gt;) doc.filter(new Filter() {<br class=3D""><br class=3D"">=
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public boolean accepts(Object o) =
+{<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (o instanceof SBase) =
+{<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do your =
+additional checks here and return true only if they pass<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return =
+true;<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return =
+false;<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br class=3D"">=
+ &nbsp;&nbsp;&nbsp;&nbsp;});<br class=3D""><br class=3D"">And here for =
+you specific question:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;SBase&gt; allArrayInstances =3D =
+(List&lt;SBase&gt;) doc.filter(new Filter() {<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public boolean accepts(Object o) =
+{<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (o instanceof SBase) =
+{<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// do your =
+additional checks here and return true only if they pass<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SBase sbase =
+=3D (SBase) o;<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if =
+(sbase.isSetPlugin("arrays")) {<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ar=
+raysSBasePlugin arrayPlugin =3D &nbsp;(ArraysSBasePlugin) =
+sbase.getPlugin("arrays");<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if=
+ (arrayPlugin.getDimensionCount() &gt; 0 || arrayPlugin.getIndexCount() =
+&gt; 0) {<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;return true;<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<=
+br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br =
+class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;});<br class=3D""><br class=3D""><br =
+class=3D"">cheers,<br class=3D"">Nico<br class=3D""><br class=3D"">-- =
+<br class=3D"">You received this message because you are subscribed to =
+the Google Groups "jsbml-development" group.<br class=3D"">To =
+unsubscribe from this group and stop receiving emails from it, send an =
+email to <a href=3D"mailto:jsbml-development+unsubscribe@googlegroups.com"=
+ class=3D"">jsbml-development+unsubscribe@googlegroups.com</a>.<br =
+class=3D"">To post to this group, send email to <a =
+href=3D"mailto:jsbml-development@googlegroups.com" =
+class=3D"">jsbml-development@googlegroups.com</a>.<br class=3D"">To view =
+this discussion on the web visit <a =
+href=3D"https://groups.google.com/d/msgid/jsbml-development/56530905.70701=
+08%40ebi.ac.uk" =
+class=3D"">https://groups.google.com/d/msgid/jsbml-development/56530905.70=
+70108%40ebi.ac.uk</a>.<br class=3D"">For more options, visit <a =
+href=3D"https://groups.google.com/d/optout" =
+class=3D"">https://groups.google.com/d/optout</a>.<br =
+class=3D""></blockquote><br class=3D""></div></blockquote></div><br =
+class=3D""></body></html>=
+
+--Apple-Mail=_45400BF7-1942-47A7-9DB3-3D940C033732--
+

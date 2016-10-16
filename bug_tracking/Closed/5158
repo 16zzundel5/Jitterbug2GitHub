@@ -1,0 +1,60 @@
+From moschino21@gmail.com  Mon Oct  4 11:34:27 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-ey0-f170.google.com (mail-ey0-f170.google.com [209.85.215.170])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o94HYQmD017856
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Oct 2010 11:34:27 -0600
+Received: by eyg24 with SMTP id 24so2955242eyg.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 04 Oct 2010 10:34:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:from:date
+         :message-id:subject:to:content-type;
+        bh=P805GfYS1DFhWWgzngmUfWx7avezyx251Xj+d0GdIoA=;
+        b=sLuxBsoBW+sQR7X6Jv88MfxacPkzAvbCe4yttFcy5tyqnEd8hO7scExUV/9j+TYR/w
+         o542h3no8IInEeahCny13FR/ZDjoQBzy45jAycraltMjxGlmxGcE+18PSMEBO8AH/cAQ
+         coz7ZrLbVofhqzMF3z4X5vOjg/f2avCxTvX8A=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=BjE0pZwTi0ZJsDoZ5j/yiCsslgIAEElBgqrXcGACtgskccSIhrhKD1iFRIlbFe/0nf
+         peklDEPR015E4jPmzYt7v+O6A3ArokcMDNBTw0ZBvJJQan4lD8rYyc/1Q+e8tdJ0EPcH
+         uEfGzwgxYqxpo21WCgt43wZSq7SK4ayEn5zhE=
+Received: by 10.213.21.148 with SMTP id j20mr8748764ebb.77.1286213665767; Mon,
+ 04 Oct 2010 10:34:25 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.14.125.4 with HTTP; Mon, 4 Oct 2010 10:34:05 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Mon, 4 Oct 2010 11:34:05 -0600
+Message-ID: <AANLkTikNyvfp1VuNJHbuH+=B=34V6B84Gi9SMJPCyZx8@mail.gmail.com>
+Subject: BUG: Unit Definitions editor does not allow changes on existing units
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0015174c0caea7442f0491cdf4b2
+
+--0015174c0caea7442f0491cdf4b2
+Content-Type: text/plain; charset=ISO-8859-1
+
+In List of Unit Definitions window, I can add a new unit definition, but if
+I open an existing one, it does not allow me to make changes and save it.
+There is also a pop up window saying "Changes in unit definition causes unit
+errors".
+
+-- 
+Zhen Zhang
+
+--0015174c0caea7442f0491cdf4b2
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+In List of Unit Definitions window, I can add a new unit definition, but if=
+ I open an existing one, it does not allow me to make changes and save it. =
+There is also a pop up window saying &quot;Changes in unit definition cause=
+s unit errors&quot;.<br clear=3D"all">
+
+<br>-- <br>Zhen Zhang<br>
+
+--0015174c0caea7442f0491cdf4b2--
+

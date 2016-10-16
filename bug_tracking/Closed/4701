@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Fri Mar 13 10:05:45 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2DG5jZv011498
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 Mar 2009 10:05:45 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Li96q-0002yp-A9
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 13 Mar 2009 09:15:40 -0600
+Message-Id: <2A393393-DBF6-4581-A694-F902EB8CB432@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: BUG: parsing multiple Boolean assignments
+Date: Fri, 13 Mar 2009 10:05:40 -0600
+X-Mailer: Apple Mail (2.929.2)
+
+If there is more than one Boolean assignment when open the file, it  
+parses it incorrectly.
+

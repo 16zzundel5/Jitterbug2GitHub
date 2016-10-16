@@ -1,0 +1,20 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: leandrohw@gmail.com
+Subject: Re: CHANGE: use getPlugin when needed (PR#6151)
+Date: Sat Sep 27 16:30:12 2014
+
+Hi Leandro,
+
+I just checked the code for all uses of getExtension, and most of them do check
+if the result is null.  However, 
+there are many calls to getExtension in the hierarchical simulation code that do
+not check if the result is null.  
+This could potentially result in null pointer exceptions.  Therefore, I think
+you need to make sure that they either 
+check for a null result OR that you use getPlugin instead if you want to ensure
+that you get something back.  
+Could you please check into this?
+
+Thanks,
+
+Chris

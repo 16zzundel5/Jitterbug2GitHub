@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Wed Mar  9 12:11:32 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p29JBWJ2010011
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 9 Mar 2011 12:11:32 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.107])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PxOnE-0006ib-HX
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 09 Mar 2011 12:11:32 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: results from autogen truncated
+Date: Wed, 9 Mar 2011 12:11:27 -0700
+Message-Id: <944C2A18-67E2-4CAE-A8A0-A0569BE336F5@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p29JBWJ2010011
+
+Results coming from autogen of levels for model generation should be truncated to a small number of digits but keeping a difference between the levels.
+
+

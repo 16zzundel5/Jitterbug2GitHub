@@ -1,0 +1,22 @@
+From myers@vlsigroup.elen.utah.edu  Sat Jun 12 11:25:21 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA01987 for <atacs-bugs@shang.elen.utah.edu>; Sat, 12 Jun 1999 11:25:20 -0600 (MDT)
+Date: Sat, 12 Jun 1999 11:25:20 -0600 (MDT)
+Message-Id: <199906121725.LAA01987@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add switch to determine of TELs table is cleared on compile.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: vlsi.elen.utah.edu (128.110.18.217)
+Submitted by: myers
+
+
+Add a switch called "cleartab" to set whether or not the TELs table is cleared
+on a new compile.  If it is set, the table is cleared each time a new csp,
+hse, or vhd file is loaded and compile.  If it is not set, then the TEL table
+persists between compiles.
+

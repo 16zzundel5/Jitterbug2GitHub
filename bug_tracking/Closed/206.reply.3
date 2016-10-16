@@ -1,0 +1,42 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: memlatchALL.csp core dumps during timed state space exploration. (PR#206)
+Date: Wed Aug  4 15:59:21 1999
+
+As Wendy points out in the notes, the seg fault is gone (see below).
+Therefore, I will close this report.  
+However, it still deadlocks.  So if it should not deadlock, please followup to
+that effect, and then move this to Incorrect Behavior.
+
+
+155 xia:~/atacs/examples> pwd
+/home/xia/peskin/atacs/examples
+156 xia:~/atacs/examples> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   console  12419349 Aug  4 11:25 /home/xia/peskin/atacs/s
+c/atacs*
+157 xia:~/atacs/examples> atacs -mcmsmUmPmT -ya memlatchALL
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Compiling memlatchALL.csp ... 
+Storing process memlatch to memlatch.er
+Storing process ai to ai.er
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process ctlenv to ctlenv.er
+Storing process latch to latch.er
+Storing process memlatchALL to memlatchALL.er
+Loading timed event-rule structure from:  memlatchALL.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... System deadlocked in state 110000000R
+Storing error trace state graph to:  memlatchALL.grf
+Executing command:  parg memlatchALL.grf &
+Storing error trace in VHDL to:  trace.vhd

@@ -1,0 +1,15 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: atacs -h seg faults (PR#506)
+Date: Sun Sep  3 15:16:42 2000
+
+OK.  I think the problem was that there was an 
+	if(it's atacs -h) print help;
+	else 
+		do other stuff
+With no braces around the do other stuff.  I think Chris neglected that 
+when he expanded "do other stuff"  I added braces around all of it, and 
+now it seems to work.
+
+So this is fixed as of cvs tag hWorks
+I will now close this report.

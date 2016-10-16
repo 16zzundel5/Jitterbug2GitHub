@@ -1,0 +1,20 @@
+From wendy@ee.utah.edu  Wed Apr  7 15:03:24 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id PAA25108 for <atacs-bugs@ming.elen.utah.edu>; Wed, 7 Apr 1999 15:03:24 -0600 (MDT)
+Date: Wed, 7 Apr 1999 15:03:24 -0600 (MDT)
+From: wendy@ee.utah.edu
+Message-Id: <199904072103.PAA25108@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Example udding.csp deadlocks under any 
+
+Full_Name: Wendy Belluomini
+Version: 4.1
+OS: Linux
+source: ~atacs/examples/bugs/udding.csp
+log: 
+Submission from: yuan.elen.utah.edu (128.110.18.206)
+Submitted by: wendy
+
+
+This example deadlocks under any options, including untimed.  This either means
+the specification does, in fact, deadlock, or there is a compiler
+bug.

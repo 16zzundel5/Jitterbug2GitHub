@@ -1,0 +1,25 @@
+From myers@vlsigroup.elen.utah.edu  Wed Nov 10 09:28:42 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA07391
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 10 Nov 1999 09:28:42 -0700
+Date: Wed, 10 Nov 1999 09:28:42 -0700
+Message-Id: <199911101628.JAA07391@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: No longer go through since cycles in acyclic graph halts synthesis.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+The following examples no longer go through due to cycles in the acyclic graph:
+
+pe-rcv-ifc.g
+pe-send-ifc.g
+sbufA.g
+

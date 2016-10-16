@@ -1,0 +1,55 @@
+From moschino21@gmail.com  Tue Jun  1 17:23:04 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-yw0-f179.google.com (mail-yw0-f179.google.com [209.85.211.179])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o51NN3Xa009327
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 1 Jun 2010 17:23:04 -0600
+Received: by ywh9 with SMTP id 9so4351404ywh.17
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 01 Jun 2010 16:23:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:from:date
+         :message-id:subject:to:content-type;
+        bh=AYV/pqbO0CUXdNKxl8NkXpoKPjq4ZBsRDOSpFwkQ1Xs=;
+        b=RCPgS8Fx7blfAQsgh5m+dr1oPxafBd6Ti+zpo6B/Gmhkg4R56hyxon6X9jrAZMw27x
+         340mpUHtnJqz9ZQeJWxqugCYZ4MAGANP/bOFesB8zr4DdE5qtiFVtw45i0/wE0xZXiqG
+         NEBVxaFqswOvpmVyjf5DPieDSAomOh2ycWWIc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=mF7SQSJBSy7RQiTHh6bqFrfdbdbxigGq7cuz1V6zuwDh6edjkJKiAkrtf8YoJxeE1r
+         MlU7Cj9tbcD/5M/FXAZWaBVjgCCS/HtGp332Jd/acBIrCka13Y/uy/sf6nzGJ5ZL6ECi
+         ObLDTfiFSnkAdYsMn+Ddzl9gs45oRJTvxrnVQ=
+Received: by 10.91.19.18 with SMTP id w18mr209928agi.160.1275434583187; Tue, 
+	01 Jun 2010 16:23:03 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.90.103.8 with HTTP; Tue, 1 Jun 2010 16:22:43 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Tue, 1 Jun 2010 17:22:43 -0600
+Message-ID: <AANLkTimP5SDZfZMSJBcYLXxXaxqUZbF4iGKymtOU_CsA@mail.gmail.com>
+Subject: BUG: Probability disappears for states without outgoing transition(s)
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0016e640d31c43e28b04880041cf
+
+--0016e640d31c43e28b04880041cf
+Content-Type: text/plain; charset=ISO-8859-1
+
+When performing Markovian analysis on an LPN file, it was found that the
+probability for states without outgoing transition(s) was 0. It should
+however keep the probability of reaching that state.
+
+-- 
+Zhen Zhang
+
+--0016e640d31c43e28b04880041cf
+Content-Type: text/html; charset=ISO-8859-1
+
+When performing Markovian analysis on an LPN file, it was found that the probability for states without outgoing transition(s) was 0. It should however keep the probability of reaching that state.<br clear="all"><br>-- <br>
+
+Zhen Zhang<br>
+
+--0016e640d31c43e28b04880041cf--
+

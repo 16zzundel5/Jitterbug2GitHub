@@ -1,0 +1,24 @@
+From myers@eng.utah.edu  Thu Jan  3 08:14:43 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r03FEfLk016986
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 3 Jan 2013 08:14:41 -0700
+Received: from c-98-202-13-26.hsd1.ut.comcast.net ([98.202.13.26] helo=[10.0.0.2])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1TqmQP-000HVs-Q0
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 03 Jan 2013 08:09:41 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: restore support for SSA-Direct
+Message-Id: <B29D9A31-1F85-4AA4-8DD8-602FA2A3C624@ece.utah.edu>
+Date: Thu, 3 Jan 2013 08:14:36 -0700
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.2 \(1499\))
+X-Mailer: Apple Mail (2.1499)
+Sender: myers@eng.utah.edu
+
+The java SSA-Direct method should be restored and tested.
+

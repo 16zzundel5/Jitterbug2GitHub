@@ -1,0 +1,33 @@
+From robert.a.thacker@us.army.mil  Thu Jan 22 10:47:41 2009
+Return-Path: <robert.a.thacker@us.army.mil>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.0 required=5.0 tests=BAYES_50,RCVD_IN_DNSWL_MED
+	autolearn=ham version=3.2.4
+Received: from mxoutdr1.us.army.mil (mxoutdr1.us.army.mil [143.69.242.38])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n0MHleAI006333
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 22 Jan 2009 10:47:41 -0700
+DomainKey-Signature: s=ako; d=us.army.mil; c=nofws; q=dns;
+  h=From:X-AKO:X-IronPort-AV:Received:Message-Id:To:
+   Content-Type:Content-Transfer-Encoding:Mime-Version:
+   Subject:Date:X-Mailer;
+  b=D9OTHLSv4Q0qmHkdbkg1/5YmVN1ol0UOQ2pPcAlwojW4dQI/TmOgw4Uq
+   OszT+g9eFBKp60Y0y9Q6a3ZAJDRDXA==;
+From: "Thacker, Robert A CPT RES USAR" <robert.a.thacker@us.army.mil>
+X-AKO: 655724185:155.98.26.227:22 Jan 2009 17:47:36 +0000:$AuthSMTP:-0.5
+X-IronPort-AV: E=Sophos;i="4.37,307,1231113600"; 
+   d="scan'208";a="655724185"
+Received: from changcheng.ece.utah.edu (HELO zorac.ece.utah.edu) ([155.98.26.227])
+  by mxoutdr1.us.army.mil with ESMTP; 22 Jan 2009 17:44:16 +0000
+Message-Id: <DAD720AD-872D-47F8-9F66-D516A73F67F3@us.army.mil>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Subject: FEATURE: FUTURE WORK: expression nodes
+Date: Thu, 22 Jan 2009 10:44:14 -0700
+X-Mailer: Apple Mail (2.930.3)
+
+should build a shared node structure to share subexpressions.  Maybe  
+some notion of when they were last evaluated?  support set??
+

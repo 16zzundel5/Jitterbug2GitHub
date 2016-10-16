@@ -1,0 +1,42 @@
+From peskin@ming.elen.utah.edu  Wed Apr 26 23:24:19 2000
+Return-Path: <peskin@ming.elen.utah.edu>
+Received: from ming.elen.utah.edu (ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id XAA15675
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 26 Apr 2000 23:24:18 -0600
+Received: (from peskin@localhost)
+	by ming.elen.utah.edu (8.9.3/8.9.3) id XAA28517
+	for atacs-bugs@shang.elen.utah.edu; Wed, 26 Apr 2000 23:24:18 -0600
+Date: Wed, 26 Apr 2000 23:24:18 -0600
+From: Eric Peskin <peskin@ming.elen.utah.edu>
+Message-Id: <200004270524.XAA28517@ming.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD89 broken repository!
+
+Linux ming.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387472 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	256 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:      
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+compare - There were 2 unmatched product terms.
+compare - There were 8 unmatched literals.
+make[1]: *** [cache_s7io7.PRS.ok] Error 10
+make: *** [unc/check.subDir] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files (may be benign) :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./csp/chantal.log:ERROR:  Cycle detected in acyclic constraint graph.
+./csp/chantal.log:ERROR:  Cycle detected in acyclic constraint graph.
+./g/glc.log:ERROR:  Cycle detected in acyclic constraint graph.
+./hse/pchbMUX.log:ERROR: Could not cover excitation regions with covers.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

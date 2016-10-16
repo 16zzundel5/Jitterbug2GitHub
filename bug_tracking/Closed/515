@@ -1,0 +1,25 @@
+From eemercer@ee.elen.utah.edu  Fri Sep 15 11:38:32 2000
+Return-Path: <eemercer@ee.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA13968
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 15 Sep 2000 11:38:28 -0600
+Date: Fri, 15 Sep 2000 11:38:28 -0600
+Message-Id: <200009151738.LAA13968@chou.elen.utah.edu>
+From: eemercer@ee.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Potential Verification Hole
+
+Full_Name: Eric G. Mercer
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: shang.elen.utah.edu (155.99.23.201)
+Submitted by: eemercer
+
+
+It is my understanding that the code that checks for disabled rules when using 
+disabling semantics (bool fire_transition in findrsg.c) only checks rules on 
+output events.  This means that diablings on input constraint rules are not 
+checked, leaving a verification hole that could lead to a false positive result.
+

@@ -1,0 +1,54 @@
+From scott.little@gmail.com  Sun Dec 20 13:15:48 2009
+Return-Path: <scott.little@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.2 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.5
+Received: from mail-yx0-f190.google.com (mail-yx0-f190.google.com [209.85.210.190])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id nBKKFmN3007708
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 20 Dec 2009 13:15:48 -0700
+Received: by yxe28 with SMTP id 28so4172069yxe.19
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 20 Dec 2009 12:15:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:date:message-id:subject
+         :from:to:content-type;
+        bh=TvQZ3JInU8y3ZXXg4BWpxSsKbGJgSm5kyyVQkK4k+QQ=;
+        b=UBvPOa64V5hDH9jogO5y42XNU5agXhD7q/qRaj566cYbdsBfoX4tzcIai4pXREC20m
+         gcKWyU81SWT5u79moTkTjqeH9cEglqdsMcs5sYN4GQkHFsnhgiHhAZDnfKSJtAjxvK0R
+         bxUxjDx5pcsRvKZ+zpuZkJ2Xk0wRiNmax1Aws=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        b=Tike54KoGwDHCq8RRej9RIqtOpKrwmYPz/ze7leP6gZbMh0+5aPLZmsiDKJjhi1qrc
+         JclnaoxxQG0bN2F34Lz/ECnUUz3cjIKDbM1oaTu4dmEU0tXYlFJPI1lApXjPA+KxZXzO
+         XAVCciQxXBWLXmgtsN4i5w1dLBZy7k9s+5Qus=
+MIME-Version: 1.0
+Received: by 10.91.164.16 with SMTP id r16mr1246268ago.12.1261340147539; Sun, 
+	20 Dec 2009 12:15:47 -0800 (PST)
+Date: Sun, 20 Dec 2009 14:15:47 -0600
+Message-ID: <a503d4960912201215s2fab9734pebcb3353aef2786d@mail.gmail.com>
+Subject: FEATURE Mass entry/read from file LHPN variables
+From: Scott Little <scott.little@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=001485f91ec46f62c9047b2ea39c
+
+--001485f91ec46f62c9047b2ea39c
+Content-Type: text/plain; charset=ISO-8859-1
+
+For large designs it is tedious to add all of the LHPN variables that will
+be used to learn.  It would be nice to automatically read these in from the
+data file or provide some sort of mass entry form.  Doing it one at a time
+is VERY painful.
+
+--001485f91ec46f62c9047b2ea39c
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+For large designs it is tedious to add all of the LHPN variables that will =
+be used to learn.=A0 It would be nice to automatically read these in from t=
+he data file or provide some sort of mass entry form.=A0 Doing it one at a =
+time is VERY painful.<br>
+
+--001485f91ec46f62c9047b2ea39c--
+

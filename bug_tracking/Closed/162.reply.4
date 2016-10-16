@@ -1,0 +1,21 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: stjung@wonnms.wonkwang.ac.kr
+Subject: Re: Verbose files for direct synthesis method. (PR#162)
+Date: Mon Nov 15 15:32:58 1999
+
+OK, yes this seems to work, although the file structure is a little different
+from that in Followup 1.   
+
+
+These files:
+   filename.cc  : timed concurrent events 
+   filename.cf  : conflict events 
+   filename.cs  : timed cause events
+   filename.re  : next/revious reverse events
+have been merged into one file, named
+   filename.rel
+Also the precedence graph now appears in 
+   filename.pg
+
+In any case, this stuff is no longer dumped to atacs.log.
+I will now close this report.

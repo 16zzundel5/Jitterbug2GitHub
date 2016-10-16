@@ -1,0 +1,15 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: refreshtree to not walk the tree (PR#5087)
+Date: Tue Aug 31 23:00:53 2010
+
+There are now "addToTree" and "deleteFromTree" methods that are called whenever
+something is added to the tree or removed from the tree.  Moving to needs
+testing.
+
+> refreshtree should just rebuild the tree from the file system.
+> 
+> Create an "addToTree" and "deleteFromTree" methods to update exactly  
+> what changed.
+> 
+> 

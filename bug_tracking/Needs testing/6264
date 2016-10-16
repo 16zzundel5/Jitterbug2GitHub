@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Fri Mar  6 09:44:31 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t26GiVfw022813
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Mar 2015 09:44:31 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.82 id 1YTvMO-000959-Up)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 Mar 2015 09:44:31 -0700
+Received: from c-98-202-139-229.hsd1.ut.comcast.net ([98.202.139.229] helo=[10.0.0.3])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YTvPW-000KeJ-77
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 06 Mar 2015 09:47:38 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: BUG: thresholds not saved in lpn learn view
+Message-Id: <795C7F11-1C7D-4BB8-A57D-745284579335@ece.utah.edu>
+Date: Fri, 6 Mar 2015 09:44:17 -0700
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.9 (--)
+X-spam-level: --
+
+When you reopen an LPN learn view, it has lost the DMV thresholds.
+

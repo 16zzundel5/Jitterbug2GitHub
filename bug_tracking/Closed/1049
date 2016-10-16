@@ -1,0 +1,52 @@
+From atacs-bugs@chou.ece.utah.edu  Fri Apr  7 16:49:21 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.6/8.13.1) with ESMTP id k37MnLki031072
+	for <atacs-bugs@shang.ece.utah.edu>; Fri, 7 Apr 2006 16:49:21 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.6/8.13.6/Submit) id k37MnLMg031071
+	for atacs-bugs@shang.ece.utah.edu; Fri, 7 Apr 2006 16:49:21 -0600
+Received: from hotmail.com (bay103-f22.bay103.hotmail.com [65.54.174.32])
+	by chou.ece.utah.edu (8.13.6/8.13.1) with ESMTP id k37MnJqX031060;
+	Fri, 7 Apr 2006 16:49:20 -0600
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Fri, 7 Apr 2006 15:49:19 -0700
+Message-ID: <BAY103-F22F4DADBC190C807F827ADC6C90@phx.gbl>
+Received: from 65.54.174.200 by by103fd.bay103.hotmail.msn.com with HTTP;
+	Fri, 07 Apr 2006 22:49:15 GMT
+X-Originating-IP: [155.98.26.227]
+X-Originating-Email: [kaijai5863@hotmail.com]
+X-Sender: kaijai5863@hotmail.com
+From: "Kevin Jones" <kaijai5863@hotmail.com>
+To: seegmill@vlsi.ece.utah.edu
+Cc: atacs-bugs@vlsi.ece.utah.edu
+Subject: Compiler Bugs
+Date: Fri, 07 Apr 2006 16:49:15 -0600
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+X-OriginalArrivalTime: 07 Apr 2006 22:49:19.0298 (UTC) FILETIME=[81533A20:01C65A95]
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.4 required=5.0 tests=AWL,FROM_ENDS_IN_NUMS,
+	MSGID_FROM_MTA_HEADER autolearn=no version=3.0.4
+
+I have run the library of examples through atacs with the following results:
+
+railroadcontroller.vhd -- 1) parentheses bug
+corbett.vhd -- 1) nonsupport of sync function (newly added to handshake 
+package)
+fish2.vhd -- 1) nonsupport of span within 'above statement
+                          Example: x'above(span(7.0,11.0));
+                     2) nonsupport of constant placed within 'above 
+statement
+                           Example: x'above(a); (where a is defined above as 
+a constant with a real value)
+                      3) parentheses bug (as in railroadcontroller.vhd)
+active.vhd -- 1) nonsupport of constant placed within above statement (as in 
+fish2.vhd)
+                       2) following the replacement of a constant with a 
+real value, the example caused a
+                                 segmentation fault when run through atacs, 
+for reasons unknown
+
+

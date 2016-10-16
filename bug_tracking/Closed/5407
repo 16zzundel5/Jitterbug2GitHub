@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Thu Jun 30 17:59:49 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p5UNxnHY028227
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 30 Jun 2011 17:59:49 -0600
+Received: from 155-99-196-92.uconnect.utah.edu ([155.99.196.92])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QcR9B-000115-3c
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 30 Jun 2011 17:59:49 -0600
+Message-Id: <6F5787E9-A6CA-4BE8-89BA-1D5456BE6092@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: problem with importing some biomodels
+Date: Thu, 30 Jun 2011 17:59:48 -0600
+X-Mailer: Apple Mail (2.936)
+
+Conversion of these to L3V1 crashes:
+
+Biomodels 65, 144, 168
+

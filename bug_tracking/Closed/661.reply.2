@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: peskin@ming.ece.utah.edu
+Subject: Re: BAD671 broken repository! (PR#661)
+Date: Tue May 14 00:26:41 2002
+
+The issue here has to do with time-dependent choice.  Postprocessing can
+introduce differing behaviors when time-dependent choice is used.  Posets (-ts)
+is always time-dependent.  Bap allows either semantic option (-tp is
+time-independent, -tt is time-dependent).  Therefore, switching between -tp and
+-tt with postprocessing yields both possible circuits.  Since -tp is now the
+default, domino2 can be safely added back into the regression test suite.

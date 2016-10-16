@@ -1,0 +1,55 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: thidinhnguyen91@gmail.com
+Subject: Re: BUG: (PR#6222)
+Date: Fri Feb  6 22:40:36 2015
+CC: myers@ece.utah.edu
+
+I believe this is due to the wrong version of Java.  You mentioned updating
+Java.  Is this problem gone 
+now?
+
+Chris
+
+> iBioSim Version 2.8.1
+> 
+> Operating system: Mac OS X
+> 
+> Bug reported by: thidinhnguyen91@gmail.com
+> 
+> Description:
+> 
+> 
+> Stack trace:
+> java.lang.UnsupportedClassVersionError: com/mxgraph/util/mxConstants
+> 	at main.util.EditPreferences$SchematicElement.<init>(EditPreferences.java:134)
+> 	at main.util.EditPreferences$SchematicElement.<init>(EditPreferences.java:119)
+> 	at main.util.EditPreferences.setDefaultSchematicPreferences(EditPreferences.java:332)
+> 	at main.util.EditPreferences.schematicPreferences(EditPreferences.java:516)
+> 	at main.util.EditPreferences.preferences(EditPreferences.java:1372)
+> 	at main.Gui$MacOSPreferencesHandler$PreferencesHandler.handlePreferences(Gui.java:342)
+> 	at com.apple.eawt._AppEventLegacyHandler$2.dispatchEvent(_AppEventLegacyHandler.java:90)
+> 	at 
+com.apple.eawt._AppEventLegacyHandler.sendEventToEachListenerUntilHandled(_AppEventLegacyHandler
+.java:168)
+> 	at com.apple.eawt._AppEventLegacyHandler.handlePreferences(_AppEventLegacyHandler.java:88)
+> 	at 
+com.apple.eawt._AppEventHandler$_PreferencesDispatcher.performUsing(_AppEventHandler.java:253)
+> 	at 
+com.apple.eawt._AppEventHandler$_PreferencesDispatcher.performUsing(_AppEventHandler.java:244)
+> 	at com.apple.eawt._AppEventHandler$_AppEventDispatcher$1.run(_AppEventHandler.java:489)
+> 	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+> 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:715)
+> 	at java.awt.EventQueue.access$400(EventQueue.java:82)
+> 	at java.awt.EventQueue$2.run(EventQueue.java:676)
+> 	at java.awt.EventQueue$2.run(EventQueue.java:674)
+> 	at java.security.AccessController.doPrivileged(Native Method)
+> 	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+> 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:685)
+> 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+> 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+> 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+> 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+> 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+> 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+> 
+> 

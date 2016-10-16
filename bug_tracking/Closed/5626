@@ -1,0 +1,23 @@
+From curtis.madsen@utah.edu  Thu Mar 15 18:18:37 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q2G0IaeB004602
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 15 Mar 2012 18:18:36 -0600
+Date: Thu, 15 Mar 2012 18:18:36 -0600
+Message-Id: <201203160018.q2G0IaeB004602@chou.ece.utah.edu>
+From: curtis.madsen@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG:  Reactants and products not editable in tabular view
+
+Full_Name: Curtis Madsen
+Version: 
+OS: 
+source: 
+log: 
+Submission from: c-24-10-243-2.hsd1.ut.comcast.net (24.10.243.2)
+Submitted by: cmadsen
+
+
+When you try to insert a reaction in the tabular view, in the window where you
+add reactants or products, the drop-down box for the species is not editable.
+

@@ -1,0 +1,28 @@
+From kjones@vlsigroup.ece.utah.edu  Mon Jan 12 09:42:53 2009
+Return-Path: <kjones@vlsigroup.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.2 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n0CGgrvv011492
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 12 Jan 2009 09:42:53 -0700
+Date: Mon, 12 Jan 2009 09:42:53 -0700
+Message-Id: <200901121642.n0CGgrvv011492@chou.ece.utah.edu>
+From: kjones@vlsigroup.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: CHANGE: Select variables in Learn
+
+Full_Name: Kevin Jones
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: kjones
+
+
+Change the cir2dat.py script to only take into account the variables included in
+the .bins file when learning a circuit.
+

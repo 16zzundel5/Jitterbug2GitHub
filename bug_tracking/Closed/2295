@@ -1,0 +1,77 @@
+From myers@ece.utah.edu  Fri Aug  3 21:41:54 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.6 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l743fsmX015484
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 3 Aug 2007 21:41:54 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IHAX0-00063a-2l); Fri, 03 Aug 2007 21:42:24 -0600
+Received: from [192.168.0.2] (71-213-28-89.slkc.qwest.net [71.213.28.89])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l743fprB003616;
+	Fri, 3 Aug 2007 21:41:51 -0600
+Subject: BUG: crash in the grapher
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: Curtis Kendall Madsen <curtis.madsen@utah.edu>,
+        atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 03 Aug 2007 21:37:37 -0600
+Message-Id: <1186198657.20422.44.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.2 (2.10.2-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.9 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+When opening an analysis view I get a message that it cannot load the
+graph.  Then, when I try to create a graph, I get the following error
+trace:
+
+[myers@jiaqi BioSim]$ Exception in thread "AWT-EventQueue-0"
+java.lang.NullPointerException
+        at graph.core.gui.Graph$7.actionPerformed(Graph.java:1048)
+        at
+javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1849)
+        at javax.swing.AbstractButton
+$Handler.actionPerformed(AbstractButton.java:2169)
+        at
+javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:420)
+        at
+javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:258)
+        at
+javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+        at java.awt.Component.processMouseEvent(Component.java:5488)
+        at
+javax.swing.JComponent.processMouseEvent(JComponent.java:3126)
+        at java.awt.Component.processEvent(Component.java:5253)
+        at java.awt.Container.processEvent(Container.java:1966)
+        at java.awt.Component.dispatchEventImpl(Component.java:3955)
+        at java.awt.Container.dispatchEventImpl(Container.java:2024)
+        at java.awt.Component.dispatchEvent(Component.java:3803)
+        at
+java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4212)
+        at
+java.awt.LightweightDispatcher.processMouseEvent(Container.java:3892)
+        at
+java.awt.LightweightDispatcher.dispatchEvent(Container.java:3822)
+        at java.awt.Container.dispatchEventImpl(Container.java:2010)
+        at java.awt.Window.dispatchEventImpl(Window.java:1778)
+        at java.awt.Component.dispatchEvent(Component.java:3803)
+        at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+        at
+java.awt.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java:242)
+        at
+java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:163)
+        at
+java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:157)
+        at
+java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:149)
+        at
+java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+
+

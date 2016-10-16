@@ -1,0 +1,47 @@
+From peskin@cs.utah.edu  Sun May  9 19:49:09 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id TAA09210 for <atacs-bugs@yuan.elen.utah.edu>; Sun, 9 May 1999 19:49:09 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id 3166940AC; Sun,  9 May 1999 19:49:16 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by ee.utah.edu (Postfix) with ESMTP id 65BB240AB
+	for <atacs-bugs@elen.utah.edu>; Sun,  9 May 1999 19:49:13 -0600 (MDT)
+Received: from [155.99.193.62] (peskinpb.cs.utah.edu [155.99.193.62])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id TAA22468
+	for <atacs-bugs@elen.utah.edu>; Sun, 9 May 1999 19:49:11 -0600 (MDT)
+X-Sender: peskin@pop.cs.utah.edu
+Message-Id: <v03020900b35be8e35802@[155.99.200.87]>
+In-Reply-To: <199905050531.XAA07936@yuan.elen.utah.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Sun, 9 May 1999 19:49:26 -0600
+To: Chris Myers <atacs-bugs@elen.utah.edu>
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+Subject: Re: compiler should set a flag when it sees a level (PR#110)
+
+Well, the flag seems to be working, BUT hw4 now fails the liveness check.
+It used to pass that check.
+
+
+
+101 sanguo:~> cd /home/ming/atacs/examples/csp
+102 sanguo:examples/csp> which atacs
+/home/song/peskin/atacs/atacs
+103 sanguo:examples/csp> ls -l `which atacs`
+-rwx------   1 peskin   101      11783732 May  9 19:26
+/home/song/peskin/atacs/atacs*
+104 sanguo:examples/csp> atacs -yd hw4
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling hw4.csp ...
+Storing process main to main.er
+Storing process ai to ai.er
+Storing process bi to bi.er
+Storing process hw4 to hw4.er
+Loading timed event-rule structure from:  hw4.er
+Initializing 3 cycles ... done
+Checking liveness ... NOT live
+ERROR:  Liveness violation!
+105 sanguo:examples/csp>
+
+

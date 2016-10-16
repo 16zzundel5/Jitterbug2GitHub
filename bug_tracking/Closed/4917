@@ -1,0 +1,46 @@
+From myers@ece.utah.edu  Fri Feb 19 16:53:56 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.9 required=5.0 tests=AWL,BAYES_20,FH_DATE_PAST_20XX,
+	RCVD_IN_SORBS_WEB autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o1JNruad008810;
+	Fri, 19 Feb 2010 16:53:56 -0700
+Received: from 75-169-169-147.slkc.qwest.net ([75.169.169.147] helo=[192.168.0.3])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1NicfU-00077Q-7M; Fri, 19 Feb 2010 16:53:56 -0700
+Message-Id: <7491E378-3DFB-4B27-95B7-73A46AD0A787@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: kjones@vlsigroup.ece.utah.edu
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: A few changes to the grammar
+Date: Fri, 19 Feb 2010 16:53:50 -0700
+Cc: Robert Thacker <thacker@vlsigroup.ece.utah.edu>,
+        Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+Hi,
+
+We have decided to make a few changes to the grammar to make things  
+more consistent to the paper as well as better situated for conversion  
+to SBML.
+
+1) and -> AND
+2) or -> OR
+3) xor -> XOR
+4) not -> NOT
+5) Add INT(e)
+6) Change bitwise operator from "e[e]" to "BIT(e,e)"
+
+The first 5 should be fairly straightforward.  Robert should be able  
+to help you with the 6th item.
+
+Cheers,
+
+Chris
+

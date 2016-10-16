@@ -1,0 +1,155 @@
+From atacs-bugs  Thu Sep 19 01:12:17 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g8J7CH104728
+	for atacs-bugs@shang.elen.utah.edu; Thu, 19 Sep 2002 01:12:17 -0600
+Received: from jiaqi.stanford.edu (SW-90-710-281-1.Stanford.EDU [171.66.154.15])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g8J7CHj04718
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 19 Sep 2002 01:12:17 -0600
+Received: (from myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) id g8J7D0w02121
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 19 Sep 2002 00:13:00 -0700
+Date: Thu, 19 Sep 2002 00:13:00 -0700
+From: "Chris J. Myers" <myers@jiaqi.stanford.edu>
+Message-Id: <200209190713.g8J7D0w02121@jiaqi.stanford.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: problems with storevhd
+
+
+There are problems with storevhd.  The modified and corrected file is attached
+below:
+
+library ieee;
+use ieee.std_logic_1164.all;
+use work.nondeterminism.all;
+
+entity mpegdecoder_ctrl_HSE_BEST is
+  port( calculate_please_req : inout std_logic;
+        calculate_please_ack : in std_logic;
+                      cb_req : in std_logic;
+                      cb_ack : inout std_logic;
+                      cr_req : in std_logic;
+                      cr_ack : inout std_logic;
+                  dpdata_req : in std_logic;
+                  dpdata_ack : inout std_logic;
+        increment_please_req : inout std_logic;
+        increment_please_ack : in std_logic;
+                     lum_req : in std_logic;
+                     lum_ack : inout std_logic;
+       mem_access_please_req : inout std_logic;
+       mem_access_please_ack : in std_logic;
+               mem_rw_please : inout std_logic;
+           splice_please_req : inout std_logic;
+           splice_please_ack : in std_logic
+       );
+end mpegdecoder_ctrl_HSE_BEST;
+
+
+architecture structure of mpegdecoder_ctrl_HSE_BEST is
+
+  -- input complements
+  signal dpdata_req_bar: std_logic;
+  signal increment_please_req_bar: std_logic;
+  signal mem_access_please_req_bar: std_logic;
+  signal mem_access_please_ack_bar: std_logic;
+  signal mem_rw_please_bar: std_logic;
+  signal splice_please_ack_bar: std_logic;
+
+
+
+  component a1
+  port(a1 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+  component a2
+  port(a1 : in std_logic;
+       b1 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+  component a2a2
+  port(a1 : in std_logic;
+       b1 : in std_logic;
+       a2 : in std_logic;
+       b2 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+  component a3
+  port(a1 : in std_logic;
+       b1 : in std_logic;
+       c1 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+  component a3a2
+  port(a1 : in std_logic;
+       b1 : in std_logic;
+       c1 : in std_logic;
+       a2 : in std_logic;
+       b2 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+  component a4
+  port(a1 : in std_logic;
+       b1 : in std_logic;
+       c1 : in std_logic;
+       d1 : in std_logic;
+       o : inout std_logic);
+  end component;
+
+begin
+  i_0 : a1
+    port map(a1=>cr_req, 
+             o=>cr_ack);
+
+  i_1 : a4
+    port map(a1=>dpdata_req_bar, b1=>mem_access_please_ack, c1=>mem_access_please_req, d1=>mem_rw_please_bar, 
+             o=>increment_please_req);
+
+  i_2 : a3a2
+    port map(a1=>cb_req, b1=>increment_please_ack, c1=>mem_access_please_req_bar, 
+             a2=>cb_req, b2=>increment_please_req_bar, 
+             o=>cb_ack);
+
+  i_3 : a2
+    port map(a1=>calculate_please_ack, b1=>mem_access_please_req_bar, 
+             o=>splice_please_req);
+
+  i_4 : a1
+    port map(a1=>lum_ack, 
+             o=>calculate_please_req);
+
+  i_5 : a3
+    port map(a1=>dpdata_req, b1=>splice_please_ack_bar, c1=>mem_rw_please_bar, 
+             o=>dpdata_ack);
+
+  i_6 : a2a2
+    port map(a1=>mem_access_please_ack_bar, b1=>dpdata_ack, 
+             a2=>splice_please_ack, b2=>splice_please_req, 
+             o=>mem_access_please_req);
+
+  i_7 : a2
+    port map(a1=>lum_req, b1=>mem_rw_please, 
+             o=>lum_ack);
+
+  i_8 : a1
+    port map(a1=>lum_req, 
+             o=>mem_rw_please);
+
+  -- complements of inputs
+  dpdata_req_bar <= not dpdata_req after delay(0,10);
+  increment_please_req_bar <= not increment_please_req after delay(0,10);
+  mem_access_please_req_bar <= not mem_access_please_req after delay(0,10);
+  mem_access_please_ack_bar <= not mem_access_please_ack after delay(0,10);
+  mem_rw_please_bar <= not mem_rw_please after delay(0,10);
+  splice_please_ack_bar <= not splice_please_ack after delay(0,10);
+
+end structure;
+
+
+
+
+

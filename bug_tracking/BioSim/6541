@@ -1,0 +1,67 @@
+From prvs=980903850=zhen.zhang@utah.edu  Tue Jun 28 12:40:10 2016
+Return-Path: <prvs=980903850=zhen.zhang@utah.edu>
+Received: from ipo4.cc.utah.edu (ipo4.cc.utah.edu [155.97.144.24])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5SIeAsM008995
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jun 2016 12:40:10 -0600
+X-IronPort-AV: E=Sophos;i="5.26,542,1459836000"; 
+   d="scan'208,217";a="585261017"
+Received: from mail-oi0-f44.google.com ([209.85.218.44])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 28 Jun 2016 12:40:09 -0600
+Received: by mail-oi0-f44.google.com with SMTP id u201so35670157oie.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jun 2016 11:40:10 -0700 (PDT)
+X-Gm-Message-State: ALyK8tKdOCdZW3CMedDiA0UL2qrUhhOWHogylTbwa9T1+os0zzBEtJnhpLdOHXoitrM8VnKNiUMQMlbF9feQtQ==
+X-Received: by 10.202.59.68 with SMTP id i65mr2671838oia.61.1467139208895;
+ Tue, 28 Jun 2016 11:40:08 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.217.135 with HTTP; Tue, 28 Jun 2016 11:39:29 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 28 Jun 2016 12:39:29 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=eg3b7m6YoQYz_xa=JDNBEk-qWCPMZUG_GXPG4vMNsCw@mail.gmail.com>
+Message-ID: <CA+LVOv=eg3b7m6YoQYz_xa=JDNBEk-qWCPMZUG_GXPG4vMNsCw@mail.gmail.com>
+Subject: BUG: Unable to add properties to property file
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113cf36a61e68c05365af783
+
+--001a113cf36a61e68c05365af783
+Content-Type: text/plain; charset=UTF-8
+
+This bug occurred when converting dual_feedback_oscillator.xml to a PRISM
+model (see stack trace below). It started to happen after JParts dependency
+got removed.
+
+java.lang.IllegalArgumentException: Invalid SId:
+St((((AraC>=60)&&(PF((t<=1000),(AraC<60))>=0.95))||((AraC<60)&&(PF((t<=1000),(AraC>=60))>=0.95))))_dg
+    at org.jlibsedml.SId.<init>(SId.java:9)
+    at
+org.jlibsedml.AbstractIdentifiableElement.<init>(AbstractIdentifiableElement.java:69)
+    at org.jlibsedml.DataGenerator.<init>(DataGenerator.java:47)
+    at org.jlibsedml.SedML.addSimpleSpeciesAsOutput(SedML.java:628)
+    at graph.Graph.saveSEDML(Graph.java:5572)
+    at analysis.main.AnalysisView.saveSEDML(AnalysisView.java:1576)
+    at analysis.main.AnalysisView.save(AnalysisView.java:1517)
+    at analysis.main.AnalysisView.run(AnalysisView.java:1004)
+    at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+
+--001a113cf36a61e68c05365af783
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">This bug occurred when converting dual_feedback_oscillator=
+.xml to a PRISM model (see stack trace below). It started to happen after J=
+Parts dependency got removed.<br><div><br>java.lang.IllegalArgumentExceptio=
+n: Invalid SId: St((((AraC&gt;=3D60)&amp;&amp;(PF((t&lt;=3D1000),(AraC&lt;6=
+0))&gt;=3D0.95))||((AraC&lt;60)&amp;&amp;(PF((t&lt;=3D1000),(AraC&gt;=3D60)=
+)&gt;=3D0.95))))_dg<br>=C2=A0=C2=A0 =C2=A0at org.jlibsedml.SId.&lt;init&gt;=
+(SId.java:9)<br>=C2=A0=C2=A0 =C2=A0at org.jlibsedml.AbstractIdentifiableEle=
+ment.&lt;init&gt;(AbstractIdentifiableElement.java:69)<br>=C2=A0=C2=A0 =C2=
+=A0at org.jlibsedml.DataGenerator.&lt;init&gt;(DataGenerator.java:47)<br>=
+=C2=A0=C2=A0 =C2=A0at org.jlibsedml.SedML.addSimpleSpeciesAsOutput(SedML.ja=
+va:628)<br>=C2=A0=C2=A0 =C2=A0at graph.Graph.saveSEDML(Graph.java:5572)<br>=
+=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisView.saveSEDML(AnalysisView.jav=
+a:1576)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisView.save(AnalysisVi=
+ew.java:1517)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisView.run(Analy=
+sisView.java:1004)<br>=C2=A0=C2=A0 =C2=A0at analysis.main.AnalysisThread.ru=
+n(AnalysisThread.java:24)</div></div>
+
+--001a113cf36a61e68c05365af783--
+

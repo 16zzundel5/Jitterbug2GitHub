@@ -1,0 +1,62 @@
+From: Eric Robert Peskin <atacs-bugs@ming.elen.utah.edu>
+To: stjung@ming.elen.utah.edu
+Subject: Re: Orbits Verification Error (PR#85)
+Date: Sun Apr 11 14:05:37 1999
+CC: myers@vlsigroup.elen.utah.edu
+
+I see that Chris moved this to Fixed (which I later renamed Needs testing).
+But I still get the segmentation fault:
+
+131 ming:~atacs/examples/g> pwd
+/home/ming/atacs/examples/g
+132 ming:~atacs/examples/g> atacs -mo -lg -to chu133
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using Orbits to obtain state graphs.
+Converting Petri net to ER and storing to:  chu133.er
+Loading timed event-rule structure from:  chu133.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Storing orbits specification file to:  chu133.spec
+Executing command:  orbits < findrsg > output
+Loading state graph in grf format from:  chu133.osg
+ERROR:  da+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  la+ is an undeclared event!
+ERROR:  za+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  dr+ is an undeclared event!
+ERROR:  x+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  lr- is an undeclared event!
+ERROR:  da+ is an undeclared event!
+ERROR:  lr- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  dr- is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  zr- is an undeclared event!
+ERROR:  za+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  lr+ is an undeclared event!
+ERROR:  x+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  x- is an undeclared event!
+ERROR:  da+ is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  zr+ is an undeclared event!
+ERROR:  zr- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  x- is an undeclared event!
+ERROR:  da- is an undeclared event!
+ERROR:  zr+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  da- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  dr- is an undeclared event!
+Finding reduced state graph ... done
+Segmentation fault
+133 ming:~atacs/examples/g> 

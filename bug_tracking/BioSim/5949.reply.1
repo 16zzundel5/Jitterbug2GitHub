@@ -1,0 +1,31 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: change conversion between libsbml and jsbml (PR#5949)
+Date: Wed Nov 13 18:47:18 2013
+
+Hi Chris,
+
+Yes. There is the method
+
+public static org.sbml.libsbml.SBMLDocument convertSBMLDocument(SBMLDocument
+doc)
+
+in LibSBMLUtils and also the method
+
+public Model convertModel(org.sbml.libsbml.Model originalModel)
+
+in LibSBMLReader.
+
+Both classes can be found in the libSBMLio module. However, I am unable to
+complement the functionality with 
+support for packages. If this is needed, I would be more than happy if somebody
+would contribute it.
+
+The LibSBMLReader stores links from each JSBML object to its corresponding
+libSBML element. These links can 
+recursively be deleted afterwards if not required. In this case also the
+LibSBMLChangeListener should be removed 
+in order to avoid null pointer exceptions when the links are removed.
+
+Cheers
+Andreas

@@ -1,0 +1,29 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: jeffrey.theisen@utah.edu
+Subject: Re: BUG: cannot register reaction (PR#5863)
+Date: Fri Mar 29 19:41:27 2013
+
+I believe this one is fixed, right?
+
+> Bug reported by: jeffrey.theisen@utah.edu
+> 
+> Description:
+> For grid models when I try to simulate with either rkf45 or gillespie
+simulator
+> I get an error message that says cannot register reaction, and the simulation
+> progress bar is stuck at 0%.  However, this error message does not appear for
+> normal (non-grid) models, nor does it appear for grid models simulated with
+> rkf45 (java) or SSA-Direct (java).
+> 
+> Stack trace:
+> java.lang.IllegalArgumentException: Cannot register reaction.
+> 	at org.sbml.jsbml.AbstractSBase.registerChild(AbstractSBase.java:1438)
+> 	at org.sbml.jsbml.AbstractSBase.setThisAsParentSBMLObject(AbstractSBase.java:1384)
+> 	at org.sbml.jsbml.ListOf.add(ListOf.java:385)
+> 	at org.sbml.jsbml.Model.addReaction(Model.java:492)
+> 	at analysis.dynamicsim.Simulator.expandArrays(Simulator.java:1963)
+> 	at analysis.Run.execute(Run.java:1264)
+> 	at analysis.AnalysisView.run(AnalysisView.java:2183)
+> 	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+> 
+> 

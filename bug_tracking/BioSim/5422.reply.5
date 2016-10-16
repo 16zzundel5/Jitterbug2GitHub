@@ -1,0 +1,148 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: flattening rules for merging SBML elements (PR#5422)
+Date: Thu Aug 15 20:50:07 2013
+
+FROM ME
+
+I've been wondering for some time if it may be possible to come up with a set of
+validation rules that can ensure that a flattened model is valid assuming the
+submodels are all valid to begin with.  This is a challenging problem, so I
+would like to take it in steps.  I believe that invalidity is caused by problems
+with deletions and replacements.  In other words, assuming there are no
+deletions or replacements, I believe that a valid model composed of valid
+submodels when flattened results in a valid model.  Can anyone think of a
+counterexample to this?
+
+Assuming this, we need to consider rules on deletions and replacements, and lets
+take deletions first.
+
+1) Assuming SBML Core only, I believe deletions of events, rules, and initial
+assignments never create an invalid model.  Note that the comp validation rule
+that we discussed earlier which says you cannot have a reference in a deletion
+and also in replacements, etc. is important to ensure this.  Considering
+approved packages, there is a potential problem with layout as layout can have a
+reference to one of these objects.  However, in is highly unlikely that layout
+is valid after flattening, so it is not too bad assumption to assume there is no
+layout information that is preserved after flattening.  If for some reason this
+is not the case, then we need to only add another rule that says deletions of
+events, rules, and initial assignments are safe as long as any references to
+them by layout in the submodel are also deleted.
+
+2) Compartments, species, reactions, parameters, and species reference ids are
+trickier because they can occur in math.  Therefore, the deletion of one of
+these objects is only valid if all other SBML elements that reference it are
+also removed.  Besides math, this may be in the left hand side of
+event/initial/rule assignments, or in the case of compartments in species and
+reactions references to them.  There is the same issue with the layout package
+described above.  With comp, there are references to parameters in conversion
+factors.  With fbc, there are references to reactions in both objectives and
+flux bounds. With qual, I don't believe there are any problems.
+
+3) Local reaction parameters can be deleted if they are either not used by the
+kinetic law or they are covered by a global parameter of the same name.
+
+4) Package objects have similar considerations as above, and they are too
+numerous to list at this time.  However, they all boil down to I think a general
+rule which states:
+
+"An SBML element can only be deleted if all references to that element are also
+deleted."
+
+Caveat: there are times where a replacement acts like a deletion.  For example,
+when you replace a rule with another rule, you are effectively deleting the
+rule.  In these situations, they can also serve to delete the objects that
+reference the object you are trying to delete.
+
+Ok, I think I will stop there.  Replacements are a lot trickier, so I will
+discuss them later.  I just wanted to get the ball rolling with deletions.
+
+Cheers,
+
+Chris
+
+
+
+FROM LUCIAN
+
+"An SBML element can only be deleted if all references to that
+element are also deleted."
+
+Yup, I think that sums it up nicely.  The only thing from core that
+you left out of the rest of your analysis is Units, but they, too,
+fall under the general rule above.
+
+The full list of placed in core that can reference other elements is
+(I believe, from looking through the spec for 'SIdRef's):
+
+* Model
+ * substance/time/volume/area/length/extent-Units (relevant to
+deleted UnitDefinitions)
+ * conversionFactor (relevant to deleted Parameters)
+* Compartment
+ * units (relevant to deleted UnitDefinitions)
+* Species
+ * compartment (relevant to deleted Compartments)
+ * substanceUnits (relevant to deleted UnitDefinitions)
+ * conversionFactor (relevant to deleted Parameters)
+* Parameter
+ * units (relevant to deleted UnitDefinitions)
+* InitialAssignment
+ * symbol (relevant to deleted Compartments, Species,
+SpeciesReference (and therefore, by proxy, deleted Reactions), and
+Parameters)
+* AssignmentRules, RateRules,and EventAssignments
+ * variable (relevant to deleted Compartments, Species,
+SpeciesReference (and therefore, by proxy, deleted Reactions), and
+Parameters)
+* Reaction
+ * compartment (relevant to deleted Compartments)
+* SimpleSpeciesReference
+ * species (relevant to deleted Species)
+* LocalParameter
+ * units (relevant to deleted UnitDefinitions)
+* Math
+ * 'ci' elements (relevant to deleted Compartments, Species,
+SpeciesReference (and therefore, by proxy, deleted Reactions),
+Reactions themselves, Parameters, and FunctionDefinitions)
+ * the cn 'units' attribute (relevant to deleted UnitDefinitions)
+* Annotations
+ * Potentially anything, but the 'rdf:about' attribute in particular.
+Relevant to anything, but helpfully, compliant annotations only
+annotate their parents, and are therefore already deleted when their
+parents are deleted.  One need only worry about non-compliant
+annotations, then.)
+
+(anything else I missed?)
+
+Also remember that it is technically possible to delete an entire
+list, so if you delete the ListOfReactions (say) you'll have to go
+through and check all of its children Reaction and SpeciesReference
+elements.
+
+My only other comment is:
+
+Caveat: there are times where a replacement acts like a deletion.  For example,
+when you replace a rule with another rule, you are effectively deleting the
+rule.  In these situations, they can also serve to delete the objects that
+reference the object you are trying to delete.
+
+This is incorrect.  Replacements should always redirect all references
+to the old object to the replacement object, regardless of the package
+the reference came from.  The only reason why replacements act like
+deletions in core for rules is that nothing refers to rules in core.
+If a package (like layout) refers to a replaced rule, that reference
+should be considered to point to the replacement object.
+
+However, there is indeed a different sort of caveat here:
+replacements *do* act like deletions for the *children* of the
+replaced object.  If a reaction is replaced, its children
+SpeciesReferences are considered to be deleted,
+
+-Lucian
+
+(Oh, geez, this probably means that replacing a Reaction *and*
+replacing one of its child SpeciesReferences needs to work without
+double-deleting the child SpeciesReference in the libsbml flattening
+routine.  I'll put that on my list...)
+

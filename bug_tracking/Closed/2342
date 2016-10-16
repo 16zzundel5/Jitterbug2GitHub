@@ -1,0 +1,36 @@
+From myers@ece.utah.edu  Fri Sep 28 09:57:00 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID,
+	SUBJECT_FUZZY_TION autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l8SFv05u013593
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 28 Sep 2007 09:57:00 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IbIDj-0006kh-Qe)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 28 Sep 2007 09:57:42 -0600
+Received: from [192.168.1.101] (changcheng.ece.utah.edu [155.98.26.227])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l8SFuv6Z022001
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 28 Sep 2007 09:56:57 -0600
+Subject: FEATURE: export data button
+From: Chris Myers <myers@ece.utah.edu>
+Reply-To: myers@ece.utah.edu
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 28 Sep 2007 09:56:33 -0600
+Message-Id: <1190994993.30696.19.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-2.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.0 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+On the graph screen, add export data button that allows you to export
+data as tsd, csv, or dat.
+
+Chris
+
+

@@ -1,0 +1,31 @@
+From myers@eng.utah.edu  Wed Mar 30 08:58:47 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u2UEwlLT019693
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:58:47 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86 id 1alHZv-0001x2-Rx)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:58:47 -0600
+Received: from [155.99.109.105]
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1alHZv-000Fxi-Qm
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 30 Mar 2016 08:58:39 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: convert SBOL 1.1 to 2.0
+Message-Id: <389B3212-747B-41D3-AA46-4601008E83F0@ece.utah.edu>
+Date: Wed, 30 Mar 2016 08:58:40 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.2 \(3112\))
+X-Mailer: Apple Mail (2.3112)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+On import of SBOL 1.1 file, it should be converted to 2.0.
+
+When opening a project with SBOL 1.1 files, they should be converted to 2.0.
+

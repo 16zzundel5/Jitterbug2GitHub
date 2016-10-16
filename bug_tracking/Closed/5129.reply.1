@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: kjones5863@gmail.com
+Subject: Re: CHANGE: do not allow correlated variable abstraction to remove interesting variables (PR#5129)
+Date: Wed Sep 29 16:25:20 2010
+
+For the reactor example, I get this exception:
+
+Exception in thread "Thread-13" java.lang.NullPointerException
+	at lhpn2sbml.parser.Abstraction.mergeCoordinatedVars(Abstraction.java:811)
+	at lhpn2sbml.parser.Abstraction.abstractSTG(Abstraction.java:190)
+	at verification.Verification.run(Verification.java:872)
+	at java.lang.Thread.run(Thread.java:613)

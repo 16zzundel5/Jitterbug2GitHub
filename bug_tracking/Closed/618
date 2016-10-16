@@ -1,0 +1,22 @@
+From atacs-bugs  Wed Oct 17 13:33:07 2001
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id f9HJX7x09922
+	for atacs-bugs@shang.elen.utah.edu; Wed, 17 Oct 2001 13:33:07 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id f9HJX6e09915
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Wed, 17 Oct 2001 13:33:06 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) id f9HJXWs08828
+	for atacs-bugs@vlsigroup; Wed, 17 Oct 2001 13:33:32 -0600
+Date: Wed, 17 Oct 2001 13:33:32 -0600
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+Message-Id: <200110171933.f9HJXWs08828@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: core dump
+
+
+atacs -lx -ts -op -ob -ys xbm-si.unc
+
+cause seg fault.
+

@@ -1,0 +1,57 @@
+From ibiosim@gmail.com  Mon Jun 27 12:23:19 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f44.google.com (mail-pa0-f44.google.com [209.85.220.44])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RINI0L015339
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:23:19 -0600
+Received: by mail-pa0-f44.google.com with SMTP id wo6so61351825pac.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:23:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=XKch4CFQj1O4jgX/qU/zXLqcxpcuh9r4eg3tisOtmGM=;
+        b=xMLha3QLj0uq4ThycFHh9m/Bw6NqdBD4YTuXNhlqSdvpC5vNaeBqagF+J/Y6FEJQP5
+         tDY0SivtUE1u2sOx51f7NPBxEarLEFZ6LMyv7dfjfsfYFKqZXwHU+oOKf6alGTev5opA
+         WqohOeKr70dZ9fVa3KT3AFobfXUGoHzgc2nTYMTl61aUV9GY1R9c4/oq7zjq3xwKReWb
+         Bc/tflYMhHtgIufs2BiHhaZ6F499Jl6l1bJJ00z2wvxv9TZbQBtAEiyQUtOXHFF+GnhT
+         sltWwPA5saZrgH2ai8waeFYZRK/QXxSOKhNoC/K9JS63fzKbmeoeEESUGjhhGxE/fX69
+         eptg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=XKch4CFQj1O4jgX/qU/zXLqcxpcuh9r4eg3tisOtmGM=;
+        b=L0fSyDxGCXvrNFqGya2oUsefTiB4f4/K8xy7GlLK+kpOCQ8x1Wq9LvSQh1apijfuRx
+         o1G0YcfWS3UdL8SAWRfJKmcibdNVgos9CG4rByCF4i99EL+vuo5XWQthwVT2eKb2bXqT
+         ZrDSBjWQu3oJVQ7MnDTM4O87aaLS0J5D+8xdj9qwLkSMjj8Y22v0MIC6WJhvjKFI8iiB
+         HJANhZLrY/ACmDsuBnhiFPvP0NXJtHJPOj1cCxBbZsDT3/hxtQVcIBVkUJEe8IoDPhUW
+         a+AGNfjMzvkEAzaK39tIEATaaC9jkiijd6uJxkVTDCrlXwwT2KkG3A1PqPioxEXUrV8t
+         2jig==
+X-Gm-Message-State: ALyK8tKVjukIdloj4suYeFLDKLTmxJN0p8epmPBKndwhOMwmVpEySnZ+FdTO7/l+3I31iQ==
+X-Received: by 10.66.5.229 with SMTP id v5mr22509947pav.63.1467051795727;
+        Mon, 27 Jun 2016 11:23:15 -0700 (PDT)
+Received: from chou.ece.utah.edu (vlsimail.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id b186sm630777pfa.61.2016.06.27.11.23.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:23:15 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:23:15 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1015539893.2.1467051794595.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: SSA Hierarchical not resetting initial conditions on multiple
+ runs
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+I forgot to reset the values of variables to their initial assignment when you do multiple runs
+

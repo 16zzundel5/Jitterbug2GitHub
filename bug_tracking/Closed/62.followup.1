@@ -1,0 +1,60 @@
+From peskin@cs.utah.edu  Mon May  3 14:41:22 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA01840 for <atacs-bugs@yuan.elen.utah.edu>; Mon, 3 May 1999 14:41:22 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id D3D7B38DE; Mon,  3 May 1999 14:41:30 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by ee.utah.edu (Postfix) with ESMTP id 0B64038DD
+	for <atacs-bugs@elen.utah.edu>; Mon,  3 May 1999 14:41:29 -0600 (MDT)
+Received: from [155.99.193.62] (peskinpb.cs.utah.edu [155.99.193.62])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id OAA21893
+	for <atacs-bugs@elen.utah.edu>; Mon, 3 May 1999 14:41:26 -0600 (MDT)
+X-Sender: peskin@pop.cs.utah.edu
+Message-Id: <v03020907b353b97f6725@[155.99.193.62]>
+In-Reply-To: <199905022232.QAA28343@yuan.elen.utah.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Mon, 3 May 1999 14:41:42 -0600
+To: Chris Myers <atacs-bugs@elen.utah.edu>
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+Subject: Re: choice.csp deadlocks, not sure why. (PR#62)
+
+>It works now.  It was fixed as a byproduct of working to fix bug 120.
+
+Do you mean the original .csp, or the modified version you proposed in the
+notes to this report?
+
+With the original .csp, I still get deadlock:
+
+129 xia:~atacs/examples/bugs> pwd
+/home/ming/atacs/examples/bugs
+130 xia:~atacs/examples/bugs> which atacs
+/home/song/peskin/atacs/atacs
+131 xia:~atacs/examples/bugs> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      10920022 May  3 12:23
+/home/song/peskin/atacs/a
+tacs*
+132 xia:~atacs/examples/bugs> atacs -mu -ys choice
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using no timing analysis.
+Compiling choice.csp ...
+Storing process choicectrl to choicectrl.er
+Storing process abenv to abenv.er
+Storing process cenv to cenv.er
+Storing process choice to choice.er
+Storing process choice to choice.er
+Loading timed event-rule structure from:  choice.er
+WARNING:  Duplicate rules ignored.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph and storing to:  choice.rsg
+ERROR: Deadlock!
+Storing error trace state graph to:  choice.grf
+Executing command:  parg choice.grf &
+Storing error trace in VHDL to:  trace.vhd
+133 xia:~atacs/examples/bugs>
+
+

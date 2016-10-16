@@ -1,0 +1,34 @@
+From curtis.madsen@utah.edu  Tue Feb 21 19:10:54 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q1M2As58011618
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 21 Feb 2012 19:10:54 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApwEAFFORE+bYbVo/2dsb2JhbABDDrNTgXo6UQE+QicEG59qlziJB40ACQIFCQQDDAIDJgEBAQECAQIChToRgw5jBIhPjGmSNlc
+X-IronPort-AV: E=Sophos;i="4.73,461,1325487600"; 
+   d="scan'208";a="1232527"
+Received: from h104.umail.utah.edu (HELO HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 21 Feb 2012 19:10:48 -0700
+Received: from C8V1.xds.umail.utah.edu ([169.254.3.23]) by
+ HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi; Tue, 21 Feb 2012
+ 19:10:47 -0700
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Tue, 21 Feb 2012 19:09:25 -0700
+Subject: BUG:  Unused promoters are not cleaned up
+Thread-Topic: Unused promoters are not cleaned up
+Thread-Index: AQHM8QcwNLUqhRs60EuZcdjMdj5Fvg==
+Message-ID: <852B726894B07749AE9ABB4B055919AC83C121574B@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id q1M2As58011618
+
+When a model is saved, the unused promoters are not removed from the model.  This used to work, but for some reason, it isn't cleaning the promoters up anymore.
+

@@ -1,0 +1,44 @@
+From peskin@cs.utah.edu  Tue Oct  3 11:58:38 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA13363
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 3 Oct 2000 11:58:38 -0600
+Date: Tue, 3 Oct 2000 11:58:38 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200010031758.LAA13363@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: projection can mask disablings
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag mask
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: ~peskin/atacs/examples/tel/merge.tel
+log: ~peskin/atacs/examples/tel/atacs.log
+Submission from: makalu.cs.utah.edu (155.99.195.34)
+Submitted by: peskin
+
+
+This example gets through ATACS, which claims to be able to build it without
+an arbiter.  However, truly meeting the spec would require an arbiter.
+
+Here is the sample session:
+
+149 xia:~> cd ~peskin/atacs/examples/tel
+150 xia:examples/tel> ../../src/atacs -ltya merge
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Loading timed event/level structure from:  merge.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding reduced state graph ... done (states=382,time=0.166470)
+Projecting out dummy transitions ... done (0.019651)
+Checking CSC ... complete state coded
+Finding regions ... done (0.001565)
+Finding conflicts ... done (0.000774)
+Finding covers ... done (0.000180)
+Storing production rules to:  merge.prs
+Total Area = 14 literals 25 transistors
+151 xia:examples/tel> 
+

@@ -1,0 +1,29 @@
+From kjones@vlsigroup.ece.utah.edu  Mon Apr 20 10:53:26 2009
+Return-Path: <kjones@vlsigroup.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n3KGrQKh029692
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 20 Apr 2009 10:53:26 -0600
+Date: Mon, 20 Apr 2009 10:53:26 -0600
+Message-Id: <200904201653.n3KGrQKh029692@chou.ece.utah.edu>
+From: kjones@vlsigroup.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: CHANGE: Include implicit places in store LHPN
+
+Full_Name: Kevin Jones
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: kjones
+
+
+When an LHPN is converted from a .g file, it currently does not include the
+implicit places in the .lpn file.  This causes problems when the gui tries to
+load the generated .g file.
+

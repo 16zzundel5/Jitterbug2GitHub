@@ -1,0 +1,29 @@
+From tphsiu@gmail.com  Fri Mar  6 10:48:48 2009
+Return-Path: <tphsiu@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n26HmmXT012901
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Mar 2009 10:48:48 -0700
+Date: Fri, 6 Mar 2009 10:48:48 -0700
+Message-Id: <200903061748.n26HmmXT012901@chou.ece.utah.edu>
+From: tphsiu@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: rename files
+
+Full_Name: Mike Hsiu
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: chou.ece.utah.edu (155.98.27.202)
+Submitted by: hsiu
+
+
+When you rename a file in LEMA, either verification or .g file, (right click and
+rename) LEMA does the rename but an error message pop up saying unable to
+rename. 
+

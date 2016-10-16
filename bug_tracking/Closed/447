@@ -1,0 +1,145 @@
+From killpack@eng.utah.edu  Wed May  3 15:44:45 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (killpack@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA31661
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 May 2000 15:44:44 -0600
+X-Authentication-Warning: chou.elen.utah.edu: killpack owned process doing -bs
+Date: Wed, 3 May 2000 15:44:44 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@chou.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: whoa-nelly - stop the state space exploration captian Kirk!
+Message-ID: <Pine.LNX.4.10.10005031542410.31653-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+When I run this command line on this file, it has a disabling event and
+throws up parg windows, but then it tries the state space exloration
+again.
+
+If left unattended, it will explore three times before quiting.
+
+Kip
+
+Command line:
+atacs -mc -mV -mz -mU -mP -mT -ms -mD -eR -lh -M20 -ya -sv and2_a.hse
+
+file::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/*
+--------------------------------------------------------------------------
+ ** pre-charged half-buffer and gate
+ ** command line: 
+ ** atacs -mc -mV -mz -mU -mP -mT -ms -mD -eR -lh -M20 -ya -sv and2_a.hse
+ **
+ ** and2_a.prs
+ **
+ */
+module and2_a;
+
+delay onegate = <200, 300>;
+delay envdelay = <200, inf; 200, inf>;
+
+output aibar = { false, onegate };
+output bibar = { false, onegate };
+output ci    = { false, onegate };
+output abi  = { true,  onegate };
+output en = {true, onegate};
+
+input a0 = {false, envdelay};
+input a1 = {false, envdelay};
+
+input b0 = {false, envdelay};
+input b1 = {false, envdelay};
+
+input  ce = {false, envdelay};
+output c0 = {false, onegate};
+output c1 = {false, onegate};
+
+
+process main;
+*[ 
+   [ce];
+
+   [  a0      -> ( c0+ || [b0 | b1])|
+      b0      -> ( c0+ || [a0 | a1])|
+      a1 & b1 ->   c1+ ]; 
+
+ /*  [ b0 & a0 -> c0+ |
+     a0 & b1 -> c0+ |
+     a1 & b0 -> c0+ |
+     a1 & b1 -> c1+ ]; 
+ */
+
+   en-;
+   [~ce];
+   [ c0 -> c0- | c1 -> c1- ];
+   [ ~a0 & ~a1 & ~b0 & ~b1 ];
+   en+
+]
+endprocess
+
+/*
+---------------------------------------------------------------------------
+ ** Gate descriptions for en
+ **
+---------------------------------------------------------------------------
+ */
+gate aibar;
+  ( ~a0 & ~a1 ) -> aibar+
+  ( a0 | a1 ) -> aibar-
+endgate
+
+gate bibar;
+  ( ~b0 & ~b1 ) -> bibar+
+  ( b0 | b1 ) -> bibar-
+endgate
+
+gate ci;
+  ( c0 | c1 ) -> ci+
+  ( ~c0 & ~c1 ) -> ci-
+endgate
+
+gate abi;
+  ( aibar & bibar ) -> abi-
+  ( ~aibar & ~bibar ) -> abi+
+endgate
+
+gate en;
+  ( abi & ci ) -> en-
+  ( ~abi & ~ci ) -> en+
+endgate
+
+/*
+---------------------------------------------------------------------------
+ ** Environment processes
+ **
+---------------------------------------------------------------------------
+ */
+
+process a;
+*[ [ true -> a0+ | true -> a1+ ]; 
+   [~en]; 
+   [ a0 -> a0- | a1 -> a1- ]; 
+   [en]
+ ]
+endprocess
+
+process b;
+*[ [ true -> b0+ | true -> b1+ ]; 
+   [~en]; 
+   [ b0 -> b0- | b1 -> b1- ]; 
+   [en]
+ ]
+endprocess
+
+process c;
+*[ ce+; 
+   [ c0 | c1 ]; 
+   ce-; 
+   [ ~c0 & ~c1 ] 
+ ]
+endprocess
+
+endmodule
+
+

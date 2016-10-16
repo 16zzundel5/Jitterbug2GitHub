@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: zhen.zhang@utah.edu
+Subject: Re: FEATURE: Add support for failure transition in the schematic editor (PR#5757)
+Date: Sat Sep  8 16:41:43 2012
+
+Can now get failure transitions if you create a constraint of the form
+G(true,~fail) and add assignments to the 
+Boolean variable fail that set it to true.
+
+Still need support for more property types.

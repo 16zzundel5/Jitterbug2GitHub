@@ -1,0 +1,34 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@eng.utah.edu
+Subject: Re: choice.csp deadlocks, not sure why. (PR#62)
+Date: Wed May  5 14:20:28 1999
+
+It should deadlock as specified.  The correct version of the example which does
+not deadlock should be:
+
+module choice;
+
+input ci;
+output co;
+input a;
+input b;
+
+process choicectrl;
+*[[ a+ -> co+; [ci+]; co-; [ci-]
+  | b+ -> co+; [ci+]; co-; [ci-]
+ ]]
+endprocess
+
+process abenv;
+*[[ skip -> a+; [co+]; a-
+  | skip -> b+; [co+]; b-
+ ]]
+endprocess
+
+process cenv;
+*[[ co+ -> ci+; [co-]; ci-
+  | co+ -> ci+; [co-]; ci- ]]
+endprocess
+
+endmodule
+

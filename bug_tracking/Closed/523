@@ -1,0 +1,137 @@
+From peskin@cs.utah.edu  Fri Oct 13 14:13:44 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA26911
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 13 Oct 2000 14:13:44 -0600
+Date: Fri, 13 Oct 2000 14:13:44 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200010132013.OAA26911@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Transformation 4 introduces safety violations
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag trans4
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: /home/xia/peskin/atacs/examples/vhd/{winery9,wine_shop,patron3,wine_example4}.vhd
+log: /home/xia/peskin/atacs/examples/vhd/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following example works without post-processing, but post-processing 
+introduces a safety violdation.  See the example session below.  This is
+an instance of the example we talked about in today's group meeting.  
+
+My two cents is as follows:  Even if we are eventually going to support
+two-bounded nets, UNTIL we do, we should probably turn Transformation 4 
+(from Hao's Tao paper) off.
+
+The following sample session actually includes two atacs invocations.
+The first runs without postprocessing.  The second tries to use postprocessing.
+After running the second command, you can see the effect of postprocessing by
+comparing preproc.tel to THE_SHOP.preHSE.tel
+---8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+148 xia:~> cd /home/xia/peskin/atacs/examples/vhd/
+149 xia:examples/vhd> atacs -mcya winery9 wine_shop patron3 wine_example4
+THE_SHOP
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling winery9.vhd ... 
+Compiled process winery
+Storing module winery9 to winery9.tel
+Compiling wine_shop.vhd ... 
+Compiled process shop
+Storing module wine_shop to wine_shop.tel
+Compiling patron3.vhd ... 
+Compiled process patron
+Storing module patron3 to patron3.tel
+Now using combinational optimization.
+Compiling wine_example4.vhd ... 
+Storing module THE_SHOP to THE_SHOP.tel
+Loading timed event/level structure from:  THE_SHOP.tel
+Initializing 3 cycles ... done
+Loading timed event/level structure from:  THE_SHOP.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Finding reduced state graph ... done (states=1718,time=1.003390)
+Projecting out dummy transitions ... done (0.203985)
+Checking CSC ... complete state coded
+Finding regions ... done (0.003498)
+Finding conflicts ... done (0.001449)
+Finding covers ... done (0.000416)
+Storing production rules to:  THE_SHOP.prs
+Total Area = 5 literals 13 transistors
+150 xia:examples/vhd> atacs -mzmcya winery9 wine_shop patron3 wine_example4
+THE_SHOP
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling winery9.vhd ... 
+Compiled process winery
+Storing module winery9 to winery9.tel
+Compiling wine_shop.vhd ... 
+Compiled process shop
+Storing module wine_shop to wine_shop.tel
+Compiling patron3.vhd ... 
+Compiled process patron
+Storing module patron3 to patron3.tel
+Now using postprocessing during compilation.
+Now using combinational optimization.
+Compiling wine_example4.vhd ... 
+Post processing ...Storing module preproc to preproc.tel
+update $1+_patron_THE_PATRON/1
+Storing module 0 to 0.tel
+update $2+_patron_THE_PATRON/1
+Storing module 1 to 1.tel
+update $0+_wine_shop_NEW_SHOP/1
+Storing module 2 to 2.tel
+update $1+_wine_shop_NEW_SHOP/1
+Storing module 3 to 3.tel
+update $2+_wine_shop_NEW_SHOP/1
+shop2_to_patron!- winery_to_shop2?+ 0 2147483647 1
+Storing module 4 to 4.tel
+update $3+_wine_shop_NEW_SHOP/1
+Storing module 5 to 5.tel
+update $2+_winery_THE_WINERY/1
+Storing module 6 to 6.tel
+update $1+_winery_THE_WINERY/1
+Storing module 7 to 7.tel
+update $3+_wine_shop_THE_SHOP/1
+Storing module 8 to 8.tel
+update $2+_wine_shop_THE_SHOP/1
+shop1_to_patron!- winery_to_shop1?+ 0 2147483647 1
+Storing module 9 to 9.tel
+update $1+_wine_shop_THE_SHOP/1
+Storing module 10 to 10.tel
+update $0+_wine_shop_THE_SHOP/1
+Storing module 11 to 11.tel
+update $0+_patron_THE_PATRON/1
+shop2_to_patron?- shop2_to_patron?+ 0 2147483647 1
+shop2_to_patron?- shop1_to_patron?+ 0 2147483647 1
+shop1_to_patron?- shop2_to_patron?+ 0 2147483647 1
+shop1_to_patron?- shop1_to_patron?+ 0 2147483647 1
+Storing module 12 to 12.tel
+update $0+_winery_THE_WINERY/1
+winery_to_shop1!- winery_to_shop1!+ 0 2147483647 1
+winery_to_shop1!- winery_to_shop2!+ 0 2147483647 1
+winery_to_shop2!- winery_to_shop1!+ 0 2147483647 1
+winery_to_shop2!- winery_to_shop2!+ 0 2147483647 1
+Storing module 13 to 13.tel
+Storing module THE_SHOP to THE_SHOP.tel
+Loading timed event/level structure from:  THE_SHOP.tel
+Initializing 3 cycles ... done
+Loading timed event/level structure from:  THE_SHOP.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Finding reduced state graph ... WARNING: Safety violation for rule
+shop1_to_patron?-/1 -> shop2_to_patron?+/1.
+Storing constraint graph to:  deadlock.grf
+Executing command:  parg deadlock.grf &
+Storing error trace state graph to:  THE_SHOP.grf
+Executing command:  parg THE_SHOP.grf &
+Storing error trace in VHDL to:  trace.vhd
+151 xia:examples/vhd> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+

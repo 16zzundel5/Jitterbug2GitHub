@@ -1,0 +1,13 @@
+From: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: property to constraint problem when strict time bound (PR#5303)
+Date: Wed Apr 13 11:37:26 2011
+
+The time bound for a probabilistic property, which starts with "Pr", now accepts
+time bounds with the following 
+forms: [l,u], [<=u],[<u],[>=l],[>l],[=l]. A new method generateSBMLConstraints
+was added to Translator.java to 
+convert a probabilistic property to SBML constraints. The mapping between a
+property and its corresponding 
+constraint(s) was also modified to take care of the special conditions at time
+boundaries.

@@ -1,0 +1,54 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: hao@tang.elen.utah.edu
+Subject: Re: Environment process must be at the bottom if the outputs are ommitted from the declarations. (PR#74)
+Date: Thu May 20 09:39:58 1999
+CC: myers@ching.elen.utah.edu
+
+OK.  Now atacs gives many errors about input/output usage.
+Should I consider this correct?
+
+172 xia:meetMorn/fresh> pwd
+/home/song/peskin/examples/csp/meetMorn/fresh
+173 xia:meetMorn/fresh> ls -l `which atacs`
+-rwx------   1 peskin   101      11473713 May 19 18:37
+/home/song/peskin/atacs/atacs*
+174 xia:meetMorn/fresh> atacs -ya lapbN
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling lapbN.csp ... 
+error: undefined action 'o1+'
+error: undefined action 'o1-'
+error: undefined action 'i3+'
+error: undefined action 'i3-'
+error: output signal 'li+' used as an input
+error: output signal 'li+' used as an input
+error: output signal 'li-' used as an input
+error: output signal 'li-' used as an input
+error: output signal 'li+' used as an input
+error: output signal 'ri+' used as an input
+error: output signal 'ri-' used as an input
+error: output signal 'ri-' used as an input
+error: output signal 'ri+' used as an input
+error: output signal 'ri+' used as an input
+error: output signal 'li+' used as an input
+error: output signal 'li+' used as an input
+error: output signal 'li-' used as an input
+error: output signal 'li-' used as an input
+error: output signal 'li+' used as an input
+error: output signal 'ri+' used as an input
+error: output signal 'ri-' used as an input
+error: output signal 'ri-' used as an input
+error: output signal 'ri+' used as an input
+error: output signal 'ri+' used as an input
+Storing process lapbN to lapbN.er
+Loading timed event-rule structure from:  lapbN.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding reduced state graph ... done
+Projecting out dummy transitions ... done
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+175 xia:meetMorn/fresh> 

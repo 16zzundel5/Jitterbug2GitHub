@@ -1,0 +1,36 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@vlsigroup.elen.utah.edu
+Subject: Re: atacs should look for include files in directory where it found main source (PR#192)
+Date: Thu Oct 19 12:54:02 2000
+
+I have fixed this myself as of cvs tag fixed192
+
+206 xia:~> cd ~peskin/atacs/examples/
+207 xia:~/atacs/examples> atacs -mcya csp/lapbN
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Now using combinational optimization.
+Compiling csp/lapbN.csp ... 
+Compiled process lapbctrl
+Compiled testbench left
+Compiled testbench right
+Compiled testbench leftenv
+Compiled testbench rightenv
+Storing module lapbN to csp/lapbN.er
+Loading timed event-rule structure from:  csp/lapbN.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done (states=144,time=0.071260)
+Projecting out dummy transitions ... done (0.002037)
+Checking CSC ... complete state coded
+Finding regions ... done (0.006937)
+Finding conflicts ... done (0.003128)
+Finding covers ... done (0.000592)
+Storing production rules to:  csp/lapbN.prs
+Total Area = 24 literals 44 transistors
+208 xia:~/atacs/examples> 
+
+I will now close this report.

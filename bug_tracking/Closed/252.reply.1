@@ -1,0 +1,25 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: if .er file exists and is not writeable, atacs seg faults (PR#252)
+Date: Thu Nov 11 20:44:04 1999
+
+The seg fault is gone (see below).  I will now close this report.
+
+684 xia:/tmp> pwd
+/tmp
+685 xia:/tmp> ls -l `which atacs`
+-rwxr-x---   1 peskin   async    12802030 Nov 10 17:22
+/home/xia/peskin/atacs/src/atacs*
+686 xia:/tmp> ll cdp.er
+-rw-------   1 peskin   async       22375 Nov 11 20:40 cdp.er
+687 xia:/tmp> atacs -lg cdp.g
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Converting Petri net to ER and storing to:  cdp.er
+688 xia:/tmp> chmod -w cdp.er
+689 xia:/tmp> atacs -lg cdp.g
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Converting Petri net to ER and storing to:  cdp.er
+ERROR: Cannot open file:  cdp.er
+690 xia:/tmp>

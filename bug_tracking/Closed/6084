@@ -1,0 +1,38 @@
+From leandrohw@gmail.com  Tue Jun 24 16:05:18 2014
+Return-Path: <leandrohw@gmail.com>
+Received: from mail-ie0-f170.google.com (mail-ie0-f170.google.com [209.85.223.170])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s5OM5HRj011908
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Jun 2014 16:05:17 -0600
+Received: by mail-ie0-f170.google.com with SMTP id tr6so911621ieb.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Jun 2014 15:05:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=from:content-type:content-transfer-encoding:subject:message-id:date
+         :to:mime-version;
+        bh=UKBDDOKspYCOUqZSBFcAF8z0BwfN2ROgZqCpHgXlrRQ=;
+        b=g7RY10n7imOMDHLY5ix3HAO5WmTYa9dT2khYEjk8FqSucCLGRbQL1vaEAqJPvWTkzZ
+         5Zgv17Ys2kkauu7oY2wXPO0mzhfz5dscngekpWTiGzpjPJzNIV7umw53/NNkbsYXbv3w
+         6eNhN8j3+99IrkjyIWDlCtlMNISrHfpmr96NSN0wOZbtIBmppij5jZGTGAQtKHX6KD10
+         /MNHtiZvjBdLE1BMC/ipUs2fPztbdsld5chixwA4fOpbbr6wgf9TWr4PWLTD+g0dHxJP
+         8lxpB5Cxyn2vtt+fv6VIBCIH+eUA0JGq9ymGbBI3y/gw26iwjAEyud2PMjxgrePOhyj6
+         Z8/g==
+X-Received: by 10.50.92.33 with SMTP id cj1mr37849317igb.2.1403647516611;
+        Tue, 24 Jun 2014 15:05:16 -0700 (PDT)
+Received: from [192.168.0.105] (c-67-177-29-14.hsd1.ut.comcast.net. [67.177.29.14])
+        by mx.google.com with ESMTPSA id v4sm951343igk.10.2014.06.24.15.05.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Tue, 24 Jun 2014 15:05:15 -0700 (PDT)
+From: Leandro Watanabe <leandrohw@gmail.com>
+Content-Type: text/plain; charset=us-ascii
+Subject: BUG: Parsing brackets 
+Message-Id: <EE3A5768-CD50-4F12-8F2E-CE53BD26D217@gmail.com>
+Date: Tue, 24 Jun 2014 16:05:13 -0600
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.2\))
+X-Mailer: Apple Mail (2.1878.2)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id s5OM5HRj011908
+
+V0[n][n should be invalid but if you enter it, it will give you V0[n][n] back. In addition, V0[[n]] throws null pointer exception.
+

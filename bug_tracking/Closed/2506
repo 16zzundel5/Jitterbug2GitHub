@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:14:24 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.190])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELENai012406
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:14:24 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so526367fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:14:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=BSYCQYSLnpVFi8wAUuPGeWcIoEzdAFYFcWPjBx5PANU=;
+        b=cfoHHuGWAKp7GDTAru/VvdV/YxX9566hI9LdjA1JdtkxPdvJ3PwCIXIGcV6P3RrXTsQOzTvIfPfaRR9Nj+jmQUyhZluqbdld5oRmUFJ3w2T2UJRQCi3EUe17AtA1i9r9IMP7ONyprtYwodbDE5oHgiqomGus5ZMzrjD7h5Mgh8s=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=GZOoVLwg906T0Oww+5oMowes3pw8xVhOnihY8LFsndlVkZws0uzvyW7kYdPCUc50C0T2E7eMPTB3Ao9nqV2sngEaBGTHMNyrZ0LkZVmQCbdNjB/1jx8vFNZV5qrysI0fEX7NtqNih4aGfRQOOY3AcZLMGDjM7u+TTi6yGnhGrRI=
+Received: by 10.82.113.6 with SMTP id l6mr3419781buc.22.1203023662631;
+        Thu, 14 Feb 2008 13:14:22 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:14:22 -0800 (PST)
+Message-ID: <eba119560802141314n2bce2100s52601323c1475950@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:14:22 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE: Shrink Whitespace in GCM Editor
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Too many fields have too much white space, shrink it.
+

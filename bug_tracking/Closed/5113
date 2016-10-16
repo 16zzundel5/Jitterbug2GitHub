@@ -1,0 +1,28 @@
+From n.roehner@utah.edu  Wed Sep  8 16:35:48 2010
+Return-Path: <n.roehner@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o88MZmfp016181
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 8 Sep 2010 16:35:48 -0600
+Date: Wed, 8 Sep 2010 16:35:48 -0600
+Message-Id: <201009082235.o88MZmfp016181@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG No prompted save when converting dirty GCM to SBML
+
+Full_Name: Nicholas Roehner
+tool: BioSim
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: nroehner
+
+
+Making changes in a GCM file and then converting it to an SBML file without
+first saving does not result in a prompted save.
+

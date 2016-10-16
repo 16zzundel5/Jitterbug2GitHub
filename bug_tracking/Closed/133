@@ -1,0 +1,20 @@
+From myers@vlsigroup.elen.utah.edu  Wed May 12 11:51:56 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA22193 for <atacs-bugs@shang.elen.utah.edu>; Wed, 12 May 1999 11:51:55 -0600 (MDT)
+Date: Wed, 12 May 1999 11:51:55 -0600 (MDT)
+Message-Id: <199905121751.LAA22193@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add gatelevel check when filtering cover BDD
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: vlsi.elen.utah.edu (128.110.18.217)
+Submitted by: myers
+
+
+Check when pulling solutions out of the cover BDD that the cover is a
+gatelevel cover using the standard SI correctness constraints.
+

@@ -1,0 +1,31 @@
+From myers@eng.utah.edu  Fri Oct 30 14:52:17 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t9UKqHMK006820
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 Oct 2015 14:52:17 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZsGen-0002XK-6A)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 Oct 2015 14:52:17 -0600
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.232])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZsGen-0002hm-3B
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 30 Oct 2015 14:52:17 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: better handling of libSBOLj exceptions
+Message-Id: <2CE572E6-F72B-463A-9E9A-55E6E370B612@ece.utah.edu>
+Date: Fri, 30 Oct 2015 14:52:16 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id t9UKqHMK006820
+
+When there are problems with SBOL files, exceptions are thrown.  iBioSim is not catching and handling these properly.
+
+

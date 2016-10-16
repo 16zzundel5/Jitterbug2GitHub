@@ -1,0 +1,65 @@
+From andrew.n.fisher@utah.edu  Fri Aug  9 19:42:26 2013
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r7A1gPmF030058
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Aug 2013 19:42:25 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqsEAPeZBVKbYbVl/2dsb2JhbABbDoI0gUm+WoEydIIbCwWBCwELAQoUQxMnBBuICJg4mBKIB5ABg1J1A4hzhUiFUJUmgl0+gio
+X-IPAS-Result: AqsEAPeZBVKbYbVl/2dsb2JhbABbDoI0gUm+WoEydIIbCwWBCwELAQoUQxMnBBuICJg4mBKIB5ABg1J1A4hzhUiFUJUmgl0+gio
+X-IronPort-AV: E=Sophos;i="4.89,849,1367992800"; 
+   d="scan'208,217";a="235273810"
+Received: from h101.umail.utah.edu (HELO X-HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 09 Aug 2013 19:42:24 -0600
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.247]) by
+ X-HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi id 14.03.0123.003;
+ Fri, 9 Aug 2013 19:42:24 -0600
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: Bug Report <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE: No rate for continuous variables.
+Thread-Topic: CHANGE: No rate for continuous variables.
+Thread-Index: AQHOlWHkmhnSWHc2oE6BEWZZ9yWcMQ==
+Date: Sat, 10 Aug 2013 01:42:24 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED1177A1DD@X-MB8.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [98.202.254.114]
+Content-Type: multipart/alternative;
+	boundary="_000_33C595BF585B104B8418E9E32A58C0ED1177A1DDXMB8xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1177A1DDXMB8xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+First create a continuous variables V0 (having initial values and initial r=
+ates). Now create a transition. If V0 is assigned a value first, then V0 ca=
+nnot be assigned a rate. Maybe this can be changed so that the rate assignm=
+ent and the value assignment can be created in either order.
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1177A1DDXMB8xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">First create a continuous variables V0 (having initial values and in=
+itial rates). Now create a transition. If V0 is assigned a value first, the=
+n V0 cannot be assigned a rate. Maybe
+ this can be changed so that the rate assignment and the value assignment c=
+an be created in either order.<br>
+</div>
+</body>
+</html>
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1177A1DDXMB8xdsumailuta_--
+

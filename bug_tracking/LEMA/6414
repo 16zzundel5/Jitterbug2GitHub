@@ -1,0 +1,55 @@
+From zhen.zhang@utah.edu  Thu Oct  1 00:40:26 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo1.cc.utah.edu (ipo1.cc.utah.edu [155.97.144.6])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t916eQgb004283
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 1 Oct 2015 00:40:26 -0600
+X-IronPort-AV: E=Sophos;i="5.17,616,1437458400"; 
+   d="scan'208";a="55211151"
+Received: from mail-oi0-f52.google.com ([209.85.218.52])
+  by ipo1smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 01 Oct 2015 00:40:25 -0600
+Received: by oixx17 with SMTP id x17so35531146oix.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Sep 2015 23:40:25 -0700 (PDT)
+X-Received: by 10.202.232.12 with SMTP id f12mr4245315oih.122.1443681625326;
+ Wed, 30 Sep 2015 23:40:25 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Wed, 30 Sep 2015 23:39:45 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Thu, 1 Oct 2015 00:39:45 -0600
+Message-ID: <CA+LVOvm8mVEZNHxJFe8Z7qaPNse+DE+OdoQ6PNVE3=qCVB5wAg@mail.gmail.com>
+Subject: FEATURE: Let the VHDL compiler report transitions compiled from if statements
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a11408b6e724c7f0521055237
+
+--001a11408b6e724c7f0521055237
+Content-Type: text/plain; charset=UTF-8
+
+An if statement with N branches gets compiled to N transitions with one
+shared preset place. These transitions are, however, not in conflict with
+each other because their enabling conditions never allow them to be enabled
+simultaneously. Knowing these transitions is helpful in the prepartion
+steps for the partial order reduction. They are not in conflict with each
+other, even though they share a preset place.
+
+It would be nice to let the compiler collect these transitions and inform
+the POR's preparation steps. Otherwise, the POR steps will have to go
+through their complex enabling expressions to figure out if they are indeed
+not conflicting, and the result might not be as accurate.
+
+--001a11408b6e724c7f0521055237
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">An if statement with N branches gets compiled to N transit=
+ions with one shared preset place. These transitions are, however, not in c=
+onflict with each other because their enabling conditions never allow them =
+to be enabled simultaneously. Knowing these transitions is helpful in the p=
+repartion steps for the partial order reduction. They are not in conflict w=
+ith each other, even though they share a preset place. <br><br>It would be =
+nice to let the compiler collect these transitions and inform the POR&#39;s=
+ preparation steps. Otherwise, the POR steps will have to go through their =
+complex enabling expressions to figure out if they are indeed not conflicti=
+ng, and the result might not be as accurate. <br><br></div>
+
+--001a11408b6e724c7f0521055237--
+

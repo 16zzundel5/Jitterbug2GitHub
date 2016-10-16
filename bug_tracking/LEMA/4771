@@ -1,0 +1,44 @@
+From satish.batchu@utah.edu  Wed Sep  9 11:56:29 2009
+Return-Path: <satish.batchu@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n89HuTFp028494
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 9 Sep 2009 11:56:29 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApoEAEuJp0qbYbVm/2dsb2JhbADPI4dsiEmEGAWDK4cw
+X-IronPort-AV: E=Sophos;i="4.44,359,1249279200"; 
+   d="scan'208";a="196274663"
+Received: from h102.umail.utah.edu (HELO HUB1.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 09 Sep 2009 11:56:29 -0600
+Received: from C1V2.xds.umail.utah.edu ([169.254.2.142]) by
+ HUB1.xds.umail.utah.edu ([2002:9b61:b566::9b61:b566]) with mapi; Wed, 9 Sep
+ 2009 11:56:29 -0600
+From: SATISH BATCHU <satish.batchu@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Wed, 9 Sep 2009 11:56:28 -0600
+Subject: FEATURE: Thresholds on rates in some cases
+Thread-Topic: FEATURE: Thresholds on rates in some cases
+Thread-Index: AQHKMXbbfodTbj/uBEO85M7X7kMSwg==
+Message-ID: <C496AC5F89F0C543BC12113C829A409F5BEFB67CD2@C1V2.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+In some cases, a finite threshold may not be achievable for getting a relat=
+ionship between variables while generating the lhpn model from sim traces. =
+For example, if a triangular wave is given as an input to a differentiator,=
+ a square wave would be obtained. When the rate of input is positive, outpu=
+t is high and vice versa. We can't get a meaningful threshold for the input=
+ in this case.  So, LHPN model should be able to use thresholds on the rate=
+s of the variables in this case. This can be done by encoding the rate enab=
+lings as boolean(integer?) variables.=
+

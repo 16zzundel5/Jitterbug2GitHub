@@ -1,0 +1,32 @@
+From myers@ece.utah.edu  Thu May 13 17:42:42 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4DNgg4B007377;
+	Thu, 13 May 2010 17:42:42 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OCi37-0000vD-WD; Thu, 13 May 2010 17:42:42 -0600
+Message-Id: <04265938-77D8-4F2C-B3A0-C1DA743A90FC@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: normalize delays does not like exponential distributions
+Date: Thu, 13 May 2010 17:42:36 -0600
+Cc: kjones@vlsigroup.ece.utah.edu
+X-Mailer: Apple Mail (2.936)
+
+If the delay assignment is not a "uniform(l,u)", it gets an exception  
+when it attempts to parseInt.  In this case, it should likely leave  
+the delay assignment alone.  Indeed, the transform should likely only  
+be applied to delay assignments of the form "uniform(l,u)".
+
+Chris
+

@@ -1,0 +1,15 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: check reaction elements (PR#2431)
+Date: Sat Jan  5 07:13:00 2008
+
+These issues remain:
+
+stoichiometry must be > 0 (default is 1)
+
+reactants/products may contain a species more than once
+
+warning when local parameter shadows another id
+ 
+reaction id can be used in kineticLaw of another reaction and refers to
+the rate of the reaction.

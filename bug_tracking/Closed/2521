@@ -1,0 +1,37 @@
+From christian.atheist@gmail.com  Mon Mar  3 00:30:54 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=3.0 tests=BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.172])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m237Usbp008607
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 3 Mar 2008 00:30:54 -0700
+Received: by wf-out-1314.google.com with SMTP id 29so6680494wff.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 02 Mar 2008 23:30:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        bh=aSynrAuMa41qxRcqkd7jvoAPf6J1xGAbe4ru/rPKgSc=;
+        b=YSVODjxQ7iTUF8a7Nz87iMKChuWfsq9eLp3Q6lnFpzlaVc1iZcfgCpxi4APIPIsJwdmyAW+OIv28OiUr0z7uLJ29Ng4oFoXP3UJvvGHOskxHcxRGTVpDRqrGFcJ8+6DeNXuUb/Vg18I6Iz/06F51Dxdw6d/CcDlQaWrgn1MSnDY=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=kvt6dNWY5kGKbsHZE4iwzX/E6iEePRZZasXy918fhChsnDUY2acVKDL9+8HNeyn4Di4wbBiZFjEfu8kV+yCuv6YrevHJwtd+L5I163jRgMYoK8CgvB4XCXyVwkp3Vm/LNlOo8h6+JwE2TUZpEgeZ9oJu/1PA4ELU8xiaQE57FUo=
+Received: by 10.143.161.3 with SMTP id n3mr8825470wfo.32.1204529451637;
+        Sun, 02 Mar 2008 23:30:51 -0800 (PST)
+Received: by 10.142.162.21 with HTTP; Sun, 2 Mar 2008 23:30:51 -0800 (PST)
+Message-ID: <eba119560803022330r75a4ebd6sbe1a6ce0fbce34e8@mail.gmail.com>
+Date: Mon, 3 Mar 2008 00:30:51 -0700
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Label and Arrowhead are added twice
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: cce5c7ade920f93f
+
+The property arrowhead and label are saved twice in a field.
+

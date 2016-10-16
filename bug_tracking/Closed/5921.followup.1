@@ -1,0 +1,53 @@
+From andrew.n.fisher@utah.edu  Wed Aug 21 11:24:51 2013
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r7LHOp1E010002
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 21 Aug 2013 11:24:51 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqAEAIz3FFKbYbVm/2dsb2JhbABaDoN9v2SBNXSCJAEBAQQ6TwIBCA4DBAEBCxQQHxMdCAIEEwiICKxsgSmQJDiDG3kDjjuaf4JeP4Ir
+X-IPAS-Result: AqAEAIz3FFKbYbVm/2dsb2JhbABaDoN9v2SBNXSCJAEBAQQ6TwIBCA4DBAEBCxQQHxMdCAIEEwiICKxsgSmQJDiDG3kDjjuaf4JeP4Ir
+X-IronPort-AV: E=Sophos;i="4.89,929,1367992800"; 
+   d="scan'208";a="239625251"
+Received: from h102.umail.utah.edu (HELO X-HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 21 Aug 2013 11:24:33 -0600
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.209]) by
+ X-HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi id 14.03.0123.003;
+ Wed, 21 Aug 2013 11:24:32 -0600
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: RE: BUG: The initial value of a continuous variable cannot be
+ changed (PR#5921)
+Thread-Topic: BUG: The initial value of a continuous variable cannot be
+ changed (PR#5921)
+Thread-Index: AQHOmTXP5F3McgID8k6EKgYSBEtzp5mf88Wq
+Date: Wed, 21 Aug 2013 17:24:32 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED117840C9@X-MB8.xds.umail.utah.edu>
+References: <201308142132.r7ELWfxq027000@chou.ece.utah.edu>
+In-Reply-To: <201308142132.r7ELWfxq027000@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.98.27.208]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r7LHOp1E010002
+
+This is still an issue for me. However, it seems that the rate has to be set to a 'uniform' value to get the
+problem. When I set the initial value to a rate of 7, save, set it to 8, and save, then there does not seem
+to be a problem.
+
+Andrew
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Wednesday, August 14, 2013 3:32 PM
+To: ANDREW NATHAN FISHER
+Subject: Re: BUG: The initial value of a continuous variable cannot be changed (PR#5921)
+
+Couldn't recreate this one.  Please show it to me next time we meet.
+
+Chris
+
+

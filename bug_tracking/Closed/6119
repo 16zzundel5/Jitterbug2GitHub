@@ -1,0 +1,89 @@
+From myers@eng.utah.edu  Tue Jul 22 17:21:03 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s6MNL2hF008005
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 22 Jul 2014 17:21:02 -0600
+Received: from [50.141.67.1] (helo=[192.168.1.10])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1X9jb4-0002q6-39; Tue, 22 Jul 2014 17:35:51 -0600
+Content-Type: multipart/alternative; boundary="Apple-Mail=_538BDC72-E96C-46A1-870A-EE4A98FECA46"
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+Subject: Re: BUG: problem with dimension id counter in reaction
+From: "Chris J. Myers" <myers@ece.utah.edu>
+In-Reply-To: <DDDF61188CC80F41AF904098A2BD0A513289526F@X-MB11.xds.umail.utah.edu>
+Date: Tue, 22 Jul 2014 17:21:00 -0600
+Cc: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>,
+        "<scottg@san.rr.com>" <scottg@san.rr.com>
+Message-Id: <61D1EA37-B4AA-4DBC-94AC-32D0CE733E84@ece.utah.edu>
+References: <DDDF61188CC80F41AF904098A2BD0A513289526F@X-MB11.xds.umail.utah.edu>
+To: LEANDRO HIKIJI WATANABE <l.watanabe@utah.edu>
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_538BDC72-E96C-46A1-870A-EE4A98FECA46
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+Yes, I ran into this one as well.
+
+Chris
+
+On Jul 22, 2014, at 5:15 PM, LEANDRO HIKIJI WATANABE =
+<l.watanabe@utah.edu> wrote:
+
+> I was trying to create an example using reactions but I run into a =
+problem. I did the following:
+>=20
+> created constant parameter n =3D 5;
+> created species A[n][n]
+> created species B[n][n]
+> created species C[n][n]
+> created compartment Cell[n][n]
+> created reaction reaction[n][n] A+B->C index math [d0][d1]
+>=20
+> Currently there is a problem with the function that checks if it is =
+statically computable so when you press OK, an error message pops up. =
+When this happens, the counter you use to keep track of the dimension =
+doesn't reset. This means if I try to press OK again, you are going to =
+end up with dimensionIds =3D {d2,d3} and so on.
+
+
+--Apple-Mail=_538BDC72-E96C-46A1-870A-EE4A98FECA46
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">Yes, I =
+ran into this one as well.<div><br></div><div>Chris</div><div><br><div =
+style=3D""><div>On Jul 22, 2014, at 5:15 PM, LEANDRO HIKIJI WATANABE =
+&lt;<a href=3D"mailto:l.watanabe@utah.edu">l.watanabe@utah.edu</a>&gt; =
+wrote:</div><br class=3D"Apple-interchange-newline"><blockquote =
+type=3D"cite"><div fpstyle=3D"1" ocsi=3D"0" style=3D"font-family: =
+Helvetica; font-size: 12px; font-style: normal; font-variant: normal; =
+font-weight: normal; letter-spacing: normal; line-height: normal; =
+orphans: auto; text-align: start; text-indent: 0px; text-transform: =
+none; white-space: normal; widows: auto; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px;"><div style=3D"direction: ltr; =
+font-family: Tahoma; font-size: 10pt;"><div style=3D"direction: ltr; =
+font-family: Tahoma; font-size: 10pt;"><div>I was trying to create an =
+example using reactions but I run into a problem. I did the =
+following:</div><div><br></div><div>created constant parameter n =3D =
+5;</div><div>created species A[n][n]</div><div>created species =
+B[n][n]</div><div>created species C[n][n]</div><div>created compartment =
+Cell[n][n]</div><div>created reaction reaction[n][n] A+B-&gt;C index =
+math [d0][d1]</div><div><br></div><div>Currently there is a problem with =
+the function that checks if it is statically computable so when you =
+press OK, an error message pops up. When this happens, the counter you =
+use to keep track of the dimension doesn't reset. This means if I try to =
+press OK again, you are going to end up with dimensionIds =3D {d2,d3} =
+and so =
+on.</div></div></div></div></blockquote></div><br></div></body></html>=
+
+--Apple-Mail=_538BDC72-E96C-46A1-870A-EE4A98FECA46--
+

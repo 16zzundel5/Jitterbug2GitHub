@@ -1,0 +1,53 @@
+From atacs-bugs  Mon Jan 20 19:15:25 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h0L2FPN18878
+	for atacs-bugs@shang.elen.utah.edu; Mon, 20 Jan 2003 19:15:25 -0700
+Received: from jiaqi.stanford.edu (DNab40461b.Stanford.EDU [171.64.70.27])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id h0L2FNm18720;
+	Mon, 20 Jan 2003 19:15:23 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h0L2CLu13042;
+	Mon, 20 Jan 2003 18:12:21 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Mon, 20 Jan 2003 18:12:21 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: Eric Robert Peskin <atacs-bugs@vlsigroup.ece.utah.edu>
+cc: peskin@vlsigroup.ece.utah.edu
+Subject: Re: BAD812 broken repository! (PR#729)
+In-Reply-To: <200301142309.h0EN9gm12871@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.44.0301201806310.12992-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+The problem has to do with the function call on line 1340 in postproc.cc 
+to the function clear_C.  This function strips "non-essential" conflicts.  
+These are defined to be if t1 and t2 conflict and don't share a common 
+enabling or enabled event, then they do not form an essential conflict.  
+In other words, they do not affect behavior.  
+
+The problem is that in the hse and CSC solving code, they assume that such 
+conflicts exist.  In other words, these two functions modify the tel by 
+adding signals which may be common to these two transitions making this 
+now an essential conflict.
+
+The reason that this function is there is that non-essential conflicts 
+were preventing postprocessing from removing dummy transitions that it can 
+otherwise remove.  To make the regression test work, I have commented it 
+out for now, but it will impact postprocessing's performance.  
+
+In the future, one of the following needs to be done:
+
+1) Implement unclear_C to put the conflicts back after postprocessing.
+
+2) Implement unclear_C to derive where the non-essential conflicts should 
+be inserted.
+
+3) Fix CSC solver and hse code to not rely on these conflicts. 
+
+Options 1 and 2 are the most likely to be done.
+
+Moving to potential problem as this requires future work.
+
+

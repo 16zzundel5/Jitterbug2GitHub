@@ -1,0 +1,9 @@
+From: Nam Nguyen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: namphuon@cs.utah.edu
+Subject: Re: BUG: Biochemical Reactions not behaving correctly (PR#4467)
+Date: Tue May 20 19:39:02 2008
+
+The problem is that the And Gate has a species that is both constant and
+biochemical.  Because of this, the constant part of the species takes over and
+causes the class to recognize it as a constant, not a biochemical species.  I
+need to refactor the species class in order to get this working.

@@ -1,0 +1,149 @@
+From myers@eng.utah.edu  Fri Feb 15 10:51:13 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1FHpCqs018527
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Feb 2013 10:51:12 -0700
+Received: from 66-117-145-136.lmi.net ([66.117.145.136] helo=[10.22.50.229])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1U6PJP-000Dlx-Rm
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 15 Feb 2013 10:43:04 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_4D864D96-C98B-4433-A329-E5C7AC6DD68F"
+Subject: BUG: GeneNet is missing cygwin libraries for Windows 8
+Date: Fri, 15 Feb 2013 10:51:06 -0700
+References: <CAJepWQCfGRpF7se-xy9qa4Tn6ZY1wy3x_1yYkRKu_Gzck_A8Rg@mail.gmail.com>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <12273FF7-1BAA-4850-AD6D-74C09FB0C6A5@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.2 \(1499\))
+X-Mailer: Apple Mail (2.1499)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_4D864D96-C98B-4433-A329-E5C7AC6DD68F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+
+
+Begin forwarded message:
+
+> From: Shaofan Qi <chi.cedric@gmail.com>
+> Subject: Re: A little problem
+> Date: February 14, 2013 10:22:44 AM MST
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+>=20
+> I got this message. "The program can't start because cyggcc_s-1.dll is =
+missing from your computer."
+>=20
+>=20
+> On Thu, Feb 14, 2013 at 10:19 AM, Shaofan Qi <chi.cedric@gmail.com> =
+wrote:
+> Tutorial question.
+>=20
+>=20
+> On Thu, Feb 14, 2013 at 10:18 AM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+> One more question is this while doing the tutorial or the homework =
+question?
+>=20
+> Chris
+>=20
+> On Feb 14, 2013, at 10:14 AM, Shaofan Qi <chi.cedric@gmail.com> wrote:
+>=20
+> > Dear Prof. Myers,
+> >
+> > This is Shaofan Qi. I have a strange problem in using IBIOSIM. When =
+I click on the Save and Run icon, I get a message "A gcm file was not =
+generated Please see the run.log file". But the run.log is empty.
+> >
+> > I use Windows 8 64bit. Ibiosim is 2.4.2.
+> >
+> >
+> >
+> > Sincerely,
+> >
+> > Shaofan Qi
+>=20
+>=20
+>=20
+
+
+--Apple-Mail=_4D864D96-C98B-4433-A329-E5C7AC6DD68F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Shaofan Qi &lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;<br></spa=
+n></div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Re: A little problem</b><br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Date: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">February 14, 2013 =
+10:22:44 AM MST<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><br><div dir=3D"ltr">I got this message. "The program can't start =
+because cyggcc_s-1.dll is missing from your computer."</div><div =
+class=3D"gmail_extra"><br><br><div class=3D"gmail_quote">On Thu, Feb 14, =
+2013 at 10:19 AM, Shaofan Qi <span dir=3D"ltr">&lt;<a =
+href=3D"mailto:chi.cedric@gmail.com" =
+target=3D"_blank">chi.cedric@gmail.com</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex"><div =
+dir=3D"ltr">Tutorial question.</div><div class=3D"HOEnZb"><div =
+class=3D"h5"><div class=3D"gmail_extra"><br><br><div =
+class=3D"gmail_quote">
+On Thu, Feb 14, 2013 at 10:18 AM, Chris J. Myers <span dir=3D"ltr">&lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+target=3D"_blank">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex">One more question is =
+this while doing the tutorial or the homework question?<br>
+<div><br>
+Chris<br>
+<br>
+On Feb 14, 2013, at 10:14 AM, Shaofan Qi &lt;<a =
+href=3D"mailto:chi.cedric@gmail.com" =
+target=3D"_blank">chi.cedric@gmail.com</a>&gt; wrote:<br>
+<br>
+</div><div>&gt; Dear Prof. Myers,<br>
+&gt;<br>
+&gt; This is Shaofan Qi. I have a strange problem in using IBIOSIM. When =
+I click on the Save and Run icon, I get a message "A gcm file was not =
+generated Please see the run.log file". But the run.log is empty.<br>
+
+
+&gt;<br>
+&gt; I use Windows 8 64bit. Ibiosim is 2.4.2.<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt; Sincerely,<br>
+&gt;<br>
+&gt; Shaofan Qi<br>
+<br>
+</div></blockquote></div><br></div>
+</div></div></blockquote></div><br></div>
+</blockquote></div><br></body></html>=
+
+--Apple-Mail=_4D864D96-C98B-4433-A329-E5C7AC6DD68F--
+

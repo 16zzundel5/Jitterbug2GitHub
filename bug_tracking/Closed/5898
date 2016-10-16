@@ -1,0 +1,138 @@
+From myers@eng.utah.edu  Fri May  3 11:58:07 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r43Hw5xO011277
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 3 May 2013 11:58:05 -0600
+Received: from c-98-202-13-26.hsd1.ut.comcast.net ([98.202.13.26] helo=[10.0.0.2])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1UYK5Z-0000VC-9S
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 03 May 2013 11:48:09 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_3A6196DB-A694-406B-9899-3A95D25EDE1A"
+Subject: CHANGE: keep required comp flag correct
+Date: Fri, 3 May 2013 11:58:05 -0600
+References: <20130503173225.GE10748@strackenz.spod-central.org>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <4F735548-86B0-4B07-9272-6C99AA25ACD1@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.3 \(1503\))
+X-Mailer: Apple Mail (2.1503)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_3A6196DB-A694-406B-9899-3A95D25EDE1A
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: Lucian Smith <lpsmith@spod-central.org>
+> Subject: Re: [libsbml-team] Possible bug
+> Date: May 3, 2013 11:32:25 AM MDT
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+> Cc: Sarah Keating <skeating@caltech.edu>, LibSBML Team =
+<libsbml-team@caltech.edu>
+>=20
+> * Chris J. Myers <myers@ece.utah.edu> [2013-05-03 17:56] writes:
+>> Hi Sarah,
+>>>=20
+>>> (SBML Validator Check #1020204) The value of attribute =
+'comp:required' on the SBML object must be set to 'false' if the Model =
+object within the SBML object contains no Submodel objects, or if all =
+Submodel objects that are present contain no Species, Parameter, =
+Compartment, Reaction, or Event objects that have not been either =
+directly or indirectly replaced. Reference: L3V1 Comp V1 Section 3.1 The =
+containing model has no submodels and thus the required attribute should =
+be false.
+>>>=20
+>> I changed this and it made no difference.  I'm not sure this is a =
+correct validation error given our recent discussion about the required =
+flag :-).
+>=20
+> It turns out that it is not *quite* right, in that if there are =
+leftover=20
+> Rules, InitialAssignment, Constraints, or FunctionDefinitions in the=20=
+
+> submodel, 'required' should be 'true', too.  However, libsbml just=20
+> checks for the presence of *any* submodel, and doesn't yet check its=20=
+
+> contents.  If there are no submodels, the 'required' flag should=20
+> definitely be 'false':  There is no way for it to change the =
+mathematics=20
+> of the model, nor is there any way to add to the mathematics of the=20
+> model.
+>=20
+> No other insights into the crash, though--sorry.
+>=20
+> -Lucian
+
+
+--Apple-Mail=_3A6196DB-A694-406B-9899-3A95D25EDE1A
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Lucian Smith &lt;<a =
+href=3D"mailto:lpsmith@spod-central.org">lpsmith@spod-central.org</a>&gt;<=
+br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Subject: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Re: [libsbml-team] Possible =
+bug</b><br></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">May 3, 2013 11:32:25 AM MDT<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">"Chris J. Myers" =
+&lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Cc: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Sarah Keating =
+&lt;<a href=3D"mailto:skeating@caltech.edu">skeating@caltech.edu</a>&gt;, =
+LibSBML Team &lt;<a =
+href=3D"mailto:libsbml-team@caltech.edu">libsbml-team@caltech.edu</a>&gt;<=
+br></span></div><br><div>* Chris J. Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt; =
+[2013-05-03 17:56] writes:<br><blockquote type=3D"cite">Hi =
+Sarah,<br><blockquote type=3D"cite"><br>(SBML Validator Check #1020204) =
+The value of attribute 'comp:required' on the SBML object must be set to =
+'false' if the Model object within the SBML object contains no Submodel =
+objects, or if all Submodel objects that are present contain no Species, =
+Parameter, Compartment, Reaction, or Event objects that have not been =
+either directly or indirectly replaced. Reference: L3V1 Comp V1 Section =
+3.1 The containing model has no submodels and thus the required =
+attribute should be false.<br><br></blockquote>I changed this and it =
+made no difference. &nbsp;I'm not sure this is a correct validation =
+error given our recent discussion about the required flag =
+:-).<br></blockquote><br>It turns out that it is not *quite* right, in =
+that if there are leftover <br>Rules, InitialAssignment, Constraints, or =
+FunctionDefinitions in the <br>submodel, 'required' should be 'true', =
+too. &nbsp;However, libsbml just <br>checks for the presence of *any* =
+submodel, and doesn't yet check its <br>contents. &nbsp;If there are no =
+submodels, the 'required' flag should <br>definitely be 'false': =
+&nbsp;There is no way for it to change the mathematics <br>of the model, =
+nor is there any way to add to the mathematics of the =
+<br>model.<br><br>No other insights into the crash, =
+though--sorry.<br><br>-Lucian<br></div></blockquote></div><br></body></htm=
+l>=
+
+--Apple-Mail=_3A6196DB-A694-406B-9899-3A95D25EDE1A--
+

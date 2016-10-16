@@ -1,0 +1,132 @@
+From atacs-bugs@chou.ece.utah.edu  Sat Aug 13 04:26:15 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j7DAQFaI012030
+	for <atacs-bugs@shang.ece.utah.edu>; Sat, 13 Aug 2005 04:26:15 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j7DAQFYe012025
+	for atacs-bugs@shang.ece.utah.edu; Sat, 13 Aug 2005 04:26:15 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j7DAQD8d012011;
+	Sat, 13 Aug 2005 04:26:13 -0600
+Received: from ming.ece.utah.edu (localhost [127.0.0.1])
+	by ming.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j7DAQDRc009712;
+	Sat, 13 Aug 2005 04:26:13 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.13.1/8.13.1/Submit) id j7DAQCIG009711;
+	Sat, 13 Aug 2005 04:26:12 -0600
+Date: Sat, 13 Aug 2005 04:26:12 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200508131026.j7DAQCIG009711@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        peskin@vlsigroup.ece.utah.edu
+Subject: BAD1693 broken repository!
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.7 required=5.0 tests=ALL_TRUSTED,AWL,LONGWORDS 
+	autolearn=unavailable version=3.0.4
+
+Linux ming.ece.utah.edu 2.6.12-1.1372_FC3 #1 Fri Jul 15 00:59:10 EDT 2005 i686 i686 i386 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    10240 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 32 kbytes
+maxproc      16242 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.diode_noosc_HPNVER-tYllva] Error 255
+make[2]: *** [.diode_osc_HPNVER-tYllva] Error 255
+make[2]: *** [.water_HPNVER-tYllva] Error 255
+make[2]: *** [.water2x_HPNVER-tYllva] Error 255
+make[1]: *** [hpn/hpnver.subDir] Error 2
+make: *** [hpnTests] Error 2
+make[3]: *** [.diode_noosc_HPNVER-cPtYllva] Error 255
+make[3]: *** [.diode_osc_HPNVER-cPtYllva] Error 255
+make[3]: *** [.water_HPNVER-cPtYllva] Error 255
+make[3]: *** [.water2x_HPNVER-cPtYllva] Error 255
+make[2]: *** [hpn/hpnver.subDir] Error 2
+make[1]: *** [hpnTests] Error 2
+make: *** [noPostProc] Error 2
+make[3]: *** [.diode_noosc_HPNVER-tYllva] Error 255
+make[3]: *** [.diode_osc_HPNVER-tYllva] Error 255
+make[3]: *** [.water_HPNVER-tYllva] Error 255
+make[3]: *** [.water2x_HPNVER-tYllva] Error 255
+make[2]: *** [hpn/hpnver.subDir] Error 2
+make[1]: *** [hpnTests] Error 2
+make: *** [hairy] Error 2
+make[3]: *** [.diode_noosc_HPNVER-tYllva] Error 255
+make[3]: *** [.diode_osc_HPNVER-tYllva] Error 255
+make[3]: *** [.water_HPNVER-tYllva] Error 255
+make[3]: *** [.water2x_HPNVER-tYllva] Error 255
+make[2]: *** [hpn/hpnver.subDir] Error 2
+make[1]: *** [hpnTests] Error 2
+make: *** [posets] Error 2
+make[3]: *** [.diode_noosc_HPNVER-oitYllva] Error 255
+make[3]: *** [.diode_osc_HPNVER-oitYllva] Error 255
+make[3]: *** [.water_HPNVER-oitYllva] Error 255
+make[3]: *** [.water2x_HPNVER-oitYllva] Error 255
+make[2]: *** [hpn/hpnver.subDir] Error 2
+make[1]: *** [hpnTests] Error 2
+make: *** [noX] Error 2
+make[3]: *** [.diode_noosc_HPNVER-oitYllva] Error 255
+make[3]: *** [.diode_osc_HPNVER-oitYllva] Error 255
+make[3]: *** [.water_HPNVER-oitYllva] Error 255
+make[3]: *** [.water2x_HPNVER-oitYllva] Error 255
+make[2]: *** [hpn/hpnver.subDir] Error 2
+make[1]: *** [hpnTests] Error 2
+make: *** [untimed] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

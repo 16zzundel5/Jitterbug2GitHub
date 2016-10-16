@@ -1,0 +1,42 @@
+From curtis.madsen@utah.edu  Wed Dec 29 18:39:02 2010
+Return-Path: <curtis.madsen@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oBU1d2Wh024471
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Dec 2010 18:39:02 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApsEAPtxG02bYbVm/2dsb2JhbAClLbZ4h3+CFIM2BIRlhh+LMg
+X-IronPort-AV: E=Sophos;i="4.60,247,1291618800"; 
+   d="scan'208";a="429960275"
+Received: from h102.umail.utah.edu (HELO HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 29 Dec 2010 18:39:02 -0700
+Received: from C8V1.xds.umail.utah.edu ([fe80::64cb:16a3:45d4:3def]) by
+ HUB2.xds.umail.utah.edu ([fe80::2ca2:7ed:9df5:dd5d%13]) with mapi; Wed, 29
+ Dec 2010 18:39:02 -0700
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Wed, 29 Dec 2010 18:36:49 -0700
+Subject: BUG:  setNodeValues in ExprTree.java may not be setting values
+ correctly
+Thread-Topic: setNodeValues in ExprTree.java may not be setting values
+ correctly
+Thread-Index: AQHLp8JVw/nbmnqzkkOrYfBqdj/HXA==
+Message-ID: <852B726894B07749AE9ABB4B055919AC64C550F220@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+I found a bug in the setNodeValues method where division by 1 would sometim=
+es result in the expression being set to 1.  I've since fixed this bug, but=
+ there may be more subtle bugs like this one that would cause expressions t=
+o be computed incorrectly.=
+

@@ -1,0 +1,456 @@
+From root@ming.ece.utah.edu  Mon Jun 11 16:05:25 2012
+Return-Path: <root@ming.ece.utah.edu>
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q5BM5HVV026976;
+	Mon, 11 Jun 2012 16:05:25 -0600
+Received: from ming.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by ming.ece.utah.edu (8.14.5/8.14.5) with ESMTP id q5BKxvbM001272;
+	Mon, 11 Jun 2012 15:01:08 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.14.4/8.14.4/Submit) id p28LwQNq011109;
+	Tue, 8 Mar 2011 14:58:26 -0700
+From: root <root@ming.ece.utah.edu>
+Message-Id: <201103082158.p28LwQNq011109@ming.ece.utah.edu>
+Date: Tue, 08 Mar 2011 14:58:26 -0700
+To: peskin@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG:BAD3506 broken repository!
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Linux ming.ece.utah.edu 2.6.34.7-66.fc13.x86_64 #1 SMP Wed Dec 15 07:04:30 UTC 2010 x86_64 x86_64 x86_64 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    10240 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 64 kbytes
+maxproc      1024 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+compare - There were 1 unmatched literals.
+make[3]: *** [.wine3.NEW_SHOP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 1
+make[2]: *** [wine3/NEW_SHOP.VHDLtest] Error 2
+compare - There were 3 unmatched outputs.
+compare - There were 3 unmatched product terms.
+compare - There were 5 unmatched literals.
+make[3]: *** [.wine934.THE_SHOP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 11
+make[2]: *** [wine934/THE_SHOP.VHDLtest] Error 2
+compare - There were 3 unmatched outputs.
+compare - There were 3 unmatched product terms.
+compare - There were 5 unmatched literals.
+make[3]: *** [.PP.PP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 11
+make[2]: *** [PP/PP.VHDLtest] Error 2
+compare - There were 2 unmatched literals.
+make[3]: *** [.PA.PA.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 2
+make[2]: *** [PA/PA.VHDLtest] Error 2
+compare - There were 6 unmatched outputs.
+compare - There were 6 unmatched product terms.
+compare - There were 10 unmatched literals.
+make[3]: *** [.AP.AP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 22
+make[2]: *** [AP/AP.VHDLtest] Error 2
+compare - There were 3 unmatched outputs.
+compare - There were 3 unmatched product terms.
+compare - There were 6 unmatched literals.
+make[3]: *** [.AA.AA.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 12
+make[2]: *** [AA/AA.VHDLtest] Error 2
+make[3]: *** [.newMergex.newMerge.prs-oioqtbG1-2ys] Error 143
+make[2]: *** [newMergex/newMerge.VHDLtest] Error 2
+make[1]: *** [vhd/VHDLtests.subDir] Error 2
+make: *** [channelTests] Error 2
+make[3]: *** [.MPEG.mpegdecoder.ctrl.prs-oioqPNoDtpG1-2ys] Error 143
+make[2]: *** [MPEG/mpegdecoder.ctrl.VHDLtest] Error 2
+make[1]: *** [vhd/paperVHDLtests.subDir] Error 2
+make: *** [paperChannelTests] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/NEW_SHOP.log:ERROR: Safety violation for rule shop1_to_shop2_rcv- -> shop_to_patron_send-.
+./vhd/NEW_SHOP.log:ERROR: Safety violation for rule shop_to_patron_send- -> shop1_to_shop2_rcv-.
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule winery_to_shop1_rcv- -> shop1_to_patron_send-.
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/PP.log:ERROR: Safety violation for rule r_send- -> l_rcv-.
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:ERROR: Firing of z_send- is a vacuous transition.
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv+.
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> y_rcv-.
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv+.
+./vhd/merge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR: Safety violation for rule r_send- -> l_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule y_rcv- -> z_send-/2.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send-/2 -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule x_rcv- -> z_send-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Sink -> y_rcv+.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule z_send- -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/AA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AA.log:ERROR: Safety violation for rule r_send- -> l_rcv-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/PA.log:ERROR: Safety violation for rule r_send- -> l_rcv-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

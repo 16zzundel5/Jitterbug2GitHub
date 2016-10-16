@@ -1,0 +1,30 @@
+From myers@ece.utah.edu  Fri Jul  2 12:23:53 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.9 required=5.0 tests=AWL,BAYES_00,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o62INrgf009507
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 2 Jul 2010 12:23:53 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OUku1-0002sU-MP
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 02 Jul 2010 12:23:53 -0600
+Message-Id: <299C03EB-2119-48A3-97DE-C37FBFD7A220@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: do not allow deletion of gcm used as a component
+Date: Fri, 2 Jul 2010 12:23:48 -0600
+X-Mailer: Apple Mail (2.936)
+
+Do not allow user to delete a gcm which is used as a component.
+
+While you are at it, make sure that you cannot delete an SBML used by  
+a gcm.
+

@@ -1,0 +1,11 @@
+From: Wendy Belluomini <atacs-bugs@shang.elen.utah.edu>
+To: eemercer@ee.utah.edu
+Subject: Re: Incorrect Initial Marking (PR#120)
+Date: Mon May  3 22:58:15 1999
+
+I believe that I have fixed this.  Your funky initial conflict was
+causing rules to remain marked fired when they should not have been.
+This was causing events to fire at the wrong time and breaking the
+poset algorithm.  I have moved the bug to needs testing.
+
+-wendy

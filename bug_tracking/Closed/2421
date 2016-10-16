@@ -1,0 +1,25 @@
+From myers@ming.ece.utah.edu  Mon Dec 31 23:41:03 2007
+Return-Path: <myers@ming.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.1 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m016f3xm027910
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 31 Dec 2007 23:41:03 -0700
+Received: from ming.ece.utah.edu (localhost [127.0.0.1])
+	by ming.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m016f3je010829
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 31 Dec 2007 23:41:03 -0700
+Received: (from myers@localhost)
+	by ming.ece.utah.edu (8.14.1/8.13.8/Submit) id m016f3TJ010828
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 31 Dec 2007 23:41:03 -0700
+Date: Mon, 31 Dec 2007 23:41:03 -0700
+From: Chris Myers <myers@ming.ece.utah.edu>
+Message-Id: <200801010641.m016f3TJ010828@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: add support for initial assignments
+
+
+Should add support for initial assignments to species, compartments,
+and parameters.
+

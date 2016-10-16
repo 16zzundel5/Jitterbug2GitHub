@@ -1,0 +1,27 @@
+From killpack@eng.utah.edu  Wed May  3 14:53:07 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (killpack@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA31254
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 May 2000 14:53:07 -0600
+X-Authentication-Warning: chou.elen.utah.edu: killpack owned process doing -bs
+Date: Wed, 3 May 2000 14:53:07 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@chou.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: assign handshake support request
+Message-ID: <Pine.LNX.4.10.10005031451340.31251-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+It would be nice to have the assign from the value of another signal...
+such as this:
+
+signal x : std_logic := '1';
+signal y : std_logic := '0';
+
+assign (x, y, 200, 300);
+
+So x would be '0' or the same value as 'y'.
+
+Kip
+

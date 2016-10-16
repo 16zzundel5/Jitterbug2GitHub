@@ -1,0 +1,40 @@
+From myers@eng.utah.edu  Tue Mar 11 11:53:59 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s2BHrjnw022731
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Mar 2014 11:53:45 -0600
+Received: from c-67-177-39-60.hsd1.ut.comcast.net ([67.177.39.60] helo=[10.0.0.3])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1WNQql-000262-OD; Tue, 11 Mar 2014 11:52:23 -0600
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0 (Mac OS X Mail 6.6 \(1510\))
+Subject: Re: BUG Deleting species fails when model contains initial assignment
+From: "Chris J. Myers" <myers@ece.utah.edu>
+In-Reply-To: <CAAfUgsF7AMQCCY=XicKYhXTEE1FOLg7zRpDjfdsOP5gUeupOgw@mail.gmail.com>
+Date: Tue, 11 Mar 2014 11:53:57 -0600
+Cc: atacs-bugs@vlsigroup.ece.utah.edu
+Message-Id: <8DCC5B37-497D-453E-BD97-C57590F55019@ece.utah.edu>
+References: <CAAfUgsF7AMQCCY=XicKYhXTEE1FOLg7zRpDjfdsOP5gUeupOgw@mail.gmail.com>
+To: Nicholas Roehner <nicholasroehner@gmail.com>
+X-Mailer: Apple Mail (2.1510)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id s2BHrjnw022731
+
+Ok, there is a workaround on this one.  Don't use initial assignments :-(
+
+Apparently, this is sort of a JSBML issue.  Namely, if you try to remove an initialAssignment when one does not exist, it crashes.  However, if no initialAssignments exist, it is okay.  I've fixed this in that we now check for the presence of an initial assignment before trying to delete it.
+
+Please test.
+
+Chris
+
+On Mar 11, 2014, at 11:42 AM, Nicholas Roehner <nicholasroehner@gmail.com> wrote:
+
+> When deleting species X in the attached model, an exception is generated that appears to depend on the presence of an initial assignment on LacI that refers to other species and parameters.
+> 
+> 
+
+

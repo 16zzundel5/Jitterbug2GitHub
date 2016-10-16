@@ -1,0 +1,37 @@
+From prvs=00163e40c=zhen.zhang@utah.edu  Tue Jul 19 00:25:14 2016
+Return-Path: <prvs=00163e40c=zhen.zhang@utah.edu>
+Received: from ipo4.cc.utah.edu (ipo4.cc.utah.edu [155.97.144.24])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6J6PDwG025980
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2016 00:25:13 -0600
+X-IronPort-AV: E=Sophos;i="5.28,388,1464674400"; 
+   d="scan'208";a="590121067"
+Received: from mail-oi0-f54.google.com ([209.85.218.54])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 19 Jul 2016 00:25:13 -0600
+Received: by mail-oi0-f54.google.com with SMTP id w18so12192404oiw.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 23:25:13 -0700 (PDT)
+X-Gm-Message-State: ALyK8tI2pi0JqhOnqOUnEIh9sMt4LC9QrOUwDKw2eztPeUp+MMpev8Ezdc8+YwBUoypPT0r4JBcf38iPtrabrg==
+X-Received: by 10.157.51.8 with SMTP id f8mr23339433otc.157.1468909512843;
+ Mon, 18 Jul 2016 23:25:12 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 23:24:33 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 19 Jul 2016 00:24:33 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvm1c+FfUU-UrtCM+TrO1Ojg82owe-ZesgFku5hUOJL-KQ@mail.gmail.com>
+Message-ID: <CA+LVOvm1c+FfUU-UrtCM+TrO1Ojg82owe-ZesgFku5hUOJL-KQ@mail.gmail.com>
+Subject: BUG: Null pointer exception on not saving a model learned from data
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+After producing a model learned from data, iBioSim currently generates
+a dot graph of the learned model, and it asks the user to provide an
+ID of the learned model. Clicking on cancel produces the following
+exception:
+java.lang.NullPointerException
+    at learn.GCM.LearnGCM.saveModel(LearnGCM.java:1225)
+    at learn.GCM.LearnGCM.runGeneNet(LearnGCM.java:1775)
+    at learn.GCM.LearnGCM.run(LearnGCM.java:1437)
+    at java.lang.Thread.run(Thread.java:745)
+
+It could be useful for a user to decide not to save the model, after
+iBioSim displays it graphically in dot.
+

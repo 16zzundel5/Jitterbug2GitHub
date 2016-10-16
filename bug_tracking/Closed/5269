@@ -1,0 +1,20 @@
+From myers@localhost.localdomain  Sat Jan 29 17:10:34 2011
+Return-Path: <myers@localhost.localdomain>
+Received: from localhost.localdomain (localhost.localdomain [127.0.0.1])
+	by yuan.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p0U0AYwK003981
+	for <atacs-bugs@localhost.localdomain>; Sat, 29 Jan 2011 17:10:34 -0700
+Received: (from root@localhost)
+	by localhost.localdomain (8.14.4/8.14.4/Submit) id p0U0AYFM003980
+	for atacs-bugs@chou.ece.utah.edu; Sat, 29 Jan 2011 17:10:34 -0700
+From: Chris Myers <myers@localhost.localdomain>
+Message-Id: <201101300010.p0U0AYFM003980@localhost.localdomain>
+Date: Sat, 29 Jan 2011 17:10:34 -0700
+To: atacs-bugs@chou.ece.utah.edu
+Subject: BUG: test 2
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by yuan.ece.utah.edu id p0U0AYwK003981
+
+

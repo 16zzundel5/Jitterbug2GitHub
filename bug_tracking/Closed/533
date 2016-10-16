@@ -1,0 +1,98 @@
+From peskin@cs.utah.edu  Mon Dec  4 10:45:07 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA19270
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 4 Dec 2000 10:45:07 -0700
+Date: Mon, 4 Dec 2000 10:45:07 -0700
+From: peskin@cs.utah.edu
+Message-Id: <200012041745.KAA19270@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: geometric and bag claim deadlock in untimed example with signal still enabled
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag enabledButDead
+OS: RedHat 7.0 Linux xia.elen.utah.edu 2.2.16-22 #1 Tue Aug 22 16:49:06 EDT 2000 i686 unknown
+spec: /home/xia/peskin/atacs/examples/tel/producer.myWoven.tel
+log: /home/xia/peskin/atacs/examples/tel/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+This example deadlocks under both geometric and bag.  
+However, using untimed or posets, it gets all the way to CSC violation.
+But the example has no timing -- everything is 0 to infinity.
+
+Furthermore, the deadlock claimed by geometric and bag is strange, in
+that in the final state, x! is enabled to fall.
+
+The following session tries the example four times: first with
+geometric, then with bag, then with untimed, and finally with posets.
+
+-8<------8<------8<------8<------8<------8<------8<------8<------8<------8<-----
+
+392 xia:examples/tel> atacs -mgltya producer.myWoven.tel 
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using geometric timing to obtain state graphs.
+Loading timed event/level structure from:  producer.myWoven.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000016)
+Finding reduced state graph ... System deadlocked in state 000R
+Storing error trace state graph to:  producer.myWoven.grf
+Executing command:  parg producer.myWoven.grf &
+Storing error trace in VHDL to:  trace.vhd
+393 xia:examples/tel> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+
+393 xia:examples/tel> atacs -mjltya producer.myWoven.tel
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using bourne again geometric timing to obtain state graphs.
+Loading timed event/level structure from:  producer.myWoven.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000121)
+Finding reduced state graph and storing to:  producer.myWoven.rsg
+System deadlocked in state 000R
+Storing error trace state graph to:  producer.myWoven.grf
+Executing command:  parg producer.myWoven.grf &
+Storing error trace in VHDL to:  trace.vhd
+394 xia:examples/tel> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+
+394 xia:examples/tel> atacs -ltya producer.myWoven.tel
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Loading timed event/level structure from:  producer.myWoven.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding reduced state graph ... done (states=18,time=0.001154)
+Projecting out dummy transitions ... done (0.000355)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+395 xia:examples/tel> atacs -msltya producer.myWoven.tel
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Loading timed event/level structure from:  producer.myWoven.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000121)
+Finding reduced state graph ... nodes = 223, dead = 2802
+memory: max=605148 inuse=597804 free=7344 
+done
+121 iterations, 57 regions, 33 new_regions, 18 states in 0.00581098 seconds
+nodes in use = 223, dead = 2802
+memory: max=605148 inuse=597804 free=7344
+Projecting out dummy transitions ... done (0.000420)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+396 xia:examples/tel> 
+

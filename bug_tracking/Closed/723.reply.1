@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: inputs identified as outputs (PR#723)
+Date: Sat Nov  9 17:46:04 2002
+
+I've changed the line in tels_table back so that your files can work, but it
+causes other problems.  Namely, there are some issues with getting internal
+signals to appear both with and with abstraction.  There are other bug reports
+about this, so this fixes this one but something will need to be done to fix the
+others.

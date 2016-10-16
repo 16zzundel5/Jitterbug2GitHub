@@ -1,0 +1,47 @@
+From myers@eng.utah.edu  Tue Jul 12 17:53:01 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6CNr1oi013513
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Jul 2016 17:53:01 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86_2 id 1bN7Tz-000NbL-LE)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Jul 2016 17:53:01 -0600
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.88])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:ECDHE-RSA-AES256-SHA:256)
+	(Exim 4.87 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1bN7Tx-000LnP-2J
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 12 Jul 2016 17:52:53 -0600
+From: Chris Myers <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_67E20534-6D4E-4198-B5EF-1C75D33F40D9"
+Subject: FEATURE: add support for COMBNE archive
+Message-Id: <DBC183A3-B56C-4298-BCD0-8A8E5C590B74@ece.utah.edu>
+Date: Tue, 12 Jul 2016 17:52:48 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+X-Mailer: Apple Mail (2.3124)
+X-UCE-Score: -2.9 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_67E20534-6D4E-4198-B5EF-1C75D33F40D9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Use this library to add support for COMBINE Archive:
+
+http://jdoc.sems.uni-rostock.de/CombineArchive/ =
+<http://jdoc.sems.uni-rostock.de/CombineArchive/>
+
+
+
+--Apple-Mail=_67E20534-6D4E-4198-B5EF-1C75D33F40D9
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv="Content-Type" content="text/html charset=us-ascii"></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" class="">Use this library to add support for COMBINE Archive:<div class=""><br class=""></div><div class=""><a href="http://jdoc.sems.uni-rostock.de/CombineArchive/" class="">http://jdoc.sems.uni-rostock.de/CombineArchive/</a></div><div class=""><br class=""></div><div class=""><br class=""></div></body></html>
+--Apple-Mail=_67E20534-6D4E-4198-B5EF-1C75D33F40D9--
+

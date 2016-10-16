@@ -1,0 +1,28 @@
+From myers@eng.utah.edu  Fri Nov  8 09:23:59 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id rA8GNwMH017627
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 8 Nov 2013 09:23:58 -0700
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Veoqp-000Kft-QE
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 08 Nov 2013 09:24:03 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: need to restore support for level/version conversion
+Message-Id: <D0DBF30F-739F-4631-B4C3-A6B6C232FF3B@ece.utah.edu>
+Date: Fri, 8 Nov 2013 09:23:56 -0700
+To: Curtis Kendall Kendall Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.0 \(1822\))
+X-Mailer: Apple Mail (2.1822)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id rA8GNwMH017627
+
+The level/version conversion was lost moving to JSBML.  Need to restore support for this, perhaps using libsbml.
+
+Chris
+
+

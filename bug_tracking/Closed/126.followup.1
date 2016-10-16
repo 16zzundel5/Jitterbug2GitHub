@@ -1,0 +1,39 @@
+From myers@jiaqi.elen.utah.edu  Tue May 11 19:23:38 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id TAA18919 for <atacs-bugs@shang.elen.utah.edu>; Tue, 11 May 1999 19:23:36 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id TAA00626
+	for atacs-bugs@shang.elen.utah.edu; Tue, 11 May 1999 19:23:07 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905120123.TAA00626@jiaqi.elen.utah.edu>
+Subject: Re: hb.csp unexpected deadlock using untimed (PR#126)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Tue, 11 May 1999 19:23:06 -0600 (MDT)
+In-Reply-To: <199905111748.LAA16822@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 11, 99 11:48:01 am
+Content-Type: text
+
+Current build is skunky.  Check with Hao when he has updated and retest.
+> 
+> Now I get Liveness violation.:
+> 
+> 120 xia:~atacs/examples/csp> pwd
+> /home/ming/atacs/examples/csp
+> 121 xia:~atacs/examples/csp> ls -l `which atacs`
+> -rwx------   1 peskin   101      11799308 May 11 11:33
+> /home/song/peskin/atacs/atacs*
+> 122 xia:~atacs/examples/csp> atacs -mu -ya hb
+> ATACS VERSION 4.1
+> Logging session in:  atacs.log
+> Using no timing analysis.
+> Compiling hb.csp ... 
+> Storing process main to main.er
+> Storing process r to r.er
+> Storing process l to l.er
+> Storing process hb to hb.er
+> Loading timed event-rule structure from:  hb.er
+> Initializing 3 cycles ... done
+> Checking liveness ... NOT live
+> ERROR:  Liveness violation!
+> 123 xia:~atacs/examples/csp> 
+> 
+> 
+

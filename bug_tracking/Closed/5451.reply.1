@@ -1,0 +1,14 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: open model without change asks to save (PR#5451)
+Date: Thu Aug 11 22:56:08 2011
+
+The dirty bit is now set to false upon opening a file, so this should be fixed
+now.  Moving to needs testing.
+
+> Even if there are no changes after opening a file, dirty is apparently being
+set
+> making you get asked to save when you try to close.
+> 
+> 
+> 

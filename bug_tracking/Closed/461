@@ -1,0 +1,39 @@
+From peskin  Fri May 12 13:48:55 2000
+Return-Path: <peskin>
+Received: (from peskin@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id NAA19636
+	for atacs-bugs@shang.elen.utah.edu; Fri, 12 May 2000 13:48:55 -0600
+Date: Fri, 12 May 2000 13:48:55 -0600
+From: Eric Peskin <peskin@chou.elen.utah.edu>
+Message-Id: <200005121948.NAA19636@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD108 broken repository!
+
+Linux chou.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387600 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	256 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[1]: *** [chantal.PRS] Error 1
+make: *** [csp/check.subDir] Error 2
+make[1]: *** [glc.PRS] Error 1
+make: *** [g/check.subDir] Error 2
+compare - There were 1 unmatched literals.
+make[1]: *** [cache_s3i3o1.PRS.ok] Error 1
+make: *** [unc/check.subDir] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./csp/chantal.log:ERROR: CSC0+/1 enabled but signal is not 0 or R in state 000F
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

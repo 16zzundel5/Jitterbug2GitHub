@@ -1,0 +1,36 @@
+From atacs-bugs  Thu May  9 14:07:54 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g49K7su20882
+	for atacs-bugs@shang.elen.utah.edu; Thu, 9 May 2002 14:07:54 -0600
+Received: from shang (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g49K7rP20876
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 9 May 2002 14:07:53 -0600
+Date: Thu, 9 May 2002 14:07:53 -0600
+Message-Id: <200205092007.g49K7rP20876@chou.elen.utah.edu>
+From: yzhao@vlsigroup.elen.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: parse error
+
+Full_Name: yanyi zhao
+spec: /home/shang/yzhao/atacs/work/vhd/{a_matrix,a_DPcomp,a_display,a_ctrl,a_decoder_ch}.vhd
+Version: cvs tag bugbug
+OS: RedHat 7.1 Linus
+command: atacs -oq -ys a_matrix.vhd a_DPcomp.vhd display.vhd ctrl.vhd decoder_ch.vhd
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: yzhao
+
+
+when i put --@synthesis_on before the type fn_type......, it got the following,
+error, but it did simulated right, so i think that ATACS can not sythesis type,
+
+constant, or any text  :0
+
+ATACS VERSION 5.1
+Logging session in:  atacs.log
+Compiling a_matrix.vhd ... 
+Bad input char `@' on line 32
+parse error
+a_matrix.vhd: 33: syntax error.
+ERROR: Compilation failed due to above errors.
+

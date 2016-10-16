@@ -1,0 +1,32 @@
+From peskin@cs.utah.edu  Thu Aug 10 16:04:46 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA01555
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 10 Aug 2000 16:04:46 -0600
+Date: Thu, 10 Aug 2000 16:04:46 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200008102204.QAA01555@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: some syntax errors still draw seg faults
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag syntaxCore
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: /home/xia/peskin/atacs/examples/vhd/patronAbogus.vhd
+log: /home/xia/peskin/atacs/examples/vhd/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+506 xia:examples/vhd> pwd
+/home/xia/peskin/atacs/examples/vhd
+507 xia:examples/vhd> !atacs
+atacs -lv patronAbogus.vhd shopAPchan.vhd wineryPchan.vhd wine_top.vhd
+wine_shop
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling patronAbogus.vhd ... 
+Attributes not supported.
+patronAbogus.vhd: 29: syntax error.
+Segmentation fault
+

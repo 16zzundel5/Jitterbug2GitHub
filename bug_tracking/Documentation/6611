@@ -1,0 +1,29 @@
+From prvs=9985151e5=zhen.zhang@utah.edu  Sat Jul 16 01:24:29 2016
+Return-Path: <prvs=9985151e5=zhen.zhang@utah.edu>
+Received: from ipo0.cc.utah.edu (ipo0.cc.utah.edu [155.97.144.59])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6G7OTuT026253
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 16 Jul 2016 01:24:29 -0600
+X-IronPort-AV: E=Sophos;i="5.28,372,1464674400"; 
+   d="scan'208";a="302608"
+Received: from mail-oi0-f42.google.com ([209.85.218.42])
+  by ipo0smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 16 Jul 2016 01:24:28 -0600
+Received: by mail-oi0-f42.google.com with SMTP id j185so186428271oih.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 16 Jul 2016 00:24:28 -0700 (PDT)
+X-Gm-Message-State: ALyK8tLwwfNCKLO2rZ300nEe9/2y+ARitX5ioJDPo7AaSMmHYTb/ApP7xSzlRkyWXH8G9ncEMmZzV2ePGvaJDw==
+X-Received: by 10.157.46.51 with SMTP id q48mr15039128otb.114.1468653868475;
+ Sat, 16 Jul 2016 00:24:28 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.217.135 with HTTP; Sat, 16 Jul 2016 00:23:49 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sat, 16 Jul 2016 01:23:49 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvmwVnFKrk4DNfD8muuigMdAyi=xsxSWtTNVrUh7nhOhZg@mail.gmail.com>
+Message-ID: <CA+LVOvmwVnFKrk4DNfD8muuigMdAyi=xsxSWtTNVrUh7nhOhZg@mail.gmail.com>
+Subject: CHANGE: Explain why assignment rule needs to be excluded for
+ reaction-based abstraction on iBioSim Version 2.8 Systems Biology Tutorial
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Only instruction of this is given at the moment, but no explanations.
+Is it always necessary to disable (any) assignment rules for
+reaction-based abstraction?
+

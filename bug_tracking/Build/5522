@@ -1,0 +1,83 @@
+From myers@eng.utah.edu  Thu Sep  8 08:21:42 2011
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p88ELfe2028016
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 8 Sep 2011 08:21:41 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1R1fV7-000N8I-Mj
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 08 Sep 2011 08:22:45 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-1-29557473
+Subject: FEATURE: Possible a way to solve our linux issues
+Date: Thu, 8 Sep 2011 08:21:30 -0600
+References: <629D0277-DE86-4CDD-8CB2-3CA5629F49F6@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <0A6551CD-6A76-4A45-B002-1C7050BBBC7E@ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1084)
+X-Mailer: Apple Mail (2.1084)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail-1-29557473
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: "Chris J. Myers" <myers@ece.utah.edu>
+> Date: September 6, 2011 7:17:54 AM MDT
+> To: group@vlsigroup.ece.utah.edu
+> Subject: Possible a way to solve our linux issues
+> 
+> Hi,
+> 
+> This looks promising for solving our linux build issues:
+> 
+> https://build.opensuse.org/
+> 
+> Chris
+
+
+--Apple-Mail-1-29557473
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">"Chris J. Myers" =
+&lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1);"><b>Date: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">September 6, 2011 =
+7:17:54 AM MDT<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1);"><b>To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><a =
+href=3D"mailto:group@vlsigroup.ece.utah.edu">group@vlsigroup.ece.utah.edu<=
+/a><br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1);"><b>Subject: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Possible a way to solve our linux =
+issues</b><br></span></div><br><div>Hi,<br><br>This looks promising for =
+solving our linux build issues:<br><br><a =
+href=3D"https://build.opensuse.org/">https://build.opensuse.org/</a><br><b=
+r>Chris<br></div></blockquote></div><br></body></html>=
+
+--Apple-Mail-1-29557473--
+

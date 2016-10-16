@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Wed Sep  8 15:51:58 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.1 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o88LpwSC014864
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 8 Sep 2010 15:51:58 -0600
+Received: from c-67-186-255-196.hsd1.ut.comcast.net ([67.186.255.196] helo=[192.168.0.154])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OtSYg-0008VO-Dy
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 08 Sep 2010 15:51:58 -0600
+Message-Id: <00440784-B94D-4415-8DBD-9C6671A8B3B5@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: remove outside and remove dim restriction
+Date: Wed, 8 Sep 2010 15:48:19 -0600
+X-Mailer: Apple Mail (2.936)
+
+For SBML L3, remove outside from compartment and allow spatial  
+dimension to be any double.
+

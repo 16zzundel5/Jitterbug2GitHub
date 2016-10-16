@@ -1,0 +1,33 @@
+From robert.a.thacker@us.army.mil  Tue Feb 10 15:45:41 2009
+Return-Path: <robert.a.thacker@us.army.mil>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.3 required=5.0 tests=AWL,BAYES_00,
+	RCVD_IN_DNSWL_MED autolearn=ham version=3.2.4
+Received: from ipmx12.int.dr1.us.army.mil (mxoutdr1.us.army.mil [143.69.242.38])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1AMjfRK014060
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 10 Feb 2009 15:45:41 -0700
+DomainKey-Signature: s=ako; d=us.army.mil; c=nofws; q=dns;
+  h=From:X-AKO:X-IronPort-AV:Received:Message-Id:To:
+   Content-Type:Content-Transfer-Encoding:Mime-Version:
+   Subject:Date:X-Mailer;
+  b=0bwfjSDzrEefNd9E8frbaQKlXXkbAi4Ade8YwJ+2egSuRfCcbr7Wpwpt
+   IjljuapZW7bw/cZHAZFIrdBuG18sJA==;
+From: "Thacker, Robert A CPT RES USAR USARC" <robert.a.thacker@us.army.mil>
+X-AKO: 1686678:155.98.26.227:10 Feb 2009 22:45:40 +0000:$AuthSMTP:-0.1
+X-IronPort-AV: E=Sophos;i="4.38,188,1233532800"; 
+   d="scan'208";a="1686678"
+Received: from changcheng.ece.utah.edu (HELO zorac.ece.utah.edu) ([155.98.26.227])
+  by ipmr12.int.dr1.us.army.mil with ESMTP; 10 Feb 2009 22:45:40 +0000
+Message-Id: <49D076F7-884C-4001-8BBD-352097C06890@us.army.mil>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Subject: BUG: debug output
+Date: Tue, 10 Feb 2009 15:45:31 -0700
+X-Mailer: Apple Mail (2.930.3)
+
+The currently checked in iBioSim-lema code prints out numbers to  
+terminal window while editing some transitions ending at places.
+

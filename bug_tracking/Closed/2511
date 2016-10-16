@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:16:49 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.187])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELGmIw012486
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:16:48 -0700
+Received: by mu-out-0910.google.com with SMTP id w8so217461mue.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:16:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=RdbeXN+4CyaWEmQwV/IHzM778VrJk6tbgtqh04kgYnI=;
+        b=grrqc48upcrO5jxVwshtYMZT0uPlyG7wV6oBnt22Gxpo0YZAMtT/j8mXuneb/LvWt4U3rzfF3WNE/5TDH1kpIygfOqyPI5wiz4SUn1Zq4hrmA1KfHc36A/TIDsbo/gCneg/J2nrOl1Cz1WmWK0egGdY5WZkFAVHn4hWz2CbHgSs=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=eVeWBQcNdWb4p5Bpt4UdK4jIHZ2lbi+PyoXwivAbRlgD6Tq9FvQamOGhxZWUvtVdfaUuv1/sDyNegcJkVH5iLXFSL8KJur8MIOug57r5ooqm7yqePJZlYQynLx7di7yYS0Yxi7cOYGexNR9aVVpkuO7cctCkvSvmNaoRa4AGNK0=
+Received: by 10.82.108.9 with SMTP id g9mr1536369buc.37.1203023806756;
+        Thu, 14 Feb 2008 13:16:46 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:16:46 -0800 (PST)
+Message-ID: <eba119560802141316p4c42ff2amc15f8927e8efaf60@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:16:46 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Ask for overwrite when generating SBML
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Ask for overwrite when generating SBML
+

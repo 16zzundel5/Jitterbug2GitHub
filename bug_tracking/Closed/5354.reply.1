@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: moschino21@gmail.com
+Subject: Re: BUG:Probability graph and termination time plot do not display (PR#5354)
+Date: Tue May 10 18:05:19 2011
+CC: curtis.madsen@utah.edu
+
+I have fixed this for monte carlo, ode, and euler methods.  It still needs to be
+fixed for iSSA, but this should not affect you.
+
+The problem was since there are no reactions after the event that sets the fail
+transition, time simply jumps to the end missing the constraint failure.  To fix
+this, constraints should be checked after each step that can cause a state
+change leading to a constraint failure, and the simulation loops should be
+exited in this case.

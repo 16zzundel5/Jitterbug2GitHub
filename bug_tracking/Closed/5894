@@ -1,0 +1,51 @@
+From ibiosim@gmail.com  Fri Apr 19 13:15:53 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-oa0-f41.google.com (mail-oa0-f41.google.com [209.85.219.41])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r3JJFqFo016825
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 19 Apr 2013 13:15:52 -0600
+Received: by mail-oa0-f41.google.com with SMTP id g12so3300088oah.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 19 Apr 2013 12:15:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=V1C8YpALiPSwyMv2ptjg7sptVGL+uk4xuRgRSjpJ2CE=;
+        b=I+7ml/yKE4K7SRUMFHEEvFGJxUJs3P1OsFnCmnDV67d1xftaVB3rYTXFzn+LMmsfSZ
+         3ArYaZR09nwYXYpg2mspzCOrWCXp2ox1xHD+odpHxMcjq+mnbgU5Gq/7f6xY8u44kUab
+         jN2Aik/2S1AM8YmSc7TpqDlgbbwi7oqSRQKXjOugPmLt/8kkj1SsCedK3gQq+TivzoGc
+         X5l+S0/kplCoX6+drBxuL3U2HpNh4MBUFUI40BlK6/QcrlJM0H0RT+erxU7mpVUfng5T
+         U6wfrtBAfdqaXmziqFvH/gBDyqGMjCk//8LRVfRa9ThV2PhO2D+6ZabcHATTg0LJ6+8y
+         dwsg==
+X-Received: by 10.182.123.49 with SMTP id lx17mr4807441obb.63.1366398951557;
+        Fri, 19 Apr 2013 12:15:51 -0700 (PDT)
+Received: from gargravarr (155-99-106-123.uconnect.utah.edu. [155.99.106.123])
+        by mx.google.com with ESMTPS id w7sm7426759obx.9.2013.04.19.12.15.49
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Fri, 19 Apr 2013 12:15:50 -0700 (PDT)
+Date: Fri, 19 Apr 2013 12:15:50 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <397835691.0.1366398946894.JavaMail.jeff@gargravarr>
+Subject: BUG: Cell Death error on 2.4.6
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.4.6
+
+Operating system: Linux
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+When I try to simulate the cell death dynamic event I get a null pointer exception.
+
+Stack trace:
+java.lang.NullPointerException
+	at analysis.dynamicsim.SimulatorSSADirect.updatePropensities(SimulatorSSADirect.java:349)
+	at analysis.dynamicsim.SimulatorSSADirect.simulate(SimulatorSSADirect.java:171)
+	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:87)
+	at analysis.Run.execute(Run.java:1280)
+	at analysis.AnalysisView.run(AnalysisView.java:2215)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

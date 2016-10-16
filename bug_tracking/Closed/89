@@ -1,0 +1,177 @@
+From peskin@sanguo.elen.utah.edu  Thu Apr  1 09:13:52 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id JAA00440 for <atacs-bugs@ming.elen.utah.edu>; Thu, 1 Apr 1999 09:13:51 -0700 (MST)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id JAA29269
+	for atacs-bugs@ming.elen.utah.edu; Thu, 1 Apr 1999 09:13:56 -0700
+Date: Thu, 1 Apr 1999 09:13:56 -0700
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199904011613.JAA29269@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: dummy.csp has an unexpected deadlock.
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /.automount/shang/root/home/shang/peskin/examples/bugs/dumb                 
+WHEN:   Thu Apr  1 09:12:47 MST 1999                
+WHAT:   -rwx------ 1 peskin 101 10435411 Mar 28 16:05 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -ya dummy.csp            
+OUTPUT:                       
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling dummy.csp ... 
+rm: dummy.er: No such file or directory
+Storing process dummy to dummy.er
+Storing process dummy to dummy.er
+Storing process dummy to dummy.er
+Loading timed event-rule structure from:  dummy.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... ERROR: Output event b+/1 is disabled
+ERROR
+ERROR: STUCK IN STATE=1RRRR1
+ENABLED RULES: 
+f+/1 d+/1 (null) 0 0 inf
+e+/1 d-/1 (null) 0 0 inf
+Storing error trace state graph to:  dummy.grf
+Executing command:  parg dummy.grf &
+Storing error trace in VHDL to:  trace.vhd
+                              
+STATUS:  0       
+              
+FILE: dummy.csp:
+module dummy;
+
+output a;
+output b;
+output c;
+output d;
+output e;
+output f;
+
+process dummy;
+*[ f+; [ skip -> (a+||b+||c+); a-; b-; c-
+       | skip -> (d+||e+); d-; e-
+       ]; f- ]
+endprocess
+endmodule
+              
+              
+FILE: ./dummy.csp:
+module dummy;
+
+output a;
+output b;
+output c;
+output d;
+output e;
+output f;
+
+process dummy;
+*[ f+; [ skip -> (a+||b+||c+); a-; b-; c-
+       | skip -> (d+||e+); d-; e-
+       ]; f- ]
+endprocess
+endmodule
+              
+              
+FILE: ./dummy.er:
+.e 13
+.i 0
+.r 17
+.n 0
+.d 0
+.c 24
+.s 000000
+reset
+# 
+# INPUT EVENTS:
+# 
+# 
+# OUTPUT EVENTS:
+# 
+e+/1 e-/1
+d+/1 d-/1
+b+/1 b-/1
+a+/1 a-/1
+c+/1 c-/1
+f+/1 f-/1
+# 
+# DUMMY EVENTS:
+# 
+# 
+# RULES:
+# 
+reset f+/1 0 0 inf
+f+/1 e+/1 0 0 inf
+f+/1 d+/1 0 0 inf
+f+/1 b+/1 0 0 inf
+f+/1 a+/1 0 0 inf
+f+/1 c+/1 0 0 inf
+d-/1 e-/1 0 0 inf
+e+/1 d-/1 0 0 inf
+d+/1 d-/1 0 0 inf
+b-/1 c-/1 0 0 inf
+b+/1 a-/1 0 0 inf
+a+/1 a-/1 0 0 inf
+c+/1 a-/1 0 0 inf
+a-/1 b-/1 0 0 inf
+c-/1 f-/1 0 0 inf
+e-/1 f-/1 0 0 inf
+# 
+# INITIAL RULES:
+# 
+f-/1 f+/1 1 0 inf
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+# 
+# CONFLICTS:
+# 
+c-/1 e-/1
+c-/1 e+/1
+c-/1 d+/1
+c-/1 d-/1
+a-/1 e-/1
+a-/1 e+/1
+a-/1 d+/1
+a-/1 d-/1
+b+/1 e-/1
+b+/1 e+/1
+b+/1 d+/1
+b+/1 d-/1
+a+/1 e-/1
+a+/1 e+/1
+a+/1 d+/1
+a+/1 d-/1
+c+/1 e-/1
+c+/1 e+/1
+c+/1 d+/1
+c+/1 d-/1
+b-/1 e-/1
+b-/1 e+/1
+b-/1 d+/1
+b-/1 d-/1
+# 
+# LOOPING CONFLICTS:
+# 
+              
+              
+FILE: ./dummy.grf:
+N F S0 0:00000R
+N F S2 2:FAIL
+N F S1 1:RRRRR1
+N E T0 f+/1:2147483647
+E P S0 0 T0 0
+E P T0 0 S1 0
+N E T1 e+/1:2147483647
+E P S1 0 T1 0
+E P T1 0 S2 0
+ZZZZZ              

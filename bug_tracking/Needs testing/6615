@@ -1,0 +1,49 @@
+From prvs=00055ee27=zhen.zhang@utah.edu  Mon Jul 18 15:20:57 2016
+Return-Path: <prvs=00055ee27=zhen.zhang@utah.edu>
+Received: from ipo4.cc.utah.edu (ipo4.cc.utah.edu [155.97.144.24])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6ILKuWM011524
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 15:20:56 -0600
+X-IronPort-AV: E=Sophos;i="5.28,385,1464674400"; 
+   d="scan'208";a="590054454"
+Received: from mail-oi0-f45.google.com ([209.85.218.45])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 18 Jul 2016 15:20:56 -0600
+Received: by mail-oi0-f45.google.com with SMTP id w18so271175707oiw.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 14:20:56 -0700 (PDT)
+X-Gm-Message-State: ALyK8tLsddBd1cT1qLToaIAJjLdwOkM518S9UHjBTXr5YQwkvuyliFZIFz77rcBXmWeBPPVVYi1X6u9432+Ppg==
+X-Received: by 10.202.232.193 with SMTP id f184mr17850023oih.104.1468876856219;
+ Mon, 18 Jul 2016 14:20:56 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 14:20:16 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 18 Jul 2016 15:20:16 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=duZeihSwK=BLqR0eebXYiwHgGGB7DNHLyJnTym2e61A@mail.gmail.com>
+Message-ID: <CA+LVOv=duZeihSwK=BLqR0eebXYiwHgGGB7DNHLyJnTym2e61A@mail.gmail.com>
+Subject: BUG: Loading previous task of a Monte Carlo simulation with
+ state-based abstraction generated java.io.FileNotFoundException
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Loading a previously saved task (Monte Carlo, state-based abstraction)
+caused the exception below. I tried with gillespie and SSA - Direct
+(Flatten), both had the same issue.
+
+java.io.FileNotFoundException:
+/Users/zhangz/Desktop/SysBioTutorial/lamda prob/lambda.lpn (No such
+file or directory)
+    at java.io.FileInputStream.open0(Native Method)
+    at java.io.FileInputStream.open(FileInputStream.java:195)
+    at java.io.FileInputStream.<init>(FileInputStream.java:138)
+    at java.io.FileInputStream.<init>(FileInputStream.java:93)
+    at java.io.FileReader.<init>(FileReader.java:58)
+    at lpn.parser.LhpnFile.load(LhpnFile.java:497)
+    at lpn.parser.Translator.convertLPN2SBML(Translator.java:714)
+    at analysis.main.Run.execute(Run.java:476)
+    at analysis.main.AnalysisView.run(AnalysisView.java:1120)
+    at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+java.lang.IllegalStateException: Error opening file
+    at lpn.parser.LhpnFile.load(LhpnFile.java:505)
+    at lpn.parser.Translator.convertLPN2SBML(Translator.java:714)
+    at analysis.main.Run.execute(Run.java:476)
+    at analysis.main.AnalysisView.run(AnalysisView.java:1120)
+    at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+

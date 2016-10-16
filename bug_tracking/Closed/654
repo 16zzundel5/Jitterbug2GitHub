@@ -1,0 +1,31 @@
+From atacs-bugs  Wed Apr  3 11:41:18 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g33IfIm00637
+	for atacs-bugs@shang.elen.utah.edu; Wed, 3 Apr 2002 11:41:18 -0700
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g33IfHB00631
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Wed, 3 Apr 2002 11:41:17 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) with ESMTP id g33Ig2a01541
+	for <atacs-bugs@vlsigroup>; Wed, 3 Apr 2002 11:42:02 -0700
+X-Authentication-Warning: jiaqi.elen.utah.edu: myers owned process doing -bs
+Date: Wed, 3 Apr 2002 11:42:02 -0700 (MST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender:  <myers@jiaqi.elen.utah.edu>
+To: <atacs-bugs@vlsigroup.elen.utah.edu>
+Subject: Postprocess problem
+Message-ID: <Pine.LNX.4.33.0204031141260.1522-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+I cannot get Yoneda's mm1 to work with abstraction anymore.  The resulting
+tel deadlocks in posets, geom, and bag; bap finds 4 states and 4 zones and
+finishes.  Do you know what is going on? (command line: atacs -oaoptpva
+top fetch).
+
+If you run with -cP and -cR instead it works, so it is a postprocessing 
+problem.
+
+

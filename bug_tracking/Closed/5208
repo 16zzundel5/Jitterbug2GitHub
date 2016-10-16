@@ -1,0 +1,32 @@
+From n.roehner@utah.edu  Wed Nov 24 16:18:14 2010
+Return-Path: <n.roehner@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oAONIDG4013407
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 24 Nov 2010 16:18:14 -0700
+Date: Wed, 24 Nov 2010 16:18:13 -0700
+Message-Id: <201011242318.oAONIDG4013407@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG improper species names for components with associated SBML files
+
+Full_Name: Nicholas Roehner
+tool: BioSim
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: nroehner
+
+
+So I have a component with an associated SBML file.  This SBML file contains
+species which have the same name as species in the component, let's say S1, S2,
+and S3.  When I generate SBML from the GCM containing this component, I end up
+with six species named C1__S1, C1_S1, C1__S2, C1_S2, C1__S3, and C1_S3.  It
+seems that the code which handles merging an SBML file associated with a
+component is failing to name species with a double underscore.
+

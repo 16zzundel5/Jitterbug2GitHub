@@ -1,0 +1,39 @@
+From zhen.zhang@utah.edu  Sat Sep  1 16:40:32 2012
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q81MeVBd000624
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 1 Sep 2012 16:40:31 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AukHAHaNQlDRVdKq/2dsb2JhbABEDqlmAZEkCIEHghciAoEDAQIFXRIBBQEiNYdrmhCCYQkDlE+JBpIwA4hQjQmOPD6BIIIpWQ
+X-IronPort-AV: E=Sophos;i="4.80,353,1344232800"; 
+   d="scan'208";a="5848839"
+Received: from mail-iy0-f170.google.com ([209.85.210.170])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 01 Sep 2012 16:40:31 -0600
+Received: by iamm10 with SMTP id m10so5708198iam.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 01 Sep 2012 15:40:30 -0700 (PDT)
+Received: by 10.50.213.106 with SMTP id nr10mr6729897igc.58.1346539230907;
+ Sat, 01 Sep 2012 15:40:30 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.64.23.238 with HTTP; Sat, 1 Sep 2012 15:40:00 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sat, 1 Sep 2012 16:40:00 -0600
+Message-ID: <CA+LVOvmrZpJoCe1rTau-=MfaxwF2cgt=q42ZZBTrw3vVJzLJ3Q@mail.gmail.com>
+Subject: FEATURE: Add support for failure transition in the schematic editor
+ for LEMA
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=14dae934053988cb9504c8ab980e
+
+--14dae934053988cb9504c8ab980e
+Content-Type: text/plain; charset=ISO-8859-1
+
+When building a transition using the schematic editor, add an option to
+build failure transition in the transition editor.
+
+--14dae934053988cb9504c8ab980e
+Content-Type: text/html; charset=ISO-8859-1
+
+When building a transition using the schematic editor, add an option to build failure transition in the transition editor.
+
+--14dae934053988cb9504c8ab980e--
+

@@ -1,0 +1,31 @@
+From myers@vlsigroup.elen.utah.edu  Wed Jun 16 10:55:20 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA01010 for <atacs-bugs@shang.elen.utah.edu>; Wed, 16 Jun 1999 10:55:20 -0600 (MDT)
+Date: Wed, 16 Jun 1999 10:55:20 -0600 (MDT)
+Message-Id: <199906161655.KAA01010@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add switches to select covering tie break method.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+When selecting context signals, it is possible that multiple ways exist to 
+solve the covering table perhaps even with the same cost.  There are several
+ways to break ties when two context signals are equally good:
+
+1) Select the one providing symmetry with the reverse transition which should
+   minimize wiring.
+2) Select the one which does not remove quiescent states which should promote
+   combinational optimization.
+3) Select output over input which avoids using fedback state variables during
+   burst mode synthesis to reduce the need for delay in the feedback path.
+4) Finally, do not allow output signals to be used.  This does not produce a
+   minimal result, but it forces the result to more closely match 3D for 
+   burst-mode synthesis.
+

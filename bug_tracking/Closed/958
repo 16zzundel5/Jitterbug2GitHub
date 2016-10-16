@@ -1,0 +1,25 @@
+From atacs-bugs@chou.ece.utah.edu  Fri May 20 11:28:08 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4KHS8QY020326
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 20 May 2005 11:28:08 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j4KHS8Yq020325
+	for atacs-bugs@shang.elen.utah.edu; Fri, 20 May 2005 11:28:08 -0600
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4KHS8Z3020322
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 May 2005 11:28:08 -0600
+Received: from shang.ece.utah.edu (localhost [127.0.0.1])
+	by shang.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4KHS82S016711
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 May 2005 11:28:08 -0600
+Received: (from root@localhost)
+	by shang.ece.utah.edu (8.13.1/8.13.1/Submit) id j4KHS85T016710
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 20 May 2005 11:28:08 -0600
+Date: Fri, 20 May 2005 11:28:08 -0600
+From: root <root@shang.ece.utah.edu>
+Message-Id: <200505201728.j4KHS85T016710@shang.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: test
+
+test from root
+

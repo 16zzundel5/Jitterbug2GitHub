@@ -1,0 +1,57 @@
+From prvs=020ae7301=l.watanabe@utah.edu  Sun Aug  7 15:11:01 2016
+Return-Path: <prvs=020ae7301=l.watanabe@utah.edu>
+Received: from ipo0.cc.utah.edu (ipo0.cc.utah.edu [155.97.144.59])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u77LB146005610
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 7 Aug 2016 15:11:01 -0600
+X-IronPort-AV: E=Sophos;i="5.28,486,1464674400"; 
+   d="scan'208,217";a="4080127"
+Received: from isoep2.iso.utah.edu (HELO X-HUB2.xds.umail.utah.edu) ([172.26.129.8])
+  by ipo0smtp.cc.utah.edu with ESMTP; 07 Aug 2016 15:11:00 -0600
+Received: from X-MB11.xds.umail.utah.edu ([169.254.3.235]) by
+ X-HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi id 14.03.0279.002;
+ Sun, 7 Aug 2016 15:11:00 -0600
+From: LEANDRO HIKIJI WATANABE <l.watanabe@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: can't instantiate array of submodels
+Thread-Topic: can't instantiate array of submodels
+Thread-Index: AdHw8DIADj8LzomLRWW7oIDg4fF2FQ==
+Date: Sun, 7 Aug 2016 21:10:59 +0000
+Message-ID: <DDDF61188CC80F41AF904098A2BD0A5156631B01@X-MB11.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [67.177.31.34]
+Content-Type: multipart/alternative;
+	boundary="_000_DDDF61188CC80F41AF904098A2BD0A5156631B01XMB11xdsumailut_"
+MIME-Version: 1.0
+X-CFilter-Loop: Reflected
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5156631B01XMB11xdsumailut_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+When I try to make an array of submodels, it complains that comp:submodelRe=
+f needs indices.
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5156631B01XMB11xdsumailut_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">When I try to make an array of submodels, it complains that comp:sub=
+modelRef needs indices.<br>
+</div>
+</body>
+</html>
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5156631B01XMB11xdsumailut_--
+

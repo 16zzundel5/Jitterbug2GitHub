@@ -1,0 +1,31 @@
+From peskin@vlsigroup.elen.utah.edu  Fri Jul 13 13:45:49 2001
+Return-Path: <peskin@vlsigroup.elen.utah.edu>
+Received: from vlsigroup.elen.utah.edu (IDENT:peskin@xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA09337
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 13 Jul 2001 13:45:48 -0600
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <3B4F4FEC.C93E0000@vlsigroup.elen.utah.edu>
+Date: Fri, 13 Jul 2001 13:45:48 -0600
+From: Eric Robert Peskin <peskin@vlsigroup.elen.utah.edu>
+Organization: University of Utah
+X-Mailer: Mozilla 4.77 [en] (X11; U; Linux 2.2.19-7.0.8 i686)
+X-Accept-Language: en, zh-TW, zh
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: BAD535 broken repository! (PR#586)
+References: <200107121839.MAA00499@chou.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+To get these to work I had to go back to ordering my sets of pointers
+to events by the address of the pointer.  I believe this bug is in my
+code.  The results I get seems to depend on the order of the
+candidates going in.  This probably means my pruning techniques are
+incorrect.
+
+However, for now, I can simply avoid the problem by going back to the
+old order.  And since it is the old order, it hasn't really
+regressed.  So I'll call this bug fixed as of GOOD538.
+
+I will now close this report.
+

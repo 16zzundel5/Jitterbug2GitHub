@@ -1,0 +1,33 @@
+From peskin@cs.utah.edu  Thu Nov 18 18:22:34 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id SAA05189
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 18 Nov 1999 18:22:34 -0700
+Date: Thu, 18 Nov 1999 18:22:34 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911190122.SAA05189@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: never went through and have cycles in acyclic graph
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12803128 Nov 15 15:39 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/atacs/examples/csp/live.csp
+log: /home/xia/peskin/atacs/examples/csp/live.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following files have cycles in their acyclic constraint graph and never
+got through atacs anyway:
+
+	lab3.csp
+	live.csp
+	2reg.g
+	3derr.g
+	bomb.g
+	iccd-scsi.g
+	sbufP.g
+
+For the files that used to make it through atacs even though they had cycles in
+
+their acyclic constraint graph, see PR # 265

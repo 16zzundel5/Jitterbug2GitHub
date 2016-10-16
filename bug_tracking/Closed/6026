@@ -1,0 +1,44 @@
+From myers@eng.utah.edu  Fri May 16 10:04:38 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s4GG4boJ032691
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 16 May 2014 10:04:37 -0600
+Received: from vlsi.ece.utah.edu ([155.98.27.195])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1WlKps-000969-B5
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 16 May 2014 10:18:16 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: SBOL association window for Model
+Message-Id: <BEC83C4C-590C-4C77-B003-15F4AF489841@ece.utah.edu>
+Date: Fri, 16 May 2014 10:04:36 -0600
+To: Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.2 \(1874\))
+X-Mailer: Apple Mail (2.1874)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id s4GG4boJ032691
+
+Move OK and Cancel to bottom of window like all others.
+
+Rest of the buttons should go like:
+
+Add, Remove, Edit, Add/Move Composite
+
+The Edit button should bring up a window which shows the:
+
+Id
+Name
+Description
+
+Add to top of this window the selection of which SBOL library to put the composite into.  Put the minus strand check box next to this at the top as well.
+
+Similar changes to other associate SBOL windows.
+
+These changes also enable the removal of the SBOL button from the schematic window.
+
+
+
+

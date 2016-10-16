@@ -1,0 +1,26 @@
+From myers@vlsigroup.elen.utah.edu  Thu Jun  3 11:36:14 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA16360 for <atacs-bugs@shang.elen.utah.edu>; Thu, 3 Jun 1999 11:36:14 -0600 (MDT)
+Date: Thu, 3 Jun 1999 11:36:14 -0600 (MDT)
+Message-Id: <199906031736.LAA16360@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Verbose files for direct synthesis method.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+When verbose is on, the direct synthesis method dumps a lot of output to 
+atacs.log.  In the normal synthesis method, output is dumped to a number of
+separate files (i.e., <file>.rr, <file>.rsg, <file>.es, <file>.crt, <file>.cr,
+and <file>.prs).  The log file should contain exactly what is displayed 
+during synthesis.  Therefore, each step of the direct synthesis method should
+output to a separate file (when verbose is selected).  For example, reverse
+events could be output to a file named <file>.re.  This will make it much
+easier to look at a particular piece of the output.
+

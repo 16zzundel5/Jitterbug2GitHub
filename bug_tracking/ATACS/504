@@ -1,0 +1,77 @@
+From peskin@cs.utah.edu  Thu Jul 27 14:27:43 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA15495
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 27 Jul 2000 14:27:43 -0600
+Date: Thu, 27 Jul 2000 14:27:43 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200007272027.OAA15495@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: infinite loops not handled correctly
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag loopy
+OS: RedHat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: /home/xia/peskin/atacs/examples/vhd/loop.vhd
+log: /home/xia/peskin/atacs/examples/vhd/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+A simple infinite loop specified in VHDL as 
+	loop
+		...
+	end loop
+Should be equivalent to 
+	while ( <always true expression> ) loop
+		...
+	end loop
+However, consider the following:
+
+481 xia:examples/vhd> diff {winery8,loop}.vhd
+21d20
+<     variable one : integer := 1;
+28c27
+<   while ( one = one ) loop
+---
+>   loop
+482 xia:examples/vhd> atacs -lv patron3.vhd winery8.vhd wine_shop.vhd
+wine_example4.vhd wine_shop 
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling patron3.vhd ... 
+Compiled process patron
+Storing module patron3 to patron3.tel
+Compiling winery8.vhd ... 
+Compiled process winery
+Storing module winery8 to winery8.tel
+Compiling wine_shop.vhd ... 
+Compiled process shop
+Storing module wine_shop to wine_shop.tel
+Compiling wine_example4.vhd ... 
+Storing module wine_shop to wine_shop.tel
+Loading timed event/level structure from:  wine_shop.tel
+Initializing 3 cycles ... done
+Searching for channels ... found channels.
+483 xia:examples/vhd> atacs -lv patron3.vhd loop.vhd wine_shop.vhd
+wine_example4.vhd wine_shop
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling patron3.vhd ... 
+Compiled process patron
+Storing module patron3 to patron3.tel
+Compiling loop.vhd ... 
+Compiled process winery
+Storing module loop to loop.tel
+Compiling wine_shop.vhd ... 
+Compiled process shop
+Storing module wine_shop to wine_shop.tel
+Compiling wine_example4.vhd ... 
+Storing module wine_shop to wine_shop.tel
+Loading timed event/level structure from:  wine_shop.tel
+WARNING:65:  winery_to_shop2! is not a signal!
+WARNING:67:  winery_to_shop2! is not a signal!
+Initializing 3 cycles ... done
+Searching for channels ... found channels.
+484 xia:examples/vhd> 
+

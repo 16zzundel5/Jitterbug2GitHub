@@ -1,0 +1,10 @@
+From: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+To: sarbruis@gmail.com
+Subject: Re: BUG: Grid Components Not Updated After Rename (PR#5520)
+Date: Mon Aug 29 23:55:12 2011
+
+I thought the problem was with grids, but the issue is that renaming only looks
+at open tabs, I think, and it needs to look at all files in the project.  If I
+have two GCMs, test1 and test2, and test2 has a copy of test1 and test2 isn't
+open when I change the name of test1, then test2 goes looking for "test1.gcm"
+when the name has been changed.

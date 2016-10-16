@@ -1,0 +1,13 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: normal species with no influences should have open complex reactions (PR#4527)
+Date: Wed Jul 30 16:46:14 2008
+
+Allow null input or output in an influence.
+
+For null input, generate only the open complex formation reactions.
+
+For null output, do not generate any open complex formation reactions,
+activation reactions, or repression reactions.  Only generate biochemical
+formation reactions.
+Therefore, null output should force biochemical to yes.

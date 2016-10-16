@@ -1,0 +1,55 @@
+From myers@eng.utah.edu  Wed Dec  3 13:33:33 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id sB3KXWi5002972
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 3 Dec 2014 13:33:32 -0700
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES256-SHA:256)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1XwGcg-00022t-Pu
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 03 Dec 2014 13:34:06 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: CHANGE: update to libsbml 5.11
+Message-Id: <457DEA9A-14B5-44B9-AC00-A269E90E52E1@ece.utah.edu>
+Date: Wed, 3 Dec 2014 13:33:32 -0700
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.1 \(1993\))
+X-Mailer: Apple Mail (2.1993)
+Sender: myers@eng.utah.edu
+
+Upgrade to libsbml 5.11.
+
+There are a couple features we want to take advantage of:
+
+ There are new functions to allow users to retrieve and print errors
+   from the ErrorLog based on the severity of the error.  These are
+   SBMLError* getErrorWithSeverity(unsigned int n, unsigned int severity)
+   and printErrors(std::ostream& stream, unsigned int severity).
+
+ 'comp' package-specific updates:
+
+   - A new flag has been added to the CompFlatteningConverter to
+     allow a user to specify a comment separated list of packages
+     that should be stripped before flattening is attempted.
+
+   - The CompFlatteningConverter has been made more rigorous
+     when it comes to specifying users options on models declared
+     as ExternalModelDefinitions.
+
+New features
+
+ Code for the Dynamic Structures ('dyn') package has been added.
+ This reflects the draft specification Release 0.1 dated
+ October 1 2014.
+
+
+ - 'distrib' package-specific updates:
+
+   - The UncertMLNode now uses a std::vector to save child members
+     rather than the List class.
+
+Groups, Req, and Arrays too?
+

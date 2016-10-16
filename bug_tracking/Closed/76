@@ -1,0 +1,20 @@
+From myers@ee.utah.edu  Tue Mar 23 17:33:00 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id RAA12293 for <atacs-bugs@ming.elen.utah.edu>; Tue, 23 Mar 1999 17:33:00 -0700 (MST)
+Date: Tue, 23 Mar 1999 17:33:00 -0700 (MST)
+From: myers@ee.utah.edu
+Message-Id: <199903240033.RAA12293@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: fifoN5.csp has mysterious deadlock
+
+Full_Name: Chris Myers
+Version: 4.1
+OS: linux
+source: /home/ming/atacs/examples/bugs/fifoN5.csp
+log: /home/ming/atacs/examples/logfiles/fifoN5.log
+category: Potential problem
+Submission from: vlsi.elen.utah.edu (128.110.18.217)
+Submitted by: myers
+
+
+Using heuristic, fifoN5 in bugs directory has a mysterious deadlock after
+finding many states.

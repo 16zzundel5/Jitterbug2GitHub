@@ -1,0 +1,23 @@
+From sarbruis@gmail.com  Mon Apr  9 16:51:59 2012
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q39MpwZZ002756
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 9 Apr 2012 16:51:58 -0600
+Date: Mon, 9 Apr 2012 16:51:58 -0600
+Message-Id: <201204092251.q39MpwZZ002756@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: compartment within model won't simulate
+
+Full_Name: jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 174-27-204-227.slkc.qwest.net (174.27.204.227)
+Submitted by: jstev
+
+
+A model with a simple compartment inside triggers an "Unable to create sbml
+file" error.  
+

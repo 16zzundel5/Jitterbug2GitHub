@@ -1,0 +1,22 @@
+From myers@vlsigroup.elen.utah.edu  Sun Jul 11 12:10:27 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id MAA16666 for <atacs-bugs@shang.elen.utah.edu>; Sun, 11 Jul 1999 12:10:27 -0600 (MDT)
+Date: Sun, 11 Jul 1999 12:10:27 -0600 (MDT)
+Message-Id: <199907111810.MAA16666@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Add help for postproc, redchk, and newtab.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+Add help for the three new compilation switches, postproc (turns postprocessing
+
+on and off), redchk (turns redundant rule checking on/off during compilation),
+and newtab (turn clearing symbol table on/off after compilation).
+

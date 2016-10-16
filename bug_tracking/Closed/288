@@ -1,0 +1,24 @@
+From myers@vlsigroup.elen.utah.edu  Thu Jan 20 10:59:03 2000
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA29336
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 20 Jan 2000 10:59:03 -0700
+Date: Thu, 20 Jan 2000 10:59:03 -0700
+Message-Id: <200001201759.KAA29336@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: ex2 behaivor is changed by postproc
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+The file ex2.csp has arc c-/1 -> $0 -> a+ and c-/1 -> $1 -> b+ which get
+postprocessed.  a+ and b+ conflict.  However, c-/1 -> a+ has delay 2,5 
+and c-/1 -> b+/2 has delay 10,20 so b+/2 never happens in postprocessed
+design.  The correct behavior is to disallow this postprocess.
+

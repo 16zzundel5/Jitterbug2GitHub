@@ -1,0 +1,100 @@
+From atacs-bugs  Sun Mar 31 00:05:21 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g2V75Ll14751
+	for atacs-bugs@shang.elen.utah.edu; Sun, 31 Mar 2002 00:05:21 -0700
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g2V75JB14742;
+	Sun, 31 Mar 2002 00:05:19 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) with ESMTP id g2V760p01370;
+	Sun, 31 Mar 2002 00:06:00 -0700
+X-Authentication-Warning: jiaqi.elen.utah.edu: myers owned process doing -bs
+Date: Sun, 31 Mar 2002 00:05:59 -0700 (MST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender:  <myers@jiaqi.elen.utah.edu>
+To: <eemercer@vlsigroup.elen.utah.edu>
+cc: <atacs-bugs@vlsigroup.elen.utah.edu>
+Subject: Bug in bap
+Message-ID: <Pine.LNX.4.33.0203302359390.1262-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+The following two commands get different results:
+
+atacs -oa -on -tp -va stari4 stage1
+
+atacs -oa -on -tb -va stari4 stage1
+
+The first gets a safety violation while the second is okay.
+
+The problem is here:
+
+Firing: ack1-/1-> 
+s: 01110F
+Rm: 
+{($clk+/1,$x2t-/1),($clk+/1,$clk-/1),(x0f+/1,x0f-/1),(x1f+/1,$x2f+/1),(x1f+/1,ack1-/1),($x2t-/1,$x2f+/1),($clk-/1,$x2f+/1),(ack1+/1,x0f-/1),(ack1+/1,x0t-/1)}
+E_not_allowed: {}
+Me: 
+          $clk+/1  x1f+/1
+         ----------------
+ $clk+/1|       0    -100
+  x1f+/1|     300       0
+
+
+Een: {$clk-/1,$x2f+/1}
+
+Een_Rb: 
+$x2f+/1: {$clk-/1,$x2t-/1,x1f+/1}
+$clk-/1: {$clk+/1}
+
+Me: 
+          $clk+/1  x1f+/1 ack1-/1
+         ------------------------
+ $clk+/1|       0    -100       U
+  x1f+/1|     300       0    -100
+ ack1-/1|       U     200       0
+
+Ec: {x1f+/1,$clk+/1}
+
+Een is 
+$x2f+/1: {$clk-/1,$x2t-/1,x1f+/1}
+$clk-/1: {$clk+/1}
+
+Computing fireable events from -> 
+          $clk+/1  x1f+/1 $x2f+/1 $clk-/1
+         --------------------------------
+ $clk+/1|       0    -100       U   -1200
+  x1f+/1|     300       0    -100       U
+ $x2f+/1|       U       U       0       U
+ $clk-/1|       U       U       U       0
+
+Setting causal assignment: ($clk-/1,$x2f+/1) -> 1100
+Setting causal assignment: ($clk+/1,$clk-/1) -> 1200
+
+Checking causal configuration -> 
+          $clk+/1  x1f+/1 $x2f+/1 $clk-/1
+         --------------------------------
+ $clk+/1|       0    -100    -200   -1200
+  x1f+/1|     300       0    -100    -900
+ $x2f+/1|    2300    2200       0    1100
+ $clk-/1|    1200    1100    1000       0
+
+Ef: {$clk-/1,$x2f+/1}
+
+================================================
+Note that $x2f+/1 is using $clk- as the causal assignment.  
+However, the only reason $clk-/1 is in the zone is because
+we are checking if it is firable.  What this means is that
+we are computing if $x2f+ can fire first (i.e., before $clk-/1)
+in the situation where $clk- enables it (i.e, $clk-/1 fires
+first)!
+
+When determining what can be causal, it should only consider
+events that are already in the zone as fired, I believe.
+
+Chris
+ 
+
+

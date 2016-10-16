@@ -1,0 +1,36 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: gatedelay issues (PR#597)
+Date: Sun Dec  9 15:05:17 2001
+
+> 
+> If the user tries to change the gatedelay, this typically doesn't
+> happen until after the example is compiled.  For example, if you
+> provide both files and options to atacs via the Unix shell command
+> line, the files get compiled first, and then the flags get processed.
+> Consider the following:
+> 
+> ../../src/atacs winery.vhd wine_shop.vhd patron.vhd wine_example3.vhd
+NEW_SHOP
+> -oXoqtsG0-1ysodde
+> 
+> Note that some of the rules are [0,inf].  These are the rules that the
+> compiler created.  Also note that other rules have [0,1].  These are
+> the rules that my hse.[hc]pp code added.  This, despite the fact that
+> my code in the compiler to create the channel-level TEL for sends and
+> receives uses {min,max}gatedelay.
+> 
+This is a tricky one.  The problem is that when there are multiple files on
+the command line, it first compiles each file individually except the top file.
+It then processes the options compiles the top level file with the selected 
+component.  
+
+The assumption is that each of the lower level files should be loaded first 
+followed by some processing specified by the options.  I'm not sure how to
+handle
+this.  Possible options are that options are all processed first but no
+execution.
+The problem with this is that if you have options nestled between execution then
+
+what should be done?  Another option is to process all options up to the first
+execution type command.  Any other ideas?

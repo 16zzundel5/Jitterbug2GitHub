@@ -1,0 +1,43 @@
+From myers@jiaqi.elen.utah.edu  Tue Sep 12 12:24:46 2000
+Return-Path: <myers@jiaqi.elen.utah.edu>
+Received: from jiaqi.elen.utah.edu (IDENT:root@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id MAA27429
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 12 Sep 2000 12:24:46 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) with ESMTP id MAA01453
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 12 Sep 2000 12:29:35 -0600
+Date: Tue, 12 Sep 2000 12:29:35 -0600 (MDT)
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+To: "Eric G. Mercer" <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: Solve CSC Error in store.er (PR#514)
+In-Reply-To: <200009121736.LAA26999@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.10.10009121229160.1338-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+I don't get the error message.
+
+However, I do get an ordering rule violation.
+
+Chris
+
+On Tue, 12 Sep 2000, Eric G. Mercer wrote:
+
+> I do not know what the difference is between what you did and what I am doing,
+> but this example still breaks things.  I have a fresh update (cvs update -A from
+> the top level.)  You may want to look at this again.  There must be something
+> wrong with the way the constraint is being handled with the flags on, because
+> this constraint rule should fail, but it does not!
+> 
+> I have checked in the skunky example in ./example/csp/jordi2wc.csp and tagged my
+> version of atacs with the name SOLVECSCERROR.  The command line I am using that
+> breaks things is:
+> 
+> atacs -mEmXmcmsmUmPmTmFmOmpya jordi2wc.csp
+> 
+> 
+> This will cause a ERROR:45: Unexpected end of line!
+> 
+> on loading the TEL
+> 
+

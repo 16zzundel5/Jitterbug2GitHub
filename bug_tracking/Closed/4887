@@ -1,0 +1,53 @@
+From scott.little@gmail.com  Fri Dec 18 16:19:53 2009
+Return-Path: <scott.little@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=BAYES_05,HTML_MESSAGE
+	autolearn=ham version=3.2.5
+Received: from mail-yx0-f190.google.com (mail-yx0-f190.google.com [209.85.210.190])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id nBINJq84018218
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Dec 2009 16:19:53 -0700
+Received: by yxe28 with SMTP id 28so3298939yxe.19
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Dec 2009 15:19:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:date:message-id:subject
+         :from:to:content-type;
+        bh=58N7yZJOpBCxlw/N7tbKN4YBo5ZWHMyoeFwfgvwEmco=;
+        b=tMvU4ptpgYPWHO6XTNfbDj7ZyNqwccqqh6jlwJu3DCmgdM9Q1Gwuh+6b4/mI4xZyzi
+         jUHCgE3IhzKWhxgvhyfPIM0crobvXRVttPQj6cwZILglzDI6PBiIGZyhI0FHR/Ww4EtK
+         biOptG3DELGmGMG7lodiX4sR33cXf81xmfoWQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        b=BqkMItnZT9zoqlXLDWmcToVxgYjP3nWMUxoXqVOK3qwina7WEE6GhGLbYwsHqd2jjJ
+         GvPPV7ThPXpSlurge+6uJJwAGYGrAXnK5/agxUYDSYtR8bOs5U/D+KQs+wkZe2Rb06p5
+         khksA2pwaWWYSY5zg7bovoM/ODBwgG/WEjbbQ=
+MIME-Version: 1.0
+Received: by 10.91.52.20 with SMTP id e20mr5007381agk.47.1261178391776; Fri, 
+	18 Dec 2009 15:19:51 -0800 (PST)
+Date: Fri, 18 Dec 2009 17:19:51 -0600
+Message-ID: <a503d4960912181519s6f9a7e2r2fb47cc2341a2e30@mail.gmail.com>
+Subject: BUG Renaming an LHPN gives an error
+From: Scott Little <scott.little@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=0016364184450a4da2047b08faaf
+
+--0016364184450a4da2047b08faaf
+Content-Type: text/plain; charset=ISO-8859-1
+
+I created a new project then created and LHPN.  I wanted to change the name
+and hit rename.  I was given an error stating that the file couldn't be
+renamed.  I deleted the original LHPN and then a renamed version popped up.
+
+--0016364184450a4da2047b08faaf
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I created a new project then created and LHPN.=A0 I wanted to change the na=
+me and hit rename.=A0 I was given an error stating that the file couldn&#39=
+;t be renamed.=A0 I deleted the original LHPN and then a renamed version po=
+pped up.<br>
+
+--0016364184450a4da2047b08faaf--
+

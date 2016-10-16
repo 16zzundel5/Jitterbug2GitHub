@@ -1,0 +1,17 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: when saving gcm files update analysis views (PR#2529)
+Date: Wed Apr  2 21:30:41 2008
+CC: christian.atheist@gmail.com
+
+I have added a method to the BioSim class that will update any open analysis
+views that are linked to a gcm or sbml file.  This function is called
+updateViews and takes a String that is the name of the file that has just been
+updated as an argument.  For example, if you have a gcm file called foo that you
+just saved to, you would call this method like so:
+
+<name of the BioSim object>.updateViews("foo.gcm");
+
+If you have any other questions, let me know.  Moving to GCM2SBML.
+
+Curtis

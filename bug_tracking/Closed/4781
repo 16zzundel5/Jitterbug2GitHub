@@ -1,0 +1,57 @@
+From rat103070@gmail.com  Thu Sep 24 12:42:10 2009
+Return-Path: <rat103070@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.2 required=5.0 tests=AWL,BAYES_20 autolearn=ham
+	version=3.2.5
+Received: from mail-px0-f191.google.com (mail-px0-f191.google.com [209.85.216.191])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8OIgA1k018001
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 Sep 2009 12:42:10 -0600
+Received: by pxi29 with SMTP id 29so2035493pxi.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 Sep 2009 11:42:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:sender:message-id:from:to
+         :content-type:content-transfer-encoding:mime-version:subject:date
+         :x-mailer;
+        bh=5gk/nDREEEbSC0dF6PHhEm1Ouwm4dBG/ZrtHh7XhpTU=;
+        b=Gfh+9B4TYEaBUqHB349dtqWKb15DgnanbzIzaP6nbwxuqgYt4dutgwsykjEdtNz9IM
+         O8H+Zjy6gCAz73UEkpT8hRPd33NFQMYqO1ZQKQGiFVlyYgNwIldvv/7rucPAD1xJYh5F
+         /z5uuac9nYR/5zjtgP9DQ71G2dob68LAZDQe4=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=sender:message-id:from:to:content-type:content-transfer-encoding
+         :mime-version:subject:date:x-mailer;
+        b=X3LAxcJPnx1vC4ufR7kFZApPc1ZAgLfhHApB8IyAQ5MtP66GgRTpOTn8qE7YkYPvhZ
+         br4fhzjQXVQ293tVedx6hxgMP3P1PUR5MREoEg/PQaXSA/WOcQYbWoPsM58eMy7q2TE+
+         DpHxOkRJBy6AWQKftv/P6QvoSltNrAnUECAAg=
+Received: by 10.114.86.13 with SMTP id j13mr192837wab.165.1253817729653;
+        Thu, 24 Sep 2009 11:42:09 -0700 (PDT)
+Received: from ?192.168.1.100? (changcheng.ece.utah.edu [155.98.26.227])
+        by mx.google.com with ESMTPS id 23sm1296197pxi.9.2009.09.24.11.42.07
+        (version=TLSv1/SSLv3 cipher=RC4-MD5);
+        Thu, 24 Sep 2009 11:42:08 -0700 (PDT)
+Sender: Robert Thacker <rat103070@gmail.com>
+Message-Id: <8493ACAC-1CF6-4AC1-BE30-71F6CDFBF96E@vlsigroup.ece.utah.edu>
+From: Robert Thacker <thacker@vlsigroup.ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: abstraction, written not read
+Date: Thu, 24 Sep 2009 12:42:05 -0600
+X-Mailer: Apple Mail (2.936)
+
+Condition: a local variable is (1) written but never read or (2)  
+written but not read before being written again
+Action: eliminate the redundant assignment
+
+p1 -> {}[1,1]<a:=x> -> p2 -> {}[1,1]<a:=y>
+
+becomes
+
+p1 -> {}[1,1]<> -> p2 -> {}[1,1]<a:=y>
+
+
+x and y need not be local
+

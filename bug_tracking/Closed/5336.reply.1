@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: tpatterson80@gmail.com
+Subject: Re: BUG: crash adding components (PR#5336)
+Date: Tue Apr 26 22:47:21 2011
+
+I can fix this by changing line 108 in DropComponentPanel.java to:
+
+	if (componentCombo != null) this.remove(componentCombo);
+
+Is this reasonable?
+
+Chris

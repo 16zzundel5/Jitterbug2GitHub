@@ -1,0 +1,23 @@
+From myers@vlsigroup.elen.utah.edu  Thu Jan 20 11:13:41 2000
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA29519
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 20 Jan 2000 11:13:41 -0700
+Date: Thu, 20 Jan 2000 11:13:41 -0700
+Message-Id: <200001201813.LAA29519@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: alu1c gets different results with postproc.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+In the alu process, this spec always picks the skip rather than 
+al1done+ due to timing.  This problem shows itself after postprocessing
+and is masked otherwise.
+

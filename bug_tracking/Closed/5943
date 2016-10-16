@@ -1,0 +1,193 @@
+From andrew.n.fisher@utah.edu  Mon Nov 11 09:44:37 2013
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id rABGiaZD005811
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 11 Nov 2013 09:44:36 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ArUEADcIgVKbYbVo/2dsb2JhbABZDoI1gU+/F4FSdIInBYELARYUQxMnBBuHeZ00mEaIPo82g1iBEAOJCoVMm0OCZz+CKg
+X-IPAS-Result: ArUEADcIgVKbYbVo/2dsb2JhbABZDoI1gU+/F4FSdIInBYELARYUQxMnBBuHeZ00mEaIPo82g1iBEAOJCoVMm0OCZz+CKg
+X-IronPort-AV: E=Sophos;i="4.93,679,1378879200"; 
+   d="scan'208,217";a="280664907"
+Received: from h104.umail.utah.edu (HELO X-HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 11 Nov 2013 09:44:36 -0700
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.253]) by
+ X-HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi id 14.03.0123.003;
+ Mon, 11 Nov 2013 09:44:36 -0700
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: Bug Report <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG Undo can causes exceptions to be thrown.
+Thread-Topic: BUG Undo can causes exceptions to be thrown.
+Thread-Index: AQHO3v1LpSVC6k4jGk64Amf2z8Qrzg==
+Date: Mon, 11 Nov 2013 16:44:35 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED1C751131@X-MB8.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.97.183.136]
+Content-Type: multipart/alternative;
+	boundary="_000_33C595BF585B104B8418E9E32A58C0ED1C751131XMB8xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1C751131XMB8xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Create a new model. Add a transition with the enabling condition 'true'. Ad=
+d a variable. Now, go to the edit menu and click 'undo' to remove the varia=
+ble just created. Finally, click on the arrow and double click on the trans=
+ition to bring up its details. When I double click on the transition I get =
+the following exception.
+
+java.lang.NullPointerException
+    at org.sbml.jsbml.Model.getRule(Model.java:3028)
+    at biomodel.gui.textualeditor.Events.eventEditor(Events.java:264)
+    at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java=
+:2425)
+    at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1166=
+)
+    at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:=
+290)
+    at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:=
+289)
+    at java.awt.Component.processMouseEvent(Component.java:6505)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3311)
+    at java.awt.Component.processEvent(Component.java:6270)
+    at java.awt.Container.processEvent(Container.java:2229)
+    at java.awt.Component.dispatchEventImpl(Component.java:4861)
+    at java.awt.Container.dispatchEventImpl(Container.java:2287)
+    at java.awt.Component.dispatchEvent(Component.java:4687)
+    at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:483=
+2)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492=
+)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+    at java.awt.Container.dispatchEventImpl(Container.java:2273)
+    at java.awt.Window.dispatchEventImpl(Window.java:2719)
+    at java.awt.Component.dispatchEvent(Component.java:4687)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+    at java.awt.EventQueue.access$200(EventQueue.java:103)
+    at java.awt.EventQueue$3.run(EventQueue.java:694)
+    at java.awt.EventQueue$3.run(EventQueue.java:692)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionD=
+omain.java:76)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionD=
+omain.java:87)
+    at java.awt.EventQueue$4.run(EventQueue.java:708)
+    at java.awt.EventQueue$4.run(EventQueue.java:706)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionD=
+omain.java:76)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+    at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThr=
+ead.java:242)
+    at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread=
+.java:161)
+    at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThr=
+ead.java:150)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146=
+)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138=
+)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1C751131XMB8xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">Create a new model. Add a transition with the enabling condition 'tr=
+ue'. Add a variable. Now, go to the edit menu and click 'undo' to remove th=
+e variable just created. Finally,
+ click on the arrow and double click on the transition to bring up its deta=
+ils. When I double click on the transition I get the following exception.<b=
+r>
+<br>
+java.lang.NullPointerException<br>
+&nbsp;&nbsp;&nbsp; at org.sbml.jsbml.Model.getRule(Model.java:3028)<br>
+&nbsp;&nbsp;&nbsp; at biomodel.gui.textualeditor.Events.eventEditor(Events.=
+java:264)<br>
+&nbsp;&nbsp;&nbsp; at biomodel.gui.schematic.Schematic.bringUpEditorForCell=
+(Schematic.java:2425)<br>
+&nbsp;&nbsp;&nbsp; at biomodel.gui.schematic.Schematic$9.mouseReleased(Sche=
+matic.java:1166)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMu=
+lticaster.java:290)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMu=
+lticaster.java:289)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Component.processMouseEvent(Component.java:6=
+505)<br>
+&nbsp;&nbsp;&nbsp; at javax.swing.JComponent.processMouseEvent(JComponent.j=
+ava:3311)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Component.processEvent(Component.java:6270)<=
+br>
+&nbsp;&nbsp;&nbsp; at java.awt.Container.processEvent(Container.java:2229)<=
+br>
+&nbsp;&nbsp;&nbsp; at java.awt.Component.dispatchEventImpl(Component.java:4=
+861)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Container.dispatchEventImpl(Container.java:2=
+287)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Component.dispatchEvent(Component.java:4687)=
+<br>
+&nbsp;&nbsp;&nbsp; at java.awt.LightweightDispatcher.retargetMouseEvent(Con=
+tainer.java:4832)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.LightweightDispatcher.processMouseEvent(Cont=
+ainer.java:4492)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.LightweightDispatcher.dispatchEvent(Containe=
+r.java:4422)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Container.dispatchEventImpl(Container.java:2=
+273)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.Window.dispatchEventImpl(Window.java:2719)<b=
+r>
+&nbsp;&nbsp;&nbsp; at java.awt.Component.dispatchEvent(Component.java:4687)=
+<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue.dispatchEventImpl(EventQueue.java=
+:735)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue.access$200(EventQueue.java:103)<b=
+r>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue$3.run(EventQueue.java:694)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue$3.run(EventQueue.java:692)<br>
+&nbsp;&nbsp;&nbsp; at java.security.AccessController.doPrivileged(Native Me=
+thod)<br>
+&nbsp;&nbsp;&nbsp; at java.security.ProtectionDomain$1.doIntersectionPrivil=
+ege(ProtectionDomain.java:76)<br>
+&nbsp;&nbsp;&nbsp; at java.security.ProtectionDomain$1.doIntersectionPrivil=
+ege(ProtectionDomain.java:87)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue$4.run(EventQueue.java:708)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue$4.run(EventQueue.java:706)<br>
+&nbsp;&nbsp;&nbsp; at java.security.AccessController.doPrivileged(Native Me=
+thod)<br>
+&nbsp;&nbsp;&nbsp; at java.security.ProtectionDomain$1.doIntersectionPrivil=
+ege(ProtectionDomain.java:76)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventQueue.dispatchEvent(EventQueue.java:705=
+)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.pumpOneEventForFilters(E=
+ventDispatchThread.java:242)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.pumpEventsForFilter(Even=
+tDispatchThread.java:161)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.pumpEventsForHierarchy(E=
+ventDispatchThread.java:150)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.pumpEvents(EventDispatch=
+Thread.java:146)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.pumpEvents(EventDispatch=
+Thread.java:138)<br>
+&nbsp;&nbsp;&nbsp; at java.awt.EventDispatchThread.run(EventDispatchThread.=
+java:91)<br>
+<br>
+</div>
+</body>
+</html>
+
+--_000_33C595BF585B104B8418E9E32A58C0ED1C751131XMB8xdsumailuta_--
+

@@ -1,0 +1,42 @@
+From myers@ece.utah.edu  Thu May  8 17:09:31 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.3 required=5.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m48N9Vah029851
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 8 May 2008 17:09:31 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1JuFFD-00011V-Mk); Thu, 08 May 2008 17:09:49 -0600
+Received: from [192.168.0.9] (75-169-163-92.slkc.qwest.net [75.169.163.92])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m48N9TA3029166;
+	Thu, 8 May 2008 17:09:29 -0600
+Subject: Re: CHANGE: make icon change in graph editor to show which data
+	points (PR#2525)
+From: Chris Myers <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+In-Reply-To: <200805081937.m48JbqjD026172@chou.ece.utah.edu>
+References: <200805081937.m48JbqjD026172@chou.ece.utah.edu>
+Content-Type: text/plain
+Date: Thu, 08 May 2008 17:05:57 -0600
+Message-Id: <1210287957.13874.9.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-7.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.4 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+On Thu, 2008-05-08 at 13:37 -0600, Curtis Madsen wrote:
+> Now check marks show up in the directory structure when something is graphed. 
+> One trade-off I had top make was to check which data is graphed when the graph
+> editor is first loaded, so it loads slower than it did before.  I may be able to
+> speed this up by making some changes, but for now, it's going to be a little
+> slow.  Moving to needs testing.
+>
+This works and is really cool!
+
+

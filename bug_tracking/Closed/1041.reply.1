@@ -1,0 +1,29 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: kjones@vlsigroup.ece.utah.edu
+Subject: Re: Railroad compiler problem (PR#1041)
+Date: Thu Aug 10 17:21:31 2006
+
+> Full_Name: Kevin Jones
+> spec: atacs/work/vhdlams/railroadcontroller.vhd
+> Version: 
+> OS: Linux song.ece.utah.edu 2.6.14-1.1656_FC4smp #1 SMP Thu Jan 5 22:24:06
+EST
+> 2006 i686 i686 i386 GNU/Linux
+> command: atacs -cPlvsgll railroadcontroller.vhd
+> Submission from: song.ece.utah.edu (155.98.27.208)
+> Submitted by: kjones
+> 
+> 
+> When railroadcontroller.vhd is compiled by the tools developed by the group,
+the
+> multiple signal conditions are not correctly processed if two signal
+conditions
+> exist in the same line of a process, viz., in the form <condition_1> and
+> <condition_2>,.  The second condition is ignored, and the parentheses are
+> incorrectly matched in railroadcontroller.tel.
+> 
+Does this one work now?
+
+Moving to needs testing.
+
+Chris

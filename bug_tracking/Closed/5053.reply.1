@@ -1,0 +1,7 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: moschino21@gmail.com
+Subject: Re: BUG: Variables with floating point initial values fail to generate (PR#5053)
+Date: Tue Sep 28 15:57:38 2010
+
+Check that initial values are either a integer or a "[int,int]".  Otherwise give
+an error message.

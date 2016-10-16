@@ -1,0 +1,49 @@
+From zhen.zhang@utah.edu  Sat Sep  1 15:44:11 2012
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q81LiBbC032036
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 1 Sep 2012 15:44:11 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApwIAMGAQlDRVdKq/2dsb2JhbABEDoI8pyoBkSQIgQeCFyICgQMBAgVdEgEFASI1h2uaAIJhCQOUVIkGkjADiFCNCY48PoEggilZ
+X-IronPort-AV: E=Sophos;i="4.80,353,1344232800"; 
+   d="scan'208";a="101322726"
+Received: from mail-iy0-f170.google.com ([209.85.210.170])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 01 Sep 2012 15:44:10 -0600
+Received: by iamm10 with SMTP id m10so5683450iam.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 01 Sep 2012 14:44:09 -0700 (PDT)
+Received: by 10.42.62.143 with SMTP id y15mr11955794ich.38.1346535849812; Sat,
+ 01 Sep 2012 14:44:09 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.64.23.238 with HTTP; Sat, 1 Sep 2012 14:43:39 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sat, 1 Sep 2012 15:43:39 -0600
+Message-ID: <CA+LVOvmA=VH6i2d4Bg3HWRHe-J+5HB2EqwYRyOtZrpOOwf6LtQ@mail.gmail.com>
+Subject: FEATURE: Add self-loop support in the schematic editor for LEMA
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=20cf30223c910163ab04c8aacffa
+
+--20cf30223c910163ab04c8aacffa
+Content-Type: text/plain; charset=ISO-8859-1
+
+Supporting self-loop requires introducing two separate events in SBML in
+your translator.  When you do this, you are basically implementing the
+self-loop with an extra transition which you can actually do now
+explicitly.  Having the ability to add the extra transition automatically
+to create the self-loop would be nice though as a shorthand.
+
+--20cf30223c910163ab04c8aacffa
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div><span style=3D"color:rgb(34,34,34);font-family:arial,sans-serif;font-s=
+ize:13px;background-color:rgb(255,255,255)">Supporting self-loop requires i=
+ntroducing two separate events in SBML in your translator. =A0When you do t=
+his, you are basically implementing the self-loop with an extra transition =
+which you can actually do now explicitly. =A0Having the ability to add the =
+extra transition automatically to create the self-loop would be nice though=
+ as a shorthand.</span></div>
+
+
+--20cf30223c910163ab04c8aacffa--
+

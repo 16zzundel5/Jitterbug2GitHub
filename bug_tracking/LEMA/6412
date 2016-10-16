@@ -1,0 +1,29 @@
+From zhen.zhang@utah.edu  Sun Sep 27 21:04:41 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.144.18])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8S34eHL023706
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 27 Sep 2015 21:04:40 -0600
+X-IronPort-AV: E=Sophos;i="5.17,600,1437458400"; 
+   d="scan'208";a="519334444"
+Received: from mail-ob0-f171.google.com ([209.85.214.171])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 27 Sep 2015 21:04:40 -0600
+Received: by obbzf10 with SMTP id zf10so117938916obb.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 27 Sep 2015 20:04:39 -0700 (PDT)
+X-Received: by 10.182.104.130 with SMTP id ge2mr9162393obb.79.1443409479763;
+ Sun, 27 Sep 2015 20:04:39 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Sun, 27 Sep 2015 20:04:00 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sun, 27 Sep 2015 21:04:00 -0600
+Message-ID: <CA+LVOvnKacot7DnM0iT9z09TnP5fsjN0r0w2Gu2JuVchOpjjSw@mail.gmail.com>
+Subject: CHANGE: Make all compiled LPN transitions persistent for a pair of
+ send and receive
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Currently, 4 out of 6 transitions are compiled as persistent. The
+transitions setting the send and rcv variables to "true" are not
+persistent. Since there is no semantic difference for these two
+transitions to be either persistent or non-persistent, they can be
+made persistent.
+

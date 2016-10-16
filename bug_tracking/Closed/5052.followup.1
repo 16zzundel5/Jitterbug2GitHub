@@ -1,0 +1,83 @@
+From rat103070@gmail.com  Wed Jul 21 17:36:06 2010
+Return-Path: <rat103070@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-yw0-f42.google.com (mail-yw0-f42.google.com [209.85.213.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o6LNZq8D028311
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 21 Jul 2010 17:35:52 -0600
+Received: by ywi6 with SMTP id 6so923081ywi.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 21 Jul 2010 16:35:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:received
+         :in-reply-to:references:date:message-id:subject:from:to:content-type;
+        bh=uKygkKdCIGs+ywid40okD0Tes/TY2a+1D9IEdW+dJS8=;
+        b=sOaQeVX41/yCCH90CgViKqXnqf0NHZn+l4pJW125rJDkGFhsxd8W9ewDnRQzrWd48f
+         uWFT/qPPh4KsgEYmntOxzFDcNoXkRhkwO5Ef6lIamSUWwSqt9zE64wd00aDW539Fo1pn
+         gglrfv1SSDndHj0HwEV9YwjIHlU5Kgb/UNjZA=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        b=pSUrJBS6HOWZZC5wxAsOJYL1YThKGMmyu8GKbiqWtCVz9R5z7vHo8e0GTtIoARD695
+         /oi/xTticCMdQGighYHS3gQNxSUWI08GcsV3OjpTTtW7QiQ4AHWXBKcCIlufzaT69UB+
+         VUOCbOaizZvvsqc9jetgFIQcH7feeNw813Kbg=
+MIME-Version: 1.0
+Received: by 10.220.60.75 with SMTP id o11mr394025vch.271.1279755349929; Wed, 
+	21 Jul 2010 16:35:49 -0700 (PDT)
+Received: by 10.220.195.10 with HTTP; Wed, 21 Jul 2010 16:35:49 -0700 (PDT)
+Received: by 10.220.195.10 with HTTP; Wed, 21 Jul 2010 16:35:49 -0700 (PDT)
+In-Reply-To: <AANLkTil0WW_-UbOjgagFttdXO0YWPG8n6FgRHzxB6fOo@mail.gmail.com>
+References: <201007212315.o6LNFK52027771@chou.ece.utah.edu>
+	<AANLkTil0WW_-UbOjgagFttdXO0YWPG8n6FgRHzxB6fOo@mail.gmail.com>
+Date: Wed, 21 Jul 2010 17:35:49 -0600
+Message-ID: <AANLkTinKX9ctq2hfur-IkCAYcu9T4SxXFjk1Ksz-W1AO@mail.gmail.com>
+Subject: Re: BUG: simulator assignment error (PR#5052)
+From: Robert Thacker <rat103070@gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=e0cb4e887f0f0831c8048bee435b
+
+--e0cb4e887f0f0831c8048bee435b
+Content-Type: text/plain; charset=ISO-8859-1
+
+Correct is a rather fluid concept.  We're modeling an integer value, so
+assigning it a fractional value is wrong.
+This comes from separating the upper byte by dividing by 256, which is
+correct if it is integer division, but incorrect if its floating point
+division.
+
+On Jul 21, 2010 5:15 PM, "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+wrote:
+
+The behavior is actually correct.  If you zoom in you find that MemData is
+actually set to 0.008 at time 10.  This comes to 2 when multiplied by 256 at
+time 17.
+
+Chris
+
+--e0cb4e887f0f0831c8048bee435b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<p>Correct is a rather fluid concept.=A0 We&#39;re modeling an integer valu=
+e, so assigning it a fractional value is wrong.<br>
+This comes from separating the upper byte by dividing by 256, which is corr=
+ect if it is integer division, but incorrect if its floating point division=
+.</p>
+<p><blockquote type=3D"cite">On Jul 21, 2010 5:15 PM, &quot;Chris Myers&quo=
+t; &lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsi=
+group.ece.utah.edu</a>&gt; wrote:<br><br>The behavior is actually correct. =
+=A0If you zoom in you find that MemData is<br>
+
+actually set to 0.008 at time 10. =A0This comes to 2 when multiplied by 256=
+ at<br>
+time 17.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></p>
+
+--e0cb4e887f0f0831c8048bee435b--
+

@@ -1,0 +1,2 @@
+NOTE: Geometric and Posets with Interleav will generate correct behavior. 
+However, if interleave is removed from posets, then the system will deadlock.

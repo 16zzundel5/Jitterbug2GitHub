@@ -1,0 +1,123 @@
+From peskin@cs.utah.edu  Fri Jun 29 19:11:26 2001
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id TAA25117
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 29 Jun 2001 19:11:26 -0600
+Date: Fri, 29 Jun 2001 19:11:26 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200106300111.TAA25117@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: timing method finds new CSC violation in old TEL
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag PR570
+OS: RedHat 7.0 Linux xia.elen.utah.edu 2.2.19-7.0.8 #1 Thu Jun 21 06:28:56 EDT 2001 i686 unknown
+spec: ~peskin/atacs/examples/tel/pr570.tel
+log: ~peskin/atacs/examples/tel/atacs.log
+Submission from: dhcp-65-38.housing.utah.edu (155.101.65.38)
+Submitted by: peskin
+
+
+This is somewhat similar to PR#568.
+BUT, this TEL structure draws the problem when using real timing methods,
+such as posets.  (Whereas PR#568 only seems to occur using untimed.)
+
+The tel structure for this report is atacs/examples/tel/pr570.tel
+It is available as of cvs tag PR570.
+
+However, to help with the debugging process, I will demonstrate the
+change across the closest two tags between which it occurs:
+The TEL structure drew no CSC violation under cvs tag GOOD520.
+The same TEL structure draws a CSC violation under cvs tag myersNewInterface.
+
+The session below first demonstrates that the directory names
+correspond to the tags, and then tries each executable on the same tel
+structure.  Note that there is no automatic exception handling
+attempted here.  (In particular, the automatic state-assignment code
+is not invoked.)  Also note that one OS release is used for the whole
+session.  I believe I am using equivalent flags to ATACS, but they
+will look different, because the names have changed.
+
+=============================================================================
+148 xia:~> cd ~peskin/nobackup/GOOD520/atacs/src/
+149 xia:atacs/src> cvs -nq update -r GOOD520
+150 xia:atacs/src> make
+make: Nothing to be done for `all'.
+151 xia:atacs/src> cd ~peskin/nobackup/myersNewInterface/atacs/src/
+152 xia:atacs/src> cvs -nq update -r myersNewInterface
+153 xia:atacs/src> make
+make: Nothing to be done for `all'.
+154 xia:atacs/src> cd ~peskin/atacs/examples/tel
+155 xia:examples/tel> ~peskin/nobackup/GOOD520/atacs/src/atacs -msltya pr570
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Loading timed event/level structure from:  pr570.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000134)
+Finding reduced state graph ... 2066 iterations 1000 regions, 561 states
+(stack_depth = 454)
+memory: max=3563928 inuse=3563400 free=528 
+5852 iterations 2000 regions, 778 states (stack_depth = 497)
+memory: max=4469144 inuse=4458984 free=10160 
+9374 iterations 3000 regions, 1016 states (stack_depth = 561)
+memory: max=5427608 inuse=5422128 free=5480 
+13211 iterations 4000 regions, 1140 states (stack_depth = 590)
+memory: max=6250904 inuse=6244488 free=6416 
+17148 iterations 5000 regions, 1220 states (stack_depth = 581)
+memory: max=6943128 inuse=6933792 free=9336 
+21297 iterations 6000 regions, 1246 states (stack_depth = 569)
+memory: max=7618968 inuse=7591096 free=27872 
+25291 iterations 7000 regions, 1268 states (stack_depth = 483)
+memory: max=8163736 inuse=8023384 free=140352 
+29428 iterations 8000 regions, 1335 states (stack_depth = 299)
+memory: max=8249752 inuse=8176616 free=73136 
+nodes = 557, dead = 11031
+memory: max=8249752 inuse=7526944 free=722808 
+done
+31034 iterations, 8306 regions, 6721 new_regions, 1335 states in 4.64572
+seconds
+nodes in use = 557, dead = 11031
+memory: max=8249752 inuse=7526944 free=722808
+Found 8306 zones in 1335 states for pr570 (595d 8249752m 4.63u)
+Projecting out dummy transitions ... done (0.098139)
+Checking CSC ... complete state coded
+Finding regions ... done (0.000686)
+Finding conflicts ... done (0.000354)
+Finding covers ... done (0.000041)
+Storing production rules to:  pr570.prs
+Total Area = 8 literals 16 transistors
+156 xia:examples/tel> 
+156 xia:examples/tel> ~peskin/nobackup/myersNewInterface/atacs/src/atacs
+-oXtsltys pr570
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exception handling now turned OFF.
+Using PO sets timing to obtain state graphs.
+Loading timed event/level structure from:  pr570.tel
+Initializing 3 cycles ... done
+Using single-cube algortithm for synthesis.
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000134)
+Finding reduced state graph ... 2481 iterations 1000 regions, 688 states
+(stack_depth = 257)
+memory: max=2973880 inuse=2969808 free=4072 
+6874 iterations 2000 regions, 1014 states (stack_depth = 224)
+memory: max=3649720 inuse=3626176 free=23544 
+nodes = 557, dead = 11031
+memory: max=3670200 inuse=3085048 free=585152 
+done
+8406 iterations, 2085 regions, 2695 new_regions, 1065 states in 1.95035 seconds
+nodes in use = 557, dead = 11031
+memory: max=3670200 inuse=3085048 free=585152
+Found 2085 zones in 1065 states for pr570 (268d 3670200m 1.94u)
+Projecting out dummy transitions ... done (0.035247)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+157 xia:examples/tel> 
+

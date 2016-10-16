@@ -1,0 +1,45 @@
+From rodrigue@ebi.ac.uk  Thu May 12 03:33:31 2011
+Return-Path: <rodrigue@ebi.ac.uk>
+Received: from spike.ebi.ac.uk (spike.ebi.ac.uk [193.62.196.9])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4C9XUfV025079
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 May 2011 03:33:30 -0600
+Received: from swallowtail.ebi.ac.uk (swallowtail.ebi.ac.uk [172.22.8.255])
+	by spike.ebi.ac.uk (8.13.8/8.13.8) with ESMTP id p4C9XQVU019809;
+	Thu, 12 May 2011 10:33:26 +0100
+Message-ID: <4DCBA966.9090507@ebi.ac.uk>
+Date: Thu, 12 May 2011 10:33:26 +0100
+From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+User-Agent: Thunderbird 2.0.0.22 (X11/20090625)
+MIME-Version: 1.0
+To: SBML Software Interoperability Discussion List <sbml-interoperability@caltech.edu>,
+        atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE/CHANGE : iBioSim pre-compiled program
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+While trying to use IBioSim, I noticed that some programs did not work 
+on our setup (Centos 5.4), which I was expecting as the compilation 
+seems to have been made for Fedora 13.
+
+Is it possible to get the sources of the programs to be able to compile 
+them locally which would be the best for us or to get a version compiled 
+for an earlier version of Linux ?
+
+Here is the error I am getting in the 'command log' frame :
+
+--------------------------------------
+Executing:
+reb2sac --target.encoding=rkf45 /homes/rodrigue/sbmlData/iBiosim/1/Test1.xml
+
+Errors:
+reb2sac: /lib64/libc.so.6: version `GLIBC_2.7' not found (required by 
+reb2sac)
+--------------------------------------
+
+
+Thanks,
+Nico
+
+

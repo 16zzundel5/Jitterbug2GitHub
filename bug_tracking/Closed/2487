@@ -1,0 +1,36 @@
+From christian.atheist@gmail.com  Mon Feb  4 09:07:26 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.185])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m14G7Ogi004197
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Feb 2008 09:07:25 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so2180935fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 04 Feb 2008 08:07:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=oeqZJJ5Ne3dVRO1WYx8qq/copRZ3ZNKnJbY+g2FZ8Xw=;
+        b=baZLB6KoUSLg8VgBy3ykOUrka8cAxXc3Mt0CexDv8nPPD5x/U6I2yQ9ldWkIaGGRnDdwWMteZr91Mw7VQyckUdD2dpX2XPvWBcQrpKa7BuPutyqrm1d6r+DLBBVJd8NXIGHixFLY7l3xnUx8gotUNDK96GQ1WGBKfW8LdTmCIkY=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=uA9TnPi/vIEW/66o4ln0qIdhMK13lkWMf0TsLXK0s+5zHj3YiZE22GkBVy5eFG7pliwvW6ph4UlnkHCK66bDGrHhXV7UGASnl/wXsSQZ+C51i2ZEWAEk0qqFAVT1Qj8/Otu2sPDoq0AUjsf3CXvH1PqPbP8/LAOJq5hrvMZaa9c=
+Received: by 10.82.118.2 with SMTP id q2mr13319901buc.23.1202141243933;
+        Mon, 04 Feb 2008 08:07:23 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Mon, 4 Feb 2008 08:07:23 -0800 (PST)
+Message-ID: <eba119560802040807v5d4e44bep5aade15a1bfa528e@mail.gmail.com>
+Date: Mon, 4 Feb 2008 09:07:23 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Multiple versions of GCM can be open at same time
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+There can be multiple copies of GCM open at the same time.  This
+should not be allowed.
+

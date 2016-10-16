@@ -1,0 +1,9 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: check for errors in SBML when creating from GCM (PR#4977)
+Date: Thu Jun 10 22:41:18 2010
+
+Check if the same elements appear in both files and clash (i.e., different in
+any way) then throw an error.
+
+After merging, perform a validity check of the SBML and report any errors.

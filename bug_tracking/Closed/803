@@ -1,0 +1,35 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jul 26 12:25:28 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIPSwO017384
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 26 Jul 2004 12:25:28 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i6QIPSkb017382
+	for atacs-bugs@shang.elen.utah.edu; Mon, 26 Jul 2004 12:25:28 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIPRwO017376
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:25:27 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i6QIPhaL029173
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:25:44 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i6QIPh29029169
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:25:43 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 26 Jul 2004 12:25:43 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: degradation
+Message-ID: <Pine.LNX.4.44.0407261223420.29114-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Degradation should be of monomer, so it should likely be:
+
+[S_tot]/sqrt(2Kd[S_tot])
+
+Chris
+
+

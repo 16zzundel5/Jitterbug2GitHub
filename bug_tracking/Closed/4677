@@ -1,0 +1,46 @@
+From rat103070@gmail.com  Fri Feb 13 09:15:38 2009
+Return-Path: <rat103070@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.172])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1DGFc0g023857
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 Feb 2009 09:15:38 -0700
+Received: by wf-out-1314.google.com with SMTP id 28so1301415wfc.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 Feb 2009 08:15:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:from:to
+         :content-type:content-transfer-encoding:mime-version:subject:date
+         :x-mailer;
+        bh=FiL1nfvyiTsDiq2ioxwEOc7hhuEH8d++k/tEWo3naIA=;
+        b=Tc99Q3Trb9D2aSFl96Rg5PSUV5hOei790d04sVI5NAzkzc8eKjZL/uNQnH/krXz0xt
+         li8lXRlCl7xGYxODXmIQbp9yP0cl5I9DqecZCOIFueqCprZptfTY9XMAT4lC0K+frCD1
+         mIoIXQPKXK7GhbrX4M2DL2hsCxYJVUI/RPqiE=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:from:to:content-type:content-transfer-encoding
+         :mime-version:subject:date:x-mailer;
+        b=cvjTYd/Ppy/YvadhBtAUrn1rv6fvxG7KY9PqiP3KPXIqPfX5Gth7HQcfgAXzJBy2NS
+         z0zDCB8TVpW9EicX+s8oz41oKG3bUy6FVgIXMfUSr2bvQeyCxAm1+NbRVo3ddzSdeDac
+         bGWWyU/14AY5Aq+JhmnL3HShqH+GECtQpPF44=
+Received: by 10.142.163.13 with SMTP id l13mr1015439wfe.2.1234541737853;
+        Fri, 13 Feb 2009 08:15:37 -0800 (PST)
+Received: from zorac.ece.utah.edu (changcheng.ece.utah.edu [155.98.26.227])
+        by mx.google.com with ESMTPS id 22sm1777086wfi.1.2009.02.13.08.15.37
+        (version=TLSv1/SSLv3 cipher=RC4-MD5);
+        Fri, 13 Feb 2009 08:15:37 -0800 (PST)
+Message-Id: <75440177-E8C0-494C-A2AD-3AFB381BA8A4@gmail.com>
+From: Robert Thacker <rat103070@gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Subject: BUG: shortcut menu
+Date: Fri, 13 Feb 2009 09:15:36 -0700
+X-Mailer: Apple Mail (2.930.3)
+
+When I click on a project from the LEMA file menu recent items I get a  
+dialog box with the message  "Error graphing sbml file"
+

@@ -1,0 +1,64 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Aug 10 15:17:52 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.1 required=5.0 tests=AWL autolearn=ham 
+	version=3.1.3
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ALHq1D018946
+	for <atacs-bugs@shang.ece.utah.edu>; Thu, 10 Aug 2006 15:17:52 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.7/8.13.7/Submit) id k7ALHqF6018945
+	for atacs-bugs@shang.ece.utah.edu; Thu, 10 Aug 2006 15:17:52 -0600
+Received: from py-out-1112.google.com (py-out-1112.google.com [64.233.166.183])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ALHoDs018937
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 15:17:50 -0600
+Received: by py-out-1112.google.com with SMTP id t32so835648pyc
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 14:17:49 -0700 (PDT)
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+        s=beta; d=gmail.com;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=NL16y6G1LF+E/GLTv034JiMXZW2ImIO4TuMMw2R/hY3bemEs6calsVk9Z0ywRn3lBWXT+yToLNEhyGqjwBvQl3AAyQEjGRjq5WtBUSUmyOZcpmHHB0TXH0BROMmM6uqZdR0xB3RF2awkbGragUOBaxilt7STmzCHRZJRp4blBEY=
+Received: by 10.35.41.14 with SMTP id t14mr4596161pyj;
+        Thu, 10 Aug 2006 14:17:49 -0700 (PDT)
+Received: by 10.35.63.8 with HTTP; Thu, 10 Aug 2006 14:17:49 -0700 (PDT)
+Message-ID: <2d7e81f50608101417y10185ea3p480ae40d5be7a98e@mail.gmail.com>
+Date: Thu, 10 Aug 2006 15:17:49 -0600
+From: "Hiro Kuwahara" <hkuwahara@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: feature request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+User interface to specify what the user is interested in analyzing
+using his/her model.
+This can be simplified to 3 sub items:
+
+*  User interface to specify sets of states which the user is
+interested in knowing whether or not reaching.
+--  For example, in the type 1 pili phase variation model, we are
+interested in knowing the probability of ON-to-OFF switching for one
+cell generation.  This can be measured by counting the number of
+simulation runs where the molecular count of artificial species
+"switch" reaches 1 within the simulation time limit given the initial
+molecular count of "switch"
+is 0, and dividing this number by the number of the total simulation runs.
+So, in this case, the user would specify "switch >= 1" as the set of
+states that the user is interested in.
+
+*  User interface to specify the independent variable for looping of
+simulations for various initial conditions, and which and how
+parameters or species' initial conditions, if any, change    based on
+the change in the independent variable.
+-- For example, in the ON-to-OFF switching  analysis, the independent
+variable is a temperature, and some parameter values and the initial
+concentrations of some species change based on the temperature.
+
+*  Ability to visualize the results using the features 5.1 and 5.2.
+-- For example,  in the ON-to-OFF switching  analysis,  the user would
+like to see how the switching probabilities change based on the change
+in temperature, i.e., visualizing the switching probabilities as a
+function of the temeperature.
+

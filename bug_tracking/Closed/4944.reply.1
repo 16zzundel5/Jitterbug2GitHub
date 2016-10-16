@@ -1,0 +1,13 @@
+From: Robert Allan Thacker <atacs-bugs@vlsigroup.ece.utah.edu>
+To: robert.a.thacker@us.army.mil
+Subject: Re: BUG: null pointer issues (PR#4944)
+Date: Fri Mar 26 18:27:37 2010
+
+only occurs on remove dead transitions.
+
+Exception in thread "Thread-14" java.lang.NullPointerException
+	at lhpn2sbml.parser.Abstraction.mergeCoordinatedVars(Abstraction.java:1648)
+	at lhpn2sbml.parser.Abstraction.abstractSTG(Abstraction.java:157)
+	at verification.Verification.run(Verification.java:866)
+	at java.lang.Thread.run(Thread.java:637)
+

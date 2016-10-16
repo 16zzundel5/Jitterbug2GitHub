@@ -1,0 +1,115 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: array validation errors (PR#6189)
+Date: Mon Oct 27 22:08:45 2014
+
+
+It is tricky to validate a hierarchical sbml document. The only way to determine
+the validity of a model is to have 
+the instantiatied sub models as well. Otherwise I won't know if you index valid
+ports or if the index math is ok 
+without port dimensions.
+
+This is a good point and likely the validation will need to be recursive on the
+subModels eventually, but I think the 
+messages can be improved for now.
+
+0:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+1:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+2:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+3:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+4:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+5:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+
+Unfortunately, the errors are not easy to track.  It might be nice to give
+information about the parent object.  
+Anyway, these appear to be errors related to the fact that the reference points
+to a port defined outside this 
+document.
+
+6:Index math should be statically computable, meaning that it should only
+contain dimension ids or constant 
+values but C2 is not statically computable.
+
+C2 does not appear in any index and C2 does not have any index.  It does have
+deletions with indices which is 
+what I think you mean.
+
+7:Index math should not go out-of-bounds but index for C2 does.
+
+Again, C2 does not have any index, but it does have deletions with indices.  The
+object indexed is a reference to a 
+port which is not defined within this model.  Checking this must certainly open
+the subModel as you say.  For 
+now, you should likely update the validation message as it does not go
+out-of-bounds as you don't know.  
+Instead, the message should indicate that index cannot be checked since the
+referenced object is not present in 
+this model.  Likely, this is the same with the error above as you cannot
+determine if it is statically computable 
+either.  
+
+8:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+9:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+10:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+11:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+12:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+13:Index objects should reference a valid SIdRef Index
+[referencedAttribute=comp:portRef, arrayDimension=0] 
+references an unknown SBase.
+
+Ditto as above.
+
+14:Index math should be statically computable, meaning that it should only
+contain dimension ids or constant 
+values but C4 is not statically computable.
+15:Index math should not go out-of-bounds but index for C4 does.
+16:Index math should be statically computable, meaning that it should only
+contain dimension ids or constant 
+values but C4 is not statically computable.
+17:Index math should not go out-of-bounds but index for C4 does.
+
+Same as above.  
+
+By the way, I'm surprised there are not more similar warnings of this type.  It
+seems to not be checking the 
+replacements at all.  Once you fix this, I suspect there will then be tons of
+warnings of these types.  Comp has a 
+generic message it prints when it discovers issues it cannot check without
+flattening.  I think we should do 
+something similar until we fix validation to recurse.  Namely, if you find there
+are deletions or replacements that 
+index references to external variables, you should give a warning once of the
+form:
+
+"Array validation has encountered indices for references to variables defined
+outside this SBML document, so it 
+currently cannot validate whether these indices are valid."
+
+This way, we will not be overwhelmed with these types of validation errors.  
+
+Thanks,
+
+Chris

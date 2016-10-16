@@ -1,0 +1,188 @@
+From myers@ece.utah.edu  Tue Jun 29 08:33:26 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.9 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE,NORMAL_HTTP_TO_IP,RCVD_IN_SORBS_WEB
+	autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o5TEXQ9Y019739
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 29 Jun 2010 08:33:26 -0600
+Received: from [74.93.186.81] (helo=[10.71.9.27])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OTbsM-0000Rm-4m
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 29 Jun 2010 08:33:26 -0600
+Message-Id: <3172C054-F2CE-431D-82D6-BF2AE08AD852@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-8-1014572837
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: problems with two biomodels
+Date: Tue, 29 Jun 2010 08:33:19 -0600
+References: <00eb01caa8ff$b94c6980$2be53c80$@washington.edu>
+X-Mailer: Apple Mail (2.936)
+
+
+--Apple-Mail-8-1014572837
+Content-Type: text/plain;
+	charset=US-ASCII;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+
+For two biomodels (13 and 70), simulation is incredibly slow.  Details  
+of road runner on these examples is below.  Can this be exploited to  
+improve our results.
+
+Begin forwarded message:
+
+> From: "Frank T. Bergmann" <fbergman@u.washington.edu>
+> Date: February 8, 2010 1:46:01 PM MST
+> To: "'Chris J. Myers'" <myers@ece.utah.edu>
+> Subject: RE: Question
+>
+> We are using CVODE as available from here:
+>
+> https://computation.llnl.gov/casc/sundials/description/ 
+> description.html
+>
+> roadRunner can be controlled via web service ... and thus all values  
+> can
+> easily be changed ... currently roadRunner is using:
+>
+> &lt;section name = "integration" method ="CVODE" description = "CVODE
+> Integrator"&gt;
+> &lt;cap name = "BDFOrder" value = "5" hint = "Maximum order for BDF  
+> Method"
+> type = "int"/&gt;
+> &lt;cap name = "AdamsOrder" value = "12" hint = "Maximum order for  
+> Adams
+> Method" type = "int"/&gt;
+> &lt;cap name = "rtol" value = "1E-06" hint = "Relative Tolerance"  
+> type =
+> "double"/&gt;
+> &lt;cap name = "atol" value = "1E-16" hint = "Absolute Tolerance"  
+> type =
+> "double"/&gt;
+> &lt;cap name = "maxsteps" value = "10000" hint = "Maximum number of  
+> internal
+> steps" type = "int"/&gt;
+>
+>
+> http://128.208.17.26/generate/edu_kgi_roadRunner.asmx/getCapabilities
+>
+> however you are correct, CVODE uses adaptive step sizes, and  
+> roadRunner only
+> supplies the points closes to the requested output points.
+>
+> best
+> Frank
+>
+>
+>> -----Original Message-----
+>> From: Chris J. Myers [mailto:myers@ece.utah.edu]
+>> Sent: Monday, February 08, 2010 12:40 PM
+>> To: Frank Bergmann
+>> Subject: Question
+>>
+>> What ODE algorithm are you using in road runner?  I assume that it is
+>> adaptive time step.  What absolute and relative error are the  
+>> defaults
+>> for the web interface?  Are there any other special parameters?
+>>
+>> It seems that models 13 and 70 require a very small time step
+>> initially which bogs down my simulator.  If I try to prevent the time
+>> step from getting too small, the results diverge.  It is quite  
+>> strange.
+>>
+>> Thanks,
+>>
+>> Chris
+>
+
+
+--Apple-Mail-8-1014572837
+Content-Type: text/html;
+	charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; ">For two biomodels (13 and 70), =
+simulation is incredibly slow. &nbsp;Details of road runner on these =
+examples is below. &nbsp;Can this be exploited to improve our =
+results.<br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>From: =
+</b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+Helvetica">"Frank T. Bergmann" &lt;<a =
+href=3D"mailto:fbergman@u.washington.edu">fbergman@u.washington.edu</a>&gt=
+;</font></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><font face=3D"Helvetica" =
+size=3D"3" color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+#000000"><b>Date: </b></font><font face=3D"Helvetica" size=3D"3" =
+style=3D"font: 12.0px Helvetica">February 8, 2010 1:46:01 PM =
+MST</font></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><font face=3D"Helvetica" =
+size=3D"3" color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+#000000"><b>To: </b></font><font face=3D"Helvetica" size=3D"3" =
+style=3D"font: 12.0px Helvetica">"'Chris J. Myers'" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</font></div>=
+<div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>Subject: =
+</b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+Helvetica"><b>RE: Question</b></font></div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; =
+min-height: 14px; "><br></div> </div><div>We are using CVODE as =
+available from here: <br><br><a =
+href=3D"https://computation.llnl.gov/casc/sundials/description/description=
+.html">https://computation.llnl.gov/casc/sundials/description/description.=
+html</a><br><br>roadRunner can be controlled via web service ... and =
+thus all values can<br>easily be changed ... currently roadRunner is =
+using: <br><br>&amp;lt;section name =3D "integration" method =3D"CVODE" =
+description =3D "CVODE<br>Integrator"&amp;gt;<br>&amp;lt;cap name =3D =
+"BDFOrder" value =3D "5" hint =3D "Maximum order for BDF Method"<br>type =
+=3D "int"/&amp;gt;<br>&amp;lt;cap name =3D "AdamsOrder" value =3D "12" =
+hint =3D "Maximum order for Adams<br>Method" type =3D =
+"int"/&amp;gt;<br>&amp;lt;cap name =3D "rtol" value =3D "1E-06" hint =3D =
+"Relative Tolerance" type =3D<br>"double"/&amp;gt;<br>&amp;lt;cap name =3D=
+ "atol" value =3D "1E-16" hint =3D "Absolute Tolerance" type =
+=3D<br>"double"/&amp;gt;<br>&amp;lt;cap name =3D "maxsteps" value =3D =
+"10000" hint =3D "Maximum number of internal<br>steps" type =3D =
+"int"/&amp;gt;<br><br><br>http://128.208.17.26/generate/edu_kgi_roadRunner=
+.asmx/getCapabilities<br><br>however you are correct, CVODE uses =
+adaptive step sizes, and roadRunner only<br>supplies the points closes =
+to the requested output points. =
+<br><br>best<br>Frank<br><br><br><blockquote type=3D"cite">-----Original =
+Message-----<br></blockquote><blockquote type=3D"cite">From: Chris J. =
+Myers [mailto:myers@ece.utah.edu]<br></blockquote><blockquote =
+type=3D"cite">Sent: Monday, February 08, 2010 12:40 =
+PM<br></blockquote><blockquote type=3D"cite">To: Frank =
+Bergmann<br></blockquote><blockquote type=3D"cite">Subject: =
+Question<br></blockquote><blockquote =
+type=3D"cite"><br></blockquote><blockquote type=3D"cite">What ODE =
+algorithm are you using in road runner? &nbsp;I assume that it =
+is<br></blockquote><blockquote type=3D"cite">adaptive time step. =
+&nbsp;What absolute and relative error are the =
+defaults<br></blockquote><blockquote type=3D"cite">for the web =
+interface? &nbsp;Are there any other special =
+parameters?<br></blockquote><blockquote =
+type=3D"cite"><br></blockquote><blockquote type=3D"cite">It seems that =
+models 13 and 70 require a very small time =
+step<br></blockquote><blockquote type=3D"cite">initially which bogs down =
+my simulator. &nbsp;If I try to prevent the =
+time<br></blockquote><blockquote type=3D"cite">step from getting too =
+small, the results diverge. &nbsp;It is quite =
+strange.<br></blockquote><blockquote =
+type=3D"cite"><br></blockquote><blockquote =
+type=3D"cite">Thanks,<br></blockquote><blockquote =
+type=3D"cite"><br></blockquote><blockquote =
+type=3D"cite">Chris<br></blockquote><br></div></blockquote></div><br></bod=
+y></html>=
+
+--Apple-Mail-8-1014572837--
+

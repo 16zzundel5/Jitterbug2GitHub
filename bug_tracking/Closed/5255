@@ -1,0 +1,39 @@
+From curtis.madsen@utah.edu  Fri Jan 21 15:30:29 2011
+Return-Path: <curtis.madsen@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.4 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0LMUT0V027203
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 21 Jan 2011 15:30:29 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApsEAC6YOU2bYbVo/2dsb2JhbAClXbN3iGiFUASEb4Ywiz0
+X-IronPort-AV: E=Sophos;i="4.60,360,1291618800"; 
+   d="scan'208";a="272024044"
+Received: from h104.umail.utah.edu (HELO HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 21 Jan 2011 15:30:29 -0700
+Received: from C8V1.xds.umail.utah.edu ([fe80::5099:35da:f10c:80a2]) by
+ HUB4.xds.umail.utah.edu ([2002:9b61:b568::9b61:b568]) with mapi; Fri, 21 Jan
+ 2011 15:30:29 -0700
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Fri, 21 Jan 2011 15:27:47 -0700
+Subject: BUG: GCM parameters not saved in analysis view
+Thread-Topic: GCM parameters not saved in analysis view
+Thread-Index: AQHLubrOo5s0V79KzkqvdLZEdV7fVA==
+Message-ID: <852B726894B07749AE9ABB4B055919AC7DFE96F48E@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+My parameter changes are not being saved in the GCM parameter editor.  It i=
+s likely that the ".sim" file is not being updated from the graphical param=
+eter editor.=
+

@@ -1,0 +1,55 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Aug 10 13:21:35 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.4 required=5.0 tests=ALL_TRUSTED 
+	autolearn=unavailable version=3.1.3
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7AJLZuk016357
+	for <atacs-bugs@shang.ece.utah.edu>; Thu, 10 Aug 2006 13:21:35 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.7/8.13.7/Submit) id k7AJLZuO016356
+	for atacs-bugs@shang.ece.utah.edu; Thu, 10 Aug 2006 13:21:35 -0600
+Received: from jiaqi.ece.utah.edu (jiaqi.ece.utah.edu [155.98.27.199])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7AJLXpm016345
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 13:21:33 -0600
+Received: from jiaqi.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by jiaqi.ece.utah.edu (8.13.7/8.12.8) with ESMTP id k7AJKkq5008522
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 13:20:46 -0600
+Received: (from myers@localhost)
+	by jiaqi.ece.utah.edu (8.13.7/8.13.7/Submit) id k7AJKkRx008519
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 10 Aug 2006 13:20:46 -0600
+X-Authentication-Warning: jiaqi.ece.utah.edu: myers set sender to myers@ece.utah.edu using -f
+Subject: Re: CTL model checker (PR#1135)
+From: Chris Myers <myers@ece.utah.edu>
+To: David Walter <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <200608101907.k7AJ7TYP016218@chou.ece.utah.edu>
+References: <200608101907.k7AJ7TYP016218@chou.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+Date: Thu, 10 Aug 2006 13:20:45 -0600
+Message-Id: <1155237645.8413.3.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.6.2 (2.6.2-1.fc5.5) 
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id k7AJLXpm016345
+
+On Thu, 2006-08-10 at 13:07 -0600, David Walter wrote:
+> I moved the code from verify.h involving the ctl checker to ctlchecker.h and
+> moved the code from verify.c involving the ctl checker to ctlchecker.c. 
+> Additionally, required include ctlchecker.h in atacs.h and findrsg.h, in
+> addition to modifying the Makefile to compile the new file ctlchecker.h
+>
+Seems like you forgot to check in a new findrsg.h as it fails to
+compile:
+
+g++ -DXIF -DTIMER -DMEMSTATS -DEXPANDNET  -I/usr/include/tcl
+-I/usr/local/include -I/usr/src/linux/include -Wall -g   -c findrsg.c
+findrsg.c: In function ‘bool find_reduced_state_graph(char, char,
+design*)’:
+findrsg.c:4521: error: ‘checkCTL’ was not declared in this scope
+/usr/local/include/cuddObj.hh: At global scope:
+/usr/local/include/cuddObj.hh:87: warning: inline function ‘DdNode*
+DD::getNode()’ used but never defined
+make: *** [findrsg.o] Error 1
+
+

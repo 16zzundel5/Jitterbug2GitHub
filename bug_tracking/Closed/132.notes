@@ -1,0 +1,7 @@
+Thacker
+The code is now configured to find the first least cube/literal cost
+combinational cover for each transition.  To test, run ATACS with the BDD
+switch
+and the verbose switch.  The combinational covers will appear in the file
+_design_.MAP.  To compare against the explicit code, run atacs with the
+multicube and atomic switches, and look at the _design_.prs file.

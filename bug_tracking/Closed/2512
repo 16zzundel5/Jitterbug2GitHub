@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:17:13 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.187])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELGmIx012486
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:17:13 -0700
+Received: by mu-out-0910.google.com with SMTP id w8so217461mue.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:17:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=ohyBpaDVUg5NQZJkABmROIbLc91HWOrdlK6k/0oINys=;
+        b=OTQDir87LCpJ67oJAGXZQ29hNYb1orWfVoMCpUr/DCycUT7v18URqUeBjsLuhddKj77XzdVt6b3aUcLoJo6wZLmVEaYl9WA5HeiN3Zn2xIiSqMz3/ediaOUb+yOwgsOcvS12nBFiBrze97dB+Xge8mn1kebF77cfLC41mnIHJUs=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=BASFhYAuu9aBsS1yV4iNQ94VbRiBq4o80tI3G4Fk7SnatmKRBI31ev9QYsrHcPTwhRTx9HTWERHAwP3at8IjEf0HCqesfl8NW9oUNR9bXzp9t/TbcucrplX8O1s4aOg5YGwYovjN4DN9SPrsMpklhI3wYJBHGNL5cI0M0PsZlG8=
+Received: by 10.82.149.8 with SMTP id w8mr3461555bud.0.1203023832882;
+        Thu, 14 Feb 2008 13:17:12 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:17:12 -0800 (PST)
+Message-ID: <eba119560802141317t72966d69g3b95204d6c155ad4@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:17:12 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE: Annotate the SBML with the GCM file
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Annotate the SBML with the GCM file
+

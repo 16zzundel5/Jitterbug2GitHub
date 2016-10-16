@@ -1,0 +1,20 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: andy.gilbert@utah.edu
+Subject: Re: BUG: Error during FBA (PR#6258)
+Date: Thu Feb 26 15:21:07 2015
+
+There are two possible sources of this error:
+
+1) You have some reaction without a flux bound defined.  The latest version that
+I posted about 24 hours 
+ago will give you this error message rather than the exception.
+
+2) You added reactions with flux bounds then deleted them.  There is a bug which
+Adrian discovered 
+yesterday in which deleting a reaction does not delete its flux bound.  If you
+have this problem, you can 
+either edit the XML file to remove the extra flux bounds or send it to me to do
+so.  This bug will be fixed in 
+2.8.4.
+
+Chris

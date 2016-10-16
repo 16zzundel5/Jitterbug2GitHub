@@ -1,0 +1,18 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: wendy@vlsigroup.elen.utah.edu
+Subject: Re: dinvd2c.csp deadlocks under posets but not geometric (PR#47)
+Date: Sat May 22 15:08:16 1999
+
+This is a very strange example indeed.  My state space exploration finds the 
+correct state space for the given ER, but it is not what you would expect from
+the CSP.  Though, strictly speaking looking at the compilation rules, it is
+also
+the correct ER.  
+
+In my routine, clk-/2 ends up causing y-/1 (strange as that seems it is correct
+for the ER).  Your analysis technique should find the same thing.  It should
+not
+know the compiler did something counter-intuitive.
+
+As for the compiler, "skip" should likely be compiled into a dummy event (and
+not postprocessed out).  This will cause the behavior to be more intuitive.

@@ -1,0 +1,54 @@
+From atacs-bugs  Thu Oct 31 03:40:48 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g9VAemp23462
+	for atacs-bugs@shang.elen.utah.edu; Thu, 31 Oct 2002 03:40:48 -0700
+Received: from localhost (yzhao@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g9VAemd23456
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 31 Oct 2002 03:40:48 -0700
+Date: Thu, 31 Oct 2002 03:40:48 -0700 (MST)
+From: Yanyi Zhao <yzhao@chou.elen.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: Re: syntax errors for ATACS generated VHDL (PR#686)
+In-Reply-To: <200210292203.g9TM3XU12395@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.44.0210310338220.23426-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+hi Dr. Myers:
+
+I have tested the vhdl code again, and all of the following 4 errors have 
+been fixed, the storevhdl works fine now.
+
+thanks a lot...
+
+yy:p
+
+
+On Tue, 29 Oct 2002, Chris Myers wrote:
+
+> 
+> > There are serval syntax errors about ATACS generated VHDL code:
+> > 1. All the ! and ? can not be compiled.
+> >
+> Should be fixed.  Please test.
+> >
+> > 2. The entity or architecture names cannot have " . " in it, such as
+> >    the name we have here "mpegdecoder.ctrl_HSE_BESTS" 
+> >
+> Should avoid .'s in our naming, I guess.
+> >
+> > 3. There are some declarations which should be declared in the entity
+> >    instead of the architecture internal signal.  For some of the vhdl, 
+> >    there are no declarations in the entity, all of them are in the 
+> >    internal signal declaration part; for some of the vhdl, the declarations 
+> >    have been declared both in the entity and the internal signal.
+> >
+> Should be fixed.  Please test.
+> >
+> > 4. The time delay is too big to simulate. Such as (0,2147483647).
+> > 
+> 
+> Should be fixed.  Please test.
+> 
+

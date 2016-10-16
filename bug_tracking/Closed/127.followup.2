@@ -1,0 +1,23 @@
+From myers@jiaqi.elen.utah.edu  Wed Jun  9 09:41:41 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id JAA14212 for <atacs-bugs@shang.elen.utah.edu>; Wed, 9 Jun 1999 09:41:39 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id JAA00648
+	for atacs-bugs@shang.elen.utah.edu; Wed, 9 Jun 1999 09:41:26 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199906091541.JAA00648@jiaqi.elen.utah.edu>
+Subject: Re: Abstraction error in lapb2 (PR#127)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Wed, 9 Jun 1999 09:41:25 -0600 (MDT)
+In-Reply-To: <199906090023.SAA03079@yuan.elen.utah.edu> from "Eric Robert Peskin" at Jun 8, 99 06:23:16 pm
+Content-Type: text
+
+> 
+> > The delay from i2- to i2+ after abstraction for the lapb2 component from the
+> > lapb2.csp example should be 103,inf rather than 4,20.
+> 
+> What lapb2.csp example?  
+> 
+oops.  It shouuld be file:lapbN2 with component:lapb2.  This can be specified
+by command line: atacs <switches> lapbN2 lapb2.  Also, a doall lapbN2 lapb2
+will work.  Finally, there is a component field now in xatacs.
+ 

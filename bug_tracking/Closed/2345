@@ -1,0 +1,38 @@
+From christian.atheist@gmail.com  Sun Sep 30 20:26:05 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.2 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.191])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l912Q4p3029911
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 30 Sep 2007 20:26:04 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so3565470fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 30 Sep 2007 19:26:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=n3+acKTBRxvaXuwOg7ZrxL/GxpIvTOWNnrJpaqQVNCM=;
+        b=M604ZoRKYfIAPjY6vhlMF6b4GXRRu9KAo5HVCYuWWwlCgK9eqpAk2KfLTv1uDshPPZRNfQyDmO3MSNKcMpHTbd1atcIrHpWtezXESPN3pcUDYQi6m8MO8WkXJ0zx8R3/s+B/zDhiLaSJBW9+l8gHoUA719Sxm87KAU6NeToiJcQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=IoBOFmAZ4aHWTiQ0ibQSGLWwUHt/iafVAjoBkijcovbEZATylH8mimuYyZgsU/SjhKYoajOrFF5P5AJBBvD7cqxeGu8QsyBEw9txDY5u/hEYUOh1Z0JsmIBXESyVeVbtvJEXuICYMOmrmDgb6L4YJCLgyW1F+opX1HsWKU+qd8A=
+Received: by 10.82.119.17 with SMTP id r17mr3952201buc.1191205562819;
+        Sun, 30 Sep 2007 19:26:02 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Sun, 30 Sep 2007 19:26:02 -0700 (PDT)
+Message-ID: <eba119560709301926v49d84c05j8ae11d86730fe21@mail.gmail.com>
+Date: Sun, 30 Sep 2007 20:26:02 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Cancel causes quit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+If I open a project, and open an analysis view and click on close on
+BioSim, it will ask if I want to save, not save, or cancel.  If I
+click cancel, BioSim just quits.  It should just ignore my selection
+and not close BioSim.
+

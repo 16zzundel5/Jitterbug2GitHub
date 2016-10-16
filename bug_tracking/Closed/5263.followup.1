@@ -1,0 +1,156 @@
+From myers@ece.utah.edu  Mon Jan 31 19:42:00 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p112g0Ka014091
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 31 Jan 2011 19:42:00 -0700
+Received: from 75-169-167-91.slkc.qwest.net ([75.169.167.91] helo=[192.168.0.6])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Pk6Br-0006fw-OX; Mon, 31 Jan 2011 19:41:59 -0700
+Cc: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <E641BA96-1E56-4227-9F82-66255730B274@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Zhen Zhang <moschino21@gmail.com>
+In-Reply-To: <AANLkTi=5jSNg0FLGug8fcTE+YBHjmpwoQgAHC9F0=SNm@mail.gmail.com>
+Content-Type: multipart/alternative; boundary=Apple-Mail-16-393339785
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: FEATURE: support for persistent flag in reaction-based LPN to SBML (PR#5263)
+Date: Mon, 31 Jan 2011 19:41:59 -0700
+References: <201101311557.p0VFvS6t021024@chou.ece.utah.edu> <AANLkTi=5jSNg0FLGug8fcTE+YBHjmpwoQgAHC9F0=SNm@mail.gmail.com>
+X-Mailer: Apple Mail (2.936)
+
+
+--Apple-Mail-16-393339785
+Content-Type: text/plain;
+	charset=US-ASCII;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+
+Good catch.  You are right.
+
+Chris
+
+On Jan 31, 2011, at 6:48 PM, Zhen Zhang wrote:
+
+> There is a problem with the reactant. In SBML(level 3 version 1), an  
+> assignment rule cannot be defined for a species that is created or  
+> destroyed in a reaction unless that species is defined as a boundary  
+> condition in the model. So instead of defining a reactant t (see  
+> below), a modifier is defined. The change of this has been checked in.
+>
+> When the persistent flag is true for a transition, t, with an  
+> exponential delay, r,  should convert it to a rule, reaction, and  
+> event as follows:
+>
+> Rule:
+> t = piecewise(1, (*t & e) | (*t & t), 0)
+>
+> Reaction:
+> modifier  t
+> product tp
+> rate law  r * t
+>
+> Event:
+> trigger tp
+> pers    false
+> delay  0
+> assignments
+>      *t = 0
+>       t* = 1
+>       <A>
+>
+> On Mon, Jan 31, 2011 at 8:57 AM, Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu 
+> > wrote:
+> This appears to be working.
+>
+> Closing.
+>
+> Chris
+>
+> > When the persistent flag is true for a transition, t, with an
+> > exponential delay, r,  should convert it to a rule, reaction, and
+> > event as follows:
+> >
+> > Rule:
+> > t = piecewise(1, (*t & e) | (*t & t), 0)
+> >
+> > Reaction:
+> > reactant       t
+> > product tp
+> > rate law  r * t
+> >
+> > Event:
+> > trigger tp
+> > pers    false
+> > delay  0
+> > assignments
+> >     *t = 0
+> >      t* = 1
+> >      <A>
+> >
+> >
+> >
+>
+>
+>
+> -- 
+> Zhen Zhang
+
+
+--Apple-Mail-16-393339785
+Content-Type: text/html;
+	charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; ">Good catch. &nbsp;You are =
+right.<div><br></div><div>Chris</div><div><br><div><div>On Jan 31, 2011, =
+at 6:48 PM, Zhen Zhang wrote:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><span =
+class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; =
+font-size: 13px; border-collapse: collapse; "><div><span =
+class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; =
+font-size: 13px; border-collapse: collapse; ">There is a problem with =
+the reactant. In SBML(level 3 version 1), a</span><span =
+class=3D"Apple-style-span" style=3D"font-family: Helvetica; font-size: =
+small; ">n assignment rule cannot be defined for a species that is =
+created or destroyed in a reaction unless that species is defined as a =
+boundary condition in the model. So instead of defining a reactant t =
+(see below), a modifier is defined. The change of this has been checked =
+in.</span></div> <div><font class=3D"Apple-style-span" =
+face=3D"Helvetica"><span class=3D"Apple-style-span" style=3D"font-size: =
+small;"><br></span></font></div>When the persistent flag is true for a =
+transition, t, with an&nbsp;exponential delay, r, &nbsp;should convert =
+it to a rule, reaction, and&nbsp;event as follows:</span><div> <span =
+class=3D"Apple-style-span" style=3D"font-family: arial, sans-serif; =
+font-size: 13px; border-collapse: collapse; =
+"><br></span></div><div><span class=3D"Apple-style-span" =
+style=3D"font-family: arial, sans-serif; font-size: 13px; =
+border-collapse: collapse; ">Rule:<br> t =3D piecewise(1, (*t &amp; e) | =
+(*t &amp; t), 0)<br><br>Reaction:<br>modifier &nbsp;t<br>product =
+tp<br>rate law &nbsp;r * t<br><br>Event:<br>trigger tp<br>pers &nbsp; =
+&nbsp;false<br>delay &nbsp;0<br>assignments<br>&nbsp;&nbsp; &nbsp; *t =3D =
+0<br>&nbsp;&nbsp; &nbsp; &nbsp;t* =3D 1<br> &nbsp;&nbsp; &nbsp; =
+&nbsp;&lt;A&gt;</span><br> <br><div class=3D"gmail_quote">On Mon, Jan =
+31, 2011 at 8:57 AM, Chris Myers <span dir=3D"ltr">&lt;<a =
+href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ece=
+.utah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" =
+style=3D"margin:0 0 0 .8ex;border-left:1px #ccc =
+solid;padding-left:1ex;"> This appears to be working.<br> <br> =
+Closing.<br> <br> Chris<br> <br> &gt; When the persistent flag is true =
+for a transition, t, with an<br> &gt; exponential delay, r, &nbsp;should =
+convert it to a rule, reaction, and<br> &gt; event as follows:<br> =
+&gt;<br> &gt; Rule:<br> &gt; t =3D piecewise(1, (*t &amp; e) | (*t &amp; =
+t), 0)<br> &gt;<br> &gt; Reaction:<br> &gt; reactant &nbsp; &nbsp; =
+&nbsp; t<br> &gt; product tp<br> &gt; rate law &nbsp;r * t<br> &gt;<br> =
+&gt; Event:<br> &gt; trigger tp<br> &gt; pers &nbsp; &nbsp;false<br> =
+&gt; delay &nbsp;0<br> &gt; assignments<br> &gt; &nbsp; &nbsp; *t =3D =
+0<br> &gt; &nbsp; &nbsp; &nbsp;t* =3D 1<br> &gt; &nbsp; &nbsp; =
+&nbsp;&lt;A&gt;<br> &gt;<br> &gt;<br> &gt;<br> =
+</blockquote></div><br><br clear=3D"all"><br>-- <br>Zhen Zhang<br> =
+</div></blockquote></div><br></div></body></html>=
+
+--Apple-Mail-16-393339785--
+

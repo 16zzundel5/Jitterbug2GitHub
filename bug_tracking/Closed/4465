@@ -1,0 +1,34 @@
+From myers@ece.utah.edu  Mon May 19 17:18:04 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.1 required=5.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m4JNI4Ql019626
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 19 May 2008 17:18:04 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1JyEcX-0006jL-N8)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 19 May 2008 17:18:24 -0600
+Received: from [192.168.0.2] (75-169-172-174.slkc.qwest.net [75.169.172.174])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m4JNI058005529
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 19 May 2008 17:18:01 -0600
+Subject: CHANGE: lookup for event assignments
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Mon, 19 May 2008 17:17:30 -0600
+Message-Id: <1211239050.1042.34.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-7.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.4 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Create an index for faster lookup of variables in event assignments.
+
+Also, create a time index for fast lookup.
+
+

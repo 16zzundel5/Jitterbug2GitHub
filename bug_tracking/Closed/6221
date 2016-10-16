@@ -1,0 +1,92 @@
+From ibiosim@gmail.com  Wed Feb  4 20:54:15 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ig0-f180.google.com (mail-ig0-f180.google.com [209.85.213.180])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t153sFKH003884
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 4 Feb 2015 20:54:15 -0700
+Received: by mail-ig0-f180.google.com with SMTP id b16so8988917igk.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 04 Feb 2015 19:54:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=X92SAILbMIqWcUNvFNdSTJqcQ3mC/ZrlI957XYe38cM=;
+        b=DtIa8KhByUoV3NfdADlJFNEBrSG7dP809TsssUuWskeoKWZojRv1mtqz4u5oNyVMd/
+         ktUOru2/n1ytrbGiq8R381O9KC3oR+TDPdcCXuxTDCjnA/bYqlRFFFGmy5/3Hk9HJWJx
+         xRX3uCI4vqpcaQQKo2ukx9qbW4XDnH4pbIqbhaKvdZ2biozAehoM4wuxRs3xjGQ0K9lo
+         LjloyeKwYDeBrkhWSi8pEb92f5UmePlzvLzpfi3Ex+5z4S2sxKx2E6l+8yDFoQi5MLk+
+         siyPkkMFvD3TvEpJN7vRrYcwRLBKn5ha5o4Qqr4dSCnV34UaGeWtDtUo8yVDb9ltjDXK
+         xbvw==
+X-Received: by 10.50.254.99 with SMTP id ah3mr28156051igd.12.1423108455069;
+        Wed, 04 Feb 2015 19:54:15 -0800 (PST)
+Received: from Ute-Red (71-213-1-208.slkc.qwest.net. [71.213.1.208])
+        by mx.google.com with ESMTPSA id z9sm1941678igw.21.2015.02.04.19.54.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Wed, 04 Feb 2015 19:54:14 -0800 (PST)
+Date: Wed, 04 Feb 2015 19:54:14 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: u0723326@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <977287061.2.1423108449059.JavaMail.Adrian@Ute-Red>
+Subject: BUG: Pressed OK after defining a function and throws an exception.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Antivirus: avast! (VPS 150204-1, 02/04/2015), Outbound message
+X-Antivirus-Status: Clean
+
+iBioSim Version 2.8
+
+Operating system: Windows 8.1
+
+Bug reported by: u0723326@utah.edu
+
+Description:
+
+
+Stack trace:
+java.lang.NoClassDefFoundError: biomodel/util/SBMLutilities$3
+	at biomodel.util.SBMLutilities.checkNumFunctionArguments(SBMLutilities.java:1022)
+	at biomodel.gui.sbmlcore.Functions.functionEditor(Functions.java:290)
+	at biomodel.gui.sbmlcore.Functions.actionPerformed(Functions.java:503)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$400(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+---
+This email has been checked for viruses by Avast antivirus software.
+http://www.avast.com
+

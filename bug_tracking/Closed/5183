@@ -1,0 +1,28 @@
+From n.roehner@utah.edu  Wed Nov  3 12:30:16 2010
+Return-Path: <n.roehner@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.8 required=5.0 tests=AWL,BAYES_50,FH_DATE_PAST_20XX
+	autolearn=no version=3.2.5
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oA3IUFlM006969
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 3 Nov 2010 12:30:15 -0600
+Date: Wed, 3 Nov 2010 12:30:15 -0600
+Message-Id: <201011031830.oA3IUFlM006969@chou.ece.utah.edu>
+From: n.roehner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG can't edit compartments in SBML editor
+
+Full_Name: Nicholas Roehner
+tool: BioSim
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: shang.ece.utah.edu (155.98.27.201)
+Submitted by: nroehner
+
+
+The title of this bug says it all.  I find that I can't open compartments for
+editing in the SBML editor.
+

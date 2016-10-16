@@ -1,0 +1,11 @@
+From: Eric G. Mercer <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Solve CSC Error in store.er (PR#514)
+Date: Thu Sep 14 13:02:58 2000
+
+I fixed the code that removes reset rules to correctly update nord and ncausal
+depending on the type of reset rule that is being removed.  I tagged the fixed
+version as: NORD_UPDATE_FIX.  The new code does not give the ERROR:45 message on
+the jordi2wc example.
+
+egm

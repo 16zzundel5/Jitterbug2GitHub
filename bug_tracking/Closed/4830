@@ -1,0 +1,29 @@
+From MYERS@ECE.UTAH.EDU  Thu Oct 15 17:31:36 2009
+Return-Path: <MYERS@ECE.UTAH.EDU>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n9FNVa2v009615
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 15 Oct 2009 17:31:36 -0600
+Received: from [192.102.209.8] (helo=[10.251.8.184])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <MYERS@ECE.UTAH.EDU>)
+	id 1MyZnE-00075z-AC
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 15 Oct 2009 17:31:36 -0600
+Message-Id: <BE94926C-58B7-4EC8-8B9F-1D06D193BE71@ECE.UTAH.EDU>
+From: "Chris J. Myers" <MYERS@ECE.UTAH.EDU>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: add support to allow environment to be modeled separately
+Date: Thu, 15 Oct 2009 17:31:30 -0600
+X-Mailer: Apple Mail (2.936)
+
+Should add support for input/output to LHPN model and use this to  
+determine which modules are the testbench.  The testbench should be  
+put into a separate file.
+

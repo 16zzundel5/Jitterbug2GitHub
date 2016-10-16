@@ -1,0 +1,58 @@
+From atacs-bugs@chou.ece.utah.edu  Sat Sep  3 19:31:34 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j841VXUX003736
+	for <atacs-bugs@shang.ece.utah.edu>; Sat, 3 Sep 2005 19:31:34 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j82H2nsn016624
+	for atacs-bugs@shang.ece.utah.edu; Fri, 2 Sep 2005 11:02:49 -0600
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j82H2mDu016614
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 2 Sep 2005 11:02:48 -0600
+Date: Fri, 2 Sep 2005 11:02:48 -0600
+Message-Id: <200509021702.j82H2mDu016614@chou.ece.utah.edu>
+From: little@cs.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: disabling of output is broken
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=5.0 tests=ALL_TRUSTED,AWL,NO_REAL_NAME 
+	autolearn=unavailable version=3.0.4
+
+Full_Name: Scott Little
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: ming.ece.utah.edu (155.98.27.210)
+Submitted by: myers
+
+
+The disabling code complains on this example when it shouldn't.  The place is
+that inc- fires and the code complains that it was disabled.
+
+.outputs inc 
+.dummy d_6P1 d_5P1 d_3P1 d_4P1 
+#@.variables y
+#@.init_state [1]
+.graph
+inc+/1 ip0
+ip0 d_5P1#@ [0,0]
+inc-/1 ip1
+ip1 d_6P1#@ [0,0]
+d_6P1 ip5
+ip5 inc+/1#@ [1,2]
+d_5P1 ip4
+ip4 inc-/1#@ [1,2]
+d_3P1 ip2
+ip2 d_4P1#@ <~(inc)>[0,0]
+d_4P1 ip3
+ip3 d_3P1#@ <inc>[0,0]
+.marking { ip0 ip2 }
+#@.init_vals {<y=2>}
+#@.init_rates {<y=1>}
+#@.enablings {<d_6P1=[y<5]><d_5P1=[y>=10]>}
+#@.rate_assignments {<d_3P1=[y:=1]><d_4P1=[y:=-2]>}
+#@.continuous y
+.end
+

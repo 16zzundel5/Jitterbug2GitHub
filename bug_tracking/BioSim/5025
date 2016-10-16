@@ -1,0 +1,39 @@
+From myers@ece.utah.edu  Thu Jun 10 16:08:17 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o5AM8Hm8020129
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Jun 2010 16:08:17 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OMpv7-0005v5-EQ
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 10 Jun 2010 16:08:17 -0600
+Message-Id: <5A602541-9353-49D2-B62D-C6C7C4A528B7@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: immediate transitions for Markov analysis
+Date: Thu, 10 Jun 2010 16:08:12 -0600
+X-Mailer: Apple Mail (2.936)
+
+Markov analysis can support immediate transitions in the following way:
+
+During state exploration, immediate transitions (i.e., those with 0  
+delay) should be interleaved only with other immediate transitions and  
+fired before any non-immediate transitions.
+
+During Markov analysis, the transition probabilities for the immediate  
+states should be determined via the priority if specified as an  
+exponential random variable.  Otherwise, assume all immediate  
+transitions are equally likely.  All immediate states should have  
+their probability set to 0 when finding the CTMC steady state  
+probabilities.
+
+

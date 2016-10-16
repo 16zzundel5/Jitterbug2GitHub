@@ -1,0 +1,10 @@
+From: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ecetataededu
+Subject: Re: FEATURE: add support for non-disabling semantics to LPNs (PR#5178)
+Date: Fri Nov 26 21:03:35 2010
+
+The transitions are now marked with a "disabling" boolean, which is true if the
+transition's enabling condition is 
+disabling.  Transitions with non-disabling semantics are denoted in the .lpn
+file by being listed on a ".non-
+disabling" line similar to the failure transition line.

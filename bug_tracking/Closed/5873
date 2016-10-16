@@ -1,0 +1,45 @@
+From ibiosim@gmail.com  Thu Mar 28 20:23:32 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pb0-f50.google.com (mail-pb0-f50.google.com [209.85.160.50])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r2T2NW05001824
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 28 Mar 2013 20:23:32 -0600
+Received: by mail-pb0-f50.google.com with SMTP id jt11so69017pbb.37
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 28 Mar 2013 19:23:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=fxRuJ4tYQ+jZeyML0eZgCmTxxYBPQIbVHzj657MunF4=;
+        b=r42vyQlqKGzgUVXlxAYYnb6HpsZiQ3aVsMjw4LSFf6LCaTIw7q2IdsTc5Kr3avzPK3
+         0BlmW6vRdjhnN9oj5FXBpAgBN5K8QTds04v7Dpxcd6mggevudaEGh0rwDsQjOzVBAcg8
+         aTjM+brguvpuqdPB4i34FRZ1wA9paixC9viz2462nraR1AL+FvblF/etfLJf2zdDl36T
+         LgdAxJhCteCLVtFlWoFuRsEbnLoxOrPevU+f+KUv+EcFCrOPyCTTsLa3lTXr5ETtNeml
+         tQtutwJQiFgynVACuqlb/ZX+SNLHh3PQleCtRYeY0azPoqfBwbAgxCCsUbrBbZuJ7HrG
+         /qRQ==
+X-Received: by 10.68.245.69 with SMTP id xm5mr1240167pbc.97.1364523811977;
+        Thu, 28 Mar 2013 19:23:31 -0700 (PDT)
+Received: from 128-110-70-100.uconnect.utah.edu (128-110-70-100.uconnect.utah.edu. [128.110.70.100])
+        by mx.google.com with ESMTPS id ip8sm931755pbc.39.2013.03.28.19.23.29
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 28 Mar 2013 19:23:30 -0700 (PDT)
+Date: Thu, 28 Mar 2013 19:23:30 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1039387172.0.1364523810775.JavaMail.katherineaiello@128-110-70-100.uconnect.utah.edu>
+Subject: BUG: Crashes when species are diffusible on Mac
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: kaiello@sci.utah.edu
+
+Description:
+I tried to run a grid model with a diffusible species, but I get an error that says "java.lang.NoSuchMethodError: org.sbml.jsbml.Reaction.setReversible(Z)V". I am able to run simulations for models that are not grid models when species are diffusible and I can run grid models without diffusible species.
+
+Stack trace:
+java.lang.NoSuchMethodError: org.sbml.jsbml.Reaction.setReversible(Z)V
+	at analysis.dynamicsim.Simulator.expandArrays(Simulator.java:1793)
+	at analysis.Run.execute(Run.java:1282)
+	at analysis.AnalysisView.run(AnalysisView.java:2201)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

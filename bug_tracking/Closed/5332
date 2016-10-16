@@ -1,0 +1,51 @@
+From moschino21@gmail.com  Wed Apr 13 18:29:48 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p3E0TkIX009221
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 13 Apr 2011 18:29:47 -0600
+Received: by bwz18 with SMTP id 18so2005879bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 13 Apr 2011 17:29:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=4ouRPOSzSCzKCF+tZWkx857UqR78/QuHbyhiSpjhLiw=;
+        b=ggr7COzIG3lKvqq+Bn0FnQta3rCzfbPlHgCyju7ta6UUjYEl2zwR/EDCcFNBTxA+P0
+         1/fae8DugUi7/JB+KnHyxuFtVxq7mibZgkMdshLYhWKJRB6U005Vy+QhPb7hGySfX9t2
+         1W3XLKb/O2bpaPs8K3uPfVmsjv0YwYaJ6Wsqo=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=OOqUax+Slc63iOOBdlxmAuekcR9lljvRVIrwWcla6UBXe3oHCZlMgCQRMnILk7ZRPS
+         NnREotggb8XEwZ5+mYkSgZl6TpydLhLQ8qA/ub3MxM5dJ0QOxTxavR6HCMcEsJtTJb/6
+         BOPd+b4em08PyFT2nYCasIjHm/55+VtGAnm5A=
+Received: by 10.204.23.71 with SMTP id q7mr112567bkb.25.1302740985247; Wed, 13
+ Apr 2011 17:29:45 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.117.139 with HTTP; Wed, 13 Apr 2011 17:29:25 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Wed, 13 Apr 2011 18:29:25 -0600
+Message-ID: <BANLkTimCM3WceENrKWdgEef0mEOdBSsJFg@mail.gmail.com>
+Subject: BUG: variables panel does not allow initial value to be a range
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0003255551baa8f84f04a0d60583
+
+--0003255551baa8f84f04a0d60583
+Content-Type: text/plain; charset=ISO-8859-1
+
+Variable panel only allows integers to be initial values for both variables
+and rates. It needs to allow ranges to be entered as initial values.
+
+-- 
+Zhen Zhang
+
+--0003255551baa8f84f04a0d60583
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Variable panel only allows integers to be initial values for both variables=
+ and rates. It needs to allow ranges to be entered as initial values.=A0<br=
+ clear=3D"all"><br>-- <br>Zhen Zhang<br>
+
+--0003255551baa8f84f04a0d60583--
+

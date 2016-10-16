@@ -1,0 +1,70 @@
+From moschino21@gmail.com  Fri Sep 14 15:32:18 2012
+Return-Path: <moschino21@gmail.com>
+Received: from mail-iy0-f170.google.com (mail-iy0-f170.google.com [209.85.210.170])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q8ELWHVA023204
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 14 Sep 2012 15:32:17 -0600
+Received: by iamm10 with SMTP id m10so3110905iam.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 14 Sep 2012 14:32:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=UyGFW2QssqT/wq1cLpqrK8F1Nkp8FTwFUXFKbDODo18=;
+        b=Izw2dstcL/Xc9m4i6ZoDQA4+fKecydwv3qmhTXxKS00jtt+Rx0xEZd+Rky+esqovIe
+         vcBV0bpssqDxLPHtoGMJmzZIGrWRJi+NLYieGZDnJdUcyQRbdz0BWkxb95FGBAy5mgmQ
+         PmRLb9YV5NM3Onw5+F7Ef87Q0qUKLzWxE93xKQqFv1eeQDU1GEOgKJvUux82BPCEMD45
+         AXRWGeQ3nX8X/thd3L3lLcwUhuC4oQ0kx/kVQ4EK9fgO9CK/nS6x+eL8AycO3tfsdtqk
+         RwCkMeZdz8AsaIhzhhaMRJbYFFrEd9OAv/JCa5nXjYzzZUlvqeedesM4TuLY9yhqkXsO
+         oNrw==
+Received: by 10.50.94.138 with SMTP id dc10mr108802igb.39.1347658336446; Fri,
+ 14 Sep 2012 14:32:16 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.64.23.238 with HTTP; Fri, 14 Sep 2012 14:31:46 -0700 (PDT)
+In-Reply-To: <201209082001.q88K1hsB010887@chou.ece.utah.edu>
+References: <201209082001.q88K1hsB010887@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Fri, 14 Sep 2012 15:31:46 -0600
+Message-ID: <CA+LVOvmjYByeCeV_g+-OBrE2EwTTBJ-Nz7bgtaUXJDx+iEOGgw@mail.gmail.com>
+Subject: Re: FEATURE: Add support for failure transition in the schematic
+ editor (PR#5757)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=e89a8f234c3f6c28e204c9b02872
+
+--e89a8f234c3f6c28e204c9b02872
+Content-Type: text/plain; charset=ISO-8859-1
+
+It works now. Closing.
+
+On Sat, Sep 8, 2012 at 2:01 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> There is now a checkbox for fail transition in schematic editor.  This
+> automatically adds the needed "fail" variable
+> and constraint which will not appear on the schematic.
+>
+>
+
+
+-- 
+Zhen Zhang
+
+--e89a8f234c3f6c28e204c9b02872
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+It works now. Closing.<br><br><div class=3D"gmail_quote">On Sat, Sep 8, 201=
+2 at 2:01 PM, Chris Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bug=
+s@vlsigroup.ece.utah.edu" target=3D"_blank">atacs-bugs@vlsigroup.ece.utah.e=
+du</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">There is now a checkbox for fail transition =
+in schematic editor. =A0This<br>
+automatically adds the needed &quot;fail&quot; variable<br>
+and constraint which will not appear on the schematic.<br>
+<br>
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br>Zhen Zhang<b=
+r>
+
+--e89a8f234c3f6c28e204c9b02872--
+

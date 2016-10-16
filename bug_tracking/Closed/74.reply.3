@@ -1,0 +1,54 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: Environment process must be at the bottom if the outputs are ommitted from the declarations. (PR#74)
+Date: Thu May 20 15:24:14 1999
+
+[Now I saw your mail about testbenches in PR#76, so nevermind my previous
+reply]
+
+With your version of lapbsv, I just get errors about o1 and i3:
+
+515 xia:meetMorn/fresh> pwd
+/home/song/peskin/examples/csp/meetMorn/fresh
+516 xia:meetMorn/fresh> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      11459439 May 20 14:36
+/home/song/peskin/atacs/atacs*
+517 xia:meetMorn/fresh> diff ~atacs/examples/csp/ lapbsv.csp
+20c20
+< process left;
+---
+> testbench left;
+22c22
+< endprocess
+---
+> endtestbench
+24c24
+< process right;
+---
+> testbench right;
+26c26
+< endprocess
+---
+> endtestbench
+518 xia:meetMorn/fresh> atacs -ya lapbN
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling lapbN.csp ... 
+error: undefined action 'o1+'
+error: undefined action 'o1-'
+error: undefined action 'i3+'
+error: undefined action 'i3-'
+Storing process lapbN to lapbN.er
+Loading timed event-rule structure from:  lapbN.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding reduced state graph ... done
+Projecting out dummy transitions ... done
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+519 xia:meetMorn/fresh> 
+
+Is that correct?

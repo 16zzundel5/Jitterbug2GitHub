@@ -1,0 +1,74 @@
+From myers@ece.utah.edu  Mon Mar 16 14:06:18 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2GK6IpX000796;
+	Mon, 16 Mar 2009 14:06:18 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1LjIHL-0006mU-CC; Mon, 16 Mar 2009 13:15:15 -0600
+Cc: kjones@vlsigroup.ece.utah.edu
+Message-Id: <9ADE2AB6-ECA7-4BEC-B65D-EA6E08F805B6@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <200903161925.n2GJPJ1i000376@chou.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: Re: CHANGE: import LHPN in LEMA should look at extension (PR#4706)
+Date: Mon, 16 Mar 2009 14:06:12 -0600
+References: <200903161925.n2GJPJ1i000376@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.929.2)
+
+atacs now produced .lpn file from .g rather than _NEW.g, so importing  
+gets this exception:
+
+ava.io.FileNotFoundException: /Users/myers/nobackup/Projects/atacsProj/ 
+foo_NEW.g (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at biomodelsim.BioSim.actionPerformed(BioSim.java:4104)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java: 
+1882)
+	at javax.swing.AbstractButton 
+$Handler.actionPerformed(AbstractButton.java:2202)
+	at  
+javax 
+.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java: 
+420)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java: 
+258)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:334)
+	at apple.laf.ScreenMenuItem.actionPerformed(ScreenMenuItem.java:95)
+	at java.awt.MenuItem.processActionEvent(MenuItem.java:597)
+	at java.awt.MenuItem.processEvent(MenuItem.java:556)
+	at java.awt.MenuComponent.dispatchEventImpl(MenuComponent.java:298)
+	at java.awt.MenuComponent.dispatchEvent(MenuComponent.java:286)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:466)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java: 
+269)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java: 
+190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+184)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+176)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+
+
+
+On Mar 16, 2009, at 1:25 PM, Kevin Jones wrote:
+
+> Done.
+

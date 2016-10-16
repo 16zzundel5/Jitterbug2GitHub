@@ -1,0 +1,43 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: File created by storevhdl should be loadable by loadvhdl. (PR#190)
+Date: Thu Nov 11 19:25:35 1999
+
+I get a syntax error (see below).  I will move this report to  Incorrect
+Behavior.
+
+304 xia:examples/csp> pwd
+/home/xia/peskin/testbed/atacs/examples/csp
+305 xia:examples/csp> ls -l `which atacs`
+-rwxr-x---   1 peskin   async    12802030 Nov 10 17:22
+/home/xia/peskin/atacs/src/atacs*
+306 xia:examples/csp> atacs -sv DME
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling DME.csp ... 
+Storing process DME to DME.er
+Storing process DME to DME.er
+Loading timed event-rule structure from:  DME.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done (0.026072)
+Projecting out dummy transitions ... done (0.001499)
+Checking CSC ... complete state coded
+Finding regions ... done (0.000967)
+Finding conflicts ... done (0.002004)
+Finding covers ... done (0.001400)
+Storing production rules to:  DME.prs
+Total Area = 30 literals 48 transistors
+Generating structural VHDL for net:  DMES.vhd
+307 xia:examples/csp> atacs -lv DMES
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling DMES.vhd ... 
+Storing process tmp to tmp.tel
+DMES.vhd: 44: syntax error.
+ERROR: Compilation failed due to above errors.
+ERROR:  Cannot access DMES.tel!
+308 xia:examples/csp> 

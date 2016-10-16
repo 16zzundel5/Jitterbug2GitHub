@@ -1,0 +1,35 @@
+From myers@ece.utah.edu  Wed May 28 23:43:41 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.1 required=5.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m4T5hflt028129
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 28 May 2008 23:43:41 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1K1avg-0005vq-6N)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 28 May 2008 23:44:04 -0600
+Received: from [192.168.0.6] (75-169-183-161.slkc.qwest.net [75.169.183.161])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id m4T5haUf014332
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 28 May 2008 23:43:36 -0600
+Subject: CHANGE: do not flatten functions, stoic math, and reaction
+	parameters
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Wed, 28 May 2008 23:42:16 -0600
+Message-Id: <1212039736.3131.2.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-9.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: 1.4 (+)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Functions, stoichiometry math, and reaction parameters are flattened
+upon compilation.  Perhaps, they should not be especially stoichiometry
+math where flattening may actually be incorrect.
+
+

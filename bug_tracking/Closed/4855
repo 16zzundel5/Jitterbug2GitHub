@@ -1,0 +1,32 @@
+From myers@ece.utah.edu  Thu Oct 22 15:00:13 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n9ML0CXW002423
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 22 Oct 2009 15:00:13 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1N14lY-00064U-U4
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 22 Oct 2009 15:00:12 -0600
+Message-Id: <237F3E7E-5A2C-43FC-AA89-D269F5C6699B@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: save should always save parameters
+Date: Thu, 22 Oct 2009 15:00:07 -0600
+X-Mailer: Apple Mail (2.936)
+
+Remove save parameters from the menu and make save in analysis/learn  
+view always save parameters, graphs, etc.
+
+Add to iBioSim's learn view a menu option to "Save GCM"
+
+Add to LEMA's learn view a menu option to "Save Models"
+

@@ -1,0 +1,45 @@
+From atacs-bugs  Thu May 30 04:39:23 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g4UAdMC17664
+	for atacs-bugs@shang.elen.utah.edu; Thu, 30 May 2002 04:39:22 -0600
+Received: from ming.ece.utah.edu (IDENT:root@ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g4UAdLP17567;
+	Thu, 30 May 2002 04:39:21 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.11.6/8.11.6) id g4UAdLQ14638;
+	Thu, 30 May 2002 04:39:21 -0600
+Date: Thu, 30 May 2002 04:39:21 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200205301039.g4UAdLQ14638@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, peskin@vlsigroup.ece.utah.edu
+Subject: BAD686 broken repository!
+
+Linux ming.ece.utah.edu 2.4.9-31 #1 Tue Feb 26 07:11:02 EST 2002 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	unlimited
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	1022 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.oneshot.prs-tsys] Error 1
+make[1]: *** [hse/check.subDir] Error 2
+make: *** [posets] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./hse/atacs.log:ERROR: Firing of a-/1 is a vacuous transition.
+./hse/oneshot.log:Finding reduced state graph ... sh: parg: command not found
+./hse/oneshot.log:ERROR: Firing of a-/1 is a vacuous transition.
+./hse/oneshot.log:sh: dinotrace: command not found
+./hse/oneshot.log:sh: parg: command not found
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

@@ -1,0 +1,32 @@
+From moschino21@gmail.com  Mon Aug 22 23:36:42 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7N5afmk009197
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 22 Aug 2011 23:36:42 -0600
+Received: by bkd19 with SMTP id 19so4846739bkd.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 22 Aug 2011 22:36:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        bh=UbN/67iwyT/gdJcAl/CRFJQR8TXvA+yMtcHrB3tERQI=;
+        b=KT7S5A/2kAHgAK58hXJys8AU8URg9wswnsE+c0oggecd0A2hBQ6LU3fR9ZBltv1/7h
+         +i2VZBNXpvVqaVc9KawgQAQS5qlPwJhg+MjiOefYxwnIjeWJpDLHwmIF84Xf6kZ2bG7t
+         XAVAxiLWaoJb6EoAUu4e69nYWzBsC9cIctjMw=
+Received: by 10.204.10.87 with SMTP id o23mr1215693bko.297.1314077801141; Mon,
+ 22 Aug 2011 22:36:41 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.17.14 with HTTP; Mon, 22 Aug 2011 22:36:21 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Mon, 22 Aug 2011 23:36:21 -0600
+Message-ID: <CA+LVOvn4wcb+5-BzhGhtiCsahUiELub7-TtEOJA1kmTkRL7d6g@mail.gmail.com>
+Subject: CHANGE: Viewing SBML model in Safari (v5.1)
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=ISO-8859-1
+
+Some long expressions (constraints, kinetic laws) are written out of
+their bounded space in their tables. Maybe each table should
+dynamically allocates space for each of its entry.
+
+-- 
+Zhen Zhang
+

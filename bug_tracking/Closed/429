@@ -1,0 +1,162 @@
+From atacs-bugs  Sat Apr 29 11:20:11 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id LAA05352
+	for atacs-bugs@shang.elen.utah.edu; Sat, 29 Apr 2000 11:20:10 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA05348
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Sat, 29 Apr 2000 11:20:06 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id LAA01302
+	for atacs-bugs@vlsigroup; Sat, 29 Apr 2000 11:23:06 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200004291723.LAA01302@jiaqi.elen.utah.edu>
+Subject: Atacs abnormal termination (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Sat, 29 Apr 2000 11:23:06 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From hans@cs.utah.edu  Sun Mar 26 10:22:41 2000
+Return-Path: <hans@cs.utah.edu>
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA20819
+	for <myers@ching.elen.utah.edu>; Sun, 26 Mar 2000 10:22:40 -0700
+Received: from sarek.cs.utah.edu (sarek.cs.utah.edu [155.99.193.87])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id KAA10150;
+	Sun, 26 Mar 2000 10:22:40 -0700 (MST)
+From: Hans  Jacobson <hans@cs.utah.edu>
+Received: (from hans@localhost)
+	by sarek.cs.utah.edu (8.8.8/8.8.8) id KAA02550;
+	Sun, 26 Mar 2000 10:22:39 -0700 (MST)
+Message-Id: <200003261722.KAA02550@sarek.cs.utah.edu>
+Subject: Atacs abnormal termination
+To: cmyers@cs.utah.edu
+Date: Sun, 26 Mar 2000 10:22:38 -0700 (MST)
+Cc: hans@cs.utah.edu (Hans Jacobson)
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+
+Hmmm, Atacs still doesn't handle the cdp-p1-xbm and dean-cache
+benchmarks. I didn't notice at first since I 'grep':ed for
+segmentation fault, not abnormal termination.
+
+/Hans
+
+
+120 hanuman:sg/all> timex atacs -mEmbmXmGmc -ya zcdp-p1-xbm.unc 
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Now generating burst-mode implementations.
+Exception handling now turned ON.
+Now generating standard C-implementations.
+Now using combinational optimization.
+Reading burstmode file zcdp-p1-xbm.unc
+states = 88 transitions = 97
+Checking CSC ... complete state coded
+Finding regions ... done (0.015092)
+Finding conflicts ... done (0.993216)
+Finding covers ... EXCEPTION!
+EXCEPTION:  Unresolved conflicts!
+Resolving remaining covers ... done (135.388076)
+Storing production rules to:  zcdp-p1-xbm.prs
+EXCEPTION: Storing guards with fanin > 4 to:  zcdp-p1-xbm.err
+Command terminated abnormally.
+real     8:34.82
+user     8:24.84
+sys         1.57
+
+
+input   cchack                   0
+input   decodeiserrack           0
+input   eack                     0
+input   errcheckif               0
+input   errcheckifack            0
+input   hornerack                0
+input   iserrsetnsynreq          0
+input   nack                     0
+input   ndecack                  0
+input   sack                     0
+input   setneif                  0
+input   setneifack               0
+input   setnsyn1if               0
+input   setnsyn1ifack            0
+input   shuffack                 0
+input   start                    0
+input   synack                   0
+input   syndromeif               0
+input   syndromeifack            0
+input   tack                     0
+input   tchack                   0
+output  cchreq                   0
+output  decodeiserrreq           0
+output  ereq                     0
+output  enable                   0
+output  errcheckifreq            0
+output  hornerreq                0
+output  hornersm1                0
+output  iserrsetnsynack          0
+output  nreq                     0
+output  nsm1                     0
+output  nsm2                     0
+output  ndecreq                  0
+output  sreq                     0
+output  setneifreq               0
+output  setnsyn1ifreq            0
+output  shuffreq                 0
+output  synreq                   0
+output  synsm1                   0
+output  synsm2                   0
+output  syndromeifreq            0
+output  treq                     0
+output  tchreq                   0
+output  zzz00                    0
+output  zzz01                    0
+output  zzz02                    0
+output  zzz03                    1
+output  zzz04                    0
+ 
+0  1    start+                   | tchreq+ 
+1  2    tchack+                  | treq+ 
+2  4    tack+                    | tchreq- treq- setnsyn1ifreq+ 
+4  6    setnsyn1ifack+ [setnsyn1if+] tchack- tack- | zzz01+ zzz02+ zzz03-     | setnsyn1ifreq- nreq+ nsm1+ synreq+ synsm1+ 
+4  41   setnsyn1ifack+ [setnsyn1if-] tchack- tack- | zzz00+ zzz02+ zzz04+     | setnsyn1ifreq- nreq+ nsm2+ synreq+ synsm1+ 
+6  8    nack+ synack+ setnsyn1ifack- | nreq- nsm1- synreq- synsm1- syndromeifreq+ zzz01- zzz02- zzz03+ 
+8  10   syndromeifack+ [syndromeif+] nack- synack- | zzz00+ zzz02+ zzz04+     | syndromeifreq- cchreq+ 
+8  17   syndromeifack+ [syndromeif-] nack- synack- | zzz01+ zzz02+ zzz03-     | syndromeifreq- setneifreq+ 
+10  11  cchack+ syndromeifack-   | sreq+ zzz00- zzz02- zzz04- 
+11  13  sack+                    | cchreq- sreq- ndecreq+ hornerreq+ 
+13  14  ndecack+ hornerack+ cchack- sack- | nreq+ synreq+ 
+14  45  nack+ synack+            | ndecreq- nreq- hornerreq- synreq- syndromeifreq+ zzz00+ zzz01+ 
+17  19  setneifack+ [setneif+] syndromeifack- | zzz01- zzz02- zzz03+     | setneifreq- nreq+ nsm1+ ereq+ 
+17  38  setneifack+ [setneif-] syndromeifack- | zzz00+ zzz01- zzz03+ zzz04+ | setneifreq- nreq+ nsm2+ ereq+ 
+19  43  nack+ eack+ setneifack-  | nreq- nsm1- ereq- shuffreq+ synsm2+ 
+21  22  shuffack+                | synreq+ zzz00- zzz01- zzz03+ zzz04- 
+22  23  synack+                  | shuffreq- synreq- synsm2- zzz00+ zzz01+ 
+23  24  shuffack- synack-        | shuffreq+ synsm2+ zzz01- zzz02+ zzz04+ 
+24  25  shuffack+                | synreq+ zzz00- zzz01+ zzz03- zzz04- 
+25  27  synack+                  | shuffreq- synreq- synsm2- errcheckifreq+ zzz00+ zzz01- zzz03+ zzz04+ 
+27  29  errcheckifack+ [errcheckif+] shuffack- synack- | zzz00- zzz02- zzz04-     | errcheckifreq- ndecreq+ hornerreq+ hornersm1+ 
+27  33  errcheckifack+ [errcheckif-] shuffack- synack- | zzz01+ zzz02- zzz03-     | errcheckifreq- decodeiserrreq+ enable+ 
+29  30  ndecack+ hornerack+ errcheckifack- | nreq+ synreq+ zzz01+ zzz02+ zzz03- 
+30  44  nack+ synack+            | ndecreq- nreq- hornerreq- synreq- hornersm1- errcheckifreq+ 
+33  35  decodeiserrack+ errcheckifack- | decodeiserrreq- zzz00- zzz02+ zzz04- 
+35  36  iserrsetnsynreq+ decodeiserrack- | iserrsetnsynack+ zzz01- zzz02- zzz03+ 
+36  1   iserrsetnsynreq-         | iserrsetnsynack- enable- tchreq+ 
+38  39  nack+ eack+ setneifack-  | nreq- nsm2- ereq- zzz00- zzz01+ zzz03- zzz04- 
+39  21  nack- eack-              | shuffreq+ synsm2+ zzz00+ zzz02- zzz04+ 
+41  46  nack+ synack+ setnsyn1ifack- | nreq- nsm2- synreq- synsm1- syndromeifreq+ zzz01+ zzz02- zzz03- 
+43  22  shuffack+ nack- eack-    | synreq+ 
+44  29  errcheckifack+ [errcheckif+] ndecack- nack- hornerack- synack- | zzz01- zzz02- zzz03+     | errcheckifreq- ndecreq+ hornerreq+ hornersm1+ 
+44  33  errcheckifack+ [errcheckif-] ndecack- nack- hornerack- synack- | zzz00+ zzz02- zzz04+     | errcheckifreq- decodeiserrreq+ enable+ 
+45  10  syndromeifack+ [syndromeif+] ndecack- nack- hornerack- synack- | zzz01- zzz02+ zzz04+     | syndromeifreq- cchreq+ 
+45  17  syndromeifack+ [syndromeif-] ndecack- nack- hornerack- synack- | zzz00- zzz02+ zzz03-     | syndromeifreq- setneifreq+ 
+46  10  syndromeifack+ [syndromeif+] nack- synack- | zzz01- zzz02+ zzz03+     | syndromeifreq- cchreq+ 
+46  17  syndromeifack+ [syndromeif-] nack- synack- | zzz00- zzz02+ zzz04-     | syndromeifreq- setneifreq+ 
+

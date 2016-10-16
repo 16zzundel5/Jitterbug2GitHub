@@ -1,0 +1,35 @@
+From myers@ece.utah.edu  Mon Dec 10 18:47:43 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lBB1lhYp009420
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Dec 2007 18:47:43 -0700
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1J1uEg-0001cR-Tk); Mon, 10 Dec 2007 18:48:40 -0700
+Received: from [192.168.0.6] (71-213-10-60.slkc.qwest.net [71.213.10.60])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id lBB1lfmk020831;
+	Mon, 10 Dec 2007 18:47:41 -0700
+Subject: BUG: progress bar
+From: Chris Myers <myers@ece.utah.edu>
+To: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+Cc: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Mon, 10 Dec 2007 18:46:19 -0700
+Message-Id: <1197337579.13616.20.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.8 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+The progress bar does not seem to be disappearing after the end of
+simulation in the latest version.
+
+Chris
+
+

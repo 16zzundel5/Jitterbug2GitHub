@@ -1,0 +1,166 @@
+From myers@eng.utah.edu  Thu Aug 21 08:19:18 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s7LEJIuJ009668
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 21 Aug 2014 08:19:18 -0600
+Received: from [74.212.139.166] (helo=[172.20.1.232])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1XKTjT-000E4k-2m
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 21 Aug 2014 08:53:00 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_C3A62BBF-DD06-4522-8402-E613EF14992F"
+Subject: CHANGE: use getPlugin when needed
+Date: Thu, 21 Aug 2014 08:19:08 -0600
+References: <53F3BA9B.2030906@ebi.ac.uk>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <9184220A-DA5F-4326-BAFE-D20DF657348C@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_C3A62BBF-DD06-4522-8402-E613EF14992F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+
+
+Begin forwarded message:
+
+> From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+> Subject: Re: [jsbml-team] getExtension
+> Date: August 19, 2014 at 2:59:07 PM MDT
+> To: "Chris J. Myers" <myers@ece.utah.edu>, The JSBML development team =
+mailing list <jsbml-team@caltech.edu>
+> Cc: Leandro Watanabe <leandrohw@gmail.com>
+>=20
+>=20
+> The method that create the SBasePlugin if it does not exist is =
+getPlugin, we let the behaviour of getExtension as
+> it was before, meaning returning null if no plugin for this package =
+exist.
+>=20
+>=20
+> On 19/08/2014 19:33, Chris J. Myers wrote:
+>> Leandro,
+>>=20
+>> You use getExtension a lot in the hierarchical simulator.  You might =
+want to make sure that you are okay with this returning null when it =
+does not exist.  I think you are actually, but just thought you might =
+want to double check.
+>>=20
+>> Chris
+>>=20
+>> On Aug 19, 2014, at 12:25 PM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+>>=20
+>>> Hi,
+>>>=20
+>>> I just realized that many places in our code we assume that =
+getExtension will always work.  Namely, if the extension does not exist, =
+it will create it.  However, this is not the case.  Is there a different =
+function I should be using?  If not, we have written functions like this =
+which I guess I should use.
+>>>=20
+>>> 	public static CompSBasePlugin getCompSBasePlugin(SBase sb) {
+>>> 		if (sb.getExtension(CompConstants.namespaceURI) !=3D =
+null) {
+>>> 			return =
+(CompSBasePlugin)sb.getExtension(CompConstants.namespaceURI);
+>>> 		}
+>>> 		CompSBasePlugin comp =3D new CompSBasePlugin(sb);
+>>> 		sb.addExtension(CompConstants.namespaceURI, comp);
+>>> 		return comp;
+>>> 	}
+>>>=20
+>>> Chris
+>> _______________________________________________
+>> jsbml-team mailing list
+>> jsbml-team@caltech.edu
+>> https://lists.caltech.edu/listinfo/jsbml-team
+
+
+--Apple-Mail=_C3A62BBF-DD06-4522-8402-E613EF14992F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: =
+after-white-space;"><br><div style=3D""><br><div>Begin forwarded =
+message:</div><br class=3D"Apple-interchange-newline"><blockquote =
+type=3D"cite"><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>From: =
+</b></span><span style=3D"font-family:'Helvetica';">Nicolas Rodriguez =
+&lt;<a =
+href=3D"mailto:rodrigue@ebi.ac.uk">rodrigue@ebi.ac.uk</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+color:rgba(0, 0, 0, 1.0);"><b>Subject: </b></span><span =
+style=3D"font-family:'Helvetica';"><b>Re: [jsbml-team] =
+getExtension</b><br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>Date: =
+</b></span><span style=3D"font-family:'Helvetica';">August 19, 2014 at =
+2:59:07 PM MDT<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>To: =
+</b></span><span style=3D"font-family:'Helvetica';">"Chris J. Myers" =
+&lt;<a href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;, =
+The JSBML development team mailing list &lt;<a =
+href=3D"mailto:jsbml-team@caltech.edu">jsbml-team@caltech.edu</a>&gt;<br><=
+/span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>Cc: =
+</b></span><span style=3D"font-family:'Helvetica';">Leandro Watanabe =
+&lt;<a =
+href=3D"mailto:leandrohw@gmail.com">leandrohw@gmail.com</a>&gt;<br></span>=
+</div><br><div><br>The method that create the SBasePlugin if it does not =
+exist is getPlugin, we let the behaviour of getExtension as<br>it was =
+before, meaning returning null if no plugin for this package =
+exist.<br><br><br>On 19/08/2014 19:33, Chris J. Myers =
+wrote:<br><blockquote type=3D"cite">Leandro,<br><br>You use getExtension =
+a lot in the hierarchical simulator. &nbsp;You might want to make sure =
+that you are okay with this returning null when it does not exist. =
+&nbsp;I think you are actually, but just thought you might want to =
+double check.<br><br>Chris<br><br>On Aug 19, 2014, at 12:25 PM, Chris J. =
+Myers &lt;<a href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;=
+ wrote:<br><br><blockquote type=3D"cite">Hi,<br><br>I just realized that =
+many places in our code we assume that getExtension will always work. =
+&nbsp;Namely, if the extension does not exist, it will create it. =
+&nbsp;However, this is not the case. &nbsp;Is there a different function =
+I should be using? &nbsp;If not, we have written functions like this =
+which I guess I should use.<br><br><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>public static CompSBasePlugin =
+getCompSBasePlugin(SBase sb) {<br><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>if =
+(sb.getExtension(CompConstants.namespaceURI) !=3D null) {<br><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>return =
+(CompSBasePlugin)sb.getExtension(CompConstants.namespaceURI);<br><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>}<br><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>CompSBasePlugin comp =3D new CompSBasePlugin(sb);<br><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>sb.addExtension(CompConstants.namespaceURI, comp);<br><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>return =
+comp;<br><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>}<br><br>Chris<br></blockquote>____________________________________=
+___________<br>jsbml-team mailing list<br><a =
+href=3D"mailto:jsbml-team@caltech.edu">jsbml-team@caltech.edu</a><br>https=
+://lists.caltech.edu/listinfo/jsbml-team<br></blockquote></div></blockquot=
+e></div><br></body></html>=
+
+--Apple-Mail=_C3A62BBF-DD06-4522-8402-E613EF14992F--
+

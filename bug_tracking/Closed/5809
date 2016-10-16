@@ -1,0 +1,457 @@
+From myers@eng.utah.edu  Mon Jan 14 09:22:06 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r0EGM51V007737
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 14 Jan 2013 09:22:05 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Tumf5-000G4I-Eq
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 14 Jan 2013 09:13:23 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_66186B1E-A0BA-4794-901A-1A241D78525C"
+Subject: CHANGE: update to libsbml-5.7
+Date: Mon, 14 Jan 2013 09:22:02 -0700
+References: <50F3E05A.3070707@caltech.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <63ACF4E5-D628-4E15-87B4-7C58E239708B@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.2 \(1499\))
+X-Mailer: Apple Mail (2.1499)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_66186B1E-A0BA-4794-901A-1A241D78525C
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: Sarah Keating <skeating@caltech.edu>
+> Subject: [libsbml-development] Release of libSBML-5.7.0
+> Date: January 14, 2013 3:39:22 AM MST
+> To: SBML Discussion List <sbml-discuss@caltech.edu>, LibSBML =
+Development List <libsbml-development@caltech.edu>
+> Reply-To: LibSBML Development List <libsbml-development@caltech.edu>
+>=20
+> ---------------------
+> libSBML-5.7.0
+> ---------------------
+>=20
+> We are pleased to announce the release of libSBML-5.7.0 which is
+> available for download from
+>=20
+> https://sourceforge.net/projects/sbml/files/libsbml/5.7.0/
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> Version 5.7.0 (2013-01-14)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> STABLE RELEASE
+>=20
+> * Hierarchical Model Composition
+>=20
+>   - The first official version of the specification of Hierarchical
+>     Model Composition is now available and thus the libSBML code for
+>     'comp' is now included in the stable release of libSBML.  This
+>     means that all prebuilt binaries for the stable release will
+>     include the 'comp' package code. The src archive containing
+>     libSBML core code will continue to be available but there will be
+>     additional src archives available in the stable branch: one
+>     containing libSBML core plus all stable packages and additional
+>     archives of the individual package code.
+>=20
+>     NOTE: The libSBML GNU make-based build system has not been updated
+>           for packages. Thus, to build from src, it is necessary to
+>           use the CMake build system.
+>=20
+>     Known limitations of the 'comp' code:
+>=20
+>       + Documentation has not yet been integrated into the libsbml
+>         documentation.
+>=20
+>       + Whilst the majority of validation rules have been implemented,
+>         some will report the schema error id rather than the specific
+>         comp validation rule id.  The more involved rules involving
+>         circular dependencies and in-depth referencing have not been
+>         implemented.  Validation of ModelDefinitions is implemented
+>         with respect to comp validation, but not with respect to core
+>         validation.
+>=20
+>       + There is no C API for interacting directly with comp
+>         objects. However the C API for reading and validation will
+>         apply to the 'comp' package and flattening can be accessed via
+>         the converter C API to call the CompFlatteningConverter.
+>=20
+> * New features
+>=20
+>   - Convenience functions have been added to the SBMLExtensionRegistry
+>     class to facilitate enabling/disabling packages using just the
+>     package name. For example: disablePackage(const std::string&
+>     package); enablePackage(const std::string& package);
+>=20
+>   - Previously the setNotes function accepting a string as argument
+>     expected the string to contain the appropriate XHTML tags and
+>     would not set the value of the <notes> element to a string that
+>     did not meet this requirement.  The functionality of the
+>     setNotes(const std::string&) function has been extended to allow a
+>     user to add an optional boolean argument addXHTMLMarkup. When the
+>     value of this argument is 'true' the function will accept a
+>     string; wrap it with the XHTML <p> tag and set the <notes> element
+>     to this.
+>=20
+>   - A C API for use with the converters has been added. Examples of
+>     using the converter API are available in all supported languages.
+>=20
+>   - 'comp' package
+>=20
+>     - Access to the flattening routines has been restricted to the
+>       CompFlatteningConverter.  This allows options to be specified by
+>       the user regarding ignoring other packages and whether to
+>       produce a document with no comp namespace or a document with the
+>       comp namespace but the required attribute set to 'false'.
+>=20
+>     - Validation has been implemented (see note above). This is called
+>       via the checkConsistency function within core libSBML; which now
+>       accesses a checkConsistency function in the comp plugin.
+>       There are two categories of validation:
+>       LIBSBML_CAT_GENERAL_CONSISTENCY and=20
+> LIBSBML_CAT_IDENTIFIER_CONSISTENCY
+>       which are enables or disable via the setConsistencyChecks()
+>       function on the SBMLDocument (in libSBML core).
+>=20
+>     - The API for resolving external models has been updated to use a
+>       registry of resolvers. This facilitates the addition of user
+>       specific resolvers.
+>=20
+> * Bug fixes
+>=20
+>   - The number of arguments expected by a piecewise function
+>     was incorrectly assumed to be two. However, a piecewise
+>     function can have a single argument. This has been corrected.
+>=20
+>   - Validation of SBML Level 3 was issuing a general warning about
+>     missing required attributes but failing to identify which
+>     attribute had caused the error to be reported.  This has been
+>     corrected. Thanks to Nicolas Rodriguez for pointing this out.
+>=20
+>   - Validation was failing to report the incorrect use of a function
+>     call if the lambda function usesd expected no arguments. This
+>     has been fixed.
+>=20
+>   - The L3Parser was not dealing with the sqrt function correctly.
+>     This has been sorted.
+>=20
+>   - 'comp' package-specific bug fixes:
+>=20
+>     + SBOTerms were not being correctly dealt with when they
+>       occured on a Port element. This has been corrected. Thanks
+>       to Chris Myers for reporting this.
+>=20
+> * Configuration/build system changes
+>=20
+>   - Building the MATLAB binding for libSBML can be problematic due to
+>     the need to identify and use the MATLAB mex compiler.  When MATLAB
+>     is being accessed over a network this can result in misleading
+>     error messages.  The build system has been improved to halt
+>     compilation if the mex compiler is not available and to give a
+>     clearer error message as to how to proceed.
+>=20
+>   - The build system has been updated to facilitate use with the
+>     Mac OS X 10.8 operating system (Mountain Lion).
+>=20
+>   - 'comp' package-specific build system changes:
+>=20
+>     + The GNUMake build system has not been implemented for
+>       packages. Thus, to build from src, it is necessary to use CMake.
+>=20
+> * Miscellaneous
+>=20
+>   - It was reported that gcc 4.7 found the various definitions of
+>     isnan used within some parts of libSBML to be problematic.  This
+>     problem has been addressed and there are now functions util_isNaN
+>     and util_isFinite in the util file that are used throughout
+>     libsbml.  Thanks to Totte Karlsson for reporting this.
+>=20
+>   - Where test files compare double values the comparisons have
+>     been unified to use the util_isEqual(double, double) function
+>     and thus avoid inaccurate results that can be machine dependent.
+>=20
+>   - This NEWS.txt file has reduced in size with NEWS dating from
+>     prior to libSBML-5 now saved as an OLD_NEWS.txt file.
+>=20
+>=20
+> EXPERIMENTAL RELEASE
+>=20
+> * New features
+>=20
+>   - 'Qual' package:
+>=20
+>     - The package specification redefined whether some attributes or
+>       elements were required; the code has been updated appropriately.
+>=20
+>   - 'Fbc' package:
+>=20
+>     - The package specification added some optional attributes
+>       and deprecated the use of strict less than or greater than;
+>       the code has been updated appropriately.
+>=20
+> * Bug fixes
+>=20
+>   - 'Render' package:
+>=20
+>     - In some cases the code was failing to add expected attributes
+>       to particular elements.  This has been corrected.
+>=20
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D
+>=20
+> Please report any problems you encounter using libSBML either to the
+> mailing list libsbml-team@caltech.edu or using the issue tracker
+> for libSBML at
+>=20
+> https://sourceforge.net/tracker/?group_id=3D71971&atid=3D942737
+>=20
+> Thanks
+>=20
+> LibSBMLTeam
+>=20
+> ____________________________________________________________
+> To manage your libsbml-development list subscription, visit=20
+> https://utils.its.caltech.edu/mailman/listinfo/libsbml-development
+>=20
+> For a web interface to the libsbml-development mailing list, visit
+> http://sbml.org/Forums/
+>=20
+> For questions or feedback about the libsbml-development list,
+> contact sbml-team@caltech.edu
+
+
+--Apple-Mail=_66186B1E-A0BA-4794-901A-1A241D78525C
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Sarah Keating =
+&lt;<a =
+href=3D"mailto:skeating@caltech.edu">skeating@caltech.edu</a>&gt;<br></spa=
+n></div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>[libsbml-development] Release of =
+libSBML-5.7.0</b><br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">January 14, 2013 3:39:22 AM MST<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">SBML Discussion =
+List &lt;<a =
+href=3D"mailto:sbml-discuss@caltech.edu">sbml-discuss@caltech.edu</a>&gt;,=
+ LibSBML Development List &lt;<a =
+href=3D"mailto:libsbml-development@caltech.edu">libsbml-development@caltec=
+h.edu</a>&gt;<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">LibSBML Development List &lt;<a =
+href=3D"mailto:libsbml-development@caltech.edu">libsbml-development@caltec=
+h.edu</a>&gt;<br></span></div><br><div>---------------------<br>libSBML-5.=
+7.0<br>---------------------<br><br>We are pleased to announce the =
+release of libSBML-5.7.0 which is<br>available for download =
+from<br><br><a =
+href=3D"https://sourceforge.net/projects/sbml/files/libsbml/5.7.0/">https:=
+//sourceforge.net/projects/sbml/files/libsbml/5.7.0/</a><br><br>=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br>Version 5.7.0 =
+(2013-01-14)<br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><=
+br>STABLE RELEASE<br><br>* Hierarchical Model Composition<br><br> =
+&nbsp;&nbsp;- The first official version of the specification of =
+Hierarchical<br> &nbsp;&nbsp;&nbsp;&nbsp;Model Composition is now =
+available and thus the libSBML code for<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;'comp' is now included in the stable release of =
+libSBML. &nbsp;This<br> &nbsp;&nbsp;&nbsp;&nbsp;means that all prebuilt =
+binaries for the stable release will<br> &nbsp;&nbsp;&nbsp;&nbsp;include =
+the 'comp' package code. The src archive containing<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;libSBML core code will continue to be available =
+but there will be<br> &nbsp;&nbsp;&nbsp;&nbsp;additional src archives =
+available in the stable branch: one<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;containing libSBML core plus all stable packages =
+and additional<br> &nbsp;&nbsp;&nbsp;&nbsp;archives of the individual =
+package code.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;NOTE: The libSBML GNU =
+make-based build system has not been updated<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for =
+packages. Thus, to build from src, it is necessary to<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use the =
+CMake build system.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;Known limitations of =
+the 'comp' code:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ =
+Documentation has not yet been integrated into the libsbml<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;documentation.<br><br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ Whilst the majority of validation =
+rules have been implemented,<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;some will report the =
+schema error id rather than the specific<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comp validation rule id. =
+&nbsp;The more involved rules involving<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;circular dependencies =
+and in-depth referencing have not been<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implemented. =
+&nbsp;Validation of ModelDefinitions is implemented<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with respect to comp =
+validation, but not with respect to core<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validation.<br><br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ There is no C API for interacting =
+directly with comp<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects. However the C =
+API for reading and validation will<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apply to the 'comp' =
+package and flattening can be accessed via<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the converter C API to =
+call the CompFlatteningConverter.<br><br>* New features<br><br> =
+&nbsp;&nbsp;- Convenience functions have been added to the =
+SBMLExtensionRegistry<br> &nbsp;&nbsp;&nbsp;&nbsp;class to facilitate =
+enabling/disabling packages using just the<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;package name. For example: disablePackage(const =
+std::string&amp;<br> &nbsp;&nbsp;&nbsp;&nbsp;package); =
+enablePackage(const std::string&amp; package);<br><br> &nbsp;&nbsp;- =
+Previously the setNotes function accepting a string as argument<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;expected the string to contain the appropriate =
+XHTML tags and<br> &nbsp;&nbsp;&nbsp;&nbsp;would not set the value of =
+the &lt;notes&gt; element to a string that<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;did not meet this requirement. &nbsp;The =
+functionality of the<br> &nbsp;&nbsp;&nbsp;&nbsp;setNotes(const =
+std::string&amp;) function has been extended to allow a<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;user to add an optional boolean argument =
+addXHTMLMarkup. When the<br> &nbsp;&nbsp;&nbsp;&nbsp;value of this =
+argument is 'true' the function will accept a<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;string; wrap it with the XHTML &lt;p&gt; tag and =
+set the &lt;notes&gt; element<br> &nbsp;&nbsp;&nbsp;&nbsp;to =
+this.<br><br> &nbsp;&nbsp;- A C API for use with the converters has been =
+added. Examples of<br> &nbsp;&nbsp;&nbsp;&nbsp;using the converter API =
+are available in all supported languages.<br><br> &nbsp;&nbsp;- 'comp' =
+package<br><br> &nbsp;&nbsp;&nbsp;&nbsp;- Access to the flattening =
+routines has been restricted to the<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CompFlatteningConverter. &nbsp;This =
+allows options to be specified by<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the user regarding ignoring other =
+packages and whether to<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;produce =
+a document with no comp namespace or a document with the<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comp namespace but the required =
+attribute set to 'false'.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;- Validation =
+has been implemented (see note above). This is called<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;via the checkConsistency function =
+within core libSBML; which now<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accesses a checkConsistency function =
+in the comp plugin.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are =
+two categories of validation:<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIBSBML_CAT_GENERAL_CONSISTENCY and =
+<br>LIBSBML_CAT_IDENTIFIER_CONSISTENCY<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which are enables or disable via the =
+setConsistencyChecks()<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function =
+on the SBMLDocument (in libSBML core).<br><br> &nbsp;&nbsp;&nbsp;&nbsp;- =
+The API for resolving external models has been updated to use a<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registry of resolvers. This =
+facilitates the addition of user<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specific resolvers.<br><br>* Bug =
+fixes<br><br> &nbsp;&nbsp;- The number of arguments expected by a =
+piecewise function<br> &nbsp;&nbsp;&nbsp;&nbsp;was incorrectly assumed =
+to be two. However, a piecewise<br> &nbsp;&nbsp;&nbsp;&nbsp;function can =
+have a single argument. This has been corrected.<br><br> &nbsp;&nbsp;- =
+Validation of SBML Level 3 was issuing a general warning about<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;missing required attributes but failing to =
+identify which<br> &nbsp;&nbsp;&nbsp;&nbsp;attribute had caused the =
+error to be reported. &nbsp;This has been<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;corrected. Thanks to Nicolas Rodriguez for =
+pointing this out.<br><br> &nbsp;&nbsp;- Validation was failing to =
+report the incorrect use of a function<br> &nbsp;&nbsp;&nbsp;&nbsp;call =
+if the lambda function usesd expected no arguments. This<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;has been fixed.<br><br> &nbsp;&nbsp;- The =
+L3Parser was not dealing with the sqrt function correctly.<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;This has been sorted.<br><br> &nbsp;&nbsp;- =
+'comp' package-specific bug fixes:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;+ =
+SBOTerms were not being correctly dealt with when they<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occured on a Port element. This has =
+been corrected. Thanks<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to Chris =
+Myers for reporting this.<br><br>* Configuration/build system =
+changes<br><br> &nbsp;&nbsp;- Building the MATLAB binding for libSBML =
+can be problematic due to<br> &nbsp;&nbsp;&nbsp;&nbsp;the need to =
+identify and use the MATLAB mex compiler. &nbsp;When MATLAB<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;is being accessed over a network this can result =
+in misleading<br> &nbsp;&nbsp;&nbsp;&nbsp;error messages. &nbsp;The =
+build system has been improved to halt<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;compilation if the mex compiler is not available =
+and to give a<br> &nbsp;&nbsp;&nbsp;&nbsp;clearer error message as to =
+how to proceed.<br><br> &nbsp;&nbsp;- The build system has been updated =
+to facilitate use with the<br> &nbsp;&nbsp;&nbsp;&nbsp;Mac OS X 10.8 =
+operating system (Mountain Lion).<br><br> &nbsp;&nbsp;- 'comp' =
+package-specific build system changes:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;+ =
+The GNUMake build system has not been implemented for<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;packages. Thus, to build from src, =
+it is necessary to use CMake.<br><br>* Miscellaneous<br><br> =
+&nbsp;&nbsp;- It was reported that gcc 4.7 found the various definitions =
+of<br> &nbsp;&nbsp;&nbsp;&nbsp;isnan used within some parts of libSBML =
+to be problematic. &nbsp;This<br> &nbsp;&nbsp;&nbsp;&nbsp;problem has =
+been addressed and there are now functions util_isNaN<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;and util_isFinite in the util file that are used =
+throughout<br> &nbsp;&nbsp;&nbsp;&nbsp;libsbml. &nbsp;Thanks to Totte =
+Karlsson for reporting this.<br><br> &nbsp;&nbsp;- Where test files =
+compare double values the comparisons have<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;been unified to use the util_isEqual(double, =
+double) function<br> &nbsp;&nbsp;&nbsp;&nbsp;and thus avoid inaccurate =
+results that can be machine dependent.<br><br> &nbsp;&nbsp;- This =
+NEWS.txt file has reduced in size with NEWS dating from<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;prior to libSBML-5 now saved as an OLD_NEWS.txt =
+file.<br><br><br>EXPERIMENTAL RELEASE<br><br>* New features<br><br> =
+&nbsp;&nbsp;- 'Qual' package:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;- The =
+package specification redefined whether some attributes or<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elements were required; the code has =
+been updated appropriately.<br><br> &nbsp;&nbsp;- 'Fbc' package:<br><br> =
+&nbsp;&nbsp;&nbsp;&nbsp;- The package specification added some optional =
+attributes<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and deprecated the =
+use of strict less than or greater than;<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the code has been updated =
+appropriately.<br><br>* Bug fixes<br><br> &nbsp;&nbsp;- 'Render' =
+package:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;- In some cases the code was =
+failing to add expected attributes<br> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to particular elements. &nbsp;This =
+has been =
+corrected.<br><br><br>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br><br>Please report any problems =
+you encounter using libSBML either to the<br>mailing list =
+libsbml-team@caltech.edu or using the issue tracker<br>for libSBML =
+at<br><br>https://sourceforge.net/tracker/?group_id=3D71971&amp;atid=3D942=
+737<br><br>Thanks<br><br>LibSBMLTeam<br><br>______________________________=
+______________________________<br>To manage your libsbml-development =
+list subscription, visit =
+<br>https://utils.its.caltech.edu/mailman/listinfo/libsbml-development<br>=
+<br>For a web interface to the libsbml-development mailing list, =
+visit<br>http://sbml.org/Forums/<br><br>For questions or feedback about =
+the libsbml-development list,<br>contact =
+sbml-team@caltech.edu<br></div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_66186B1E-A0BA-4794-901A-1A241D78525C--
+

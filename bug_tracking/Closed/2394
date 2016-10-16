@@ -1,0 +1,40 @@
+From christian.atheist@gmail.com  Sat Dec  8 22:11:20 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.189])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lB95BJh3026936
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 8 Dec 2007 22:11:19 -0700
+Received: by mu-out-0910.google.com with SMTP id i10so1741996mue
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 08 Dec 2007 21:11:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=+z9KO+o7bu0Oc6PsaNgYB4szjzFM2xh441jND70EcsI=;
+        b=JBsM1TDR1NH0aZcACCoV/gn8PsN+xdTVmkrBIXRiDu6tr9EyjKhFb3yIMldo1nd0eBI/xexygk8DF9CVSdMpa4kmJk/jMAPgiOjRe31wIIsIZ8C6dMntaKTGx8fGGGoy1PZX0FwrJ1eTMkIwzcthWDt0hqey7bu3JECQ/ynJfQs=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=HIuG8elwWUQY6iT5TswqzeJLWOfK3y7oDfuFvlgVP7h0yrBon5UhYiV7FIovoxzNFscli2KF6U8WppAPgUHHmVazGCdLt6uhRDTRNqOh4BRxjCUrDYWHH5vfaUvH04c0necm0LBnTBQdg9m6OTCnReHXGAKYIzUi3vkhzBiH7KU=
+Received: by 10.82.173.19 with SMTP id v19mr16519802bue.1197177077963;
+        Sat, 08 Dec 2007 21:11:17 -0800 (PST)
+Received: by 10.82.149.11 with HTTP; Sat, 8 Dec 2007 21:11:17 -0800 (PST)
+Message-ID: <eba119560712082111i748df05ax4d4d5e897d9b0c22@mail.gmail.com>
+Date: Sat, 8 Dec 2007 22:11:17 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Curtis Madsen" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Cannot change stoichiometry in Parameter Editor
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+In the analysis view, you cannot change the stoichiometry.  I think
+this should be edittable because you're not changing the structure of
+the sbml, just a parameter value.
+
+Cheers,
+Nam
+

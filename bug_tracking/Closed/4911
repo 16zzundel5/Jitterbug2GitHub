@@ -1,0 +1,43 @@
+From myers@ece.utah.edu  Thu Feb  4 16:24:43 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.3 required=5.0 tests=AWL,BAYES_00,FH_DATE_PAST_20XX
+	autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o14NOhPi026960
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 4 Feb 2010 16:24:43 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1NdB3z-00006C-Fk
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 04 Feb 2010 16:24:43 -0700
+Message-Id: <E43D9733-16A9-4D4D-BE97-8456187F182F@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: allow random functions in the expression syntax
+Date: Thu, 4 Feb 2010 16:24:37 -0700
+X-Mailer: Apple Mail (2.936)
+
+The following random functions should be legal in the expression  
+syntax, and does away with the need for bounds.
+
+uniform(a,b)
+normal(m,s)
+exponential(mu)
+gamma(a,b)
+lognormal(z,s)
+chisq(nu)
+laplace(a)
+cauchy(a)
+rayleigh(s)
+poisson(mu)
+binomial(p,n)
+bernouli(p)
+
+Support needs to be both added to atacs and the GUI.
+

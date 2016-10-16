@@ -1,0 +1,23 @@
+From sarbruis@gmail.com  Mon Aug 22 14:29:09 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7MKT99d031985
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 22 Aug 2011 14:29:09 -0600
+Date: Mon, 22 Aug 2011 14:29:09 -0600
+Message-Id: <201108222029.p7MKT99d031985@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: Progress dialog for XML generation
+
+Full_Name: Jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 174-27-222-206.slkc.qwest.net (174.27.222.206)
+Submitted by: jstev
+
+
+With a large grid it can take a while to generate the XML.  It'd be nice to have
+a progress bar like with the simulation.  Would this be easy to do?
+

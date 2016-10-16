@@ -1,0 +1,100 @@
+From kjones5863@gmail.com  Wed May 12 13:57:24 2010
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-ww0-f42.google.com (mail-ww0-f42.google.com [74.125.82.42])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4CJvMaC009788;
+	Wed, 12 May 2010 13:57:23 -0600
+Received: by wwf26 with SMTP id 26so188853wwf.15
+        for <multiple recipients>; Wed, 12 May 2010 12:57:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:in-reply-to
+         :references:date:message-id:subject:from:to:cc:content-type;
+        bh=awBPI2GKw3EyaaVTclcVyWvxU3sJ0bZgQ2FgCHN3UNQ=;
+        b=Rvq1rdw95/aA6RpfeyM2Zw8qDSa7emds7tyaaE1gdioeyOkxXXxZfTiuB5x7KLdJn3
+         JHhcrXKND7DaCw+dIp2ghsbcX9R/6fjbLVNWsZyRYr0KsSHNksTy7xz4F1vegAia4jO2
+         Pm8fWGvg9xYFxU9Qqp1tctLbpKg7FfXsdCztk=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=aSa2ynx5yXMnWS+sTC2h8QdwET3FXBE3kk0OMucXmd/fiYEFAjQecDrOE4ffeUqnXY
+         Cba9EXcs8G8YOosPGZ2TF9vvn/7OTFYbWqEWuuF03LIENwY9+wEPQA6lj2/cvTLaaasB
+         ukb3K066POHH3JPzOh9CsXPksto9Vx/3xAGu4=
+MIME-Version: 1.0
+Received: by 10.227.153.211 with SMTP id l19mr7335042wbw.228.1273694241992; 
+	Wed, 12 May 2010 12:57:21 -0700 (PDT)
+Received: by 10.216.39.130 with HTTP; Wed, 12 May 2010 12:57:21 -0700 (PDT)
+In-Reply-To: <5B456539-E7B7-4240-B668-9786CE1442C4@ece.utah.edu>
+References: <201005121911.o4CJBmG4008355@chou.ece.utah.edu>
+	 <5B456539-E7B7-4240-B668-9786CE1442C4@ece.utah.edu>
+Date: Wed, 12 May 2010 13:57:21 -0600
+Message-ID: <AANLkTinlY6SsA5ApP-WzmNSmW9mCPQo1JL6j7sLuhv7C@mail.gmail.com>
+Subject: Re: BUG: ranges in assignments should be converted to uniform 
+	distributions (PR#4966)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=0016368331c6d8b0c004866b0cc3
+
+--0016368331c6d8b0c004866b0cc3
+Content-Type: text/plain; charset=ISO-8859-1
+
+Satish and I noticed today that if the lower and upper bounds are equal,
+then ATACS throws an error, so that is an important distinction for now.
+
+Kevin Jones
+
+On Wed, May 12, 2010 at 1:54 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> One minor nit.  If the lower and upper bounds are equal, the uniform is
+> unnecessary and it can just be the single value.
+>
+> Chris
+>
+>
+> On May 12, 2010, at 1:11 PM, Kevin Jones wrote:
+>
+>  This is now done for continuous, discrete and rate assignments.  Should it
+>> be
+>> done for
+>> boolean assignments?
+>>
+>
+>
+
+--0016368331c6d8b0c004866b0cc3
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Satish and I noticed today that if the lower and upper bounds are equal, th=
+en ATACS throws an error, so that is an important distinction for now.<div>=
+<br></div><div>Kevin Jones<br><br><div class=3D"gmail_quote">On Wed, May 12=
+, 2010 at 1:54 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:m=
+yers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex;">One minor nit. =A0If the lower and upper bo=
+unds are equal, the uniform is unnecessary and it can just be the single va=
+lue.<br>
+<font color=3D"#888888">
+<br>
+Chris</font><div><div></div><div class=3D"h5"><br>
+<br>
+On May 12, 2010, at 1:11 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+This is now done for continuous, discrete and rate assignments. =A0Should i=
+t be<br>
+done for<br>
+boolean assignments?<br>
+</blockquote>
+<br>
+</div></div></blockquote></div><br></div>
+
+--0016368331c6d8b0c004866b0cc3--
+

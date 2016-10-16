@@ -1,0 +1,27 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG:  Exception when trying to delete reaction (PR#5459)
+Date: Thu Aug 11 23:54:36 2011
+CC: myers@ece.utah.edu
+
+The problem was caused by the new lines you added to refresh:
+
+gcm.reloadSBMLFile();
+compartmentPanel.refreshCompartmentPanel(gcm.getSBMLDocument());
+speciesPanel.refreshSpeciesPanel(gcm.getSBMLDocument());
+parametersPanel.refreshParameterPanel(gcm.getSBMLDocument());
+reactionPanel.refreshReactionPanel(gcm.getSBMLDocument());
+
+I have commented them out, but I'm sure this causes other problems with whatever
+you were trying to do here.
+
+The refresh function gets called a lot.  It basically rebuilds the schematic. 
+However, if you have changed the 
+sbml document then reloading the file here will wipe out any changes you make. 
+Namely, you add a reaction or 
+species to the SBML document then reload the old document and this change is now
+gone.  
+
+Is this only for the parameter editor perhaps?
+
+Chris

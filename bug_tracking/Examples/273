@@ -1,0 +1,44 @@
+From peskin@cs.utah.edu  Thu Dec  2 15:36:31 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA09242
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 2 Dec 1999 15:36:31 -0700
+Date: Thu, 2 Dec 1999 15:36:31 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199912022236.PAA09242@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Bad header information!
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12894974 Nov 24 17:32 /home/xia/peskin/atacs/src/atacs*
+OS: RedHat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/atacs/examples/g/4demux.g
+log: /home/xia/peskin/atacs/examples/g/4demux.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+The following examples have bad header information:
+
+	[1468]*{demux,reg}.g {15,2?}fifo.g dff.chu.g
+
+See bug reports 204, 205
+
+240 xia:~/atacs/examples> grep Bad */*.log
+g/10demux.log:ERROR:6:  Bad header information!
+g/10reg.log:ERROR:6:  Bad header information!
+g/12demux.log:ERROR:6:  Bad header information!
+g/12reg.log:ERROR:6:  Bad header information!
+g/14demux.log:ERROR:6:  Bad header information!
+g/15fifo.log:ERROR:6:  Bad header information!
+g/16demux.log:ERROR:6:  Bad header information!
+g/20fifo.log:ERROR:6:  Bad header information!
+g/25fifo.log:ERROR:6:  Bad header information!
+g/4demux.log:ERROR:6:  Bad header information!
+g/4reg.log:ERROR:6:  Bad header information!
+g/6demux.log:ERROR:6:  Bad header information!
+g/6reg.log:ERROR:6:  Bad header information!
+g/8demux.log:ERROR:6:  Bad header information!
+g/8reg.log:ERROR:6:  Bad header information!
+g/dff.chu.log:ERROR:6:  Bad header information!
+241 xia:~/atacs/examples> 
+

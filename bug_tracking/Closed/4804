@@ -1,0 +1,27 @@
+From myers@ece.utah.edu  Fri Oct  9 10:49:03 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.2 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n99Gn3Je016777
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Oct 2009 10:49:03 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MwIeN-0004Ja-DK
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 09 Oct 2009 10:49:03 -0600
+Message-Id: <61A7F3BA-97B6-4505-A18A-D651EF8FC8C1@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: need fflush for _Print in all simulations methods
+Date: Fri, 9 Oct 2009 10:48:57 -0600
+X-Mailer: Apple Mail (2.936)
+
+Missing fflush(stdout) in _Print in all stochastic simulations methods.
+

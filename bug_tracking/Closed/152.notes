@@ -1,0 +1,5 @@
+Hao
+This has been fixed.  Note that both the files uno1_ctrl_tb.vhd and
+uno1_ctrl.vhd are
+needed for testing.  Also, uno1_ctrl has a problem.  Replace all instances of 
+uno_ctrl with uno1_ctrl within this file.

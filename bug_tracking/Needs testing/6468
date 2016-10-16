@@ -1,0 +1,55 @@
+From tramy.nguy@gmail.com  Tue Mar  1 09:47:29 2016
+Return-Path: <tramy.nguy@gmail.com>
+Received: from mail-yw0-f182.google.com (mail-yw0-f182.google.com [209.85.161.182])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u21GlTnV007578
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 1 Mar 2016 09:47:29 -0700
+Received: by mail-yw0-f182.google.com with SMTP id u200so153616929ywf.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 01 Mar 2016 08:47:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to;
+        bh=7ZWtjYiTTzNl5AqmZsRSEtz8RLvomYg/VimJN7B02BM=;
+        b=WJf3lnXtyYScQkbOGBEZ5xrArXM3bd9rn0oZu2r09zdBXtYS8E4zJ5ceY/sDRbmkQY
+         ySIRoPHqlsivPp5HHhUWDlILYkWGdzo1leAZQ60CLFxzhIt1YetaVkiO31pmxS5uGpGm
+         CvqI3Iy6n3i/BYhdszYSnD3BhBD3eBeeI586e2Yl1vBVNoaQSPe5/RNXd30yLcnPBbe8
+         x9wxSK2oxr93kNfyjyG0d3wc6dVpEUu9Ogeav70Sbdhl+aMBx2/F6u2dOqnFMow7ySW4
+         OUamKJS1OBf4JpZrs5NI24TD3RpbONENzqkB8LwHmmWgMCWBBj6+qT4cgB65yOdYzSzM
+         M03g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+        bh=7ZWtjYiTTzNl5AqmZsRSEtz8RLvomYg/VimJN7B02BM=;
+        b=igzw5sTgaUZ3khAJsHEUGfFLe0HPM3IVrutN07NqzypOLEssLRXuY9mcasP+QM7RQS
+         XuZR+UKPEo6JWWp+T/EVLeVbr4F9/LZTshGOpeHNbxWseEimCtYP1zb1dDGWVotX+3B0
+         ddHZ/dNfyBdHJKNLmekPiuHb+FBO7sPrrrafhYKOHlEc6gu/jkcUPpqOtasUbQgW+PbG
+         64sg8U6MUJA6EKljLwhunBOfAaVoRRnULhL8TRaeAOLdC31Ok6ZkjRg71mtxi2rts7UX
+         hu5JGEzTJtnGK8pU3oqIFMJab2IVrfwxoOQHJGZy7+ZaS5IcJyHlNYcDhWa9UjEtFoc2
+         SE3A==
+X-Gm-Message-State: AD7BkJKIKYnx5sFyZ36K5cHl6aIIwiF0/jzO1/hj+HuXwtKmZN74YAfq/oeRUlxv7w03HWrSAlDo9V6Rzr2b9w==
+MIME-Version: 1.0
+X-Received: by 10.129.105.3 with SMTP id e3mr12168927ywc.237.1456850848359;
+ Tue, 01 Mar 2016 08:47:28 -0800 (PST)
+Received: by 10.37.79.8 with HTTP; Tue, 1 Mar 2016 08:47:28 -0800 (PST)
+Date: Tue, 1 Mar 2016 09:47:28 -0700
+Message-ID: <CAJxZzr7X_VbDG_ScStvpRiaxUB3kHgHUv8b22ZzWENgDoQefSA@mail.gmail.com>
+Subject: BUG - Model Editor not indicating file has changed
+From: Tramy Nguyen <tramy.nguy@gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a114902184eab01052cff85dc
+
+--001a114902184eab01052cff85dc
+Content-Type: text/plain; charset=UTF-8
+
+After editing the Model Editor panel and OK is selected, the working
+project file should indicate that the file has been modified with a "*" on
+the tab.
+
+Tramy Nguyen
+
+--001a114902184eab01052cff85dc
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr">After editing the Model Editor panel and OK is selected, the working project file should indicate that the file has been modified with a &quot;*&quot; on the tab.<div><br></div><div>Tramy Nguyen</div></div>
+
+--001a114902184eab01052cff85dc--
+

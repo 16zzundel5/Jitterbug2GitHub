@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Fri Oct 16 10:35:37 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n9GGZbaJ028089
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 16 Oct 2009 10:35:37 -0600
+Received: from [192.102.209.8] (helo=[10.251.8.184])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MypmD-0005bS-DK
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 16 Oct 2009 10:35:37 -0600
+Message-Id: <A0260E51-DD54-4CF7-971C-9697FF936931@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: support non-determinism with different input trace
+Date: Fri, 16 Oct 2009 10:35:31 -0600
+X-Mailer: Apple Mail (2.936)
+
+When input traces diverge significantly (especially in the initial  
+state), should support non-determinism at start.
+

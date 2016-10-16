@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: crash during verification (PR#6227)
+Date: Fri Feb  6 16:11:47 2015
+
+This is due to a transition without a delay which are now considered immediate
+transitions.  These should 
+be handled correctly in the zone based verification.  Namely, they should be
+fired off immediately with no 
+concern for order of firing.

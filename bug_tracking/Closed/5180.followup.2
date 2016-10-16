@@ -1,0 +1,100 @@
+From myers@ece.utah.edu  Mon Jan 24 08:16:28 2011
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.3 required=10.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0OFGSun015220
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 24 Jan 2011 08:16:28 -0700
+Received: from 75-169-160-18.slkc.qwest.net ([75.169.160.18] helo=[192.168.0.9])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PhO9b-0003So-QZ; Mon, 24 Jan 2011 08:16:28 -0700
+Cc: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>,
+        Tyler Patterson <tpatterson80@gmail.com>
+Message-Id: <B5EC6663-C106-4061-8B21-590955C2A546@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+In-Reply-To: <F3FE734CBA37DE4989B91D55FAAB78B595567FC79E@C5V2.xds.umail.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: CHANGE: add support for constitutive promoters (PR#5180)
+Date: Mon, 24 Jan 2011 08:16:20 -0700
+References: <201101210105.p0L15FGt008881@chou.ece.utah.edu>,<2C65BE1C-6E02-4302-B63C-B0179210A230@ece.utah.edu> <F3FE734CBA37DE4989B91D55FAAB78B595567FC79E@C5V2.xds.umail.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+I think that explicit promoters should not appear in the list of  
+promoter choices for implicit promoter edges.  This is actually  
+described in the original bug report early on but got lost in all the  
+replies, I think.
+
+Chris
+
+On Jan 21, 2011, at 11:39 AM, NICHOLAS ANDREW ROEHNER wrote:
+
+> Hi all,
+>
+> I've gone ahead and added production to the last index in the types  
+> list in InfluencePanel (it's there but won't ever be displayed).   
+> Tyler, I think what you forgot to do was set an influence's type to  
+> production when it's drawn from a promoter to a species, and to add  
+> production to the list of valid types in  
+> Biograph.getPropertiesList.  The latter causes the console to pitch  
+> a fit when somebody double clicks on the production influence.
+>
+> Also, I've noticed that when I change an influence's implicit  
+> promoter to an already existing explicit promoter, it greys out that  
+> influence's edit promoter button, which is fine, but it also no  
+> longer displays the promoter name on the influence and removes the  
+> promoter combo box, which is probably not good since I can no longer  
+> tell which promoter is being used nor switch between promoters for  
+> that influence.  We either need to distinguish in the code between  
+> influences drawn to an explicit promoter and influences using said  
+> explicit promoter in an implicit manner, or we need to disallow  
+> explicit promoters as choices in the influence panel's promoter  
+> combo box.
+>
+> Nic
+> ________________________________________
+> From: Chris J. Myers [myers@ece.utah.edu]
+> Sent: Friday, January 21, 2011 7:33 AM
+> To: tyler patterson
+> Cc: Tyler Patterson; NICHOLAS ANDREW ROEHNER
+> Subject: Re: CHANGE: add support for constitutive promoters (PR#5180)
+>
+> Looks good to me.  One minor nit is that "No influence" I think can
+> potentially make sense here.
+>
+> Nic: what do you think we should do about the production type?  Should
+> we go ahead and add it?
+>
+> Chris
+>
+> On Jan 20, 2011, at 6:05 PM, tyler patterson wrote:
+>
+>>> Do not label arc from species to promoter.
+>>>
+>>> Cannot edit promoters.
+>>>
+>>> Cannot edit any influences that are connected to promoters.
+>>>
+>>> Should only get the influence editor when clicking on influence
+>>> between
+>>> promoters and species, never promoter editor.
+>>>
+>>> Type of influences from promoter to species should be a new type
+>> "Production".
+>>>
+>>> Type of species to promoter should not be allowed to be complex  
+>>> type.
+>>
+>> These should all be done with the possible exception of the
+>> "Production" type. I
+>> associated the edges to a new type in
+>> GlobalConstants, but I think there was something else this was
+>> supposed to do, I
+>> just can't remember what.
+

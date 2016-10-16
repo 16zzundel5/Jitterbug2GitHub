@@ -1,0 +1,77 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: rodrigue@ebi.ac.uk
+Subject: Re: BUG : iBioSim launch script no working (PR#5361)
+Date: Fri May 13 15:24:52 2011
+CC: myers@ece.utah.edu
+
+Hi Nicolas, 
+
+Thanks for all your useful feedback on iBioSim.
+> 
+> I am trying to install iBioSim on the EBI machines and run into several 
+> problems.
+> I tried to go to the bug database 
+> (http://www.async.ece.utah.edu/cgi-bin/atacs) but I was
+> not able to fill in a bug there. (just found the mail to use at the end 
+> of the manual)
+> 
+We are using a pretty antiquated bug database, and when we updated our system
+the online bug submission broke.  Not sure why.  Glad you found the email
+version.  We should likely add a pointer to this on our website to make it more
+obvious.
+
+> I have downloaded iBioSim 1.5 (Fedora 13 x64) 
+> (http://www.async.ece.utah.edu/iBioSim/iBioSim-1.5-Linux-x86_64-Install)
+> 
+> And the iBioSim script to start the program has a wrong CLASSPATH, has 
+> there was several libraries changed I have updated the script to
+> include all the libraries in the gui/lib folder :
+> 
+> --------------------------------------------------------------------------------
+> 
+> CLASSPATH=$BIOSIM/gui/dist/classes
+> 
+> for jarFile in $BIOSIM_LIB_PATH/*.jar
+> do
+>     CLASSPATH=$CLASSPATH:$jarFile
+> done
+> 
+> exec java -Xmx512M -classpath $CLASSPATH biomodelsim.BioSim
+> 
+> -------------------------------------------------------------------------------
+> 
+> Like this, you don't need to worry about jar names changing, all of them 
+> are included.
+
+This is a great suggestion which we will certainly use in our next set of
+scripts.  Will need to figure out how to do this in windows batch files
+though...  do you know how?
+
+As for the startup problem, it is likely due to the fact that the quickstart
+icons do not see the BIOSIM variable right away.  Often what needs to be done is
+for you to log out and back in to get it to show up.  However, once you have
+installed once, the BIOSIM variable is there (assuming you don't move your
+install), and this problem usually goes away.
+
+> I have removed libsbmlj64.jar and sbmlj.jar as there was already a 
+> libsbmlj.jar
+> 
+The sbmlj.jar file is there for windows systems which require the filename to
+not have the <lib> prefix.  Should be removed though in the linux install.  As
+for libsbmlj64.jar, I convinced myself at some point that the 64-bit version of
+libsbmlj.jar was different than the 32-bit version.  I will need to double check
+this because I'm not now sure that this is the case. 
+
+> If you do not modified the CLASSPATH, you cannot start the program as 
+> you get NoClassDefFoundException, the first one being :
+> 
+> Exception in thread "main" java.lang.NoClassDefFoundError: 
+> org/jfree/chart/event/ChartProgressListener
+> 
+Again, I think this is due to the delayed setting of the BIOSIM variable. 
+However, it is possible that we missed a jar in the script for the latest
+install.  Your solution definitely solves this potential issue.
+
+Thanks,
+
+Chris

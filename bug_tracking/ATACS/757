@@ -1,0 +1,32 @@
+From atacs-bugs@chou.ece.utah.edu  Fri Jan  9 09:26:00 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GPxEN016640
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 9 Jan 2004 09:26:00 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i09GPxXa016638
+	for atacs-bugs@shang.elen.utah.edu; Fri, 9 Jan 2004 09:25:59 -0700
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GPxEN016632
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:25:59 -0700
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i09GPnTp012138
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:25:49 -0700
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i09GPnr9012134
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:25:49 -0700
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Fri, 9 Jan 2004 09:25:49 -0700 (MST)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: genrg aware trace code
+Message-ID: <Pine.LNX.4.44.0401090925090.12133-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Error trace generating code in findrsg.c should print the actions when 
+genrg is used.
+
+

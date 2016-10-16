@@ -1,0 +1,15 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: u0723326@utah.edu
+Subject: Re: BUG: Pressed OK after defining a function and throws an exception. (PR#6221)
+Date: Fri Feb  6 18:38:44 2015
+CC: myers@ece.utah.edu
+
+I'm pretty sure this is the same bug that I found in the demo.  Namely, there is
+likely a syntax error in your 
+function definition.  Can you double check this?  If you don't see a syntax
+error then send me the function 
+you want to enter.  Remember, you cannot write 2y, but it must be 2*y.  This is
+the one that bit me.  This 
+bug is fixed in 2.8.2 which I will release next week.
+
+Chris

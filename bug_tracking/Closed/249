@@ -1,0 +1,30 @@
+From peskin@cs.utah.edu  Wed Nov  3 17:49:51 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id RAA12942
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 Nov 1999 17:49:51 -0700
+Date: Wed, 3 Nov 1999 17:49:51 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911040049.RAA12942@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: If spec is an ER, eXception handling may try to overwrite the spec
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12759842 Oct 28 14:29 ../../src/atacs*
+OS: RedHat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999
+source: /home/xia/peskin/atacs/examples/er/selector1.er
+log: /home/xia/peskin/atacs/examples/er/selector1.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+If ATACS needs write a new ER (e.g., to handle an exception), 
+and the spec was itself an .er, ATACS should pick a 
+new file name (or directory) for the new ER.  Currently, it does not.
+
+If CVS watching is on, and the spec in question is not being cvs edited,
+then this bug exposes the seg fault of report 248.
+See that report for a sample session.
+
+On the other hand, if you had just changed the specification, and you had not
+yet cvs committed said changes, ATACS could clobber your work!
+

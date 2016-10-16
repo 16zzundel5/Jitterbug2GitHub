@@ -1,0 +1,27 @@
+From myers@ece.utah.edu  Mon Nov  8 09:28:22 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.3 required=5.0 tests=AWL,BAYES_40,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oA8GSMQq025111
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 8 Nov 2010 09:28:22 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.100])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PFVrd-000627-0M
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 08 Nov 2010 10:50:41 -0700
+Message-Id: <932802AC-CC67-47E3-98C1-AB275EA17EEE@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: update icons to match arrows in GCM editor
+Date: Mon, 8 Nov 2010 10:50:27 -0700
+X-Mailer: Apple Mail (2.936)
+
+Update the icons to match the actual arrows for each type of influence.
+

@@ -1,0 +1,26 @@
+From sarbruis@gmail.com  Thu Aug 18 10:04:29 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7IG4T9u000735
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 18 Aug 2011 10:04:29 -0600
+Date: Thu, 18 Aug 2011 10:04:29 -0600
+Message-Id: <201108181604.p7IG4T9u000735@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Constitutive (regardless of diffusible status) species break reb2sac
+
+Full_Name: Jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 174-27-222-206.slkc.qwest.net (174.27.222.206)
+Submitted by: jstev
+
+
+I expect this has something to with the recent changes I made.  The fact that
+diffusibility status doesn't have an effect means it's probably not something to
+do with the visitors.  But I'm not good enough at debugging reb2sac errors to
+find out what the issue is and there aren't any exceptions or errors other than
+the "BAD RETURN VALUE!!!" one.
+

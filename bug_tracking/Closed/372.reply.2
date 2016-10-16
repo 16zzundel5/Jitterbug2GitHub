@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@ming.elen.utah.edu
+Subject: Re: BAD43 broken repository! (PR#372)
+Date: Sun Mar 19 23:38:21 2000
+
+The problem is that pchbMUX is non-distributive.  This means there is OR type
+casuality.  The new multicube approach that I implemented with Hans does not 
+always work in such a situation.  
+
+The other messages are debug stuff, and I have removed them (will check in when
+I get a chance).
+
+For the time being, you can take pchbMUX out of the regression suite until
+this is fixed.

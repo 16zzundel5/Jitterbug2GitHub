@@ -1,0 +1,5 @@
+Wendy
+Postprocess seems correct, but with posets matrix goes invalid.  Works for
+geometric.
+No safety issue here.  File name is postp.hse.
+See PR#274

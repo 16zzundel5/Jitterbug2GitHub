@@ -1,0 +1,38 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: jeffrey.theisen@utah.edu
+Subject: Re: BUG: Move Random error in SSA-Direct (java) (PR#5865)
+Date: Fri Mar 29 21:06:20 2013
+
+Not sure how to recreate this one.  Would you mind sending me your project? 
+Please email it to 
+myers@ece.utah.edu and not reply to the atacs-bgs address.
+
+Thanks,
+
+Chris
+
+> Bug reported by: jeffrey.theisen@utah.edu
+> 
+> Description:
+> When I had a simple model of movement, a single cell that only has events for
+> movement in a grid with nothing else, SSA-Direct (java) was able to simulate
+> without a problem.  However, when I incorporated this behavior into a more
+> complex model with diffusible species and multiple cell types with multiple
+> compartments in each, the simulator ran into a Null Pointer Exception Error. 
+I
+> am not sure what specifically caused this because the model is much more
+> complex.
+> 
+> Stack trace:
+> java.lang.NullPointerException
+> 	at org.sbml.jsbml.SimpleSpeciesReference.<init>(SimpleSpeciesReference.java:85)
+> 	at org.sbml.jsbml.SpeciesReference.<init>(SpeciesReference.java:113)
+> 	at analysis.dynamicsim.Simulator.moveComponent(Simulator.java:2906)
+> 	at analysis.dynamicsim.Simulator.fireEvents(Simulator.java:2184)
+> 	at analysis.dynamicsim.SimulatorSSADirect.simulate(SimulatorSSADirect.java:86)
+> 	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:85)
+> 	at analysis.Run.execute(Run.java:1233)
+> 	at analysis.AnalysisView.run(AnalysisView.java:2214)
+> 	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+> 
+> 

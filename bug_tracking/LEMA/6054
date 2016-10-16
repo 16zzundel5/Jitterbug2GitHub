@@ -1,0 +1,40 @@
+From zhen.zhang@utah.edu  Fri May 30 18:19:30 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s4V0JU2k009569
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 May 2014 18:19:30 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AngHAIYfiVPRVdyt/2dsb2JhbABZDoJ5gSqCbKogAZY3CBZ0gj4RdAECBTcCJBIBBQEiNYggowGDEWqLJ58+hS0XkU6BSwSKJY9ZkTwYKYEwgnhfHg
+X-IPAS-Result: AngHAIYfiVPRVdyt/2dsb2JhbABZDoJ5gSqCbKogAZY3CBZ0gj4RdAECBTcCJBIBBQEiNYggowGDEWqLJ58+hS0XkU6BSwSKJY9ZkTwYKYEwgnhfHg
+X-IronPort-AV: E=Sophos;i="4.98,944,1392188400"; 
+   d="scan'208";a="370869385"
+Received: from mail-vc0-f173.google.com ([209.85.220.173])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 30 May 2014 18:19:31 -0600
+Received: by mail-vc0-f173.google.com with SMTP id il7so2922510vcb.32
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 May 2014 17:19:29 -0700 (PDT)
+X-Received: by 10.58.29.106 with SMTP id j10mr16826869veh.31.1401495569084;
+ Fri, 30 May 2014 17:19:29 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.220.161.10 with HTTP; Fri, 30 May 2014 17:18:48 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Fri, 30 May 2014 18:18:48 -0600
+Message-ID: <CA+LVOvn4BEV6Ynhbazbfbu_OC62w-FxpSgFDDrLX8mQpO5pwiQ@mail.gmail.com>
+Subject: FEATURE: Add inout port type for place in LEMA's schematic editor
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=047d7b6d9ddc8cb9aa04faa71deb
+
+--047d7b6d9ddc8cb9aa04faa71deb
+Content-Type: text/plain; charset=UTF-8
+
+The port type for a place should have an 'inout' type.
+
+--047d7b6d9ddc8cb9aa04faa71deb
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">The port type for a place should have an &#39;inout&#39; t=
+ype.=C2=A0</div>
+
+--047d7b6d9ddc8cb9aa04faa71deb--
+

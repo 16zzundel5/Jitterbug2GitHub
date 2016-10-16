@@ -1,0 +1,174 @@
+From peskin@sanguo.elen.utah.edu  Thu Mar 18 11:02:27 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id LAA16794 for <atacs-bugs@ming.elen.utah.edu>; Thu, 18 Mar 1999 11:02:27 -0700 (MST)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id LAA07963
+	for atacs-bugs@ming.elen.utah.edu; Thu, 18 Mar 1999 11:02:31 -0700
+Date: Thu, 18 Mar 1999 11:02:31 -0700
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199903181802.LAA07963@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: For sunfifo, extra term in seoutb using new multicube algorithm.
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /.automount/shang/root/home/shang/peskin/examples/csp/sunClean                 
+WHEN:   Thu Mar 18 11:02:13 MST 1999                
+WHAT:   -rwx------ 1 peskin async 10368819 Mar 18 09:38 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -mg -mM -mc -ya sunfifo            
+OUTPUT:                       
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using geometric timing to obtain state graphs.
+Using multi-cube covering procedure.
+Now using combinational optimization.
+Compiling sunfifo.csp ... 
+rm: sunfifo.er: No such file or directory
+Storing process seoutb to seoutb.er
+Storing process fout to fout.er
+Storing process fout to fout.er
+Storing process fin to fin.er
+Storing process seinb to seinb.er
+Storing process fifo to fifo.er
+Storing process sunfifo to sunfifo.er
+Loading timed event-rule structure from:  sunfifo.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 10 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 50 regions, stack_depth=1
+
+52 regions explored, 29 states explored in 0.055696 seconds
+done
+Projecting out dummy transitions ... done
+Checking CSC ... complete state coded
+Finding regions ... EXCEPTION!
+EXCEPTION:  Persistence rule violation!
+Finding all primes ... done
+Finding prime implicant tables ... done
+Finding prime cover and storing to:  sunfifo.prs
+                              
+STATUS:  0       
+              
+FILE: ./sunfifo.csp:
+/*****************************************************************************/
+/* FIFO from SUN group (see ASYNC97)                                         */
+/*****************************************************************************/
+module fifo;
+
+input fin = {<180,inf;180,260>};
+input seinb={true,<90,110;90,inf>};
+output seoutb={true,<90,110>};
+output fout={<90,110>};
+output eout={true,<90,110>};
+output foutb={true,<90,110>};
+output eoutb={<90,110>};
+
+process seoutb;
+    *[ [fin & eout]; seoutb-; [~eout | ~fin]; seoutb+ ]
+endprocess
+
+process fout;
+    *[ [~seoutb]; eoutb+; eout-; [seoutb & foutb]; eoutb-; eout+ ]
+endprocess
+
+process fout;
+    *[ [eoutb & seinb]; foutb-; fout+; [~seinb]; foutb+; fout- ]
+endprocess
+
+process fin;
+*[ fin+; [~seoutb]; fin-; [seoutb] ]
+endprocess
+
+process seinb;
+*[ [fout]; seinb-; [~fout]; seinb+ ]
+endprocess
+
+endmodule
+              
+              
+FILE: ./sunfifo.er:
+.e 25
+.i 4
+.r 15
+.n 0
+.d 0
+.c 0
+.s 1001101
+reset
+# 
+# INPUT EVENTS:
+# 
+seinb+/1 seinb-/1
+fin+/1 fin-/1
+# 
+# OUTPUT EVENTS:
+# 
+fout+/1 fout-/1
+foutb+/1 foutb-/1
+seoutb+/1 seoutb-/1
+eoutb+/1 eoutb-/1
+eout+/1 eout-/1
+# 
+# DUMMY EVENTS:
+# 
+$8+/1
+$9+/1
+$5+/1
+$4+/1
+$1+/1
+$0+/1
+$2+/1
+$3+/1
+$6+/1
+$7+/1
+# 
+# RULES:
+# 
+reset fin+/1 0 180 inf
+eoutb-/1 eout+/1 0 90 110
+eoutb+/1 eout-/1 0 90 110
+foutb-/1 fout+/1 0 90 110
+foutb+/1 fout-/1 0 90 110
+seinb-/1 seinb+/1 [~fout] 0 90 110
+fout+/1 foutb+/1 [~seinb] 0 90 110
+seoutb-/1 seoutb+/1 [~eout | ~fin] 0 90 110
+eout-/1 eoutb-/1 [seoutb & foutb] 0 90 110
+fin+/1 fin-/1 [~seoutb] 0 180 260
+# 
+# INITIAL RULES:
+# 
+eout+/1 eoutb+/1 [~seoutb] 1 90 110
+fout-/1 foutb-/1 [eoutb & seinb] 1 90 110
+seinb+/1 seinb-/1 [fout] 1 90 inf
+seoutb+/1 seoutb-/1 [fin & eout] 1 90 110
+fin-/1 fin+/1 [seoutb] 1 180 inf
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+# 
+# CONFLICTS:
+# 
+# 
+# LOOPING CONFLICTS:
+# 
+              
+              
+FILE: ./sunfifo.prs:
+[ fout: (~foutb)] Combinational
+[~foutb: (seinb & eoutb)] Combinational
+[ seoutb: (~fin)] Combinational
+[ seoutb: (~eout)] Combinational
+[+eoutb: (~seoutb)]
+[-eoutb: (~seinb & foutb)]
+[ eout: (~eoutb)] Combinational
+              

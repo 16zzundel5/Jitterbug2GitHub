@@ -1,0 +1,12 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: restrict abstraction only for SBML elements used (PR#5496)
+Date: Tue Aug 23 17:56:47 2011
+
+I moved the call to the method that marks species as abstractable to after the
+code that removes unchecked SBML elements from the SBML documents.  Moving to
+needs testing.
+
+> When an SBML element is not used, it should not limit abstraction.
+> 
+> 

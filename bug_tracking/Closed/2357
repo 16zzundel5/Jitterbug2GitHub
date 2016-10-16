@@ -1,0 +1,41 @@
+From myers@ece.utah.edu  Fri Oct 12 15:51:14 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID,
+	SUBJECT_FUZZY_TION autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l9CLpEOa017271
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 12 Oct 2007 15:51:14 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IgSQE-00032P-25)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 12 Oct 2007 15:52:00 -0600
+Received: from [192.168.0.6] (71-213-14-55.slkc.qwest.net [71.213.14.55])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id l9CLp7KL009168
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 12 Oct 2007 15:51:07 -0600
+Subject: FEATURE: new buttons on learn tab of learn view
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Fri, 12 Oct 2007 15:49:58 -0600
+Message-Id: <1192225798.16911.68.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.9 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Add the following buttons to learn tab of learn view:
+
+1) Save Circuit - should prompt for a name and copy the method.dot file
+to a <file>.cir file and place it in the project top-level.
+
+2) View Circuit - should open method.dot in dotty
+
+3) View Log - should open run.log text viewer
+
+Chris
+
+

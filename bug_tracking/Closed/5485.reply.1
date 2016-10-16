@@ -1,0 +1,9 @@
+From: Jason Stevens <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: BUG:  Diffusible Species Not Printed Outside Compartment w/o Grid (PR#5485)
+Date: Mon Aug 22 19:03:30 2011
+
+This is a bug, but if you want membrane diffusion to occur, you need to have the
+species in the outer component/compartment as well as the inner compartment.  So
+the membrane diffusion reaction shouldn't have been created, and I'll try to
+figure out what happened.

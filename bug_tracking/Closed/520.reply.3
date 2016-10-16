@@ -1,0 +1,62 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: posets seg faults on wine example (PR#520)
+Date: Fri Jun  1 10:08:56 2001
+
+The particular command I showed in the bug report no longer reproduces
+it, because my code now generates different TEL structures.  However,
+the TEL file produced by the old code still draws the segmentation
+fault from the new code.  I have checked in the TEL file itself as
+atacs/examples/tel/wineFault.tel.  This should make it easier to
+reproduce the bug.
+
+As of cvs tag PR520followup1, this TEL structure still draws a
+segmentation fault (see below).  I am moving this back to Fatal error,
+pending resolution.
+
+
+324 xia:~> cd ~peskin/atacs/examples/tel
+325 xia:examples/tel> ../../src/atacs -msmPmTya wineFault.tel
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Loading timed event/level structure from:  wineFault.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000238)
+Finding reduced state graph ... 1967 iterations 1000 regions, 692 states
+(stack_
+depth = 636)
+memory: max=4291896 inuse=4286344 free=5552 
+4682 iterations 2000 regions, 1094 states (stack_depth = 1125)
+memory: max=6729016 inuse=6725752 free=3264 
+8856 iterations 3000 regions, 1296 states (stack_depth = 1185)
+memory: max=7818552 inuse=7806984 free=11568 
+13438 iterations 4000 regions, 1463 states (stack_depth = 1205)
+memory: max=8760632 inuse=8756016 free=4616 
+17425 iterations 5000 regions, 1772 states (stack_depth = 1193)
+memory: max=9674040 inuse=9663520 free=10520 
+21827 iterations 6000 regions, 2052 states (stack_depth = 1195)
+memory: max=10624312 inuse=10609624 free=14688 
+25977 iterations 7000 regions, 2384 states (stack_depth = 1203)
+memory: max=11603256 inuse=11592848 free=10408 
+30333 iterations 8000 regions, 2906 states (stack_depth = 1191)
+memory: max=12623160 inuse=12603064 free=20096 
+34649 iterations 9000 regions, 3220 states (stack_depth = 1218)
+memory: max=13651256 inuse=13639776 free=11480 
+40590 iterations 10000 regions, 3411 states (stack_depth = 1238)
+memory: max=14605624 inuse=14603096 free=2528 
+40605 iterations 10000 regions, 3411 states (stack_depth = 1235)
+memory: max=14609720 inuse=14592880 free=16840 
+45668 iterations 11000 regions, 3966 states (stack_depth = 1227)
+memory: max=15629624 inuse=15618952 free=10672 
+50466 iterations 12000 regions, 3982 states (stack_depth = 1219)
+memory: max=16457016 inuse=16429704 free=27312 
+55194 iterations 13000 regions, 4346 states (stack_depth = 1163)
+memory: max=17341752 inuse=17224520 free=117232 
+Segmentation fault
+326 xia:examples/tel> 

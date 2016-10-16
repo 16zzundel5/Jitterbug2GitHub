@@ -1,0 +1,86 @@
+From ibiosim@gmail.com  Tue Feb  3 10:28:08 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f43.google.com (mail-pa0-f43.google.com [209.85.220.43])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t13HS8MR021895
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 Feb 2015 10:28:08 -0700
+Received: by mail-pa0-f43.google.com with SMTP id eu11so98703357pac.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 03 Feb 2015 09:28:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=Jfcq8LgxQpj06YVQ/9Zj7YuaI5jFLSq9G2fzJ65YMFM=;
+        b=Yg2a3bvvaqjKZfFSAxzEthC4s02Zd+Vzkw/as1OMzJJ/BLEZqp/clFUpezGEq3r/pK
+         mHYW10Dsf9kaPCuVis+S2kEqcxF1Qpqmxs55VNnO9ecYy2Q6zmRVLupJX8nd8EHOimVA
+         XPoq6UVxv87gBlkM8gnn9gAa84vusIycxLJI1JCPAEfJR8UI5cM+4OOf5qM+1QU8dq3I
+         lFny8RvW9VecOn0IOafG/vP0h//mAz6JzZ4r3b9llAfUyI8Xed7vE/PIXKrXwEDylUTe
+         n/sLi82Jp7T7+Wzp7naxJVTkW/STZFzoejYVsrYVIKH1ljL3pLapz0ztGqOydA5xv6aM
+         U4MA==
+X-Received: by 10.70.33.230 with SMTP id u6mr932667pdi.119.1422984488074;
+        Tue, 03 Feb 2015 09:28:08 -0800 (PST)
+Received: from jiaqi.uconnect.utah.edu (128-110-74-170.uconnect.utah.edu. [128.110.74.170])
+        by mx.google.com with ESMTPSA id do2sm2726768pbc.23.2015.02.03.09.28.05
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Tue, 03 Feb 2015 09:28:06 -0800 (PST)
+Date: Tue, 03 Feb 2015 09:28:06 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: myers@ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1648365860.0.1422984483556.JavaMail.myers@jiaqi>
+Subject: BUG: Creating math without times
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.1
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+Constant followed by variable without times operator causes an exception.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.util.SBMLutilities.checkNumFunctionArguments(SBMLutilities.java:1023)
+	at biomodel.gui.sbmlcore.Functions.functionEditor(Functions.java:290)
+	at biomodel.gui.sbmlcore.Functions.actionPerformed(Functions.java:503)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2018)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2341)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6516)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3320)
+	at java.awt.Component.processEvent(Component.java:6281)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Component.dispatchEventImpl(Component.java:4872)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4832)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+	at java.awt.Container.dispatchEventImpl(Container.java:2273)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:708)
+	at java.awt.EventQueue$4.run(EventQueue.java:706)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+

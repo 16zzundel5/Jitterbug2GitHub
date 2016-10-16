@@ -1,0 +1,64 @@
+From curtis.madsen@utah.edu  Thu Aug 12 16:24:27 2010
+Return-Path: <curtis.madsen@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.1 required=5.0 tests=AWL,BAYES_99,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7CMORAW025266
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2010 16:24:27 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Av0EAOARZEybYbVl/2dsb2JhbAChHga0VYhkhToEhC6FMIoq
+X-IronPort-AV: E=Sophos;i="4.55,360,1278309600"; 
+   d="scan'208";a="187215623"
+Received: from h101.umail.utah.edu (HELO HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 12 Aug 2010 16:24:26 -0600
+Received: from C8V1.xds.umail.utah.edu ([fe80::64cb:16a3:45d4:3def]) by
+ HUB1.xds.umail.utah.edu ([2002:9b61:b565::9b61:b565]) with mapi; Thu, 12 Aug
+ 2010 16:24:27 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Thu, 12 Aug 2010 16:22:01 -0600
+Subject: CHANGE:  biochemical organization
+Thread-Topic: CHANGE:  biochemical organization
+Thread-Index: Acs6bLiirJTKuwb8Rmuzu4uw21IGQAAABDON
+Message-ID: <852B726894B07749AE9ABB4B055919AC63C564A139@C8V1.xds.umail.utah.edu>
+References: <1902380917.953784.1281651571985.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>,<1028219542.953882.1281651692069.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>
+In-Reply-To: <1028219542.953882.1281651692069.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+This change report is from Nic (n.roehner@utah.edu):
+
+1.  Currently, changing the parameters of biochemical influences grouped by=
+ a promoter has unexpected results.  Changing Ka or Kb for one or more infl=
+uences in a group has no effect on simulation behavior.  The only means of =
+modifying behavior is to change the parameter defaults, which makes it impo=
+ssible to create circuits with biochemical influence groups of different Ka=
+/Kb.  Changing nc for any influence in a group, however, effectively change=
+s nc for all influences in that group.  If two or more influences in a grou=
+p have different nc values, then the simulation appears to behave according=
+ to one value and not the other(s), but how this choice is made is unclear.
+
+Ideally, biochemical influences sharing the same promoter would share the s=
+ame set of parameters and appear as such in the GCM editor.  But, this pres=
+upposes that the species involved in these influences form a single biochem=
+ical species, which leads us to #2.
+
+2.  When multiple biochemical influences share the same promoter, there is =
+no way to specify that their species form multiple biochemical species, exc=
+ept by having some influences repress and others activate.  Consequently, a=
+ promoter can't be activated separately by dimers AB and CD because the GCM=
+ editor interprets this as activation via the quadrimer ABCD.
+
+In sum, we should be able to organize biochemical influences sharing the sa=
+me promoter into subgroups defined by influence type and biochemical specie=
+s formed, and each subgroup should have its own single set of parameters.
+

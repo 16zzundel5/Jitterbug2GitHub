@@ -1,0 +1,22 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: killpack@eng.utah.edu
+Subject: Re: vhdl process names can clobber eachother (PR#452)
+Date: Tue Jul 11 14:09:41 2000
+
+> Full_Name: Kip Killpack
+> Version: 
+> OS: 
+> spec: 
+> log: 
+> Submission from: chou.elen.utah.edu (155.99.23.202)
+> Submitted by: killpack
+> 
+> 
+> During compilation of a vhdl file, process names are converted to 
+> process_name.tel.
+> 
+> If two different blocks (ex: environment and synthesized unit) have a process
+> with the same name, when the design is compiled, one of the processes' tel
+> structure file will overwrite the other one.
+> 
+No longer store processes to files.

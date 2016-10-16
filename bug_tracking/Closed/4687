@@ -1,0 +1,30 @@
+From tphsiu@gmail.com  Fri Feb 20 10:53:02 2009
+Return-Path: <tphsiu@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1KHr2Bd018132
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 Feb 2009 10:53:02 -0700
+Date: Fri, 20 Feb 2009 10:53:02 -0700
+Message-Id: <200902201753.n1KHr2Bd018132@chou.ece.utah.edu>
+From: tphsiu@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: separated input for Boolean and rate assignment
+
+Full_Name: Mike Hsiu
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: chou.ece.utah.edu (155.98.27.202)
+Submitted by: hsiu
+
+
+I believe it will be a lot more user friendly if we have separate input places
+for Boolean assignment (TRUE & FALSE or a choice table) and rate assignment (for
+example, when Rate assignment check box is checked, the input row will be open
+and allow user input) instead of having it all under Assignment lower bound.
+

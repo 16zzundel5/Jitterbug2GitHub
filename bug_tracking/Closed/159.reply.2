@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@vlsigroup.elen.utah.eduhao@tang.elen.utah.edu
+Subject: Re: Add support for concurrent signal assignment statements from VHDL. (PR#159)
+Date: Thu Jul 29 23:20:31 1999
+CC: hao@vlsigroup.elen.utah.edu
+
+CSA's cannot be within a process.  This was the problem with csa.vhd.  It is 
+indeed a syntax error.  I have checked in an updated csa.vhd which now works.

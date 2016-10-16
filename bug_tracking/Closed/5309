@@ -1,0 +1,54 @@
+From moschino21@gmail.com  Thu Mar 17 14:01:20 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2HK1JCo006169
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 17 Mar 2011 14:01:19 -0600
+Received: by bwz13 with SMTP id 13so4099486bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 17 Mar 2011 13:01:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=qeqTXmFqxbDUYpK2yeNdAo33uN3/9asaaMXimJcoMKA=;
+        b=azre+IYLB7NL+0dBmK6RboFfO3RJaPiUQGRMPWVjuZ7eYG3lzrB0AbNhgjnmChVi8N
+         52RrbpCrITgv6cO55AL5Nqk8OQFqCSLWpBGGaL3dsaEz19Nh4L6ifNFhnq3TmNpiRDGf
+         2yRqst1TF17qJ6Ql4c3pOWXBSNZPVe+wp02LI=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=JNOWZoI0I5WVX2iITVWuRwP8nhT4R8Cx1ooYzct1CXbi6FsChOgVuu0is3ZDppikms
+         df0z6NdcJDodZ2VqOixtYBN3BWDtlTNDTe9rtPAO76yRd+4LBsdFbWFDGuSWmH1F2VdT
+         WEo+iXslnN7vIBMUpUbjsfYwvtuVPkGhl31Bc=
+Received: by 10.204.229.193 with SMTP id jj1mr210272bkb.21.1300392078141; Thu,
+ 17 Mar 2011 13:01:18 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.35.147 with HTTP; Thu, 17 Mar 2011 13:00:58 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Thu, 17 Mar 2011 14:00:58 -0600
+Message-ID: <AANLkTi=10g4MHGcRcX2Ns6usMjNGHO8EkpYJ5tSg3=st@mail.gmail.com>
+Subject: CHANGE: atacs regression tests take significant amount of memory
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=485b395e7ae9e2e748049eb31f3f
+
+--485b395e7ae9e2e748049eb31f3f
+Content-Type: text/plain; charset=ISO-8859-1
+
+Changes that have been made to atacs since 1/1/2011 now cause significant
+amount of memory usage for the regression tests on ming.ece.utah.edu.
+
+-- 
+Zhen Zhang
+
+--485b395e7ae9e2e748049eb31f3f
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Changes that have been made to atacs since 1/1/2011 now cause significant a=
+mount of memory usage for the regression tests on <a href=3D"http://ming.ec=
+e.utah.edu">ming.ece.utah.edu</a>.=A0<br clear=3D"all"><br>-- <br>Zhen Zhan=
+g<br>
+
+
+
+--485b395e7ae9e2e748049eb31f3f--
+

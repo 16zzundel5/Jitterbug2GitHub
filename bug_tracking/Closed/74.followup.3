@@ -1,0 +1,51 @@
+From myers@jiaqi.elen.utah.edu  Thu May 20 15:03:45 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id PAA02666 for <atacs-bugs@shang.elen.utah.edu>; Thu, 20 May 1999 15:03:44 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id PAA01551
+	for atacs-bugs@shang.elen.utah.edu; Thu, 20 May 1999 15:03:19 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905202103.PAA01551@jiaqi.elen.utah.edu>
+Subject: Re: Environment process must be at the bottom if the outputs are ommitted from the declarations. (PR#74)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Thu, 20 May 1999 15:03:18 -0600 (MDT)
+In-Reply-To: <199905202043.OAA02595@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 20, 99 02:43:52 pm
+Content-Type: text
+
+> 
+> What is 
+> >The testbench type of process
+> ?
+> 
+> (Sorry if that is from the group meeting I missed.)
+> 
+> 
+Example below:
+
+/*****************************************************************************/
+/* Lazy-active/Passive Buffer w/added state variable to solve CSC.           */
+/*****************************************************************************/
+module lapb;
+
+delay env = <100,inf>;
+delay gatedelay = <1,5>;
+
+input li = {false,env};
+input ri = {false,env};
+output lo = {false,gatedelay};
+output ro = {false,gatedelay};
+output x = {false,gatedelay};
+
+process lapbctrl;
+*[ [li-@]; lo+; x+; [li+]; lo-; 
+   [ri+]; ro+; x-; [ri-]; ro- ]
+endprocess
+
+testbench left;
+*[ [lo+]; li+; [lo-]; li- ]
+endtestbench
+
+testbench right;
+*[ ri+; [ro+]; ri-; [ro-] ]
+endtestbench
+
+endmodule

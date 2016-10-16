@@ -1,0 +1,90 @@
+From atacs-bugs@chou.ece.utah.edu  Tue May 25 06:33:21 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i4PCXKc7025358
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 25 May 2004 06:33:20 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i4PCXKW6025356
+	for atacs-bugs@shang.elen.utah.edu; Tue, 25 May 2004 06:33:20 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.99.23.210])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i4PCXJc7025345;
+	Tue, 25 May 2004 06:33:19 -0600
+Received: from ming.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by ming.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i4PCYLMt020539;
+	Tue, 25 May 2004 06:34:21 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.12.8/8.12.8/Submit) id i4PCYK87020535;
+	Tue, 25 May 2004 06:34:20 -0600
+Date: Tue, 25 May 2004 06:34:20 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200405251234.i4PCYK87020535@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+   peskin@vlsigroup.ece.utah.edu
+Subject: BAD1255 broken repository!
+
+Linux ming 2.4.20-27.9 #1 Thu Dec 11 13:22:41 EST 2003 i686 i686 i386 GNU/Linux
+cputime 	unlimited
+filesize 	unlimited
+datasize 	unlimited
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+vmemoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2044 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[2]: *** [.mul1.prs-tsys] Error 152
+make[1]: *** [hse/check.subDir] Error 2
+make: *** [posets] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

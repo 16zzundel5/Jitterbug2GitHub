@@ -1,0 +1,9 @@
+From: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: a model with no failure transitions should abstract to nothing (PR#5235)
+Date: Wed Jan 26 04:42:03 2011
+
+This should be fixed.  The problem that I found was that the "Remove
+Uninteresting Variables" was not on the list 
+of default transforms.  This was fixed.  Let me know if there is still a
+problem.  Moving to needs testing.

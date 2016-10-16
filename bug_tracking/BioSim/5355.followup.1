@@ -1,0 +1,45 @@
+From moschino21@gmail.com  Sat Sep 26 13:21:14 2015
+Return-Path: <moschino21@gmail.com>
+Received: from mail-oi0-f49.google.com (mail-oi0-f49.google.com [209.85.218.49])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8QJLDKW012258
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 26 Sep 2015 13:21:13 -0600
+Received: by oiww128 with SMTP id w128so73331316oiw.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 26 Sep 2015 12:21:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=SriXfLqjxMg1a3oG7qwx0intjY4XeysnE6poMUe/sqQ=;
+        b=KgUkOxl6BXoF1QHdlPl+fRb4ngMN2/an8o71QkWYPD5e2lPx2A1N6pWUNLp8umoUYX
+         v+lD7DOu8fvihjA8pLEhb1USw9olpQysLzCAgmmOD9YRcSdIwB5XWhV/evC2ISuuReYS
+         bzThsIe2qHfLKLrL9vyczTxZTXSJTCbHQTX3p6/3oXJhdYs6H+IJMPR5TpQlaMvGFVmj
+         rZ2LZJP1PTCfzNQZ/eUH+YvilMkH+ZOElm7VbNYOe16ioatE04uXF9QUz1f1aMpqkaL1
+         SJiJrZt8o3ReLtZEy8vfY/MGp7zCjrMBuw+tiyBx0UFOVDfRYQ04wlFtOPQmVH0O82Yv
+         RnMA==
+X-Received: by 10.202.232.12 with SMTP id f12mr5501053oih.122.1443295273084;
+ Sat, 26 Sep 2015 12:21:13 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Sat, 26 Sep 2015 12:20:33 -0700 (PDT)
+In-Reply-To: <201509152223.t8FMNtxI011169@chou.ece.utah.edu>
+References: <201509152223.t8FMNtxI011169@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Sat, 26 Sep 2015 13:20:33 -0600
+Message-ID: <CA+LVOvnuK-gkh0ZA849NkFLv+OwwO+0J=PAttqo40yK85BPTsg@mail.gmail.com>
+Subject: Re: FEATURE:compile VHDL assertions to LPN fail transitions (PR#5355)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+It compiles to some transitions, but not failure transitions.
+
+On Tue, Sep 15, 2015 at 4:23 PM, Chris Myers
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+> I think this already is working.
+>
+> Please test.
+>
+
+
+
+-- 
+Zhen Zhang
+

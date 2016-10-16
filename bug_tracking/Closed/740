@@ -1,0 +1,122 @@
+From atacs-bugs  Wed Feb  5 05:05:18 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h15C5Ij06542
+	for atacs-bugs@shang.elen.utah.edu; Wed, 5 Feb 2003 05:05:18 -0700
+Received: from ming.ece.utah.edu (IDENT:root@ming.ece.utah.edu [155.99.23.210])
+	by chou.ece.utah.edu (8.11.6/8.11.6) with ESMTP id h15C5FG06307;
+	Wed, 5 Feb 2003 05:05:15 -0700
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.11.6/8.11.6) id h15BxSO14581;
+	Wed, 5 Feb 2003 04:59:28 -0700
+Date: Wed, 5 Feb 2003 04:59:28 -0700
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200302051159.h15BxSO14581@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+   peskin@vlsigroup.ece.utah.edu
+Subject: BAD826 broken repository!
+
+Linux ming.ece.utah.edu 2.4.18-19.7.x #1 Thu Dec 12 09:00:42 EST 2002 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	unlimited
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2044 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+compare - There were 1 unmatched literals.
+make[3]: *** [.PP.PP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 1
+make[2]: *** [PP/PP.VHDLtest] Error 2
+compare - There were 6 unmatched outputs.
+compare - There were 6 unmatched product terms.
+compare - There were 8 unmatched literals.
+make[3]: *** [.PA.PA.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 20
+make[2]: *** [PA/PA.VHDLtest] Error 2
+compare - There were 3 unmatched outputs.
+compare - There were 3 unmatched product terms.
+compare - There were 3 unmatched literals.
+make[3]: *** [.AP.AP.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 9
+make[2]: *** [AP/AP.VHDLtest] Error 2
+compare - There were 3 unmatched outputs.
+compare - There were 3 unmatched product terms.
+compare - There were 4 unmatched literals.
+make[3]: *** [.AA.AA.prs-oioqtbG1-2ys.._.._bin_compare_literals-i.OK] Error 10
+make[2]: *** [AA/AA.VHDLtest] Error 2
+make[1]: *** [vhd/VHDLtests.subDir] Error 2
+make: *** [channelTests] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/atacs.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 011001
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> x_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+./vhd/newMerge.log:ERROR: Safety violation for rule $z_Source -> y_rcv-.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

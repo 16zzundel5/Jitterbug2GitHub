@@ -1,0 +1,7 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: view graph needs to wait for atacs to complete before opening the dot file (PR#4631)
+Date: Fri Jan 23 16:50:31 2009
+
+Double check that every exec of atacs to display a graph has a wait for before
+the open.  

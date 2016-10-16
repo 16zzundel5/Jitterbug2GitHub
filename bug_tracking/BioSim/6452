@@ -1,0 +1,357 @@
+From myers@eng.utah.edu  Fri Dec  4 15:14:09 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id tB4ME8Yg031632
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 4 Dec 2015 15:14:08 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1a4ycB-000KeK-TS)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 04 Dec 2015 15:14:08 -0700
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.232])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1a4yc8-0004Yr-Tv
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 04 Dec 2015 15:14:05 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_BB8F5E20-CF8B-41ED-A182-00A96521331E"
+Subject: BUG: atacs not working on windows
+Date: Fri, 4 Dec 2015 15:14:01 -0700
+References: <CA+uipg_UsMs2zO-ioP64uF=MkBEOPiasM-G_WjtY3H3y0zLrtQ@mail.gmail.com>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <179A9E99-4AD8-4539-A028-F3B41F78A24F@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.2 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_BB8F5E20-CF8B-41ED-A182-00A96521331E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+> Begin forwarded message:
+>=20
+> Date: November 29, 2015 at 1:26:49 PM MST
+> Subject: Re: ATACS errors
+> From: Victor Avila <vic.avi88@gmail.com>
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+>=20
+> So I tried the command line approach and I got the following console =
+output:
+>=20
+> C:\ATACS\lpn\lpn>C:\ATACS\bin\atacs.exe -M4 -tuogyspn cdp.lpn
+> ATACS VERSION 6.0
+> Logging session in:  atacs.log
+> Changing maximum transistor stack size from 4 to 4.
+> Using no timing analysis.
+> Now generating generalized C-implementations.
+> Using single-cube algorithm for synthesis.
+> ERROR:  Cannot access cdp.rsg!
+> ERROR: cdp.rsg is not a valid rsg file!
+> Display net only works after finding a cover.
+>=20
+> This is the second approach that has stated something about the .rsg =
+files, which were not included in the test cases I have.=20
+>=20
+> As for the synthesis view names, I just used alphanumeric names, no =
+special characters.=20
+>=20
+> -V
+>=20
+> On Sat, Nov 28, 2015 at 6:41 PM, Chris J. Myers <myers@ece.utah.edu =
+<mailto:myers@ece.utah.edu>> wrote:
+> One more shot in the dark.  What is the directory for your project and =
+what name did you give your synthesis view?  We sometimes have issues =
+with spaces or symbols in these causing problems.
+>=20
+> You can potentially try to run directly by opening a command prompt =
+(DOS) window.  Changing to the directory where your synthesis view =
+directory is.  Then doing:
+>=20
+> C:\ATACS\bin\atacs.exe -M4 -tuogyspn ALU1.lpn
+>=20
+> If neither of these things work, I likely will need to take a look.
+>=20
+> Chris
+>=20
+>> On Nov 28, 2015, at 5:20 PM, Victor Avila <vic.avi88@gmail.com =
+<mailto:vic.avi88@gmail.com>> wrote:
+>>=20
+>> Also*
+>>=20
+>> On Sat, Nov 28, 2015 at 5:20 PM, Victor Avila <vic.avi88@gmail.com =
+<mailto:vic.avi88@gmail.com>> wrote:
+>> ALos, I'm using Win 7
+>>=20
+>> -V
+>>=20
+>> On Sat, Nov 28, 2015 at 5:14 PM, Victor Avila <vic.avi88@gmail.com =
+<mailto:vic.avi88@gmail.com>> wrote:
+>> I tried the steps you described with the file you provided and i =
+still got the same result.=20
+>>=20
+>> PS: ATACS doesn't seem to like to be installed in a directory other =
+than C, as it appears that the uninstall program is hard coded to remove =
+the program from the C drive.
+>>=20
+>> On Sat, Nov 28, 2015 at 4:19 PM, Chris J. Myers <myers@ece.utah.edu =
+<mailto:myers@ece.utah.edu>> wrote:
+>> This is very odd.  I just tried this on my computer, and it is =
+working.  I did the following
+>>=20
+>> File -> Import -> LPN Model
+>> Right click and Create Synthesis View
+>> Then pressed play and a circuit was created.
+>>=20
+>> Attached is the file I ran it on. =20
+>>=20
+>> ATACS is actually a GUI front-end to a command line tool, atacs.  The =
+command being run is:
+>>=20
+>> atacs -M4 -tuogyspn ALU1.lpn
+>>=20
+>> You could try going to the project directory and running this command =
+directly. =20
+>>=20
+>> BTW, which OS are you running on?
+>>=20
+>> Chris
+>>=20
+>>=20
+>>=20
+>>=20
+>>> On Nov 28, 2015, at 12:26 PM, Victor Avila <vic.avi88@gmail.com =
+<mailto:vic.avi88@gmail.com>> wrote:
+>>>=20
+>>> I started with the ALU1.lpn file, I created a new project then added =
+LPN file via File > Import. I then right clicked on the file and =
+selected "Create Synthesis View." I have tried leaving most of the =
+default settings alone, with the exception of "Other Options" which I =
+have changed to either quiet or verbose. I then click the play button =
+then get the error.
+>>>=20
+>>> I have attached the ATACS.log file.
+>>>=20
+>>> -V
+>>>=20
+>>>=20
+>>> On Sat, Nov 28, 2015 at 12:13 PM, Chris J. Myers <myers@ece.utah.edu =
+<mailto:myers@ece.utah.edu>> wrote:
+>>> Can you send me an example that you are trying (or tell me which =
+one)?  Also, can you tell me the steps you are taking exactly?
+>>>=20
+>>> Chris
+>>>=20
+>>> > On Nov 28, 2015, at 11:48 AM, Victor Avila <vic.avi88@gmail.com =
+<mailto:vic.avi88@gmail.com>> wrote:
+>>> >
+>>> > Dr. Myers,
+>>> >
+>>> > I am trying to open some of the test cases you gave me with the =
+ATACS program and I keep running into an error stating that no trace =
+files exist? I want to visualize the STG's you provided so I can better =
+understand the file, but ATACS doesn't seem to want to play nice.
+>>> >
+>>> > Any ideas on how I could resolve this?
+>>> >
+>>> > Thanks,
+>>> >
+>>> > Victor Avila
+>>>=20
+>>>=20
+>>> <atacs.log><run.log>
+>>=20
+>>=20
+>>=20
+>>=20
+>>=20
+>=20
+>=20
+
+
+--Apple-Mail=_BB8F5E20-CF8B-41ED-A182-00A96521331E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">November 29, 2015 at 1:26:49 PM =
+MST<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Re: ATACS =
+errors</b><br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Victor Avila &lt;<a =
+href=3D"mailto:vic.avi88@gmail.com" =
+class=3D"">vic.avi88@gmail.com</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;" class=3D"">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+class=3D"">myers@ece.utah.edu</a>&gt;<br class=3D""></span></div><br =
+class=3D""><div class=3D""><div dir=3D"ltr" class=3D"">So I tried the =
+command line approach and I got the following console output:<div =
+class=3D""><div class=3D""><br class=3D""></div><div =
+class=3D"">C:\ATACS\lpn\lpn&gt;C:\ATACS\bin\atacs.exe -M4 -tuogyspn =
+cdp.lpn</div><div class=3D"">ATACS VERSION 6.0</div><div =
+class=3D"">Logging session in: &nbsp;atacs.log</div><div =
+class=3D"">Changing maximum transistor stack size from 4 to 4.</div><div =
+class=3D"">Using no timing analysis.</div><div class=3D"">Now generating =
+generalized C-implementations.</div><div class=3D"">Using single-cube =
+algorithm for synthesis.</div><div class=3D"">ERROR: &nbsp;Cannot access =
+cdp.rsg!</div><div class=3D"">ERROR: cdp.rsg is not a valid rsg =
+file!</div><div class=3D"">Display net only works after finding a =
+cover.</div></div><div class=3D""><br class=3D""></div><div =
+class=3D"">This is the second approach that has stated something about =
+the .rsg files, which were not included in the test cases I =
+have.&nbsp;</div><div class=3D""><br class=3D""></div><div class=3D"">As =
+for the synthesis view names, I just used alphanumeric names, no special =
+characters.&nbsp;</div><div class=3D""><br class=3D""></div><div =
+class=3D"">-V</div></div><div class=3D"gmail_extra"><br class=3D""><div =
+class=3D"gmail_quote">On Sat, Nov 28, 2015 at 6:41 PM, Chris J. Myers =
+<span dir=3D"ltr" class=3D"">&lt;<a href=3D"mailto:myers@ece.utah.edu" =
+target=3D"_blank" class=3D"">myers@ece.utah.edu</a>&gt;</span> wrote:<br =
+class=3D""><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex"><div =
+style=3D"word-wrap:break-word" class=3D""><div class=3D"">One more shot =
+in the dark.&nbsp; What is the directory for your project and what name =
+did you give your synthesis view?&nbsp; We sometimes have issues with =
+spaces or symbols in these causing problems.</div><div class=3D""><br =
+class=3D""></div><div class=3D"">You can potentially try to run directly =
+by opening a command prompt (DOS) window.&nbsp; Changing to the =
+directory where your synthesis view directory is.&nbsp; Then =
+doing:</div><div class=3D""><br class=3D""></div><div =
+class=3D"">C:\ATACS\bin\atacs.exe -M4 -tuogyspn ALU1.lpn</div><div =
+class=3D""><br class=3D""></div><div class=3D"">If neither of these =
+things work, I likely will need to take a look.</div><span =
+class=3D"HOEnZb"><font color=3D"#888888" class=3D""><div class=3D""><br =
+class=3D""></div><div class=3D"">Chris</div></font></span><div =
+class=3D""><div class=3D"h5"><br class=3D""><div class=3D""><blockquote =
+type=3D"cite" class=3D""><div class=3D"">On Nov 28, 2015, at 5:20 PM, =
+Victor Avila &lt;<a href=3D"mailto:vic.avi88@gmail.com" target=3D"_blank" =
+class=3D"">vic.avi88@gmail.com</a>&gt; wrote:</div><br class=3D""><div =
+class=3D""><div dir=3D"ltr" class=3D"">Also*</div><div =
+class=3D"gmail_extra"><br class=3D""><div class=3D"gmail_quote">On Sat, =
+Nov 28, 2015 at 5:20 PM, Victor Avila <span dir=3D"ltr" class=3D"">&lt;<a =
+href=3D"mailto:vic.avi88@gmail.com" target=3D"_blank" =
+class=3D"">vic.avi88@gmail.com</a>&gt;</span> wrote:<br =
+class=3D""><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"ltr" =
+class=3D"">ALos, I'm using Win 7<span class=3D""><font color=3D"#888888" =
+class=3D""><div class=3D""><br class=3D""></div><div =
+class=3D"">-V</div></font></span></div><div class=3D""><div =
+class=3D""><div class=3D"gmail_extra"><br class=3D""><div =
+class=3D"gmail_quote">On Sat, Nov 28, 2015 at 5:14 PM, Victor Avila =
+<span dir=3D"ltr" class=3D"">&lt;<a href=3D"mailto:vic.avi88@gmail.com" =
+target=3D"_blank" class=3D"">vic.avi88@gmail.com</a>&gt;</span> =
+wrote:<br class=3D""><blockquote class=3D"gmail_quote" style=3D"margin:0 =
+0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"ltr" =
+class=3D"">I tried the steps you described with the file you provided =
+and i still got the same result.&nbsp;<div class=3D""><br =
+class=3D""></div><div class=3D"">PS: ATACS doesn't seem to like to be =
+installed in a directory other than C, as it appears that the uninstall =
+program is hard coded to remove the program from the C =
+drive.</div></div><div class=3D"gmail_extra"><br class=3D""><div =
+class=3D"gmail_quote"><div class=3D""><div class=3D"">On Sat, Nov 28, =
+2015 at 4:19 PM, Chris J. Myers <span dir=3D"ltr" class=3D"">&lt;<a =
+href=3D"mailto:myers@ece.utah.edu" target=3D"_blank" =
+class=3D"">myers@ece.utah.edu</a>&gt;</span> wrote:<br =
+class=3D""></div></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+ 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div =
+class=3D""><div class=3D""><div style=3D"word-wrap:break-word" =
+class=3D"">This is very odd.&nbsp; I just tried this on my computer, and =
+it is working.&nbsp; I did the following<div class=3D""><br =
+class=3D""></div><div class=3D"">File -&gt; Import -&gt; LPN =
+Model</div><div class=3D"">Right click and Create Synthesis =
+View</div><div class=3D"">Then pressed play and a circuit was =
+created.</div><div class=3D""><br class=3D""></div><div =
+class=3D"">Attached is the file I ran it on. &nbsp;</div><div =
+class=3D""><br class=3D""></div><div class=3D"">ATACS is actually a GUI =
+front-end to a command line tool, atacs.&nbsp; The command being run =
+is:</div><div class=3D""><br class=3D""></div><div class=3D"">atacs -M4 =
+-tuogyspn ALU1.lpn</div><div class=3D""><br class=3D""></div><div =
+class=3D"">You could try going to the project directory and running this =
+command directly. &nbsp;</div><div class=3D""><br class=3D""></div><div =
+class=3D"">BTW, which OS are you running on?</div><span class=3D""><font =
+color=3D"#888888" class=3D""><div class=3D""><br class=3D""></div><div =
+class=3D"">Chris</div><div class=3D""><br class=3D""></div><div =
+class=3D""></div></font></span></div><br class=3D""></div></div><div =
+style=3D"word-wrap:break-word" class=3D""><div class=3D""><br =
+class=3D""><div class=3D""><br class=3D""><div class=3D""><blockquote =
+type=3D"cite" class=3D""><span class=3D""><div class=3D"">On Nov 28, =
+2015, at 12:26 PM, Victor Avila &lt;<a href=3D"mailto:vic.avi88@gmail.com"=
+ target=3D"_blank" class=3D"">vic.avi88@gmail.com</a>&gt; =
+wrote:</div><br class=3D""></span><div class=3D""><div class=3D""><div =
+class=3D""><div dir=3D"ltr" class=3D"">I started with the ALU1.lpn file, =
+I created a new project then added LPN file via File &gt; Import. I then =
+right clicked on the file and selected "Create Synthesis View." I have =
+tried leaving most of the default settings alone, with the exception of =
+"Other Options" which I have changed to either quiet or verbose. I then =
+click the play button then get the error.<div class=3D""><br =
+class=3D""></div><div class=3D"">I have attached the ATACS.log file.<br =
+class=3D""><div class=3D""><br class=3D""></div><div =
+class=3D"">-V</div><div class=3D""><br class=3D""></div></div></div><div =
+class=3D"gmail_extra"><br class=3D""><div class=3D"gmail_quote">On Sat, =
+Nov 28, 2015 at 12:13 PM, Chris J. Myers <span dir=3D"ltr" =
+class=3D"">&lt;<a href=3D"mailto:myers@ece.utah.edu" target=3D"_blank" =
+class=3D"">myers@ece.utah.edu</a>&gt;</span> wrote:<br =
+class=3D""><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex">Can you send me an =
+example that you are trying (or tell me which one)?&nbsp; Also, can you =
+tell me the steps you are taking exactly?<br class=3D"">
+<span class=3D""><font color=3D"#888888" class=3D""><br class=3D"">
+Chris<br class=3D"">
+</font></span><div class=3D""><div class=3D""><br class=3D"">
+&gt; On Nov 28, 2015, at 11:48 AM, Victor Avila &lt;<a =
+href=3D"mailto:vic.avi88@gmail.com" target=3D"_blank" =
+class=3D"">vic.avi88@gmail.com</a>&gt; wrote:<br class=3D"">
+&gt;<br class=3D"">
+&gt; Dr. Myers,<br class=3D"">
+&gt;<br class=3D"">
+&gt; I am trying to open some of the test cases you gave me with the =
+ATACS program and I keep running into an error stating that no trace =
+files exist? I want to visualize the STG's you provided so I can better =
+understand the file, but ATACS doesn't seem to want to play nice.<br =
+class=3D"">
+&gt;<br class=3D"">
+&gt; Any ideas on how I could resolve this?<br class=3D"">
+&gt;<br class=3D"">
+&gt; Thanks,<br class=3D"">
+&gt;<br class=3D"">
+&gt; Victor Avila<br class=3D"">
+<br class=3D"">
+</div></div></blockquote></div><br class=3D""></div>
+</div></div><span class=3D"">&lt;atacs.log&gt;</span><span =
+class=3D"">&lt;run.log&gt;</span></div></blockquote></div><br =
+class=3D""></div></div></div><br class=3D""></blockquote></div><br =
+class=3D""></div>
+</blockquote></div><br class=3D""></div>
+</div></div></blockquote></div><br class=3D""></div>
+</div></blockquote></div><br =
+class=3D""></div></div></div></blockquote></div><br class=3D""></div>
+</div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_BB8F5E20-CF8B-41ED-A182-00A96521331E--
+

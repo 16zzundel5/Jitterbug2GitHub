@@ -1,0 +1,41 @@
+From curtis.madsen@utah.edu  Tue Sep  7 17:53:09 2010
+Return-Path: <curtis.madsen@utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.0 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o87Nr93c007961
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 7 Sep 2010 17:53:09 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApsEAHdthkybYbVn/2dsb2JhbAChe7kViB2FPQSEQ4VVinA
+X-IronPort-AV: E=Sophos;i="4.56,331,1280728800"; 
+   d="scan'208";a="369121865"
+Received: from h103.umail.utah.edu (HELO HUB3.xds.umail.utah.edu) ([155.97.181.103])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 07 Sep 2010 17:53:09 -0600
+Received: from C8V1.xds.umail.utah.edu ([fe80::583d:fcfd:7eda:76a2]) by
+ HUB3.xds.umail.utah.edu ([2002:9b61:b567::9b61:b567]) with mapi; Tue, 7 Sep
+ 2010 17:53:08 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Tue, 7 Sep 2010 17:48:46 -0600
+Subject: BUG: Unable to delete local parameters in SBML Editor
+Thread-Topic: Unable to delete local parameters in SBML Editor
+Thread-Index: AQHLTufSKcxZvrJuIkK8Y4VUKVaS8g==
+Message-ID: <852B726894B07749AE9ABB4B055919AC64B2C23D36@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+The SBML Editor doesn't always allow a user to delete local parameters clai=
+ming that they are used in the kinetic law.  This is due to the fact that t=
+he SBML Editor loads in information from the currently selected reaction, a=
+nd if a new reaction is being created, then this reaction is a different re=
+action with a different kinetic law.=
+

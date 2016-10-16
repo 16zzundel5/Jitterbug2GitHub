@@ -1,0 +1,161 @@
+From peskin@cs.utah.edu  Sun Apr  4 22:00:39 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id WAA23799 for <atacs-bugs@ming.elen.utah.edu>; Sun, 4 Apr 1999 22:00:38 -0600 (MDT)
+Date: Sun, 4 Apr 1999 22:00:38 -0600 (MDT)
+From: peskin@cs.utah.edu
+Message-Id: <199904050400.WAA23799@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Some versions of newsel produced wildly different results from orbits.
+
+Full_Name: Eric Robert Peskin
+Version: Apr  4 20:58 /home/shang/peskin/atacs/atacs*
+OS: Linux ming.elen.utah.edu 2.0.36 #1 Tue Oct 13 22:17:11 EDT 1998 i686 unknown
+source: 
+log: 
+Submission from: slip87.cs.utah.edu (155.99.200.87)
+Submitted by: peskin
+
+
+With the default settings, I get 
+   6261    6284  106533 newsel.rsg
+But with with orbits, I get
+    481     504    8273 newsel.rsg
+See the session below (newsel.csp is appended at the end).
+
+08 ming:~/examples/csp> pwd
+/home/shang/peskin/examples/csp
+109 ming:~/examples/csp> date
+Sun Apr  4 21:51:33 MDT 1999
+110 ming:~/examples/csp> atacs
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+atacs> loadcsp newsel
+Compiling newsel.csp ...
+Storing process main to main.er
+Storing process selmodule to selmodule.er
+Storing process in to in.er
+Storing process sel1 to sel1.er
+Storing process sel2 to sel2.er
+Storing process out1 to out1.er
+Storing process out2 to out2.er
+Storing process out3 to out3.er
+Storing process newsel to newsel.er
+Storing process newsel to newsel.er
+Loading timed event-rule structure from:  newsel.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 2 unconnected nodes.
+Initializing 3 cycles ... done
+atacs> findrsg
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph and storing to:  newsel.rsg
+atacs> wc newsel.rsg
+   6261    6284  106533 newsel.rsg
+atacs> orbits
+Using Orbits to obtain state graphs.
+atacs> loadcsp newsel
+Compiling newsel.csp ...
+Storing process main to main.er
+Storing process selmodule to selmodule.er
+Storing process in to in.er
+Storing process sel1 to sel1.er
+Storing process sel2 to sel2.er
+Storing process out1 to out1.er
+Storing process out2 to out2.er
+Storing process out3 to out3.er
+Storing process newsel to newsel.er
+Storing process newsel to newsel.er
+Loading timed event-rule structure from:  newsel.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 2 unconnected nodes.
+Initializing 3 cycles ... done
+atacs> findrsg
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Storing orbits specification file to:  newsel.spec
+Executing command:  orbits < findrsg > output
+Loading state graph in grf format from:  newsel.osg
+Finding reduced state graph and storing to:  newsel.rsg
+atacs> wc newsel.rsg
+    481     504    8273 newsel.rsg
+atacs> cat newsel.csp
+module selmodule;
+
+input ini;
+output ino = {<101,235>};
+
+output selo = {<101,235>};
+input sel1i;
+input sel2i;
+
+output out1o = {<101,235>};
+input out1i;
+
+output out2o = {<101,235>};
+input out2i;
+
+process main;
+*[ [ini+]; ino+; [ini-]; ino-; [sel1i-@ | sel2i-@]; selo+;
+   [ sel1i+ & out1i-@ -> out1o+; [out1i+]; selo-; out1o-
+   | sel2i+ & out2i-@ -> out2o+; [out2i+]; selo-; out2o-
+   ]
+ ]
+endprocess
+endmodule
+
+module newsel;
+
+input out1i = {<328,761;200,468>};
+input out2i = {<328,761;200,468>};
+input out3i = {<328,761;200,468>};
+input in0 = {<479,951>};
+input sel10i = {<329,762;201,469>};
+input sel20i = {<329,762;201,469>};
+input sel11i = {<329,762;201,469>};
+input sel21i = {<329,762;201,469>};
+
+selmodule sel1(ini => in0,ino => in1,selo => sel1o,sel1i => sel10i,
+               sel2i => sel11i, out1o => out1o, out1i => out1i, out2o => x1,
+               out2i => x2);
+
+selmodule sel2(ini => x1,ino => x2,selo => sel2o,sel1i => sel20i,
+               sel2i => sel21i, out1o => out2o, out1i => out2i,
+               out2o => out3o, out2i => out3i);
+
+process in;
+*[ in0+; [in1+]; in0-; [in1-] ]
+endprocess
+
+process sel1;
+*[ [sel1o+]; [ skip -> sel10i+; [sel1o-]; sel10i-
+             | skip -> sel11i+; [sel1o-]; sel11i-
+           ]
+ ]
+endprocess
+
+process sel2;
+*[ [sel2o+]; [ skip -> sel20i+; [sel2o-]; sel20i-
+             | skip -> sel21i+; [sel2o-]; sel21i-
+           ]
+ ]
+endprocess
+
+process out1;
+*[ [out1o+]; out1i+; [out1o-]; out1i- ]
+endprocess
+
+process out2;
+*[ [out2o+]; out2i+; [out2o-]; out2i- ]
+endprocess
+
+process out3;
+*[ [out3o+]; out3i+; [out3o-]; out3i- ]
+endprocess
+endmodule
+
+
+
+atacs>
+

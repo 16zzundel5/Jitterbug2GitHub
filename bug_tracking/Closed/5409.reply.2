@@ -1,0 +1,8 @@
+From: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: issue with generated species names (PR#5409)
+Date: Thu Aug  4 17:20:31 2011
+
+During generation, need to check all usedIds to ensure there is no aliasing OR
+reuse of an ID.  For example, adding a species that has the same id as a
+reaction or an event should be prevented.

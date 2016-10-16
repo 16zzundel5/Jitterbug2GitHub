@@ -1,0 +1,40 @@
+From ibiosim@gmail.com  Mon Feb 18 21:52:15 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f177.google.com (mail-ie0-f177.google.com [209.85.223.177])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1J4qFJ3009177
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Feb 2013 21:52:15 -0700
+Received: by mail-ie0-f177.google.com with SMTP id 16so8105519iea.36
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Feb 2013 20:52:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=NDafYHr9P6JD7YdVWx1Dw/21IHirzeRpqSU7IaG8DTs=;
+        b=i1bae6trUeTO7Sd41txDFvJHu+bOqVLDfZB9RRWenwdI3k3aCFbB8xQ5kuaT12CXxX
+         V9PFE/poP+CbG9S627SPhV/04j9VfiZZpO1RAfuZ/FPv4MK4U0dl/hWBaaheYp+l/Oi8
+         6vLAi/1icjYW81LSm5vJ4N8dStnzUKM74NJU9FJtwlNxFrU3nJ3NVbjJwbnTYh732XT+
+         QS1GEnKNIijO16zoZXHBOw85YgSzgUXSqKDTnMjbbgJ9ZSbtgDGzx59tTQIC7T9fif2I
+         3qqhU03QYevtZJBhss0KxKx7sA4Udlk8sWbpY1NgY/BMWDSDV65RDrUA51ThZKRBgkxH
+         NhbQ==
+X-Received: by 10.50.183.167 with SMTP id en7mr8570844igc.58.1361249534348;
+        Mon, 18 Feb 2013 20:52:14 -0800 (PST)
+Received: from gargravarr (c-76-23-51-50.hsd1.ut.comcast.net. [76.23.51.50])
+        by mx.google.com with ESMTPS id ww6sm10316320igb.2.2013.02.18.20.52.12
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Mon, 18 Feb 2013 20:52:13 -0800 (PST)
+Date: Mon, 18 Feb 2013 20:52:13 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <362764163.0.1361249530259.JavaMail.jeff@gargravarr>
+Subject: BUG: analysis tool incorrectly creates rules from components
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+As I was trying to simulate my Host Interaction model I ran into some issues.  To simplify the model as I was working on it, I used two different components to make a hierachical model.  When I try running an ODE simulation I get an error saying The reb2sac program returned 255 as an exit value.  I investigated the issue some more and found that if I make a flattened sbml model I could see what was wrong.  Somehow, when flattening the model, the variables for my rules were not correctly created:
+
+Where a rule should have said "tlr_activation_function(Adherent, C1__MG_309, C1__MG_309, C1__tlr_activation_constant)", the variables from the function were incorrectly entered as "tlr_activation_function(Adherent, MG_309, MG_309, C1__tlr_activation_constant)".  I found that if I went through all of my rules and added the necessary prefixes the all the variables, then the simulation would run just fine.
+

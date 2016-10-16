@@ -1,0 +1,236 @@
+From killpack@eng.utah.edu  Tue May  2 15:59:17 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA25085
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 2 May 2000 15:59:16 -0600
+Date: Tue, 2 May 2000 15:59:16 -0600
+From: killpack@eng.utah.edu
+Message-Id: <200005022159.PAA25085@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: vhdl'isms
+
+Full_Name: Kip Killpack
+Version: checkout Tues may 2
+OS: 
+spec: 
+log: 
+Submission from: chou.elen.utah.edu (155.99.23.202)
+Submitted by: killpack
+
+
+Here is a vhdl top level file with environment and unit under test files.
+
+1) when I declare intermediate signals (from the and2 gate to the environment)
+that have no inital value, I get a disabling error.
+
+2) When I declare signals with initial values, atacs says it is not complete
+state
+coded
+
+3) If I comment ALL the intermediate signals out, the synthesis completes
+with no csc violation. (but this can't be simulated in vhdl)
+
+Kip
+
+command line: atacs -mV -mz -mU -mP -mT -ms -mD -lh -M20 -ya -sv and2_a_top.vhd
+
+FILES
+TOP::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+
+ENTITY and2_a_top IS
+END and2_a_top;
+
+ARCHITECTURE behavior of and2_a_top IS
+  component and2_a_env
+    PORT(
+      c0 : IN std_logic;
+      c1 : IN std_logic;
+      en : IN std_logic;
+      a0 : INOUT std_logic := '0';
+      a1 : INOUT std_logic := '0';
+      b0 : INOUT std_logic := '0';
+      b1 : INOUT std_logic := '0';
+      ce : INOUT std_logic := '0'
+      );
+  END component;
+
+  component and2_a
+    PORT(
+      c0 : INOUT std_logic := '0';
+      c1 : INOUT std_logic := '0';
+      en : INOUT std_logic := '1';
+      a0 : IN std_logic;
+      a1 : IN std_logic;
+      b0 : IN std_logic;
+      b1 : IN std_logic;
+      ce : IN std_logic
+      );
+  END component;
+
+--  output event c1+/1 is disabled
+  signal c0 : std_logic;
+    signal c1 : std_logic;
+    signal a0 : std_logic;
+    signal a1 : std_logic;
+    signal b0 : std_logic;
+    signal b1 : std_logic;
+    signal en : std_logic;
+    signal ce : std_logic;
+
+  -- csc violation
+--     signal c0 : std_logic := '0';
+--     signal c1 : std_logic := '0';
+--     signal a0 : std_logic := '0';
+--     signal a1 : std_logic := '0';
+--     signal b0 : std_logic := '0';
+--     signal b1 : std_logic := '0';
+--     signal en : std_logic := '1';
+--     signal ce : std_logic := '0';
+
+BEGIN
+  env : and2_a_env
+    port map (
+      c0 => c0,
+      c1 => c1,
+      en => en,
+      a0 => a0,
+      a1 => a1,
+      b0 => b0,
+      b1 => b1,
+      ce => ce
+      );
+
+  the_and2 : and2_a
+    port map (
+      c0 => c0,
+      c1 => c1,
+      en => en,
+      a0 => a0,
+      a1 => a1,
+      b0 => b0,
+      b1 => b1,
+      ce => ce
+      );
+
+end behavior;
+and2_a.vhd::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+use work.handshake.all;
+
+ENTITY and2_a IS
+     PORT(
+	  c0 : INOUT std_logic := '0';
+	  c1 : INOUT std_logic := '0';
+	  en : INOUT std_logic := '1';
+	  a0 : IN std_logic;
+	  a1 : IN std_logic;
+	  b0 : IN std_logic;
+	  b1 : IN std_logic;
+	  ce : IN std_logic
+	  );
+END and2_a;
+
+ARCHITECTURE behavior of and2_a IS
+BEGIN
+
+  and2 : process
+  begin
+    guard(ce, '1');
+    guard_or(a0, '1', a1, '1');
+    guard_or(b0, '1', b1, '1');
+    -- evaluate                                             ab => c
+    if    (a0 = '1' and b0 = '1') then                --00 => 0
+      assign(c0, '1', 200, 300);
+    elsif (a0 = '1' and b1 = '1') then                --01 => 0
+      assign(c0, '1', 200, 300);
+    elsif (a1 = '1' and b0 = '1') then                --10 => 0
+      assign(c0, '1', 200, 300);
+--    elsif (a1 = '1' and b1 = '1') then                --11 => 1
+    else
+      assign(c1, '1', 200, 300);
+    end if;
+    -- start reset cycle
+    assign(en, '0', 200, 300);
+    guard(ce, '0');
+    if (c0 = '1') then
+      assign (c0, '0', 200, 300);
+    elsif (c1 = '1') then
+      assign (c1, '0', 200, 300);
+    end if;
+    guard_and(a0, '0', a1, '0');
+    guard_and(b0, '0', b1, '0');
+    assign(en, '1', 200, 300);
+  end process;
+
+END behavior;
+and2_a_env.vhd::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+use work.handshake.all;
+
+ENTITY and2_a_env IS
+     PORT(
+	  c0 : IN std_logic;
+	  c1 : IN std_logic;
+	  en : IN std_logic;
+	  a0 : INOUT std_logic := '0';
+	  a1 : INOUT std_logic := '0';
+	  b0 : INOUT std_logic := '0';
+	  b1 : INOUT std_logic := '0';
+	  ce : INOUT std_logic := '0'
+	  );
+END and2_a_env;
+
+ARCHITECTURE behavior of and2_a_env IS
+BEGIN
+
+  a : process
+    variable choosea : integer;
+  begin
+    choosea := selection(2);
+    if (choosea = 1) then
+      assign(a0, '1', 200, inf);
+    else
+      assign(a1, '1', 200, inf);
+    end if;
+    guard(en, '0');
+    if (a0 = '1') then
+      assign(a0, '0', 200, inf);
+    elsif (a1 = '1') then
+      assign(a1, '0', 200, inf);
+    end if;
+    guard(en, '1');
+  end process;
+
+  b : process
+    variable chooseb : integer;
+  begin
+    chooseb := selection(2);
+    if (chooseb = 1) then
+      assign(b0, '1', 200, inf);
+    else
+      assign(b1, '1', 200, inf);
+    end if;
+    guard(en, '0');
+    if (b0 = '1') then
+      assign(b0, '0', 200, inf);
+    elsif (b1 = '1') then
+      assign(b1, '0', 200, inf);
+    end if;
+    guard(en, '1');
+  end process;
+
+  c : process
+  begin
+    assign(ce, '1', 200, inf);
+    guard_or(c0, '1', c1, '1');
+    assign(ce, '0', 200, inf);
+    guard_and(c0, '0', c1, '0');    
+  end process;
+  
+END behavior;
+
+

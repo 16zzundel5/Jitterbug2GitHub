@@ -1,0 +1,22 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG: Exception while running file (PR#2350)
+Date: Thu Oct 11 19:13:14 2007
+
+> I get an exception in my shell when I run an sbml file:
+> 
+> java.io.IOException: Bad file descriptor
+>         at java.io.FileInputStream.read(Native Method)
+>         at reb2sac.core.gui.Run.execute(Run.java:322)
+>         at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1608)
+>         at java.lang.Thread.run(Thread.java:619)
+> 
+I think for this problem that you need to read the standard output and standard
+error in two separate threads perhaps.  See listing 4.5 at:
+
+http://www.javaworld.com/javaworld/jw-12-2000/jw-1229-traps.html?page=3
+
+The output stream should go into a run.log while the error stream should appear
+in the command logging box.
+
+Chris

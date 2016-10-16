@@ -1,0 +1,181 @@
+From myers@eng.utah.edu  Fri Jan 30 13:12:11 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t0UKCBtZ016038
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 Jan 2015 13:12:11 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.82 id 1YHHvB-0009VN-Fj)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 30 Jan 2015 13:12:10 -0700
+Received: from c-50-186-113-219.hsd1.ut.comcast.net ([50.186.113.219] helo=[10.0.0.3])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YHHvA-0001Jg-Ep
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 30 Jan 2015 13:12:05 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_AAA7520A-C295-420E-B8AE-D1FCA6E72ECB"
+Subject: BUG: ReactionGlyphs must have a BoundingBox or Curve
+Date: Fri, 30 Jan 2015 13:11:57 -0700
+References: <54CB632F.1050103@ebi.ac.uk>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <8B69B25D-FE79-403D-A58F-75040DAFCC2D@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.1 \(1993\))
+X-Mailer: Apple Mail (2.1993)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+
+--Apple-Mail=_AAA7520A-C295-420E-B8AE-D1FCA6E72ECB
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Currently for implicit reactions, we are adding an empty BoundingBox =
+which is incorrect.  Instead, it should likely have a Curve.  However, =
+the Curve is currently placed with the SpeciesReference.  It should =
+likely be moved to the ReactionGlyph instead or duplicated there.
+
+> Begin forwarded message:
+>=20
+> Date: January 30, 2015 at 3:55:43 AM MST
+> From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+> To: "Chris J. Myers" <myers@ece.utah.edu>, The SBML L3 Layout package =
+discussion list <sbml-layout@lists.sourceforge.net>
+> Cc: The JSBML development team mailing list <jsbml-team@caltech.edu>
+> Subject: Re: [jsbml-team] Reaction Glyph question
+>=20
+> On 01/30/2015 12:15 AM, Chris J. Myers wrote:
+>> One more thing about this example.  The ReactionGlyph in the example =
+has a curve, but for the class ReactionGlyph in JSBML, I don=E2=80=99t =
+see a createCurve method.
+>=20
+> You have some more details taken directly from the specs on the =
+libsbml docs.
+>=20
+> =
+http://sbml.org/Software/libSBML/docs/java-api/index.html?org/sbml/libsbml=
+/GeneralGlyph.html
+>=20
+>=20
+> Although in the section 3.10 of the specs, on the description of the =
+Curve, it is said that if a curve is defined, the BoundingBox
+> is to be ignored.
+>=20
+> I will add a createCurve method to jsbml.
+>=20
+> Nico
+>=20
+>>> On Jan 29, 2015, at 5:02 PM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+>>>=20
+>>> Hi,
+>>>=20
+>>> ReactionGlyph inherits from GraphicalObject.  GraphicalObject has a =
+required BoundingBox.  A BoundingBox has a required Point and Dimension. =
+ However, the ReactionGlyph in Example 4.3.1 is simply a curve and does =
+not have a BoundingBox.  Is this valid or am I missing something?  It =
+seems like it would be nice to not require a bounding box for a reaction =
+represented by a curve.  If we do require this, what would it be in this =
+example, a box enclosing the curve?
+>>>=20
+>>> Thanks,
+>>>=20
+>>> Chris
+>>>=20
+>> _______________________________________________
+>> jsbml-team mailing list
+>> jsbml-team@caltech.edu
+>> https://lists.caltech.edu/listinfo/jsbml-team
+
+
+--Apple-Mail=_AAA7520A-C295-420E-B8AE-D1FCA6E72ECB
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D"">Currently for implicit reactions, we are adding an empty =
+BoundingBox which is incorrect. &nbsp;Instead, it should likely have a =
+Curve. &nbsp;However, the Curve is currently placed with the =
+SpeciesReference. &nbsp;It should likely be moved to the ReactionGlyph =
+instead or duplicated there.<br class=3D""><div><br class=3D""><blockquote=
+ type=3D"cite" class=3D""><div class=3D"">Begin forwarded =
+message:</div><br class=3D"Apple-interchange-newline"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">January 30, 2015 at 3:55:43 AM =
+MST<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Nicolas Rodriguez &lt;<a =
+href=3D"mailto:rodrigue@ebi.ac.uk" =
+class=3D"">rodrigue@ebi.ac.uk</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;" class=3D"">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu" class=3D"">myers@ece.utah.edu</a>&gt;, =
+The SBML L3 Layout package discussion list &lt;<a =
+href=3D"mailto:sbml-layout@lists.sourceforge.net" =
+class=3D"">sbml-layout@lists.sourceforge.net</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Cc: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">The JSBML development team =
+mailing list &lt;<a href=3D"mailto:jsbml-team@caltech.edu" =
+class=3D"">jsbml-team@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Re: [jsbml-team] =
+Reaction Glyph question</b><br class=3D""></span></div><br class=3D""><div=
+ class=3D"">On 01/30/2015 12:15 AM, Chris J. Myers wrote:<br =
+class=3D""><blockquote type=3D"cite" class=3D"">One more thing about =
+this example. &nbsp;The ReactionGlyph in the example has a curve, but =
+for the class ReactionGlyph in JSBML, I don=E2=80=99t see a createCurve =
+method.<br class=3D""></blockquote><br class=3D"">You have some more =
+details taken directly from the specs on the libsbml docs.<br =
+class=3D""><br class=3D""><a =
+href=3D"http://sbml.org/Software/libSBML/docs/java-api/index.html?org/sbml=
+/libsbml/GeneralGlyph.html" =
+class=3D"">http://sbml.org/Software/libSBML/docs/java-api/index.html?org/s=
+bml/libsbml/GeneralGlyph.html</a><br class=3D""><br class=3D""><br =
+class=3D"">Although in the section 3.10 of the specs, on the description =
+of the Curve, it is said that if a curve is defined, the BoundingBox<br =
+class=3D"">is to be ignored.<br class=3D""><br class=3D"">I will add a =
+createCurve method to jsbml.<br class=3D""><br class=3D"">Nico<br =
+class=3D""><br class=3D""><blockquote type=3D"cite" class=3D""><blockquote=
+ type=3D"cite" class=3D"">On Jan 29, 2015, at 5:02 PM, Chris J. Myers =
+&lt;myers@ece.utah.edu&gt; wrote:<br class=3D""><br class=3D"">Hi,<br =
+class=3D""><br class=3D"">ReactionGlyph inherits from GraphicalObject. =
+&nbsp;GraphicalObject has a required BoundingBox. &nbsp;A BoundingBox =
+has a required Point and Dimension. &nbsp;However, the ReactionGlyph in =
+Example 4.3.1 is simply a curve and does not have a BoundingBox. =
+&nbsp;Is this valid or am I missing something? &nbsp;It seems like it =
+would be nice to not require a bounding box for a reaction represented =
+by a curve. &nbsp;If we do require this, what would it be in this =
+example, a box enclosing the curve?<br class=3D""><br =
+class=3D"">Thanks,<br class=3D""><br class=3D"">Chris<br class=3D""><br =
+class=3D""></blockquote>_______________________________________________<br=
+ class=3D"">jsbml-team mailing list<br =
+class=3D"">jsbml-team@caltech.edu<br =
+class=3D"">https://lists.caltech.edu/listinfo/jsbml-team<br =
+class=3D""></blockquote></div></blockquote></div><br =
+class=3D""></body></html>=
+
+--Apple-Mail=_AAA7520A-C295-420E-B8AE-D1FCA6E72ECB--
+

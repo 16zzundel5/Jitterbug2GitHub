@@ -1,0 +1,25 @@
+From atacs-bugs  Tue Jun 24 20:34:36 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h5P2YaC15120
+	for atacs-bugs@shang.elen.utah.edu; Tue, 24 Jun 2003 20:34:36 -0600
+Received: from yt0.cs.titech.ac.jp (yt0.yt.cs.titech.ac.jp [131.112.16.112])
+	by chou.ece.utah.edu (8.11.6/8.11.6) with ESMTP id h5P2YZP15117
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Jun 2003 20:34:35 -0600
+Received: from jiaqi.stanford.edu (jiaqi [192.168.112.163])
+	by yt0.cs.titech.ac.jp (8.9.3/3.7W) with ESMTP id LAA30229
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 25 Jun 2003 11:16:29 +0900 (JST)
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h5P2ELC03537
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 25 Jun 2003 11:14:21 +0900
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Wed, 25 Jun 2003 11:14:21 +0900 (JST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Add continuous variable initial ranges 
+Message-ID: <Pine.LNX.4.44.0306251113580.3512-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+

@@ -1,0 +1,26 @@
+From atacs-bugs  Mon May 13 11:07:30 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g4DH7TX14142
+	for atacs-bugs@shang.elen.utah.edu; Mon, 13 May 2002 11:07:29 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g4DH7TP14134
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 13 May 2002 11:07:29 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) with ESMTP id g4D6UQp02188
+	for <atacs-bugs@vlsigroup>; Mon, 13 May 2002 00:30:26 -0600
+X-Authentication-Warning: jiaqi.elen.utah.edu: myers owned process doing -bs
+Date: Mon, 13 May 2002 00:30:26 -0600 (MDT)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender:  <myers@jiaqi.elen.utah.edu>
+To: <atacs-bugs@vlsigroup.elen.utah.edu>
+Subject: print_grf
+Message-ID: <Pine.LNX.4.33.0205130029510.2185-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+If done without loading a file it core dumps.
+
+
+

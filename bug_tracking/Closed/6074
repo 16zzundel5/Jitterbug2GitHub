@@ -1,0 +1,35 @@
+From zhen.zhang@utah.edu  Thu Jun 12 21:31:04 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s5D3V3BE006212
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Jun 2014 21:31:03 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AoEJABJwmlPRVYC2/2dsb2JhbABaDoJ/gSuCbKl7AZcWCBZ1hBwRfA8CJgIkEgEFASI1iCCjGYMSaosnmlmFLxeBKpAtgUwEijuPd5FiGCmBMIF8gQBfHoEwJA
+X-IPAS-Result: AoEJABJwmlPRVYC2/2dsb2JhbABaDoJ/gSuCbKl7AZcWCBZ1hBwRfA8CJgIkEgEFASI1iCCjGYMSaosnmlmFLxeBKpAtgUwEijuPd5FiGCmBMIF8gQBfHoEwJA
+X-IronPort-AV: E=Sophos;i="5.01,468,1400047200"; 
+   d="scan'208";a="281140888"
+Received: from mail-ve0-f182.google.com ([209.85.128.182])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 12 Jun 2014 21:30:44 -0600
+Received: by mail-ve0-f182.google.com with SMTP id oy12so826749veb.41
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Jun 2014 20:30:43 -0700 (PDT)
+X-Received: by 10.220.80.70 with SMTP id s6mr26174vck.44.1402630243480; Thu,
+ 12 Jun 2014 20:30:43 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.220.161.10 with HTTP; Thu, 12 Jun 2014 20:30:03 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Thu, 12 Jun 2014 21:30:03 -0600
+Message-ID: <CA+LVOvnY6j15LukPro-B5aO7C46eNhfuT_Zjsbb_0Z4pUmSxOQ@mail.gmail.com>
+Subject: CHANGE: Disable Contains Undeclared Units Warning window in LEMA's
+ schematic editor
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+After an LPN transition is edited, there are three consecutive warning
+windows about undeclared units on event assignment to variables,
+preset and postset places, and delay. It wold be nice if these checks
+are disabled for LPNs, at least temporarily. Otherwise, whenever a
+single transition is edited, one has to click the "OK" buttons several
+times to go through these warnings, which do not have significant
+meanings for an LPN.
+

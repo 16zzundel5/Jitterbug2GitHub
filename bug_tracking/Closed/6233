@@ -1,0 +1,31 @@
+From myers@eng.utah.edu  Tue Feb 10 12:38:50 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1AJconL010416
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 10 Feb 2015 12:38:50 -0700
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.82 id 1YLGdy-000Md8-Dy)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 10 Feb 2015 12:38:50 -0700
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YLGgg-000N5H-E1
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 10 Feb 2015 12:41:34 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: FEATURE: add support to import a directory into the data manager
+Message-Id: <CAACB200-CB13-4686-8095-17F7BAC964D0@ece.utah.edu>
+Date: Tue, 10 Feb 2015 12:38:44 -0700
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.1 \(1993\))
+X-Mailer: Apple Mail (2.1993)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id t1AJconL010416
+
+Allow a whole directory to be imported into the data manager for the learn view.
+
+

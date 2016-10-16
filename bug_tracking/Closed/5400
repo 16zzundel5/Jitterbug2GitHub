@@ -1,0 +1,48 @@
+From sarbruis@gmail.com  Mon Jun 27 14:19:07 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p5RKJ6pf002724
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2011 14:19:06 -0600
+Received: by bwa19 with SMTP id 19so2875593bwa.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2011 13:19:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=XTwo9cqMRCpSU3mmZn0Xi/MYB6vdfk8BTL6ylN9Wlt4=;
+        b=LqE5NLPIx091Yhj9VJ89u3qqZykyteAurqZ3Ph6MKz01q0IkxIa9UgK4uZImeEHrou
+         Xa9yXO1WflhpeuO8ZbGFVOYd95+8Z5rwTnnRNdJCM1uG0ZyCyggsWXRx1QaQkg8k6crE
+         507pbHMFlyCJ7WWoYT6FB3KJleYrLZ9LM6iWQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=umugsdwfWW2MIH5QRyFg0cGUCc6f8VyXn7nf98girQf+tOeGaUYFClh2kbCDFUFBDr
+         sSiSWJYU7f+0oTBYNSZSsPNDMRsiRhPQdeABHe2H/jbJpqnA2rpzJFIE8GB7Sjz8fOPa
+         ahZ4FvrEgFLej0ap6s4Vs/awgNrBMbST25acE=
+Received: by 10.204.119.132 with SMTP id z4mr3202891bkq.42.1309205945354; Mon,
+ 27 Jun 2011 13:19:05 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.205.83.202 with HTTP; Mon, 27 Jun 2011 13:18:23 -0700 (PDT)
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Mon, 27 Jun 2011 14:18:23 -0600
+Message-ID: <BANLkTikPA+PRVnT5kx+G9nqouHYf=AxjKw@mail.gmail.com>
+Subject: BUG: double-clicking reaction edge throws exception
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=001636c5a2d54f8bb804a6b743c9
+
+--001636c5a2d54f8bb804a6b743c9
+Content-Type: text/plain; charset=ISO-8859-1
+
+here's the error:
+
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+at sbmleditor.Reactions.reactionsEditor(Reactions.java:297)
+etc.
+
+--001636c5a2d54f8bb804a6b743c9
+Content-Type: text/html; charset=ISO-8859-1
+
+here&#39;s the error:<br><br>Exception in thread &quot;AWT-EventQueue-0&quot; java.lang.NullPointerException<br> at sbmleditor.Reactions.reactionsEditor(Reactions.java:297)<br>etc.<br>
+
+--001636c5a2d54f8bb804a6b743c9--
+

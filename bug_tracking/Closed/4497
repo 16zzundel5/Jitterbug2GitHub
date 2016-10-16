@@ -1,0 +1,47 @@
+From myers@ece.utah.edu  Sun Jun  8 08:20:37 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.8 required=5.0 tests=AWL,BAYES_50,
+	DATE_IN_PAST_12_24 autolearn=no version=3.2.1
+Received: from chlorine.colo.stayonline.net (bromine.colo.stayonline.net [69.25.86.40])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m58EKa5U016941
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 8 Jun 2008 08:20:37 -0600
+X-ASG-Debug-ID: 1212934836-0d0a001f0000-xj3xSL
+X-Barracuda-URL: http://192.168.6.17:8000/cgi-bin/mark.cgi
+Received: from et-iad-6.site.stayonline.net (unknown [65.125.1.2])
+	by chlorine.colo.stayonline.net (Spam Firewall) with ESMTP id 783B6117130
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun,  8 Jun 2008 10:20:36 -0400 (EDT)
+Received: from et-iad-6.site.stayonline.net ([65.125.1.2]) by chlorine.colo.stayonline.net with ESMTP id dMEM69saAIK2vf2K for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 08 Jun 2008 10:20:36 -0400 (EDT)
+Received: from [172.16.3.183] ([172.16.3.183])
+	by et-iad-6.site.stayonline.net (8.12.6/8.12.6) with ESMTP id m58EKCr2007344
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 8 Jun 2008 14:20:12 GMT
+X-ASG-Orig-Subj: CHANGE: reorder the parameters for promoters
+Subject: CHANGE: reorder the parameters for promoters
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Sat, 07 Jun 2008 13:43:38 -0600
+Message-Id: <1212867818.24689.14.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-9.fc7) 
+Content-Transfer-Encoding: 7bit
+X-Barracuda-Connect: UNKNOWN[65.125.1.2]
+X-Barracuda-Start-Time: 1212934836
+X-Barracuda-Virus-Scanned: by Barracuda Spam Firewall at colo.stayonline.net
+X-Barracuda-Spam-Score: -1002.00
+X-Barracuda-Spam-Status: No, SCORE=-1002.00 using global scores of TAG_LEVEL=1000.0 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=1000.0 
+
+Promoter count
+Cooperativity constant
+Binding rate of RNAP
+Production rate
+Basal production rate
+Activated production rate
+
+NOTE: are production rate and basal production rate redundant here
+
+Should cooperativity be on promoter or influence
+
+
+

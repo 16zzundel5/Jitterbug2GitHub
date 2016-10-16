@@ -1,0 +1,26 @@
+From curtis.madsen@utah.edu  Fri Aug  5 15:16:27 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p75LGRRZ019050
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 5 Aug 2011 15:16:27 -0600
+Date: Fri, 5 Aug 2011 15:16:27 -0600
+Message-Id: <201108052116.p75LGRRZ019050@chou.ece.utah.edu>
+From: curtis.madsen@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Component has the same generated id as a species
+
+Full_Name: Curtis Madsen
+Version: 1.6.1
+OS: Linux Fedora 15 64-bit
+source: 
+log: 
+Submission from: tang.ece.utah.edu (155.98.27.207)
+Submitted by: cmadsen
+
+
+When a component is added to a gcm file, a default id is generated starting with
+"C1".  The code, however, does not check to see if the model already contains
+anything with that id and drops the component anyway, which could cause an
+invalid gcm to be created.  There should be a check to make sure the generated
+id is unique.
+

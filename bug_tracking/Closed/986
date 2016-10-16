@@ -1,0 +1,30 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jul 11 10:31:00 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j6BGV0M2030077
+	for <atacs-bugs@shang.ece.utah.edu>; Mon, 11 Jul 2005 10:31:00 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j6BGV0BT030072
+	for atacs-bugs@shang.ece.utah.edu; Mon, 11 Jul 2005 10:31:00 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j6BGUq7i029839;
+	Mon, 11 Jul 2005 10:30:52 -0600
+Received: from ming.ece.utah.edu (localhost [127.0.0.1])
+	by ming.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j6BGUqMW004919;
+	Mon, 11 Jul 2005 10:30:52 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.13.1/8.13.1/Submit) id j6BGUqfl004918;
+	Mon, 11 Jul 2005 10:30:52 -0600
+Date: Mon, 11 Jul 2005 10:30:52 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200507111630.j6BGUqfl004918@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        peskin@vlsigroup.ece.utah.edu
+Subject: Could not checkout
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.4 required=5.0 tests=ALL_TRUSTED,AWL,
+	DNS_FROM_RFC_ABUSE autolearn=unavailable version=3.0.4
+
+cvs [checkout aborted]: cannot make directory bm: File exists
+

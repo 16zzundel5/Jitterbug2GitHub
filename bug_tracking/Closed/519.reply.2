@@ -1,0 +1,7 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: timing methods mask CSC violation in untimed example (PR#519)
+Date: Tue Apr 23 11:56:16 2002
+
+The problem is this example is not output semi-modular.  I've added an explicit
+test for this after state graph generation so all methods (untimed/timed) fail.

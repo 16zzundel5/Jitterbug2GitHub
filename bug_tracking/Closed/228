@@ -1,0 +1,20 @@
+From myers@vlsigroup.elen.utah.edu  Wed Sep 15 22:59:47 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id WAA10762 for <atacs-bugs@shang.elen.utah.edu>; Wed, 15 Sep 1999 22:59:46 -0600 (MDT)
+Date: Wed, 15 Sep 1999 22:59:46 -0600 (MDT)
+Message-Id: <199909160459.WAA10762@yuan.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Findred and redchk do not remove arcs correctly when there is choice.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: box.csp
+log: 
+Submission from: han.elen.utah.edu (155.99.23.196)
+Submitted by: myers
+
+
+The file box.csp appears to not be free choice, but if redundant arcs are
+removed then it is (see box1.csp).
+

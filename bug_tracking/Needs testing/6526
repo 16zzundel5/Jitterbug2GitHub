@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Mon Jun 27 12:26:05 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f178.google.com (mail-pf0-f178.google.com [209.85.192.178])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RIQ4uH016416
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:26:05 -0600
+Received: by mail-pf0-f178.google.com with SMTP id i123so64246709pfg.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:26:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=GTMubMrJn3U0IYoUbHtvm0hHptzPOphu9xVflcOvJSk=;
+        b=GE7bckjoyRoi4VcIeqIl5g/KlXAxEoh3Z5CCdlFv/1kXGPDFgth3bh+0OrBi80x+xU
+         Iy6vMQROrG4YsaQtXI5217/2Iygs7oeK1BtQ9UGODi77lnIjPoauAVEzKZo7FXKCpi2m
+         wBsgws0HENtxzRh/HZxjD7RD1BypbnTcIg1Y0MmuKVH2gQR1ksdbnD3I7kIE7VnKcHMT
+         c/WwCqa3nbJ8rXCofYpBQsjSl3lDXxmIlihWBNsd60169bjcVv89WviI+7fO9L0C5EJU
+         N+6icPlU4VYln+sRHMy0MiFJR8xWz2WNsGGTkXFcc9DjU0AsPEjklyceHNWhTUl9Xsyn
+         /cnw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=GTMubMrJn3U0IYoUbHtvm0hHptzPOphu9xVflcOvJSk=;
+        b=H95R1nlpmelai9d1fNjKSMLxrSITxIHHv4PayhHxULJOCUcg5UhJlRGoKsWAdLB1Qn
+         fgmPpNTVLMllqjG7MfOYNmNzTlQBBbLjVoZ/ep+VRmYKh0DpW2OA8hEUCcvXNE0e823C
+         +9CrRa9w0lzMzyGYWeDjkb1eWB+cv4DyNp7p6HHScDUEt2HVGKPvX/dg5UlqoT2BXsYJ
+         h7xQCZNB8mDONG4TrWtibFxFHZxKq0NapGe0JlNKmNyQHIhvWfPBWgd8MBfUZKUiy3Ko
+         cAuM9yqnaayEU9hBqHqhycnPm7y1H6CoDPZCl8o5r2UMXdXxPyNs8dWlgemoZ/asI5Ep
+         cRUg==
+X-Gm-Message-State: ALyK8tI7t/v95HNB9s/4SewaN35HgN1VJfGhp3TRROXYM0kH6IM6nPsXdSnfJ83q8U2GvQ==
+X-Received: by 10.98.113.74 with SMTP id m71mr36145802pfc.6.1467051963690;
+        Mon, 27 Jun 2016 11:26:03 -0700 (PDT)
+Received: from chou.ece.utah.edu (chou.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id um1sm1004652pac.41.2016.06.27.11.26.03
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:26:03 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:26:03 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1187298263.3.1467051962771.JavaMail.leandro@chou.ece.utah.edu>
+Subject: CHANGE: Sort tsd files in analysis view
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I go to Schematic in Analysis View, when I click on Choose Simulation, the files are not sorted. It is a lot more convenient to sort it out
+

@@ -1,0 +1,25 @@
+From stjung@ming.elen.utah.edu  Mon Apr 26 10:53:35 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id KAA16269 for <atacs-bugs@ming.elen.utah.edu>; Mon, 26 Apr 1999 10:53:34 -0600 (MDT)
+Date: Mon, 26 Apr 1999 10:53:34 -0600 (MDT)
+Message-Id: <199904261653.KAA16269@yuan.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Verification Error
+
+Full_Name: Sung Tae Jung
+Version: 
+OS: 
+source: 
+log: 
+Submission from: ming.elen.utah.edu (128.110.18.208)
+Submitted by: stjung
+
+
+
+The orbits verification failed for "examples/csp/slu.csp" and
+"examples/csp/cnt11.csp". I used the follwoing commands.
+
+        atacs -lc -mh -mc -to cnt11.csp
+        atacs -lc -mh -mc -to slu.csp
+
+

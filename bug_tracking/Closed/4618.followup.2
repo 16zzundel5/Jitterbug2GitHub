@@ -1,0 +1,95 @@
+From kjones5863@gmail.com  Wed Feb 18 14:13:29 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.174])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1ILDTX2022505;
+	Wed, 18 Feb 2009 14:13:29 -0700
+Received: by wf-out-1314.google.com with SMTP id 28so87394wfc.24
+        for <multiple recipients>; Wed, 18 Feb 2009 13:13:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=UFYxIDjsjOcydPcvEVOEuJl9a0ihONrmKJ9mxzrmbWg=;
+        b=AkbugCt5fSir7g9vNlrybd7sMEIpI91jH2xC0GKEB8AKIogX0SamS/p6cQ2p+rHlGw
+         8nYy4f4hMHq5Qgh8CvmxbT3s9vMMr3cMW4NENttD6pcaiOzvjyrIg3nSn/ln9O5NLYxG
+         ViZkgccaZBEGYK+4tbMJTShJcZ2162ZgF0F9o=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=sspR6zQ4m0+dEQ0oOXqJy8nb3QVoNayyFMTwRMdbc1AOb4sdsWxjtFi4eHUQZxaHml
+         XH33cVsJK9YBIm7Y0Ooy16FKiIBPeCPBOYzEmjNbcdpVZ5kt6ZjBE2bA872t8OMR8Cop
+         PIGvv8sukpeHQf+9sFMkogx5Q6WRaVuCrf6UU=
+MIME-Version: 1.0
+Received: by 10.142.144.16 with SMTP id r16mr1474810wfd.15.1234991609255; Wed, 
+	18 Feb 2009 13:13:29 -0800 (PST)
+In-Reply-To: <B26F2AF8-DFEF-4169-9C21-487F5E7348D4@ece.utah.edu>
+References: <200902132040.n1DKeIMb027752@chou.ece.utah.edu>
+	 <B26F2AF8-DFEF-4169-9C21-487F5E7348D4@ece.utah.edu>
+Date: Wed, 18 Feb 2009 14:13:29 -0700
+Message-ID: <2b601e3d0902181313i6c8e4716wbbd843a1211ee582@mail.gmail.com>
+Subject: Re: CHANGE: add bad error messages on problems in tsd file (PR#4618)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=000e0cd327462b973a046337e461
+
+--000e0cd327462b973a046337e461
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+This error message was generated when a variable was included in the bins
+file (i.e. the background LHPN) that was not found in the data.  That is the
+only time that I am aware that we have seen this message.
+
+Kevin Jones
+
+On Sat, Feb 14, 2009 at 1:33 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> When does the error message get generated?  I could not find a way to
+> generate it.
+>
+> Chris
+>
+> On Feb 13, 2009, at 1:40 PM, Kevin Jones wrote:
+>
+>  Done.  If you want a different wording on the error message, let me know.
+>>
+>
+>
+
+--000e0cd327462b973a046337e461
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+This error message was generated when a variable was included in the bins f=
+ile (i.e. the background LHPN) that was not found in the data.&nbsp; That i=
+s the only time that I am aware that we have seen this message.<br><br>Kevi=
+n Jones<br>
+<br><div class=3D"gmail_quote">On Sat, Feb 14, 2009 at 1:33 PM, Chris J. My=
+ers <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu">myers@ece.u=
+tah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D=
+"border-left: 1px solid rgb(204, 204, 204); margin: 0pt 0pt 0pt 0.8ex; padd=
+ing-left: 1ex;">
+When does the error message get generated? &nbsp;I could not find a way to =
+generate it.<br>
+<br>
+Chris<br>
+<br>
+On Feb 13, 2009, at 1:40 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+Done. &nbsp;If you want a different wording on the error message, let me kn=
+ow.<br>
+</blockquote>
+<br>
+</blockquote></div><br>
+
+--000e0cd327462b973a046337e461--
+

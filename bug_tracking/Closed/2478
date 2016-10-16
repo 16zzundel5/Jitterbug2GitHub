@@ -1,0 +1,41 @@
+From christian.atheist@gmail.com  Fri Feb  1 13:09:41 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.186])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m11K9del023633
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 1 Feb 2008 13:09:40 -0700
+Received: by mu-out-0910.google.com with SMTP id w8so967802mue.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 01 Feb 2008 12:09:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=Bu/ehvstG3SdW6C2+2+Vf1uIQ8fqr1c6qTSJXJWTLAk=;
+        b=xmzVC7WruCIcjap+IE10MbASZjS460peIWOvQk6W0bsMXxgVG3r7Tb1R+hbWum2HKxSvo44dUEd26F74fPgcUzFXcphko3CZdx89Fa9Y3XGFey1vjv/4tP31c284vwKUR2V6Wztrx7j0DsB+Eb9So2+ZVG6gmqLB7xSVydGQyk4=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=a5snOREkydRiQVVROb6tfaweojzKm1sOIattMPd8Xj1VVv19DvLFPT/ZzgkLOOfAhkCSVjIm2kc4dzeYaSgNp0rFhYqF0bbOTDYfWOA4SHsBZtypLIcQhZY6b/ibceghsqoP+2PMHg2n74GYrBEvncIkrAWGKj9cKE8IpDf+Lz8=
+Received: by 10.82.161.19 with SMTP id j19mr7059489bue.20.1201896576998;
+        Fri, 01 Feb 2008 12:09:36 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Fri, 1 Feb 2008 12:09:36 -0800 (PST)
+Message-ID: <eba119560802011209m6b949254i29460590dd050db3@mail.gmail.com>
+Date: Fri, 1 Feb 2008 13:09:36 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: File does not simulation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I created an .sbml file with no warnings.  However, the file will not
+simulate if I select monte carlo simulation.  The simulation progress
+is stuck at zero and never progresses.  If I select ODE simulation,
+the file will simulation but will not graph (bug already filed).
+
+File can be found here:
+http://www.async.ece.utah.edu/~namphuon/temp/nand3.sbml
+

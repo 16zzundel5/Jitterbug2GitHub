@@ -1,0 +1,9 @@
+From: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
+To: zhen.zhang@utah.edu
+Subject: Re: CHANGE: Compile a VHDL assertion to a failure transition (PR#6398)
+Date: Wed Sep 23 21:10:34 2015
+
+Actually, such an assertion compiles to a pair of transitions. One dangling
+non-persistent transition is without either preset or postset place, and it
+assigns the failure variable to "false", and the other is the one described in
+the previous email.

@@ -1,0 +1,67 @@
+From n.roehner@utah.edu  Fri Dec  6 09:46:05 2013
+Return-Path: <n.roehner@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id rB6Gk4R7027983
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Dec 2013 09:46:04 -0700
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqAEAML+oVKbYbVl/2dsb2JhbABZDoQEuQGBOHSCJQEBAQQ6TwIBCA4DBAEBCxQQHxMdCAIEEwiHerpDhkMXjl84gyCBEwOOVptRgmo/gio
+X-IPAS-Result: AqAEAML+oVKbYbVl/2dsb2JhbABZDoQEuQGBOHSCJQEBAQQ6TwIBCA4DBAEBCxQQHxMdCAIEEwiHerpDhkMXjl84gyCBEwOOVptRgmo/gio
+X-IronPort-AV: E=Sophos;i="4.93,841,1378879200"; 
+   d="scan'208";a="292103075"
+Received: from h101.umail.utah.edu (HELO X-HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 06 Dec 2013 09:46:04 -0700
+Received: from X-MB7.xds.umail.utah.edu ([169.254.12.220]) by
+ X-HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi id 14.03.0158.001;
+ Fri, 6 Dec 2013 09:46:04 -0700
+From: NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: RE: BUG Can't Register GeneralGlyph when Moving Parameter (PR#5957)
+Thread-Topic: BUG Can't Register GeneralGlyph when Moving Parameter (PR#5957)
+Thread-Index: AQHO8fGTTQ45tWJIjkWgPmY7vzvTO5pHX3AL
+Date: Fri, 6 Dec 2013 16:46:04 +0000
+Message-ID: <1D5250E842FE904897C541D35F1217F027E16C0A@X-MB7.xds.umail.utah.edu>
+References: <201312051938.rB5JcVr7030620@chou.ece.utah.edu>
+In-Reply-To: <201312051938.rB5JcVr7030620@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.97.183.136]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id rB6Gk4R7027983
+
+Hi Chris,
+
+I opened the Constants tab, clicked Add Constant, then named it "fg," set the initial value to 3, and changed the Constant field to false. I then opened the Schematic tab and tried to move "fg." The move was successful but the following exception was generated:
+
+13/12/06 09:38:45 ERROR jsbml.Model: An element with the id "Glyph__fg" is already present in this model  test1. The new element will not be added to the model.
+java.lang.IllegalArgumentException: Cannot register generalGlyph.
+	at org.sbml.jsbml.AbstractSBase.registerChild(AbstractSBase.java:1411)
+	at org.sbml.jsbml.ListOf.add(ListOf.java:397)
+	at org.sbml.jsbml.ext.layout.Layout.addGeneralGlyph(Layout.java:159)
+	at org.sbml.jsbml.ext.layout.Layout.createGeneralGlyph(Layout.java:372)
+	at org.sbml.jsbml.ext.layout.Layout.createGeneralGlyph(Layout.java:357)
+	at biomodel.gui.schematic.BioGraph.updateInternalPosition(BioGraph.java:1603)
+	at biomodel.gui.schematic.Schematic$11.invoke(Schematic.java:1283)
+
+I will be in the office this afternoon if you'd like to see it in person. I sent my job app materials to Ilias yesterday and will be chatting with him on Skype in the next couple of hours.
+
+Cheers,
+
+Nic
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Thursday, December 05, 2013 12:38 PM
+To: NICHOLAS ANDREW ROEHNER
+Subject: Re: BUG Can't Register GeneralGlyph when Moving Parameter (PR#5957)
+
+I cannot reproduce this one.  Can you try this again and if it still does not
+work, come and show me exactly what
+you are doing?
+
+Chris
+
+

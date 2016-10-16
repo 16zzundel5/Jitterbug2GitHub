@@ -1,0 +1,32 @@
+From myers@ece.utah.edu  Wed Dec 12 14:34:34 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.7 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lBCLYYu0013047
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 12 Dec 2007 14:34:34 -0700
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1J2ZEm-0004DU-Bi)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 12 Dec 2007 14:35:31 -0700
+Received: from [192.168.0.6] (71-213-10-60.slkc.qwest.net [71.213.10.60])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id lBCLYVc1003874
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 12 Dec 2007 14:34:31 -0700
+Subject: BUG: species in termination conditions should not be deleted
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Wed, 12 Dec 2007 14:32:51 -0700
+Message-Id: <1197495171.20023.69.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.8 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+Species appearing in termination conditions should not be deleted.
+
+

@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:18:39 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.191])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELHjja012507
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:18:39 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so527287fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:18:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=cMzUPfJhF9ujUYwGfUj9zk6+RSGaMAqPDehxAusNzYI=;
+        b=yHDb7IsanmbPeL7m9XQgSITtDHKTH7jjiMkibCva2jgyGbBIU9666tYsq979mkqyffPqfNUcyF1FoZrdj91r3u+xuUb80b+8TnC62GCAWVCOjIilLDOj1ESTVe34BkolAEnc9/zh8r79evjUaqiPGXu7jGzk2ZB+RAknuOCuy+g=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=xIZTZzh3hvEsfc+e1NUrKEh0FBKR5U/SgxoeufZRqPDdnbsOv8Er22COGmKwrV1faOaRXW0TxN1Ck4CVzp3umfX91Igegx7JzLKwsS6/9wLgkxZhlZKC3CwVDTRCvUQbg+HBF3n8dFMvv7ebZ+edQalLgfa4jJY/lPv4/kjN33M=
+Received: by 10.82.150.20 with SMTP id x20mr1729906bud.31.1203023918647;
+        Thu, 14 Feb 2008 13:18:38 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:18:38 -0800 (PST)
+Message-ID: <eba119560802141318m64f33571jdeaf5e1e2996ee52@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:18:38 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE: Kdimer to KAssociation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+change name of parameter
+

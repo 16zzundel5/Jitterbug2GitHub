@@ -1,0 +1,37 @@
+From christian.atheist@gmail.com  Mon Feb  4 08:10:35 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.3 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.188])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m14FAYcQ003445
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Feb 2008 08:10:35 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so2162942fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 04 Feb 2008 07:10:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=8Mb8M0KqMY0sT0N6sxwni6zK4uX8j8P9QBuHnVw4ZQk=;
+        b=fmDnFBmBaS8OKlhi5zqmiZ2Wuz5veoMvHntBw5puSZr2zDlztPmhe+ZH/ecYCFMNJ7lxdccG3pyH3KRDnBoD6gGOYKXN/DPJZEyG2cLLnhcEPFi7ratvr56b2qfZI21uUpBp4b5JCGI37wjGwCA88IKMXF1IK2fhl+KXRYqnNNo=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=s0pbmeaDfPu5aoB5rtBEafvl8I2/XnCsIJWCfhzkjXOSkvWv/nDGYdgwb7Vq5h3om2Ql8crNObBzrEJxZxJLsad46Y4Jrb3nQ6SqB07cQreuzUC+P4ebanrOEOSKCTigKfalSlRIMO31DNH3TJOTJ9urX+OZ3aQoHj9JyJIk1LU=
+Received: by 10.82.162.14 with SMTP id k14mr13193889bue.32.1202137833889;
+        Mon, 04 Feb 2008 07:10:33 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Mon, 4 Feb 2008 07:10:33 -0800 (PST)
+Message-ID: <eba119560802040710u503f217br8c029fead8055947@mail.gmail.com>
+Date: Mon, 4 Feb 2008 08:10:33 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Gui code needs to be refactored
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The GCMEditor has many internal gui classes that are very similar.  A
+GuiFactoryBuilder would greatly cut down on the code, while speeding
+up development.
+

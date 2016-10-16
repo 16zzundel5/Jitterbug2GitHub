@@ -1,0 +1,86 @@
+From moschino21@gmail.com  Thu May  5 19:19:25 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p461JOg4014055
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 5 May 2011 19:19:25 -0600
+Received: by bwz18 with SMTP id 18so3387094bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 05 May 2011 18:19:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=oDcdLFrV7Fn36zPw1SP1eqa6khln0hy6bC39/9m9Cyk=;
+        b=Bww9at5uFIo1bOg98/FsomXq3kD9eK/KtMXicnMguXoa5Jnm1NtHnQwBY9NxSF5Y9Z
+         GlOPnyT3fA1pQD0WnXd7pPhhQ83U1tE3QwOXFa16BL3g5iCofrRUInyAYr8RLr+2cJjR
+         5pVarqIDggNJw2etFNhwrq/rMn32lA7nhLF7U=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=MrbXBqAz5iZG3AgAdaOrrrGOOw8mJ0tWQU6EvhIG+JZ8dYpSUQK4/5o5PpZAIWtJT2
+         4SG7tE8k1W/qDpa0zyiVuedbGjtPW50AGqx/IEW8BiAL5jB7k2j2cFNV0yKxqv6rygiX
+         QsxI79wF8KpiFhnh8fQ9uggQSUCEj9qngW9GE=
+Received: by 10.204.83.129 with SMTP id f1mr1071683bkl.29.1304644763135; Thu,
+ 05 May 2011 18:19:23 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.205.65.76 with HTTP; Thu, 5 May 2011 18:19:03 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Thu, 5 May 2011 19:19:03 -0600
+Message-ID: <BANLkTikTBo-Z=XOY8Ux3A=Q==U8xW8gkUg@mail.gmail.com>
+Subject: BUG:Probability graph and termination time plot do not display
+ results from constraints violoation
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0016e6dbe825aa309904a2914747
+
+--0016e6dbe825aa309904a2914747
+Content-Type: text/plain; charset=ISO-8859-1
+
+The simple LPN file below has a failed transition, and it is translated into
+a SBML constraint and the SBML model is simulated. The TSD graph of the
+stochastic simulation results with 100 runs show firing of the failed
+transition. This implies that the corresponding SBML constraint is violated
+in several runs. However, the probability graph and termination time plot do
+not show probabilities of constraint failure.
+
+.internal b c
+.dummy t3 t2
+#@.variables b c
+#@.failtrans t2
+#|.places p2
+.graph
+p2 t3
+p2 t2
+.marking {p2 }
+#@.init_vals {<b=0><c=0>}
+#@.assignments {<t3=[c:=c+1]><t2=[b:=b+1]>}
+#@.delay_assignments {<t3=[uniform(0,10)]><t2=[uniform(0,10)]>}
+#@.continuous
+.end
+
+-- 
+Zhen Zhang
+
+--0016e6dbe825aa309904a2914747
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div>The simple LPN file below has a failed transition, and it is translate=
+d into a SBML constraint and the SBML model is simulated. The TSD graph of =
+the stochastic simulation results with 100 runs show firing of the failed t=
+ransition. This implies that the corresponding SBML constraint is violated =
+in several runs. However, the probability graph and termination time plot d=
+o not show probabilities of constraint failure.=A0</div>
+
+
+<div><br></div><div>.internal b c=A0</div><div>.dummy t3 t2=A0</div><div>#@=
+.variables b c=A0</div><div>#@.failtrans t2=A0</div><div>#|.places p2=A0</d=
+iv><div>.graph</div><div>p2 t3</div><div>p2 t2</div>
+<div>.marking {p2 }</div><div>#@.init_vals {&lt;b=3D0&gt;&lt;c=3D0&gt;}</di=
+v><div>#@.assignments {&lt;t3=3D[c:=3Dc+1]&gt;&lt;t2=3D[b:=3Db+1]&gt;}</div=
+><div>#@.delay_assignments {&lt;t3=3D[uniform(0,10)]&gt;&lt;t2=3D[uniform(0=
+,10)]&gt;}</div>
+
+
+<div>#@.continuous=A0</div><div>.end</div><br>-- <br>Zhen Zhang<br>
+
+--0016e6dbe825aa309904a2914747--
+

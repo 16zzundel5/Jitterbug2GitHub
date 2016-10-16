@@ -1,0 +1,32 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Oct 10 10:03:09 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j9AG39Kb003227
+	for <atacs-bugs@shang.ece.utah.edu>; Mon, 10 Oct 2005 10:03:09 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j9AG39Xb003226
+	for atacs-bugs@shang.ece.utah.edu; Mon, 10 Oct 2005 10:03:09 -0600
+Received: from jiaqi.ece.utah.edu (jiaqi.ece.utah.edu [155.98.27.199])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j9AG37UF003217
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Oct 2005 10:03:07 -0600
+Received: from jiaqi.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by jiaqi.ece.utah.edu (8.13.1/8.12.8) with ESMTP id j9AG3O7a008254
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Oct 2005 10:03:24 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.ece.utah.edu (8.13.1/8.13.1/Submit) with ESMTP id j9AG3Oht008251
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 10 Oct 2005 10:03:24 -0600
+X-Authentication-Warning: jiaqi.ece.utah.edu: myers owned process doing -bs
+Date: Mon, 10 Oct 2005 10:03:24 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: test
+Message-ID: <Pine.LNX.4.64.0510101003160.7558@jiaqi.ece.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=5.0 tests=ALL_TRUSTED,AWL 
+	autolearn=unavailable version=3.0.4
+
+

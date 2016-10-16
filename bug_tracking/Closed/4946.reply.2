@@ -1,0 +1,13 @@
+From: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: random initial values (PR#4946)
+Date: Wed May 12 01:05:56 2010
+
+Translator.java is now capable of analyzing initial variables with ranges using
+the following short term fix. 
+Short term fix: 
+1. Extract the lower and upper bounds and set the initial value to the mean. 			
+					
+2. Anything that involves infinity, take either the lower or upper bound which
+is not infinity.  
+3. If both are infinity, set to 0.	

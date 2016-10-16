@@ -1,0 +1,102 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: myers@vlsigroup.elen.utah.edu
+Subject: Re: BAD388 broken repository! (PR#544)
+Date: Tue Feb 13 17:35:17 2001
+CC: krieger@ming.elen.utah.edu
+
+I have removed this example from the nighttime regression suite.
+Chris Krieger, we suspect the problem is in your code.
+
+> Please take this example out of night time regression.
+> 
+> Chris
+> 
+> On Tue, 13 Feb 2001, Eric Robert Peskin wrote:
+> 
+>> The overnight regression testing turned up this problem last night.
+>> Here is a sample session that reproduces it:
+>> 
+>> 472 xia:~> cd ~peskin/atacs/examples/csp/
+>> 473 xia:examples/csp> ../../src/atacs -mXmsya lapb_pa
+>> ATACS VERSION 4.1
+>> Logging session in:  atacs.log
+>> Exception handling now turned ON.
+>> Using PO sets timing to obtain state graphs.
+>> Compiling lapb_pa.csp ... 
+>> Compiled process lapbctrl
+>> Compiled process left
+>> Compiled process right
+>> Storing module lapb_pa to ./lapb_pa.er
+>> Loading timed event-rule structure from:  lapb_pa.er
+>> Initializing 3 cycles ... done
+>> Checking for cycles in acyclic constraint graph ... done.
+>> Checking liveness ... live
+>> Checking connectivity ... strongly connected
+>> Checking safety ... safe
+>> Finding redundant rules ... done (0.000141)
+>> Finding reduced state graph ... nodes = 273, dead = 2935
+>> memory: max=630300 inuse=623212 free=7088 
+>> done
+>> 34 iterations, 23 regions, 17 new_regions, 12 states in 0.00168705 seconds
+>> nodes in use = 273, dead = 2935
+>> memory: max=630300 inuse=623212 free=7088
+>> Found 23 zones in 12 states for lapb_pa (6d 630300m 0u)
+>> Projecting out dummy transitions ... done (0.000276)
+>> Checking CSC ... NOT complete state coded
+>> EXCEPTION:  CSC violation!
+>> Finding State Variables to solve 1 CSC violation(s)
+>> Solution costing 1 + 0 used
+>> Signal named CSC0 being added
+>> IP: lo-/1 <->  ===== lo+/1 <-> 
+>> 
+>> Storing TEL to file: lapb_pa.er
+>> Loading timed event-rule structure from:  lapb_pa.er
+>> WARNING:  Graph not connected!
+>> Initializing 3 cycles ... done
+>> Checking for cycles in acyclic constraint graph ... done.
+>> Checking liveness ... live
+>> Checking connectivity ... NOT strongly connected
+>> EXCEPTION:  Connectivity violation!
+>> Checking safety ... safe
+>> Finding redundant rules and storing to:  lapb_pa.rr
+>> Storing timed event-rule structure to:  lapb_pa.er
+>> Loading timed event-rule structure from:  lapb_pa.er
+>> WARNING:  Graph not connected!
+>> Initializing 3 cycles ... done
+>> Checking for cycles in acyclic constraint graph ... done.
+>> Checking liveness ... live
+>> Checking connectivity ... NOT strongly connected
+>> EXCEPTION:  Connectivity violation!
+>> Checking safety ... safe
+>> Finding redundant rules and storing to:  lapb_pa.rr
+>> Storing timed event-rule structure to:  lapb_pa.er
+>> Loading timed event-rule structure from:  lapb_pa.er
+>> WARNING:  Graph not connected!
+>> Initializing 3 cycles ... done
+>> Checking for cycles in acyclic constraint graph ... done.
+>> Checking liveness ... live
+>> Checking connectivity ... NOT strongly connected
+>> EXCEPTION:  Connectivity violation!
+>> Checking safety ... safe
+>> Finding redundant rules and storing to:  lapb_pa.rr
+>> Checking for cycles in acyclic constraint graph ... done.
+>> Checking liveness ... live
+>> Checking connectivity ... NOT strongly connected
+>> EXCEPTION:  Connectivity violation!
+>> Checking safety ... safe
+>> Finding reduced state graph and storing to:  lapb_pa.rsg
+>> ERROR!
+>> ERROR: CSC0-/1 enabled but signal is not 1 or F in state F001B
+>> Storing constraint graph to:  deadlock.grf
+>> Executing command:  parg deadlock.grf &
+>> Storing error trace state graph to:  lapb_pa.grf
+>> Executing command:  parg lapb_pa.grf &
+>> /home/xia/peskin/customs/bin/parg deadlock.grf
+>> Storing error trace in VHDL to:  trace.vhd
+>> Initial: 1 + 0
+>> Predicted: 1 + 0
+>> Actual: 0 + 0
+>> 474 xia:examples/csp> /home/xia/peskin/customs/bin/parg lapb_pa.grf
+>> 
+> 
+> 

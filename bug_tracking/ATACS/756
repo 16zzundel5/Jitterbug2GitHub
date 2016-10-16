@@ -1,0 +1,45 @@
+From atacs-bugs@chou.ece.utah.edu  Wed Jan  7 17:25:33 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i080PXEN005960
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 7 Jan 2004 17:25:33 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i080PXDr005958
+	for atacs-bugs@shang.elen.utah.edu; Wed, 7 Jan 2004 17:25:33 -0700
+Received: from mail-svr1.cs.utah.edu (mail-svr1.cs.utah.edu [155.99.198.200])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i080PXEN005952
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 7 Jan 2004 17:25:33 -0700
+Received: from mail-svr2.cs.utah.edu (vishnu.cs.utah.edu [155.99.198.201])
+	by mail-svr1.cs.utah.edu (Postfix) with ESMTP id 0B4CB346EB
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed,  7 Jan 2004 17:25:37 -0700 (MST)
+Received: from vlsigroup.ece.utah.edu (shang.ece.utah.edu [155.99.23.201])
+	by mail-svr2.cs.utah.edu (Postfix) with ESMTP id 46EFD3F190
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed,  7 Jan 2004 17:25:32 -0700 (MST)
+Message-ID: <3FFCA365.8000509@vlsigroup.ece.utah.edu>
+Date: Wed, 07 Jan 2004 17:25:09 -0700
+From: David Walter <dwalter@vlsigroup.ece.utah.edu>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030701
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: State count lower by one when loading RSG
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+
+atacs -lsds small.rsg
+
+small.rsg:
+SG:
+STATEVECTOR:INP a INP b
+STATES:
+0:R0
+1:F0
+2:RR
+3:0F
+EDGES:
+0:R0 -> 1:F0
+1:F0 -> 2:RR
+2:RR -> 3:0F
+3:0F -> 0:R0
+2:RR -> 1:F0
+

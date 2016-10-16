@@ -1,0 +1,25 @@
+From myers@vlsigroup.elen.utah.edu  Mon Feb 14 10:38:13 2000
+Return-Path: <myers@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA15540
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 14 Feb 2000 10:38:13 -0700
+Date: Mon, 14 Feb 2000 10:38:13 -0700
+Message-Id: <200002141738.KAA15540@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Error in meta.hse example.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+Without postprocessing, meta.hse synthesizes a circuit erroneously.
+The output event b+ is disabled, but this is not caught because it has
+a dummy event in its preset which is actually disabled.  When a dummy
+event is disabled, need to check if it enables an output event.
+

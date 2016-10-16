@@ -1,0 +1,64 @@
+From curtis.madsen@utah.edu  Thu Aug 11 19:34:10 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7C1YAj1017983
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 11 Aug 2011 19:34:10 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap0EAOyBRE6bYbVn/2dsb2JhbABBDqhHgUABAQQBOj8FCwIBCA4oEDIlAQEEDgWHb7BtiH+FaF8Eh1+LMJA3Vw
+X-IronPort-AV: E=Sophos;i="4.67,359,1309759200"; 
+   d="scan'208";a="542417664"
+Received: from h103.umail.utah.edu (HELO HUB3.xds.umail.utah.edu) ([155.97.181.103])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 11 Aug 2011 19:34:09 -0600
+Received: from C8V1.xds.umail.utah.edu ([169.254.3.7]) by
+ HUB3.xds.umail.utah.edu ([155.97.181.103]) with mapi; Thu, 11 Aug 2011
+ 19:34:09 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+CC: "myers@ece.utah.edu" <myers@ece.utah.edu>
+Date: Thu, 11 Aug 2011 19:34:03 -0600
+Subject: Re: BUG:  Exception when trying to delete reaction (PR#5459)
+Thread-Topic: BUG:  Exception when trying to delete reaction (PR#5459)
+Thread-Index: AcxYj+6AQvmndb4MRA+/ELWyBKf49Q==
+Message-ID: <54D7F955-5ADC-4D40-8436-F93AA5FB7844@utah.edu>
+References: <201108112354.p7BNsZZt016680@chou.ece.utah.edu>
+In-Reply-To: <201108112354.p7BNsZZt016680@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p7C1YAj1017983
+
+Yes, the reason I added these lines is for the parameter editor.  However, I think that these lines can either go somewhere else or be placed in an if statement checking that the editor is in parameter editor mode.
+
+Curtis
+
+On Aug 11, 2011, at 5:54 PM, "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> The problem was caused by the new lines you added to refresh:
+> 
+> gcm.reloadSBMLFile();
+> compartmentPanel.refreshCompartmentPanel(gcm.getSBMLDocument());
+> speciesPanel.refreshSpeciesPanel(gcm.getSBMLDocument());
+> parametersPanel.refreshParameterPanel(gcm.getSBMLDocument());
+> reactionPanel.refreshReactionPanel(gcm.getSBMLDocument());
+> 
+> I have commented them out, but I'm sure this causes other problems with whatever
+> you were trying to do here.
+> 
+> The refresh function gets called a lot.  It basically rebuilds the schematic. 
+> However, if you have changed the 
+> sbml document then reloading the file here will wipe out any changes you make. 
+> Namely, you add a reaction or 
+> species to the SBML document then reload the old document and this change is now
+> gone.  
+> 
+> Is this only for the parameter editor perhaps?
+> 
+> Chris
+> 
+

@@ -1,0 +1,34 @@
+From myers@ece.utah.edu  Sat Nov  3 18:55:11 2007
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.6 required=3.0 tests=AWL,BAYES_50,RCVD_BAD_ID
+	autolearn=no version=3.2.1
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.111.32])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id lA40tBpb006462
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 3 Nov 2007 18:55:11 -0600
+Received: from beta.eng.utah.edu ([155.98.111.99])
+	by mailhub.eng.utah.edu with esmtp 
+	(Exim 4.60 id 1IoTmS-0004Ib-UF)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 03 Nov 2007 18:56:02 -0600
+Received: from [192.168.0.2] (71-213-80-239.slkc.qwest.net [71.213.80.239])
+	(authenticated bits=0)
+	by beta.eng.utah.edu (8.13.1/8.13.1) with ESMTP id lA40t9cD013908
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 3 Nov 2007 18:55:09 -0600
+Subject: CHANGE: keepgoing option
+From: Chris Myers <myers@ece.utah.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain
+Date: Sat, 03 Nov 2007 18:53:35 -0600
+Message-Id: <1194137615.20834.2.camel@jiaqi.ece.utah.edu>
+Mime-Version: 1.0
+X-Mailer: Evolution 2.10.3 (2.10.3-4.fc7) 
+Content-Transfer-Encoding: 7bit
+X-UCE-Score: -0.1 (/)
+X-Scan-Signature: a75380776e3da7e1c10a138c289e280b
+
+The keepgoing option has not been added yet for geom, bag, bap, approx,
+posets, baptdc, hpn, or lhpndbm.  This option species that fail states
+should be added but state exploration should continue.
+
+

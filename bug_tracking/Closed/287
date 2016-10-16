@@ -1,0 +1,29 @@
+From badam@eng.utah.edu  Sun Jan 16 01:54:47 2000
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id BAA32117
+	for <atacs-bugs@shang.elen.utah.edu>; Sun, 16 Jan 2000 01:54:47 -0700
+Date: Sun, 16 Jan 2000 01:54:47 -0700
+From: badam@eng.utah.edu
+Message-Id: <200001160854.BAA32117@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Error in opening figure
+
+Full_Name: Balaji R Badam
+Version: 
+OS: unix
+source: http://shang.elen.utah.edu/~myers/book/back/VB_C.ps
+log: http://shang.elen.utah.edu/~myers/book/appB.html
+Submission from: lab3-12.eng.utah.edu (155.99.222.211)
+Submitted by: bbravi
+
+
+I tried to open the Figure C.1: Circuit for a C-element in 
+Appendix B: C.3  Schematic Entry for a C-element and found this error message.
+
+Not Found
+
+The requested URL /~myers/book/back/VB_C.ps was not found on this server.
+
+I tried many ways but could not open the figure.
+
+Ravi.

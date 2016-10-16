@@ -1,0 +1,37 @@
+From atacs-bugs  Tue Apr 23 12:33:56 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g3NIXue13961
+	for atacs-bugs@shang.elen.utah.edu; Tue, 23 Apr 2002 12:33:56 -0600
+Received: from saturn.wwc.edu (saturn.wwc.edu [199.236.178.1])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g3NIXtj13954
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 23 Apr 2002 12:33:56 -0600
+Received: from student.wwc.edu (student.wwc [10.82.5.3])
+	by saturn.wwc.edu (Postfix) with ESMTP id 362BAC2DEC
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 23 Apr 2002 18:33:42 +0000 (UTC)
+Received: from WWC-MTA by student.wwc.edu
+	with Novell_GroupWise; Tue, 23 Apr 2002 11:35:17 -0700
+Message-Id: <scc546f5.063@student.wwc.edu>
+X-Mailer: Novell GroupWise Internet Agent 6.0.1
+Date: Tue, 23 Apr 2002 11:34:49 -0700
+From: "Curt Nelson" <nelscu@wwc.edu>
+To: <atacs-bugs@vlsigroup.ece.utah.edu>
+Cc: "Curt Nelson" <NelsCu@wwc.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The last line in theis code never gets executed. Did the region
+information change?
+
+  for (region_num=2*design->ninpsig+1;
+       region_num<(2*design->nsignals+1);
+       region_num=region_num+2) {
+    
+  for (cur_region=design->regions[region_num];cur_region;
+       cur_region=cur_region->link) {
+    cout << "hello" << cur_region->cover << endl;
+
+Curt
+

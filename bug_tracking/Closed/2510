@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:16:22 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.184])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELGLmI012462
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:16:21 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so526891fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:16:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=5ycuBgBNLUfYgZKppcOxn99iCKlrZ326u+Bx0OuNPhs=;
+        b=JyuVOl2416mhuVEGbhxJU3ZVTUIA18VvDDwzqmqwrraaC8S2l/Vnf6sBl/GSk/4j4sMKXcRXwsp4uyLTWd9rqjI7DNbPPhqMy4ed2+2lXwUMR/t/hDfctJ5ZbHtsU4jwaTmMe6AfgX3hQc81PDLZc/JaQRnG5f7J1wG9R4gnz5E=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=RXBGaRNL1gM2eyc5X24GeCJkp1W8u2jb0F6nsABr7AOGLVYij/vmO6ZRVtC+339NGgHzRp9sdhznLCfjSNMVVIiNrccAL/qBMTLw0L6r4NFX3IVjSUvycOkMU4iV7Wpmw0xwClarRSehcwKtzMyET6Xfk1Ez38JwqZBtPqLilL8=
+Received: by 10.82.184.2 with SMTP id h2mr1747733buf.32.1203023780592;
+        Thu, 14 Feb 2008 13:16:20 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:16:20 -0800 (PST)
+Message-ID: <eba119560802141316hdff06aep781f00e0740e447@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:16:20 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE: Standalone Java version for scripting
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Create a standalone java version for scripting
+

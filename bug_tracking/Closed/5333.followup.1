@@ -1,0 +1,136 @@
+From myers@ece.utah.edu  Fri Apr 15 01:21:58 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p3F7LwmJ025681
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Apr 2011 01:21:58 -0600
+Received: from wlan.dagstuhl.de ([192.76.146.51] helo=[192.168.10.156])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QAdLp-0003O7-EN; Fri, 15 Apr 2011 01:21:57 -0600
+Cc: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+Message-Id: <A4F2B131-2A13-4E4F-A7DD-1ED1D2A54DE5@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <201104142356.p3ENuNf2022277@chou.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: BUG: crash during sweep (PR#5333)
+Date: Fri, 15 Apr 2011 01:21:48 -0600
+References: <201104142356.p3ENuNf2022277@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+Looks good.  Closing.
+
+On Apr 14, 2011, at 5:56 PM, Curtis Madsen wrote:
+
+> The threads interact with each other with a lock now, so you  
+> shouldn't get a
+> null pointer exception anymore.  Moving to needs testing.
+>
+>>
+>> --Apple-Mail-32-226605640
+>> Content-Type: text/plain;
+>> 	charset=US-ASCII;
+>> 	format=flowed;
+>> 	delsp=yes
+>> Content-Transfer-Encoding: 7bit
+>>
+>> When doing sweep of a variable, sometimes during calculations of the
+>> average/stddev an exception is generated:
+>>
+>> Exception in thread "Thread-8" java.lang.NullPointerException
+>> 	at graph.Graph.calculateAverageVarianceDeviation(Graph.java:5526)
+>> 	at graph.Graph.readData(Graph.java:529)
+>> 	at reb2sac.Run.execute(Run.java:2436)
+>> 	at reb2sac.Reb2Sac.run(Reb2Sac.java:3175)
+>> 	at reb2sac.Reb2SacThread.run(Reb2SacThread.java:21)
+>>
+>> The progress window does not close and aggregates are not all
+>> calculated.  Perhaps a race condition.
+>>
+>>
+>> --Apple-Mail-32-226605640
+>> Content-Type: text/html;
+>> 	charset=US-ASCII
+>> Content-Transfer-Encoding: quoted-printable
+>>
+>> <html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode:  
+>> space; =
+>> -webkit-line-break: after-white-space; ">When doing sweep of a  
+>> variable, =
+>> sometimes during calculations of the average/stddev an exception is =
+>> generated:<div><br></div><div><div style=3D"margin-top: 0px; =
+>> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font:  
+>> normal =
+>> normal normal 11px/normal Monaco; color: rgb(255, 0, 0);  
+>> ">Exception in =
+>> thread "Thread-8" <span style=3D"text-decoration: underline ;  
+>> color: =
+>> #000080">java.lang.NullPointerException</span></div><div =
+>> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+>> margin-left: 0px; font: normal normal normal 11px/normal Monaco;  
+>> color: =
+>> rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+>> style=3D"white-space:pre">	</span>at =
+>> graph.Graph.calculateAverageVarianceDeviation(<span =
+>> style=3D"text-decoration: underline ; color: =
+>> #000080">Graph.java:5526</span>)</div><div style=3D"margin-top:  
+>> 0px; =
+>> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font:  
+>> normal =
+>> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+>> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+>> graph.Graph.readData(<span style=3D"text-decoration: underline ;  
+>> color: =
+>> #000080">Graph.java:529</span>)</div><div style=3D"margin-top: 0px; =
+>> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font:  
+>> normal =
+>> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+>> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+>> reb2sac.Run.execute(<span style=3D"text-decoration: underline ;  
+>> color: =
+>> #000080">Run.java:2436</span>)</div><div style=3D"margin-top: 0px; =
+>> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font:  
+>> normal =
+>> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+>> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+>> reb2sac.Reb2Sac.run(<span style=3D"text-decoration: underline ;  
+>> color: =
+>> #000080">Reb2Sac.java:3175</span>)</div><div style=3D"margin-top:  
+>> 0px; =
+>> margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font:  
+>> normal =
+>> normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+>> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+>> reb2sac.Reb2SacThread.run(<span style=3D"text-decoration:  
+>> underline ; =
+>> color: #000080">Reb2SacThread.java:21</span>)</div></div><div =
+>> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+>> margin-left: 0px; font: normal normal normal 11px/normal Monaco;  
+>> color: =
+>> rgb(255, 0, 0); "><br></div><div style=3D"margin-top: 0px; margin- 
+>> right: =
+>> 0px; margin-bottom: 0px; margin-left: 0px; font: normal normal  
+>> normal =
+>> 11px/normal Monaco; color: rgb(255, 0, 0); "><font =
+>> class=3D"Apple-style-span" color=3D"#000000"  
+>> face=3D"Helvetica"><span =
+>> class=3D"Apple-style-span" style=3D"font-size: medium;">The  
+>> progress =
+>> window does not close and aggregates are not all calculated. =
+>>  Perhaps a race condition.</span></font></div><div =
+>> style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+>> margin-left: 0px; font: normal normal normal 11px/normal Monaco;  
+>> color: =
+>> rgb(255, 0, 0); "><font class=3D"Apple-style-span"  
+>> color=3D"#000000" =
+>> face=3D"Helvetica"><span class=3D"Apple-style-span" style=3D"font- 
+>> size: =
+>> medium;"><br></span></font></div></body></html>=
+>>
+>> --Apple-Mail-32-226605640--
+>>
+>>
+

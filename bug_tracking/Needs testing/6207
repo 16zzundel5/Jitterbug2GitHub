@@ -1,0 +1,51 @@
+From ibiosim@gmail.com  Thu Jan 29 09:49:28 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f45.google.com (mail-pa0-f45.google.com [209.85.220.45])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t0TGnRJr011798
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 29 Jan 2015 09:49:27 -0700
+Received: by mail-pa0-f45.google.com with SMTP id et14so41144120pad.4
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 29 Jan 2015 08:49:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=oWKXhSBRfND87Yz6LESnKwT0hdokuZIQCrt8kHshYmA=;
+        b=ggJT5IsmF/OgQxYntuKIKxNR4GbPlmPkFxJEEIvfQ6tw/Rw1ediLV1BqsN+3TtqJ7z
+         yw3kbPieO9Ko/CfMsy0HRY0ogSbXxZ+YRRff3Z8tDidT9oI5tu+Frfc8jYkSZV/QZmM1
+         pJE1V+hLZ0owrWzqnDWSDT/UBpIZ9/91C5sMdWbjmh3lkXZuTZ43Ip4FtKGqYILqPyzM
+         pFu6nVf0c7NLECqDwnF55w6vFhQcs+YfI3IpesA2ii6x5QusU3EabTaght35JHyfpmX+
+         oy3Gw3cUznRqGabmE4/yjicg0rszH/RiiN5592crCUv6HUutOKmuT03xIULm9GFtKnqB
+         1zbQ==
+X-Received: by 10.68.69.69 with SMTP id c5mr2195622pbu.90.1422550166733;
+        Thu, 29 Jan 2015 08:49:26 -0800 (PST)
+Received: from andy ([155.99.90.61])
+        by mx.google.com with ESMTPSA id c9sm8276162pdj.52.2015.01.29.08.49.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 29 Jan 2015 08:49:25 -0800 (PST)
+Date: Thu, 29 Jan 2015 08:49:25 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: andy.gilbert@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1527693336.0.1422550150942.JavaMail.andy@andy>
+Subject: BUG: The Fedora version does not work  on Ubuntu when I tried to
+ launch it
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8
+
+Operating system: Linux
+
+Bug reported by: andy.gilbert@utah.edu
+
+Description:
+The java version still works fine so I have a working version of the tool. I just wanted to let you know that the Fedora version does not work for all variants of linux.
+
+Stack trace:
+java.lang.NullPointerException
+	at javax.swing.ImageIcon.<init>(ImageIcon.java:205)
+	at main.Gui.<init>(Gui.java:411)
+	at main.Gui.main(Gui.java:8064)
+

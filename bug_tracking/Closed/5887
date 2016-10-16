@@ -1,0 +1,31 @@
+From myers@eng.utah.edu  Wed Apr 17 12:12:30 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r3HICT3o003854
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 17 Apr 2013 12:12:29 -0600
+Received: from 128-110-67-165.uconnect.utah.edu ([128.110.67.165])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1USWgT-0008xO-73
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 17 Apr 2013 12:02:17 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: textual editor should be different for LEMA
+Message-Id: <2AC58D22-7C60-48AF-8BB9-7CC94DA36416@ece.utah.edu>
+Date: Wed, 17 Apr 2013 12:12:28 -0600
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.3 \(1503\))
+X-Mailer: Apple Mail (2.1503)
+Sender: myers@eng.utah.edu
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r3HICT3o003854
+
+Parameters - should include more information on the list about type, initial value, input/output
+
+Events tab should actually be named "Transitions"
+
+Need to add a control flow tab
+
+
+

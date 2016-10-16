@@ -1,0 +1,34 @@
+From ali@seis.utah.edu  Tue Feb 12 13:45:23 2008
+Return-Path: <ali@seis.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=3.0 tests=BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from uuss.seis.utah.edu (uuss.seis.utah.edu [128.110.129.2])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1CKjMUt023128
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 13:45:22 -0700
+Received: from pion.seis.utah.edu (pion.seis.utah.edu [128.110.129.34])
+	by uuss.seis.utah.edu (8.9.3/8.9.3) with ESMTP id NAA04747;
+	Tue, 12 Feb 2008 13:45:10 -0700 (MST)
+From: Ali Moeinvaziri <ali@seis.utah.edu>
+Received: (from ali@localhost)
+	by pion.seis.utah.edu (8.9.3/8.9.3) id NAA25249;
+	Tue, 12 Feb 2008 13:45:10 -0700 (MST)
+Date: Tue, 12 Feb 2008 13:45:10 -0700 (MST)
+Message-Id: <200802122045.NAA25249@pion.seis.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: FEATURE: file description
+Cc: myers@ece.utah.edu, ali@seis.utah.edu
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+
+
+To whom it may concern:
+
+It might be useful to put a short description for each file type extensions
+when selecting to export the graph to a file. For example, when selecting pdf type,
+it would be professional to say "Portable Document Format" inside parenthesis
+in front of pdf. 
+
+-AM
+

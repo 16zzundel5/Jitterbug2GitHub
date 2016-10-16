@@ -1,0 +1,28 @@
+From killpack@eng.utah.edu  Fri Oct 22 11:56:46 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA06792
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 22 Oct 1999 11:56:46 -0600
+Date: Fri, 22 Oct 1999 11:56:46 -0600
+From: killpack@eng.utah.edu
+Message-Id: <199910221756.LAA06792@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: command line flags are wierd!
+
+Full_Name: Kip Killpack
+Version: updated Fri Oct 22, 9AM
+OS: Linux
+source: /home/chou/killpack/research/sonic/hse/pchbFS.hse
+log: /home/chou/killpack/research/sonic/hse/dump/atacs.log
+Submission from: chou.elen.utah.edu (155.99.23.202)
+Submitted by: killpack
+
+
+This command line with the -lh will cause a CSC violation
+atacs -lh -mV -mz -mU -mP -mT -ms -mD -ya pchbFS.hse
+
+If I take out the -lh like this...
+atacs -mV -mz -mU -mP -mT -ms -mD -ya pchbFS.hse
+
+Then the file goes through, and gives me the correct .prs file
+
+

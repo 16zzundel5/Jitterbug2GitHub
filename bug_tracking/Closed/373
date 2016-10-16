@@ -1,0 +1,28 @@
+From jitter-bugs@samba.org  Mon Mar 20 10:58:08 2000
+Return-Path: <jitter-bugs@samba.org>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA16801
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 20 Mar 2000 10:58:08 -0700
+Date: Mon, 20 Mar 2000 10:58:08 -0700
+Message-Id: <200003201758.KAA16801@chou.elen.utah.edu>
+From: jitter-bugs@samba.org
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Burst Mode Synthesis Core Dump in Windows NT 4.0
+
+Full_Name: Eric G Mercer
+Version: 
+OS: NT 4.0
+source: /home/shang/eemercer/work/vhdl/bm_example.tar.gz
+log: 
+Submission from: shang.elen.utah.edu (155.99.23.201)
+
+
+command: atacs -mc -mb -mG -mV -ya -sv winedual wineshop
+
+Issue: The busrt mode synthesis core dumps under windows NT 4.0.  Assuming this
+
+is a memory issue, the tel structure for the example in the listed tar-ball 
+(/home/shang/eemercer/work/vhdl/bm_example.tar.gz) and named wineshop.tel. 
+Using
+the tel structure, the example should be able to be run under purify.
+

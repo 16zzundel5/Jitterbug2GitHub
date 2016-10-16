@@ -1,0 +1,222 @@
+From atacs-bugs  Tue Jan 15 11:24:40 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g0FIOef18076
+	for atacs-bugs@shang.elen.utah.edu; Tue, 15 Jan 2002 11:24:40 -0700
+Received: from chen.elen.utah.edu (IDENT:root@chen.elen.utah.edu [155.99.23.216])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g0FIOeh18065;
+	Tue, 15 Jan 2002 11:24:40 -0700
+Received: from localhost (eemercer@localhost)
+	by chen.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g0FIOeW05085;
+	Tue, 15 Jan 2002 11:24:40 -0700
+X-Authentication-Warning: chen.elen.utah.edu: eemercer owned process doing -bs
+Date: Tue, 15 Jan 2002 11:24:40 -0700 (MST)
+From: Eric Mercer <eemercer@vlsigroup.ece.utah.edu>
+X-X-Sender:  <eemercer@chen.elen.utah.edu>
+To: <atacs-bugs@vlsigroup.elen.utah.edu>
+cc: <myers@vlsigroup.elen.utah.edu>
+Subject: ATACS does not find components with capitol letters
+Message-ID: <Pine.LNX.4.33.0201151114330.5045-200000@chen.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: MULTIPART/MIXED; BOUNDARY="1671157783-2064418820-1011119080=:5045"
+
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+  Send mail to mime@docserver.cac.washington.edu for more info.
+
+--1671157783-2064418820-1011119080=:5045
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+It appears that ATACS does not accept component names that have any 
+capitol letters in them when using HSE as a specification language.  I 
+have attached a spec to this message that using capitol letters in the 
+naming of CLKNM.  The command:
+
+ > atacs -oalhoqoptpys master_slave_sip_hl.hse CLKNM
+                    
+                    OR
+
+ > atacs -oalhoqoptpys master_slave_sip_hl.hse clknm
+
+will claim that the component is not found.  If the component name is 
+changed to clknm, then it works correctly.
+
+As a side note, ATACS does appear to support two-level hierarchy.  The 
+command:
+
+ > atacs -oalhoqoptpys master_slave_sip_hl.hse valid_clk_s.stalln
+
+wills synthesize the inverter in the valid_clk component.
+
+egm
+
+-- 
+-----------------------------------------------------------------------------
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 3280 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+-----------------------------------------------------------------------------
+
+--1671157783-2064418820-1011119080=:5045
+Content-Type: TEXT/PLAIN; charset=US-ASCII; name="master_slave_sip_hl.hse"
+Content-Transfer-Encoding: BASE64
+Content-ID: <Pine.LNX.4.33.0201151124400.5045@chen.elen.utah.edu>
+Content-Description: 
+Content-Disposition: attachment; filename="master_slave_sip_hl.hse"
+
+LyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKg0KICogSW52ZXJ0ZXIgd2l0
+aCBpbml0aWFsIGhpZ2ggb3V0cHV0DQogKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqLw0KbW9kdWxlIGludmVydGVyX2g7DQoNCiAgaW5wdXQgICBpbiA9
+IHtmYWxzZX07DQogIG91dHB1dCBvdXQgPSB7dHJ1ZSw8MjAsMjU7MTUsMjA+
+fTsNCg0KICBwcm9jZXNzIGludmVydGVyOw0KICAgICpbIFtpbl0gOyBvdXQt
+IDsgW35pbl0gOyBvdXQrIF0NCiAgZW5kcHJvY2Vzcw0KDQplbmRtb2R1bGUN
+Cg0KLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKg0KICogSW52ZXJ0ZXIg
+d2l0aCBpbml0aWFsIGxvdyBvdXRwdXQNCiAqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKiovDQptb2R1bGUgaW52ZXJ0ZXJfbDsNCg0KICBpbnB1dCAgIGlu
+ID0ge3RydWV9Ow0KICBvdXRwdXQgb3V0ID0ge2ZhbHNlLDwyMCwyNTsxNSwy
+MD59Ow0KDQogIHByb2Nlc3MgaW52ZXJ0ZXI7DQogICAgKlsgW35pbl0gOyBv
+dXQrIDsgW2luXSA7IG91dC0gXQ0KICBlbmRwcm9jZXNzDQoNCmVuZG1vZHVs
+ZQ0KDQovKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqDQogKiBEYXRhIGNs
+b2NrIGNpcmN1aXQNCiAqIE5PVEU6IFZhbGlkIGlzIGNvbXB1dGVkIG9uIHRo
+ZSBvcHBvc2l0ZSBlZGdlIG9mIHRoIGVjbG9jay4gIEl0IGlzDQogKiBzdGFi
+bGUgYmVmb3JlIHRoaXMgZWRnZSBhcnJpdmVzLg0KICoqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKi8NCm1vZHVsZSBhbmRfZ2F0ZTsNCg0KICBpbnB1dCBh
+ID0ge2ZhbHNlfTsNCiAgaW5wdXQgYiA9IHtmYWxzZX07DQoNCiAgb3V0cHV0
+IGMgPSB7ZmFsc2UsPDAsMD59Ow0KDQogIHByb2Nlc3MgbG9naWM7DQogICAg
+KlsgW2EgJiBiXTsgYys7IFt+YSB8IH5iXTsgYy0gXQ0KICBlbmRwcm9jZXNz
+DQoNCmVuZG1vZHVsZQ0KDQovKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+DQogKiBWYWxpZCBjbG9jayBjaXJjdWl0DQogKiBOT1RFOiBzaW4gY2hhbmdl
+cyBvbiB0aGUgb3Bwb3NpdGUgcGhhc2Ugb2YgY2xrLCB0aHVzIGl0IGlzIHN0
+YWJsZSANCiAqIHdoZW4gY2xrIGFycml2ZXMuICBJdHMgaW52ZXJzaW9uIGRv
+ZXMgbm90IG5lZWQgdG8gYmUgaW5jbHVkZWQgaW4gDQogKiBvdXIgZGVsYXkg
+ZXN0aW1hdGVzDQogKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqLw0KbW9k
+dWxlIHZhbGlkX2NsazsNCg0KICBpbnB1dCBzaW4gPSB7ZmFsc2V9Ow0KICBp
+bnB1dCBjbGsgPSB7ZmFsc2V9Ow0KDQogIG91dHB1dCB2YWxpZF9jbGsgPSB7
+ZmFsc2UsPDM1LDQ1Pn07DQoNCiAgaW52ZXJ0ZXJfaCBzdGFsbG4oIGluID0+
+IHNpbiwgb3V0ID0+IHN0YWxsbiApOw0KDQogIHByb2Nlc3MgdmFsaWRfY2xr
+Ow0KICAgICpbIFtjbGsgJiBzdGFsbG5dOyB2YWxpZF9jbGsrOyBbfmNsa107
+IHZhbGlkX2Nsay0gXQ0KICBlbmRwcm9jZXNzDQoNCmVuZG1vZHVsZQ0KDQov
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqDQogKiBEYXRhIGNsb2NrIGNp
+cmN1aXQNCiAqIE5PVEU6IFZhbGlkIGlzIGNvbXB1dGVkIG9uIHRoZSBvcHBv
+c2l0ZSBlZGdlIG9mIHRoIGVjbG9jay4gIEl0IGlzDQogKiBzdGFibGUgYmVm
+b3JlIHRoaXMgZWRnZSBhcnJpdmVzLg0KICoqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKi8NCm1vZHVsZSBkYXRhX2NsazsNCg0KICBpbnB1dCB2aW4gPSB7
+ZmFsc2V9Ow0KICBpbnB1dCBjbGsgPSB7ZmFsc2V9Ow0KDQogIG91dHB1dCBk
+YXRhX2NsayA9IHtmYWxzZSw8MzUsNDU+fTsNCg0KICBwcm9jZXNzIHZhbGlk
+X2NsazsNCiAgICAqWyBbY2xrICYgdmluXTsgZGF0YV9jbGsrOyBbfmNsa107
+IGRhdGFfY2xrLSBdDQogIGVuZHByb2Nlc3MNCg0KZW5kbW9kdWxlDQoNCi8q
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioNCiAqIGxhdGNoIGNpcmN1aXQN
+CiAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKiovDQptb2R1bGUgcmVfbGF0
+Y2g7DQoNCiAgaW5wdXQgICBkID0ge2ZhbHNlfTsNCiAgaW5wdXQgY2xrID0g
+e2ZhbHNlfTsNCg0KICBvdXRwdXQgcSA9IHtmYWxzZSw8NDAsNTA+fTsNCg0K
+ICBwcm9jZXNzIHJlX2xhdGNoOw0KICAgICpbIFtjbGsgJiBkXTsgcSs7IFt+
+Y2xrXTsgW2NsayAmIH5kXTsgcS0gO1t+Y2xrXSBdDQogIGVuZHByb2Nlc3MN
+Cg0KZW5kbW9kdWxlDQoNCi8qKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioN
+CiAqIHN0YWxsIGxhdGNoIGNpcmN1aXQgZm9yIG1hc3Rlcg0KICoqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKi8NCm1vZHVsZSBzdGFsbF9sYXRjaDsNCg0K
+ICBpbnB1dCBzdGFsbF9pbiA9IHtmYWxzZX07DQogIGlucHV0IHZhbGlkX2lu
+ID0ge2ZhbHNlfTsNCiAgaW5wdXQgICAgICBjbGsgPSB7ZmFsc2V9Ow0KDQog
+IG91dHB1dCBzdGFsbF9vdXQgPSB7ZmFsc2UsPDQwLDUwPn07DQoNCiAgcHJv
+Y2VzcyBzdGFsbF9sYXRjaDsNCiAgICAqWyBbY2xrICYgc3RhbGxfaW4gJiB2
+YWxpZF9pbl0gOyBzdGFsbF9vdXQrIDsgW35jbGtdIDsgDQogICAgICAgW2Ns
+ayAmIH5zdGFsbF9pbiAmIHZhbGlkX2luXSA7IHN0YWxsX291dC0gOyBbfmNs
+a10gXQ0KLyoqIFN5bnRoZXNpcyBzaG93cyB0aGF0IHRoZXNlIGNhc2VzIG5l
+dmVyIGhhcHBlbi4NCiAgICAgICB8IGNsayAmIH5zdGFsbF9pbiAmIH52YWxp
+ZF9pbiAtPiBzdGFsbF9vdXQtIDsgW35jbGtdDQogICAgICAgfCBjbGsgJiBz
+dGFsbF9pbiAmIH52YWxpZF9pbiAtPiBzdGFsbF9vdXQtIDsgW35jbGtdDQog
+ICAgICAgfCBjbGsgJiBzdGFsbF9pbiAmIHZhbGlkX2luIC0+IFt+Y2xrXSA7
+ICoNCiAgICAgICBdXQ0KKiovDQogIGVuZHByb2Nlc3MNCg0KZW5kbW9kdWxl
+DQoNCg0KLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqDQogKiogTUFT
+VEVSLVNMQVZFIFNJUA0KICoqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiov
+DQptb2R1bGUgbWFzdGVyX3NsYXZlX3NpcDsNCg0KICAvKiogR2xvYmFsIGNv
+bnRyb2wgc2lnbmFscyAqKi8NCiAgaW5wdXQgICAgZ2NsayAgPSB7ZmFsc2Us
+PDgwMCw4MDA+fTsNCiAgaW5wdXQgc3RhbGxfaW4gPSB7ZmFsc2UsPDYwLDE1
+NT59Ow0KICBpbnB1dCB2YWxpZF9pbiA9IHtmYWxzZSw8NzUsOTU+fTsNCiAg
+aW5wdXQgIGRhdGFfaW4gPSB7ZmFsc2UsPDE1NiwyMDU+fTsNCg0KICAvKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqDQogICAqKiBNQVNURVIgU1RBR0Ug
+MQ0KICAgKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovDQoNCiAgLyoqIFN0
+YWxsIExhdGNoDQogICAqKiBGb2xkZWQgbG9naWMgaW50byBsYXRjaCB0byBi
+ZWNhdXNlIGdhdGUgaXMgaGF6YXJkb3VzLiAgVGhpcyBpcw0KICAgKiogbm90
+IGFuIGlzc3VlIHNpbmNlIHRoZSBsYXRjaCBpcyBub3QgYWN0aXZlIHdoaWxl
+IGdhdGUgaXMgaGF6YXJkb3VzDQogICAqKi8NCiAgc3RhbGxfbGF0Y2ggc3Rh
+bGxfb3V0KCBzdGFsbF9pbiA9PiBzdGFsbF9TLCB2YWxpZF9pbiA9PiB2YWxp
+ZF9pbnQsDQogICAgICAgICAgICAgICAgICAgICAgICAgY2xrID0+IGdjbGss
+IHN0YWxsX291dCA9PiBzdGFsbF9vdXQgKTsNCg0KICAvKiogVmFsaWQgY2xv
+Y2sgYW5kIGxhdGNoICoqLw0KICBpbnZlcnRlcl9oIENMS05NKCBpbiA9PiBn
+Y2xrLCBvdXQgPT4gY2xrbl9NICk7DQogIHZhbGlkX2NsayB2YWxpZF9jbGtf
+TSggc2luID0+IHN0YWxsX291dCwgY2xrID0+IGNsa25fTSwgDQogICAgICAg
+ICAgICAgICAgICAgICAgICAgdmFsaWRfY2xrID0+IHZhbGlkX2Nsa19NICk7
+DQogIHJlX2xhdGNoIHZhbGlkX00oIGQgPT4gdmFsaWRfaW4sIGNsayA9PiB2
+YWxpZF9jbGtfTSwgcSA9PiB2YWxpZF9pbnQgKTsNCg0KICAvKiogRGF0YSBj
+bG9jayBhbmQgbGF0Y2ggKiovDQogIGludmVydGVyX2wgdmFsaWRfY2xrX01u
+KCBpbiA9PiB2YWxpZF9jbGtfTSwgb3V0ID0+IHZhbGlkX2Nsa19NbiApOw0K
+ICBkYXRhX2NsayBkYXRhX2Nsa19NbiggdmluID0+IHZhbGlkX2ludCwgY2xr
+ID0+IHZhbGlkX2Nsa19NbiwgDQogICAgICAgICAgICAgICAgICAgICAgIGRh
+dGFfY2xrID0+IGRhdGFfY2xrX01uICk7DQogIGludmVydGVyX2ggZGF0YV9j
+bGtfTSggaW4gPT4gZGF0YV9jbGtfTW4sIG91dCA9PiBkYXRhX2Nsa19NICk7
+DQogIHJlX2xhdGNoIGRhdGFfTSggZCA9PiBkYXRhX2luLCBjbGsgPT4gZGF0
+YV9jbGtfTSwgcSA9PiBkYXRhX2ludCApOw0KDQoNCiAgLyoqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKg0KICAgKiogU0xBVkUgU1RBR0UgMQ0KICAgKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKiovDQoNCiAgLyoqIFN0YWxsIExhdGNo
+ICoqLw0KICBpbnZlcnRlcl9oIGNsa25fUyggaW4gPT4gZ2Nsaywgb3V0ID0+
+IGNsa25fUyApOw0KICByZV9sYXRjaCBzdGFsbF9TKCBkID0+IHN0YWxsX2lu
+LCBjbGsgPT4gY2xrbl9TLCBxID0+IHN0YWxsX1MgKTsNCg0KICAvKiogVmFs
+aWQgY2xvY2sgYW5kIGxhdGNoICoqLw0KICB2YWxpZF9jbGsgdmFsaWRfY2xr
+X3MoIHNpbiA9PiBzdGFsbF9TLCBjbGsgPT4gZ2NsaywgDQogICAgICAgICAg
+ICAgICAgICAgICAgICAgdmFsaWRfY2xrID0+IHZhbGlkX2Nsa19TICk7DQog
+IHJlX2xhdGNoIHZhbGlkX1MoIGQgPT4gdmFsaWRfaW50LCBjbGsgPT4gdmFs
+aWRfY2xrX1MsIHEgPT4gdmFsaWRfb3V0ICk7DQoNCiAgLyoqIERhdGEgY2xv
+Y2sgYW5kIGxhdGNoICoqLw0KICBkYXRhX2NsayBkYXRhX2Nsa19TKCB2aW4g
+PT4gdmFsaWRfaW50LCBjbGsgPT4gdmFsaWRfY2xrX1MsIA0KICAgICAgICAg
+ICAgICAgICAgICAgICBkYXRhX2NsayA9PiBkYXRhX2Nsa19TICk7DQogIHJl
+X2xhdGNoIGRhdGFfUyggZCA9PiBkYXRhX2ludCwgY2xrID0+IGRhdGFfY2xr
+X1MsIHEgPT4gZGF0YV9vdXQgKTsNCg0KDQogIC8qKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioNCiAgICogRU5WSVJPTk1FTlQNCiAgICoqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKi8NCiAgdGVzdGJlbmNoIHRfY2xvY2s7DQogICAg
+KlsgZ2NsaysgOyBnY2xrLSBdDQogIGVuZHRlc3RiZW5jaA0KDQogIHRlc3Ri
+ZW5jaCB0X3N0YWxsX2luOw0KICAgICpbIFsgICAgICAgICAgICAgIGdjbGsg
+JiBzdGFsbF9pbiAtPiBzdGFsbF9pbi0gOyBbfmdjbGtdDQogICAgICAgfCAg
+ICAgICAgICAgICAgZ2NsayAmIHN0YWxsX2luIC0+IFt+Z2Nsa10NCiAgICAg
+ICB8IGdjbGsgJiB+c3RhbGxfaW4gJiB2YWxpZF9vdXQgLT4gc3RhbGxfaW4r
+IDsgW35nY2xrXQ0KICAgICAgIHwgZ2NsayAmIH5zdGFsbF9pbiAmIHZhbGlk
+X291dCAtPiBbfmdjbGtdDQogICAgICAgXQ0KICAgICBdDQogIGVuZHRlc3Ri
+ZW5jaA0KDQogIHRlc3RiZW5jaCB0X3ZhbGlkX2luOw0KICAgKlsgWyBnY2xr
+ICYgdmFsaWRfaW4gJiB+c3RhbGxfb3V0IC0+IHZhbGlkX2luLSA7IFt+Z2Ns
+a10NCiAgICAgIHwgZ2NsayAmIHZhbGlkX2luICYgfnN0YWxsX291dCAtPiBb
+fmdjbGtdDQogICAgICB8ICAgICAgICAgICAgIGdjbGsgJiB+dmFsaWRfaW4g
+LT4gdmFsaWRfaW4rIDsgW35nY2xrXQ0KICAgICAgfCAgICAgICAgICAgICBn
+Y2xrICYgfnZhbGlkX2luIC0+IFt+Z2Nsa10NCiAgICAgIF0NCiAgICBdDQog
+IGVuZHRlc3RiZW5jaA0KDQogIHRlc3RiZW5jaCB0X2RhdGFfaW47DQogICAq
+WyBbICBnY2xrICYgZGF0YV9pbiAmIH5zdGFsbF9vdXQgLT4gZGF0YV9pbi0g
+OyBbfmdjbGtdDQogICAgICB8ICBnY2xrICYgZGF0YV9pbiAmIH5zdGFsbF9v
+dXQgLT4gW35nY2xrXQ0KICAgICAgfCBnY2xrICYgfmRhdGFfaW4gJiB+c3Rh
+bGxfb3V0IC0+IGRhdGFfaW4rIDsgW35nY2xrXQ0KICAgICAgfCBnY2xrICYg
+fmRhdGFfaW4gJiB+c3RhbGxfb3V0IC0+IFt+Z2Nsa10NCiAgICAgIF0NCiAg
+ICBdDQogIGVuZHRlc3RiZW5jaA0KICANCmVuZG1vZHVsZQ0K
+--1671157783-2064418820-1011119080=:5045--
+

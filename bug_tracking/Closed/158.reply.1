@@ -1,0 +1,44 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: stjung@vlsigroup.elen.utah.edu
+Subject: Re: find_reverse_events does not work for rev.csp. (PR#158)
+Date: Wed Jun  9 15:07:06 1999
+
+Chris says, "Sung-Tae knows how to test this."
+So, how can I test this?
+
+
+> Full_Name: Chris Myers
+> Version: 
+> OS: 
+> source: 
+> log: 
+> Submission from: han.elen.utah.edu (155.99.23.196)
+> Submitted by: myers
+> 
+> 
+> Find reverse events does not work for:
+> module rev;
+> input a;
+> input b;
+> input c;
+> input d;
+> input e;
+> input f;
+> input g;
+> input h;
+> output s;
+> 
+> process rev;
+> *[[ skip -> e+; s+; a+; e-; s-; a-
+>   | skip -> d+; c+; d-;
+>     [ skip -> c-
+>     | skip -> f+; b+; f-;
+>       [ skip -> b-
+>       | skip -> g+; a+; g-; a-; *
+>       ]; *
+>     ]
+>  ]]
+> endprocess
+> endmodule
+> 
+> 

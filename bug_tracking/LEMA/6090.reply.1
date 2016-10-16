@@ -1,0 +1,43 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: persistent transitions not working (PR#6090)
+Date: Sat Jun 28 16:04:52 2014
+
+Consider the following example Petri net:
+
+p0 -- { a==1 } --> t0 --> p1
+p0 -- { b==1 } --> t1 --> p2
+
+You can model this with two events:
+
+Event t0
+Trigger (p0==1 && (a==1 || t0==1)) 
+Trigger is non-persistent 
+Delay d0
+Assignments:
+	p0:=0
+	p1:=1
+	t0:=0
+	t1:=0
+
+Event t1
+Trigger (p0==1 && (b==1 || t1==1))
+Trigger is non-persistent
+Delay d1 
+Assignments:
+	p0:=0
+	p1:=2
+	t0:=0
+	t1:=0
+
+Event tt0
+Trigger (p0==1 && a==1) 
+Delay 0
+Assignments
+	t0:=1
+
+Event tt1
+Trigger (p0==1 && b==1) 
+Delay 0
+Assignments
+	t1:=1

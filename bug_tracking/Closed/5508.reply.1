@@ -1,0 +1,24 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: open model window not updated on rename (PR#5508)
+Date: Thu Aug 25 17:01:20 2011
+
+There were a few places in the rename method that things were not being set
+correctly.  Not sure how this happened, but I think that they are fixed and
+renaming should work now.  Moving to needs testing.
+
+> Curtis: can you look at this one.
+> 
+> When a model is open and renamed, the name is not getting updated in the open
+> model editor.
+> 
+> Also, I don't seem to be able to rename analysis or learn views.
+> 
+> Any ideas?
+> 
+> Thanks,
+> 
+> Chris
+> 
+> 
+> 

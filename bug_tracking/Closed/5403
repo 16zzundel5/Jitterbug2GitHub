@@ -1,0 +1,86 @@
+From sarbruis@gmail.com  Wed Jun 29 01:44:55 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p5T7isGS003058
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Jun 2011 01:44:55 -0600
+Received: by bwa19 with SMTP id 19so1275571bwa.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 29 Jun 2011 00:44:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=Bic4xCYdFYroBeox+2sE+Suyk95iTCwNTaz3Hv/HVQc=;
+        b=FINmhlY/6MyNEOMvcJQqZYAZdk++leB5Ew2/LP7US2ouSmbMWNH7UnkSdKs78rlNt2
+         lJL4fbffdm/4q0XbgBZfDksnQmNTa0qRkWEsg4lJmR+WHNETD70ZPsVtTG3Zq/sjGY13
+         fNKjGS2+k+FyAxSsSOh2C2ga4bp8jznI6AnqE=
+Received: by 10.204.135.206 with SMTP id o14mr411520bkt.143.1309333493113;
+ Wed, 29 Jun 2011 00:44:53 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.116.193 with HTTP; Wed, 29 Jun 2011 00:44:13 -0700 (PDT)
+In-Reply-To: <201106290626.p5T6Q3n4002167@chou.ece.utah.edu>
+References: <201106290626.p5T6Q3n4002167@chou.ece.utah.edu>
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Wed, 29 Jun 2011 01:44:13 -0600
+Message-ID: <BANLkTikrDOAn6bVHVd=asyEwt8yO3wqMbA@mail.gmail.com>
+Subject: Re: BUG: setType in InfluencePanel doesn't handle reaction and
+ modifier types (PR#5401)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=000e0cd6e2febfe51304a6d4f592
+
+--000e0cd6e2febfe51304a6d4f592
+Content-Type: text/plain; charset=ISO-8859-1
+
+Okay.  They're listed under the types drop-down in the influence panel and
+in the types array, so I think that's the problem, then.
+
+
+On Wed, Jun 29, 2011 at 12:26 AM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Influences and reactions are actually handled quite differently.  Namely,
+> an
+> influence is part of the GCM and is composed of multiple reactions while a
+> reaction is part of the SBML model.  When you click on an influence, you
+> get the
+> influence editor, and when you click on a reaction, you get a reaction
+> editor.
+>
+> For this reason, you cannot change an influence to a reaction or vice
+> versa, so
+> those options are not needed in the influence editor.
+>
+> Chris
+>
+>
+
+--000e0cd6e2febfe51304a6d4f592
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div>Okay. =A0They&#39;re listed under the types drop-down in the influence=
+ panel and in the types array, so I think that&#39;s the problem, then.<br>=
+</div><div><br></div><div><br></div><div class=3D"gmail_quote">On Wed, Jun =
+29, 2011 at 12:26 AM, Chris Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:a=
+tacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;=
+</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex;">Influences and reactions are actually handl=
+ed quite differently. =A0Namely, an<br>
+influence is part of the GCM and is composed of multiple reactions while a<=
+br>
+reaction is part of the SBML model. =A0When you click on an influence, you =
+get the<br>
+influence editor, and when you click on a reaction, you get a reaction edit=
+or.<br>
+<br>
+For this reason, you cannot change an influence to a reaction or vice versa=
+, so<br>
+those options are not needed in the influence editor.<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br>
+
+--000e0cd6e2febfe51304a6d4f592--
+

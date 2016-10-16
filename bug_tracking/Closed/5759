@@ -1,0 +1,53 @@
+From moschino21@gmail.com  Sat Sep  1 16:50:40 2012
+Return-Path: <moschino21@gmail.com>
+Received: from mail-ie0-f170.google.com (mail-ie0-f170.google.com [209.85.223.170])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q81MoeKU000808
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 1 Sep 2012 16:50:40 -0600
+Received: by ied7 with SMTP id 7so2304860ied.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 01 Sep 2012 15:50:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        bh=DYi29JYhQ2m/lHFunkaO5kg9NFfnZQDFwMWpnvV85dE=;
+        b=RVDMs8ogg1e2ABfrxAaozaBxBT2J6bNwoTXehO5CdqVyLBHhzo4bxjpcIaExHakt6w
+         BTeHtPi6iGGJ1SPTa6Z2ot7+7OF7yaWihZhA4zb6hdAomPmj5G4R9konLrvrWCAqDBRo
+         bKj5MoEqHde9HWTsCEit+5Qj3wwGiws8gmU3VCCVMhl54AjtwoWcpa+hE864eKHjpRRl
+         +fzdpT7p232uZIpL1VxgzCBgi07k6mm5BDuvY0no0hgFjR4FtvMWkQn9DTdzvwcMVtTI
+         7A+0aLIUASZYWeLPWB4Qnx3vMgDwgPkBsSm5x9L6oVPy1J1y4AEmfTjdnhhppZGQhkEE
+         BfeQ==
+Received: by 10.50.10.197 with SMTP id k5mr6836586igb.39.1346539839769; Sat,
+ 01 Sep 2012 15:50:39 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.64.23.238 with HTTP; Sat, 1 Sep 2012 15:50:09 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Sat, 1 Sep 2012 16:50:09 -0600
+Message-ID: <CA+LVOvmZ-X7sbYSF5p4bQ_+nq=P5e3T8OVHLhOLqi-dEbO16NQ@mail.gmail.com>
+Subject: FEATURE:Add support for Boolean variables in the schematic editor in LEMA
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=14dae9340929d34cd604c8abbcc8
+
+--14dae9340929d34cd604c8abbcc8
+Content-Type: text/plain; charset=ISO-8859-1
+
+Boolean variable is not supported in the schematic editor. Also, the
+trigger and assignment in the transition editor does not allow Boolean
+variables. It will be useful to support Boolean variables in  both places.
+Possibly we need custom annotations.
+
+-- 
+Zhen Zhang
+
+--14dae9340929d34cd604c8abbcc8
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<span style=3D"font-family:arial,sans-serif;font-size:13px;background-color=
+:rgb(255,255,255)">Boolean variable is not supported in the schematic edito=
+r. Also, the trigger and assignment in the transition editor does not allow=
+ Boolean variables. It will be useful to support Boolean variables in =A0bo=
+th places. Possibly we need custom annotations.=A0</span><br clear=3D"all">
+
+<div><br></div>-- <br>Zhen Zhang<br>
+
+--14dae9340929d34cd604c8abbcc8--
+

@@ -1,0 +1,46 @@
+From nroehner@comcast.net  Thu Aug 12 16:05:00 2010
+Return-Path: <nroehner@comcast.net>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from qmta06.emeryville.ca.mail.comcast.net (qmta06.emeryville.ca.mail.comcast.net [76.96.30.56])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7CM4xUA024769
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Aug 2010 16:04:59 -0600
+Received: from omta17.emeryville.ca.mail.comcast.net ([76.96.30.73])
+	by qmta06.emeryville.ca.mail.comcast.net with comcast
+	id tXEn1e00A1afHeLA6a4zuv; Thu, 12 Aug 2010 22:04:59 +0000
+Received: from sz0128.ev.mail.comcast.net ([76.96.26.192])
+	by omta17.emeryville.ca.mail.comcast.net with comcast
+	id ta4y1e00J48h5108da4yiA; Thu, 12 Aug 2010 22:04:59 +0000
+Date: Thu, 12 Aug 2010 22:04:58 +0000 (UTC)
+From: nroehner@comcast.net
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <649221550.953146.1281650698882.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>
+Subject: BUG:  problem with prompted save
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_953145_531575010.1281650698881"
+X-Originating-IP: [155.98.26.227]
+X-Mailer: Zimbra 6.0.5_GA_2420.RHEL4 (ZimbraWebClient - FF3.0 (Linux)/6.0.5_GA_2420.RHEL4)
+
+------=_Part_953145_531575010.1281650698881
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+If I make a change in a GCM and then create an analysis view, I'm prompted to save. Clicking either "yes" or "yes to all" results in an error message stating that my GCM file isn't valid. If, however, I save by clicking the save button in the toolbar after making a change, I can create an analysis view without any problems. 
+
+Nic 
+
+------=_Part_953145_531575010.1281650698881
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html><head><style type='text/css'>p { margin: 0; }</style></head><body><div style='font-family: Arial; font-size: 12pt; color: #000000'><font><font size="2">If I make a change in a GCM and then create an analysis
+view, I'm prompted to save.&nbsp; Clicking either "yes" or "yes to all"
+results in an error message stating that my GCM file isn't valid.&nbsp; If,
+however, I save by clicking the save button in the toolbar after making
+a change, I can create an analysis view without any problems.<br><br>Nic<br>
+</font></font></div></body></html>
+------=_Part_953145_531575010.1281650698881--
+

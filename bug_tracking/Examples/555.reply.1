@@ -1,0 +1,24 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: hao@vlsigroup.ece.utah.edu
+Subject: Re: Timing dependent choices problem (PR#555)
+Date: Mon Apr 22 19:02:18 2002
+CC: eemercer@vlsigroup
+
+> Full_Name: Hao Zheng
+> Version: 
+> OS: 
+> spec: 
+> log: 
+> Submission from: tang.elen.utah.edu (155.99.23.207)
+> Submitted by: hao
+> 
+> 
+> Example file: /home/tang/hao/research/atacs/examples/csp/ex2.csp
+> postprocessing destory the timing dependent choice specified, and POSETS
+> cannot handle it. 
+> Error: different circuit is derived. 
+> 
+> 
+Indeed this example has time dependent choice inherent in the example.  I
+believe it should have two different circuits depending on whether -tp -ts are
+chosen.

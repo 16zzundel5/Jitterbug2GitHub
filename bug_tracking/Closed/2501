@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Tue Feb 12 14:53:59 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.184])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1CLrwJC024490
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 14:53:58 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so5827493fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 13:53:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=HB8GjRaqYEMy/oyywkXgCqou6Gi8SHMeeqqmwH+v0F8=;
+        b=Rt3kd2zaTwQCKnLJXjA1nWYPd5rEFW6ttODeSOCU9IgKTOIE1UZg7q+hx0wyZQopWTW+rfj2QQVUzE7cnmZugM3E1Lywl3b+KRk9ZnYcIx2pz2MLi8RygXUbEh3NVgnxiDhlGajoL8JO7JS99au83XRVgEoAWYNJWGXwB2SfS40=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=UhWljN9qXIM6xuEPtkC3dv9mAh9SBPFAbVvb8eJPINZ0t6DQ5gkhvvspMQKMY2mxAZXqzLaVPy1cG5SRB2lIsYQqztyip4f/QHgqXQ3/nX3Zh+AT1i0Ql3vSo+yLfSE3yMBzeKXKgC7nRGMRF2TelzzWkPuTRKcLYdquIz6v9ko=
+Received: by 10.82.148.7 with SMTP id v7mr3422564bud.10.1202853236517;
+        Tue, 12 Feb 2008 13:53:56 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Tue, 12 Feb 2008 13:53:56 -0800 (PST)
+Message-ID: <eba119560802121353q49caa1a1lea244e133ee85f76@mail.gmail.com>
+Date: Tue, 12 Feb 2008 14:53:56 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Move Stoichiometry to promoter
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Move the stoichiometry field from influence to promoter
+

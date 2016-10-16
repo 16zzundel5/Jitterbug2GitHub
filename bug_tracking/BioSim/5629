@@ -1,0 +1,70 @@
+From curtis.madsen@utah.edu  Tue Mar 27 18:01:54 2012
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q2S01sYM017606
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 27 Mar 2012 18:01:54 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap4EAOVTck+bYbVl/2dsb2JhbABFDoI4tyeCAAsFgQsBCwEeViYBBBuIApoDlyOJCZAsYwSIJZ1pgjA3
+X-IronPort-AV: E=Sophos;i="4.73,659,1325487600"; 
+   d="scan'208,217";a="19279373"
+Received: from h101.umail.utah.edu (HELO X-HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 27 Mar 2012 18:01:53 -0600
+Received: from X-MB4.xds.umail.utah.edu ([169.254.9.24]) by
+ X-HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi id 14.02.0247.003;
+ Tue, 27 Mar 2012 18:01:53 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG:  Events with Delay Don't Work in iSSA
+Thread-Topic: Events with Delay Don't Work in iSSA
+Thread-Index: Ac0Mdfe9+F7D4vs7ThulO/9f16x/Mg==
+Date: Wed, 28 Mar 2012 00:01:52 +0000
+Message-ID: <F96A0BC7D9EC7641BD926A332F7A2F9D0D10EB49@X-MB4.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.98.26.227]
+Content-Type: multipart/alternative;
+	boundary="_000_F96A0BC7D9EC7641BD926A332F7A2F9D0D10EB49XMB4xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_F96A0BC7D9EC7641BD926A332F7A2F9D0D10EB49XMB4xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+When restarts occur at the start of the next increment in iSSA, the event q=
+ueue is lost.  This means that if an event has delay larger than the curren=
+t run's increment, then the event will be placed on the queue, but will nev=
+er fire because that part of the state is lost.  We need to figure out how =
+to preserve the event queue or decide that events with delay are disallowed=
+ in iSSA.  Perhaps we can store the event queue for each run and then resto=
+re the event queue for the selected path.
+
+--_000_F96A0BC7D9EC7641BD926A332F7A2F9D0D10EB49XMB4xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">When restarts occur at the start of the next increment in iSSA, the =
+event queue is lost.&nbsp; This means that if an event has delay larger tha=
+n the current run's increment, then the
+ event will be placed on the queue, but will never fire because that part o=
+f the state is lost.&nbsp; We need to figure out how to preserve the event =
+queue or decide that events with delay are disallowed in iSSA.&nbsp; Perhap=
+s we can store the event queue for each run
+ and then restore the event queue for the selected path.<br>
+</div>
+</body>
+</html>
+
+--_000_F96A0BC7D9EC7641BD926A332F7A2F9D0D10EB49XMB4xdsumailuta_--
+

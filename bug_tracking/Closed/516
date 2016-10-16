@@ -1,0 +1,64 @@
+From eemercer@elen.utah.edu  Fri Sep 29 10:19:01 2000
+Return-Path: <eemercer@elen.utah.edu>
+Received: from localhost (eemercer@localhost)
+	by shang.elen.utah.edu (8.9.3/8.9.3) with ESMTP id KAA08046
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 29 Sep 2000 10:19:00 -0600
+X-Authentication-Warning: shang.elen.utah.edu: eemercer owned process doing -bs
+Date: Fri, 29 Sep 2000 10:19:00 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Check Script not Catching All Files (fwd)
+Message-ID: <Pine.LNX.4.10.10009291018490.8028-100000@shang.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+
+-----
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 3280 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+---------- Forwarded message ----------
+Date: Fri, 29 Sep 2000 10:14:21 -0600 (MDT)
+From: Eric Mercer <eemercer@elen.utah.edu>
+To: peskin@vlsigroup.elen.utah.edu
+Subject: Check Script not Catching All Files
+
+Eric,
+
+It did it a gain!  And you are not here to see it. Here is the message:
+
+Checking status of tree rooted at /home/shang/eemercer/research/atacs/
+WARNING M examples/hse/pchb.hse: You have modified this file but not
+committed it.
+WARNING U src/hse.cpp: Another user has modified this file.
+WARNING ? src/trace.vhd: You have not cvs added this file.
+Committing just ... could break the repository!
+Are you sure you want to proceed (yes/no)?  
+
+
+Here are the files modified in my directory:
+
+findrsg.c (I was checking this in)
+bag.cc
+bag.h
+
+examples/hse/pchb.hse
+
+I did not run the regression first before trying to check in findrsg.c.
+Maybe this has something to with the results.
+
+egm
+
+-----
+Eric G Mercer                                   eemercer@elen.utah.edu
+MEB 3280 Dept. Electrical Engineering           Office: 801-581-8378
+University of Utah                              FAX: 801-581-5281
+Salt Lake City, UT 84112
+ID: 0x4340C2D9 <eemercer@elen.utah.edu>
+Finger Print: C2B3 329C D759 3651 66CD  48D3 605D 32AC 4340 C2D9
+
+

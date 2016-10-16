@@ -1,0 +1,134 @@
+From myers@eng.utah.edu  Mon Sep 29 10:18:42 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s8TGIf4K016811
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 29 Sep 2014 10:18:41 -0600
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1XYeCY-000PDb-OJ
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 29 Sep 2014 10:53:30 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_43BD6A5E-AD58-4CD1-860B-7A0372C84244"
+Subject: FEATURE: support import of HELM files
+Date: Mon, 29 Sep 2014 10:18:40 -0600
+References: <a155a86b-5e05-4f06-ac55-310cbf1416b1@googlegroups.com>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <4E67249F-D32A-4A81-A233-36471217E2D1@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_43BD6A5E-AD58-4CD1-860B-7A0372C84244
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: Jake Beal <jakebeal@gmail.com>
+> Subject: HELM
+> Date: September 29, 2014 at 7:00:49 AM MDT
+> To: sbol-dev@googlegroups.com
+> Reply-To: sbol-dev@googlegroups.com
+>=20
+> Yesterday, Mike Fero pointed me at another standard that I think we =
+should be aware of and the editors should think about how to interact =
+with:
+> HELM (link) is a standard developed by a consortium of mostly drug =
+companies for describing non-standard biological polymers.
+> I don't believe this is a competitor to SBOL, because it is mainly =
+focused at the sequence level, while SBOL 2.0 is really bringing the =
+notion of design intention.
+>=20
+> I think, however, that it might be good to formally allow HELM =
+notations as an alternative to the simple sequence descriptors that we =
+currently permit.
+> This will allow SBOL to be applied to molecules that include xeno =
+nucleic acids, unnatural amino acids, modification by methyl groups, =
+etc.
+> Pragmatically, I'm not sure how hard this would be to support in =
+libSBOL, which may regulate timing...
+>=20
+> Thanks,
+> -Jake
+>=20
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "SBOL Developers" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbol-dev+unsubscribe@googlegroups.com.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_43BD6A5E-AD58-4CD1-860B-7A0372C84244
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: =
+after-white-space;"><br><div style=3D""><br><div>Begin forwarded =
+message:</div><br class=3D"Apple-interchange-newline"><blockquote =
+type=3D"cite"><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>From: =
+</b></span><span style=3D"font-family:'Helvetica';">Jake Beal &lt;<a =
+href=3D"mailto:jakebeal@gmail.com">jakebeal@gmail.com</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+color:rgba(0, 0, 0, 1.0);"><b>Subject: </b></span><span =
+style=3D"font-family:'Helvetica';"><b>HELM</b><br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; color:rgba(0, =
+0, 0, 1.0);"><b>Date: </b></span><span =
+style=3D"font-family:'Helvetica';">September 29, 2014 at 7:00:49 AM =
+MDT<br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>To: =
+</b></span><span style=3D"font-family:'Helvetica';"><a =
+href=3D"mailto:sbol-dev@googlegroups.com">sbol-dev@googlegroups.com</a><br=
+></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family:'Helvetica';"><a=
+ =
+href=3D"mailto:sbol-dev@googlegroups.com">sbol-dev@googlegroups.com</a><br=
+></span></div><br><div><div dir=3D"ltr">Yesterday, Mike Fero pointed me =
+at another standard that I think we should be aware of and the editors =
+should think about how to interact with:<div><a =
+href=3D"http://www.openhelm.org/">HELM&nbsp;(link)</a>&nbsp;is a =
+standard developed by a consortium of mostly drug companies for =
+describing non-standard biological polymers.<br></div><div>I don't =
+believe this is a competitor to SBOL, because it is mainly focused at =
+the sequence level, while SBOL 2.0 is really bringing the notion of =
+design intention.</div><div><br></div><div>I think, however, that it =
+might be good to formally allow HELM notations as an alternative to the =
+simple sequence descriptors that we currently permit.</div><div>This =
+will allow SBOL to be applied to molecules that include xeno nucleic =
+acids, unnatural amino acids, modification by methyl groups, =
+etc.</div><div>Pragmatically, I'm not sure how hard this would be to =
+support in libSBOL, which may regulate =
+timing...</div><div><br></div><div>Thanks,</div><div>-Jake</div><div><br><=
+/div></div><div><br class=3D"webkit-block-placeholder"></div>
+
+-- <br>
+You received this message because you are subscribed to the Google =
+Groups "SBOL Developers" group.<br>
+To unsubscribe from this group and stop receiving emails from it, send =
+an email to <a =
+href=3D"mailto:sbol-dev+unsubscribe@googlegroups.com">sbol-dev+unsubscribe=
+@googlegroups.com</a>.<br>
+For more options, visit <a =
+href=3D"https://groups.google.com/d/optout">https://groups.google.com/d/op=
+tout</a>.<br>
+</div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_43BD6A5E-AD58-4CD1-860B-7A0372C84244--
+

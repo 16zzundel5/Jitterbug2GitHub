@@ -1,0 +1,21 @@
+From atacs-bugs  Mon Oct 22 16:40:31 2001
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id f9MMeVY25158
+	for atacs-bugs@shang.elen.utah.edu; Mon, 22 Oct 2001 16:40:31 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id f9MMeVe25151
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Mon, 22 Oct 2001 16:40:31 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) id f9MMexV08293
+	for atacs-bugs@vlsigroup; Mon, 22 Oct 2001 16:40:59 -0600
+Date: Mon, 22 Oct 2001 16:40:59 -0600
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+Message-Id: <200110222240.f9MMexV08293@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: levtest.unc
+
+
+This example does not seem to work through atacs.  For some reason it
+tries to split regions.  A bogus .gold had been provided previously.
+

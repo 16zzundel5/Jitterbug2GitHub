@@ -1,0 +1,47 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: flattening rules for merging SBML elements (PR#5422)
+Date: Thu Aug 15 21:28:12 2013
+
+As I mentioned, replacements are a lot more difficult to set down a fixed rule
+for ensuring validation after flattening.  The problem is that you can have
+issues like two submodels that have an initial assignment to a species and after
+the replacement of that species with a top-level species you end up with two
+initial assignments which is not consistent.  
+
+To address this problem, we have been considering the idea of using port
+directionality to determine how an object can be used.  Note that this idea
+would not be perfect, but it would at least allow someone that wanted to follow
+a set of rules a means to ensure a valid model.  We leave open the possibility
+of marking ports with no direction (or referencing objects directly with no
+port) as a means to get around the validation.
+
+The idea works like this.  
+
+1) A species referenced by an input port could not be assigned in a rule, event,
+or initial assignment and it could not participate as a reactant or product in a
+reaction.
+
+2) A species referenced by an output port can be referenced anywhere within a
+model, but when it is connected to by a higher level model, it can only be
+connected to species in other subModels through input ports.
+
+3) A species used to connect ports in a top-level model could only be assigned
+in rules, events, or initial assignments and used as reactants or products in a
+reaction if it was being used to only connect to input ports.
+
+4) Similar rules are made for compartments, parameters, and speciesReferences.
+
+5) Replacements cannot reference output ports.
+
+6) ReplacedBys cannot reference input ports.
+
+Again, note there would still be ports without directionality for which you
+would not have these restrictions or you could reference an object directly
+without using a port.  However, I think if you followed these rules and only
+used input and output ports to reference to objects you may be able to guarantee
+validity after flattening, if I have not missed something.
+
+Cheers,
+
+Chris

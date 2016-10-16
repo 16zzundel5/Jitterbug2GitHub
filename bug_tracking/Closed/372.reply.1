@@ -1,0 +1,149 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@ming.elen.utah.edu
+Subject: Re: BAD43 broken repository! (PR#372)
+Date: Fri Mar 17 12:48:31 2000
+CC: myers@vlsigroup.elen.utah.edu
+
+Note:   The "Cycle detected in acyclic constraint graph." messages in this 
+report were not actually fatal.  They just occured during failed attempts at 
+solving CSC.
+
+Furthermore, the message 
+> ./csp/chantal.log:ERROR: CSC0+/1 enabled but signal is not 0 or R in state
+000F
+has cleared up in more recent versions (e.g., cvs tag GOOD47)
+
+HOWEVER, the error:
+> ./hse/pchbMUX.log:ERROR: Could not cover excitation regions with covers.
+persists.  It is a tricky one because ATACS produces a prs file and returns 0,
+but it also generates that error message -- after producing the prs file.
+
+Here is the log:
+
+114 ming:atacs/examples> more hse/pchbMUX.log
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Compiling pchbMUX.hse ... 
+Storing process main to main.tel
+Storing process A to A.tel
+Storing process B to B.tel
+Storing process Sel to Sel.tel
+Storing process D to D.tel
+Storing process pchbMUX to pchbMUX.tel
+Loading timed event/level structure from:  pchbMUX.tel
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000809)
+Finding reduced state graph ... 49 iterations 50 regions, 50 new_reg, 48 states
+
+(stack_depth = 31)
+nodes = 885, dead = 19458
+memory: max=3208784 inuse=3206288 free=2496 
+135 iterations 100 regions, 109 new_reg, 98 states (stack_depth = 45)
+nodes = 885, dead = 19458
+memory: max=3343952 inuse=3333752 free=10200 
+231 iterations 150 regions, 163 new_reg, 148 states (stack_depth = 44)
+nodes = 885, dead = 19458
+memory: max=3397200 inuse=3392248 free=4952 
+345 iterations 200 regions, 215 new_reg, 198 states (stack_depth = 38)
+nodes = 885, dead = 19458
+memory: max=3434064 inuse=3427120 free=6944 
+452 iterations 250 regions, 267 new_reg, 247 states (stack_depth = 37)
+nodes = 885, dead = 19458
+memory: max=3491408 inuse=3484984 free=6424 
+548 iterations 300 regions, 317 new_reg, 297 states (stack_depth = 40)
+nodes = 885, dead = 19458
+memory: max=3573328 inuse=3560832 free=12496 
+649 iterations 350 regions, 369 new_reg, 347 states (stack_depth = 40)
+nodes = 885, dead = 19458
+memory: max=3630672 inuse=3623488 free=7184 
+748 iterations 400 regions, 421 new_reg, 396 states (stack_depth = 42)
+nodes = 885, dead = 19458
+memory: max=3708496 inuse=3694392 free=14104 
+864 iterations 450 regions, 477 new_reg, 444 states (stack_depth = 34)
+nodes = 885, dead = 19458
+memory: max=3728976 inuse=3721448 free=7528 
+999 iterations 500 regions, 527 new_reg, 494 states (stack_depth = 24)
+nodes = 885, dead = 19458
+memory: max=3757648 inuse=3741168 free=16480 
+1142 iterations 550 regions, 581 new_reg, 542 states (stack_depth = 4)
+nodes = 885, dead = 19458
+memory: max=3757648 inuse=3736280 free=21368 
+1266 iterations 600 regions, 631 new_reg, 581 states (stack_depth = 6)
+nodes = 885, dead = 19458
+memory: max=3806800 inuse=3800216 free=6584 
+1391 iterations 650 regions, 681 new_reg, 624 states (stack_depth = 6)
+nodes = 885, dead = 19458
+memory: max=3864144 inuse=3860064 free=4080 
+nodes = 885, dead = 19458
+memory: max=3880528 inuse=3866176 free=14352 
+done
+1461 iterations, 671 regions, 702 new_regions, 636 states in 1.53658 seconds
+nodes in use = 885, dead = 19458
+memory: max=3880528 inuse=3866176 free=14352
+Projecting out dummy transitions ... done (0.010455)
+Checking CSC ... complete state coded
+Finding regions ... EXCEPTION!
+EXCEPTION:  Persistence rule violation!
+Finding conflicts ... EXCEPTION!
+EXCEPTION:  Unresolvable conflicts!
+Splitting regions ... EXCEPTION!
+EXCEPTION:  Unresolvable conflicts!
+Splitting regions ... EXCEPTION!
+EXCEPTION:  Unresolvable conflicts!
+Splitting regions ... EXCEPTION!
+EXCEPTION:  Unresolvable conflicts!
+Splitting regions ... done (0.111199)
+Finding covers ... done (0.003327)
+Storing production rules to:  pchbMUX.prs
+EXCEPTION: Storing guards with fanin > 4 to:  pchbMUX.err
+ERROR: Could not cover excitation regions with covers.
+ec=1101001100
+ c=1101ZZ1ZZZ
+ec=1101010100
+ c=1101Z1ZZZZ
+ec=11010XX100
+ c=1101ZZZZZZ
+ec=1X01001100
+ c=1Z01ZZ1ZZZ
+ec=1001001100
+ c=1001ZZ1ZZZ
+ec=110X010100
+ c=11ZZ01ZZZZ
+ec=1100010100
+ c=11Z001ZZZZ
+ec=1XX1001100
+ c=1ZZ1Z01ZZZ
+ec=110100X100
+ c=11Z1Z0ZZZZ
+ec=110XX10100
+ c=11ZZZ10ZZZ
+ec=1101000100
+ c=11Z1Z00ZZZ
+ec=11010X0100
+ c=11Z1ZZ0ZZZ
+ec=1100110100
+ c=11ZZ11ZZZZ
+ec=1100X10100
+ c=11Z0Z1ZZZZ
+ec=1011001100
+ c=1Z11ZZ1ZZZ
+ec=10X1001100
+ c=10Z1ZZ1ZZZ
+ec=ZZZZZZZZZZ
+ c=11Z1Z11ZZZ
+115 ming:atacs/examples>   
+
+

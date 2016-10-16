@@ -1,0 +1,60 @@
+From l.watanabe@utah.edu  Sun Jun 16 15:49:02 2013
+Return-Path: <l.watanabe@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.131.71])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r5GLn0bc021486
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 16 Jun 2013 15:49:00 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AqEEADEyvlGbYbVn/2dsb2JhbABaDoN1vkqBGHSCIwEBAQMBOkQLAgEIDgMEAQELFBAfEx0IAgQTCIgABq8WiAePFjiCf2EDjiiaXIJRPoIo
+X-IPAS-Result: AqEEADEyvlGbYbVn/2dsb2JhbABaDoN1vkqBGHSCIwEBAQMBOkQLAgEIDgMEAQELFBAfEx0IAgQTCIgABq8WiAePFjiCf2EDjiiaXIJRPoIo
+X-IronPort-AV: E=Sophos;i="4.87,876,1363154400"; 
+   d="scan'208";a="212947332"
+Received: from h103.umail.utah.edu (HELO X-HUB3.xds.umail.utah.edu) ([155.97.181.103])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 16 Jun 2013 15:49:00 -0600
+Received: from X-MB11.xds.umail.utah.edu ([169.254.3.158]) by
+ X-HUB3.xds.umail.utah.edu ([155.97.181.233]) with mapi id 14.03.0123.003;
+ Sun, 16 Jun 2013 15:51:34 -0600
+From: LEANDRO HIKIJI WATANABE <l.watanabe@utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: RE: BUG: problem with java simulator for DTMTS-004-03 (PR#5667)
+Thread-Topic: BUG: problem with java simulator for DTMTS-004-03 (PR#5667)
+Thread-Index: AQHOaip/TOGGLBNnNkKAQyn6Aihr4pk44l4S
+Date: Sun, 16 Jun 2013 21:50:50 +0000
+Message-ID: <DDDF61188CC80F41AF904098A2BD0A511D3E13E0@X-MB11.xds.umail.utah.edu>
+References: <201306160041.r5G0ffqg016477@chou.ece.utah.edu>
+In-Reply-To: <201306160041.r5G0ffqg016477@chou.ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [174.52.98.5]
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id r5GLn0bc021486
+
+Ok, I won't update my code just yet because I am working on the events part of the code. 
+
+Leandro
+________________________________________
+From: Chris Myers [atacs-bugs@vlsigroup.ece.utah.edu]
+Sent: Saturday, June 15, 2013 6:41 PM
+To: u0030884
+Cc: LEANDRO HIKIJI WATANABE
+Subject: Re: BUG: problem with java simulator for DTMTS-004-03 (PR#5667)
+
+> For the example 004-03 from the discrete stochastic benchmarks, the Gillespie
+> java CR simulator reaches 60 molecules on average when it should be 25.
+>
+>
+>
+I figured out the problem with this example.  The issue is that the time needs
+to be updated before firing a
+reaction and printing needs to happening up to the timeLimit first also.  I
+fixed the java simulators including
+yours.  I hope this will not cause any trouble with what you are working on.  We
+can talk about this one Monday.
+
+Chris
+
+

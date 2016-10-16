@@ -1,0 +1,81 @@
+From myers@ece.utah.edu  Fri Jul 29 11:26:40 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p6THQZVw012498
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 29 Jul 2011 11:26:40 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.105])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QmqpX-0000ns-28; Fri, 29 Jul 2011 11:26:35 -0600
+Subject: Re: BUG: exception due to missing pan button
+Mime-Version: 1.0 (Apple Message framework v1084)
+Content-Type: multipart/alternative; boundary=Apple-Mail-2-793224628
+From: "Chris J. Myers" <myers@ece.utah.edu>
+In-Reply-To: <CAHb1wp1wdAOemfGO4W=1ErWGA_SCNFqccM9k6o3vHVJ1gmX2mw@mail.gmail.com>
+Date: Fri, 29 Jul 2011 11:26:29 -0600
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <75E5CE28-A166-4236-8909-660C223E062F@ece.utah.edu>
+References: <C9496749-522A-4C17-B26A-82462F4727E6@ece.utah.edu> <CAHb1wp1wdAOemfGO4W=1ErWGA_SCNFqccM9k6o3vHVJ1gmX2mw@mail.gmail.com>
+To: Jason Stevens <sarbruis@gmail.com>
+X-Mailer: Apple Mail (2.1084)
+
+
+--Apple-Mail-2-793224628
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Fixed.
+
+Thanks,
+
+Chris
+
+On Jul 29, 2011, at 11:17 AM, Jason Stevens wrote:
+
+> I think I committed the fix for this.  Try updating.
+>=20
+> On Fri, Jul 29, 2011 at 11:14 AM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+> I get this exception:
+>=20
+> Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+> 	at =
+gcm.gui.schematic.Schematic$1.isPanningEvent(Schematic.java:176)
+> 	at =
+com.mxgraph.swing.handler.mxPanningHandler.mousePressed(Unknown Source)
+>=20
+> when I click on a species in an editor without a grid.  I think this =
+is due to the pan button not being present.  It should either check that =
+the pan button exists or better yet the pan/zoom feature should be =
+available even for non-grid gcm's.
+>=20
+> Chris
+>=20
+>=20
+
+
+--Apple-Mail-2-793224628
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">Fixed.<div><br></div><div>Thanks,</div><div><br></div><div>Chris</div><div><br><div><div>On Jul 29, 2011, at 11:17 AM, Jason Stevens wrote:</div><br class="Apple-interchange-newline"><blockquote type="cite">I think I committed the fix for this. &nbsp;Try updating.<br><br><div class="gmail_quote">On Fri, Jul 29, 2011 at 11:14 AM, Chris J. Myers <span dir="ltr">&lt;<a href="mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex;"><div style="word-wrap:break-word">I get this exception:<div><br></div><div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;color:rgb(254, 43, 23)">
+
+Exception in thread "AWT-EventQueue-0" <span style="text-decoration:underline;color:#101d91">java.lang.NullPointerException</span></div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;color:rgb(254, 43, 23)">
+
+<span style="white-space:pre-wrap">	</span>at gcm.gui.schematic.Schematic$1.isPanningEvent(<span style="text-decoration:underline;color:#101d91">Schematic.java:176</span>)</div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;color:rgb(254, 43, 23)">
+
+<span style="white-space:pre-wrap">	</span>at com.mxgraph.swing.handler.mxPanningHandler.mousePressed(Unknown Source)</div></div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;color:rgb(254, 43, 23)">
+
+<br></div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Helvetica" size="3">when I click on a species in an editor without a grid. &nbsp;I think this is due to the pan button not being present. &nbsp;It should either check that the pan button exists or better yet the pan/zoom feature should be available even for non-grid gcm's.</font></div>
+
+<div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Helvetica" size="3"><br></font></div><font color="#888888"><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">
+
+<font face="Helvetica" size="3">Chris</font></div><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font face="Helvetica" size="3"><br></font></div></font></div></blockquote></div><br>
+</blockquote></div><br></div></body></html>
+--Apple-Mail-2-793224628--
+

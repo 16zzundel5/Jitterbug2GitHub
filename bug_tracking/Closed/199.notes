@@ -1,0 +1,10 @@
+Hao   [See also PR#197]
+To test this, the following commands should generate the same result:
+load(csp,hse,vhdl) filename
+posets
+findred
+shower
+--------
+redchk
+load(csp,hse,vhdl) filename
+shower

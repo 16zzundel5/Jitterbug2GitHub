@@ -1,0 +1,37 @@
+From myers@ece.utah.edu  Fri Sep 11 16:30:49 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8BMUnrg013473
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 11 Sep 2009 16:30:49 -0600
+Received: from 75-169-163-120.slkc.qwest.net ([75.169.163.120] helo=[192.168.0.8])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MmEdk-0001cW-1Q; Fri, 11 Sep 2009 16:30:49 -0600
+Message-Id: <E060515B-04D9-4A8A-9B81-186C0DA6BE40@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v935.3)
+Subject: FEATURE: save logic thresholds in properties file
+Date: Fri, 11 Sep 2009 16:30:17 -0600
+Cc: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+X-Mailer: Apple Mail (2.935.3)
+
+We should save the logic thresholds in the properties file so they do  
+not need to be entered again and again.  There should already by  
+syntax for doing this for Hiro's logical abstraction.  My thought is  
+to make this part of the abstraction options tab.  Add a button to  
+"Set Thresholds".  This should bring up the logic thresholds entry  
+menu for the species highlighted in the Interesting Species list.  Any  
+thresholds found in the properties file should be listed in the menu  
+to start with.  Also, they should be listed in the interesting species  
+menu.  For example, "A (10,20)".
+
+
+

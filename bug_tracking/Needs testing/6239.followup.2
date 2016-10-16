@@ -1,0 +1,103 @@
+From 7andy121@gmail.com  Thu Feb 12 22:33:14 2015
+Return-Path: <7andy121@gmail.com>
+Received: from mail-ie0-f173.google.com (mail-ie0-f173.google.com [209.85.223.173])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1D5XErj008937
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Feb 2015 22:33:14 -0700
+Received: by ierx19 with SMTP id x19so17379221ier.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 12 Feb 2015 21:33:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=from:content-type:message-id:mime-version:subject:date:references
+         :to:in-reply-to;
+        bh=kX8q9Bnu+kEjnCQ+AQXFq61o78qIC7TVIj9KBd+7fUo=;
+        b=fXMK4Ham62ptJsjHFxAqK+/PeQ3ZYkLDcFhoW1q9Jzup9+/8T95jwwbncc5wsoATKt
+         Sv7miTuwETFlIJZzgKFZSvbspJKKhmL2akOScwo+b8kRygmYd8kIR+Y9jXReRlLikMmL
+         sb5uuwhwDrkw0OgtQBrLWDNXUvATbDZhVS9zYjBNn5rrSWFF/LmlXCEuOoRGctOFTetp
+         oK2cvsam3az1M72mjHWjHmE5uQx4O3fI7ySC9bXoRklzmlKk2aMRXJo4BwyTrrSf00tS
+         IaME95nRc1B/C7EUQRDepfl95Gr4irnH1+BH6So1M35DPgJ3Udr5CrS+rITR0AHz5esh
+         irXA==
+X-Received: by 10.42.223.194 with SMTP id il2mr12632761icb.94.1423805593776;
+        Thu, 12 Feb 2015 21:33:13 -0800 (PST)
+Received: from [192.168.0.48] (75-162-218-241.slkc.qwest.net. [75.162.218.241])
+        by mx.google.com with ESMTPSA id nv8sm2661846igb.6.2015.02.12.21.33.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 12 Feb 2015 21:33:13 -0800 (PST)
+From: Andy Gilbert <7andy121@gmail.com>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_9C45C423-C22B-4E92-A01A-0FD29A7487A5"
+Message-Id: <D692CBCB-06C6-4E26-B61C-16E0E00ADF4D@gmail.com>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+Subject: Re: BUG: Problems creating Model File (PR#6239)
+Date: Thu, 12 Feb 2015 22:33:12 -0700
+References: <201502130037.t1D0b27H022800@chou.ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <201502130037.t1D0b27H022800@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.2070.6)
+
+
+--Apple-Mail=_9C45C423-C22B-4E92-A01A-0FD29A7487A5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Exact build:
+
+|Andy| @ ~ > java -version
+java version "1.6.0_65"
+Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
+Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
+|Andy| @ ~ >=20
+
+
+Let me know if you need any additional information. I would be happy to =
+provide it. In the meantime I will continue to develop my models on my =
+old computer.=20
+
+Andy
+> On Feb 12, 2015, at 5:37 PM, Chris Myers =
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+>=20
+> Actually, it seems that particular library needs Java 7.
+>=20
+> Chris
+>=20
+
+
+--Apple-Mail=_9C45C423-C22B-4E92-A01A-0FD29A7487A5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D"">Exact build:<div class=3D""><br class=3D""></div><div =
+class=3D""><div style=3D"margin: 0px; font-family: 'Andale Mono'; color: =
+rgb(41, 249, 20); background-color: rgb(0, 0, 0);" class=3D"">|Andy| @ ~ =
+&gt; java -version</div><div style=3D"margin: 0px; font-family: 'Andale =
+Mono'; color: rgb(41, 249, 20); background-color: rgb(0, 0, 0);" =
+class=3D"">java version "1.6.0_65"</div><div style=3D"margin: 0px; =
+font-family: 'Andale Mono'; color: rgb(41, 249, 20); background-color: =
+rgb(0, 0, 0);" class=3D"">Java(TM) SE Runtime Environment (build =
+1.6.0_65-b14-466.1-11M4716)</div><div style=3D"margin: 0px; font-family: =
+'Andale Mono'; color: rgb(41, 249, 20); background-color: rgb(0, 0, 0);" =
+class=3D"">Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, =
+mixed mode)</div><div style=3D"margin: 0px; font-family: 'Andale Mono'; =
+color: rgb(41, 249, 20); background-color: rgb(0, 0, 0);" =
+class=3D"">|Andy| @ ~ &gt;&nbsp;</div><div style=3D"margin: 0px; =
+font-family: 'Andale Mono'; color: rgb(41, 249, 20); background-color: =
+rgb(0, 0, 0); min-height: 14px;" class=3D""><br class=3D""></div><div><br =
+class=3D""></div><div>Let me know if you need any additional =
+information. I would be happy to provide it. In the meantime I will =
+continue to develop my models on my old computer.&nbsp;</div><div><br =
+class=3D""></div><div>Andy<br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">On Feb 12, 2015, at 5:37 PM, Chris Myers =
+&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" =
+class=3D"">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><div class=3D"">Actually, it seems =
+that particular library needs Java 7.<br class=3D""><br =
+class=3D"">Chris<br class=3D""><br class=3D""></div></blockquote></div><br=
+ class=3D""></div></body></html>=
+
+--Apple-Mail=_9C45C423-C22B-4E92-A01A-0FD29A7487A5--
+

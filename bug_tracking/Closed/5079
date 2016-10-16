@@ -1,0 +1,353 @@
+From myers@ece.utah.edu  Mon Aug 30 09:10:45 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o7UFAjp3001218
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 30 Aug 2010 09:10:45 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.104])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Oq60T-0003OY-NC; Mon, 30 Aug 2010 09:10:45 -0600
+Message-Id: <75E20F4B-20CF-4CDB-87AD-D9887FBF187A@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Tyler Patterson <tpatterson80@gmail.com>,
+        Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-92--68837515
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: exception while deleting a component
+Date: Mon, 30 Aug 2010 09:10:40 -0600
+X-Mailer: Apple Mail (2.936)
+
+
+--Apple-Mail-92--68837515
+Content-Type: text/plain;
+	charset=US-ASCII;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+
+I get the following exception when deleting a component:
+
+25 Deleting.
+Exception in thread "AWT-EventQueue-0" java.lang.Error: The type of  
+this cell could not be determined!
+	at gcm2sbml.gui.modelview.BioGraph.getCellType(BioGraph.java:125)
+	at gcm2sbml.gui.modelview.BioGraph.getCellType(BioGraph.java:128)
+	at gcm2sbml.gui.modelview.BioGraph.getCellType(BioGraph.java:113)
+	at gcm2sbml.gui.modelview.ModelView$6.invoke(ModelView.java:335)
+	at com.mxgraph.util.mxEventSource.fireEvent(Unknown Source)
+	at com.mxgraph.util.mxEventSource.fireEvent(Unknown Source)
+	at com.mxgraph.view.mxGraph.cellsRemoved(Unknown Source)
+	at com.mxgraph.view.mxGraph.removeCells(Unknown Source)
+	at com.mxgraph.view.mxGraph.removeCells(Unknown Source)
+	at com.mxgraph.view.mxGraph.removeCells(Unknown Source)
+	at com.mxgraph.swing.util.mxGraphActions 
+$DeleteAction.actionPerformed(Unknown Source)
+	at gcm2sbml.gui.modelview.ModelView$8.actionPerformed(ModelView.java: 
+562)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java: 
+1882)
+	at javax.swing.AbstractButton 
+$Handler.actionPerformed(AbstractButton.java:2202)
+	at  
+javax 
+.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java: 
+420)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java: 
+258)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:334)
+	at  
+javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java: 
+1050)
+	at apple.laf.CUIAquaMenuItem.doClick(CUIAquaMenuItem.java:119)
+	at javax.swing.plaf.basic.BasicMenuItemUI 
+$Handler.mouseReleased(BasicMenuItemUI.java:1091)
+	at java.awt.Component.processMouseEvent(Component.java:5602)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3129)
+	at java.awt.Component.processEvent(Component.java:5367)
+	at java.awt.Container.processEvent(Container.java:2010)
+	at java.awt.Component.dispatchEventImpl(Component.java:4068)
+	at java.awt.Container.dispatchEventImpl(Container.java:2068)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java: 
+4256)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java: 
+3936)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3866)
+	at java.awt.Container.dispatchEventImpl(Container.java:2054)
+	at java.awt.Window.dispatchEventImpl(Window.java:1801)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java: 
+269)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java: 
+190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+184)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+176)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+
+
+--Apple-Mail-92--68837515
+Content-Type: text/html;
+	charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; ">I get the following exception =
+when deleting a component:<div><br></div><div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; ">25 Deleting.</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); ">Exception in thread "AWT-EventQueue-0" =
+java.lang.Error: The type of this cell could not be =
+determined!</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm2sbml.gui.modelview.BioGraph.getCellType(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">BioGraph.java:125</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm2sbml.gui.modelview.BioGraph.getCellType(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">BioGraph.java:128</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm2sbml.gui.modelview.BioGraph.getCellType(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">BioGraph.java:113</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm2sbml.gui.modelview.ModelView$6.invoke(<span style=3D"text-decoration: =
+underline ; color: #000080">ModelView.java:335</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.util.mxEventSource.fireEvent(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.util.mxEventSource.fireEvent(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.view.mxGraph.cellsRemoved(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.view.mxGraph.removeCells(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.view.mxGraph.removeCells(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.view.mxGraph.removeCells(Unknown Source)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+com.mxgraph.swing.util.mxGraphActions$DeleteAction.actionPerformed(Unknown=
+ Source)</div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+gcm2sbml.gui.modelview.ModelView$8.actionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">ModelView.java:562</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.AbstractButton.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">AbstractButton.java:1882</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.AbstractButton$Handler.actionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">AbstractButton.java:2202</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+javax.swing.DefaultButtonModel.fireActionPerformed(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">DefaultButtonModel.java:420</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.DefaultButtonModel.setPressed(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">DefaultButtonModel.java:258</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.AbstractButton.doClick(<span style=3D"text-decoration: =
+underline ; color: #000080">AbstractButton.java:334</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.plaf.basic.BasicMenuItemUI.doClick(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">BasicMenuItemUI.java:1050</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+apple.laf.CUIAquaMenuItem.doClick(<span style=3D"text-decoration: =
+underline ; color: #000080">CUIAquaMenuItem.java:119</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">BasicMenuItemUI.java:1091</span>)</div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: =
+normal normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Component.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:5602</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+javax.swing.JComponent.processMouseEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">JComponent.java:3129</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.processEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:5367</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.processEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Container.java:2010</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:4068</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Container.java:2068</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:3903</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.retargetMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:4256</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.processMouseEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:3936</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.LightweightDispatcher.dispatchEvent(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">Container.java:3866</span>)</div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 11px/normal Monaco; color: rgb(255, 0, 0); "><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at =
+java.awt.Container.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Container.java:2054</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Window.dispatchEventImpl(<span style=3D"text-decoration: =
+underline ; color: #000080">Window.java:1801</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.Component.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">Component.java:3903</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventQueue.dispatchEvent(<span style=3D"text-decoration: =
+underline ; color: #000080">EventQueue.java:463</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpOneEventForHierarchy(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">EventDispatchThread.java:269</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEventsForHierarchy(<span =
+style=3D"text-decoration: underline ; color: =
+#000080">EventDispatchThread.java:190</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:184</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.pumpEvents(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:176</span>)</div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 11px/normal Monaco; color: =
+rgb(255, 0, 0); "><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>at =
+java.awt.EventDispatchThread.run(<span style=3D"text-decoration: =
+underline ; color: =
+#000080">EventDispatchThread.java:110</span>)</div></div><div><br></div></=
+body></html>=
+
+--Apple-Mail-92--68837515--
+

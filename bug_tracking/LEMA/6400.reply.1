@@ -1,0 +1,8 @@
+From: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
+To: zhen.zhang@utah.edu
+Subject: Re: FEATURE: Compile data for VHDL expressions (PR#6400)
+Date: Thu Sep 24 20:16:30 2015
+
+Relational operators ">" and "<" are
+supported only on single-bit slicing of a std_logic_vector. It would not work
+for larger bit slice.

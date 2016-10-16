@@ -1,0 +1,35 @@
+From rat103070@hotmail.com  Fri Feb 13 11:18:57 2009
+Return-Path: <rat103070@hotmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from bay0-omc3-s27.bay0.hotmail.com (bay0-omc3-s27.bay0.hotmail.com [65.54.246.227])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1DIIuFA025945
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 13 Feb 2009 11:18:56 -0700
+Received: from hotmail.com ([207.46.8.16]) by bay0-omc3-s27.bay0.hotmail.com with Microsoft SMTPSVC(6.0.3790.3959);
+	 Fri, 13 Feb 2009 10:18:56 -0800
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Fri, 13 Feb 2009 10:18:55 -0800
+Message-ID: <BAY117-DAV670808C90E1862ECBCB5AADB80@phx.gbl>
+Received: from 155.98.26.227 by BAY117-DAV6.phx.gbl with DAV;
+	Fri, 13 Feb 2009 18:18:54 +0000
+X-Originating-IP: [155.98.26.227]
+X-Originating-Email: [rat103070@hotmail.com]
+X-Sender: rat103070@hotmail.com
+Message-Id: <0F296313-48A9-41D2-9AB8-757866599114@hotmail.com>
+From: Robert Thacker <rat103070@hotmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Subject: FEATURE: open double click
+Date: Fri, 13 Feb 2009 11:18:51 -0700
+X-Mailer: Apple Mail (2.930.3)
+X-OriginalArrivalTime: 13 Feb 2009 18:18:55.0833 (UTC) FILETIME=[883C2C90:01C98E07]
+
+It would be nice if the open project browser would accept a double  
+click of a valid project directory and open it, rather than browsing  
+inside it.
+
+

@@ -1,0 +1,463 @@
+From myers@eng.utah.edu  Thu Apr  9 08:23:27 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t39ENRIq016252
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 9 Apr 2015 08:23:27 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1YgDMa-0009H4-8S)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 09 Apr 2015 08:23:27 -0600
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YgDMa-000D8x-5m
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 09 Apr 2015 08:23:24 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_9A984319-43BF-4994-B650-FCC0B17232AC"
+Subject: CHANGE: update libsbml to 5.11.4
+Date: Thu, 9 Apr 2015 08:23:23 -0600
+References: <55263B95.3040909@caltech.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <9176E1C8-C6AE-4863-8228-4DF07E92A7D1@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+
+--Apple-Mail=_9A984319-43BF-4994-B650-FCC0B17232AC
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> Date: April 9, 2015 at 2:43:01 AM MDT
+> From: Sarah Keating <skeating@caltech.edu>
+> Reply-To: sbml-discuss@googlegroups.com
+> To: SBML Discussion List <sbml-discuss@googlegroups.com>, LibSBML =
+Development List <libsbml-development@googlegroups.com>
+> Subject: [sbml-discuss] [libsbml-development] Release of =
+libSBML-5.11.4
+>=20
+> ----------------------
+> libSBML-5.11.4
+> ----------------------
+>=20
+> We are pleased to announce the release of libSBML-5.11.4 which is
+> available for download from
+>=20
+> https://sourceforge.net/projects/sbml/files/libsbml/5.11.4/
+>=20
+> For the first time we include binaries for Mac OS X/Linux + MATLAB. We =
+would be very grateful for any feedback on these.
+>=20
+> NOTE: Support for SBML L2V5 is still considered experimental.
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> 5.11.4 (2015-04-09)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> STABLE RELEASE
+>=20
+> * New features
+>=20
+>  - The ASTNode class has a new function double getValue() that
+>    returns the numerical value of the ASTNode as a double.  This
+>    includes returning values for constants such as AST_CONSTANT_PI,
+>    AST_CONSTANT_E, and AST_NAME_AVOGADRO, or '1' for an ASTNode of =
+type
+>    AST_CONSTANT_TRUE and '0' for AST_CONSTANT_FALSE.  Note, it does
+>    not attempt to evaluate the node and thus will return NaN for a
+>    function or node representing a named variable, and AST_NAME_TIME.
+>=20
+>  - There has been a complete review of validation messages.  These
+>    have been unified in terms of spacing and line returns.  In
+>    addition many have been enhanced with additional model specific
+>    information designed to assist in locating and fixing the issues.
+>=20
+>  - There is now an interface to PHP.  This has been tested on all
+>    platforms.
+>=20
+>  - Historically libSBML did not provide unsetFoo functions where
+>    the attribute was a required attribute with a default value.
+>    At user request we have changed this so every attribute has a
+>    corresponding unset function.  Note that where the attribute
+>    has a default value it is still considered 'set' but not
+>    considered to have been explicitly set and will therefore not
+>    appear in the written output.
+>=20
+>  - The L3Parser will now correctly parse a unary plus.
+>=20
+>  - The L3Parser will now parse chains of relational operators.
+>    Identical operators become ASTNodes with relational type and
+>    each argument as a direct child.  Thus 'x < y < z' becomes
+>    an ASTNode of type AST_RELATIONAL_LT with three children
+>    representing x, y and z.  Non identical operators use a logical
+>    'and' function to combine the arguments. Thus 'x < y > z'
+>    becomes an ASTNode of type AST_LOGICAL_AND with two children
+>    each representing the relational operator; that is
+>    and(lt(x,y), gt(y,z))
+>=20
+>  - The ability to index lists in the python bindings has been =
+improved.
+>=20
+>  - A new value 'LIBSBML_MISSING_METAID' has been added to the
+>    OperationReturnValues_t enumeration.  This value will be returned
+>    when a user attempts to set an annotation on an object that has
+>    no metaid attribute set.  Note this is a change in behaviour as
+>    previously the value returned would have been
+>    'LIBSBML_UNEXPECTED_ATTRIBUTE'.  We hope this change makes the
+>    issue clearer to users.
+>=20
+>  - The package extension mechanism has been expanded to allow the
+>    extension of individual ListOfFoo classes.
+>=20
+> * Bug fixes
+>=20
+>  - Conversion from SBML Level 3 to Level 2 was losing some
+>    LocalParameters. This has been sorted.  Thanks to Matthias
+>    K=C3=B6nig for spotting and reporting the problem.
+>=20
+>  - Fixed a bug where using the expat parser failed to correctly
+>    report the presence of invalid XML namespaces.
+>=20
+>  - Sourceforge libSBML Tracker #393: LibSBML was failing when
+>    built on an ARM processor running Fedora.  This has been
+>    sorted out.  Thanks to Zbigniew J=C4=99drzejewski-Szmek for
+>    reporting the issue and testing solutions.
+>=20
+>  - The formulaParser was incorrectly parsing particular syntax
+>    involving exponential, plus/minus signs and no spacing i.e.
+>    '2e3-3' was failing to parse.  This has been corrected.
+>    Thanks to Kieran Smallbone for reporting this and apologies
+>    for the length of time it took to fix.
+>=20
+>  - Sourceforge libSBML Tracker #402: The functions that deal with
+>    user data on both ASTNode and SBase objects have been made
+>    to work with const versions of objects where appropriate.
+>    Thanks to Takeshi Abe for the request and the patch.
+>=20
+>  - 'comp' package-specific bug fixes:
+>=20
+>    - The code for determining whether an external file is available
+>      has been further tightened up.
+>=20
+>  - 'fbc' package-specific bug fixes:
+>=20
+>    - A bug in the code that reads GeneAssociations as an annotation
+>      meant information was being lost.  This has been corrected.
+>      Thanks to Matthias K=C3=B6nig for reporting the problem.
+>=20
+>=20
+>  - 'layout' package-specific bug fixes:
+>=20
+>    - The names of some functions meant they were failing to
+>      correctly port to the Python bindings.  The binding mechanism
+>      has been fixed to correct this.  Thanks to Kieran Smallbone
+>      for reporting this.
+>=20
+>    - The SpeciesReferenceGlyph attribute 'role' can take the value
+>      'undefined' but this was not written out. This has been
+>      changed.
+>=20
+> * Configuration/build system changes
+>=20
+>  - This release includes pre-built binaries for the MATLAB
+>    bindings that should work for many Linux and MacOSX
+>    platforms.  Please advise us it you find a combination
+>    of platform and MATLAB version for which these fail.
+>=20
+> * Miscellaneous
+>=20
+>  - The names of some arguments to functions have
+>    been modified to convey the fact that the object
+>    is not owned by the collection object to which it
+>    has been added.
+>=20
+> EXPERIMENTAL RELEASE
+>=20
+> * New features
+>=20
+>  - 'distrib' package-specific updates:
+>=20
+>    - There are new example programs that will create the
+>      examples given in the current specification.
+>=20
+>  - 'multi' package-specific updates:
+>=20
+>    - The multi code has been updated in line with the specification
+>      Release 1.0.2 dated November 2014. This code has been contributed
+>      by Fengkai Zhang. Many thanks, Fengkai.
+>=20
+>  - 'spatial' package-specific updates:
+>=20
+>    - The spatial code has been updated in line with the specification
+>      Release 0.90 dated March 2015.
+>=20
+> * Bug fixes
+>=20
+>  - 'multi' package-specific bug fixes:
+>=20
+>    - The multi attributes that can be added to a math  element
+>      where being lost when written out.  This has been fixed.
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Please report any problems you encounter using libSBML either to the
+> mailing list libsbml-team@caltech.edu or using the issue tracker
+> for libSBML at
+>=20
+> https://sourceforge.net/tracker/?group_id=3D71971&atid=3D942737
+>=20
+> Thanks
+>=20
+> the LibSBMLTeam
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "sbml-discuss" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbml-discuss+unsubscribe@googlegroups.com.
+> To post to this group, send email to sbml-discuss@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/55263B95.3040909%40caltech.=
+edu.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_9A984319-43BF-4994-B650-FCC0B17232AC
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">April 9, 2015 at 2:43:01 AM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Sarah Keating &lt;<a =
+href=3D"mailto:skeating@caltech.edu" =
+class=3D"">skeating@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">SBML Discussion List &lt;<a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a>&gt;, LibSBML Development =
+List &lt;<a href=3D"mailto:libsbml-development@googlegroups.com" =
+class=3D"">libsbml-development@googlegroups.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-discuss] =
+[libsbml-development] Release of libSBML-5.11.4</b><br =
+class=3D""></span></div><br class=3D""><div =
+class=3D"">----------------------<br class=3D"">libSBML-5.11.4<br =
+class=3D"">----------------------<br class=3D""><br class=3D"">We are =
+pleased to announce the release of libSBML-5.11.4 which is<br =
+class=3D"">available for download from<br class=3D""><br class=3D""><a =
+href=3D"https://sourceforge.net/projects/sbml/files/libsbml/5.11.4/" =
+class=3D"">https://sourceforge.net/projects/sbml/files/libsbml/5.11.4/</a>=
+<br class=3D""><br class=3D"">For the first time we include binaries for =
+Mac OS X/Linux + MATLAB. We would be very grateful for any feedback on =
+these.<br class=3D""><br class=3D"">NOTE: Support for SBML L2V5 is still =
+considered experimental.<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D"">5.11.4 (2015-04-09)<br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">STABLE RELEASE<br class=3D""><br class=3D"">* =
+New features<br class=3D""><br class=3D""> &nbsp;- The ASTNode class has =
+a new function double getValue() that<br class=3D""> =
+&nbsp;&nbsp;&nbsp;returns the numerical value of the ASTNode as a =
+double. &nbsp;This<br class=3D""> &nbsp;&nbsp;&nbsp;includes returning =
+values for constants such as AST_CONSTANT_PI,<br class=3D""> =
+&nbsp;&nbsp;&nbsp;AST_CONSTANT_E, and AST_NAME_AVOGADRO, or '1' for an =
+ASTNode of type<br class=3D""> &nbsp;&nbsp;&nbsp;AST_CONSTANT_TRUE and =
+'0' for AST_CONSTANT_FALSE. &nbsp;Note, it does<br class=3D""> =
+&nbsp;&nbsp;&nbsp;not attempt to evaluate the node and thus will return =
+NaN for a<br class=3D""> &nbsp;&nbsp;&nbsp;function or node representing =
+a named variable, and AST_NAME_TIME.<br class=3D""><br class=3D""> =
+&nbsp;- There has been a complete review of validation messages. =
+&nbsp;These<br class=3D""> &nbsp;&nbsp;&nbsp;have been unified in terms =
+of spacing and line returns. &nbsp;In<br class=3D""> =
+&nbsp;&nbsp;&nbsp;addition many have been enhanced with additional model =
+specific<br class=3D""> &nbsp;&nbsp;&nbsp;information designed to assist =
+in locating and fixing the issues.<br class=3D""><br class=3D""> &nbsp;- =
+There is now an interface to PHP. &nbsp;This has been tested on all<br =
+class=3D""> &nbsp;&nbsp;&nbsp;platforms.<br class=3D""><br class=3D""> =
+&nbsp;- Historically libSBML did not provide unsetFoo functions where<br =
+class=3D""> &nbsp;&nbsp;&nbsp;the attribute was a required attribute =
+with a default value.<br class=3D""> &nbsp;&nbsp;&nbsp;At user request =
+we have changed this so every attribute has a<br class=3D""> =
+&nbsp;&nbsp;&nbsp;corresponding unset function. &nbsp;Note that where =
+the attribute<br class=3D""> &nbsp;&nbsp;&nbsp;has a default value it is =
+still considered 'set' but not<br class=3D""> =
+&nbsp;&nbsp;&nbsp;considered to have been explicitly set and will =
+therefore not<br class=3D""> &nbsp;&nbsp;&nbsp;appear in the written =
+output.<br class=3D""><br class=3D""> &nbsp;- The L3Parser will now =
+correctly parse a unary plus.<br class=3D""><br class=3D""> &nbsp;- The =
+L3Parser will now parse chains of relational operators.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;Identical operators become ASTNodes with relational =
+type and<br class=3D""> &nbsp;&nbsp;&nbsp;each argument as a direct =
+child. &nbsp;Thus 'x &lt; y &lt; z' becomes<br class=3D""> =
+&nbsp;&nbsp;&nbsp;an ASTNode of type AST_RELATIONAL_LT with three =
+children<br class=3D""> &nbsp;&nbsp;&nbsp;representing x, y and z. =
+&nbsp;Non identical operators use a logical<br class=3D""> =
+&nbsp;&nbsp;&nbsp;'and' function to combine the arguments. Thus 'x &lt; =
+y &gt; z'<br class=3D""> &nbsp;&nbsp;&nbsp;becomes an ASTNode of type =
+AST_LOGICAL_AND with two children<br class=3D""> &nbsp;&nbsp;&nbsp;each =
+representing the relational operator; that is<br class=3D""> =
+&nbsp;&nbsp;&nbsp;and(lt(x,y), gt(y,z))<br class=3D""><br class=3D""> =
+&nbsp;- The ability to index lists in the python bindings has been =
+improved.<br class=3D""><br class=3D""> &nbsp;- A new value =
+'LIBSBML_MISSING_METAID' has been added to the<br class=3D""> =
+&nbsp;&nbsp;&nbsp;OperationReturnValues_t enumeration. &nbsp;This value =
+will be returned<br class=3D""> &nbsp;&nbsp;&nbsp;when a user attempts =
+to set an annotation on an object that has<br class=3D""> =
+&nbsp;&nbsp;&nbsp;no metaid attribute set. &nbsp;Note this is a change =
+in behaviour as<br class=3D""> &nbsp;&nbsp;&nbsp;previously the value =
+returned would have been<br class=3D""> =
+&nbsp;&nbsp;&nbsp;'LIBSBML_UNEXPECTED_ATTRIBUTE'. &nbsp;We hope this =
+change makes the<br class=3D""> &nbsp;&nbsp;&nbsp;issue clearer to =
+users.<br class=3D""><br class=3D""> &nbsp;- The package extension =
+mechanism has been expanded to allow the<br class=3D""> =
+&nbsp;&nbsp;&nbsp;extension of individual ListOfFoo classes.<br =
+class=3D""><br class=3D"">* Bug fixes<br class=3D""><br class=3D""> =
+&nbsp;- Conversion from SBML Level 3 to Level 2 was losing some<br =
+class=3D""> &nbsp;&nbsp;&nbsp;LocalParameters. This has been sorted. =
+&nbsp;Thanks to Matthias<br class=3D""> &nbsp;&nbsp;&nbsp;K=C3=B6nig for =
+spotting and reporting the problem.<br class=3D""><br class=3D""> =
+&nbsp;- Fixed a bug where using the expat parser failed to correctly<br =
+class=3D""> &nbsp;&nbsp;&nbsp;report the presence of invalid XML =
+namespaces.<br class=3D""><br class=3D""> &nbsp;- Sourceforge libSBML =
+Tracker #393: LibSBML was failing when<br class=3D""> =
+&nbsp;&nbsp;&nbsp;built on an ARM processor running Fedora. &nbsp;This =
+has been<br class=3D""> &nbsp;&nbsp;&nbsp;sorted out. &nbsp;Thanks to =
+Zbigniew J=C4=99drzejewski-Szmek for<br class=3D""> =
+&nbsp;&nbsp;&nbsp;reporting the issue and testing solutions.<br =
+class=3D""><br class=3D""> &nbsp;- The formulaParser was incorrectly =
+parsing particular syntax<br class=3D""> &nbsp;&nbsp;&nbsp;involving =
+exponential, plus/minus signs and no spacing i.e.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;'2e3-3' was failing to parse. &nbsp;This has been =
+corrected.<br class=3D""> &nbsp;&nbsp;&nbsp;Thanks to Kieran Smallbone =
+for reporting this and apologies<br class=3D""> &nbsp;&nbsp;&nbsp;for =
+the length of time it took to fix.<br class=3D""><br class=3D""> &nbsp;- =
+Sourceforge libSBML Tracker #402: The functions that deal with<br =
+class=3D""> &nbsp;&nbsp;&nbsp;user data on both ASTNode and SBase =
+objects have been made<br class=3D""> &nbsp;&nbsp;&nbsp;to work with =
+const versions of objects where appropriate.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;Thanks to Takeshi Abe for the request and the =
+patch.<br class=3D""><br class=3D""> &nbsp;- 'comp' package-specific bug =
+fixes:<br class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- The code for =
+determining whether an external file is available<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has been further tightened up.<br =
+class=3D""><br class=3D""> &nbsp;- 'fbc' package-specific bug fixes:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- A bug in the code that =
+reads GeneAssociations as an annotation<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;meant information was being lost. =
+&nbsp;This has been corrected.<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to Matthias K=C3=B6nig for =
+reporting the problem.<br class=3D""><br class=3D""><br class=3D""> =
+&nbsp;- 'layout' package-specific bug fixes:<br class=3D""><br class=3D"">=
+ &nbsp;&nbsp;&nbsp;- The names of some functions meant they were failing =
+to<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correctly port to the =
+Python bindings. &nbsp;The binding mechanism<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has been fixed to correct this. =
+&nbsp;Thanks to Kieran Smallbone<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for reporting this.<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;&nbsp;- The SpeciesReferenceGlyph attribute =
+'role' can take the value<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'undefined' but this was not written out. =
+This has been<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changed.<br =
+class=3D""><br class=3D"">* Configuration/build system changes<br =
+class=3D""><br class=3D""> &nbsp;- This release includes pre-built =
+binaries for the MATLAB<br class=3D""> &nbsp;&nbsp;&nbsp;bindings that =
+should work for many Linux and MacOSX<br class=3D""> =
+&nbsp;&nbsp;&nbsp;platforms. &nbsp;Please advise us it you find a =
+combination<br class=3D""> &nbsp;&nbsp;&nbsp;of platform and MATLAB =
+version for which these fail.<br class=3D""><br class=3D"">* =
+Miscellaneous<br class=3D""><br class=3D""> &nbsp;- The names of some =
+arguments to functions have<br class=3D""> &nbsp;&nbsp;&nbsp;been =
+modified to convey the fact that the object<br class=3D""> =
+&nbsp;&nbsp;&nbsp;is not owned by the collection object to which it<br =
+class=3D""> &nbsp;&nbsp;&nbsp;has been added.<br class=3D""><br =
+class=3D"">EXPERIMENTAL RELEASE<br class=3D""><br class=3D"">* New =
+features<br class=3D""><br class=3D""> &nbsp;- 'distrib' =
+package-specific updates:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;- There are new example programs that will create =
+the<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;examples given in the =
+current specification.<br class=3D""><br class=3D""> &nbsp;- 'multi' =
+package-specific updates:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;- The multi code has been updated in line with the =
+specification<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Release 1.0.2 =
+dated November 2014. This code has been contributed<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by Fengkai Zhang. Many thanks, Fengkai.<br =
+class=3D""><br class=3D""> &nbsp;- 'spatial' package-specific =
+updates:<br class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- The spatial =
+code has been updated in line with the specification<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Release 0.90 dated March 2015.<br =
+class=3D""><br class=3D"">* Bug fixes<br class=3D""><br class=3D""> =
+&nbsp;- 'multi' package-specific bug fixes:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;- The multi attributes that can be added to a math =
+&nbsp;element<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where being =
+lost when written out. &nbsp;This has been fixed.<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">Please report any problems you encounter using =
+libSBML either to the<br class=3D"">mailing list =
+libsbml-team@caltech.edu or using the issue tracker<br class=3D"">for =
+libSBML at<br class=3D""><br =
+class=3D"">https://sourceforge.net/tracker/?group_id=3D71971&amp;atid=3D94=
+2737<br class=3D""><br class=3D"">Thanks<br class=3D""><br class=3D"">the =
+LibSBMLTeam<br class=3D""><br class=3D"">-- <br class=3D"">You received =
+this message because you are subscribed to the Google Groups =
+"sbml-discuss" group.<br class=3D"">To unsubscribe from this group and =
+stop receiving emails from it, send an email to =
+sbml-discuss+unsubscribe@googlegroups.com.<br class=3D"">To post to this =
+group, send email to sbml-discuss@googlegroups.com.<br class=3D"">To =
+view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/55263B95.3040909%40caltech.=
+edu.<br class=3D"">For more options, visit =
+https://groups.google.com/d/optout.<br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_9A984319-43BF-4994-B650-FCC0B17232AC--
+

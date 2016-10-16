@@ -1,0 +1,29 @@
+From myers@ece.utah.edu  Fri Jul 10 09:18:51 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n6AFIpDZ015655
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 10 Jul 2009 09:18:51 -0600
+Received: from 75-169-181-53.slkc.qwest.net ([75.169.181.53] helo=[192.168.0.6])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MPHsB-0002ZI-41
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 10 Jul 2009 09:18:51 -0600
+Message-Id: <9FA67686-FF0B-43C6-87FC-7B7A92B82BEF@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v935.3)
+Subject: BUG: model file in analysis view listed as sbml when it is a gcm
+Date: Fri, 10 Jul 2009 09:18:41 -0600
+X-Mailer: Apple Mail (2.935.3)
+
+The model file listed in an analysis view is an sbml file even when it  
+is a gcm file.
+
+

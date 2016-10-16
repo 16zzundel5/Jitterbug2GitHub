@@ -1,0 +1,10 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: peskin@sanguo.elen.utah.edu
+Subject: Re: sbuf-send-pkt2.g has strange safety violation (PR#83)
+Date: Sat May 15 17:45:23 1999
+
+I have added a notation which can be used to augment examples with the extra
+tokens needed by atacs.  For sbuf-send-pkt2.g, the following line needs to be
+added:
+
+#@.marking {<sendline+/2,rejpkt+/2> <sendline+/2,ackline+/1>}

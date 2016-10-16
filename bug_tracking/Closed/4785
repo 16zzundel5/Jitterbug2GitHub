@@ -1,0 +1,62 @@
+From rat103070@gmail.com  Fri Sep 25 13:17:48 2009
+Return-Path: <rat103070@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from mail-px0-f202.google.com (mail-px0-f202.google.com [209.85.216.202])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8PJHmhm017427
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 25 Sep 2009 13:17:48 -0600
+Received: by pxi40 with SMTP id 40so3699070pxi.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 25 Sep 2009 12:17:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:sender:message-id:from:to
+         :content-type:content-transfer-encoding:mime-version:subject:date
+         :x-mailer;
+        bh=o/PAsv5lD9o+aS+1ZmzmuFg9sECFZzMH/5mT/1uJRCM=;
+        b=aH+vxOkn4EOsgMDl/LI9ZWSD2gWrD+hUikwh3sEGrNonvUYItSP0RZwSkhpWbKUwDB
+         04rXhnCw1LMZB/hiZCQAy9hDFekJz1MZAr6093e7bSciV3QtmKjK8UYWik3xPEKzFEIc
+         cv7/s/6ojHHpbleuze7cgDRctitEheBTubwPQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=sender:message-id:from:to:content-type:content-transfer-encoding
+         :mime-version:subject:date:x-mailer;
+        b=v4d7/5GsgDGThBnfHdsI59qkFPRBfCslQii2aCPk3I16Kk/zMyedktfJozqozguXD6
+         +tDRiwrhQy7qV5S2BHdteDyNFlbeoa3CLKcpIAn2rVJxKf2Yv7khu2JbZ88GaWc4M2HV
+         Eo4zOo+HVIWvD50G4wBKDU196jwWhIwQ9BNYE=
+Received: by 10.114.7.13 with SMTP id 13mr498903wag.82.1253906267268;
+        Fri, 25 Sep 2009 12:17:47 -0700 (PDT)
+Received: from zorac.ece.utah.edu (changcheng.ece.utah.edu [155.98.26.227])
+        by mx.google.com with ESMTPS id 23sm5563pxi.5.2009.09.25.12.17.44
+        (version=TLSv1/SSLv3 cipher=RC4-MD5);
+        Fri, 25 Sep 2009 12:17:45 -0700 (PDT)
+Sender: Robert Thacker <rat103070@gmail.com>
+Message-Id: <9B03A9D4-0CAC-495E-8D8D-353AD8E86164@vlsigroup.ece.utah.edu>
+From: Robert Thacker <thacker@vlsigroup.ece.utah.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: abstraction, enabling tautologies
+Date: Fri, 25 Sep 2009 13:17:43 -0600
+X-Mailer: Apple Mail (2.936)
+
+part 1:
+
+condition: (1) An enabling condition g is true in the initial state,  
+and (2) for each transition t with an assignment v:=e such that v is  
+in support(g), if the value of g is true in the state preceding the  
+execution of t, in any state following the execution of t the value of  
+g is true
+action: replace g with true
+
+part 2:
+
+condition: (1) An enabling condition g is false in the initial state,  
+and (2) for each transition t with an assignment v:=e such that v is  
+in support(g), if the value of g is false in the state preceding the  
+execution of t, in any state following the execution of t the value of  
+g is false
+action: replace g with false
+

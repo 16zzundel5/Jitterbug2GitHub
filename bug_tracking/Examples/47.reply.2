@@ -1,0 +1,15 @@
+From: Wendy Belluomini <atacs-bugs@shang.elen.utah.edu>
+To: peskin@eng.utah.edu myers@ching.elen.utah.edu
+Subject: Re: dinvd2c.csp deadlocks under posets but not geometric (PR#47)
+Date: Tue May 18 15:18:55 1999
+
+The core dump is a result of trying
+to create a trace after the deadlock is detected, so that is not 
+main problem here the problem.  I think this is a compiler bug.
+The example is deadlocking since y- is firing when it should not
+be.  This is a result of a rule from clk-/2 -> y-.  clk-/2 conflicts
+with a+, and so y- can fire when either clk-/2 fires or a+ fires.
+However, the csp indicates that y- should only fire when a+ fires.
+When I remove the rule, clk-2/ -> y-, from the er it works fine.
+
+-wendy

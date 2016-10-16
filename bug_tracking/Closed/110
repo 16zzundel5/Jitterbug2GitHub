@@ -1,0 +1,274 @@
+From peskin@sanguo.elen.utah.edu  Sun Apr 11 14:33:13 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA22110 for <atacs-bugs@ming.elen.utah.edu>; Sun, 11 Apr 1999 14:33:13 -0600 (MDT)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id OAA18971
+	for atacs-bugs@ming.elen.utah.edu; Sun, 11 Apr 1999 14:33:19 -0600
+Date: Sun, 11 Apr 1999 14:33:19 -0600
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199904112033.OAA18971@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: compiler should set a flag when it sees a level
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /home/ming/atacs/examples/csp                
+WHEN:   Sun Apr 11 14:32:57 MDT 1999                
+WHAT:   -rwx------ 1 peskin 101 10569845 Apr 9 17:23 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -yd hw4            
+OUTPUT:                       
+                              
+file:///home/ming/atacs/examples/csp/atacs.log                 
+Compiling hw4.csp ... 
+Loading timed event-rule structure from:  hw4.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 11 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+                              
+                              
+EXIT STATUS:  0  
+              
+file:///home/ming/atacs/examples/csp/hw4.csp
+/*****************************************************************************/
+/* Example from homework 4 of the async class.                               */
+/*****************************************************************************/
+module hw4;
+
+input ai;
+input bi;
+input x;
+output ao;
+output bo;
+output y;
+
+process main;
+    *[ [ ai & x -> ao+; [~ai]; ao-
+       | ai & ~x -> bo+; [bi]; ao+; bo-; [~bi]; [~ai]; ao-
+       ]
+     ]
+endprocess
+
+process ai;
+    *[[ skip -> x+; ai+; [ao]; ai-; x-; [~ao]
+      | skip -> ai+; [ao]; ai-; [~ao]
+     ]]
+endprocess
+
+process bi;
+    *[ [bo]; bi+; [~bo]; bi- ]
+endprocess
+
+endmodule
+              
+              
+file:///home/ming/atacs/examples/csp/hw4.prs
+[-bo: ()]
+[-ao: (~ai)]
+              
+              
+file:///home/ming/atacs/examples/csp/hw4.rsg
+SG:
+STATEVECTOR:INP bi INP ai INP x bo ao 
+STATES:
+0RR00
+010R0
+0R100
+0110R
+0F101
+00F0F
+0000F
+00F00
+0RR00
+010R0
+0R100
+0110R
+R1010
+1101R
+1F0F1
+100F1
+FF001
+0F001
+F0001
+FF001
+0F001
+F000F
+0000F
+FRR00
+0RR00
+F10R0
+FR100
+F110R
+FF101
+F0F0F
+F000F
+F0F00
+FRR00
+F10R0
+FR100
+F110R
+F101R
+R101R
+FF0F1
+RF0F1
+F00F1
+R00F1
+R0001
+R000F
+RRR00
+R10R0
+RR100
+R110R
+RF101
+R0F0F
+R000F
+R0F00
+RRR00
+R10R0
+RR100
+R110R
+RF001
+RF001
+00001
+              
+              
+file:///home/ming/atacs/examples/csp/hw4.er
+.e 27
+.i 8
+.r 21
+.n 0
+.d 2
+.c 56
+.s 00000
+reset
+# 
+# INPUT EVENTS:
+# 
+bi+/1 bi-/1
+ai+/1 ai-/1
+ai+/2 ai-/2
+x+/1 x-/1
+# 
+# OUTPUT EVENTS:
+# 
+bo+/1 bo-/1
+ao+/1 ao-/1
+ao+/2 ao-/2
+# 
+# DUMMY EVENTS:
+# 
+$10+/1
+$11+/1
+$2+/1
+$4+/1
+$3+/1
+$5+/1
+$0+/1
+$1+/1
+$9+/1
+$8+/1
+$7+/1
+$6+/1
+# 
+# RULES:
+# 
+ai+/1 ai-/1 [ao] 0 0 inf
+ao+/1 ao-/1 [~ai] 0 0 inf
+bi+/1 bi-/1 [~bo] 0 0 inf
+bo-/1 $4+/1 [~bi] 0 0 0
+ao+/2 bo-/1 0 0 inf
+reset x+/1 0 0 inf
+reset ai+/2 0 0 inf
+x+/1 ai+/1 0 0 inf
+ai-/1 x-/1 0 0 inf
+bo+/1 ao+/2 [bi] 0 0 inf
+$4+/1 ao-/2 [~ai] 0 0 inf
+ai+/2 ai-/2 [ao] 0 0 inf
+# 
+# INITIAL RULES:
+# 
+x-/1 x+/1 [~ao] 1 0 inf
+x-/1 ai+/2 [~ao] 1 0 inf
+ai-/2 x+/1 [~ao] 1 0 inf
+ai-/2 ai+/2 [~ao] 1 0 inf
+ao-/2 ao+/1 [ai&x] 1 0 inf
+ao-/1 ao+/1 [ai&x] 1 0 inf
+ao-/2 bo+/1 [ai&~x] 1 0 inf
+ao-/1 bo+/1 [ai&~x] 1 0 inf
+bi-/1 bi+/1 [bo] 1 0 inf
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+ao+/1 ao+/2 
+ai+/1 ai+/2 
+# 
+# CONFLICTS:
+# 
+$0+/1 $2+/1
+$0+/1 ao-/2
+$0+/1 $4+/1
+$0+/1 ao+/2
+$0+/1 bo+/1
+$0+/1 $3+/1
+$0+/1 bo-/1
+$0+/1 $5+/1
+ao-/1 $2+/1
+ao-/1 ao-/2
+ao-/1 $4+/1
+ao-/1 ao+/2
+ao-/1 bo+/1
+ao-/1 $3+/1
+ao-/1 bo-/1
+ao-/1 $5+/1
+ao+/1 $2+/1
+ao+/1 ao-/2
+ao+/1 $4+/1
+ao+/1 ao+/2
+ao+/1 bo+/1
+ao+/1 $3+/1
+ao+/1 bo-/1
+ao+/1 $5+/1
+$1+/1 $2+/1
+$1+/1 ao-/2
+$1+/1 $4+/1
+$1+/1 ao+/2
+$1+/1 bo+/1
+$1+/1 $3+/1
+$1+/1 bo-/1
+$1+/1 $5+/1
+$7+/1 $9+/1
+$7+/1 $8+/1
+$7+/1 ai+/2
+$7+/1 ai-/2
+ai-/1 $9+/1
+ai-/1 $8+/1
+ai-/1 ai+/2
+ai-/1 ai-/2
+ai+/1 $9+/1
+ai+/1 $8+/1
+ai+/1 ai+/2
+ai+/1 ai-/2
+x+/1 $9+/1
+x+/1 $8+/1
+x+/1 ai+/2
+x+/1 ai-/2
+$6+/1 $9+/1
+$6+/1 $8+/1
+$6+/1 ai+/2
+$6+/1 ai-/2
+x-/1 $9+/1
+x-/1 $8+/1
+x-/1 ai+/2
+x-/1 ai-/2
+# 
+# LOOPING CONFLICTS:
+# 
+              

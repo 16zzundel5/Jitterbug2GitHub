@@ -1,0 +1,275 @@
+From myers@eng.utah.edu  Tue Aug 12 15:54:24 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s7CLsOqD004759
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Aug 2014 15:54:24 -0600
+Received: from c-67-177-39-60.hsd1.ut.comcast.net ([67.177.39.60] helo=[10.0.0.3])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1XHKFM-000Oxr-6e
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 12 Aug 2014 16:08:48 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_EF8ABCC9-E46E-4F5A-A8E6-D9829A36A3BA"
+Subject: BUG: jsbml parser precedence does not match libsbml
+Date: Tue, 12 Aug 2014 15:54:23 -0600
+References: <CAHLmBr2UO6RV+xg6=vTZo2niW3v=dLiELziHY3vw-85j6AbumQ@mail.gmail.com>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <0067CA2B-A1EB-4087-9BF7-770B1983E389@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_EF8ABCC9-E46E-4F5A-A8E6-D9829A36A3BA
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+JSBML's math parser precedence does not match libsbml's.  They should be =
+brought into agreement.
+
+Begin forwarded message:
+
+> From: Lucian Smith <lucianoelsmitho@gmail.com>
+> Subject: Re: [jsbml-team] Issues with formulaToString
+> Date: August 12, 2014 at 3:13:10 PM MDT
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+> Cc: Andreas Dr=E4ger <andraeger@eng.ucsd.edu>, Leandro Watanabe =
+<leandrohw@gmail.com>, jsbml-team <jsbml-team@caltech.edu>
+>=20
+> The precedence rules are documented at
+>=20
+> =
+http://sbml.org/Software/libSBML/docs/cpp-api/_l3_formula_formatter_8h.htm=
+l#a3ee99a0498b6249f6602b98be6733b19
+>=20
+> Note that '&&' and '||' have the same level of precedence, which is =
+actually a little non-standard--often, they have different precedences.  =
+Also, unary minus and unary not also have the same precedence, though =
+this shouldn't come up in normal use.
+>=20
+> The above original string is parsed in libsbml as
+>=20
+>           <math xmlns=3D"http://www.w3.org/1998/Math/MathML">
+>             <apply>
+>               <and/>
+>               <apply>
+>                 <gt/>
+>                 <ci> V0 </ci>
+>                 <cn type=3D"integer"> 3 </cn>
+>               </apply>
+>               <apply>
+>                 <gt/>
+>                 <ci> V1 </ci>
+>                 <cn type=3D"integer"> 3 </cn>
+>               </apply>
+>             </apply>
+>=20
+>=20
+>=20
+> On Tue, Aug 12, 2014 at 1:57 PM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+> Lucian: see message below about parse issue.  Do you have precedence =
+rules documented for your parser?  How would yours have parsed the =
+formula below?
+>=20
+> On Aug 12, 2014, at 2:54 PM, Andreas Dr=E4ger <andraeger@eng.ucsd.edu> =
+wrote:
+>=20
+> > Am 08/05/14 um 13:46 schrieb Chris J. Myers:
+> >> These issues do appear to be fixed.  I did notice one strange =
+thing:
+> >>
+> >> V0 > 3 && V1 > 3
+> >>
+> >> Did not turn into the tree that I expected.  I think it came out =
+as:
+> >>
+> >> V0 > ((3 && V1) > 3)
+> >>
+> >> Or something like this.  It resulted in a weird error message =
+though.  I thought the getName() method would have returned ">" but it =
+returns null.  So it says first argument of null function is not a =
+number.  What method should I use to get the type of operator as a =
+String?
+> >>
+> >> By the way, if I change to:
+> >>
+> >> (V0 > 3) && (V1 > 3)
+> >>
+> >> This works fine.  Are the order of precedence in the parser =
+documented somewhere?
+> >>
+> >> Chris
+> >>
+> >
+> > Hi Chris,
+> >
+> > I am assuming you wanted to parse the String "V0 > 3 && V1 > 3"? =
+Yes, in
+> > this case something as you describe could happen. We did not yet
+> > document all rules of precedence of the parser. Another item on the =
+TODO
+> > list.
+> >
+> > Thanks for pointing this out. I am adding an entry to Pivotal =
+Tracker now.
+> > Andreas
+> >
+> > --
+> > Dr. Andreas Draeger
+> > University of California, San Diego, La Jolla, CA 92093-0412, USA
+> > Bioengineering Dept., Systems Biology Research Group, Office #2506
+> > Phone: +1-858-534-9717, Fax: +1-858-822-3120, twitter: @dr_drae
+>=20
+>=20
+
+
+--Apple-Mail=_EF8ABCC9-E46E-4F5A-A8E6-D9829A36A3BA
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: =
+after-white-space;">JSBML's math parser precedence does not match =
+libsbml's. &nbsp;They should be brought into =
+agreement.<br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; color:rgba(0, =
+0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica';">Lucian Smith &lt;<a =
+href=3D"mailto:lucianoelsmitho@gmail.com">lucianoelsmitho@gmail.com</a>&gt=
+;<br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica';"><b>Re: [jsbml-team] =
+Issues with formulaToString</b><br></span></div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>Date: =
+</b></span><span style=3D"font-family:'Helvetica';">August 12, 2014 at =
+3:13:10 PM MDT<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; color:rgba(0, 0, 0, 1.0);"><b>To: =
+</b></span><span style=3D"font-family:'Helvetica';">"Chris J. Myers" =
+&lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+color:rgba(0, 0, 0, 1.0);"><b>Cc: </b></span><span =
+style=3D"font-family:'Helvetica';">Andreas Dr=E4ger &lt;<a =
+href=3D"mailto:andraeger@eng.ucsd.edu">andraeger@eng.ucsd.edu</a>&gt;, =
+Leandro Watanabe &lt;<a =
+href=3D"mailto:leandrohw@gmail.com">leandrohw@gmail.com</a>&gt;, =
+jsbml-team &lt;<a =
+href=3D"mailto:jsbml-team@caltech.edu">jsbml-team@caltech.edu</a>&gt;<br><=
+/span></div><br><div><div dir=3D"ltr">The precedence rules are =
+documented at<div><br></div><div><a =
+href=3D"http://sbml.org/Software/libSBML/docs/cpp-api/_l3_formula_formatte=
+r_8h.html#a3ee99a0498b6249f6602b98be6733b19">http://sbml.org/Software/libS=
+BML/docs/cpp-api/_l3_formula_formatter_8h.html#a3ee99a0498b6249f6602b98be6=
+733b19</a><br>
+</div><div><br></div><div>Note that '&amp;&amp;' and '||' have the same =
+level of precedence, which is actually a little non-standard--often, =
+they have different precedences. &nbsp;Also, unary minus and unary not =
+also have the same precedence, though this shouldn't come up in normal =
+use.</div>
+<div><br></div><div>The above original string is parsed in libsbml =
+as</div><div><br></div><div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;math xmlns=3D"<a =
+href=3D"http://www.w3.org/1998/Math/MathML">http://www.w3.org/1998/Math/Ma=
+thML</a>"&gt;</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;apply&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;and/&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;apply&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &lt;gt/&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &lt;ci&gt; V0 &lt;/ci&gt;</div><div>&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;cn type=3D"integer"&gt; 3 =
+&lt;/cn&gt;</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;/apply&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &lt;apply&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &lt;gt/&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &lt;ci&gt; V1 &lt;/ci&gt;</div><div>&nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;cn type=3D"integer"&gt; 3 =
+&lt;/cn&gt;</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;/apply&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;/apply&gt;</div></div><div><br></div></div><div =
+class=3D"gmail_extra"><br><br><div class=3D"gmail_quote">On Tue, Aug 12, =
+2014 at 1:57 PM, Chris J. Myers <span dir=3D"ltr">&lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+target=3D"_blank">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex">Lucian: see message =
+below about parse issue. &nbsp;Do you have precedence rules documented =
+for your parser? &nbsp;How would yours have parsed the formula =
+below?<br>
+
+<br>
+On Aug 12, 2014, at 2:54 PM, Andreas Dr=E4ger &lt;<a =
+href=3D"mailto:andraeger@eng.ucsd.edu">andraeger@eng.ucsd.edu</a>&gt; =
+wrote:<br>
+<br>
+&gt; Am 08/05/14 um 13:46 schrieb Chris J. Myers:<br>
+&gt;&gt; These issues do appear to be fixed. &nbsp;I did notice one =
+strange thing:<br>
+&gt;&gt;<br>
+&gt;&gt; V0 &gt; 3 &amp;&amp; V1 &gt; 3<br>
+&gt;&gt;<br>
+&gt;&gt; Did not turn into the tree that I expected. &nbsp;I think it =
+came out as:<br>
+&gt;&gt;<br>
+&gt;&gt; V0 &gt; ((3 &amp;&amp; V1) &gt; 3)<br>
+&gt;&gt;<br>
+&gt;&gt; Or something like this. &nbsp;It resulted in a weird error =
+message though. &nbsp;I thought the getName() method would have returned =
+"&gt;" but it returns null. &nbsp;So it says first argument of null =
+function is not a number. &nbsp;What method should I use to get the type =
+of operator as a String?<br>
+
+&gt;&gt;<br>
+&gt;&gt; By the way, if I change to:<br>
+&gt;&gt;<br>
+&gt;&gt; (V0 &gt; 3) &amp;&amp; (V1 &gt; 3)<br>
+&gt;&gt;<br>
+&gt;&gt; This works fine. &nbsp;Are the order of precedence in the =
+parser documented somewhere?<br>
+&gt;&gt;<br>
+&gt;&gt; Chris<br>
+&gt;&gt;<br>
+&gt;<br>
+&gt; Hi Chris,<br>
+&gt;<br>
+&gt; I am assuming you wanted to parse the String "V0 &gt; 3 &amp;&amp; =
+V1 &gt; 3"? Yes, in<br>
+&gt; this case something as you describe could happen. We did not =
+yet<br>
+&gt; document all rules of precedence of the parser. Another item on the =
+TODO<br>
+&gt; list.<br>
+&gt;<br>
+&gt; Thanks for pointing this out. I am adding an entry to Pivotal =
+Tracker now.<br>
+<div class=3D"HOEnZb"><div class=3D"h5">&gt; Andreas<br>
+&gt;<br>
+&gt; --<br>
+&gt; Dr. Andreas Draeger<br>
+&gt; University of California, San Diego, La Jolla, CA 92093-0412, =
+USA<br>
+&gt; Bioengineering Dept., Systems Biology Research Group, Office =
+#2506<br>
+&gt; Phone: <a href=3D"tel:%2B1-858-534-9717" =
+value=3D"+18585349717">+1-858-534-9717</a>, Fax: <a =
+href=3D"tel:%2B1-858-822-3120" value=3D"+18588223120">+1-858-822-3120</a>,=
+ twitter: @dr_drae<br>
+<br>
+</div></div></blockquote></div><br></div>
+</div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_EF8ABCC9-E46E-4F5A-A8E6-D9829A36A3BA--
+

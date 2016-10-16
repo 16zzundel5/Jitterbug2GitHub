@@ -1,0 +1,79 @@
+From ibiosim@gmail.com  Wed Feb  6 19:01:18 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f43.google.com (mail-pa0-f43.google.com [209.85.220.43])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1721HEV021259
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 6 Feb 2013 19:01:17 -0700
+Received: by mail-pa0-f43.google.com with SMTP id bh2so1100923pad.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 06 Feb 2013 18:01:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=exKPFfo9hDkq/JoPF2eaRkk1w3WCnd7QYnpDa9oqXEc=;
+        b=kCbgu6afFkYLBQzqJJzfgVo35y8RuGliM9kbyE+aQBpweisNklb3f7OugDBfQ53dUN
+         HTrJPD94ndOAW1vUCOTc9V6VGTzuwyU8kbrMl3pgAUkD75/6+BssPSw3neO6hnoBt+xT
+         FUbHh74JN0niJk1rvcMnfcf3DR6nu4gLRzlgrKDpDnNgAdLfjzbCr5xfm/7GPGF9LRSj
+         7RpQVJGRV62nKQ67O37ApA23H25lpbTi53nRTr/ViAbhnRtYARjV2zjPI2MymmF5Xvqp
+         IP8oBEkfn2/P/HkqHX9ld9D2/H0sQYthZB15Em3A3upv5CG4JV2AoLyoPf69+i9cCqdC
+         1muA==
+X-Received: by 10.66.80.65 with SMTP id p1mr543441pax.20.1360202476601;
+        Wed, 06 Feb 2013 18:01:16 -0800 (PST)
+Received: from gargravarr (c-76-23-51-50.hsd1.ut.comcast.net. [76.23.51.50])
+        by mx.google.com with ESMTPS id z6sm15866661pav.3.2013.02.06.18.01.14
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 06 Feb 2013 18:01:15 -0800 (PST)
+Date: Wed, 06 Feb 2013 18:01:15 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <220780800.0.1360202471610.JavaMail.jeff@gargravarr>
+Subject: BUG: Event cannot be edited
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+I created 2 events yesterday, one for cell division, one for random cell movement.  I did not notice anything wrong with them yesterday, but today for some reason they cannot be modified and I have no clue why.  Everytime I try to open the event menu I get a NullPointer Exception.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.gui.textualeditor.SBMLutilities.removeBoolean(SBMLutilities.java:2175)
+	at biomodel.parser.BioModel.removeBooleans(BioModel.java:7638)
+	at biomodel.gui.textualeditor.Events.eventEditor(Events.java:208)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2394)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1155)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6389)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3268)
+	at java.awt.Component.processEvent(Component.java:6154)
+	at java.awt.Container.processEvent(Container.java:2045)
+	at java.awt.Component.dispatchEventImpl(Component.java:4750)
+	at java.awt.Container.dispatchEventImpl(Container.java:2103)
+	at java.awt.Component.dispatchEvent(Component.java:4576)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4633)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4297)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4227)
+	at java.awt.Container.dispatchEventImpl(Container.java:2089)
+	at java.awt.Window.dispatchEventImpl(Window.java:2518)
+	at java.awt.Component.dispatchEvent(Component.java:4576)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:672)
+	at java.awt.EventQueue.access$400(EventQueue.java:96)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.awt.EventQueue$2.run(EventQueue.java:629)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:105)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:116)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.awt.EventQueue$3.run(EventQueue.java:643)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:105)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:642)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:275)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:200)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:185)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:177)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:138)
+

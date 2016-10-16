@@ -1,0 +1,25 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: CHANGE: rate law for complex formation reaction (PR#5245)
+Date: Fri Mar 25 18:59:49 2011
+CC: myers@ece.utah.edu
+
+I tried out A->B, and I think it at least gives something with correct units
+though perhaps a bit counter-intuitive.  I think though that I like this form of
+the equation a little bit better (it is equivalent to the earlier form):
+
+kf * (Keq)^{n-2} * A^n - kr * B
+
+where kf has units of (mole^-1 s^-1) and kr has units of (s^-1) and Keq = kf/kr.
+ You may also give a simpler form for a couple of special cases:
+
+n=2: kf * A^2 - kr * B
+n=1: kr * A - kr * B
+
+I still find the n=1 case to be counter-intuitive, but units wise it is correct.
+ Namely, kr is the stand-in for (s^-1) units.  I guess another solution would be
+to treat this as a special case where you assume that kf has units (s^-1), and
+create a formula of: kf * A - kr * B.  In this case, Keq=kf/kr would be
+dimensionless.  What do you think?
+
+Chris

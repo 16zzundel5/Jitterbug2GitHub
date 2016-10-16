@@ -1,0 +1,8 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: sarbruis@gmail.com
+Subject: Re: BUG: Promoter disappears after changing its ID (PR#5482)
+Date: Sun Aug 21 01:48:27 2011
+
+Should be fixed now.  Apparently, we were saving "drawn_promoter", but the
+attribute had changed to 
+"ExplicitPromoter".

@@ -1,0 +1,81 @@
+From atacs-bugs@chou.ece.utah.edu  Thu Jul 29 17:16:12 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6TNGCwO006407
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 29 Jul 2004 17:16:12 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i6TNGC0D006405
+	for atacs-bugs@shang.elen.utah.edu; Thu, 29 Jul 2004 17:16:12 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6TNGBwO006399;
+	Thu, 29 Jul 2004 17:16:11 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i6TNGUaL032626;
+	Thu, 29 Jul 2004 17:16:30 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i6TNGTCx032622;
+	Thu, 29 Jul 2004 17:16:30 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Thu, 29 Jul 2004 17:16:29 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: yoneda@nii.ac.jp
+cc: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Re: output semi-modularity
+In-Reply-To: <20040730014314Y.yoneda@yt.cs.titech.ac.jp>
+Message-ID: <Pine.LNX.4.44.0407291658270.32472-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+> They've sent me another interesting example (Ex4-dummy.g). 
+> 
+> Petrify claims that this STG has no CSC. Atacs also shows some
+> error. From your explanation in the previous e-mail, we should
+> consider that x is excited for rising at the marking {s1}
+> initially. But, after firing a-/1, x-/2, and z-/1, it now seems that x
+> is not excited even at the same marking {s1}.
+> 
+> It seem very strange to me that the same marking implies different
+> behavior. Do you think this STG really has no CSC? Or, is it not
+> output semi-modular? I'm pretty confused. I think the excitation of
+> signals should be decided at each marking, not the path. What do you
+> think?
+> 
+Try using:
+
+atacs -ofysds Ex4-dummy-2.g
+
+This turns off the failure due to disabling.  The resulting state graph is 
+output semimodular and a circuit is generated.  However, it is not clear 
+that the circuit is correct.  The problem is that when s0 is marked you 
+can get x+ or a+, but when s1 is marked you can get only a+.  Therefore, 
+if you eliminate $eps, you can no longer distiguish these states.
+
+Try also:
+
+atacs -ofySds Ex4-dummy-2.g
+
+This will show you the original state graph before projection.  This state 
+graph does have a CSC error (states 0 and 2).  So, Petrify's answer makes 
+sense.
+
+Anyway, it is an interesting example.  ATACS is okay because it quits with 
+the disabling.  However, if you put a dummy transition between s0 and x+/1 
+then ATACS will not quit.  
+
+The right answer does appear to be a CSC or output semimodular violation.  
+This would require a change in the projection code.  I used to check for 
+such a thing.  See the function statecmp in project.c.  If you uncomment 
+all the commented out code, then $eps will no longer be projected out of 
+the state graph and you will end up with an output semimodular violation.
+
+Interesting...  I guess at some point I decided that this was 
+unnnecessary, but I do remember spending a long time getting this just 
+right.
+
+Cheers,
+
+Chris
+
+
+

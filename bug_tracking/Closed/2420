@@ -1,0 +1,25 @@
+From myers@ming.ece.utah.edu  Mon Dec 31 23:40:23 2007
+Return-Path: <myers@ming.ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.7 required=3.0 tests=AWL,BAYES_20 autolearn=ham
+	version=3.2.1
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m016eMk7027899
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 31 Dec 2007 23:40:22 -0700
+Received: from ming.ece.utah.edu (localhost [127.0.0.1])
+	by ming.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m016eMlo010822
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 31 Dec 2007 23:40:22 -0700
+Received: (from myers@localhost)
+	by ming.ece.utah.edu (8.14.1/8.13.8/Submit) id m016eM8d010821
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 31 Dec 2007 23:40:22 -0700
+Date: Mon, 31 Dec 2007 23:40:22 -0700
+From: Chris Myers <myers@ming.ece.utah.edu>
+Message-Id: <200801010640.m016eM8d010821@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: CHANGE: format math before putting in list
+
+
+Math should be formatted for functions, rules, and constraints before
+putting it in the JList box or it may not be found again.
+

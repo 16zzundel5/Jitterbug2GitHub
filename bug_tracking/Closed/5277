@@ -1,0 +1,52 @@
+From moschino21@gmail.com  Thu Feb  3 01:02:38 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-ew0-f42.google.com (mail-ew0-f42.google.com [209.85.215.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p1382RTU024494
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 3 Feb 2011 01:02:38 -0700
+Received: by ewy1 with SMTP id 1so641582ewy.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 03 Feb 2011 00:02:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=+BZMmZQUnmmGsS76AP+VCRWz4CWeYX8eLqkQ5W/j95Q=;
+        b=nkXCcJX7mUwKY1OlQl/oE6FVLFqWjmxAZIEqyhxhM/vTiJc608GCV0NdY4b0jUZpHq
+         q0gv6HzWm7tBg3GdNdbBvX2sG1Yw/85nQ23cgH1uI0jdK0CD3O+OgvHrQWi+nNBROc+3
+         Zbmdssg7t0OZN+TY8qSGzgDv8xM9uMYhC+EqY=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=VkvKeFiva/Jb7O5Vard78hNq66z0Vw6QRcZv06fNMmlkrCqah3EFaxxoL+gno8Vy/v
+         HISa0KX8NhR27ulA8xWzcmOCDfg5YRMaSCX8N1xwt8oRjQOO+DJkw/1jHLbFDPBWYMnJ
+         NxE9bMbsGOB++46zoOzIh+ZFJbHOLpWqt8MI8=
+Received: by 10.213.16.208 with SMTP id p16mr576886eba.4.1296720133323; Thu,
+ 03 Feb 2011 00:02:13 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.213.33.79 with HTTP; Thu, 3 Feb 2011 00:01:53 -0800 (PST)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Thu, 3 Feb 2011 01:01:53 -0700
+Message-ID: <AANLkTin9wkjGxbq9HsSzN0B0oaBODaYtmHSoZ9HkbZa=@mail.gmail.com>
+Subject: BUG: Transition editor does not allow deleting enabling condition
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0015174c11f4eb7e0b049b5c2e2a
+
+--0015174c11f4eb7e0b049b5c2e2a
+Content-Type: text/plain; charset=ISO-8859-1
+
+If an expression is first entered as the enabling condition in the
+transition editor and saved, and later if this expression is erased, saving
+this change does not work as the transition still keeps the old enabling
+condition.
+
+-- 
+Zhen Zhang
+
+--0015174c11f4eb7e0b049b5c2e2a
+Content-Type: text/html; charset=ISO-8859-1
+
+If an expression is first entered as the enabling condition in the transition editor and saved, and later if this expression is erased, saving this change does not work as the transition still keeps the old enabling condition.<br clear="all">
+
+<br>-- <br>Zhen Zhang<br>
+
+--0015174c11f4eb7e0b049b5c2e2a--
+

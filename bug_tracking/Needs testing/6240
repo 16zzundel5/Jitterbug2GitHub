@@ -1,0 +1,44 @@
+From ibiosim@gmail.com  Sat Feb 14 12:44:18 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f170.google.com (mail-pd0-f170.google.com [209.85.192.170])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1EJiHiY028204
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 14 Feb 2015 12:44:17 -0700
+Received: by pdbfp1 with SMTP id fp1so22051336pdb.5
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 14 Feb 2015 11:44:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=LbUWz258prlfgpw5GU9c4LQqGC8e3z0Zt80BpZOJbpc=;
+        b=VOq8GgU3kasZ4v6QrEmF5gmbyz1ykkFRPTHO7NDnjaRXyecRfxvPU9m5mKQth96/ze
+         yeTsyuhs3dOC4AymCLrXmDqmp7JC7Psalrk42VCUrwBDdNiQQ+w9TQg1o+F3eak3xPty
+         wOgg12crAL/Ijsg2pYIJas+K9uguPcET7buDGCmJwE24aJdb6jiWgJWQIAnYn6foDax8
+         cbhWeJE5Mjvd5iHNrvv7XRXTNZK4NSW5PpKQjco6EE42moBqbktWvoSpoq2dVqnxbaLR
+         e+Ua0xaUCIR0Q9nBcaUbINYdNYZgqs8suJ514yDo/voRVEqymC+apV6yYyAbdd/4tN9w
+         KUtA==
+X-Received: by 10.68.125.197 with SMTP id ms5mr26627691pbb.12.1423943057469;
+        Sat, 14 Feb 2015 11:44:17 -0800 (PST)
+Received: from GAU (155-97-237-247.usahousing.utah.edu. [155.97.237.247])
+        by mx.google.com with ESMTPSA id o4sm10276525pdn.3.2015.02.14.11.44.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Sat, 14 Feb 2015 11:44:16 -0800 (PST)
+Date: Sat, 14 Feb 2015 11:44:16 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: DTrang.Tran@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <2115562712.0.1423943052579.JavaMail.tk@GAU>
+Subject: BUG: Learning tool doesn't work iBioSim 2.8.2 on Linux
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.2
+
+Operating system: Linux
+
+Bug reported by: DTrang.Tran@utah.edu
+
+Description:
+For the learning section of the system bio tutorial, iBioSim was unable to run the learning tool. After loading data, specifying running parameters and hitting "Save and run", an error windows popped out saying "Unable to learn from data" without furrther detail.
+

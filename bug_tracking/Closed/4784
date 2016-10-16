@@ -1,0 +1,71 @@
+From robert.a.thacker@us.army.mil  Thu Sep 24 13:46:18 2009
+Return-Path: <robert.a.thacker@us.army.mil>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.6 required=5.0 tests=BAYES_00,RCVD_IN_DNSWL_MED
+	autolearn=ham version=3.2.5
+Received: from mxoutdr1.us.army.mil (mxoutdr1.us.army.mil [143.69.242.38])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n8OJkHwo019210
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 24 Sep 2009 13:46:18 -0600
+DomainKey-Signature: s=ako; d=us.army.mil; c=nofws; q=dns;
+  h=From:X-AKO:X-AKO-AuthID:X-IronPort-AV:Received:
+   Message-Id:To:Content-Type:Content-Transfer-Encoding:
+   Mime-Version:Subject:Date:X-Mailer;
+  b=JD+XLWL/2P+9aRpa8LzmMqYoMba490hZisQ3WJOFKMmhCsXMurW0APpj
+   6RQx0G4dQxGdc6E6SEJVeX97d74P2w==;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=us.army.mil; i=robert.a.thacker@us.army.mil;
+  q=dns/txt; s=akodkim; t=1253821578; x=1285357578;
+  h=from:sender:reply-to:subject:date:message-id:to:cc:
+   mime-version:content-transfer-encoding:content-id:
+   content-description:resent-date:resent-from:resent-sender:
+   resent-to:resent-cc:resent-message-id:in-reply-to:
+   references:list-id:list-help:list-unsubscribe:
+   list-subscribe:list-post:list-owner:list-archive;
+  z=From:=20"Thacker,=20Robert=20A=20CPT=20RES=20USAR=20USAR
+   C"=20<robert.a.thacker@us.army.mil>|Subject:=20FEATURE:
+   =20abstraction,=20correlated=20values|Date:=20Thu,=2024
+   =20Sep=202009=2013:46:15=20-0600|Message-Id:=20<34AF3A61-
+   B837-4296-8FD3-D9DD85F1CE93@us.army.mil>|To:=20Chris=20My
+   ers=20<atacs-bugs@vlsigroup.ece.utah.edu>|Mime-Version:
+   =201.0=20(Apple=20Message=20framework=20v936)
+   |Content-Transfer-Encoding:=207bit;
+  bh=3P7joKOhmkeif+R94pb8txfeUTLt1Iv7gP31rVPJqtA=;
+  b=AENSvV7nKzsdqVqLM8jzfG8pumxk2PnXfrZ4Jp33Z6DCxtWmoX2Wfqgn
+   etjTYwX3YZyAdHqGYJJ+AC7hoT1XB5ydW9mLomJqY92uZkSppUrsayF1U
+   MRxE8TQ9/Jevs1QxvzH2R5KjSWyyqMfWn3To89DdzOkXYVBjh7h+Z6ZcB
+   w=;
+From: "Thacker, Robert A CPT RES USAR USARC" <robert.a.thacker@us.army.mil>
+X-AKO: 73846378:155.98.26.227:24 Sep 2009 19:46:17 +0000:$AuthSMTP:None
+X-AKO-AuthID: robert.a.thacker
+X-IronPort-AV: E=Sophos;i="4.44,446,1249257600"; 
+   d="scan'208";a="73846378"
+Received: from changcheng.ece.utah.edu (HELO [192.168.1.100]) ([155.98.26.227])
+  by mxoutdr1.us.army.mil with ESMTP; 24 Sep 2009 19:46:17 +0000
+Message-Id: <34AF3A61-B837-4296-8FD3-D9DD85F1CE93@us.army.mil>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: abstraction, correlated values
+Date: Thu, 24 Sep 2009 13:46:15 -0600
+X-Mailer: Apple Mail (2.936)
+
+condition:  (1) in every transition t where x is assigned, y is also  
+assigned and (2) every assignment of y can be represented in the form  
+f(ax+b)
+action: in every expression e such that y is in support(e) replace y  
+with f(ax+b)
+
+ok, i think the "form" needs some work.
+
+p1 -> {}[1,1]<x:=1,y:=2> -> p2 -> {}[1,1]<x:=7, y:=14>-> p3 -> {} 
+[1,1]<z:=y>
+
+becomes
+
+p1 -> {}[1,1]<x:=1,y:=2> -> p2 -> {}[1,1]<x:=7, y:=14>-> p3 -> {} 
+[1,1]<z:=2*x>
+
+"f(x)" could also be something like \neg x
+

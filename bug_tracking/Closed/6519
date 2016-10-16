@@ -1,0 +1,104 @@
+From ibiosim@gmail.com  Mon Jun 27 12:06:01 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f53.google.com (mail-pa0-f53.google.com [209.85.220.53])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RI61Uc014958
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:06:01 -0600
+Received: by mail-pa0-f53.google.com with SMTP id hl6so61112610pac.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:06:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=Z9dqKTdupvADF5crIIO2wEFbYbRlc4d5e3CJAmq6UrM=;
+        b=iJI8qVKrbsoGeiJ/AxKdngGi7RlGXiWMMAkaH/TCkO+tjVGMRCas4CCITaC+2lS0Gb
+         Q4Jl1dNCToNVScjqhVlcU89WvGmEc21F4HEFpAf49Surjl1yamLg9x+RHpkIr70Efg0E
+         rZjedmFlZoEtEXXT8gJkLBHd3WKCeEsX761xdxxPsZ/lPZ1J7VPoi+6k/ilGV8x1I+IF
+         QEwYGg1uZq9ZV0ae/ZiszseyJG1UxBRframBQhHHFxVVuestvLNRLMuQsvqrT7yg+MQx
+         TACufTPDP79FHMKAEJiKkifSeF4SozP/GmUFDTVSkKMIwghQe4EGJv2dgr7vUsdWQN+b
+         6Z7Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=Z9dqKTdupvADF5crIIO2wEFbYbRlc4d5e3CJAmq6UrM=;
+        b=TBQL83LnMaFUc+HpkMAvmx6dQQzFKZug04cTZVenJ4XAyRki1kLdBj5NX7maUcZ7Ti
+         HUTX1/6ruoqUO9my7hlmbKjrHkTzODVL9zrNuhsxSO89n24aAhYPLQwbeQYvHB0VLJE0
+         Q127O8Z82B8dKLMBZ0XyxQK3C2oj0uJ60TPp6MFrzemvh2zlZwR6sjCFmWuEgKENpZj0
+         ul2Yl+nbHkswE0VpQYDiMBgORzqg2PBCxEOFWBALixkpnmqtrAvnz88eBrhT68V85y9Y
+         h9DI0kcvIJniqPxcNvvciPdyKmniz6x94TIeDCY6h4OavVQeY8iecZHv7mIxN8E7DPNP
+         1iXg==
+X-Gm-Message-State: ALyK8tJ0+wwaGgeH1pXxckdheSgr7KYtWsrcnvhDbWwbKDdoVbzUSeUC+UZ6pO1uUY2PGw==
+X-Received: by 10.66.49.134 with SMTP id u6mr35916920pan.118.1467050760730;
+        Mon, 27 Jun 2016 11:06:00 -0700 (PDT)
+Received: from chou.ece.utah.edu (chou.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id qc6sm1584879pac.6.2016.06.27.11.06.00
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:06:00 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:06:00 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <717863701.1.1467050759677.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Got exception after expanding reaction
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I used the analysis view to generate a model from expand reaction, I got a null pointer exception
+
+Stack trace:
+java.lang.NullPointerException
+	at com.mxgraph.swing.view.mxInteractiveCanvas.intersects(Unknown Source)
+	at com.mxgraph.swing.mxGraphComponent.getCellAt(Unknown Source)
+	at com.mxgraph.swing.mxGraphComponent.getCellAt(Unknown Source)
+	at com.mxgraph.swing.handler.mxCellMarker.getCell(Unknown Source)
+	at com.mxgraph.swing.handler.mxConnectionHandler$4.getCell(Unknown Source)
+	at com.mxgraph.swing.handler.mxCellMarker.getState(Unknown Source)
+	at com.mxgraph.swing.handler.mxCellMarker.process(Unknown Source)
+	at com.mxgraph.swing.handler.mxConnectionHandler.mouseDragged(Unknown Source)
+	at com.mxgraph.swing.handler.mxConnectionHandler.mouseMoved(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseMoved(AWTEventMulticaster.java:330)
+	at java.awt.AWTEventMulticaster.mouseMoved(AWTEventMulticaster.java:329)
+	at java.awt.AWTEventMulticaster.mouseMoved(AWTEventMulticaster.java:329)
+	at java.awt.AWTEventMulticaster.mouseMoved(AWTEventMulticaster.java:329)
+	at java.awt.AWTEventMulticaster.mouseMoved(AWTEventMulticaster.java:329)
+	at java.awt.Component.processMouseMotionEvent(Component.java:6580)
+	at javax.swing.JComponent.processMouseMotionEvent(JComponent.java:3342)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4538)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+

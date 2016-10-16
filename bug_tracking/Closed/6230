@@ -1,0 +1,64 @@
+From downsideleft@gmail.com  Fri Feb  6 15:16:58 2015
+Return-Path: <downsideleft@gmail.com>
+Received: from mail-qg0-f54.google.com (mail-qg0-f54.google.com [209.85.192.54])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t16MGwfk028804
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Feb 2015 15:16:58 -0700
+Received: by mail-qg0-f54.google.com with SMTP id z60so12913219qgd.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 Feb 2015 14:16:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=CXeRtrdSfIHE8SXY2lHargAGqiBZo4tM+b+xKhc+b/E=;
+        b=oNAhGT56Vb5u6PXdiScp9r7UC6Lgr2yLpxiJhea8Ki/wGIeoR4cUwq7HxJFC6MdTus
+         Lpk2ugpZrm+3xztqaiFVymkTo+OizvICPwF3gYhGAmCIu0V/uHyrjiLMfUkdBEGNplHx
+         zPw88qe3y5uXYFhLYQ3zdzogQrSieeh1Z82vKLNpGnxegGiuR688AMGiaqT1WAcS5ln/
+         phmxWyaqej3E6D+0E9Jr/XUYFOKofTMVAMZnN2HR23f6tnAZNQ3K2D3taf6/fAq4tqEz
+         62r1ULJ49g1nDd9RAXci7cAz7ClGWhoFIvfchtqdc31A/i23qJnVEAWgmDSGBNaCryWy
+         gZKA==
+MIME-Version: 1.0
+X-Received: by 10.224.112.137 with SMTP id w9mr13519343qap.8.1423261017442;
+ Fri, 06 Feb 2015 14:16:57 -0800 (PST)
+Received: by 10.96.157.229 with HTTP; Fri, 6 Feb 2015 14:16:57 -0800 (PST)
+In-Reply-To: <54071761101a4774a864d50bac99290e@X-HUB2.xds.umail.utah.edu>
+References: <54071761101a4774a864d50bac99290e@X-HUB2.xds.umail.utah.edu>
+Date: Fri, 6 Feb 2015 15:16:57 -0700
+Message-ID: <CAEX=6Ch1z+svpL2pOTNBARwQfyKK-s2tOOdO8FGtTzOqhG0ggQ@mail.gmail.com>
+Subject: Re: BUG: saved a file in the java version, can't open it in mac
+ version (PR#6225)
+From: Tye Gardner <downsideleft@gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a11c32c5e5e2c4d050e72c7ee
+
+--001a11c32c5e5e2c4d050e72c7ee
+Content-Type: text/plain; charset=UTF-8
+
+It isn't. I think the problem was with the mac version, not the file.
+
+On Fri, Feb 6, 2015 at 3:08 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> This is very strange.  Is the Mac version working at all?
+>
+> Chris
+>
+>
+
+--001a11c32c5e5e2c4d050e72c7ee
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">It isn&#39;t. I think the problem was with the mac version=
+, not the file.</div><div class=3D"gmail_extra"><br><div class=3D"gmail_quo=
+te">On Fri, Feb 6, 2015 at 3:08 PM, Chris Myers <span dir=3D"ltr">&lt;<a hr=
+ef=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" target=3D"_blank">atacs-bug=
+s@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left=
+:1ex">This is very strange.=C2=A0 Is the Mac version working at all?<br>
+<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></span></blockquote></div><br></div>
+
+--001a11c32c5e5e2c4d050e72c7ee--
+

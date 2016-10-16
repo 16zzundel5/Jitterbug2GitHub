@@ -1,0 +1,42 @@
+From: Eric G. Mercer <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: geometric and bag claim deadlock in untimed example with signal still enabled (PR#533)
+Date: Mon Dec  4 14:27:59 2000
+
+The issue was found in the function geom.c:check_enablings.  This
+function goes through the enabled and fired rules and checks that the
+level expressions are still satisfied, and removes any rules that no
+longer have satisfied level expressions.  Removing a rule with an
+unsatisfied level expression is only correct under DISABLING
+semantics.  The code in in check_enablings that examined rules with
+active clocks correctly considered the DISABLING semantics.  However,
+the code that check fired rules did not look at the DISABLING flag.
+Thus, it was erroneously removing rules with non-disabling semantics.
+
+To solve this issue, I split the function in
+approx.c:approx_check_enablings into 2 parts: active rules and fired
+rules.  The active rules are handled locally by each of the respective
+functions: check_enablings and approx_check_enablings.  However, the
+fired rules are now handled by a separate function in common_timing:
+
+//////////////////////////////////////////////////////////////////////////
+// This function removes rules from the Rf lists exp_enabled_bv and
+// fired_bv iff:
+//
+//     1) The rules uses DISABLING semantics;
+//     2) The rules if marked as fired in exp_enabled_bv
+//     3) The rules level expression in no longer satisfied in 
+//        the current state.
+//
+// If these 3 conditions hold, then the rule is simply marked unfired.
+//////////////////////////////////////////////////////////////////////////
+void update_disabled_rules_in_Rf( ruleADT **rules,  
+                                  markingADT marking,
+                                  int nevents, 
+                                  exp_enabledADT exp_enabled_bv,
+                                  firedADT fired_bv, 
+                                  int nsigs );
+
+
+The new function considers the DISABLING flag before removing any
+rules from the Rf sets.  An update will capture the new code.

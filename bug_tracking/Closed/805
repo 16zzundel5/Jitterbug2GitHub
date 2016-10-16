@@ -1,0 +1,36 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jul 26 12:27:18 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIRIwO017489
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 26 Jul 2004 12:27:18 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i6QIRICj017487
+	for atacs-bugs@shang.elen.utah.edu; Mon, 26 Jul 2004 12:27:18 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIRHwO017479
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:27:17 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i6QIRXaL029187
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:27:33 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i6QIRXkV029183
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:27:33 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 26 Jul 2004 12:27:33 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: combine like equations
+Message-ID: <Pine.LNX.4.44.0407261226420.29114-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Equations with same expression should be combined.
+
+This can likely be done with a modified operator-site reduction and rapid 
+equilibrium as they are what introduce this issue.
+
+Chris
+
+

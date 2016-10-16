@@ -1,0 +1,28 @@
+From myers@ece.utah.edu  Thu Jan 13 08:59:59 2011
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: *
+X-Spam-Status: No, score=1.1 required=5.0 tests=AWL,BAYES_00,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0DFxxiV019001
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 13 Jan 2011 08:59:59 -0700
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PdPah-000886-ET
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 13 Jan 2011 08:59:59 -0700
+Message-Id: <DC60F6E7-A310-449A-8D8C-0901A500091D@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: garbage collect unused promoters
+Date: Thu, 13 Jan 2011 08:59:54 -0700
+X-Mailer: Apple Mail (2.936)
+
+When saving a GCM, do not save any promoters which are invisible and  
+do not appear in any influences.
+

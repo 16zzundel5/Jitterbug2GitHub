@@ -1,0 +1,86 @@
+From ibiosim@gmail.com  Tue Feb  3 21:18:16 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f44.google.com (mail-pa0-f44.google.com [209.85.220.44])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t144IGlR000727
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 Feb 2015 21:18:16 -0700
+Received: by mail-pa0-f44.google.com with SMTP id rd3so105005141pab.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 03 Feb 2015 20:18:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=aKsjBDUKrPYTPLOf/gUDtfN6B9dd+J1zYE4YH4UusVc=;
+        b=RPs2L/MYzyxi7Lw7ndHM2LtXiU72+Ns1A3sInHEwYJv1lA6Yw99jDQgmk5TeO/YIVr
+         T3V9vXOAkIomqPdbWXQ3gjMBttkbedm9ukskxsejUuec9LSYBiA6OmkOuojhrMS6PEwI
+         65yuat76pd7De+16QNMpISVZApbmISJzgjJyb1k+pE8LjM3f+lw5TGkmZ1fY6bcv/H8a
+         dJAMRSFenPW11y9ZpSdYu4yaMZVsW3BngGu3dGgZfKHvOrwS+/K8bSq2TZnaLMf8l9Xd
+         /p0yGFwZZGKedYBSwrX8uvkoxjrTvj2y3dnRG83Z2DiOLdtGsvuxnWbVbozh4av03NjP
+         jqrw==
+X-Received: by 10.70.137.66 with SMTP id qg2mr42930231pdb.73.1423023495404;
+        Tue, 03 Feb 2015 20:18:15 -0800 (PST)
+Received: from tbook.uconnect.utah.edu ([155.99.108.50])
+        by mx.google.com with ESMTPSA id ni10sm425469pbc.51.2015.02.03.20.18.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Tue, 03 Feb 2015 20:18:14 -0800 (PST)
+Date: Tue, 03 Feb 2015 20:18:14 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: tbecnel14@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <591185920.0.1423023491244.JavaMail.tombo@tBook>
+Subject: BUG: Sorry, cannot recall what just happened. I added a species to
+ a blank model, then double-clicked in the white space. The null pointer
+ expection was thrown.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8
+
+Operating system: Mac OS X
+
+Bug reported by: tbecnel14@gmail.com
+
+Description:
+
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.util.SBMLutilities.getArraysSBasePlugin(SBMLutilities.java:3787)
+	at biomodel.util.SBMLutilities.copyDimensionsIndices(SBMLutilities.java:425)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2537)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1182)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3321)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2739)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:746)
+	at java.awt.EventQueue.access$400(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:697)
+	at java.awt.EventQueue$3.run(EventQueue.java:691)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:719)
+	at java.awt.EventQueue$4.run(EventQueue.java:717)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:716)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+

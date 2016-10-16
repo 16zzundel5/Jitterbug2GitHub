@@ -1,0 +1,152 @@
+From peskin@sanguo.elen.utah.edu  Tue Mar 23 09:24:27 1999
+Received: from sanguo.elen.utah.edu (sanguo.elen.utah.edu [128.110.18.227]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id JAA10617 for <atacs-bugs@ming.elen.utah.edu>; Tue, 23 Mar 1999 09:24:27 -0700 (MST)
+Received: (from peskin@localhost)
+	by sanguo.elen.utah.edu (8.8.7/8.8.7) id JAA15767
+	for atacs-bugs@ming.elen.utah.edu; Tue, 23 Mar 1999 09:24:31 -0700
+Date: Tue, 23 Mar 1999 09:24:31 -0700
+From: Eric Peskin <peskin@sanguo.elen.utah.edu>
+Message-Id: <199903231624.JAA15767@sanguo.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: Environment process must be at the bottom if the outputs are ommitted from the declarations.
+
+SYSTEM: linux (Linux sanguo 2.0.34 #12 Tue Aug 4 16:37:01 MDT 1998 i686 unknown)
+WHO:    peskin               
+WHERE:  /.automount/shang/root/home/shang/peskin/examples/csp/meetMorn/fresh                 
+WHEN:   Tue Mar 23 09:24:10 MST 1999                
+WHAT:   -rwx------ 1 peskin 101 10437043 Mar 23 09:07 /home/shang/peskin/atacs/atacs               
+HOW:    atacs -ya lapbN            
+OUTPUT:                       
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling lapbN.csp ... 
+rm: lapbN.er: No such file or directory
+Storing process lapbctrl to lapbctrl.er
+Storing process left to left.er
+Storing process right to right.er
+Storing process lapb to lapb.er
+Storing process lapbN to lapbN.er
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process main to main.er
+Storing process lapbN to lapbN.er
+Loading timed event-rule structure from:  lapbN.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Finding reduced state graph ... done
+Projecting out dummy transitions ... done
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+                              
+STATUS:  0       
+              
+FILE: ./lapbN.csp:
+include lapbsv;
+
+/*****************************************************************************/
+/* A collection of N lapb stages 					     */
+/* 	In order to add a stage, simply copy a lapb instance and increment   */
+/*      all the numbers.  Also, increment the numbers in the rightenv.       */
+/*****************************************************************************/
+
+module main;
+
+delay env = <100,inf>;
+
+input i1 = {false,env};
+input o3 = {false,env};
+
+process leftenv;
+*[ [o1+]; i1+; [o1-]; i1- ]
+endprocess
+
+process rightenv;
+*[ o3+; [i3+]; o3-; [i3-] ]
+endprocess
+
+lapb lapb1(li => i1, lo => o1, ri => o2, ro => i2);
+
+lapb lapb2(li => i2, lo => o2, ri => o3, ro => i3);
+
+
+endmodule
+              
+              
+FILE: ./lapbN.er:
+.e 17
+.i 4
+.r 28
+.n 0
+.d 0
+.c 0
+.s 00000000
+reset
+# 
+# INPUT EVENTS:
+# 
+o3+/1 o3-/1
+i1+/1 i1-/1
+# 
+# OUTPUT EVENTS:
+# 
+i3+/1 i3-/1
+x_lapb2+/1 x_lapb2-/1
+o2+/1 o2-/1
+o1+/1 o1-/1
+x_lapb1+/1 x_lapb1-/1
+i2+/1 i2-/1
+# 
+# DUMMY EVENTS:
+# 
+# 
+# RULES:
+# 
+o3-/1 i3-/1 0 1 5
+i2+/1 o2-/1 0 1 5
+o3+/1 i3+/1 0 1 5
+reset o2+/1 0 1 5
+o2-/1 i3+/1 0 1 5
+x_lapb2+/1 o2-/1 0 1 5
+o2+/1 x_lapb2+/1 0 1 5
+i3+/1 x_lapb2-/1 0 1 5
+x_lapb2-/1 i3-/1 0 1 5
+o3+/1 o3-/1 0 100 inf
+reset o3+/1 0 100 inf
+i1+/1 i1-/1 0 100 inf
+reset i1+/1 0 100 inf
+x_lapb1-/1 i2-/1 0 1 5
+i2+/1 x_lapb1-/1 0 1 5
+o1+/1 x_lapb1+/1 0 1 5
+x_lapb1+/1 o1-/1 0 1 5
+o1-/1 i2+/1 0 1 5
+reset o1+/1 0 1 5
+o2+/1 i2+/1 0 1 5
+i1+/1 o1-/1 0 1 5
+o2-/1 i2-/1 0 1 5
+# 
+# INITIAL RULES:
+# 
+i3-/1 o2+/1 1 1 5
+i2-/1 o2+/1 1 1 5
+o3-/1 o3+/1 1 100 inf
+i1-/1 i1+/1 1 100 inf
+i1-/1 o1+/1 1 1 5
+i2-/1 o1+/1 1 1 5
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+# 
+# CONFLICTS:
+# 
+# 
+# LOOPING CONFLICTS:
+# 
+              

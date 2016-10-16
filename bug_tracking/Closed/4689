@@ -1,0 +1,28 @@
+From tphsiu@gmail.com  Fri Feb 20 11:22:14 2009
+Return-Path: <tphsiu@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n1KIMEOQ018543
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 Feb 2009 11:22:14 -0700
+Date: Fri, 20 Feb 2009 11:22:14 -0700
+Message-Id: <200902201822.n1KIMEOQ018543@chou.ece.utah.edu>
+From: tphsiu@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Verification view shortcut 
+
+Full_Name: Mike Hsiu
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: chou.ece.utah.edu (155.98.27.202)
+Submitted by: hsiu
+
+
+When I right click on verification icons, the short cut menu appears. But I am
+not able to put my mouse over or click on any of the options in the menu.
+

@@ -1,0 +1,109 @@
+From moschino21@gmail.com  Wed Jun 16 19:45:39 2010
+Return-Path: <moschino21@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.3 required=5.0 tests=BAYES_50,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-pv0-f170.google.com (mail-pv0-f170.google.com [74.125.83.170])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o5H1jdBx027332
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 16 Jun 2010 19:45:39 -0600
+Received: by pvd12 with SMTP id 12so914303pvd.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 16 Jun 2010 18:45:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:mime-version:received:from:date
+         :message-id:subject:to:content-type;
+        bh=yAhHPY8xv22PqsbtwpwX2cvd7XRjch2A6+F9gzkakJU=;
+        b=v5AUUSEbzTMGRvgGAUcqSeODmiT4JjlTQDmq54g1ssG0ollNYVLpB2H6XRuppcVyPZ
+         aa5SdqgAbzZbNcbR2QGP/hgtZ0qVBF5DFiGbPwhW4xURxkYbMWLJdnwe/gOHI0x789Qj
+         TI2MBH92ndd5WyUVV4YoDLjD6r/5Qf3K8zSNw=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=Z6csFpIYxtKRY1r+JWEIS0RQNypxmGKnBxJtSE7LpL22Z6e0iJ6FHBa/fOaa2xUtwZ
+         /UWcnd+i87jIXjlgD9Tk6jiNQkasIUvjMmRpbQjvcxkp/p61U5XzdqEYXPmFFaiIlNbJ
+         +sT1b4DE613ijn0DbmDvvUACUWiidfoVjEVRg=
+Received: by 10.142.196.19 with SMTP id t19mr50201wff.306.1276739139096; Wed, 
+	16 Jun 2010 18:45:39 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.114.193.11 with HTTP; Wed, 16 Jun 2010 18:45:19 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Wed, 16 Jun 2010 19:45:19 -0600
+Message-ID: <AANLkTikMeqvp_qJLLCzZlXJhE7dj3Fd0r97J99xiNi79@mail.gmail.com>
+Subject: BUG: Delay expressions fails the lhpn parser
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=000e0cd32ed8db4f1304892ffecf
+
+--000e0cd32ed8db4f1304892ffecf
+Content-Type: text/plain; charset=ISO-8859-1
+
+I compiled the following .s file, which contains expressions for delay
+assignments, to .lpn and it looks that the generated LPN file is correct.
+When I bring it up in the transition editor, the delay assignment for t0
+becomes uniform(delayL,delayU), but t1 is (delayL+1),(delayU+2), which
+generates an error for t1.
+
+;@ include <example.inst>
+;@ init_val    tcnt0 0
+;@ init_val    tmax0 65536
+;@ init_val    delayL 1
+;@ init_val    delayU 1
+;@ mark
+t_count    set_val tcnt0<=tmax0 tcnt0 tcnt0+1 delayL delayU
+        link t_count
+t_count    set_val tcnt0>tmax0 tcnt0 0 (delayL+1) (delayU+2)
+        link t_count
+
+Generated LPN file:
+.dummy t0 t1
+#@.variables delayL delayU tcnt0 tmax0
+#|.places t_count
+.graph
+t_count t0
+t0 t_count
+t_count t1
+t1 t_count
+.marking { t_count }
+#@.init_vals {<delayL=1><delayU=1><tcnt0=0><tmax0=65536>}
+#@.enablings {<t0=[tcnt0<=tmax0]><t1=[tcnt0>tmax0]>}
+#@.assignments {<t0=[tcnt0:=tcnt0+1]><t1=[tcnt0:=0]>}
+#@.delay_assignments {<t0=[delayL,delayU]><t1=[(delayL+1),(delayU+2)]>}
+.end
+-- 
+Zhen Zhang
+
+--000e0cd32ed8db4f1304892ffecf
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I compiled the following .s file, which contains expressions for delay assi=
+gnments, to .lpn and it looks that the generated LPN file is correct. When =
+I bring it up in the transition editor, the delay assignment for t0 becomes=
+ uniform(delayL,delayU), but t1 is (delayL+1),(delayU+2), which generates a=
+n error for t1. <br>
+
+<br>;@ include &lt;example.inst&gt;<br>;@ init_val=A0=A0=A0 tcnt0 0<br>;@ i=
+nit_val=A0=A0=A0 tmax0 65536<br>;@ init_val=A0=A0=A0 delayL 1<br>;@ init_va=
+l=A0=A0=A0 delayU 1<br>;@ mark<br>t_count=A0=A0=A0 set_val tcnt0&lt;=3Dtmax=
+0 tcnt0 tcnt0+1 <span style=3D"background-color: rgb(255, 204, 0);">delayL =
+delayU</span><br>
+
+=A0=A0=A0 =A0=A0=A0 link t_count<br>t_count=A0=A0=A0 set_val tcnt0&gt;tmax0=
+ tcnt0 0 <span style=3D"background-color: rgb(255, 204, 0);">(delayL+1) (de=
+layU+2)</span><br>=A0=A0=A0 =A0=A0=A0 link t_count<br><br>Generated LPN fil=
+e: <br>.dummy t0 t1<br>#@.variables delayL delayU tcnt0 tmax0<br>
+
+#|.places t_count<br>.graph<br>t_count t0<br>t0 t_count<br>t_count t1<br>t1=
+ t_count<br>.marking { t_count }<br>#@.init_vals {&lt;delayL=3D1&gt;&lt;del=
+ayU=3D1&gt;&lt;tcnt0=3D0&gt;&lt;tmax0=3D65536&gt;}<br>#@.enablings {&lt;t0=
+=3D[tcnt0&lt;=3Dtmax0]&gt;&lt;t1=3D[tcnt0&gt;tmax0]&gt;}<br>
+
+#@.assignments {&lt;t0=3D[tcnt0:=3Dtcnt0+1]&gt;&lt;t1=3D[tcnt0:=3D0]&gt;}<b=
+r><span style=3D"background-color: rgb(255, 204, 0);">#@.delay_assignments =
+{&lt;t0=3D[delayL,delayU]&gt;&lt;t1=3D[(delayL+1),(delayU+2)]&gt;}</span><b=
+r>.end<br>
+
+-- <br>Zhen Zhang<br>
+
+--000e0cd32ed8db4f1304892ffecf--
+

@@ -1,0 +1,76 @@
+From atacs-bugs  Tue May  2 14:25:30 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id OAA24012
+	for atacs-bugs@shang.elen.utah.edu; Tue, 2 May 2000 14:25:29 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:myers@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA24009
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Tue, 2 May 2000 14:25:27 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id OAA01751
+	for atacs-bugs@vlsigroup; Tue, 2 May 2000 14:28:29 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200005022028.OAA01751@jiaqi.elen.utah.edu>
+Subject: Re: The book (fwd)
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Date: Tue, 2 May 2000 14:28:29 -0600 (MDT)
+X-Mailer: ELM [version 2.5 PL0pre8]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+From mccurdy@eng.utah.edu  Mon May  1 11:17:02 2000
+Return-Path: <mccurdy@eng.utah.edu>
+Received: from arachne.eng.utah.edu (arachne.eng.utah.edu [155.99.222.1])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA15082
+	for <myers@vlsigroup.elen.utah.edu>; Mon, 1 May 2000 11:17:02 -0600
+Received: from lab2-34.eng.utah.edu (lab2-34.eng.utah.edu [155.99.222.137])
+	by arachne.eng.utah.edu (8.9.1a/8.9.1) with ESMTP id LAA15832
+	for <myers@vlsigroup.elen.utah.edu>; Mon, 1 May 2000 11:17:01 -0600 (MDT)
+Received: from localhost (mccurdy@localhost)
+	by lab2-34.eng.utah.edu (8.9.3/8.9.3) with ESMTP id LAA00486
+	for <myers@vlsigroup.elen.utah.edu>; Mon, 1 May 2000 11:17:00 -0600 (MDT)
+X-Authentication-Warning: lab2-34.eng.utah.edu: mccurdy owned process doing -bs
+Date: Mon, 1 May 2000 11:17:00 -0600 (MDT)
+From: Jonathan R Mccurdy <mccurdy@eng.utah.edu>
+To: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Subject: Re: The book
+In-Reply-To: <200005010452.WAA01888@jiaqi.elen.utah.edu>
+Message-ID: <Pine.4.10.10005011101310.430-100000@lab2-34.eng.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+	I just have one comment on the book.  In chapter 6 I struggled
+with some of the mathematical notation that composed sme of the
+definitions.  Especially the information about the insertion point.  It
+may help to have a verbal explaination with the mathmatical notation.
+I.E. such and such notation, other in other words, this or that.  math
+followed by words, rather than just an equation.  I would have been really
+lost without going to the lecture.
+
+There are a couple of sentences that need some work in the
+book.  Just grammer stuff.  
+
+The first chapter,  The first paragraph -- still thinks prohibition
+still exists -- don't have two stills,  cut one out.
+
+Page 6 of Chapter 1 that last paragraph says ack_line rather than ack_wine
+
+chapter two the first paragraph --communication takes places when one --
+
+Chap 2 page 8  the first paragraph -- These can thought --
+
+also the third paragraph -- As a another example, --
+
+Chap 4 page 3, the paragraph below fig 4.2 -- Often it useful --
+
+Chap 5 page 2 the first paragraph -- as long a bound --
+
+Any way these are just a couple tid-bits.  I have really enjoyed the
+book.. I learned a lot reading it.
+
+
+Jonathan
+
+
+

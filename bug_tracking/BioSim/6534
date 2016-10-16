@@ -1,0 +1,41 @@
+From prvs=97921db5b=zhen.zhang@utah.edu  Mon Jun 27 16:37:11 2016
+Return-Path: <prvs=97921db5b=zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.144.18])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RMbBKO006400
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 16:37:11 -0600
+X-IronPort-AV: E=Sophos;i="5.26,538,1459836000"; 
+   d="scan'208,217";a="588285546"
+Received: from mail-oi0-f46.google.com ([209.85.218.46])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 27 Jun 2016 16:37:10 -0600
+Received: by mail-oi0-f46.google.com with SMTP id f189so220781890oig.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 15:37:10 -0700 (PDT)
+X-Gm-Message-State: ALyK8tIEe5MfRYoV6rsVvpH0JQhIA+RKMSf7rcjDyJvDoK5aPgpih39hK+idD1KKbGKi34r/YtktcumhRfikpA==
+X-Received: by 10.202.81.88 with SMTP id f85mr2034020oib.95.1467067029440;
+ Mon, 27 Jun 2016 15:37:09 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.172.21 with HTTP; Mon, 27 Jun 2016 15:36:30 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 27 Jun 2016 16:36:30 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvnvF+WZR=t5JoQk9yAng6H5sDyMTuS3RSy=VuemzCFk4A@mail.gmail.com>
+Message-ID: <CA+LVOvnvF+WZR=t5JoQk9yAng6H5sDyMTuS3RSy=VuemzCFk4A@mail.gmail.com>
+Subject: BUG: issues with the progress window for transient CTMC analysis
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113b066c26d3de05364a29c2
+
+--001a113b066c26d3de05364a29c2
+Content-Type: text/plain; charset=UTF-8
+
+For the speedInd model (see stochastic_model_checking package sent
+separately), progress bar immediately shows full progress even though the
+transient analysis is still ongoing. Also, it is probably better to show
+the percentage of completion instead in the progress window.
+
+--001a113b066c26d3de05364a29c2
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr">For the speedInd model (see 
+stochastic_model_checking package sent separately), progress bar 
+immediately shows full progress even though the transient analysis is still ongoing. Also, it is probably better to show the percentage of completion instead in the progress window.<br></div>
+
+--001a113b066c26d3de05364a29c2--
+

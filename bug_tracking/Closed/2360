@@ -1,0 +1,76 @@
+From christian.atheist@gmail.com  Sun Oct 21 21:01:57 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.185])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l9M31utQ003848
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 21 Oct 2007 21:01:57 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so1161754fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 21 Oct 2007 20:01:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=Hw2WWyefCZYB+covlZeaQT8VN81rwRHtUfFQWks+V70=;
+        b=PdjssyTw25P9FMsKZuUfU5d1gudOhH9h2s68LrAQ+kghUwpmbByNN2z/Mpka0mullh4+UYR/B0NXDXXr/P5RDY2ehqItIdQ7QL1kkpbelKO9FpqzSES24nT4C0xxSAiXBmwTPWEbl/51G0KKu+fBrgmSgCnCgDvILw62RtdjV8g=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=N1yspecWoxgjzdBHfaawNm52O0C7RKaB+y+y9DHLCNQYm31fE3My/ZUR273DHa7W69G5yuwHc+yHyY2n1FcM49pIbYfE2bTMgQHG2LTjm3f9zZ24y+va5AzTls+N9zOt9s5bottHnYghse2OwDIkBjYrTEcmp8JZty5JINaOQNA=
+Received: by 10.82.165.13 with SMTP id n13mr7501154bue.1193022115932;
+        Sun, 21 Oct 2007 20:01:55 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Sun, 21 Oct 2007 20:01:55 -0700 (PDT)
+Message-ID: <eba119560710212001m1f41d744o75a344f82343646d@mail.gmail.com>
+Date: Sun, 21 Oct 2007 21:01:55 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Error During Run
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+During my simulations, BioSim pops up a message that says there was an
+error during simulation.  My terminal dumps out this message:
+
+
+[namphuon@shang BioSimProjects]$ Exception in thread "Thread-9"
+java.lang.NullPointerException
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1626)
+        at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-8" java.lang.NullPointerException
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1626)
+        at java.lang.Thread.run(Thread.java:619)
+java.lang.IndexOutOfBoundsException: Index: 29, Size: 29
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.core.gui.Graph.refresh(Graph.java:2887)
+        at reb2sac.core.gui.Run.execute(Run.java:433)
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1610)
+        at java.lang.Thread.run(Thread.java:619)
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.core.gui.Graph.refresh(Graph.java:2862)
+        at reb2sac.core.gui.Run.execute(Run.java:433)
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1610)
+        at java.lang.Thread.run(Thread.java:619)
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.core.gui.Graph.refresh(Graph.java:2862)
+        at reb2sac.core.gui.Run.execute(Run.java:433)
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1610)
+        at java.lang.Thread.run(Thread.java:619)
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+        at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+        at java.util.ArrayList.get(ArrayList.java:322)
+        at graph.core.gui.Graph.refresh(Graph.java:2862)
+        at reb2sac.core.gui.Run.execute(Run.java:433)
+        at reb2sac.core.gui.Reb2Sac.run(Reb2Sac.java:1610)
+        at java.lang.Thread.run(Thread.java:619)
+
+I have no idea how to reproduce this, other than this can sometimes
+happen while running many different analysis views at the same time.
+

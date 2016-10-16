@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:15:19 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from mu-out-0910.google.com (mu-out-0910.google.com [209.85.134.189])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELFI6P012425
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:15:19 -0700
+Received: by mu-out-0910.google.com with SMTP id w8so216985mue.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:15:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=GX2sW0Z7PTl5E1sPsXGLuIb7wBKAKodxUrDWi8RrG/s=;
+        b=dv/ZLBnDielQrMlKNzoBw4fvkUlNB/OzgBei0WQDYrGU7BbrucVrmQFsTXPs8/jbmjSeTpBNL2LmxvQcCmxr2lczRshYPhqQTr6KO+G0+cUq3oU/PbdLW1t8MRo480XiHQZtMF7pIVuDx1RfUPvuRq7ClIrYOR23dI+oVTwpOLA=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=KrYPhi9aaooxP/K8LE/VBJjBFIABZqoW3Kf7fC1SaBpLVHFIJnlt3KuD2Vm8EMdB0FYWGtV0yVMsm5CQ5L8rfLwEKT3M/pwBi5uPcE4PuJ/mz7NAkdp/omHV28VBc0544EdACCcbGmz0l9HMOD2FX1JlTIUwecpZak8nP9FCReM=
+Received: by 10.82.161.19 with SMTP id j19mr1746649bue.29.1203023717676;
+        Thu, 14 Feb 2008 13:15:17 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:15:17 -0800 (PST)
+Message-ID: <eba119560802141315u78e6f4a7q49624a5b042a5b7b@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:15:17 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE: Implement copy, edit, delete
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Implement copy, edit, delete in GUI
+

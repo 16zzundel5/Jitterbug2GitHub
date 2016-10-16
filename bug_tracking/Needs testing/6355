@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Fri Jul 31 16:49:40 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t6VMneOp013061
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 31 Jul 2015 16:49:40 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZLJ7U-000HFg-5e)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 31 Jul 2015 16:49:40 -0600
+Received: from [162.223.34.100] (helo=[172.20.40.72])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZLJ7U-000KL3-4Q
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 31 Jul 2015 16:49:40 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: BUG: need to inline xhtml relational operators
+Message-Id: <C23B4C47-9838-49A4-B384-BF54D04485C8@ece.utah.edu>
+Date: Fri, 31 Jul 2015 16:49:39 -0600
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.5 (--)
+X-spam-level: --
+
+Relational operators shown in XHTML as prefix not infix.
+

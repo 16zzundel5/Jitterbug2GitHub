@@ -1,0 +1,10 @@
+From: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG: orginal sets parameter to default value (PR#5059)
+Date: Mon Sep 13 20:03:17 2010
+
+Seems to work now.  Interestingly enough, modifying a parameter's default in the
+analysis view does change simulation behavior if that parameter was originally
+set to default in the GCM.  Of course, there's no way of knowing whether the
+original value was set to default without looking at the corresponding GCM, but
+I guess it works.

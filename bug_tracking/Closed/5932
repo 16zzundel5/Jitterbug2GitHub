@@ -1,0 +1,536 @@
+From myers@eng.utah.edu  Mon Oct 21 16:03:18 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id r9LM3Hbn011829
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 21 Oct 2013 16:03:17 -0600
+Received: from c-98-202-13-26.hsd1.ut.comcast.net ([98.202.13.26] helo=[10.0.0.11])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1VYNSs-0004jd-R9
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 21 Oct 2013 15:56:43 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_5D118531-E310-433B-BEA1-30EFF7B95034"
+Subject: FEATURE: more mathML support
+Date: Mon, 21 Oct 2013 16:03:11 -0600
+References: <E5AD378A-0B29-43AD-837F-AC5F5730DD16@ece.utah.edu>
+To: Leandro Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <05BEED59-0DC3-4BAE-BFFC-9D7BBA1E996D@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.5 \(1508\))
+X-Mailer: Apple Mail (2.1508)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_5D118531-E310-433B-BEA1-30EFF7B95034
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: "Chris J. Myers" <myers@ece.utah.edu>
+> Subject: Re: [sbml-discuss] Restricted use of third-party standards by =
+SBML
+> Date: March 29, 2013 7:33:57 AM MDT
+> To: SBML Discussion List <sbml-discuss@caltech.edu>
+> Reply-To: SBML Discussion List <sbml-discuss@caltech.edu>
+>=20
+> Ok, I was curious what we actually are leaving out, so I checked it =
+out:
+>=20
+> http://www.w3.org/TR/MathML3/chapter4.html
+>=20
+> 1) Functions and inverses - we only support lambda (for functions =
+definitions) and piecewise.  Not clear if any of the others are needed =
+by us.
+> 2) Arithmetic, algebra, logic - we support most of these.  We should =
+add quotient, remainder, and perhaps gcd and lcm.  Others such as root, =
+forall, exists, are pretty loaded.  The rest deal with complex numbers, =
+does anybody need those?
+> 3) Relations - we support most of these.  The exception are =
+equivalent, approximately, and factor of.  Not sure we need any of =
+these.
+> 4) Calculus and vector calculus - we do not support these. They would =
+be difficult to do so, but they may be useful.  They could perhaps be =
+added by a package, if desired.
+> 5) Theory of sets - we support none of these.  I think they may =
+perhaps be useful if we add sets, so they could be added by a "sets" =
+package.
+> 6) Sequences and series - we support none of these.  I think these are =
+ones that Nicolas would like to have.  We really need arrays or sets to =
+make full use of them though.
+> 7) Elementary classical functions - we support all of these.
+> 8) Statistics - we support none of these.  These are things like mean, =
+variance, etc.  They may be useful if we add arrays or sets, perhaps.
+> 9) Linear algebra - we support none of these, but they will be added =
+by the arrays package.
+> 10) Constant and symbol elements - only support exponentiale, true, =
+false, and pi.  Would like to add infinity and notanumber, and perhaps =
+emptyset with a sets package.  Not so sure about any of the others.
+>=20
+> So, in summary, I think there are a few things we can add to core that =
+would be useful (quotient, remainder, infinity, notanumber).  I think if =
+can breakdown the rest into the following packages:
+>=20
+> 1) Arrays and sets
+> 2) Calculus
+> 3) Complex numbers
+>=20
+> We are already planning on arrays and sets package which I think will =
+add a lot to the mathML subset.  Many of the missing operators only make =
+sense if we have arrays and sets.  The question is whether people would =
+like the calculus and complex parts as well?
+>=20
+> Cheers,
+>=20
+> Chris
+>=20
+> On Mar 28, 2013, at 5:14 PM, hsauro <hsauro@u.washington.edu> wrote:
+>=20
+>> I still haven't heard a good case for expanding SBML to more MathML=20=
+
+>> other than it can be done. What can't be done with current SBML that=20=
+
+>> modelers would really like to do? Personally I can't think of =
+anything I=20
+>> would need at the moment on the math side (other than arrays perhaps)=20=
+
+>> though of course others may needs additional math constructs.
+>>=20
+>> The one application I am involved in on the side is multicellular=20
+>> models. But what restricts us here is not the lack of math but a=20
+>> community agreed way to represent multicellular systems using a=20
+>> *biological description* which could be converted by a tool into a =
+math=20
+>> representation. Given the huge variety of approaches in this area it=20=
+
+>> wouldn't make sense to have a fixed math representation which is how=20=
+
+>> CellML/FieldML might do it for example. One could perhaps imagine =
+arrays=20
+>> being handy in describing a multicellular model.
+>>=20
+>> Herbert
+>>=20
+>> On 3/28/2013 3:19 PM, Lucian Smith wrote:
+>>> * Mike Hucka <mhucka@caltech.edu> [2013-03-28 21:04] writes:
+>>>> On Thu, 28 Mar 2013 11:00:02 +0100, Andreas Dr?ger wrote:
+>>>>> I think we have read many important concerns and opinions about =
+this
+>>>>> crucial topic. Maybe a community vote such as
+>>>>>=20
+>>>>> * Extend MathML subset at all?
+>>>>> if yes, should it be done by
+>>>>> * Declaring a separate package with the entire MathML
+>>>>> * Step-wise extending the MathML package in subsequent SBML =
+versions
+>>>>> * Allowing the entire MathML content in SBML's core
+>>>>>=20
+>>>>> could help to figure out what should be done?
+>>>> This is the best approach to reaching a community decision, IMHO, =
+and fits with how major SBML decisions have been done in the past.
+>>> A vote does seem reasonable, but I'd still be interested in more
+>>> discussion before actually voting.
+>>>=20
+>>> To be clear, here is the current situation, as I understand it from
+>>> discussions here at at previous SBML Editor meetings:
+>>>=20
+>>> * In SBML L3v1 core, the specification allows only a subset of =
+MathML to
+>>> be used.
+>>>=20
+>>> * The editors have agreed that a generous interpretation of that =
+language
+>>> would allow any package to extend that subset.  The 'arrays and =
+sets'
+>>> package is planning to allow vector and matrix constructions, =
+following
+>>> this rule.  It would therefore be possible to define an 'allMathML'
+>>> package that extended the 'subset' to 'all of MathML'.  Any two =
+packages
+>>> that wanted to extend the MathML subset to include the same new =
+element
+>>> (i.e. both 'allMathML' and 'arrays' adding the 'sum' element) could =
+do so
+>>> without conflict, as the semantic meaning of that element is defined =
+by
+>>> MathML, not SBML.
+>>>=20
+>>> So, that's the state of the core today; it would be relatively
+>>> straightforward for someone to run with Chris's suggestion and =
+create a
+>>> package, with no change at all to the core.  If someone did this, =
+they
+>>> could do so following the procedure at
+>>>=20
+>>> =
+http://sbml.org/Documents/SBML_Development_Process/SBML_Development_Proces=
+s_for_SBML_Level_3
+>>>=20
+>>> The first stage of which is 'write a proposal, and put it up for a =
+vote'.
+>>> The proposal does not need to be complicated!  It need only describe =
+how
+>>> the proposed package would proceed, and how it would fulfil the
+>>> architectural principles of Utility, Biological Orientation, =
+Coherence,
+>>> and Orthogonality.  As stated on the above page:
+>>>=20
+>>>  "There are no length requirements for a package proposal. The =
+proposal
+>>> should be long enough to allow the SBML community to assess and vote =
+on
+>>> the proposal as described below. Some packages may be simple enough =
+that a
+>>> few paragraphs suffice; others may need more detailed explanations. =
+In all
+>>> cases, authors of package proposals are advised to pay particular
+>>> attention to giving clear explanations of (i) the needs that the =
+proposed
+>>> package is meant to address and (ii) the approach being proposed to
+>>> address those needs."
+>>>=20
+>>> Now, if anyone was so inclined to do something like this, they may =
+well
+>>> want to have a straw poll from sbml-discuss beforehand, so they =
+didn't
+>>> waste too much effort on something people actively object to.  But I =
+would
+>>> not want that straw poll to be binding.  (Indeed, a more useful poll =
+might
+>>> be 'I would like to work on this; who's up for helping and/or would
+>>> implement support for it once it was written?')
+>>>=20
+>>>=20
+>>> So.  The *next* question is, "What about SBML L3v2?"  The current =
+plan is
+>>> to at *least* extend the MathML subset by adding in particular =
+things.
+>>> See, for example, =
+http://sourceforge.net/p/sbml/sbml-specifications/229/
+>>>=20
+>>> So the question would be not whether to increase the subset at all =
+(that
+>>> has already been agreed to), but *how much* to increase it by:  what
+>>> particular constructs to add in, or whether to just say 'open the
+>>> floodgates'.
+>>>=20
+>>> If we did a poll now, this is what I would ask:
+>>>=20
+>>> * Do you think an L3v1 'all MathML' package would be useful?
+>>> * Pick one of the following three options:
+>>>  * I think SBML L3v2 should incorporate all of MathML even if the
+>>>    proposed package did not exist.
+>>>  * I think SBML L3v2 should incorporate all of MathML only if the
+>>>    proposed package was implemented and found to be useful.
+>>>  * I think SBML L3v2 should not incorporate all of MathML even if =
+the
+>>>    proposed package was implemented and found to be useful (i.e. you
+>>>    think the benefits of that package are fully realized in the =
+package
+>>>    itself).
+>>> * Would you be willing to help write such a package?
+>>> * Would you be willing to implement support for such a package?
+>>> * If SBML L3v2 only expanded the subset of MathML we support, what
+>>>  constructs (if any) do you think are most needed:  ________________
+>>>=20
+>>>=20
+>>> --------------
+>>>=20
+>>> Above I tried to be objective; what follows is more my opinion.
+>>>=20
+>>> After having written out the above, it seems clear to me that the
+>>> simplest, most straightforward way to go is for someone who cares =
+enough
+>>> to write up a package proposal, gather other supporters, and see if =
+they
+>>> can get through to getting two implementations of an 'allMathML' =
+package.
+>>> If this turned out to be incredibly easy, it would be a compelling
+>>> argument for, in the future, folding that package into core.  If it =
+turned
+>>> out to be hard, it would justify people's fears who didn't want it.
+>>> Either way, the experiment would be performed, and the usefulness of =
+the
+>>> package would be less a matter of debate and more a matter of =
+observation.
+>>>=20
+>>> The other issue is that if this package *couldn't* get enough =
+support to
+>>> follow through to two implementations of it, we would know that it =
+was a
+>>> good thing we didn't try to put it into l3v2, because acceptance of =
+core
+>>> also requires two implementations, which apparantly there was not
+>>> community will for.
+>>>=20
+>>> So my current inclination is to push for someone who believes 'all =
+of
+>>> MathML' is the way to go to move forward on that idea as a package, =
+and
+>>> convince the rest of us through example.  I, at least, would =
+absolutely
+>>> support such an effort.
+>>>=20
+>>> -Lucian
+>>> ____________________________________________________________
+>>> To manage your sbml-discuss list subscription, visit
+>>> https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss
+>>>=20
+>>> For a web interface to the sbml-discuss mailing list, visit
+>>> http://sbml.org/Forums/
+>>>=20
+>>> For questions or feedback about the sbml-discuss list,
+>>> contact sbml-team@caltech.edu
+>>=20
+>>=20
+>> --=20
+>> Herbert M. Sauro, PhD
+>> Associate Professor
+>> Department of Bioengineering
+>>=20
+>> University of Washington
+>> William H. Foege Building
+>> Box 355061, Seattle, WA 98195-5061
+>> 206.685.2119 (tel), 206.685.3300 (shared fax)
+>>=20
+>> http://www.sys-bio.org; http://blog.analogmachine.org
+>> New Text Book: Enzyme Kinetics for Systems Biology
+>> Order at Amazon: http://tinyurl.com/3w4b9al
+>>=20
+>> ____________________________________________________________
+>> To manage your sbml-discuss list subscription, visit=20
+>> https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss
+>>=20
+>> For a web interface to the sbml-discuss mailing list, visit
+>> http://sbml.org/Forums/
+>>=20
+>> For questions or feedback about the sbml-discuss list,
+>> contact sbml-team@caltech.edu
+>=20
+> ____________________________________________________________
+> To manage your sbml-discuss list subscription, visit=20
+> https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss
+>=20
+> For a web interface to the sbml-discuss mailing list, visit
+> http://sbml.org/Forums/
+>=20
+> For questions or feedback about the sbml-discuss list,
+> contact sbml-team@caltech.edu
+
+
+--Apple-Mail=_5D118531-E310-433B-BEA1-30EFF7B95034
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">"Chris J. Myers" =
+&lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Re: [sbml-discuss] Restricted use of third-party =
+standards by SBML</b><br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">March 29, 2013 7:33:57 AM MDT<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">SBML Discussion =
+List &lt;<a =
+href=3D"mailto:sbml-discuss@caltech.edu">sbml-discuss@caltech.edu</a>&gt;<=
+br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">SBML Discussion List &lt;<a =
+href=3D"mailto:sbml-discuss@caltech.edu">sbml-discuss@caltech.edu</a>&gt;<=
+br></span></div><br><div>Ok, I was curious what we actually are leaving =
+out, so I checked it out:<br><br><a =
+href=3D"http://www.w3.org/TR/MathML3/chapter4.html">http://www.w3.org/TR/M=
+athML3/chapter4.html</a><br><br>1) Functions and inverses - we only =
+support lambda (for functions definitions) and piecewise. &nbsp;Not =
+clear if any of the others are needed by us.<br>2) Arithmetic, algebra, =
+logic - we support most of these. &nbsp;We should add quotient, =
+remainder, and perhaps gcd and lcm. &nbsp;Others such as root, forall, =
+exists, are pretty loaded. &nbsp;The rest deal with complex numbers, =
+does anybody need those?<br>3) Relations - we support most of these. =
+&nbsp;The exception are equivalent, approximately, and factor of. =
+&nbsp;Not sure we need any of these.<br>4) Calculus and vector calculus =
+- we do not support these. They would be difficult to do so, but they =
+may be useful. &nbsp;They could perhaps be added by a package, if =
+desired.<br>5) Theory of sets - we support none of these. &nbsp;I think =
+they may perhaps be useful if we add sets, so they could be added by a =
+"sets" package.<br>6) Sequences and series - we support none of these. =
+&nbsp;I think these are ones that Nicolas would like to have. &nbsp;We =
+really need arrays or sets to make full use of them though.<br>7) =
+Elementary classical functions - we support all of these.<br>8) =
+Statistics - we support none of these. &nbsp;These are things like mean, =
+variance, etc. &nbsp;They may be useful if we add arrays or sets, =
+perhaps.<br>9) Linear algebra - we support none of these, but they will =
+be added by the arrays package.<br>10) Constant and symbol elements - =
+only support exponentiale, true, false, and pi. &nbsp;Would like to add =
+infinity and notanumber, and perhaps emptyset with a sets package. =
+&nbsp;Not so sure about any of the others.<br><br>So, in summary, I =
+think there are a few things we can add to core that would be useful =
+(quotient, remainder, infinity, notanumber). &nbsp;I think if can =
+breakdown the rest into the following packages:<br><br>1) Arrays and =
+sets<br>2) Calculus<br>3) Complex numbers<br><br>We are already planning =
+on arrays and sets package which I think will add a lot to the mathML =
+subset. &nbsp;Many of the missing operators only make sense if we have =
+arrays and sets. &nbsp;The question is whether people would like the =
+calculus and complex parts as =
+well?<br><br>Cheers,<br><br>Chris<br><br>On Mar 28, 2013, at 5:14 PM, =
+hsauro &lt;hsauro@u.washington.edu&gt; wrote:<br><br><blockquote =
+type=3D"cite">I still haven't heard a good case for expanding SBML to =
+more MathML <br>other than it can be done. What can't be done with =
+current SBML that <br>modelers would really like to do? Personally I =
+can't think of anything I <br>would need at the moment on the math side =
+(other than arrays perhaps) <br>though of course others may needs =
+additional math constructs.<br><br>The one application I am involved in =
+on the side is multicellular <br>models. But what restricts us here is =
+not the lack of math but a <br>community agreed way to represent =
+multicellular systems using a <br>*biological description* which could =
+be converted by a tool into a math <br>representation. Given the huge =
+variety of approaches in this area it <br>wouldn't make sense to have a =
+fixed math representation which is how <br>CellML/FieldML might do it =
+for example. One could perhaps imagine arrays <br>being handy in =
+describing a multicellular model.<br><br>Herbert<br><br>On 3/28/2013 =
+3:19 PM, Lucian Smith wrote:<br><blockquote type=3D"cite">* Mike Hucka =
+&lt;mhucka@caltech.edu&gt; [2013-03-28 21:04] writes:<br><blockquote =
+type=3D"cite">On Thu, 28 Mar 2013 11:00:02 +0100, Andreas Dr?ger =
+wrote:<br><blockquote type=3D"cite">I think we have read many important =
+concerns and opinions about this<br>crucial topic. Maybe a community =
+vote such as<br><br>* Extend MathML subset at all?<br>if yes, should it =
+be done by<br>* Declaring a separate package with the entire MathML<br>* =
+Step-wise extending the MathML package in subsequent SBML versions<br>* =
+Allowing the entire MathML content in SBML's core<br><br>could help to =
+figure out what should be done?<br></blockquote>This is the best =
+approach to reaching a community decision, IMHO, and fits with how major =
+SBML decisions have been done in the past.<br></blockquote>A vote does =
+seem reasonable, but I'd still be interested in more<br>discussion =
+before actually voting.<br><br>To be clear, here is the current =
+situation, as I understand it from<br>discussions here at at previous =
+SBML Editor meetings:<br><br>* In SBML L3v1 core, the specification =
+allows only a subset of MathML to<br>be used.<br><br>* The editors have =
+agreed that a generous interpretation of that language<br>would allow =
+any package to extend that subset. &nbsp;The 'arrays and =
+sets'<br>package is planning to allow vector and matrix constructions, =
+following<br>this rule. &nbsp;It would therefore be possible to define =
+an 'allMathML'<br>package that extended the 'subset' to 'all of MathML'. =
+&nbsp;Any two packages<br>that wanted to extend the MathML subset to =
+include the same new element<br>(i.e. both 'allMathML' and 'arrays' =
+adding the 'sum' element) could do so<br>without conflict, as the =
+semantic meaning of that element is defined by<br>MathML, not =
+SBML.<br><br>So, that's the state of the core today; it would be =
+relatively<br>straightforward for someone to run with Chris's suggestion =
+and create a<br>package, with no change at all to the core. &nbsp;If =
+someone did this, they<br>could do so following the procedure =
+at<br><br>http://sbml.org/Documents/SBML_Development_Process/SBML_Developm=
+ent_Process_for_SBML_Level_3<br><br>The first stage of which is 'write a =
+proposal, and put it up for a vote'.<br>The proposal does not need to be =
+complicated! &nbsp;It need only describe how<br>the proposed package =
+would proceed, and how it would fulfil the<br>architectural principles =
+of Utility, Biological Orientation, Coherence,<br>and Orthogonality. =
+&nbsp;As stated on the above page:<br><br> &nbsp;"There are no length =
+requirements for a package proposal. The proposal<br>should be long =
+enough to allow the SBML community to assess and vote on<br>the proposal =
+as described below. Some packages may be simple enough that a<br>few =
+paragraphs suffice; others may need more detailed explanations. In =
+all<br>cases, authors of package proposals are advised to pay =
+particular<br>attention to giving clear explanations of (i) the needs =
+that the proposed<br>package is meant to address and (ii) the approach =
+being proposed to<br>address those needs."<br><br>Now, if anyone was so =
+inclined to do something like this, they may well<br>want to have a =
+straw poll from sbml-discuss beforehand, so they didn't<br>waste too =
+much effort on something people actively object to. &nbsp;But I =
+would<br>not want that straw poll to be binding. &nbsp;(Indeed, a more =
+useful poll might<br>be 'I would like to work on this; who's up for =
+helping and/or would<br>implement support for it once it was =
+written?')<br><br><br>So. &nbsp;The *next* question is, "What about SBML =
+L3v2?" &nbsp;The current plan is<br>to at *least* extend the MathML =
+subset by adding in particular things.<br>See, for example, =
+http://sourceforge.net/p/sbml/sbml-specifications/229/<br><br>So the =
+question would be not whether to increase the subset at all (that<br>has =
+already been agreed to), but *how much* to increase it by: =
+&nbsp;what<br>particular constructs to add in, or whether to just say =
+'open the<br>floodgates'.<br><br>If we did a poll now, this is what I =
+would ask:<br><br>* Do you think an L3v1 'all MathML' package would be =
+useful?<br>* Pick one of the following three options:<br> &nbsp;* I =
+think SBML L3v2 should incorporate all of MathML even if the<br> =
+&nbsp;&nbsp;&nbsp;proposed package did not exist.<br> &nbsp;* I think =
+SBML L3v2 should incorporate all of MathML only if the<br> =
+&nbsp;&nbsp;&nbsp;proposed package was implemented and found to be =
+useful.<br> &nbsp;* I think SBML L3v2 should not incorporate all of =
+MathML even if the<br> &nbsp;&nbsp;&nbsp;proposed package was =
+implemented and found to be useful (i.e. you<br> &nbsp;&nbsp;&nbsp;think =
+the benefits of that package are fully realized in the package<br> =
+&nbsp;&nbsp;&nbsp;itself).<br>* Would you be willing to help write such =
+a package?<br>* Would you be willing to implement support for such a =
+package?<br>* If SBML L3v2 only expanded the subset of MathML we =
+support, what<br> &nbsp;constructs (if any) do you think are most =
+needed: &nbsp;________________<br><br><br>--------------<br><br>Above I =
+tried to be objective; what follows is more my opinion.<br><br>After =
+having written out the above, it seems clear to me that the<br>simplest, =
+most straightforward way to go is for someone who cares enough<br>to =
+write up a package proposal, gather other supporters, and see if =
+they<br>can get through to getting two implementations of an 'allMathML' =
+package.<br>If this turned out to be incredibly easy, it would be a =
+compelling<br>argument for, in the future, folding that package into =
+core. &nbsp;If it turned<br>out to be hard, it would justify people's =
+fears who didn't want it.<br>Either way, the experiment would be =
+performed, and the usefulness of the<br>package would be less a matter =
+of debate and more a matter of observation.<br><br>The other issue is =
+that if this package *couldn't* get enough support to<br>follow through =
+to two implementations of it, we would know that it was a<br>good thing =
+we didn't try to put it into l3v2, because acceptance of core<br>also =
+requires two implementations, which apparantly there was =
+not<br>community will for.<br><br>So my current inclination is to push =
+for someone who believes 'all of<br>MathML' is the way to go to move =
+forward on that idea as a package, and<br>convince the rest of us =
+through example. &nbsp;I, at least, would absolutely<br>support such an =
+effort.<br><br>-Lucian<br>________________________________________________=
+____________<br>To manage your sbml-discuss list subscription, =
+visit<br>https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss<br><b=
+r>For a web interface to the sbml-discuss mailing list, =
+visit<br>http://sbml.org/Forums/<br><br>For questions or feedback about =
+the sbml-discuss list,<br>contact =
+sbml-team@caltech.edu<br></blockquote><br><br>-- <br>Herbert M. Sauro, =
+PhD<br>Associate Professor<br>Department of =
+Bioengineering<br><br>University of Washington<br>William H. Foege =
+Building<br>Box 355061, Seattle, WA 98195-5061<br>206.685.2119 (tel), =
+206.685.3300 (shared fax)<br><br>http://www.sys-bio.org; =
+http://blog.analogmachine.org<br>New Text Book: Enzyme Kinetics for =
+Systems Biology<br>Order at Amazon: =
+http://tinyurl.com/3w4b9al<br><br>________________________________________=
+____________________<br>To manage your sbml-discuss list subscription, =
+visit =
+<br>https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss<br><br>For=
+ a web interface to the sbml-discuss mailing list, =
+visit<br>http://sbml.org/Forums/<br><br>For questions or feedback about =
+the sbml-discuss list,<br>contact =
+sbml-team@caltech.edu<br></blockquote><br>________________________________=
+____________________________<br>To manage your sbml-discuss list =
+subscription, visit =
+<br>https://utils.its.caltech.edu/mailman/listinfo/sbml-discuss<br><br>For=
+ a web interface to the sbml-discuss mailing list, =
+visit<br>http://sbml.org/Forums/<br><br>For questions or feedback about =
+the sbml-discuss list,<br>contact =
+sbml-team@caltech.edu<br></div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_5D118531-E310-433B-BEA1-30EFF7B95034--
+

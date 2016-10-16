@@ -1,0 +1,36 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: kjones5863@gmail.com
+Subject: Re: CHANGE: check delays are uniform or constant before combining (PR#4994)
+Date: Wed Sep 29 16:22:48 2010
+
+Hi,
+
+For this example:
+
+.dummy t1 t0 
+#@.variables X 
+#|.places p1 p0 
+.graph
+p1 t1
+t1 p0
+p0 t0
+t0 p1
+.marking {p0 }
+#@.init_vals {<X=0>}
+#@.assignments {<t1=[X:=X+3]><t0=[X:=3]>}
+#@.delay_assignments {<t1=[uniform(0,1)]><t0=[uniform(0,X)]>}
+#@.continuous 
+.end
+
+I get the following exception:
+
+Exception in thread "Thread-7" java.lang.NumberFormatException: For input
+string: "X"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:447)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at lhpn2sbml.parser.Abstraction.removeVacTrans(Abstraction.java:1962)
+	at lhpn2sbml.parser.Abstraction.checkTrans23(Abstraction.java:1458)
+	at lhpn2sbml.parser.Abstraction.abstractSTG(Abstraction.java:134)
+	at verification.Verification.run(Verification.java:872)
+	at java.lang.Thread.run(Thread.java:613)

@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: andrew.n.fisher@utah.edu
+Subject: Re: CHANGE: File.separator->Gui.separator breaks headless code (PR#6209)
+Date: Wed Feb  4 00:05:04 2015
+
+What we need is a value always accessible.  The reason for Gui.separator is that
+File.separator does not 
+work on windows.  It needs to be escaped.  Namely, \\ must be changed to \\\\. 
+We could move it from Gui 
+to another class which is always constructed even for GUI-less code.
+
+Chris

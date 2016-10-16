@@ -1,0 +1,48 @@
+From zhen.zhang@utah.edu  Sat Sep 26 18:46:00 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.144.18])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8R0k03h003385
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 26 Sep 2015 18:46:00 -0600
+X-IronPort-AV: E=Sophos;i="5.17,594,1437458400"; 
+   d="scan'208";a="519220673"
+Received: from mail-oi0-f49.google.com ([209.85.218.49])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 26 Sep 2015 18:46:00 -0600
+Received: by oiev17 with SMTP id v17so74920448oie.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 26 Sep 2015 17:45:59 -0700 (PDT)
+X-Received: by 10.202.91.2 with SMTP id p2mr5919397oib.41.1443314759753; Sat,
+ 26 Sep 2015 17:45:59 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.199.4 with HTTP; Sat, 26 Sep 2015 17:45:20 -0700 (PDT)
+In-Reply-To: <CA+LVOvmuxZhRGn0kK+rDj1D89Y_bXGjv7b-e1EExv4oC+wRguw@mail.gmail.com>
+References: <CA+LVOvnfmp7RLwDMZ0yCdQhbhYYcPO1iF1aObD_bdWdP5HcKWQ@mail.gmail.com>
+ <CFF43CA0-44F5-4824-8696-ABC95834015E@ece.utah.edu> <CA+LVOvmuxZhRGn0kK+rDj1D89Y_bXGjv7b-e1EExv4oC+wRguw@mail.gmail.com>
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Sat, 26 Sep 2015 18:45:20 -0600
+Message-ID: <CA+LVOvkQn4qZ6nqQETKOM8f1JAefOccmCYzoLCvf=7MwHfR=_Q@mail.gmail.com>
+Subject: Re: CHANGE: Differentiate delay assignments between immediate and
+ non-immediate transitions
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+Correction. My reasoning for making 1 of the 6 transitions from send
+and receive pair is wrong. An immediate transition is not always
+independent of other transitions. POR still goes through dependent
+analysis for an immediate transition.
+
+On Sat, Sep 26, 2015 at 6:35 PM, Zhen Zhang <zhen.zhang@utah.edu> wrote:
+> For a pair of send and receive, 6 LPN transitions are generated, 3 in
+> each LPN process. I think the transition assigning its local data on
+> the receiving end should be made non-immediate. This is because the
+> receiver of this data may do different things based on its value.
+> Making this transition non-immediate allows the trace-back to not miss
+> any possible values. Do you agree?
+>
+> For the assign statement, I think it is safe to compile it to
+> immediate transitions. For other types of compiled transitions, I
+> think we should be careful about making them immediate. We currently
+> do not allow, for each enabled seed transition, its dependent set to
+> contain the mixture of the immediate and non-immediate transitions. I
+> am not sure making guards immediate can get us into this disallowed
+> state.
+

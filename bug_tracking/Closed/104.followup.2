@@ -1,0 +1,62 @@
+From hao@tang.elen.utah.edu  Tue Jun 22 12:17:00 1999
+Received: from tang.elen.utah.edu (tang.elen.utah.edu [128.110.18.209]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id MAA18556 for <atacs-bugs@shang.elen.utah.edu>; Tue, 22 Jun 1999 12:17:00 -0600 (MDT)
+Received: (from hao@localhost)
+	by tang.elen.utah.edu (8.9.3/8.9.3) id MAA09566;
+	Tue, 22 Jun 1999 12:17:16 -0600
+Date: Tue, 22 Jun 1999 12:17:16 -0600
+From: Hao Zheng <hao@tang.elen.utah.edu>
+Message-Id: <199906221817.MAA09566@tang.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu, hao@tang.elen.utah.edu
+Subject: Re: Use postprocessing to project internal signals. (PR#104)
+
+The following is the one without syntax errors. Since the signal 'b' in the 
+module 'buf' is an internal signal, it won't be projected out. 
+module inv0;
+
+input x = {true};
+output y = {false,<1,2>};
+
+process inv0;
+*[ [x-]; y+; [x+]; y- ]
+endprocess
+endmodule
+
+
+//-------------------------------
+module inv1;
+input x = {false};
+output y = {true,<1,2>};
+
+process inv1;
+*[ [x+]; y-; [x-]; y+ ]
+endprocess
+endmodule
+
+//-------------------------------
+module  inv2;
+input x = {false};
+output y = {true,<1,2>};
+
+process inv2;
+*[ y+; [x+]; y-; [x-] ]
+endprocess
+endmodule
+
+
+//--------------------------------
+module buf;
+input a;
+
+inv1 i1(x => a, y => b);
+inv0 i2(x => b, y => c);
+
+endmodule
+
+module main;
+
+input Y;
+
+buf A(a => X, c => Y);
+inv2 B(x => Y, y => X);
+
+endmodule

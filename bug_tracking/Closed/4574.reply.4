@@ -1,0 +1,14 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: BUG: abstraction of species used only in a rule (PR#4574)
+Date: Mon Dec  7 21:07:25 2009
+
+Still need to check the following:
+1) Algebraic rule includes a relevant species.
+2) Event trigger, delay, or assignment expression involves an assignment
+to a relevant species.
+
+An irrelevant species still needs to be removed from:
+1) An algebraic rule which is composed of irrelevant species.
+2) An event assignment to it.  The event should be removed if no assignments
+remain after removing the one to the irrelevant species.

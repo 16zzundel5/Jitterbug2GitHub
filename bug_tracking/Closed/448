@@ -1,0 +1,155 @@
+From killpack@eng.utah.edu  Thu May  4 12:51:44 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (killpack@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id MAA05204
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 4 May 2000 12:51:43 -0600
+X-Authentication-Warning: chou.elen.utah.edu: killpack owned process doing -bs
+Date: Thu, 4 May 2000 12:51:43 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@chou.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Atacs and gate specification
+Message-ID: <Pine.LNX.4.10.10005041217590.5021-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+It would be nice to be able to say that a gate is specifically a nor - for
+example: aibar comes out as an AND gate with the inputs inverted - with
+bubble pushing - this gate is a nor.  Nor is better because I don't have
+to invert the inputs.
+
+Kip
+
+prs::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+[+c0: (a0 & b0 & ce & en)]
+[+c0: (a0 & b1 & ce & en)]
+[+c0: (a1 & b0 & ce & en)]
+[-c0: (~ce & ~en)]
+[+c1: (a1 & b1 & ce & en)]
+[-c1: (~ce & ~en)]
+[ ci: (~c0 & ~c1)] Combinational
+[ bibar: (~b0 & ~b1)] Combinational
+[ aibar: (~a0 & ~a1)] Combinational
+[+abi: (bibar & aibar)]
+[-abi: (~bibar & ~aibar)]
+[+en: (ci & abi)]
+[-en: (~ci & ~abi)]
+
+file::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/*
+--------------------------------------------------------------------------
+ ** pre-charged half-buffer AND gate
+ ** command line: 
+ ** atacs -mV -mE -mz -mU -mP -mT -ms -mc -mD -eR -lh -M20 -ya -sv
+and2_a.hse
+ **
+ ** and2_a.prs
+ **
+ */
+module and2_a;
+
+delay celtgate  = <65, 135>;
+delay standgate = <33, 67>;
+delay envdelay  = <65, inf>;    /* 1 celt gate */
+
+output aibar = { true, standgate };
+output bibar = { true, standgate };
+output ci    = { true, standgate };
+output abi   = { true, celtgate };
+output en    = { true, celtgate };
+
+input a0 = {false, envdelay};
+input a1 = {false, envdelay};
+
+input b0 = {false, envdelay};
+input b1 = {false, envdelay};
+
+input  ce = {false, envdelay};
+output c0 = {false, celtgate};
+output c1 = {false, celtgate};
+
+
+process main;
+*[ 
+   [ce];
+   [ b0 & a0 -> c0+ |
+     a0 & b1 -> c0+ |
+     a1 & b0 -> c0+ |
+     a1 & b1 -> c1+ ]; 
+ 
+   [~en];   /* en- */   
+   [~ce];
+   [ c0 -> c0- | c1 -> c1- ];
+   [ ~a0 & ~a1 & ~b0 & ~b1 ];
+   [en]    /* en+ */
+]
+endprocess
+
+/*
+---------------------------------------------------------------------------
+ ** Gate descriptions for en
+ **
+---------------------------------------------------------------------------
+ */
+gate aibar;
+  ( a0 | a1 ) -> aibar-
+  ( ~a0 & ~a1 ) -> aibar+
+endgate
+
+gate bibar;
+  ( b0 | b1 ) -> bibar-
+  ( ~b0 & ~b1 ) -> bibar+
+endgate
+
+gate ci;
+  ( c0 | c1 ) -> ci-
+  ( ~c0 & ~c1 ) -> ci+
+endgate
+
+gate abi;
+  ( ~aibar & ~bibar ) -> abi-
+  ( aibar & bibar ) -> abi+
+endgate
+
+gate en;
+  ( ~abi & ~ci ) -> en-
+  ( abi & ci ) -> en+
+endgate
+
+/*
+---------------------------------------------------------------------------
+ ** Environment processes
+ **
+---------------------------------------------------------------------------
+ */
+
+process a;
+*[ 
+   [ true -> a0+ | true -> a1+ ]; 
+   [~en]; 
+   [ a0 -> a0- | a1 -> a1- ];
+   [en]
+ ]
+endprocess
+
+process b;
+*[ 
+   [ true -> b0+ | true -> b1+ ]; 
+   [~en]; 
+   [ b0 -> b0- | b1 -> b1- ];
+   [en]
+ ]
+endprocess
+
+process c;
+*[ 
+   ce+; 
+   [ c0 | c1 ]; 
+   ce-; 
+   [ ~c0 & ~c1 ] 
+ ]
+endprocess
+
+endmodule
+
+

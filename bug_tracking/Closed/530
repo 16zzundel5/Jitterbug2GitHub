@@ -1,0 +1,216 @@
+From atacs-bugs  Sun Nov  5 16:51:13 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id QAA02726
+	for atacs-bugs@shang.elen.utah.edu; Sun, 5 Nov 2000 16:51:13 -0700
+Received: from jiaqi.elen.utah.edu (IDENT:root@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA02720
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Sun, 5 Nov 2000 16:51:13 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA01752
+	for <atacs-bugs@vlsigroup>; Sun, 5 Nov 2000 16:56:40 -0700
+Date: Sun, 5 Nov 2000 16:56:40 -0700 (MST)
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: Asynchronous Circuit Design (fwd)
+Message-ID: <Pine.LNX.4.10.10011051656340.1680-200000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: MULTIPART/Mixed; BOUNDARY="0__=j6kRbDgyUSCbr2eF1N0KbmCb6YafYqMjuYaEcuTRJRSg8VNoo5dwO2CP"
+Content-ID: <Pine.LNX.4.10.10011051656341.1680@jiaqi.elen.utah.edu>
+Content-Disposition: INLINE
+
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+  Send mail to mime@docserver.cac.washington.edu for more info.
+
+--0__=j6kRbDgyUSCbr2eF1N0KbmCb6YafYqMjuYaEcuTRJRSg8VNoo5dwO2CP
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Content-ID: <Pine.LNX.4.10.10011051656342.1680@jiaqi.elen.utah.edu>
+Content-Disposition: INLINE
+
+
+
+---------- Forwarded message ----------
+Date: Mon, 14 Aug 2000 09:32:09 -0400
+From: pmeyler@wiley.com
+To: myers@elen.utah.edu
+Subject: Asynchronous Circuit Design
+
+
+
+Dear Chris
+
+Later than I expected, I have received two reviews of your proposal. Thanks for
+your patience. I shall copy the relevant sections here and then continue
+afterwards.
+
+******************
+Reviewer 1
+
+I think that this book does fill a hole that exists.  Dr. Myers does a
+reasonable job of presenting sufficient breadth and detail.  I do strongly
+suggest that a section on synchronizers be included.  With this information, and
+some improvement to the text as it is, I believe this would be a useful book for
+those both in industry and academia.
+
+*******************
+Reviewer 2
+
+As the author notes, there is no recent textbook on asynchronous design. The
+book by Brzozoski and Seger gives a comprehensive and rigorous overview of the
+subject, but is not written as a textbook.
+
+ The scope of the book seems reasonable.  It is clearly written by someone in
+the synthesis camp.  The focus on explaining the Huffman and Muller schools is a
+reasonable one to take.
+
+  In the prospectus, the author lists several current applications of
+asynchronous circuits, including Intel's RAPPID (a research project) and
+Philips's pager.  Myrinet's "pipeline synchronization" should be added to this
+list.  It would be constructive to add a chapter to survey recent asynchronous
+designs, both research projects and shipping products.  The U. Manchester Amulet
+belongs here.  This should definitely be a separate chapter, as this material
+will become dated faster than the rest of the content of the book.  Nonetheless,
+I believe that adding examples of substantial designs will lend credibility to
+the book.
+
+  Another possible addition would be a chapter could with examples of mixed
+synchronous/asynchronous designs such as self-resetting domino logic, pulse
+logic ALU's, source synchronous communication.  The role of synchronization in
+synchronous designs along with a discussion of metastability should be here.
+There are still plenty of designers who don't really grasp what metastability is
+about.  This chapter could include connections of asynchronous techniques to
+"far-out" technologies such as RSFQ (superconducting) logic, etc.
+
+  Now for comments on the three chapters (5-7) I examined.  I believe that the
+use of running examples will make this material accessible to a wider audience.
+On the other hand, I found the complete lack of theorems and proofs to be
+disturbing.  The presentation is very "operational" -- it describes step-by-step
+what each algorithms does, and the procedure for synthesis, but it doesn't give
+me a sense that I know that it's correct. I just understand how it works for the
+particular examples.  I hope that this can be corrected with some modest
+revision.
+  First, each of chapters five and six should clearly define the synthesis
+problems that they address.  Synthesis is a function (in the mathematical sense)
+whose domain is a specification (i.e. a flow table or a signal transition graph)
+and whose range is a netlist.  These functions should be clearly defined.  Then,
+the author can explain that one way to implement one of these functions is to
+decompose it into three or four simpler functions (e.g. state minimization,
+state assignment, and logic synthesis).  Each section that presents one of these
+simpler functions can take a similar approach.  In the end, the detailed
+algorithms can be presented in imperative pseudo-code (i.e. operational terms),
+but a more functional/mathematical description of the high level problems would
+help.  Theoretical results that justify key steps in the synthesis procedures
+should be (in my opinion) marked with theorems.  To keep this text accessible,
+to less theoretically orient readers, most proofs can be omitted 
+
+--0__=j6kRbDgyUSCbr2eF1N0KbmCb6YafYqMjuYaEcuTRJRSg8VNoo5dwO2CP
+Content-Type: TEXT/PLAIN; CHARSET=iso-8859-1
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-ID: <Pine.LNX.4.10.10011051656343.1680@jiaqi.elen.utah.edu>
+Content-Description: 
+Content-Disposition: INLINE
+
+
+? a citation to
+the relevant literature should do the job.  [BS95] provides much of the=
+ theory
+that is lacking in this text, and frequent citations would help cover t=
+his gap.
+I think an occasional proof is a fine idea, in particular when such a p=
+roof is
+short and contributes to understanding the bigger picture.  Pseudo-code=
+
+fragments should include comments.  Of course, the detailed description=
+ will be
+in the text, but a few comments in the code can provide useful clues to=
+ the
+reader and make the connection to the text clearer.
+
+  It would be helpful if the examples could be motivated by a "story pr=
+oblem"
+style example.  This is done nicely with the wine shop example in chapt=
+er 7. The
+examples in chapters 5 and 6 are more of the "consider this flow table"=
+ or (STG)
+style.  For readers not familiar with asynchronous design, the obvious =
+question
+is:
+  "Why should I care about some made-up flow table? I want to know if I=
+ can do
+anything real with this stuff."
+Motivating the examples with some, semi-plausible description of what t=
+hey could
+be used for helps enhance the readers intuition.  As I noted at the beg=
+inning of
+this paragraph, chapter 7 handles this well.
+
+I liked chapter 7.  A comprehensive description of the authors POSET te=
+chniques
+is a good contribution.  This chapter should include descriptions of ot=
+her
+techniques such as timed automata (e.g. Kronos), Abadi and Lamports
+"old-fashioned recipe", Pena's work on relative timing, etc.  A compari=
+son of
+the various approaches would be a very useful contribution.
+
+  In summary, I think that the subject matter is an important one, and =
+the
+author is right to note the lack of an up-to-date textbook for asynchro=
+nous
+design.  I've suggested several ideas (mainly additions) that I believe=
+ would
+strengthen the book.  Of course, incorporating all of these suggestions=
+ would
+lead to a bloated text.  The ideal approach would be to encourage the a=
+uthor to
+persuade one of his colleagues at another institution to use a "beta" d=
+raft of
+the text in courses taught by someone other than the author. I expect t=
+hat such
+feedback would focus on the most important changes and would establish =
+the value
+of the text to a wider audience.
+
+
+***********************************
+
+Overall, these are positive reports which support my view that this is =
+a timely
+book with good potential. I hope you find them encouraging. I shall be
+recommending to our editorial committee that you be offered a contract =
+for the
+book. In making that recommendation, it would be useful to hear your re=
+action to
+the referees' reviews. Reviewer 1 makes one substantial suggestion, whi=
+le
+reviewer 2 has several recommendations. I agree with a few of these (in=
+cluding
+more applications, for instance) but we should be careful to avoid lett=
+ing the
+book become too large, since that can make it very difficult to price s=
+ensibly.
+
+I look forward to hearing from you and again, thanks for your patience.=
+
+
+Best wishes
+
+Phil
+
+____________________________________________
+
+Dr Philip Meyler
+Senior Editor
+John Wiley & Sons, Inc
+605 Third Avenue
+New York, NY 10158-0012
+Tel: (212) 850 8784
+Fax: (212) 850 6264
+E-mail: pmeyler@wiley.com
+Web: http://www.wiley.com
+____________________________________________
+=
+
+--0__=j6kRbDgyUSCbr2eF1N0KbmCb6YafYqMjuYaEcuTRJRSg8VNoo5dwO2CP--
+

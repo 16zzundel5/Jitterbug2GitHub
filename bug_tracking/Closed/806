@@ -1,0 +1,34 @@
+From atacs-bugs@chou.ece.utah.edu  Mon Jul 26 12:27:56 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIRuwO017577
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 26 Jul 2004 12:27:56 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i6QIRuDO017575
+	for atacs-bugs@shang.elen.utah.edu; Mon, 26 Jul 2004 12:27:56 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i6QIRtwO017569
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:27:55 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i6QISBaL029194
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:28:11 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i6QISBnK029190
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 26 Jul 2004 12:28:11 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 26 Jul 2004 12:28:11 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: multiple operator reduction
+Message-ID: <Pine.LNX.4.44.0407261227440.29114-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+If there are multiple operators to a reaction, it does not seem to get the 
+correct result.
+
+Chris
+
+

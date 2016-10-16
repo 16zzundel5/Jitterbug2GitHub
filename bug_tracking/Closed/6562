@@ -1,0 +1,72 @@
+From ibiosim@gmail.com  Tue Jul  5 10:18:54 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f173.google.com (mail-pf0-f173.google.com [209.85.192.173])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u65GIr3w006218
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Jul 2016 10:18:53 -0600
+Received: by mail-pf0-f173.google.com with SMTP id i123so71396939pfg.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Jul 2016 09:18:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=+vz9jMRcyilJv/xzT+4rc/dU34v7R681CXHhgbHb8n0=;
+        b=TXEHX6bnlyG/P+xxcRKsq7BDb4XLVBz3LFF+SMtOI3o21Y0pCGvI2wta6W9ZoyGETP
+         Z2tESUvRNA8+ETC8NfQRwCuyJbkPYlho6VnqmkFMN6l8FDDLoemfpdWqe2peXF3Mp7cx
+         3Eo6zd/6P4pFOtHBb674bSUHD6LegqWA5xbtoSYyY6WhFylJfWlNQzLJ2bvpWvNQe+Sk
+         YDXiUtyjKAWyuAXTSr1QXDbeJgGuNC2ol/RrLB8I9w6Ylu9VKEK8EjBhFAtCexcyXruU
+         /UgfxfRJPCHxg1w3JB+KDnEZft0T8kbfFyxjkRPz3skAopjRTmxb4KTOzNHlaoqSNbc5
+         O1Wg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=+vz9jMRcyilJv/xzT+4rc/dU34v7R681CXHhgbHb8n0=;
+        b=FbWMMyCf7qlopEwjLIS38ZhNRnCsDq3E2QCu0kjnwg9YcUSTM0sfA5TzUMxpkXjKux
+         pfwGY3FKCcBTtScHVYCcI0wauTMOWmmQ03aPU8VEzIDWsaEhvDXugfj1XGbV5JJbCRly
+         D6AMQxIGyal1PwK7+gvLSI5+Zb4lzm1M/TqzH+faK+oR1QgzT1V/wwH49zzJWSRuPgLm
+         UFRE7VlVzSMItFbKC8H4ZoKpdqaSvJ7MRc+gexgUCiUha/q/Dyjk+RoWcGrIYJERafQJ
+         vDezY3uyCyyi662yVtw92jwrCYr6c4TZOx8J2yrFZfuS3O0IkP0dEW0QyIhQkvFsy264
+         8dFg==
+X-Gm-Message-State: ALyK8tIsfj0cKQgTvmXPf6tMuro9oRb/0dumz2EWrQzVir+8BMfFf2lpdSI1Ufjt5cBwVQ==
+X-Received: by 10.98.43.7 with SMTP id r7mr33522250pfr.65.1467735533480;
+        Tue, 05 Jul 2016 09:18:53 -0700 (PDT)
+Received: from chou.ece.utah.edu (vlsimail.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id 64sm6033810pfj.96.2016.07.05.09.18.52
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Tue, 05 Jul 2016 09:18:53 -0700 (PDT)
+Date: Tue, 05 Jul 2016 09:18:53 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <2142394300.0.1467735532006.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Problem with setting up models with dynamic simulator
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+In the dynamic simulator, when you try to simulate the model it throws this exception
+
+Stack trace:
+java.lang.IllegalArgumentException: getName() should be called only when !isNumber() && !isOperator()
+	at org.sbml.jsbml.ASTNode.getName(ASTNode.java:2859)
+	at analysis.dynamicsim.flattened.Simulator.inlineFormula(Simulator.java:3023)
+	at analysis.dynamicsim.flattened.Simulator.inlineFormula(Simulator.java:3019)
+	at analysis.dynamicsim.flattened.Simulator.inlineFormula(Simulator.java:3019)
+	at analysis.dynamicsim.flattened.Simulator.inlineFormula(Simulator.java:3019)
+	at analysis.dynamicsim.flattened.Simulator.setupSingleReaction(Simulator.java:6436)
+	at analysis.dynamicsim.flattened.Simulator.setupReactions(Simulator.java:6492)
+	at analysis.dynamicsim.flattened.SimulatorSSACR.initialize(SimulatorSSACR.java:495)
+	at analysis.dynamicsim.flattened.SimulatorSSACR.<init>(SimulatorSSACR.java:69)
+	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:70)
+	at analysis.main.Run.execute(Run.java:1277)
+	at analysis.main.AnalysisView.run(AnalysisView.java:1116)
+	at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+

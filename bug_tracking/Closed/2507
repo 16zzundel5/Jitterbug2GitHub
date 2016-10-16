@@ -1,0 +1,35 @@
+From christian.atheist@gmail.com  Thu Feb 14 14:14:47 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.190])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1ELENaj012406
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 14:14:47 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so526367fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Feb 2008 13:14:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=bHaafEvVlVeFCtJa92YKNHclZSoLgReJlgCJYhGj7Lo=;
+        b=hYDQLuq8DoZukdIygrg01sYdoGtVewF8hY+3WJPClToUXU7XB6XTrCh/Xoyds1QVBrE0Rq/nNaCpHsV2FDJI/uDpKhU0LqjgxbDEvmC/cOoIJyYFWjdmtgS9TCZj35UD/Ku+BTkY/Ly5iKB75nPXmQEcGanBgPk+xqeh+pbqEUQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=TDTAG2cnLYaV2uvMYS7PSmHdG+7gCHqAfZpjYser+8yERDHdKfWTPcADfIzicKtRqacvFTVZ0qFMo5QhtB2bwF0xtOv4SXhwaMPZxZCuNnlkL7CKyix06QvVEy0fk6X78nRVOEcFLumrisDGDf4ocgg5w5a9JuAlroz0VfTInxw=
+Received: by 10.82.149.8 with SMTP id w8mr3456570bud.0.1203023686673;
+        Thu, 14 Feb 2008 13:14:46 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Thu, 14 Feb 2008 13:14:46 -0800 (PST)
+Message-ID: <eba119560802141314t3ec8828nefc15c73e9556e5a@mail.gmail.com>
+Date: Thu, 14 Feb 2008 14:14:46 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Disable edit of ID
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Don't allow user to edit ID of GCM
+

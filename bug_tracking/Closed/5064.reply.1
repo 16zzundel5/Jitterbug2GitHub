@@ -1,0 +1,12 @@
+From: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
+To: nroehner@comcast.net
+Subject: Re: BUG:  biochemical and dimerization abstractions generate incorrect (PR#5064)
+Date: Fri Sep  3 20:45:23 2010
+
+Fixed.  PrintActivatedBindingVisitor and PrintRepressionBindingVisitor now
+generate the specified rate laws, with the added caveat that Ka and Kr have been
+moved inside the pow( , nc) expressions and are no longer implicitly raised to
+nc.  To make the units work, Ka and Kr were made proper eq constants with units
+of mol-1, and the forward rate terms were multiplied by kr (units of s-1).  In
+the case of activated binding, an eq constant for RNAP binding the promoter with
+units of mol-1 was also added.

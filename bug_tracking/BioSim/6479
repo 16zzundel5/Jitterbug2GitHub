@@ -1,0 +1,29 @@
+From myers@eng.utah.edu  Wed Mar 30 08:18:51 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u2UEIpdx014852
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:18:51 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86 id 1alGxO-00015o-L3)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:18:50 -0600
+Received: from [155.99.109.105]
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1alGxO-000Ffa-Ja
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 30 Mar 2016 08:18:50 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: FEATURE: headless entry to SBML/SBOL conversion
+Message-Id: <3F34B6ED-E13B-4381-A8E0-2C5A23E0C4D7@ece.utah.edu>
+Date: Wed, 30 Mar 2016 08:18:51 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.2 \(3112\))
+X-Mailer: Apple Mail (2.3112)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+It would be useful to be able to do conversion without firing up the GUI.
+

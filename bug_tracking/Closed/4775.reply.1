@@ -1,0 +1,9 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: add constant for level and version (PR#4775)
+Date: Wed Sep 23 23:05:06 2009
+
+I added a readSBML static method to BioSim.java and changed everywhere that sbml
+models are read in to call this method.  I also added two constants to the
+BioSim.java file that set the level and version of all read in sbml models. 
+Moving to needs testing.

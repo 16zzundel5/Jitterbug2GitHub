@@ -1,0 +1,21 @@
+From atacs-bugs  Wed Oct 17 13:41:46 2001
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id f9HJfj909994
+	for atacs-bugs@shang.elen.utah.edu; Wed, 17 Oct 2001 13:41:45 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id f9HJfje09988
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Wed, 17 Oct 2001 13:41:45 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) id f9HJgBf08856
+	for atacs-bugs@vlsigroup; Wed, 17 Oct 2001 13:42:11 -0600
+Date: Wed, 17 Oct 2001 13:42:11 -0600
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+Message-Id: <200110171942.f9HJgBf08856@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: atomic/gc/gatelevel
+
+
+Selecting one, synthesis, select different one should work, but doesn't
+unwind synthesis completely.
+

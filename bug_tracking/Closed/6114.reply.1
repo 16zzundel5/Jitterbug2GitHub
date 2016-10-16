@@ -1,0 +1,19 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: l.watanabe@utah.edu
+Subject: Re: BUG: selector in index math (PR#6114)
+Date: Tue Jul 22 22:12:12 2014
+
+Here is an example that causes this problem:
+
+V0[n]
+V1[n]
+Rule0[n]
+  V0[V0[d0]] := V1[d0]
+
+This will have an index field of: [V0[d0]]  
+
+Probably need to be careful about using split here on brackets as nested
+brackets could be selector.  Need to strip 
+outer brackets for each grouping then parse the math inside.
+
+

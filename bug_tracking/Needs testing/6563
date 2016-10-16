@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Tue Jul  5 10:26:15 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pa0-f41.google.com (mail-pa0-f41.google.com [209.85.220.41])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u65GQFGt009549
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Jul 2016 10:26:15 -0600
+Received: by mail-pa0-f41.google.com with SMTP id uj8so8912803pab.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Jul 2016 09:26:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=eRSi48kY1kc4ia2mMflUQuH+9IFqvIGRbLsfKzQ97GE=;
+        b=wAYihXfhTIZX18HxruB36m3+yKvi2+Kj2OZhA+R6tXImsuyUstl+hNWfUKhEwqy/fE
+         3e5Z9k9uYUrdRu2JP05VUYEmKd3/s03DuDNylNGcFK4Mjn8lLHcsqPBum4yT6AA3rRgZ
+         YoSGXwDbQt7wJW30bsmxrOCmd+d8dgdCi1XJU3acgx2I4Gysq5FGkMKDdq4sxge0G9E8
+         t+Q109JLfEAaaLuU9iZG9c7RTezDbMgZeypnauOBtIvXB2vTiRFAZRmWBKrpO6Z/pv1t
+         okY+PnRuS8Sh8a451aysDHrAbbMiH+VuuC0PZN37a2f/nW08ErsknZRqk1hNV8jf8FqV
+         usNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=eRSi48kY1kc4ia2mMflUQuH+9IFqvIGRbLsfKzQ97GE=;
+        b=SUrBHv/Zv5JKpYm3nl7c3jYPbowDA2w6nwPqRIwnFaTbB4JP50tkcxTs6OAig5uz8h
+         Qg/g8VsNDUPKhKdJ8DgiXhgII/I6gRumQ5VLifUtjlYSD+b4/N9K226ovDxewJl16SKA
+         PLpKwqvCmw2dAk0vYS/7u9Jt+ILr1BCWVAJh4q0oBOIMHgjeufcwZI/3TaBtYIIA7OQi
+         uHiMDGe5Re4RDVBVmHo/rUxfcs+a1W5ML2QQas3iMKvckyPKABGfvUdB7Gx59v8/kqzx
+         PFIzFjA8Gp8ER1ce5u2JS07MElFSveoRL/eH+7om2Z9cNloyuIFCqQecd/cpgscfTJKe
+         nxJw==
+X-Gm-Message-State: ALyK8tL4odmOhpBmm0bkLPhGrdLJ6C+YAqBxcrpk/hABdjLtNev6BU5mdwO7IZ5GccxG/A==
+X-Received: by 10.66.62.226 with SMTP id b2mr9263101pas.119.1467735975264;
+        Tue, 05 Jul 2016 09:26:15 -0700 (PDT)
+Received: from chou.ece.utah.edu (vlsimail.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id qc16sm6569611pab.1.2016.07.05.09.26.14
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Tue, 05 Jul 2016 09:26:14 -0700 (PDT)
+Date: Tue, 05 Jul 2016 09:26:14 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: l.watanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1145864579.1.1467735974143.JavaMail.leandro@chou.ece.utah.edu>
+Subject: CHANGE: Change default name of the file being exported
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: l.watanabe@utah.edu
+
+Description:
+When I want to export a file, the default name extension is defaulted to the previously used export method. For example, if I export an sbol file then a pdf file, the default name for export pdf will be file.sbol. Should be file.pdf
+

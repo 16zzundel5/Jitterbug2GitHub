@@ -1,0 +1,66 @@
+From root@ming.elen.utah.edu  Thu Nov  2 04:54:10 2000
+Return-Path: <root@ming.elen.utah.edu>
+Received: from ming.elen.utah.edu (ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id EAA02792
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 2 Nov 2000 04:54:10 -0700
+Received: (from root@localhost)
+	by ming.elen.utah.edu (8.9.3/8.9.3) id EAA14859
+	for atacs-bugs@shang.elen.utah.edu; Thu, 2 Nov 2000 04:54:09 -0700
+Date: Thu, 2 Nov 2000 04:54:09 -0700
+From: root <root@ming.elen.utah.edu>
+Message-Id: <200011021154.EAA14859@ming.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD283 broken repository!
+
+Linux ming.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	387220 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	2048 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[4]: *** [.wine224.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine224.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine224/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine324.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine324.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine324/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine424.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine424.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine424/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine524.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine524.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine524/THE_SHOP.VHDLtest] Error 2
+make[1]: *** [channelTests] Error 2
+make: *** [noPostProc] Error 2
+make[4]: *** [.wine224.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine224.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine224/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine324.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine324.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine324/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine424.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine424.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine424/THE_SHOP.VHDLtest] Error 2
+make[4]: *** [.wine524.THE_SHOP.prs-mzmEmcmzya] Error 1
+make[3]: *** [vhd/.wine524.THE_SHOP.prs-mzmEmcmzya.OK.subDir] Error 2
+make[2]: *** [wine524/THE_SHOP.VHDLtest] Error 2
+make[1]: *** [channelTests] Error 2
+make: *** [hairyNoPostProc] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+./vhd/producer.log:ERROR: Deadlock!
+./vhd/producer.log:Initializing 3 cycles ... sh: parg: command not found
+./vhd/producer.log:ERROR: Deadlock!
+./vhd/producer.log:Initializing 3 cycles ... sh: parg: command not found
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

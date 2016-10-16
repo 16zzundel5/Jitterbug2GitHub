@@ -1,0 +1,117 @@
+From ibiosim@gmail.com  Tue Apr  5 21:01:58 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-io0-f180.google.com (mail-io0-f180.google.com [209.85.223.180])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u3631wcb023303
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Apr 2016 21:01:58 -0600
+Received: by mail-io0-f180.google.com with SMTP id q128so41445252iof.3
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Apr 2016 20:01:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=Ul2U5YBmcRWSBrlXWBw7waH5JegEcp3P3rJahCXOPmE=;
+        b=mI9k1Kg4cG9YlfifGwzgpJjDNBwOlh6I818BnET7Vo0H5MA6vv4Wi1YkKQIhn+UZ36
+         tKcMw6S+2Zg01Y5PLjJJ1zFGyFmb1mE7J+tZeFAktw2cvWdHWdHkIHb++QEs9noZenoi
+         uW5lJPOaFlrGlLRFRERcKR7Ub5rh5/dYFeES2RTKMC+IQJaJBSu4EbrAN81z8SzAz3pq
+         4GUMDQspvlibwPIdRnANGbN1XtAAYE1wE1mk37wZjUZT8DJTsyex2kfxYnvasPeebHH4
+         r7VZdQbSAdVwAoVe8X67rBpT7QrYk6Dhsl6x6op+xxSgFzn8kh9VymdpaObALaQKkfpy
+         pW/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=Ul2U5YBmcRWSBrlXWBw7waH5JegEcp3P3rJahCXOPmE=;
+        b=dt6Loz4hJNrjvnX43Fq023jHW/pe0c576CCFdz7Tu+FDZ4WBnFwi65GgZuRyjJuwOw
+         rFBQN/6J1xCyQHaDDsZEnMlZ8q3oGhHj7rDWw+gUGg/qcfBLAVYAuoraifCFoUfz5ALW
+         LfaPhnN03In2AjeRuFalkyX7WzAOzFC9u7N/kaIKixXAueyQBaz+7eU8I2ozvilBEIkY
+         x3yK5+VIlnclEUInKIExMp6ziCphghJAfNfNv53finrI5QYHjZFWE5tm856w8luEZyYq
+         Eh7RCgWuDA9vjbrYBfxYD3e5sl2PCpu7o3D3XJdc4poxXAliH9aTV2iyzcjc3wxYbsHO
+         8/9g==
+X-Gm-Message-State: AD7BkJJ7leysHbBRmVCSRCmGzXblk98xCvjHv34hHU48sbcf0mjrA3/PixSjNKTO6yDnMA==
+X-Received: by 10.107.135.75 with SMTP id j72mr822034iod.111.1459911717893;
+        Tue, 05 Apr 2016 20:01:57 -0700 (PDT)
+Received: from 10.0.0.88 (c-73-3-103-205.hsd1.ut.comcast.net. [73.3.103.205])
+        by smtp.gmail.com with ESMTPSA id cl9sm8604768igc.10.2016.04.05.20.01.53
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Tue, 05 Apr 2016 20:01:56 -0700 (PDT)
+Date: Tue, 05 Apr 2016 20:01:56 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: myers@ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <945107888.0.1459911711828.JavaMail.javamailuser@localhost>
+Subject: BUG: Assembly is throwing exception
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+The assembler is throwing an exception of files sent by Broad.
+
+Stack trace:
+java.lang.NullPointerException
+	at sbol.assembly.Assembler2.loadAssemblyTypes(Assembler2.java:472)
+	at sbol.assembly.Assembler2.loadAssemblyTypes(Assembler2.java:536)
+	at sbol.assembly.Assembler2.loadNodeTypes(Assembler2.java:542)
+	at sbol.assembly.Assembler2.orderAssemblyNodes(Assembler2.java:345)
+	at sbol.assembly.Assembler2.assembleDNAComponent(Assembler2.java:53)
+	at biomodel.gui.schematic.ModelEditor.saveSBOL2(ModelEditor.java:457)
+	at biomodel.gui.schematic.ModelEditor.save(ModelEditor.java:374)
+	at main.Gui.actionPerformed(Gui.java:2720)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2018)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2341)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:356)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Actions.actionPerformed(BasicMenuItemUI.java:802)
+	at javax.swing.SwingUtilities.notifyAction(SwingUtilities.java:1662)
+	at javax.swing.JComponent.processKeyBinding(JComponent.java:2878)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:689)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:697)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:697)
+	at javax.swing.JMenuBar.processKeyBinding(JMenuBar.java:668)
+	at javax.swing.KeyboardManager.fireBinding(KeyboardManager.java:307)
+	at javax.swing.KeyboardManager.fireKeyboardAction(KeyboardManager.java:293)
+	at javax.swing.JComponent.processKeyBindingsForAllComponents(JComponent.java:2970)
+	at javax.swing.JComponent.processKeyBindings(JComponent.java:2962)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2841)
+	at java.awt.Component.processEvent(Component.java:6293)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Component.dispatchEventImpl(Component.java:4872)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1895)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:762)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1027)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:899)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:727)
+	at java.awt.Component.dispatchEventImpl(Component.java:4742)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:708)
+	at java.awt.EventQueue$4.run(EventQueue.java:706)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+

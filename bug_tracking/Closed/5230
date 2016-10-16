@@ -1,0 +1,176 @@
+From myers@ece.utah.edu  Wed Dec 15 09:06:47 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.3 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id oBFG6kCE029580
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 15 Dec 2010 09:06:46 -0700
+Received: from 75-169-166-75.slkc.qwest.net ([75.169.166.75] helo=[192.168.0.11])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PStsM-0000Rx-Dv; Wed, 15 Dec 2010 09:06:46 -0700
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <E3146DE1-384A-4216-98A0-4AE3FDEF99E1@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Kendall Madsen <curtis.madsen@utah.edu>,
+        ZHEN ZHANG <zhen.zhang@utah.edu>
+In-Reply-To: <852B726894B07749AE9ABB4B055919AC64C550F214@C8V1.xds.umail.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: Re: BUG:  Segmentation fault in reb2sac when performing logical abstraction
+Date: Wed, 15 Dec 2010 09:06:39 -0700
+References: <852B726894B07749AE9ABB4B055919AC64C550F214@C8V1.xds.umail.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+Hi,
+
+I cannot recreate this exact problem with my own xml files.  Please  
+send me yours, and I will check it out.
+
+However, with my test case, there are still problems.  The LPN file  
+format has changed so much that the old Markov analysis approach in  
+atacs will not work.  Therefore, it is not worth you continuing to try.
+
+Right now, the best approach is to work from a GCM file using Curtis  
+code.
+
+Chris
+
+On Dec 14, 2010, at 3:45 PM, Curtis Kendall Madsen wrote:
+
+> When performing logical abstraction on an SBML file in iBioSim,  
+> reb2sac gives me the following error:
+>
+> *** glibc detected *** reb2sac: double free or corruption (!prev):  
+> 0x0000000001fba630 ***
+> ======= Backtrace: =========
+> /lib64/libc.so.6[0x3583075676]
+> reb2sac[0x4695d4]
+> reb2sac[0x468e19]
+> reb2sac[0x4a1fc2]
+> reb2sac[0x4a1cbd]
+> reb2sac[0x484a2f]
+> /lib64/libc.so.6(__libc_start_main+0xfd)[0x358301ec5d]
+> reb2sac[0x405609]
+> ======= Memory map: ========
+> 00400000-004ef000 r-xp 00000000 fd:02  
+> 14418896                           /home/tang/cmadsen/nobackup/ 
+> BioSim/bin/reb2sac
+> 006ef000-006f6000 rw-p 000ef000 fd:02  
+> 14418896                           /home/tang/cmadsen/nobackup/ 
+> BioSim/bin/reb2sac
+> 006f6000-006fa000 rw-p 00000000 00:00 0
+> 01fa5000-0200a000 rw-p 00000000 00:00  
+> 0                                  [heap]
+> 3582c00000-3582c1e000 r-xp 00000000 fd:00  
+> 2752789                        /lib64/ld-2.12.1.so
+> 3582e1d000-3582e1e000 r--p 0001d000 fd:00  
+> 2752789                        /lib64/ld-2.12.1.so
+> 3582e1e000-3582e1f000 rw-p 0001e000 fd:00  
+> 2752789                        /lib64/ld-2.12.1.so
+> 3582e1f000-3582e20000 rw-p 00000000 00:00 0
+> 3583000000-3583175000 r-xp 00000000 fd:00  
+> 2752790                        /lib64/libc-2.12.1.so
+> 3583175000-3583375000 ---p 00175000 fd:00  
+> 2752790                        /lib64/libc-2.12.1.so
+> 3583375000-3583379000 r--p 00175000 fd:00  
+> 2752790                        /lib64/libc-2.12.1.so
+> 3583379000-358337a000 rw-p 00179000 fd:00  
+> 2752790                        /lib64/libc-2.12.1.so
+> 358337a000-358337f000 rw-p 00000000 00:00 0
+> 3583800000-3583883000 r-xp 00000000 fd:00  
+> 2777032                        /lib64/libm-2.12.1.so
+> 3583883000-3583a82000 ---p 00083000 fd:00  
+> 2777032                        /lib64/libm-2.12.1.so
+> 3583a82000-3583a83000 r--p 00082000 fd:00  
+> 2777032                        /lib64/libm-2.12.1.so
+> 3583a83000-3583a84000 rw-p 00083000 fd:00  
+> 2777032                        /lib64/libm-2.12.1.so
+> 3583c00000-3583c02000 r-xp 00000000 fd:00  
+> 2752794                        /lib64/libdl-2.12.1.so
+> 3583c02000-3583e02000 ---p 00002000 fd:00  
+> 2752794                        /lib64/libdl-2.12.1.so
+> 3583e02000-3583e03000 r--p 00002000 fd:00  
+> 2752794                        /lib64/libdl-2.12.1.so
+> 3583e03000-3583e04000 rw-p 00003000 fd:00  
+> 2752794                        /lib64/libdl-2.12.1.so
+> 3584400000-3584415000 r-xp 00000000 fd:00  
+> 2752912                        /lib64/libz.so.1.2.3
+> 3584415000-3584614000 ---p 00015000 fd:00  
+> 2752912                        /lib64/libz.so.1.2.3
+> 3584614000-3584615000 rw-p 00014000 fd:00  
+> 2752912                        /lib64/libz.so.1.2.3
+> 358dc00000-358dd48000 r-xp 00000000 fd:00  
+> 2242763                        /usr/lib64/libxml2.so.2.7.7
+> 358dd48000-358df47000 ---p 00148000 fd:00  
+> 2242763                        /usr/lib64/libxml2.so.2.7.7
+> 358df47000-358df51000 rw-p 00147000 fd:00  
+> 2242763                        /usr/lib64/libxml2.so.2.7.7
+> 358df51000-358df52000 rw-p 00000000 00:00 0
+> 358ec00000-358ec16000 r-xp 00000000 fd:00  
+> 2777090                        /lib64/libgcc_s-4.4.5-20101113.so.1
+> 358ec16000-358ee15000 ---p 00016000 fd:00  
+> 2777090                        /lib64/libgcc_s-4.4.5-20101113.so.1
+> 358ee15000-358ee16000 rw-p 00015000 fd:00  
+> 2777090                        /lib64/libgcc_s-4.4.5-20101113.so.1
+> 3591000000-35910e8000 r-xp 00000000 fd:00  
+> 2242810                        /usr/lib64/libstdc++.so.6.0.13
+> 35910e8000-35912e8000 ---p 000e8000 fd:00  
+> 2242810                        /usr/lib64/libstdc++.so.6.0.13
+> 35912e8000-35912ef000 r--p 000e8000 fd:00  
+> 2242810                        /usr/lib64/libstdc++.so.6.0.13
+> 35912ef000-35912f1000 rw-p 000ef000 fd:00  
+> 2242810                        /usr/lib64/libstdc++.so.6.0.13
+> 35912f1000-3591306000 rw-p 00000000 00:00 0
+> 3592800000-3592810000 r-xp 00000000 fd:00  
+> 2777031                        /lib64/libbz2.so.1.0.6
+> 3592810000-3592a0f000 ---p 00010000 fd:00  
+> 2777031                        /lib64/libbz2.so.1.0.6
+> 3592a0f000-3592a11000 rw-p 0000f000 fd:00  
+> 2777031                        /lib64/libbz2.so.1.0.6
+> 7fe58cb55000-7fe58cb5c000 rw-p 00000000 00:00 0
+> 7fe58cb5c000-7fe58cea3000 r-xp 00000000 fd:02  
+> 14420799                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libsbml.so.4
+> 7fe58cea3000-7fe58d0a3000 ---p 00347000 fd:02  
+> 14420799                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libsbml.so.4
+> 7fe58d0a3000-7fe58d0ca000 rw-p 00347000 fd:02  
+> 14420799                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libsbml.so.4
+> 7fe58d0ca000-7fe58d0cd000 rw-p 00000000 00:00 0
+> 7fe58d0cd000-7fe58d103000 r-xp 00000000 fd:02  
+> 14420809                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgslcblas.so.0
+> 7fe58d103000-7fe58d302000 ---p 00036000 fd:02  
+> 14420809                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgslcblas.so.0
+> 7fe58d302000-7fe58d303000 rw-p 00035000 fd:02  
+> 14420809                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgslcblas.so.0
+> 7fe58d303000-7fe58d4df000 r-xp 00000000 fd:02  
+> 14420804                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgsl.so.0
+> 7fe58d4df000-7fe58d6de000 ---p 001dc000 fd:02  
+> 14420804                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgsl.so.0
+> 7fe58d6de000-7fe58d6ec000 rw-p 001db000 fd:02  
+> 14420804                   /home/tang/cmadsen/nobackup/BioSim/lib64/ 
+> libgsl.so.0
+> 7fe58d6ec000-7fe58d6ed000 rw-p 00000000 00:00 0
+> 7fe58d708000-7fe58d70a000 rw-p 00000000 00:00 0
+> 7fff633a8000-7fff633c9000 rw-p 00000000 00:00  
+> 0                          [stack]
+> 7fff633ff000-7fff63400000 r-xp 00000000 00:00  
+> 0                          [vdso]
+> ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00  
+> 0                  [vsyscall]
+>
+> Online, someone said that this error is a linux C++ bug and one way  
+> to fix it is to add MALLOC_CHECK_=0 to your environment.  After I  
+> add this environment variable, however, reb2sac core dumps instead.
+

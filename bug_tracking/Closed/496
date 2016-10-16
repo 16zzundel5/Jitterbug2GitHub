@@ -1,0 +1,180 @@
+From peskin@cs.utah.edu  Fri Jul  7 09:13:51 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id JAA22260
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 7 Jul 2000 09:13:51 -0600
+Date: Fri, 7 Jul 2000 09:13:51 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200007071513.JAA22260@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: CSC signals enabled in inapprorate state 
+
+Full_Name: Eric Robert Peskin
+Version: CVS tag BAD166
+OS: Red Hat Linux xia.elen.utah.edu 2.2.16-3 #1 Mon Jun 19 18:10:14 EDT 2000 i686 unknown
+spec: /home/xia/peskin/atacs/examples/csp/{FIFO,seq}.csp
+log: /home/xia/peskin/atacs/examples/csp/{FIFO,seq}.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+See also PR#495 and the two example runs below.  
+I will remove FIFO and seq from the nightime regression suite for now.
+
+---8<--------8<--------8<--------8<--------8<--------8<--------8<--------8<---
+
+129 xia:~> cd /home/xia/peskin/atacs/examples/csp
+130 xia:examples/csp> ../../src/atacs FIFO.csp -mEmXmcmsmUmPmTmFmOmpya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Compiling FIFO.csp ... 
+Storing process FIFOctrl to FIFOctrl.er
+Storing process Lenv to Lenv.er
+Storing process Renv to Renv.er
+Storing process FIFO to FIFO.er
+Loading timed event-rule structure from:  FIFO.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done (0.000503)
+Finding reduced state graph ... nodes = 270, dead = 2911
+memory: max=589456 inuse=582792 free=6664 
+done
+35 iterations, 25 regions, 25 new_regions, 16 states in 0.010754 seconds
+nodes in use = 270, dead = 2911
+memory: max=589456 inuse=582792 free=6664
+Projecting out dummy transitions ... done (0.001130)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 3 CSC violation(s)
+Solution costing 1 + 0 used
+Signal named CSC0 being added
+IP: lo+/1 <-> lo-/1  ===== ro+/1 <-> ro-/1 
+
+Storing TEL to file: FIFO.er
+Loading timed event-rule structure from:  FIFO.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  FIFO.rr
+Storing timed event-rule structure to:  FIFO.er
+Loading timed event-rule structure from:  FIFO.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  FIFO.rr
+Storing timed event-rule structure to:  FIFO.er
+Loading timed event-rule structure from:  FIFO.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  FIFO.rr
+Finding reduced state graph and storing to:  FIFO.rsg
+ERROR!
+ERROR: CSC0+/1 enabled but signal is not 0 or R in state 0110B
+Storing constraint graph to:  deadlock.grf
+Executing command:  parg deadlock.grf &
+Storing error trace state graph to:  FIFO.grf
+Executing command:  parg FIFO.grf &
+layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+Storing error trace in VHDL to:  trace.vhd
+Initial: 3 + 0
+Predicted: 1 + 0
+Actual: 0 + 0
+131 xia:examples/csp> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+
+131 xia:examples/csp> ../../src/atacs seq.csp -mEmXmcmsmUmPmTmFmOmpya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Exact cyclic table resolution mode now turned ON.
+Exception handling now turned ON.
+Now using combinational optimization.
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Compiling seq.csp ... 
+Storing process main to main.er
+Storing process a to a.er
+Storing process b to b.er
+Storing process c to c.er
+Storing process seq to seq.er
+Loading timed event-rule structure from:  seq.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done (0.000570)
+Finding reduced state graph ... nodes = 368, dead = 6157
+memory: max=839312 inuse=833144 free=6168 
+done
+52 iterations, 32 regions, 28 new_regions, 20 states in 0.016101 seconds
+nodes in use = 368, dead = 6157
+memory: max=839312 inuse=833144 free=6168
+Projecting out dummy transitions ... done (0.000738)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 6 CSC violation(s)
+Solution costing 3 + 0 used
+Signal named CSC0 being added
+IP: bo+/1 <-> bo-/1  ===== ao+/1 <-> ao-/1 
+
+Storing TEL to file: seq.er
+Loading timed event-rule structure from:  seq.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  seq.rr
+Storing timed event-rule structure to:  seq.er
+Loading timed event-rule structure from:  seq.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  seq.rr
+Storing timed event-rule structure to:  seq.er
+Loading timed event-rule structure from:  seq.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  seq.rr
+Finding reduced state graph and storing to:  seq.rsg
+ERROR!
+ERROR: CSC0-/1 enabled but signal is not 1 or F in state 0F0010B
+Storing constraint graph to:  deadlock.grf
+Executing command:  parg deadlock.grf &
+Storing error trace state graph to:  seq.grf
+Executing command:  parg seq.grf &
+Storing error trace in VHDL to:  trace.vhd
+Initial: 6 + 0
+Predicted: 3 + 0
+Actual: 0 + 0
+132 xia:examples/csp> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+

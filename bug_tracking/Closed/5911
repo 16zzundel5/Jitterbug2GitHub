@@ -1,0 +1,242 @@
+From myers@eng.utah.edu  Fri May 31 11:58:59 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r4VHwuPS008751
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 31 May 2013 11:58:56 -0600
+Received: from c-98-202-13-26.hsd1.ut.comcast.net ([98.202.13.26] helo=[10.0.0.2])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1UiTSD-000B9a-9g
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 31 May 2013 11:49:29 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_76CA37E6-7AD5-46A8-96D9-43225E8A098E"
+Subject: FEATURE: support for required elements package
+Date: Fri, 31 May 2013 11:58:50 -0600
+References: <20130531174356.GF2791@strackenz.spod-central.org>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <77332B44-F995-4BBF-86D7-6F0DC47E7DB0@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.3 \(1503\))
+X-Mailer: Apple Mail (2.1503)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_76CA37E6-7AD5-46A8-96D9-43225E8A098E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: Lucian Smith <lpsmith@spod-central.org>
+> Subject: Re: [sbml-required] Release 0.5
+> Date: May 31, 2013 11:43:56 AM MDT
+> To: The SBML L3 Required Elements package discussion list =
+<sbml-required@lists.sourceforge.net>
+> Reply-To: The SBML L3 Required Elements package discussion list =
+<sbml-required@lists.sourceforge.net>
+>=20
+> Basic libsbml support should not be a problem, with Sarah's code=20
+> generator; it will be a little more work to generate something that =
+runs=20
+> through a model and automatically adds req elements to =
+package-modified=20
+> elements, but even that won't be *too* hard, and until then, you could=20=
+
+> add them yourself.
+>=20
+> I bet a function to gather a list of namespaces from req elements also=20=
+
+> would not be difficult to implement.
+>=20
+> -Lucian
+>=20
+> * Chris J. Myers <myers@ece.utah.edu> [2013-05-31 18:40] writes:
+>> We could implement if there is libsbml support.  Basically, it would =
+be nice to have a validation function that takes a list of the =
+namespaces that ones tool supports and returns the objects that are =
+changed by other names spaces as warnings when viable is true and errors =
+otherwise.  As for creation, is there support in libsbml to create these =
+elements yet, or is that also still to come?
+>>=20
+>> Chris
+>>=20
+>> On May 30, 2013, at 3:40 PM, Lucian Smith <lpsmith@spod-central.org> =
+wrote:
+>>=20
+>>> Following some discussions at HARMONY, here's a new version of the=20=
+
+>>> 'Required Elements' package:
+>>>=20
+>>> https://docs.google.com/file/d/0B71r5kLs3FliWGxFN3o0dnNrZE0/edit
+>>>=20
+>>> The main change here is the ability to reference custom annotations =
+with=20
+>>> the 'ChangedMath' elements as well as packages, and the addition of =
+some=20
+>>> validation rules.
+>>>=20
+>>> At this point, I think we can probably muster up enough tools to=20
+>>> *produce* these files; the trick is going to be finding a client =
+that=20
+>>> wants to *use* the package.  In other words, finding someone for =
+whom=20
+>>> this package is actually useful, that wants to be able to be more=20
+>>> informed about packages and annotations they don't know about.
+>>>=20
+>>> Any takers?  Should I troll for responses on sbml-discuss?
+>>>=20
+>>> (Any comments on this version of the spec are also welcome, of =
+course.)
+>>>=20
+>>> -Lucian
+>>>=20
+>>> =
+--------------------------------------------------------------------------=
+----
+>>> Introducing AppDynamics Lite, a free troubleshooting tool for =
+Java/.NET
+>>> Get 100% visibility into your production application - at no cost.
+>>> Code-level diagnostics for performance bottlenecks with <2% overhead
+>>> Download for free and get started troubleshooting in minutes.
+>>> http://p.sf.net/sfu/appdyn_d2d_ap1
+>>> _______________________________________________
+>>> sbml-required mailing list
+>>> sbml-required@lists.sourceforge.net
+>>> https://lists.sourceforge.net/lists/listinfo/sbml-required
+>>=20
+>>=20
+>> =
+--------------------------------------------------------------------------=
+----
+>> Get 100% visibility into Java/.NET code with AppDynamics Lite
+>> It's a free troubleshooting tool designed for production
+>> Get down to code-level detail for bottlenecks, with <2% overhead.
+>> Download for free and get started troubleshooting in minutes.
+>> http://p.sf.net/sfu/appdyn_d2d_ap2
+>> _______________________________________________
+>> sbml-required mailing list
+>> sbml-required@lists.sourceforge.net
+>> https://lists.sourceforge.net/lists/listinfo/sbml-required
+>=20
+> =
+--------------------------------------------------------------------------=
+----
+> Get 100% visibility into Java/.NET code with AppDynamics Lite
+> It's a free troubleshooting tool designed for production
+> Get down to code-level detail for bottlenecks, with <2% overhead.
+> Download for free and get started troubleshooting in minutes.
+> http://p.sf.net/sfu/appdyn_d2d_ap2
+> _______________________________________________
+> sbml-required mailing list
+> sbml-required@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/sbml-required
+
+
+--Apple-Mail=_76CA37E6-7AD5-46A8-96D9-43225E8A098E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Lucian Smith &lt;<a =
+href=3D"mailto:lpsmith@spod-central.org">lpsmith@spod-central.org</a>&gt;<=
+br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Subject: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Re: [sbml-required] Release =
+0.5</b><br></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">May 31, 2013 11:43:56 AM MDT<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">The SBML L3 =
+Required Elements package discussion list &lt;<a =
+href=3D"mailto:sbml-required@lists.sourceforge.net">sbml-required@lists.so=
+urceforge.net</a>&gt;<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">The SBML L3 Required Elements package discussion list =
+&lt;<a =
+href=3D"mailto:sbml-required@lists.sourceforge.net">sbml-required@lists.so=
+urceforge.net</a>&gt;<br></span></div><br><div>Basic libsbml support =
+should not be a problem, with Sarah's code <br>generator; it will be a =
+little more work to generate something that runs <br>through a model and =
+automatically adds req elements to package-modified <br>elements, but =
+even that won't be *too* hard, and until then, you could <br>add them =
+yourself.<br><br>I bet a function to gather a list of namespaces from =
+req elements also <br>would not be difficult to =
+implement.<br><br>-Lucian<br><br>* Chris J. Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt; =
+[2013-05-31 18:40] writes:<br><blockquote type=3D"cite">We could =
+implement if there is libsbml support. &nbsp;Basically, it would be nice =
+to have a validation function that takes a list of the namespaces that =
+ones tool supports and returns the objects that are changed by other =
+names spaces as warnings when viable is true and errors otherwise. =
+&nbsp;As for creation, is there support in libsbml to create these =
+elements yet, or is that also still to come?<br><br>Chris<br><br>On May =
+30, 2013, at 3:40 PM, Lucian Smith &lt;<a =
+href=3D"mailto:lpsmith@spod-central.org">lpsmith@spod-central.org</a>&gt; =
+wrote:<br><br><blockquote type=3D"cite">Following some discussions at =
+HARMONY, here's a new version of the <br>'Required Elements' =
+package:<br><br><a =
+href=3D"https://docs.google.com/file/d/0B71r5kLs3FliWGxFN3o0dnNrZE0/edit">=
+https://docs.google.com/file/d/0B71r5kLs3FliWGxFN3o0dnNrZE0/edit</a><br><b=
+r>The main change here is the ability to reference custom annotations =
+with <br>the 'ChangedMath' elements as well as packages, and the =
+addition of some <br>validation rules.<br><br>At this point, I think we =
+can probably muster up enough tools to <br>*produce* these files; the =
+trick is going to be finding a client that <br>wants to *use* the =
+package. &nbsp;In other words, finding someone for whom <br>this package =
+is actually useful, that wants to be able to be more <br>informed about =
+packages and annotations they don't know about.<br><br>Any takers? =
+&nbsp;Should I troll for responses on sbml-discuss?<br><br>(Any comments =
+on this version of the spec are also welcome, of =
+course.)<br><br>-Lucian<br><br>-------------------------------------------=
+-----------------------------------<br>Introducing AppDynamics Lite, a =
+free troubleshooting tool for Java/.NET<br>Get 100% visibility into your =
+production application - at no cost.<br>Code-level diagnostics for =
+performance bottlenecks with &lt;2% overhead<br>Download for free and =
+get started troubleshooting in =
+minutes.<br>http://p.sf.net/sfu/appdyn_d2d_ap1<br>________________________=
+_______________________<br>sbml-required mailing =
+list<br>sbml-required@lists.sourceforge.net<br>https://lists.sourceforge.n=
+et/lists/listinfo/sbml-required<br></blockquote><br><br>------------------=
+------------------------------------------------------------<br>Get 100% =
+visibility into Java/.NET code with AppDynamics Lite<br>It's a free =
+troubleshooting tool designed for production<br>Get down to code-level =
+detail for bottlenecks, with &lt;2% overhead.<br>Download for free and =
+get started troubleshooting in minutes.<br><a =
+href=3D"http://p.sf.net/sfu/appdyn_d2d_ap2">http://p.sf.net/sfu/appdyn_d2d=
+_ap2</a><br>_______________________________________________<br>sbml-requir=
+ed mailing =
+list<br>sbml-required@lists.sourceforge.net<br>https://lists.sourceforge.n=
+et/lists/listinfo/sbml-required<br></blockquote><br>----------------------=
+--------------------------------------------------------<br>Get 100% =
+visibility into Java/.NET code with AppDynamics Lite<br>It's a free =
+troubleshooting tool designed for production<br>Get down to code-level =
+detail for bottlenecks, with &lt;2% overhead.<br>Download for free and =
+get started troubleshooting in minutes.<br><a =
+href=3D"http://p.sf.net/sfu/appdyn_d2d_ap2">http://p.sf.net/sfu/appdyn_d2d=
+_ap2</a><br>_______________________________________________<br>sbml-requir=
+ed mailing =
+list<br>sbml-required@lists.sourceforge.net<br>https://lists.sourceforge.n=
+et/lists/listinfo/sbml-required<br></div></blockquote></div><br></body></h=
+tml>=
+
+--Apple-Mail=_76CA37E6-7AD5-46A8-96D9-43225E8A098E--
+

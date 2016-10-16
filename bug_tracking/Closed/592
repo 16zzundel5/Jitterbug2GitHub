@@ -1,0 +1,23 @@
+From atacs-bugs  Thu Jul 12 12:30:38 2001
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id MAA32589
+	for atacs-bugs@shang.elen.utah.edu; Thu, 12 Jul 2001 12:30:38 -0600
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id MAA32582
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Thu, 12 Jul 2001 12:30:38 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.2/8.11.2) with ESMTP id f6CIUDK05210
+	for <atacs-bugs@vlsigroup>; Thu, 12 Jul 2001 12:30:13 -0600
+Date: Thu, 12 Jul 2001 12:30:13 -0600 (MDT)
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+To: <atacs-bugs@vlsigroup.elen.utah.edu>
+Subject: Project leaves duplicates in succ list.
+Message-ID: <Pine.LNX.4.33.0107121229280.5206-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+After projection duplicate successor links can be left (see pr570.tel).
+
+

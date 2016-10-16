@@ -1,0 +1,12 @@
+Chris
+I decided to leave the output of input bias.  Therefore, the tie-breaker goes
+like
+this:
+1) Does not remove quiescent states (i.e., more likely combinational).
+2) Uses a signal in set (reset) which is being used in the reset (set).
+3) Uses a signal in set (reset) which could potentially be used in the reset
+(set).
+4) Is later in the list of signals (i.e., more likely an output).
+To do this, I had to update several gold files in the regression test.
+I also added a switch called "inponly" which allows only inputs to be used as
+context signals.  It is only really meaningful for burst-mode.

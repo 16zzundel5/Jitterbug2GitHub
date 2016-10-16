@@ -1,0 +1,88 @@
+From atacs-bugs  Thu Apr 29 15:34:50 1999
+Received: (from atacs-bugs@localhost) by yuan.elen.utah.edu (8.7.1/8.7.1) id PAA04816 for atacs-bugs; Thu, 29 Apr 1999 15:34:50 -0600 (MDT)
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id VAA28623 for <atacs-bugs@yuan.elen.utah.edu>; Wed, 28 Apr 1999 21:18:31 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id F04373A67; Wed, 28 Apr 1999 21:18:38 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from wrath.cs.utah.edu (wrath.cs.utah.edu [155.99.198.100])
+	by ee.utah.edu (Postfix) with ESMTP id C54B038FD
+	for <atacs-bugs@elen.utah.edu>; Wed, 28 Apr 1999 21:18:34 -0600 (MDT)
+Received: from [155.99.200.87] (slip87.cs.utah.edu [155.99.200.87])
+	by wrath.cs.utah.edu (8.8.8/8.8.8) with ESMTP id VAA00992
+	for <atacs-bugs@elen.utah.edu>; Wed, 28 Apr 1999 21:18:28 -0600 (MDT)
+X-Sender: peskin@pop.cs.utah.edu
+Message-Id: <v03020901b34d7da118de@[155.99.200.87]>
+In-Reply-To: <199904282032.OAA27168@yuan.elen.utah.edu>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 28 Apr 1999 21:18:21 -0600
+To: Chris Myers <atacs-bugs@elen.utah.edu>
+From: Eric Robert Peskin <peskin@cs.utah.edu>
+Subject: Re: Orbits Verification Error (PR#85)
+
+>I found another problem having to do with the fact that events in this file do
+>not have an index (i.e., a+ instead of a+/1).  I think this bug is now fixed.
+>
+>Chris
+
+I still get the seg fault:
+
+107 ming:examples/g> pwd
+/home/ming/atacs/examples/g
+108 ming:examples/g> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   async    10594936 Apr 26 13:25
+/home/song/peskin/atacs/atacs*
+109 ming:examples/g> atacs -mo -lg -to chu133
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using Orbits to obtain state graphs.
+Converting Petri net to ER and storing to:  chu133.er
+Loading timed event-rule structure from:  chu133.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Storing orbits specification file to:  chu133.spec
+Executing command:  orbits < findrsg > output
+Loading state graph in grf format from:  chu133.osg
+ERROR:  da+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  la+ is an undeclared event!
+ERROR:  za+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  dr+ is an undeclared event!
+ERROR:  x+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  lr- is an undeclared event!
+ERROR:  da+ is an undeclared event!
+ERROR:  lr- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  dr- is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  zr- is an undeclared event!
+ERROR:  za+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  lr+ is an undeclared event!
+ERROR:  x+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  x- is an undeclared event!
+ERROR:  da+ is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  zr+ is an undeclared event!
+ERROR:  zr- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  x- is an undeclared event!
+ERROR:  da- is an undeclared event!
+ERROR:  zr+ is an undeclared event!
+ERROR:  la- is an undeclared event!
+ERROR:  da- is an undeclared event!
+ERROR:  za- is an undeclared event!
+ERROR:  dr- is an undeclared event!
+Finding reduced state graph ... done
+Segmentation fault
+110 ming:examples/g>
+
+
+

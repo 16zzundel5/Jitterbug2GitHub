@@ -1,0 +1,116 @@
+From myers@ece.utah.edu  Wed Mar 18 16:47:27 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2IMlRLT025028;
+	Wed, 18 Mar 2009 16:47:27 -0600
+Received: from 75-169-165-35.slkc.qwest.net ([75.169.165.35] helo=[192.168.0.2])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Lk3jt-0001b3-4e; Wed, 18 Mar 2009 15:55:53 -0600
+Cc: kjones@vlsigroup.ece.utah.edu
+Message-Id: <35961AC0-666D-434E-9002-CAC65A39BFD8@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+In-Reply-To: <200903182057.n2IKvlHd024312@chou.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v929.2)
+Subject: Re: BUG: problem editing flow relation (PR#4715)
+Date: Wed, 18 Mar 2009 16:47:13 -0600
+References: <200903182057.n2IKvlHd024312@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.929.2)
+
+For this file:
+
+.dummy t t2
+#@.variables x
+#|.places p p2
+.graph
+t p2
+p t
+t2 p
+p2 t2
+.marking {p }
+#@.init_vals {<x=0>}
+#@.delay_assignments {<t=[0,inf]><t2=[0,inf]>}
+#@.transition_rates {<t=[3*x]><t2=[x^2]>}
+.end
+
+I open this in the LPHN editor and try to change the (t,p2) edge to  
+(t,p) edge and I get this exception:
+
+java.lang.NullPointerException
+	at lhpn2sbml.parser.LHPNFile.removeControlFlow(LHPNFile.java:700)
+	at lhpn2sbml.gui.ControlFlowPanel.openGui(ControlFlowPanel.java:214)
+	at lhpn2sbml.gui.ControlFlowPanel.<init>(ControlFlowPanel.java:159)
+	at lhpn2sbml.gui.LHPNEditor$EditCommand.run(LHPNEditor.java:482)
+	at lhpn2sbml.gui.LHPNEditor$EditButton.run(LHPNEditor.java:319)
+	at lhpn2sbml.gui.LHPNEditor.actionPerformed(LHPNEditor.java:375)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java: 
+1882)
+	at javax.swing.AbstractButton 
+$Handler.actionPerformed(AbstractButton.java:2202)
+	at  
+javax 
+.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java: 
+420)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java: 
+258)
+	at  
+javax 
+.swing 
+.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java: 
+236)
+	at java.awt.Component.processMouseEvent(Component.java:5602)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3135)
+	at java.awt.Component.processEvent(Component.java:5367)
+	at java.awt.Container.processEvent(Container.java:2010)
+	at java.awt.Component.dispatchEventImpl(Component.java:4068)
+	at java.awt.Container.dispatchEventImpl(Container.java:2068)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at biomodelsim.BioSim.mouseReleased(BioSim.java:7197)
+	at java.awt.Component.processMouseEvent(Component.java:5602)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3135)
+	at java.awt.Component.processEvent(Component.java:5367)
+	at java.awt.Container.processEvent(Container.java:2010)
+	at java.awt.Component.dispatchEventImpl(Component.java:4068)
+	at java.awt.Container.dispatchEventImpl(Container.java:2068)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java: 
+4256)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java: 
+3936)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3866)
+	at java.awt.Container.dispatchEventImpl(Container.java:2054)
+	at java.awt.Window.dispatchEventImpl(Window.java:1801)
+	at java.awt.Component.dispatchEvent(Component.java:3903)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java: 
+269)
+	at  
+java 
+.awt 
+.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java: 
+190)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+184)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java: 
+176)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+
+
+Again, not sure if this is a check in issue.
+
+On Mar 18, 2009, at 2:57 PM, Kevin Jones wrote:
+
+> This should be fixed now.  Let me know if you find any other  
+> problems with it.
+

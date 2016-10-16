@@ -1,0 +1,87 @@
+From ibiosim@gmail.com  Wed Feb  4 18:19:50 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ig0-f172.google.com (mail-ig0-f172.google.com [209.85.213.172])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t151JoJS025909
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 4 Feb 2015 18:19:50 -0700
+Received: by mail-ig0-f172.google.com with SMTP id l13so38900679iga.5
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 04 Feb 2015 17:19:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=mrAYNEJFG9d743BoL5/V8KDdmRN77uxXr4W8Ma1OcJ0=;
+        b=CFWCiFzgUElQt9aJMwTa3h6f3/whf+fwJB5CCIzad322ILgEYqJhCLr/Evz/iidM02
+         41HyB1G2zt9/N+joMA+w5fRhtPF16CIuFoL4Hw/a/w+56eQ1m1Lb1JI7oZfNxerK5J2P
+         rSkbjKOcRZUsobAtiQsd9m8I30V/fBjW3rwDThb1NpzLBWTlRKMKd9AC9BIJEIGiV6an
+         qX4KpBazL9fggEXSV15lrusTWeo4Gw6uqrMYDaDgSci+qGpFfLivEJCYQcT1uX4TPA/z
+         7QPFRLCuUNGiwggfpsQPsWHzbqJdi2iJQtOO5rSXyBa7U7qtqHnFVWGFKAIm0K3zSBAi
+         O9Fw==
+X-Received: by 10.50.61.34 with SMTP id m2mr5319702igr.20.1423099189945;
+        Wed, 04 Feb 2015 17:19:49 -0800 (PST)
+Received: from 192.168.0.28 (65-130-133-184.slkc.qwest.net. [65.130.133.184])
+        by mx.google.com with ESMTPSA id p142sm1746920iop.27.2015.02.04.17.19.47
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Wed, 04 Feb 2015 17:19:48 -0800 (PST)
+Date: Wed, 04 Feb 2015 17:19:48 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: Avery.gardner@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <30599766.0.1423099182645.JavaMail.Tye@CompytronIII>
+Subject: BUG: Program threw an error while trying to input units while
+ following the tutorial, this caused the nanLitre definition to be empty but
+ also unable to delete it.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.1
+
+Operating system: Windows 7
+
+Bug reported by: Avery.gardner@utah.edu
+
+Description:
+
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.gui.sbmlcore.Units.removeUnit(Units.java:667)
+	at biomodel.gui.sbmlcore.Units.actionPerformed(Units.java:1142)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$200(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+

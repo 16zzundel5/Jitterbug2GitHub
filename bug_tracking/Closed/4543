@@ -1,0 +1,92 @@
+From christian.atheist@gmail.com  Fri Aug  1 13:43:50 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.2 required=5.0 tests=AWL,BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.173])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m71Jhnxr005677
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 1 Aug 2008 13:43:49 -0600
+Received: by wf-out-1314.google.com with SMTP id 28so1090575wfc.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 01 Aug 2008 12:43:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:sender
+         :to:subject:mime-version:content-type:content-transfer-encoding
+         :content-disposition:x-google-sender-auth;
+        bh=rmsQNsk3ElMdGbGmESsRSf1wvb0MutdLTHkiBdOEFEY=;
+        b=OHybPD2uGkas+Bn5hs1XwlMZxgfq7FUGHjvPaGNV5MI6EUROuWF8DxQWZBV8ffcbJI
+         YVa+rRYxlOo7iDolSGIQef778fv0LzQShJuS4KAOcV7IJOTS2599g/XGsPu6uoTNtVVm
+         DWVxahGWQqTH2cpC4bfsOqL+JsdQ3THcUUER8=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:sender:to:subject:mime-version:content-type
+         :content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=kSqWl5SL2T7kZqCyy2U4fzJaa387BJBkTzsDGy3v/yzXu7mh8AOMo1iASE/0Tcbu86
+         jKSOzc6zeXI5JmJHx0dS5cAp20lXuRjvDSIfUCv8tzU/7i2rhpOxqGKMBzwA0Gaopk2h
+         NphAcmxeRr/WXrN+wRtSgv9MSSXNQGRaZlSHg=
+Received: by 10.142.126.17 with SMTP id y17mr3880939wfc.189.1217619829071;
+        Fri, 01 Aug 2008 12:43:49 -0700 (PDT)
+Received: by 10.142.164.21 with HTTP; Fri, 1 Aug 2008 12:43:49 -0700 (PDT)
+Message-ID: <eba119560808011243l5e93532cp596707df18d4eac0@mail.gmail.com>
+Date: Fri, 1 Aug 2008 13:43:49 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Right-clicking on left hand panel throws exception
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: 554f60b7942cda26
+
+If nothing is selected in the left hand panel (the project manager
+tree), and the user right clicks, it throws an exception.
+
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at biomodelsim.BioSim.mousePressed(BioSim.java:2208)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+	at java.awt.Component.processMouseEvent(Component.java:6035)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+	at java.awt.Component.processEvent(Component.java:5803)
+	at java.awt.Container.processEvent(Container.java:2058)
+	at java.awt.Component.dispatchEventImpl(Component.java:4410)
+	at java.awt.Container.dispatchEventImpl(Container.java:2116)
+	at java.awt.Component.dispatchEvent(Component.java:4240)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+	at java.awt.Container.dispatchEventImpl(Container.java:2102)
+	at java.awt.Window.dispatchEventImpl(Window.java:2429)
+	at java.awt.Component.dispatchEvent(Component.java:4240)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at biomodelsim.BioSim.mousePressed(BioSim.java:2208)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:263)
+	at java.awt.Component.processMouseEvent(Component.java:6035)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3260)
+	at java.awt.Component.processEvent(Component.java:5803)
+	at java.awt.Container.processEvent(Container.java:2058)
+	at java.awt.Component.dispatchEventImpl(Component.java:4410)
+	at java.awt.Container.dispatchEventImpl(Container.java:2116)
+	at java.awt.Component.dispatchEvent(Component.java:4240)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4322)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3983)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3916)
+	at java.awt.Container.dispatchEventImpl(Container.java:2102)
+	at java.awt.Window.dispatchEventImpl(Window.java:2429)
+	at java.awt.Component.dispatchEvent(Component.java:4240)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:599)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:273)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:183)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:173)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:168)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:160)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:121)
+

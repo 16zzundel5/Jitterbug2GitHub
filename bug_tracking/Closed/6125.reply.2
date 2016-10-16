@@ -1,0 +1,10 @@
+From: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: send dimension size id's to checkIndices (PR#6125)
+Date: Mon Aug 11 18:07:27 2014
+CC: scottg@san.rr.com
+
+I checked in the out of bounds check. There is one problem though. I need to
+pass the array dimension of the 
+thing you are indexing to the evaluateIndexBounds. I use numIndices but this is
+getting the values backwards.

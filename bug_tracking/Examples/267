@@ -1,0 +1,45 @@
+From stjung@ming.elen.utah.edu  Mon Nov 15 11:23:24 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id LAA22720
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 15 Nov 1999 11:23:24 -0700
+Date: Mon, 15 Nov 1999 11:23:24 -0700
+Message-Id: <199911151823.LAA22720@chou.elen.utah.edu>
+From: stjung@ming.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Verification Error
+
+Full_Name: Sung Tae Jung
+Version: 
+OS: 
+source: /home/ming/stjung/atacs/examples/csp/alloc-outbound.csp
+log: /home/ming/stjung/atacs/examples/csp/atacs.log
+Submission from: ming.elen.utah.edu (155.99.23.210)
+Submitted by: stjung
+
+
+
+Verification did not complete for several specifications.
+   I used the following switches:
+      atacs> gatelevel
+      atacs> combo
+      atacs> doall alloc_outbound
+      atacs> verify
+
+The following specifications have problems in verification 
+also. All specifications are in the ATACS examples database.
+
+   In CSP directory:
+      alloc-outbound-usc, rcv-setup
+
+   In g directory:
+      vme-master.g, vme-read.g, vme-write.g
+      dme-e-1.g, dram-ctrl.g, factorial-1.g, gcd.g,
+      hp-ir-it-control-1.g, hp-it-two-ticks-if-1.g,
+      iccd-isend-csm-1.g, iccd-tsend-bm.g, iccd-tsend-csm-1.g,
+      pscsi-ircv-1.g, pscsi-trcv-1.g, pscsi-trcv-bm.g, stetson-p3-1.g
+
+
+  
+
+
+    

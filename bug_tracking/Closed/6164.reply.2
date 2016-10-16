@@ -1,0 +1,87 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: ibiosim@gmail.com
+Subject: Re: BUG: Crash when changing influence arc (PR#6164)
+Date: Tue Sep  9 13:40:59 2014
+
+What about the reactionGlyph?  Bounding box or curve?  Should be nothing I
+think since specieReferenceGlyphs should handle the curve unless I'm
+mistaken?
+
+
+It could be empty. In graphical languages like SBGN PD, this bounding box
+can represent the middle piece (or the actual process glyph). But it is not
+required. You could just have your product start at the end of the reactant
+arc and it would be fine. 
+
+Frank
+
+Chris
+
+Sent from my iPhone
+
+On Sep 9, 2014, at 2:08 AM, "Frank T. Bergmann" <fbergman@caltech.edu>
+wrote:
+
+If I want to connect two species directly where the edge between
+represents a reaction, what is the proper form?
+
+For example, species S0 is reactant and S1 is product of a reaction
+R0.  I
+want
+this as arc between species labeled R0.  Note if a second reactant s2
+is
+added
+then another arc is added from S0 to S2 also labeled R0.
+
+In the layout you would have
+
+- two species glyphs for sg0, sg1
+ - two text glyphs that position the label for s0 and s1
+- one reaction glyph rg0
+- one text glyph positioning the label r0
+- two species reference glyphs indicating that s0 is the reactant, s1
+the product  (if you add the second reactant, you would add a new
+species reference glyph for the new reactant)
+
+At the bare minimum those should all have bounding boxes, but extra
+points are awarded for actually specifying the arc for each species
+reference glyph.
+
+Does that answer your question?
+
+Frank
+
+Thanks for the advice.
+
+Chris
+
+Sent from my iPhone
+----------------------------------------------------------------------
+------
+--
+Want excitement?
+Manually upgrade your production database.
+When you want reliability, choose Perforce Perforce version control.
+Predictably reliable.
+
+http://pubads.g.doubleclick.net/gampad/clk?id=157508191&iu=/4140/ostg
+.cl
+ktrk
+_______________________________________________
+sbml-layout mailing list
+sbml-layout@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/sbml-layout
+
+
+----------------------------------------------------------------------
+--------
+Want excitement?
+Manually upgrade your production database.
+When you want reliability, choose Perforce.
+Perforce version control. Predictably reliable.
+
+http://pubads.g.doubleclick.net/gampad/clk?id=157508191&iu=/4140/ostg.
+clktrk _______________________________________________
+sbml-layout mailing list
+sbml-layout@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/sbml-layout

@@ -1,0 +1,91 @@
+From kjones5863@gmail.com  Tue Oct  6 14:01:47 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.7 required=5.0 tests=AWL,BAYES_05,HTML_MESSAGE
+	autolearn=ham version=3.2.5
+Received: from mail-iw0-f192.google.com (mail-iw0-f192.google.com [209.85.223.192])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n96K1kR1020821;
+	Tue, 6 Oct 2009 14:01:47 -0600
+Received: by iwn30 with SMTP id 30so2311093iwn.19
+        for <multiple recipients>; Tue, 06 Oct 2009 13:01:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=6QAgyXuUXnm/R8Y1aVWgc50RclR+qVYG5C0fFjVnW0g=;
+        b=ggi0WIZgi8iyJYOMqXFKw3Yo/m0g5cJ6IsZhgAeSqQuQ43sMQ2AVsS55ZoT7Gek1yN
+         ulfjLIPnwTwBuzOKNvXgBb6i0K7zoqzx2ZRkh8KrDzrObXLle/d1jiIt2rEn6KJTHCkc
+         Anb+0cEkQFoXagpP6OuxntFxBV59h3XG+9/ZI=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=tmNbT7nS/1NMaPUrJWTf+EirBR5R4AYoXkpl84UVC8cYkIRh44Bk/E5qeY0IVuH1YD
+         5yrvVtcd9h3rWksWVaU5/aLlKTYbk0Ejqms/EJz/+8zADgsb9NaqUwn/jqRg44zvuGbj
+         U6WWN+Dd0bfjlPspJBIMkw9lkMpCruOGZZZxs=
+MIME-Version: 1.0
+Received: by 10.231.122.36 with SMTP id j36mr3544217ibr.21.1254859306225; Tue, 
+	06 Oct 2009 13:01:46 -0700 (PDT)
+In-Reply-To: <78769EC4-9F84-44E4-A77B-3F2A5073ADE6@ece.utah.edu>
+References: <200910052244.n95MiTU1000966@chou.ece.utah.edu>
+	 <78769EC4-9F84-44E4-A77B-3F2A5073ADE6@ece.utah.edu>
+Date: Tue, 6 Oct 2009 14:01:46 -0600
+Message-ID: <2b601e3d0910061301if319a91l513c940a73f79d80@mail.gmail.com>
+Subject: Re: BUG: view log in verification view does not open file (PR#4791)
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=0016e64603ea30d2d2047549b3ff
+
+--0016e64603ea30d2d2047549b3ff
+Content-Type: text/plain; charset=ISO-8859-1
+
+This ought to be working now.  Sorry, there were some issues that I didn't
+notice when I tried to get it working for both verification and synthesis.
+
+On Tue, Oct 6, 2009 at 12:08 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> This still is not working for me.  I run a verification, and I looked in
+> the atacs.log and run.log files which are not empty.  However, selecting
+> view log does not show anything.
+>
+> Chris
+>
+> On Oct 5, 2009, at 4:44 PM, Kevin Jones wrote:
+>
+>  Fixed for verification and synthesis views.  Moving to needs testing.
+>>
+>
+>
+
+--0016e64603ea30d2d2047549b3ff
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+This ought to be working now.=A0 Sorry, there were some issues that I didn&=
+#39;t notice when I tried to get it working for both verification and synth=
+esis.<br><br><div class=3D"gmail_quote">On Tue, Oct 6, 2009 at 12:08 PM, Ch=
+ris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu">my=
+ers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">This still is not=
+ working for me. =A0I run a verification, and I looked in the atacs.log and=
+ run.log files which are not empty. =A0However, selecting view log does not=
+ show anything.<br>
+
+<br>
+Chris<br>
+<br>
+On Oct 5, 2009, at 4:44 PM, Kevin Jones wrote:<br>
+<br>
+<blockquote class=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, =
+204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+Fixed for verification and synthesis views. =A0Moving to needs testing.<br>
+</blockquote>
+<br>
+</blockquote></div><br>
+
+--0016e64603ea30d2d2047549b3ff--
+

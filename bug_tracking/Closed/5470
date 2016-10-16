@@ -1,0 +1,34 @@
+From curtis.madsen@utah.edu  Thu Aug 18 09:49:15 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7IFnElS000450
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 18 Aug 2011 09:49:15 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApwEAJUzTU6bYbVm/2dsb2JhbABCDqlkgUc6UQE+QicEG6EzlzKIf4VpXwSHYIszkD1X
+X-IronPort-AV: E=Sophos;i="4.68,246,1312178400"; 
+   d="scan'208";a="545040410"
+Received: from h102.umail.utah.edu (HELO HUB2.xds.umail.utah.edu) ([155.97.181.102])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 18 Aug 2011 09:49:10 -0600
+Received: from C8V1.xds.umail.utah.edu ([169.254.3.7]) by
+ HUB2.xds.umail.utah.edu ([155.97.181.102]) with mapi; Thu, 18 Aug 2011
+ 09:49:10 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Thu, 18 Aug 2011 09:47:48 -0600
+Subject: BUG:  Imported SBOL files are blank
+Thread-Topic: Imported SBOL files are blank
+Thread-Index: AQHMXb5eVO2r6DGdrESnvjPcn26jYQ==
+Message-ID: <852B726894B07749AE9ABB4B055919AC83BA925273@C8V1.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p7IFnElS000450
+
+When I import the files testFileGamma.rdf and testFileTheta.rdf into a new project, the imported files are blank, and iBioSim throws exceptions when I try to view them.
+

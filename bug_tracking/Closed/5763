@@ -1,0 +1,82 @@
+From moschino21@gmail.com  Mon Sep  3 20:34:58 2012
+Return-Path: <moschino21@gmail.com>
+Received: from mail-iy0-f170.google.com (mail-iy0-f170.google.com [209.85.210.170])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q842YvCh007718
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 3 Sep 2012 20:34:58 -0600
+Received: by iamm10 with SMTP id m10so7339377iam.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 03 Sep 2012 19:34:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=ZMOGg2PuPxVNoJeA/yNxEFK56uX1yR/JhD/iDPXbjNE=;
+        b=dkAma8iikJtfWtcGbcG3gZMoYcTzc2fvDAcX7k9/+D31YQ5TrdLBiDZRLmOVBJd61u
+         dtzwAAmML9pdUKe6FEwJrLzjRYDb0uJwtAyqjaHz2z6R/5d/VS2VMXcAj287FBunq7sH
+         fr0WtINFoOXKDpv5Ds/Dtj91a6f4Dna/mazrAZsRsFFkTBC8e5ixHONEJttUI0yMLpKj
+         ueLnDYzLVye5YA2EKWiZuer2EXHo+kopzPfrPyMKkBhhIp2BdbvhuGMobK3q7EltBhdJ
+         qy+Bv3roEHM8aG3YGa23OJNlES/eCGLXncLv9vpsWzv1FCcy1jCu69ZaClP9XBEgNazI
+         weww==
+Received: by 10.50.76.137 with SMTP id k9mr12233960igw.58.1346726097583; Mon,
+ 03 Sep 2012 19:34:57 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.64.23.238 with HTTP; Mon, 3 Sep 2012 19:34:27 -0700 (PDT)
+In-Reply-To: <201209032031.q83KV8uC000391@chou.ece.utah.edu>
+References: <201209032031.q83KV8uC000391@chou.ece.utah.edu>
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Mon, 3 Sep 2012 20:34:27 -0600
+Message-ID: <CA+LVOvn+fTS3yQXSsK8z_qBC-Cmd6PgVK6skT_UyyPKhRk_MoA@mail.gmail.com>
+Subject: Re: FEATURE:Add support for initial values for continuous variables
+ in (PR#5758)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=e89a8f23433ba7fd8c04c8d71a95
+
+--e89a8f23433ba7fd8c04c8d71a95
+Content-Type: text/plain; charset=ISO-8859-1
+
+I agree. The initial value of a continuous variable in the graphical editor
+in BioSim now supports rational numbers. We probably do not need to support
+irrational numbers (like pi, sqareroot(2) etc). The converted LPN however
+still accept integers as initial values. Also, unless a rate rule is
+associated with a continuous variable in the graphical editor, the
+converted LPN still treats a continuous variable as an integer.
+
+On Mon, Sep 3, 2012 at 2:31 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> On second thought, there should be some error checking in LPN generation to
+> ensure this meets the required
+> form.
+>
+>
+
+
+-- 
+Zhen Zhang
+
+--e89a8f23433ba7fd8c04c8d71a95
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I agree. The initial value of a continuous variable in the graphical editor=
+ in BioSim now supports rational numbers. We probably do not need to suppor=
+t irrational numbers (like pi, sqareroot(2) etc). The converted LPN however=
+ still accept integers as initial values. Also, unless a rate rule is assoc=
+iated with a continuous variable in the graphical editor, the converted LPN=
+ still treats a continuous variable as an integer.=A0<br>
+
+<br><div class=3D"gmail_quote">On Mon, Sep 3, 2012 at 2:31 PM, Chris Myers =
+<span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu" =
+target=3D"_blank">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<b=
+r><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:=
+1px #ccc solid;padding-left:1ex">
+
+On second thought, there should be some error checking in LPN generation to=
+<br>
+ensure this meets the required<br>
+form.<br>
+<br>
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br>Zhen Zhang<b=
+r>
+
+--e89a8f23433ba7fd8c04c8d71a95--
+

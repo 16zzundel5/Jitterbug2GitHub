@@ -1,0 +1,36 @@
+From christian.atheist@gmail.com  Tue Feb 12 14:52:42 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.190])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1CLqfl4024440
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 14:52:42 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so5827092fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 13:52:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=YQ6FaCMUON4E5i6I9RZopLt9bDmc4BOw4y4c3Fedyr4=;
+        b=F/PmgrPfEOuItl1rcRW4E4z5ovTIy6LuaYJbT0tq2+jaBsojgWhUtMnR7DfmKU2srygYdixaO8tikM649FDKMnxEGobS2dj+GQQSdvL4hG1hR/cGl/NrpySwE8nHqigXpoIPhb35aPePLRbQhc6bzv3gLW14oQwcKfdkuZCWjOc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=TEVPQyOdQAR6XFbv80WESSf7KWhTu4VF5dl0IsmQgEarpGNHGHHkoz02pTqF54O0p9NbGvEkkRo7MB1MA1urMgL/R2QqLnTQJBjPERJdnzL9uvunfG7Jk2CbcxtBUYbo1BsI1H3kwVRs2Ju2dQ1bLJlKu38N3rHCSeaPcuAml64=
+Received: by 10.82.140.20 with SMTP id n20mr1626126bud.24.1202853160584;
+        Tue, 12 Feb 2008 13:52:40 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Tue, 12 Feb 2008 13:52:40 -0800 (PST)
+Message-ID: <eba119560802121352k3b2b996fq2890ab39c0a9cfb7@mail.gmail.com>
+Date: Tue, 12 Feb 2008 14:52:40 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Disable based on selection
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Disable fields based on current selection, such as removing the
+default promoter.
+

@@ -1,0 +1,53 @@
+From myers@elen.utah.edu  Thu May 20 15:17:29 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id PAA02748 for <atacs-bugs@yuan.elen.utah.edu>; Thu, 20 May 1999 15:17:29 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id BD73F4373; Thu, 20 May 1999 15:17:40 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: from yuan.elen.utah.edu (yuan.elen.utah.edu [128.110.18.206])
+	by ee.utah.edu (Postfix) with ESMTP id DCCEB4370
+	for <atacs-bugs@elen.utah.edu>; Thu, 20 May 1999 15:17:39 -0600 (MDT)
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id PAA02745 for <atacs-bugs@elen.utah.edu>; Thu, 20 May 1999 15:17:24 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id PAA01599
+	for atacs-bugs@elen.utah.edu; Thu, 20 May 1999 15:16:58 -0600
+From: "Chris J. Myers" <myers@elen.utah.edu>
+Message-Id: <199905202116.PAA01599@jiaqi.elen.utah.edu>
+Subject: Re: fifoN5.csp has mysterious deadlock (PR#76)
+To: atacs-bugs@elen.utah.edu (Eric Robert Peskin)
+Date: Thu, 20 May 1999 15:16:57 -0600 (MDT)
+In-Reply-To: <199905202104.PAA02673@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 20, 99 03:04:03 pm
+Content-Type: text
+
+Here is the sunfifo2 file that I used:
+
+module fifo;
+
+input fin = {<180,inf;180,260>};
+input seinb={true,<90,110;90,inf>};
+output seoutb={true,<90,110>};
+output fout={<90,110>};
+output eout={true,<90,110>};
+output foutb={true,<90,110>};
+output eoutb={<90,110>};
+
+process seoutb;
+*[ [fin+]; seoutb-; [eout-]; seoutb+; [eout+] ]
+endprocess
+
+process eout;
+*[ [seoutb-]; eoutb+; eout-; [seoutb+ & foutb+]; eoutb-; eout+ ]
+endprocess
+
+process fout;
+*[ [eoutb+]; foutb-; fout+; [seinb-]; foutb+; fout-; [seinb+] ]
+endprocess
+
+testbench fin;
+*[ fin+; [seoutb-]; fin-; [seoutb+] ]
+endtestbench
+
+testbench seinb;
+*[ [fout+]; seinb-; [fout-]; seinb+ ]
+endtestbench
+
+endmodule

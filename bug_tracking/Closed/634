@@ -1,0 +1,45 @@
+From root@xia.elen.utah.edu  Wed Jan  2 04:02:11 2002
+Return-Path: <root@xia.elen.utah.edu>
+Received: from xia.elen.utah.edu (IDENT:root@xia.elen.utah.edu [155.99.23.200])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g02B2Ah20448
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 2 Jan 2002 04:02:10 -0700
+Received: (from root@localhost)
+	by xia.elen.utah.edu (8.11.6/8.11.6) id g02B2AA24230
+	for atacs-bugs@shang.elen.utah.edu; Wed, 2 Jan 2002 04:02:10 -0700
+Date: Wed, 2 Jan 2002 04:02:10 -0700
+From: root <root@xia.elen.utah.edu>
+Message-Id: <200201021102.g02B2AA24230@xia.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: BAD0 broken repository!
+
+Linux xia.elen.utah.edu 2.4.9-12 #1 Tue Oct 30 18:33:49 EST 2001 i686 unknown
+cputime 	unlimited
+filesize 	unlimited
+datasize 	254624 kbytes
+stacksize 	8192 kbytes
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	1022 
+openfiles 	1024 
+
+CHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make: *** [build] Error 2
+make[1]: *** [build] Error 2
+make: *** [noPostProc] Error 2
+make[1]: *** [build] Error 2
+make: *** [hairy] Error 2
+make[1]: *** [build] Error 2
+make: *** [hairyNoPostProc] Error 2
+make[1]: *** [build] Error 2
+make: *** [noX] Error 2
+make[1]: *** [build] Error 2
+make: *** [untimed] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Messages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

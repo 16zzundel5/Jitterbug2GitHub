@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Mon Apr  4 13:08:56 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p34J8uaY010285
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 4 Apr 2011 13:08:56 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Q6p8y-00005W-0i
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 04 Apr 2011 13:08:56 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: abstraction in the property
+Date: Mon, 4 Apr 2011 13:08:50 -0600
+Message-Id: <C32ED93D-C8BB-4831-B8C8-762025EF59BA@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p34J8uaY010285
+
+When using logical abstraction, if a species that appears in the property is either a complex or is sequestered, then the property should use the appropriate free form for the species.
+
+

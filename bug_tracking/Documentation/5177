@@ -1,0 +1,343 @@
+From myers@ece.utah.edu  Sat Oct 30 08:03:55 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o9UE3tOT017206
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 30 Oct 2010 08:03:55 -0600
+Received: from 75-169-182-139.slkc.qwest.net ([75.169.182.139] helo=[192.168.0.11])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PCECn-0004t5-98
+	for atacs-bugs@vlsigroup.ece.utah.edu; Sat, 30 Oct 2010 10:22:57 -0600
+Message-Id: <49CBD520-BE93-4348-9E92-B2379C22BCF8@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=Apple-Mail-30-910925131
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: update tutorial
+Date: Sat, 30 Oct 2010 10:22:50 -0600
+References: <1B94E28A-6224-4CDB-8848-66C4B2D90253@ece.utah.edu>
+X-Mailer: Apple Mail (2.936)
+
+
+--Apple-Mail-30-910925131
+Content-Type: text/plain;
+	charset=US-ASCII;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+I figured out the bugs, but I want to suggest the following workaround  
+until a new version is posted.
+
+> Select Add Transition
+> 	ID -> tCI2
+> 	Enabling condition: CI>=2
+>       Delay assignment: 0.1*exponential(1/(0.1*CI*CI))  <-- The 0.1  
+> in front is to get around a bug
+          Delay assignment: exponential(0.1*CI*CI)
+
+> 	Select Add Assignment:
+> 		Variable: CI2
+> 		Assignment: CI2+1
+> 	Select Add Assignment:
+> 		Variable: CI
+> 		Assignment: CI-2
+> Select Add Transition
+> 	ID -> tCI
+> 	Enabling condition: CI2>=1
+>        Delay assignment: 0.1*exponential(1/CI2)
+           Delay assignment: exponential(CI2)
+
+Begin forwarded message:
+
+> From: "Chris J. Myers" <myers@ece.utah.edu>
+> Date: October 29, 2010 10:40:35 AM MDT
+> To: Zachary L Dwight <zach.dwight@path.utah.edu>
+> Cc: Joseph Nichols <joewnichols@gmail.com>, Phillip Smith <phillip.smith@hsc.utah.edu 
+> >, JACOB ALAN ZOHNER <Jacob.Zohner@utah.edu>, "Ryan O'Callaghan" <ryan.ocallaghan@comcast.net 
+> >, ZHEN ZHANG <zhen.zhang@utah.edu>, NICHOLAS ANDREW ROEHNER <n.roehner@utah.edu 
+> >, "Chris J. Myers" <myers@ece.utah.edu>
+> Subject: Re: HW6 (no webct turn in option?)
+>
+> Unfortunately, there is no tutorial written up.  Let me see if I can  
+> give you one here.  I think I will cc others in the class as they  
+> likely have the same issues.
+>
+> Let us consider the example:
+>
+> 2*CI --0.1-> CI2
+> CI2 --0.1-> 2*CI
+>
+> File -> New -> Labeled Petri Net
+> Enter LPN Model ID: CI
+> Select Add Variable:
+> 	Type -> Discrete
+> 	ID -> CI
+> 	Initial Value -> 20
+> Select Add Variable:
+> 	Type -> Discrete
+> 	ID -> CI2
+> 	Initial Value -> 0
+> Select Add Place:
+> 	ID -> pCI
+> 	Initially Marked -> true
+> Select Add Place:
+> 	ID -> pCI2
+> 	Initially Marked -> true
+> Select Add Transition
+> 	ID -> tCI2
+> 	Enabling condition: CI>=2
+> 	Delay assignment: 0.1*exponential(1/(0.1*CI*CI))  <-- The 0.1 in  
+> front is to get around a bug
+> 	Select Add Assignment:
+> 		Variable: CI2
+> 		Assignment: CI2+1
+> 	Select Add Assignment:
+> 		Variable: CI
+> 		Assignment: CI-2
+> Select Add Transition
+> 	ID -> tCI
+> 	Enabling condition: CI2>=1
+> 	Delay assignment: 0.1*exponential(1/CI2)
+> 	Select Add Assignment:
+> 		Variable: CI2
+> 		Assignment: CI2-1
+> 	Select Add Assignment:
+> 		Variable: CI
+> 		Assignment: CI+2
+> Select Add Movement:
+> 	From -> pCI
+> 	To -> tCI
+> Select Add Movement:
+> 	From -> pCI2
+> 	To -> tCI2
+> Select Add Movement:
+> 	From -> tCI
+> 	To -> pCI
+> Select Add Movement:
+> 	From -> tCI2
+> 	To -> pCI2
+> Save
+>
+> Right click on filename and View Model (Does it look okay?)
+>
+> Right click on filename and create an analysis view, try simulating  
+> it with Monte Carlo and see what you get.
+>
+> This is tedious so you do not need to build very complete models.  I  
+> just want you to get a little bit of a feel for it.
+>
+> Cheers,
+>
+> Chris
+>
+> On Oct 29, 2010, at 9:56 AM, Zachary L Dwight wrote:
+>
+>> One other question -
+>>
+>> Is there a tutorial for SPNs?  I'm having trouble remembering what  
+>> is required to model (or confusing myself as to what is what -  
+>> places, transitions,etc) .  A species is a place, a variable is a  
+>> parameter - but how do I get a transition/reaction to show up ?  I  
+>> get an error when I try to view the LPN ("Error graphing the sbml"  
+>> or "File cannot be read").  I must not be understanding the control  
+>> flows and transitions.  Any help appreciated,
+>>
+>> Zach
+>>
+>
+
+
+--Apple-Mail-30-910925131
+Content-Type: text/html;
+	charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; ">Hi,<br><br>I figured out the =
+bugs, but I want to suggest the following workaround until a new version =
+is posted.<br><br><blockquote type=3D"cite">Select Add =
+Transition<br></blockquote><blockquote type=3D"cite"><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">	</span>ID -&gt; =
+tCI2<br></blockquote><blockquote type=3D"cite"><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">	</span>Enabling =
+condition: CI&gt;=3D2<br></blockquote><blockquote =
+type=3D"cite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay assignment: =
+0.1*exponential(1/(0.1*CI*CI)) &nbsp;&lt;-- The 0.1 in front is to get =
+around a =
+bug<br></blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+Delay assignment: exponential(0.1*CI*CI)<br><br><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Select Add Assignment:<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Variable: CI2<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Assignment: CI2+1<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Select Add Assignment:<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Variable: CI<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Assignment: CI-2<br></blockquote><blockquote =
+type=3D"cite">Select Add Transition<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>ID -&gt; tCI<br></blockquote><blockquote =
+type=3D"cite"><span class=3D"Apple-tab-span" style=3D"white-space: pre; =
+">	</span>Enabling condition: CI2&gt;=3D1<br></blockquote><blockquote=
+ type=3D"cite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay =
+assignment: =
+0.1*exponential(1/CI2)<br></blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;Delay assignment: =
+exponential(CI2)<br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>From: =
+</b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+Helvetica">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</font></div>=
+<div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>Date: =
+</b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+Helvetica">October 29, 2010 10:40:35 AM MDT</font></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>To: </b></font><font =
+face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px Helvetica">Zachary L =
+Dwight &lt;<a =
+href=3D"mailto:zach.dwight@path.utah.edu">zach.dwight@path.utah.edu</a>&gt=
+;</font></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><font face=3D"Helvetica" =
+size=3D"3" color=3D"#000000" style=3D"font: 12.0px Helvetica; color: =
+#000000"><b>Cc: </b></font><font face=3D"Helvetica" size=3D"3" =
+style=3D"font: 12.0px Helvetica">Joseph Nichols &lt;<a =
+href=3D"mailto:joewnichols@gmail.com">joewnichols@gmail.com</a>&gt;, =
+Phillip Smith &lt;<a =
+href=3D"mailto:phillip.smith@hsc.utah.edu">phillip.smith@hsc.utah.edu</a>&=
+gt;, JACOB ALAN ZOHNER &lt;<a =
+href=3D"mailto:Jacob.Zohner@utah.edu">Jacob.Zohner@utah.edu</a>&gt;, =
+"Ryan O'Callaghan" &lt;<a =
+href=3D"mailto:ryan.ocallaghan@comcast.net">ryan.ocallaghan@comcast.net</a=
+>&gt;, ZHEN ZHANG &lt;<a =
+href=3D"mailto:zhen.zhang@utah.edu">zhen.zhang@utah.edu</a>&gt;, =
+NICHOLAS ANDREW ROEHNER &lt;<a =
+href=3D"mailto:n.roehner@utah.edu">n.roehner@utah.edu</a>&gt;, "Chris J. =
+Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;</font></div>=
+<div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><font face=3D"Helvetica" size=3D"3" color=3D"#000000" =
+style=3D"font: 12.0px Helvetica; color: #000000"><b>Subject: =
+</b></font><font face=3D"Helvetica" size=3D"3" style=3D"font: 12.0px =
+Helvetica"><b>Re: HW6 (no webct turn in option?)</b></font></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; min-height: 14px; "><br></div> </div><div =
+style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space; ">Unfortunately, there is no =
+tutorial written up. &nbsp;Let me see if I can give you one here. =
+&nbsp;I think I will cc others in the class as they likely have the same =
+issues.<div><br></div><div>Let us consider the =
+example:</div><div><br></div><div>2*CI --0.1-&gt; CI2</div><div><div>CI2 =
+--0.1-&gt; 2*CI</div><div><br></div><div>File -&gt; New -&gt; Labeled =
+Petri Net</div><div>Enter LPN Model ID: CI</div><div>Select Add =
+Variable:</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>Type -&gt; =
+Discrete</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>ID -&gt; CI</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>Initial =
+Value -&gt; 20</div><div>Select Add Variable:</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>Type =
+-&gt; Discrete</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>ID -&gt; CI2</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>Initial =
+Value -&gt; 0</div><div>Select Add Place:</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>ID -&gt; =
+pCI</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>Initially Marked -&gt; true</div><div>Select Add =
+Place:</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>ID -&gt; pCI2</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>Initially Marked -&gt; =
+true</div><div>Select Add Transition</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>ID -&gt; =
+tCI2</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>Enabling condition: CI&gt;=3D2</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>Delay =
+assignment: 0.1*exponential(1/(0.1*CI*CI)) &nbsp;&lt;-- The 0.1 in front =
+is to get around a bug&nbsp;</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>Select Add =
+Assignment:</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">		</span>Variable: =
+CI2</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">		=
+</span>Assignment: CI2+1</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>Select Add =
+Assignment:</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">		</span>Variable: =
+CI</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">		=
+</span>Assignment: CI-2</div><div><div>Select Add =
+Transition</div><div><span class=3D"Apple-tab-span" style=3D"white-space: =
+pre; ">	</span>ID -&gt; tCI</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space: pre; ">	</span>Enabling condition: =
+CI2&gt;=3D1</div><div><span class=3D"Apple-tab-span" style=3D"white-space:=
+ pre; ">	</span>Delay assignment: =
+0.1*exponential(1/CI2)</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space: pre; ">	</span>Select Add =
+Assignment:</div><div><span class=3D"Apple-tab-span" style=3D"white-space:=
+ pre; ">		</span>Variable: CI2</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">		=
+</span>Assignment: CI2-1</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space: pre; ">	</span>Select Add =
+Assignment:</div><div><span class=3D"Apple-tab-span" style=3D"white-space:=
+ pre; ">		</span>Variable: CI</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">		=
+</span>Assignment: CI+2</div></div><div>Select Add =
+Movement:</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span>=46rom -&gt; pCI</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>To -&gt; =
+tCI</div><div>Select Add Movement:</div><div><div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">	</span>=46rom =
+-&gt; pCI2</div><div><span class=3D"Apple-tab-span" style=3D"white-space: =
+pre; ">	</span>To -&gt; tCI2</div></div></div><div><div>Select Add =
+Movement:</div><div><span class=3D"Apple-tab-span" style=3D"white-space: =
+pre; ">	</span>=46rom -&gt; tCI</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space: pre; ">	</span>To -&gt; pCI</div><div>Select Add =
+Movement:</div><div><div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space: pre; ">	</span>=46rom -&gt; tCI2</div><div><span =
+class=3D"Apple-tab-span" style=3D"white-space: pre; ">	</span>To -&gt; =
+pCI2</div></div></div></div><div>Save</div><div><span =
+class=3D"Apple-tab-span" =
+style=3D"white-space:pre"><br></span></div><div>Right click on filename =
+and View Model (Does it look okay?)</div><div><span =
+class=3D"Apple-tab-span" =
+style=3D"white-space:pre"><br></span></div><div>Right click on filename =
+and create an analysis view, try simulating it with Monte Carlo and see =
+what you get.</div><div><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre"><br></span></div><div>This is tedious so you =
+do not need to build very complete models. &nbsp;I just want you to get =
+a little bit of a feel for =
+it.</div><div><br></div><div>Cheers,</div><div><br></div><div>Chris</div><=
+div><br><div><div>On Oct 29, 2010, at 9:56 AM, Zachary L Dwight =
+wrote:</div><br class=3D"Apple-interchange-newline"><blockquote =
+type=3D"cite"><div>One other question -<br><br>Is there a tutorial for =
+SPNs? &nbsp;I'm having trouble remembering what is required to model (or =
+confusing myself as to what is what - places, transitions,etc) . &nbsp;A =
+species is a place, a variable is a parameter - but how do I get a =
+transition/reaction to show up ? &nbsp;I get an error when I try to view =
+the LPN ("Error graphing the sbml" or "File cannot be read"). &nbsp;I =
+must not be understanding the control flows and transitions. &nbsp;Any =
+help appreciated,<br><br>Zach<br><font class=3D"Apple-style-span" =
+color=3D"#540000"><br></font></div></blockquote></div><br></div></div></di=
+v></blockquote></div><br></body></html>=
+
+--Apple-Mail-30-910925131--
+

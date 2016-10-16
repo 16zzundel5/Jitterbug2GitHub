@@ -1,0 +1,39 @@
+From tphsiu@gmail.com  Fri Feb  6 16:08:00 2009
+Return-Path: <tphsiu@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=5.0 tests=BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from shang.ece.utah.edu (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n16N80fK004431
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 Feb 2009 16:08:00 -0700
+Date: Fri, 6 Feb 2009 16:08:00 -0700
+Message-Id: <200902062308.n16N80fK004431@chou.ece.utah.edu>
+From: tphsiu@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Adding variables
+
+Full_Name: Mike Hsiu
+tool: ATACS
+spec: 
+Version: 
+OS: 
+command: 
+Submission from: chou.ece.utah.edu (155.98.27.202)
+Submitted by: hsiu
+
+
+When we add new variables, a couple interesting discovery.
+
+In general, should we allow any two variables with same variable name?
+
+For Boolean type, LEMA does not check for variable name. eg. you can add as many
+Boolean variable "x" as you want.
+
+For Continuous type, LEMA will check if variable with same name, same type
+exists. eg. you can have Boolean variable "x" and Continuous variable "x." But
+will display error message if you try to create 2 Continuous "x" variables.
+
+For Integer type, LEMA checks for all type/all name. Integer displays an error
+message if there is any variable (any type) with the same variable name.
+

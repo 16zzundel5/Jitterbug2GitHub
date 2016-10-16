@@ -1,0 +1,28 @@
+From prvs=00163e40c=zhen.zhang@utah.edu  Mon Jul 18 23:56:54 2016
+Return-Path: <prvs=00163e40c=zhen.zhang@utah.edu>
+Received: from ipo5.cc.utah.edu (ipo5.cc.utah.edu [155.97.144.30])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6J5usGp021643
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 23:56:54 -0600
+X-IronPort-AV: E=Sophos;i="5.28,388,1464674400"; 
+   d="scan'208";a="126774351"
+Received: from mail-oi0-f41.google.com ([209.85.218.41])
+  by ipo5smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 18 Jul 2016 23:56:53 -0600
+Received: by mail-oi0-f41.google.com with SMTP id l65so11572616oib.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 22:56:53 -0700 (PDT)
+X-Gm-Message-State: ALyK8tK/8I3p59LODqEJoatCvhz27xm79G++BDLg5+MS4PQ5QaUZkdzf0sqthSCwE5rDE9jJ34zS+mtmsk83Kw==
+X-Received: by 10.202.219.213 with SMTP id s204mr18146841oig.151.1468907813360;
+ Mon, 18 Jul 2016 22:56:53 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 22:56:13 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 18 Jul 2016 23:56:13 -0600
+X-Gmail-Original-Message-ID: <CA+LVOvn3qXEvX0jNSj0jauMToOm1L+S4Y2=O+j6pVaNP8p4ouA@mail.gmail.com>
+Message-ID: <CA+LVOvn3qXEvX0jNSj0jauMToOm1L+S4Y2=O+j6pVaNP8p4ouA@mail.gmail.com>
+Subject: CHANGE: Change "Learn tab" to "Learn Options tab" on iBioSim Version
+ 2.8 Systems Biology Tutoria
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+In Section 8, it should be "Learn Options tab" instead of "Lean tab"
+in the sentence "Now, click on the Learn tab".
+

@@ -1,0 +1,96 @@
+From peskin@cs.utah.edu  Thu Nov 18 15:34:40 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id PAA04814
+	for <atacs-bugs@shang.elen.utah.edu>; Thu, 18 Nov 1999 15:34:40 -0700
+Date: Thu, 18 Nov 1999 15:34:40 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911182234.PAA04814@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: proj.csp deadlocked
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12799944 Nov 17 20:50 ../../src/atacs*
+OS: Red Hat 6.0 (Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+source: /home/xia/peskin/testbed/atacs/examples/csp/proj.csp
+log: /home/xia/peskin/testbed/atacs/examples/csp/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+proj.csp deadlocked.  An example session is shown below.
+
+245 xia:examples/csp> pwd
+/home/xia/peskin/testbed/atacs/examples/csp
+246 xia:examples/csp> ll ../../src/atacs
+-rwxr-x---   1 peskin   async    12799944 Nov 17 20:50 ../../src/atacs*
+247 xia:examples/csp> ../../src/atacs proj.csp -msmUmPmTmFmOmpmEmcmX -ya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Compiling proj.csp ... 
+Storing process proj to proj.er
+Storing process proj to proj.er
+Loading timed event-rule structure from:  proj.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done (0.000518)
+Finding reduced state graph ... nodes = 142, dead = 292
+memory: max=265104 inuse=262632 free=2472 
+done
+31 iterations, 24 regions, 24 new_regions, 16 states in 0.0119879 seconds
+nodes in use = 142, dead = 292
+memory: max=265104 inuse=262632 free=2472
+Projecting out dummy transitions ... done (0.001214)
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 9 CSC violation(s)
+Solution costing 6 + 0 used
+Signal named CSC0 being added
+IP: a+/1 b+/1 <-> a-/1 b-/1  ===== a-/1 b-/1 <-> d-/1 
+Storing TEL to file: proj.er
+Loading timed event-rule structure from:  proj.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  proj.rr
+Storing timed event-rule structure to:  proj.er
+Loading timed event-rule structure from:  proj.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  proj.rr
+Storing timed event-rule structure to:  proj.er
+Loading timed event-rule structure from:  proj.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  proj.rr
+Finding reduced state graph and storing to:  proj.rsg
+System deadlocked in state 00010
+Storing error trace state graph to:  proj.grf
+Executing command:  parg proj.grf &
+Storing error trace in VHDL to:  trace.vhd
+Initial: 9 + 0
+Predicted: 6 + 0
+Actual: 0 + 0
+248 xia:examples/csp> layout 1.04 (C) Copyright 1990, 1992, 1994 Tomas Rokicki
+
+

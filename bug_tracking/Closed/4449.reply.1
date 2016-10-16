@@ -1,0 +1,12 @@
+From: Nam Nguyen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: namphuon@cs.utah.edu
+Subject: Re: BUG: Extra timepoint occurs in tsd file (PR#4449)
+Date: Tue May  6 19:33:53 2008
+
+Found the problem, it's not an extra data point, rather there's this line in the
+tsd file:
+
+(13800,0,114(0,0,0,253,214,220)
+
+I am not sure how this error occurred, and I am trying to reproduce it, but it
+might be a one time thing.

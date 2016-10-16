@@ -1,0 +1,31 @@
+From atacs-bugs  Sun Oct  8 00:02:25 2000
+Return-Path: <atacs-bugs>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) id AAA08796
+	for atacs-bugs@shang.elen.utah.edu; Sun, 8 Oct 2000 00:02:24 -0600
+Received: from jiaqi.elen.utah.edu (IDENT:root@han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id AAA08789
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Sun, 8 Oct 2000 00:02:23 -0600
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) id AAA01983
+	for atacs-bugs@vlsigroup; Sun, 8 Oct 2000 00:07:31 -0600
+Date: Sun, 8 Oct 2000 00:07:31 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <200010080607.AAA01983@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: This file causes core dump
+
+
+.inputs x y
+.outputs z
+.graph
+#@.init_state [000]
+x+ y+ 
+x+ z+
+y+ y-
+z+ y-
+y- z-
+z- x+
+.marking { <z-,x+> }
+.end
+

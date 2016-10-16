@@ -1,0 +1,54 @@
+From michael13162@gmail.com  Wed Jun  1 15:25:37 2016
+Return-Path: <michael13162@gmail.com>
+Received: from mail-it0-f53.google.com (mail-it0-f53.google.com [209.85.214.53])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u51LPbE2016735
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 1 Jun 2016 15:25:37 -0600
+Received: by mail-it0-f53.google.com with SMTP id z123so35176395itg.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 01 Jun 2016 14:25:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=FJhWIVBOeb9RC0OjCzBkxWeLT+b9dw9H1yYbVPvBaOY=;
+        b=Ky0JixDm3QK5jb+qoWAka0SwDa5n9WmS3aHTHXLxhigRfarnqxk6LWvgyz2VqnCaaz
+         rlBzJE8MTP+G0BD0jNKAcPGsdVgcyYbjIDP8TTNShKYStQgnAyIL4pMYuKwQCvXYahAQ
+         51aKbwtC/5oq1/OhfvI4pxARAzm8IfDKl/UqNxjmELtECQhFUnlrdVwIxrVhOZUQzXeq
+         V4+yQN6rRGWdUr4pfmefbfT0nxcpqao+dX12URMHh+W+TRrnhe8zaT6wN2IWhnYuiEOi
+         DD/ZtUpVsZaPc1djKm199/bPVC1v10BC8XFxZJnoPiTzc60UKmVzsWy7yVcs/sCLGoDU
+         F5FQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=FJhWIVBOeb9RC0OjCzBkxWeLT+b9dw9H1yYbVPvBaOY=;
+        b=ljfKiSD8IOqFqrgp1Ovyplw2RvOVqFIJxXbvHI3jEIQ3CkZSzYxFGvJBrZ5Js6DyHU
+         A/XIoqPtaOq0cRir9LMUjRmYvFTVnJg25C+DkD6uuUR2ZZEtybW6ZyHMmWc/rukFtf4/
+         ZW9znQqdOdHaXOrPlEQPJ5FuHcCXuYwp2gLguKKFMBS6tDQOh2DjhWPtdabA8LwehvuR
+         XUu3V1rrfP67A3KaIdGG9EVadrrbdyKRqYk0/nWKlpBHNclqN29X7/xfBjtzbJ5ObUiR
+         XukLkoPMG3nK2MbJsNcwtodNgIjmPUpO6ehUSmAckzPb+al07NWMRgDOnhosErn8/zPg
+         t/eg==
+X-Gm-Message-State: ALyK8tLIWvtPss222bwzKmAxQXWh9fkkwc4gcbtUxlFdCZ6pkdc74Zrp4rlrZAL7s9Nb5tqiiSG/jsawfwR3Mg==
+X-Received: by 10.36.103.19 with SMTP id u19mr140457itc.8.1464816336390; Wed,
+ 01 Jun 2016 14:25:36 -0700 (PDT)
+MIME-Version: 1.0
+From: Michael Zhang <michael13162@gmail.com>
+Date: Wed, 01 Jun 2016 21:25:26 +0000
+Message-ID: <CADN0eeznFJuRCtAOzswmJji0U=EAAYpRQ064WQit38t5+y0Sow@mail.gmail.com>
+Subject: BUG
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=001a114ab53a64505e05343e211d
+
+--001a114ab53a64505e05343e211d
+Content-Type: text/plain; charset=UTF-8
+
+Some SBML files in the Bioparts repository aren't valid SBML, so they fail
+to load.
+-- 
+Thanks,
+Michael Zhang
+
+--001a114ab53a64505e05343e211d
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr">Some SBML files in the Bioparts repository aren&#39;t valid SBML, so they fail to load.</div><div dir="ltr">-- <br></div><div data-smartmail="gmail_signature"><div dir="ltr">Thanks,<div>Michael Zhang</div></div></div>
+
+--001a114ab53a64505e05343e211d--
+

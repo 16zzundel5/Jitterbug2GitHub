@@ -1,0 +1,31 @@
+From myers@eng.utah.edu  Wed Mar 30 08:55:20 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u2UEtJeR018486
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:55:19 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86 id 1alHWY-0001s7-Ty)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 30 Mar 2016 08:55:19 -0600
+Received: from [155.99.109.105]
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1alHWY-000Fw3-So
+	for atacs-bugs@vlsigroup.ece.utah.edu; Wed, 30 Mar 2016 08:55:10 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: CHANGE: SBOL browser should use ontology rather than constants
+Message-Id: <E53783E6-AC53-44CD-91DB-CF236C9D74E0@ece.utah.edu>
+Date: Wed, 30 Mar 2016 08:55:11 -0600
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.2 \(3112\))
+X-Mailer: Apple Mail (2.3112)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id u2UEtJeR018486
+
+The SBOL browser should use the Sequence ontology rather than constants when displaying the part types available for sorting.
+
+

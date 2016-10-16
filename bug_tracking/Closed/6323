@@ -1,0 +1,27 @@
+From zhen.zhang@utah.edu  Mon May 11 15:20:44 2015
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo3.cc.utah.edu (ipo3.cc.utah.edu [155.97.144.18])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t4BLKiLB018713
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 11 May 2015 15:20:44 -0600
+X-IronPort-AV: E=Sophos;i="5.13,410,1427781600"; 
+   d="scan'208";a="491370678"
+Received: from mail-oi0-f50.google.com ([209.85.218.50])
+  by ipo3smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 11 May 2015 15:20:44 -0600
+Received: by oign205 with SMTP id n205so115160655oig.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 11 May 2015 14:20:43 -0700 (PDT)
+X-Received: by 10.182.101.197 with SMTP id fi5mr9662711obb.60.1431379243627;
+ Mon, 11 May 2015 14:20:43 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.212.202 with HTTP; Mon, 11 May 2015 14:20:03 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 11 May 2015 15:20:03 -0600
+Message-ID: <CA+LVOvnc8jWFhbUPZkhX+Mm6cFbRF961Qzrg9ohECPA0dcZQKQ@mail.gmail.com>
+Subject: FEATURE: In VHDL compiler, replace "maybe" by "true" in the enabling condition
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+When atacs compiles a VHDL file with a nondeterministic choice,
+"maybe" and its inverse are produced as the enabling conditions for
+LPN transitions involving the nondeterministic choice. They should be
+replaced by the Boolean condition "true".
+

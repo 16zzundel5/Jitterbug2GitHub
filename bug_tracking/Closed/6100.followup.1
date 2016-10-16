@@ -1,0 +1,109 @@
+From myers@eng.utah.edu  Mon Jul 21 14:31:22 2014
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s6LKVM9R030122
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 21 Jul 2014 14:31:22 -0600
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1X9KTJ-000IzO-IS; Mon, 21 Jul 2014 14:46:09 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_5D51CB93-A1B6-4BD9-8CA8-21A97E709834"
+Message-Id: <937CB72A-0140-4DF3-B12A-373D9FFEAF02@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+Subject: Re: CHANGE: addInitialAssignment only add dimensions when needed (PR#6100)
+Date: Mon, 21 Jul 2014 14:31:20 -0600
+References: <201407212014.s6LKEVut028426@chou.ece.utah.edu>
+To: Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>,
+        Leandro Watanabe <leandrohw@gmail.com>,
+        "<scottg@san.rr.com>" <scottg@san.rr.com>
+In-Reply-To: <201407212014.s6LKEVut028426@chou.ece.utah.edu>
+X-Mailer: Apple Mail (2.1878.6)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_5D51CB93-A1B6-4BD9-8CA8-21A97E709834
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+For context, here is the description from the bug database:
+
+The function addInitialAssignment should only add dimensions and indices =
+when
+needed.  To determine this, the math should be checked to see what the
+dimensions of the math are.  If they are scalar, then add the dimensions =
+and
+indices as done now.  Otherwise, should compare dimensions with those =
+for the
+variable.  If the math dimension number or sizes don't match, then there =
+should
+be an error.  Otherwise, simply add the math with no dimensions or =
+indices
+added.  This is to cover the case where the assignment is with other =
+arrays or
+using the vector operator.
+
+The idea was that if you assign a vector then you would not include =
+dimensions.  However, the current thinking that we are having is that we =
+may want to always include dimensions.  This has some interesting =
+ramifications which I will soon likely email the arrays mailing list =
+with.  For example, do we want to allow an initial assignment that does =
+not assign every element of an array? =20
+
+Anyway, the short answer for you is that at this point, this item is on =
+hold while we work through these issues.
+
+Chris
+
+On Jul 21, 2014, at 2:14 PM, Scott Glass =
+<atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> I am very confused by this. I think an example will offer the most =
+clarity.
+> Where is the math read and how can it have dimensions?
+
+
+--Apple-Mail=_5D51CB93-A1B6-4BD9-8CA8-21A97E709834
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">For =
+context, here is the description from the bug =
+database:<div><br></div><div><a name=3D"themesg"><pre>The function =
+addInitialAssignment should only add dimensions and indices when
+needed.  To determine this, the math should be checked to see what the
+dimensions of the math are.  If they are scalar, then add the dimensions =
+and
+indices as done now.  Otherwise, should compare dimensions with those =
+for the
+variable.  If the math dimension number or sizes don't match, then there =
+should
+be an error.  Otherwise, simply add the math with no dimensions or =
+indices
+added.  This is to cover the case where the assignment is with other =
+arrays or
+using the vector operator.</pre></a><div><br></div><div>The idea was =
+that if you assign a vector then you would not include dimensions. =
+&nbsp;However, the current thinking that we are having is that we may =
+want to always include dimensions. &nbsp;This has some interesting =
+ramifications which I will soon likely email the arrays mailing list =
+with. &nbsp;For example, do we want to allow an initial assignment that =
+does not assign every element of an array? =
+&nbsp;</div><div><br></div><div>Anyway, the short answer for you is that =
+at this point, this item is on hold while we work through these =
+issues.</div><div><br></div><div>Chris</div><div><br></div><div><div>On =
+Jul 21, 2014, at 2:14 PM, Scott Glass &lt;<a =
+href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu">atacs-bugs@vlsigroup.ece=
+.utah.edu</a>&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite">I am very =
+confused by this. I think an example will offer the most =
+clarity.<br>Where is the math read and how can it have =
+dimensions?<br></blockquote></div><br></div></body></html>=
+
+--Apple-Mail=_5D51CB93-A1B6-4BD9-8CA8-21A97E709834--
+

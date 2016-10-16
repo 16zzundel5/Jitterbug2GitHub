@@ -1,0 +1,48 @@
+From MAILER-DAEMON  Thu Jul 29 23:20:55 1999
+Received: from ee.utah.edu (postfix@ee.elen.utah.edu [128.110.18.195]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id XAA28923 for <atacs-bugs@yuan.elen.utah.edu>; Thu, 29 Jul 1999 23:20:55 -0600 (MDT)
+Received: by ee.utah.edu (Postfix)
+	id 98F6240FA; Thu, 29 Jul 1999 23:21:09 -0600 (MDT)
+Delivered-To: atacs-bugs@elen.utah.edu
+Received: by ee.utah.edu (Postfix) via BOUNCE
+	id 2306940F9; Thu, 29 Jul 1999 23:21:06 -0600 (MDT)
+Date: Thu, 29 Jul 1999 23:21:06 -0600 (MDT)
+From: MAILER-DAEMON@ee.utah.edu (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: atacs-bugs@elen.utah.edu
+Message-Id: <19990730052106.2306940F9@ee.utah.edu>
+
+This is the Postfix program at host ee.utah.edu.
+
+I'm sorry to have to inform you that the message returned
+below could not be delivered to one or more destinations.
+
+For further assistance, please contact <postmaster@ee.utah.edu>
+
+If you do so, please include this problem report. You can
+delete your own text from the message returned below.
+
+			The Postfix program
+
+	--- Delivery error report follows ---
+
+<peskin@vlsigroup.elen.utah.eduhao>: Name service error for domain
+    vlsigroup.elen.utah.eduhao: Host not found
+
+	--- Undelivered message follows ---
+
+Received: from yuan.elen.utah.edu (yuan.elen.utah.edu [128.110.18.206])
+	by ee.utah.edu (Postfix) with ESMTP id DF24A40F3
+	for <peskin@vlsigroup.elen.utah.eduhao>; Thu, 29 Jul 1999 23:20:33 -0600 (MDT)
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id XAA28915; Thu, 29 Jul 1999 23:20:10 -0600 (MDT)
+Date: Thu, 29 Jul 1999 23:20:10 -0600 (MDT)
+Message-Id: <199907300520.XAA28915@yuan.elen.utah.edu>
+From: Chris Myers <atacs-bugs@elen.utah.edu>
+To: peskin@vlsigroup.elen.utah.eduhao@elen.utah.edu
+Subject: Re: Add support for concurrent signal assignment statements from VHDL. (PR#159)
+Cc: hao@elen.utah.edu
+X-Loop: atacs-bugs@shang.elen.utah.edu
+Return-Path: <atacs-bugs@elen.utah.edu>
+
+CSA's cannot be within a process.  This was the problem with csa.vhd.  It is 
+indeed a syntax error.  I have checked in an updated csa.vhd which now works.
+

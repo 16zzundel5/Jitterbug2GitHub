@@ -1,0 +1,49 @@
+From ibiosim@gmail.com  Tue Mar 19 21:32:58 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f174.google.com (mail-pd0-f174.google.com [209.85.192.174])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r2K3WtJZ023282
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Mar 2013 21:32:55 -0600
+Received: by mail-pd0-f174.google.com with SMTP id 10so422699pdi.33
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Mar 2013 20:32:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=Qf7+M+aXTNUoXsDUnz4R3NHPTuzCc1CmGP9ep50myRA=;
+        b=TrsHausLE6PzHxuGWCI0/8v39Dp8mpfjE5zJVUiwKYW2rdY6JBAKXhbRS3KxGag6cC
+         XtNJqqK1QuzlW7bLDdrGhq9+tj2NFiWaeR8Om2XfQda0QBErghVKDRL9Db58/7smI6SW
+         /buh6L/6kAVv8xX0MBWy4OyIXojlol+u5rvX1HU01FikpvQFZCQstvHW3Av0XCVMVh0P
+         NX3YAN+N5By+mReXYBzGgAvkyuDryagk5QSyADs4ChDY4tVuYoR2HeB7TaN1F3XMjY/0
+         8z5Sf07/r6Xci2Lt4GfxVEXLChwk8/Uo1dzmr0YkH9hxTv/yZvQtBkrbuWtbaPShkE3p
+         aO4g==
+X-Received: by 10.66.165.34 with SMTP id yv2mr7118866pab.35.1363750374659;
+        Tue, 19 Mar 2013 20:32:54 -0700 (PDT)
+Received: from gargravarr (c-76-23-51-50.hsd1.ut.comcast.net. [76.23.51.50])
+        by mx.google.com with ESMTPS id ri1sm362850pbc.16.2013.03.19.20.32.51
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Tue, 19 Mar 2013 20:32:53 -0700 (PDT)
+Date: Tue, 19 Mar 2013 20:32:53 -0700 (PDT)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <228031843.0.1363750368612.JavaMail.jeff@gargravarr>
+Subject: BUG: cannot register reaction
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: jeffrey.theisen@utah.edu
+
+Description:
+For grid models when I try to simulate with either rkf45 or gillespie simulator I get an error message that says cannot register reaction, and the simulation progress bar is stuck at 0%.  However, this error message does not appear for normal (non-grid) models, nor does it appear for grid models simulated with rkf45 (java) or SSA-Direct (java).
+
+Stack trace:
+java.lang.IllegalArgumentException: Cannot register reaction.
+	at org.sbml.jsbml.AbstractSBase.registerChild(AbstractSBase.java:1438)
+	at org.sbml.jsbml.AbstractSBase.setThisAsParentSBMLObject(AbstractSBase.java:1384)
+	at org.sbml.jsbml.ListOf.add(ListOf.java:385)
+	at org.sbml.jsbml.Model.addReaction(Model.java:492)
+	at analysis.dynamicsim.Simulator.expandArrays(Simulator.java:1963)
+	at analysis.Run.execute(Run.java:1264)
+	at analysis.AnalysisView.run(AnalysisView.java:2183)
+	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+

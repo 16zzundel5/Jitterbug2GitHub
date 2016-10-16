@@ -1,0 +1,11 @@
+Chris
+I can fix it by changing the CSP file.  
+(see also bugs 65 and 283)
+
+input z;
+process choicectrl;
+*[[ a+ -> co+; z+; [ci+]; co-; [ci- & a-]; z-
+  | b+ -> co+; z+; [ci+]; co-; [ci- & b-]; z-
+ ]]
+endprocess
+

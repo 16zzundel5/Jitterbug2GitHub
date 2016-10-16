@@ -1,0 +1,28 @@
+From prvs=00163e40c=zhen.zhang@utah.edu  Tue Jul 19 00:06:27 2016
+Return-Path: <prvs=00163e40c=zhen.zhang@utah.edu>
+Received: from ipo0.cc.utah.edu (ipo0.cc.utah.edu [155.97.144.59])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6J66Ril023347
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 19 Jul 2016 00:06:27 -0600
+X-IronPort-AV: E=Sophos;i="5.28,388,1464674400"; 
+   d="scan'208";a="729333"
+Received: from mail-oi0-f48.google.com ([209.85.218.48])
+  by ipo0smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 19 Jul 2016 00:06:26 -0600
+Received: by mail-oi0-f48.google.com with SMTP id l72so11813408oig.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 18 Jul 2016 23:06:26 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJKIZUkUuxI+l+pRbe3oOf5zTwVDHTW/tvzCreO0scfYpJRp07zhozs78OoXz5ryGSiudoZyZY7sfmcbQ==
+X-Received: by 10.157.63.153 with SMTP id r25mr22879436otc.156.1468908386424;
+ Mon, 18 Jul 2016 23:06:26 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.74.7 with HTTP; Mon, 18 Jul 2016 23:05:47 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Tue, 19 Jul 2016 00:05:47 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=7fZVWj9YCRGOpWAS3eJ5wNbdXfW95coXNLVMB9y_o=g@mail.gmail.com>
+Message-ID: <CA+LVOv=7fZVWj9YCRGOpWAS3eJ5wNbdXfW95coXNLVMB9y_o=g@mail.gmail.com>
+Subject: CHANGE: Update screenshot for lean options on iBioSim Version 2.8
+ Systems Biology Tutoria
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=UTF-8
+
+The current screenshot is out-of-date: it does not show a drop-down
+list of "Learn Method".
+

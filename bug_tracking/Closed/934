@@ -1,0 +1,47 @@
+From atacs-bugs@vlsigroup.ece.utah.edu  Tue May  3 07:02:53 2005
+Return-Path: <atacs-bugs@vlsigroup.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1/SuSE Linux 0.7) with ESMTP id j43D2pEU015638
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 3 May 2005 07:02:53 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j43D2pM0015622
+	for atacs-bugs@shang.elen.utah.edu; Tue, 3 May 2005 07:02:51 -0600
+Received: from mailgate1.uni-kl.de (mailgate1.uni-kl.de [131.246.120.5])
+	by chou.ece.utah.edu (8.13.1/8.13.1/SuSE Linux 0.7) with ESMTP id j43D2Y65015601
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 May 2005 07:02:49 -0600
+Received: from postamt.eit.uni-kl.de (postamt.eit.uni-kl.de [131.246.73.100])
+	by mailgate1.uni-kl.de (8.13.1/8.13.1) with ESMTP id j43D2NIE012542
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 3 May 2005 15:02:24 +0200
+Received: from terminus.eit.uni-kl.de (terminus.eit.uni-kl.de [131.246.77.1])
+	by postamt.eit.uni-kl.de (Postfix) with SMTP id BED405510E
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue,  3 May 2005 15:02:23 +0200 (CEST)
+Received: (qmail 15691 invoked by uid 1014); 3 May 2005 13:02:23 -0000
+From: fiedler@eit.uni-kl.de
+Date: Tue, 03 May 2005 15:02:23 +0200
+To: peskin@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BAD0 broken repository!
+Message-ID: <4277765F.mailC3R1U69ZI@terminus.eit.uni-kl.de>
+User-Agent: nail 10.5 4/27/03
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Linux terminus 2.4.21-286-smp4G #1 SMP Sat Apr 2 09:08:57 UTC 2005 i686 i686 i386 GNU/Linux
+cputime 	unlimited
+filesize 	unlimited
+datasize 	unlimited
+stacksize 	unlimited
+coredumpsize 	0 kbytes
+memoryuse 	unlimited
+vmemoryuse 	unlimited
+descriptors 	1024 
+memorylocked 	unlimited
+maxproc 	7168 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

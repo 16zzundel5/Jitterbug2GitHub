@@ -1,0 +1,76 @@
+From peskin@cs.utah.edu  Wed Nov  3 17:22:49 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id RAA12911
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 Nov 1999 17:22:49 -0700
+Date: Wed, 3 Nov 1999 17:22:49 -0700
+From: peskin@cs.utah.edu
+Message-Id: <199911040022.RAA12911@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: write-protected files can still draw seg faults
+
+Full_Name: Eric Robert Peskin
+Version: -rwxr-x---   1 peskin   async    12759842 Oct 28 14:29 ../../src/atacs*
+OS: RedHat 6.0 Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+source: /home/xia/peskin/atacs/examples/er/selector1.er
+log: /home/xia/peskin/atacs/examples/er/selector1.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+This is similar to bug reports # 109, 110, 145
+
+Here is a sample session:
+
+357 xia:examples/er> pwd
+/home/xia/peskin/atacs/examples/er
+358 xia:examples/er> ../../src/atacs selector1.er -msmUmPmTmFmOmpmEmcmX -ya
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using subset region match during state space exploration.
+Using superset region match during state space exploration.
+Now using interleaving optimization.
+Now using infinity optimization.
+Now using orbits match.
+Now using stack pruning on superset optimization.
+Exact cyclic table resolution mode now turned ON.
+Now using combinational optimization.
+Exception handling now turned ON.
+Loading timed event-rule structure from:  selector1.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 3 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules ... done
+Finding reduced state graph ... 70 iterations 50 regions, 50 new_reg, 32 states
+(stack_depth = 1)
+nodes = 324, dead = 1810
+memory: max=508752 inuse=504736 free=4016 
+nodes = 324, dead = 1810
+memory: max=508752 inuse=503744 free=5008 
+done
+74 iterations, 52 regions, 51 new_regions, 33 states in 0.072518 seconds
+nodes in use = 324, dead = 1810
+memory: max=508752 inuse=503744 free=5008
+Projecting out dummy transitions ... done
+Checking CSC ... NOT complete state coded
+EXCEPTION:  CSC violation!
+Finding State Variables to solve 1 CSC violation(s)
+Solution costing 1 + 0 used
+Signal named CSC0 being added
+IP: sel1o-/2 <->  ===== out2o-/1 <-> 
+
+findsv: Couldn't create file: selector1.er
+Loading timed event-rule structure from:  selector1.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 3 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding redundant rules and storing to:  selector1.rr
+Storing timed event-rule structure to:  selector1.er
+Segmentation fault
+

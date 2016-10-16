@@ -1,0 +1,13 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: zhen.zhang@utah.edu
+Subject: Re: FEATURE: Add self-loop support in the schematic editor for LEMA (PR#5756)
+Date: Fri Sep 14 19:25:22 2012
+
+I've made it so that an LPN with self-loops gets converted into an SBML LPN with
+an extra place and transition.  
+
+When converting back to an LPN, the extra place and transition will remain, but
+they can be removed by 
+abstraction before verification.
+
+Chris

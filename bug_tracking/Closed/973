@@ -1,0 +1,460 @@
+From atacs-bugs@chou.ece.utah.edu  Tue May 31 14:23:35 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4VKNYAn020723
+	for <atacs-bugs@shang.ece.utah.edu>; Tue, 31 May 2005 14:23:34 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j4VKNYY4020718
+	for atacs-bugs@shang.ece.utah.edu; Tue, 31 May 2005 14:23:34 -0600
+Received: from ming.ece.utah.edu (ming.ece.utah.edu [155.98.27.210])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4VKNWTO020706;
+	Tue, 31 May 2005 14:23:32 -0600
+Received: from ming.ece.utah.edu (localhost [127.0.0.1])
+	by ming.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4VKNWTu021729;
+	Tue, 31 May 2005 14:23:32 -0600
+Received: (from root@localhost)
+	by ming.ece.utah.edu (8.13.1/8.13.1/Submit) id j4VKNWRu021728;
+	Tue, 31 May 2005 14:23:32 -0600
+Date: Tue, 31 May 2005 14:23:32 -0600
+From: root <root@ming.ece.utah.edu>
+Message-Id: <200505312023.j4VKNWRu021728@ming.ece.utah.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu, myers@vlsigroup.ece.utah.edu,
+        peskin@vlsigroup.ece.utah.edu
+Subject: BAD1622 broken repository!
+X-Spam-Checker-Version: SpamAssassin 3.0.3 (2005-04-27) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.2 required=5.0 tests=ALL_TRUSTED,
+	DNS_FROM_RFC_ABUSE,LONGWORDS autolearn=unavailable version=3.0.3
+
+Linux ming.ece.utah.edu 2.6.11-1.14_FC3smp #1 SMP Thu Apr 7 19:38:19 EDT 2005 i686 i686 i386 GNU/Linux
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    10240 kbytes
+coredumpsize 0 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 32 kbytes
+maxproc      16242 
+\nCHECK THESE ERRORS FROM MAKE FIRST:
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+make[1]: *** [.FIFOR.prs-tpG0-1ys] Error 127
+make[1]: *** [.FIFOSV.prs-tpG0-1ys] Error 127
+make[1]: *** [.JSPelatch.prs-tpG0-1ys] Error 127
+make[1]: *** [.SEL.prs-tpG0-1ys] Error 127
+make[1]: *** [.abstract.prs-tpG0-1ys] Error 127
+make[1]: *** [.alloc-outbound-usc.prs-tpG0-1ys] Error 127
+make[1]: *** [.alloc-outbound.prs-tpG0-1ys] Error 127
+make[1]: *** [.box.prs-tpG0-1ys] Error 127
+make[1]: *** [.box1.prs-tpG0-1ys] Error 127
+make[1]: *** [.c.prs-tpG0-1ys] Error 127
+make[1]: *** [.case1.prs-tpG0-1ys] Error 127
+make[1]: *** [.case2.prs-tpG0-1ys] Error 127
+make[1]: *** [.case3.prs-tpG0-1ys] Error 127
+make[1]: *** [.case4.prs-tpG0-1ys] Error 127
+make[1]: *** [.case7.prs-tpG0-1ys] Error 127
+make[1]: *** [.celement.prs-tpG0-1ys] Error 127
+make[1]: *** [.choice2.prs-tpG0-1ys] Error 127
+make[1]: *** [.circ1.prs-tpG0-1ys] Error 127
+make[1]: *** [.circ2.prs-tpG0-1ys] Error 127
+make[1]: *** [.circ3.prs-tpG0-1ys] Error 127
+make[1]: *** [.cnt3.prs-tpG0-1ys] Error 127
+make[1]: *** [.cnt3_synch.prs-tpG0-1ys] Error 127
+make[1]: *** [.coverlap.prs-tpG0-1ys] Error 127
+make[1]: *** [.cstat.prs-tpG0-1ys] Error 127
+make[1]: *** [.dlatch.prs-tpG0-1ys] Error 127
+make[1]: *** [.elatch.prs-tpG0-1ys] Error 127
+make[1]: *** [.elatchB.prs-tpG0-1ys] Error 127
+make[1]: *** [.etlatch2.prs-tpG0-1ys] Error 127
+make[1]: *** [.etlatch3.prs-tpG0-1ys] Error 127
+make[1]: *** [.etlatchP.prs-tpG0-1ys] Error 127
+make[1]: *** [.ex1.prs-tpG0-1ys] Error 127
+make[1]: *** [.ex1b.prs-tpG0-1ys] Error 127
+make[1]: *** [.go.prs-tpG0-1ys] Error 127
+make[1]: *** [.ifreq1.prs-tpG0-1ys] Error 127
+make[1]: *** [.ifreq2.prs-tpG0-1ys] Error 127
+make[1]: *** [.inv.prs-tpG0-1ys] Error 127
+make[1]: *** [.jordi1P.prs-tpG0-1ys] Error 127
+make[1]: *** [.jordi2.prs-tpG0-1ys] Error 127
+make[1]: *** [.lapb2.prs-tpG0-1ys] Error 127
+make[1]: *** [.lapbN.prs-tpG0-1ys] Error 127
+make[1]: *** [.lapb_pa.prs-tpG0-1ys] Error 127
+make[1]: *** [.lapbsv.prs-tpG0-1ys] Error 127
+make[1]: *** [.lecture7.prs-tpG0-1ys] Error 127
+make[1]: *** [.loop.prs-tpG0-1ys] Error 127
+make[1]: *** [.merge.prs-tpG0-1ys] Error 127
+make[1]: *** [.mul2c.prs-tpG0-1ys] Error 127
+make[1]: *** [.must-share1.prs-tpG0-1ys] Error 127
+make[1]: *** [.nondisj.prs-tpG0-1ys] Error 127
+make[1]: *** [.nosing.prs-tpG0-1ys] Error 127
+make[1]: *** [.overlap.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_a1.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_b2.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c3.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c4.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c4_2.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c5.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c8.prs-tpG0-1ys] Error 127
+make[1]: *** [.pab_c9.prs-tpG0-1ys] Error 127
+make[1]: *** [.pif.prs-tpG0-1ys] Error 127
+make[1]: *** [.pvuv.prs-tpG0-1ys] Error 127
+make[1]: *** [.rcv-setup-usc.prs-tpG0-1ys] Error 127
+make[1]: *** [.regions.prs-tpG0-1ys] Error 127
+make[1]: *** [.rev.prs-tpG0-1ys] Error 127
+make[1]: *** [.rlm.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiP.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiR.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiSV.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiSV2.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiSVN2.prs-tpG0-1ys] Error 127
+make[1]: *** [.selopt.prs-tpG0-1ys] Error 127
+make[1]: *** [.silly.prs-tpG0-1ys] Error 127
+make[1]: *** [.simp.prs-tpG0-1ys] Error 127
+make[1]: *** [.simple.prs-tpG0-1ys] Error 127
+make[1]: *** [.slatch.prs-tpG0-1ys] Error 127
+make[1]: *** [.slatch2.prs-tpG0-1ys] Error 127
+make[1]: *** [.sm.prs-tpG0-1ys] Error 127
+make[1]: *** [.splitsemi.prs-tpG0-1ys] Error 127
+make[1]: *** [.srdand.prs-tpG0-1ys] Error 127
+make[1]: *** [.srdaoi.prs-tpG0-1ys] Error 127
+make[1]: *** [.srdor.prs-tpG0-1ys] Error 127
+make[1]: *** [.srgate.prs-tpG0-1ys] Error 127
+make[1]: *** [.stariE.prs-tpG0-1ys] Error 127
+make[1]: *** [.start6.prs-tpG0-1ys] Error 127
+make[1]: *** [.statem.prs-tpG0-1ys] Error 127
+make[1]: *** [.sunfifo2.prs-tpG0-1ys] Error 127
+make[1]: *** [.tff.prs-tpG0-1ys] Error 127
+make[1]: *** [.udding.prs-tpG0-1ys] Error 127
+make[1]: *** [.upipe.prs-tpG0-1ys] Error 127
+make[1]: *** [.var.prs-tpG0-1ys] Error 127
+make[1]: *** [.varP.prs-tpG0-1ys] Error 127
+make[1]: *** [.vmeP.prs-tpG0-1ys] Error 127
+make[1]: *** [.x.prs-tpG0-1ys] Error 127
+make[1]: *** [.xor.prs-tpG0-1ys] Error 127
+make: *** [csp/check.subDir] Error 2
+make[1]: *** [.share.prs-tpG0-1ys] Error 127
+make[1]: *** [.tag1.prs-tpG0-1ys] Error 127
+make: *** [er/check.subDir] Error 2
+make[1]: *** [.3derr.prs-ys] Error 127
+make[1]: *** [.ALU1.prs-ys] Error 127
+make[1]: *** [.DME.prs-ys] Error 127
+make[1]: *** [.alloc-outbound.prs-ys] Error 127
+make[1]: *** [.atod.prs-ys] Error 127
+make[1]: *** [.bug.prs-ys] Error 127
+make[1]: *** [.c-elem.prs-ys] Error 127
+make[1]: *** [.chu-ad-opt-e.prs-ys] Error 127
+make[1]: *** [.chu133.prs-ys] Error 127
+make[1]: *** [.chu150.prs-ys] Error 127
+make[1]: *** [.chu172.prs-ys] Error 127
+make[1]: *** [.converta.prs-ys] Error 127
+make[1]: *** [.dc.prs-ys] Error 127
+make[1]: *** [.dff.prs-ys] Error 127
+make[1]: *** [.dlatch-usc.prs-ys] Error 127
+make[1]: *** [.dme-e.prs-ys] Error 127
+make[1]: *** [.dram-ctrl.prs-ys] Error 127
+make[1]: *** [.ebergen-all.prs-ys] Error 127
+make[1]: *** [.ebergen-b.prs-ys] Error 127
+make[1]: *** [.ebergen-c.prs-ys] Error 127
+make[1]: *** [.ebergen-x.prs-ys] Error 127
+make[1]: *** [.ebergen.prs-ys] Error 127
+make[1]: *** [.factorial.prs-ys] Error 127
+make[1]: *** [.fifo.prs-ys] Error 127
+make[1]: *** [.full.prs-ys] Error 127
+make[1]: *** [.half.prs-ys] Error 127
+make[1]: *** [.hazard.prs-ys] Error 127
+make[1]: *** [.hp-ir-it-control.prs-ys] Error 127
+make[1]: *** [.hp-ir-two-ticks-if.prs-ys] Error 127
+make[1]: *** [.hybridf.prs-ys] Error 127
+make[1]: *** [.iccd-isend-bm.prs-ys] Error 127
+make[1]: *** [.iccd-isend-csm.prs-ys] Error 127
+make[1]: *** [.iccd-trcv-bm.prs-ys] Error 127
+make[1]: *** [.iccd-trcv-csm.prs-ys] Error 127
+make[1]: *** [.iccd-tsend-bm.prs-ys] Error 127
+make[1]: *** [.iccd-tsend-csm.prs-ys] Error 127
+make[1]: *** [.input.prs-ys] Error 127
+make[1]: *** [.jordi1P.prs-ys] Error 127
+make[1]: *** [.jrb1.prs-ys] Error 127
+make[1]: *** [.jrb1b.prs-ys] Error 127
+make[1]: *** [.jrb2.prs-ys] Error 127
+make[1]: *** [.luciano.prs-ys] Error 127
+make[1]: *** [.mp-forward-pkt.prs-ys] Error 127
+make[1]: *** [.nak-pa.prs-ys] Error 127
+make[1]: *** [.nowick.prs-ys] Error 127
+make[1]: *** [.out.prs-ys] Error 127
+make[1]: *** [.pe-rcv-ifc2.prs-ys] Error 127
+make[1]: *** [.pe-send-ifc.prs-ys] Error 127
+make[1]: *** [.pscsi-ircv.prs-ys] Error 127
+make[1]: *** [.pscsi-trcv-bm.prs-ys] Error 127
+make[1]: *** [.pscsi-trcv.prs-ys] Error 127
+make[1]: *** [.qr42.prs-ys] Error 127
+make[1]: *** [.ram-read-sbuf.prs-ys] Error 127
+make[1]: *** [.rlm.prs-ys] Error 127
+make[1]: *** [.roberto.prs-ys] Error 127
+make[1]: *** [.rpdft.prs-ys] Error 127
+make[1]: *** [.sbuf-ram-write.prs-ys] Error 127
+make[1]: *** [.sbuf-ram-writeP.prs-ys] Error 127
+make[1]: *** [.sbuf-read-ctl.prs-ys] Error 127
+make[1]: *** [.sbuf-send-ctl.prs-ys] Error 127
+make[1]: *** [.sbuf-send-pkt2-usc.prs-ys] Error 127
+make[1]: *** [.sbuf-send-pkt2.prs-ys] Error 127
+make[1]: *** [.sendr-done.prs-ys] Error 127
+make[1]: *** [.sm.prs-ys] Error 127
+make[1]: *** [.stetson-p3.prs-ys] Error 127
+make[1]: *** [.vbe10b.prs-ys] Error 127
+make[1]: *** [.vbe4a.prs-ys] Error 127
+make[1]: *** [.vbe5b.prs-ys] Error 127
+make[1]: *** [.vbe5c.prs-ys] Error 127
+make[1]: *** [.vbe6a.prs-ys] Error 127
+make[1]: *** [.vme-master.prs-ys] Error 127
+make[1]: *** [.vme-read.prs-ys] Error 127
+make[1]: *** [.vme-write.prs-ys] Error 127
+make[1]: *** [.vme.prs-ys] Error 127
+make[1]: *** [.vmeP.prs-ys] Error 127
+make[1]: *** [.vmebus-arb.prs-ys] Error 127
+make[1]: *** [.wrdata.prs-ys] Error 127
+make[1]: *** [.wrdatab.prs-ys] Error 127
+make[1]: *** [.xyz.prs-ys] Error 127
+make: *** [g/check.subDir] Error 2
+make[1]: *** [.cgate.prs-tpG0-1ys] Error 127
+make[1]: *** [.circ5.prs-tpG0-1ys] Error 127
+make[1]: *** [.compare.prs-tpG0-1ys] Error 127
+make[1]: *** [.hb.prs-tpG0-1ys] Error 127
+make[1]: *** [.hw4.prs-tpG0-1ys] Error 127
+make[1]: *** [.level.prs-tpG0-1ys] Error 127
+make[1]: *** [.mul2.prs-tpG0-1ys] Error 127
+make[1]: *** [.oneshot.prs-tpG0-1ys] Error 127
+make[1]: *** [.pcfb.prs-tpG0-1ys] Error 127
+make[1]: *** [.pchb.prs-tpG0-1ys] Error 127
+make[1]: *** [.ring.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiL.prs-tpG0-1ys] Error 127
+make[1]: *** [.scsiSVimp.prs-tpG0-1ys] Error 127
+make[1]: *** [.split.prs-tpG0-1ys] Error 127
+make[1]: *** [.sunfifo.prs-tpG0-1ys] Error 127
+make[1]: *** [.timedep.prs-tpG0-1ys] Error 127
+make: *** [hse/check.subDir] Error 2
+make[1]: *** [.stari_old3.prs-tpG0-1ys] Error 127
+make: *** [tel/check.subDir] Error 2
+make[1]: *** [.3derr.prs-obys] Error 127
+make[1]: *** [.ack-barcode.prs-obys] Error 127
+make[1]: *** [.ack-cdp-p1-xbm.prs-obys] Error 127
+make[1]: *** [.ack-cdp-p1.prs-obys] Error 127
+make[1]: *** [.ack-cdp-p2.prs-obys] Error 127
+make[1]: *** [.ack-diffeq.prs-obys] Error 127
+make[1]: *** [.ack-factorial.prs-obys] Error 127
+make[1]: *** [.ack-fibonacci-xbm.prs-obys] Error 127
+make[1]: *** [.ack-fibonacci.prs-obys] Error 127
+make[1]: *** [.ack-xbm-si.prs-obys] Error 127
+make[1]: *** [.cache_s1io1.prs-obys] Error 127
+make[1]: *** [.chu-ad-opt-e.prs-obys] Error 127
+make[1]: *** [.dean-cache-ctrl.prs-obys] Error 127
+make[1]: *** [.dme-e.prs-obys] Error 127
+make[1]: *** [.dme-fast-e.prs-obys] Error 127
+make[1]: *** [.dram-ctrl.prs-obys] Error 127
+make[1]: *** [.hp-ir-it-control.prs-obys] Error 127
+make[1]: *** [.hp-ir-rf-control.prs-obys] Error 127
+make[1]: *** [.hp-ir-sc-control.prs-obys] Error 127
+make[1]: *** [.hp-ir-sd-control.prs-obys] Error 127
+make[1]: *** [.hp-ir-two-ticks-if.prs-obys] Error 127
+make[1]: *** [.hp-ir.prs-obys] Error 127
+make[1]: *** [.iccd-isend-bm.prs-obys] Error 127
+make[1]: *** [.iccd-isend-csm.prs-obys] Error 127
+make[1]: *** [.iccd-trcv-bm.prs-obys] Error 127
+make[1]: *** [.iccd-trcv-csm.prs-obys] Error 127
+make[1]: *** [.iccd-tsend-bm.prs-obys] Error 127
+make[1]: *** [.iccd-tsend-csm.prs-obys] Error 127
+make[1]: *** [.nonmin.prs-obys] Error 127
+make[1]: *** [.postoffice-pe-send-ifc.prs-obys] Error 127
+make[1]: *** [.postoffice-sbuf-read-ctl.prs-obys] Error 127
+make[1]: *** [.postoffice-sbuf-send-ctl.prs-obys] Error 127
+make[1]: *** [.pscsi-ircv.prs-obys] Error 127
+make[1]: *** [.pscsi-isend.prs-obys] Error 127
+make[1]: *** [.pscsi-pscsi.prs-obys] Error 127
+make[1]: *** [.pscsi-trcv-bm.prs-obys] Error 127
+make[1]: *** [.pscsi-trcv.prs-obys] Error 127
+make[1]: *** [.pscsi-tsend-bm.prs-obys] Error 127
+make[1]: *** [.pscsi-tsend.prs-obys] Error 127
+make[1]: *** [.stetson-p1.prs-obys] Error 127
+make[1]: *** [.stetson-p2.prs-obys] Error 127
+make[1]: *** [.stetson-p3.prs-obys] Error 127
+make[1]: *** [.vanbek-ad-opt-e.prs-obys] Error 127
+make[1]: *** [.xbm-si.prs-obys] Error 127
+make[1]: *** [.xscsi-biu-dma2fifo.prs-obys] Error 127
+make[1]: *** [.xscsi-biu-fifo2dma.prs-obys] Error 127
+make[1]: *** [.xscsi-fifocellctrl.prs-obys] Error 127
+make[1]: *** [.xscsi-sbi-fifo2scsi.prs-obys] Error 127
+make[1]: *** [.yun-diffeq-alu1.prs-obys] Error 127
+make[1]: *** [.yun-diffeq-alu2.prs-obys] Error 127
+make[1]: *** [.yun-diffeq-mul1.prs-obys] Error 127
+make[1]: *** [.yun-diffeq-mul2.prs-obys] Error 127
+make: *** [unc/check.subDir] Error 2
+make[1]: *** [.3derr.prs-olys] Error 127
+make[1]: *** [.alu1.prs-olys] Error 127
+make[1]: *** [.alu2.prs-olys] Error 127
+make[1]: *** [.barcode-xbm.prs-olys] Error 127
+make[1]: *** [.barcode.prs-olys] Error 127
+make[1]: *** [.biu-dma2fifo.prs-olys] Error 127
+make[1]: *** [.biu-fifo2dma.prs-olys] Error 127
+make[1]: *** [.chu-ad-opt-e.prs-olys] Error 127
+make[1]: *** [.diffeq-xbm.prs-olys] Error 127
+make[1]: *** [.diffeq.prs-olys] Error 127
+make[1]: *** [.dme-e.prs-olys] Error 127
+make[1]: *** [.dme-fast-e.prs-olys] Error 127
+make[1]: *** [.dram-ctrl.prs-olys] Error 127
+make[1]: *** [.fact.prs-olys] Error 127
+make[1]: *** [.fib-xbm.prs-olys] Error 127
+make[1]: *** [.fib.prs-olys] Error 127
+make[1]: *** [.fifocellctrl.prs-olys] Error 127
+make[1]: *** [.gcd.prs-olys] Error 127
+make[1]: *** [.hp-ir-it-control.prs-olys] Error 127
+make[1]: *** [.hp-ir-rf-control.prs-olys] Error 127
+make[1]: *** [.hp-ir-sc-control.prs-olys] Error 127
+make[1]: *** [.hp-ir-sd-control.prs-olys] Error 127
+make[1]: *** [.hp-ir-two-ticks-if.prs-olys] Error 127
+make[1]: *** [.hp-ir.prs-olys] Error 127
+make[1]: *** [.iccd-isend-bm.prs-olys] Error 127
+make[1]: *** [.iccd-isend-csm.prs-olys] Error 127
+make[1]: *** [.iccd-trcv-bm.prs-olys] Error 127
+make[1]: *** [.iccd-trcv-csm.prs-olys] Error 127
+make[1]: *** [.iccd-tsend-bm.prs-olys] Error 127
+make[1]: *** [.iccd-tsend-csm.prs-olys] Error 127
+make[1]: *** [.mul1.prs-olys] Error 127
+make[1]: *** [.mul2.prs-olys] Error 127
+make[1]: *** [.nonmin.prs-olys] Error 127
+make[1]: *** [.pe-send-ifc.prs-olys] Error 127
+make[1]: *** [.pscsi-ircv.prs-olys] Error 127
+make[1]: *** [.pscsi-isend.prs-olys] Error 127
+make[1]: *** [.pscsi-pscsi.prs-olys] Error 127
+make[1]: *** [.pscsi-trcv-bm.prs-olys] Error 127
+make[1]: *** [.pscsi-trcv.prs-olys] Error 127
+make[1]: *** [.pscsi-tsend-bm.prs-olys] Error 127
+make[1]: *** [.pscsi-tsend.prs-olys] Error 127
+make[1]: *** [.sbi-fifo2scsi.prs-olys] Error 127
+make[1]: *** [.sbuf-read-ctl.prs-olys] Error 127
+make[1]: *** [.sbuf-send-ctl.prs-olys] Error 127
+make[1]: *** [.sc-haz.prs-olys] Error 127
+make[1]: *** [.stetson-p1.prs-olys] Error 127
+make[1]: *** [.stetson-p2.prs-olys] Error 127
+make[1]: *** [.stetson-p3.prs-olys] Error 127
+make[1]: *** [.vanbek-ad-opt-e.prs-olys] Error 127
+make[1]: *** [.x.prs-olys] Error 127
+make[1]: *** [.xbm-si.prs-olys] Error 127
+make: *** [unc2l/check.subDir] Error 2
+make[1]: *** [.csa_tb.prs-tpG0-1ys] Error 127
+make[1]: *** [.direct.prs-tpG0-1ys] Error 127
+make[1]: *** [.killpack.prs-tpG0-1ys] Error 127
+make[1]: *** [.spdor.prs-tpG0-1ys] Error 127
+make[1]: *** [.tb_pre_dec.prs-tpG0-1ys] Error 127
+make[1]: *** [.uno1_ctrl_tb.prs-tpG0-1ys] Error 127
+make[1]: *** [.uno_ctrl_tb.prs-tpG0-1ys] Error 127
+make: *** [vhd/check.subDir] Error 2
+make[2]: *** [.PAR_VERIFY-tsG0-1va] Error 127
+make[1]: *** [tel/verify.subDir] Error 2
+make: *** [verificationTests] Error 2
+make[2]: *** [.diode_noosc_HPNVER-tYllva] Error 126
+make[2]: *** [.diode_osc_HPNVER-tYllva] Error 126
+make[2]: *** [.water_HPNVER-tYllva] Error 126
+make[2]: *** [.water2x_HPNVER-tYllva] Error 126
+make[1]: *** [hpn/hpnver.subDir] Error 2
+make: *** [hpnTests] Error 2
+make[2]: *** [.DME.prs-tpG0-1cPys] Error 126
+make[2]: *** [.FIFO.prs-tpG0-1cPys] Error 126
+make[2]: *** [.FIFOR.prs-tpG0-1cPys] Error 126
+make[2]: *** [.FIFOSV.prs-tpG0-1cPys] Error 126
+make[2]: *** [.JSPelatch.prs-tpG0-1cPys] Error 126
+make[2]: *** [.SEL.prs-tpG0-1cPys] Error 126
+make[2]: *** [.abstract.prs-tpG0-1cPys] Error 126
+make[2]: *** [.alloc-outbound-usc.prs-tpG0-1cPys] Error 126
+make[2]: *** [.alloc-outbound.prs-tpG0-1cPys] Error 126
+make[2]: *** [.box.prs-tpG0-1cPys] Error 126
+make[2]: *** [.box1.prs-tpG0-1cPys] Error 126
+make[2]: *** [.c.prs-tpG0-1cPys] Error 126
+make[2]: *** [.case1.prs-tpG0-1cPys] Error 126
+make[2]: *** [.case2.prs-tpG0-1cPys] Error 126
+make[2]: *** [.case3.prs-tpG0-1cPys] Error 126
+make[2]: *** [.case4.prs-tpG0-1cPys] Error 126
+make[2]: *** [.case7.prs-tpG0-1cPys] Error 126
+make[2]: *** [.celement.prs-tpG0-1cPys] Error 126
+make[2]: *** [.choice2.prs-tpG0-1cPys] Error 126
+make[2]: *** [.circ1.prs-tpG0-1cPys] Error 126
+make[2]: *** [.circ2.prs-tpG0-1cPys] Error 126
+make[2]: *** [.circ3.prs-tpG0-1cPys] Error 126
+make[2]: *** [.circ4.prs-tpG0-1cPys] Error 126
+make[2]: *** [.cnt11.prs-tpG0-1cPys] Error 126
+make[2]: *** [.scsiSV.prs-tpG0-1cPys.._.._bin_compare_literals-i.OK] Error 2
+make[1]: *** [csp/check.subDir] Error 2
+make[2]: *** [.alloc-outbound.prs-cPys] Error 1
+make[2]: *** [.pscsi-trcv-bm.prs-cPys] Error 1
+make[1]: *** [g/check.subDir] Error 2
+make[2]: *** [.pe-send-ifc.prs-olcPys] Error 1
+compare - There were 12 unmatched outputs.
+compare - There were 129 unmatched product terms.
+compare - There were 400 unmatched literals.
+make[2]: *** [.pscsi-pscsi.prs-olcPys.._.._bin_compare_literals-i.OK] Error 29
+make[2]: *** [.pscsi-tsend.prs-olcPys] Error 1
+make[1]: *** [unc2l/check.subDir] Error 2
+make: *** [noPostProc] Error 2
+compare - There were 120 unmatched outputs.
+compare - There were 354 unmatched product terms.
+compare - There were 1530 unmatched literals.
+make[2]: *** [.cache_s3io3.prs-obys.._.._bin_compare_literals-i.OK] Error 212
+make[1]: *** [unc/check.subDir] Error 2
+make: *** [hairy] Error 2
+make[2]: *** [.beta.prs-tsys] Error 1
+make[1]: *** [csp/check.subDir] Error 2
+make: *** [posets] Error 2
+make[3]: *** [.wine3.NEW_SHOP.prs-oioqtbG1-2ys] Error 1
+make[2]: *** [wine3/NEW_SHOP.VHDLtest] Error 2
+make[3]: *** [.wine224.THE_SHOP.prs-oioqtbG1-2ys] Error 6
+make[2]: *** [wine224/THE_SHOP.VHDLtest] Error 2
+make[3]: *** [.wine324.THE_SHOP.prs-oioqtbG1-2ys] Error 3
+make[2]: *** [wine324/THE_SHOP.VHDLtest] Error 2
+make[3]: *** [.wine524.THE_SHOP.prs-oioqtbG1-2ys] Error 2
+make[2]: *** [wine524/THE_SHOP.VHDLtest] Error 2
+make[3]: *** [.wine934.THE_SHOP.prs-oioqtbG1-2ys] Error 1
+make[2]: *** [wine934/THE_SHOP.VHDLtest] Error 2
+make[3]: *** [.AP.AP.prs-oioqtbG1-2ys] Error 4
+make[2]: *** [AP/AP.VHDLtest] Error 2
+make[3]: *** [.newMergex.newMerge.prs-oioqtbG1-2ys] Error 18
+make[2]: *** [newMergex/newMerge.VHDLtest] Error 2
+make[1]: *** [vhd/VHDLtests.subDir] Error 2
+make: *** [channelTests] Error 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+\nMessages from log files           :
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+Binary file ./g/atacs.log matches
+./vhd/NEW_SHOP.log:ERROR: Could not execute mv NEW_SHOP_HSE_CURRENT.prs NEW_SHOP_HSE_U_9.prs
+./vhd/PP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/merge.log:ERROR: Could not execute mv merge_HSE_CURRENT.prs merge_HSE_U_1.prs
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 101100
+./vhd/merge.log:System deadlocked in state 001101
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/merge.log:System deadlocked in state 011100
+./vhd/merge.log:System deadlocked in state 001110
+./vhd/THE_SHOP.log:ERROR: Could not execute mv THE_SHOP_HSE_CURRENT.prs THE_SHOP_HSE_U_1.prs
+./vhd/THE_SHOP.log:ERROR: Safety violation for rule shop1_to_patron_send- -> winery_to_shop1_rcv-.
+./vhd/PA.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:Finding redundant rules ... ERROR: Could not load event rule system for solution.
+./vhd/AP.log:ERROR: Safety violation for rule l_rcv- -> r_send-.
+./vhd/AP.log:ERROR:1:  Unexpected end of file!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

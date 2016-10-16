@@ -1,0 +1,34 @@
+From atacs-bugs@chou.ece.utah.edu  Fri Jan  9 09:29:10 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GT9EN016685
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 9 Jan 2004 09:29:09 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i09GT9Ot016683
+	for atacs-bugs@shang.elen.utah.edu; Fri, 9 Jan 2004 09:29:09 -0700
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GT7EN016677
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:29:08 -0700
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i09GSwTp012159
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:28:58 -0700
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i09GSwNm012155
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:28:58 -0700
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Fri, 9 Jan 2004 09:28:58 -0700 (MST)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: Fairness in HPNs
+Message-ID: <Pine.LNX.4.44.0401090927381.12133-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+Only fair cycles should be considered in EG check.  These cycles should 
+not monotonically increase a continuous variable while always ignoring 
+transitions out on that variable that would fire after reaching that 
+bound.
+
+

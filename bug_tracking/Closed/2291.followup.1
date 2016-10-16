@@ -1,0 +1,56 @@
+From christian.atheist@gmail.com  Mon Jul 23 12:06:20 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=3.0 tests=BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from ug-out-1314.google.com (ug-out-1314.google.com [66.249.92.168])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l6NI6Iwj004599
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 Jul 2007 12:06:19 -0600
+Received: by ug-out-1314.google.com with SMTP id s2so5042uge
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 Jul 2007 11:06:17 -0700 (PDT)
+DKIM-Signature: a=rsa-sha1; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:in-reply-to:mime-version:content-type:content-transfer-encoding:content-disposition:references;
+        b=AAxy419L5jZBZoQK/Yx+0U9KmR6FSohwvj6xMtotwP8MZ8kZ4h/1VIx/e5EtPf9jf08meIoE0/99VPX7C33iQQjLFfegpswcje8gEekta4yI4a/iQqT/kYmrLv8YNIhMkn/IYt2/I6SJBepPITkDPem2RPT9L3ir3h3P/KeZ0wc=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:to:subject:in-reply-to:mime-version:content-type:content-transfer-encoding:content-disposition:references;
+        b=cSulDBBMsNhlWnhsNMKEUvP+MHq45Uf9PumtoUfD5Wzmh0fXFn2631ZNlakfQGQWT4Tev4jN5qHeM2APrnHGWJSFKaJ5gKSNaVd6ZYhFZqbDE/k950MSOCCSbU1xnBL+wfnQJp1Idu0VmPr9SJ9GKfyUlMfcDMXCZudEnra6018=
+Received: by 10.82.112.3 with SMTP id k3mr2418721buc.1185213977358;
+        Mon, 23 Jul 2007 11:06:17 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Mon, 23 Jul 2007 11:06:17 -0700 (PDT)
+Message-ID: <eba119560707231106t4d213184kcd2c23cf1491fd7e@mail.gmail.com>
+Date: Mon, 23 Jul 2007 12:06:17 -0600
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Curtis Madsen" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: Re: BUG: Can't Parse Kinetic Law (PR#2291)
+In-Reply-To: <200707231706.l6NH6qMj004082@chou.ece.utah.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+References: <200707231706.l6NH6qMj004082@chou.ece.utah.edu>
+
+Hi Curtis,
+
+The sbml wasn't imported, though.  I hand created it using the tool,
+adding species and reactions through the editor.  If there was an
+error, it must've occurred during the creation processes, but I'm not
+sure where or how to recreate it.  Several reactions gave very weird
+error messages when I tried to save them, and so this might be part of
+where the error is happening.
+
+cheers,
+Nam
+
+On 7/23/07, Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+> I took a look at the sbml file you posted on this bug and could recreate the
+> error you were getting.  However, the sbml file had four reactions in it that
+> had no id.  I think that you were getting this error because the tool was
+> getting confused by which reaction you were selecting.  I deleted the reactions
+> that had no id from the file and retested and the error went away.  I think
+> maybe we should make it impossible to get to a state like that by not allowing
+> sbml files that are missing ids to be imported.
+>
+

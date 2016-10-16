@@ -1,0 +1,25 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: flattening rules for merging SBML elements (PR#5422)
+Date: Thu Jun 14 21:30:30 2012
+
+An input species should not be assigned to in a rule, event, initial assignment,
+or participate as a reactant or 
+product in a reaction.
+
+A species that is an output can only be connected to other species that are
+inputs.
+
+The connect species should not be assigned to in a rule, event, initial
+assignment, or participate as a reactant or 
+product in a reaction.
+
+Also, need an new type inout to specify when directionality is not known.
+
+Add a port mapped check box to species.
+
+Variable parameters should also be able to be assigned a direction with the same
+restrictions on inputs.
+
+Will need to also do something about compartments to prevent invalid models when
+they are replaced.

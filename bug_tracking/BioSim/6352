@@ -1,0 +1,279 @@
+From myers@eng.utah.edu  Tue Jul 28 14:08:27 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t6SK8RGd002190
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jul 2015 14:08:27 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZKBAm-000Gag-1q)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jul 2015 14:08:27 -0600
+Received: from [50.252.135.161] (helo=[172.20.1.35])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZKBAl-000J20-Rv
+	for atacs-bugs@vlsigroup.ece.utah.edu; Tue, 28 Jul 2015 14:08:24 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_CD67C55D-80FA-403F-BCC4-2F99D47A242D"
+Subject: FEATURE: Test files for distributions
+Date: Tue, 28 Jul 2015 14:08:15 -0600
+References: <CAHLmBr2C4eaL-gKgxV7jMayb9YM2NFTdRvLUajDTV2NRuVnHdA@mail.gmail.com>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <F6346CA0-2DE7-4DDF-BAF1-8568829DEC20@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.5 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_CD67C55D-80FA-403F-BCC4-2F99D47A242D
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+> Begin forwarded message:
+>=20
+> Date: July 24, 2015 at 1:20:56 PM MDT
+> From: Lucian Smith <lucianoelsmitho@gmail.com>
+> To: The SBML L3 Distributions package discussion list =
+<sbml-distrib@lists.sourceforge.net>
+> Subject: [sbml-distrib] Fwd: Test files for distributions
+> Reply-To: The SBML L3 Distributions and Ranges package discussion list =
+<sbml-distrib@lists.sourceforge.net>
+>=20
+> OK, hopefully sourcefore is back up enough to send this this time...
+>=20
+> So, I went through and created a bunch of models for each of the =
+univariate distributions in UncertML; even the mixed distributions =
+(though I only used that with normals, since that seems to be the common =
+use-case).  I don't yet have categorical distributions yet, but I hope =
+to have them soon.  I tried to attach them to this email, but this seems =
+to be forbidden, so I uploaded it to Google drive instead:
+>=20
+> https://drive.google.com/file/d/0B71r5kLs3FliNm5UYjU2LXVqUkk/view =
+<https://drive.google.com/file/d/0B71r5kLs3FliNm5UYjU2LXVqUkk/view>
+>=20
+> I also went through and calculated the expected means and standard =
+deviations for all of them, and used that to create files of expected =
+results, following the SBML Stochastic Test Suite format that we =
+recently released.  The earlier tests were for running explicitly =
+stochastic runs of core SBML models; these new ones have draws from =
+'distrib' distributions in them, and nothing else explicitly stochastic.
+>=20
+> The basic model looks like:
+>=20
+>   species X in C;
+>=20
+>   X =3D 0;
+>   C =3D 1;
+>   t =3D 0;
+>=20
+>   t' =3D 1;
+>=20
+>   E0: at t >=3D 0.5: t =3D -0.5, X =3D normal(0, 1.5);
+>=20
+> In other words,  't' describes a sawtooth wave, since it increases =
+constantly due to the rate rule, and gets reset with the event.  Every =
+time the event fires (every second after 0.5 seconds), the species 'X' =
+gets assigned a new value from a distribution.  (The only thing that =
+varies is what distribution is used instead of 'normal'.)
+>=20
+> You should be able to compare your results with the expected results =
+in exactly the same way as is done with the other stochastic tests; i.e.
+>=20
+> * Run the simulation 'n' times, collecting output for each time point =
+each time.
+> * Calculate the mean and standard deviation of your produced results.
+> * Compare the observed mean and standard deviation with the expected =
+mean and standard deviation, using 'n' and these formulae:
+>=20
+> Z_t =3D sqrt(n)*(X_t-mu_t)/sigma_t
+>=20
+> and
+>=20
+> Y_t =3D sqrt(n/2)*(S_t^2/sigma_t^2 - 1)
+>=20
+> where X_t and S_t are the observed mean and standard deviation, and =
+mu_t and sigma_t are the expected means and standard deviations.
+>=20
+> Z_t should always fall in the range 'meanRange' from the settings file =
+(which currently will always be the range (-3,3)).
+>=20
+> Y_t should always fall in the range 'sdRange' from the settings file =
+(which currently will always be the range (-3,3)).
+>=20
+> (Y_t's range is (-3,3) for these tests instead of (-5,5) for the =
+original 39 tests because these calculated standard deviations are =
+exact, and not estimated.)
+>=20
+> All of the distributions used here I was able to find described pretty =
+clearly on wikipedia as well as the UncertML web site, so it shouldn't =
+be terribly difficult to figure out how to implement support for them =
+should you want to.
+>=20
+> Any questions, let me know, and if you're working on support, let me =
+know that, too!  With any luck, we'll be able to finalize the =
+specification soon!
+>=20
+> -Lucian
+> =
+--------------------------------------------------------------------------=
+----
+> _______________________________________________
+> sbml-distrib mailing list
+> sbml-distrib@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/sbml-distrib
+
+
+--Apple-Mail=_CD67C55D-80FA-403F-BCC4-2F99D47A242D
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">July 24, 2015 at 1:20:56 PM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Lucian Smith &lt;<a =
+href=3D"mailto:lucianoelsmitho@gmail.com" =
+class=3D"">lucianoelsmitho@gmail.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">The SBML L3 Distributions =
+package discussion list &lt;<a =
+href=3D"mailto:sbml-distrib@lists.sourceforge.net" =
+class=3D"">sbml-distrib@lists.sourceforge.net</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-distrib] =
+Fwd: Test files for distributions</b><br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">The SBML L3 Distributions and =
+Ranges package discussion list &lt;<a =
+href=3D"mailto:sbml-distrib@lists.sourceforge.net" =
+class=3D"">sbml-distrib@lists.sourceforge.net</a>&gt;<br =
+class=3D""></span></div><br class=3D""><div class=3D""><div dir=3D"ltr" =
+class=3D""><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D""><div =
+class=3D"">OK, hopefully sourcefore is back up enough to send this this =
+time...</div><div class=3D""><br class=3D""></div><div =
+class=3D"gmail_quote">So, I went through and created a bunch of models =
+for each of the&nbsp;univariate distributions in UncertML; even the =
+mixed distributions (though I only used that with normals, since that =
+seems to be the common use-case).&nbsp; I don't yet have categorical =
+distributions yet, but I hope to have them soon.&nbsp; I tried to attach =
+them to this email, but this seems to be forbidden, so I uploaded it to =
+Google drive instead:</div><div class=3D"gmail_quote"><span class=3D""><br=
+ class=3D""></span></div><div class=3D"gmail_quote"><span class=3D""><a =
+href=3D"https://drive.google.com/file/d/0B71r5kLs3FliNm5UYjU2LXVqUkk/view"=
+ =
+class=3D"">https://drive.google.com/file/d/0B71r5kLs3FliNm5UYjU2LXVqUkk/vi=
+ew</a><br class=3D"">
+<br class=3D"">
+I also went through and calculated the expected means and =
+standard&nbsp;deviations for all of them, and used that to create files =
+of expected&nbsp;results, following the SBML Stochastic Test Suite =
+format that we&nbsp;recently released.&nbsp; The earlier tests were for =
+running explicitly&nbsp;stochastic runs of core SBML models; these new =
+ones have draws from&nbsp;'distrib' distributions in them, and nothing =
+else explicitly&nbsp;stochastic.<br class=3D"">
+<br class=3D"">
+The basic model looks like:<br class=3D"">
+<br class=3D"">
+&nbsp; species X in C;<br class=3D"">
+<br class=3D"">
+&nbsp; X =3D 0;<br class=3D"">
+&nbsp; C =3D 1;<br class=3D"">
+&nbsp; t =3D 0;<br class=3D"">
+<br class=3D"">
+&nbsp; t' =3D 1;<br class=3D"">
+<br class=3D"">
+&nbsp; E0: at t &gt;=3D 0.5: t =3D -0.5, X =3D normal(0, 1.5);<br =
+class=3D"">
+<br class=3D"">
+In other words,&nbsp; 't' describes a sawtooth wave, since it =
+increases&nbsp;constantly due to the rate rule, and gets reset with the =
+event.&nbsp; Every&nbsp;time the event fires (every second after 0.5 =
+seconds), the species 'X'&nbsp;gets assigned a new value from a =
+distribution.&nbsp; (The only thing that&nbsp;varies is what =
+distribution is used instead of 'normal'.)<br class=3D"">
+<br class=3D"">
+You should be able to compare your results with the expected =
+results&nbsp;in exactly the same way as is done with the other =
+stochastic tests;&nbsp;i.e.<br class=3D"">
+<br class=3D"">
+* Run the simulation 'n' times, collecting output for each time point =
+each time.<br class=3D"">
+* Calculate the mean and standard deviation of your produced results.<br =
+class=3D""></span>
+* Compare the observed mean and standard deviation with the expected =
+mean and&nbsp;standard deviation, using 'n' and these formulae:<span =
+class=3D""><br class=3D"">
+<br class=3D"">
+Z_t =3D sqrt(n)*(X_t-mu_t)/sigma_t<br class=3D"">
+<br class=3D"">
+and<br class=3D"">
+<br class=3D"">
+Y_t =3D sqrt(n/2)*(S_t^2/sigma_t^2 - 1)<br class=3D"">
+<br class=3D"">
+where X_t and S_t are the observed mean and standard deviation, =
+and&nbsp;mu_t and sigma_t are the expected means and standard =
+deviations.<br class=3D"">
+<br class=3D"">
+Z_t should always fall in the range 'meanRange' from the settings =
+file&nbsp;(which currently will always be the range (-3,3)).<br =
+class=3D"">
+<br class=3D"">
+Y_t should always fall in the range 'sdRange' from the settings =
+file&nbsp;(which currently will always be the range (-3,3)).<br =
+class=3D"">
+<br class=3D"">
+(Y_t's range is (-3,3) for these tests instead of (-5,5) for =
+the&nbsp;original 39 tests because these calculated standard deviations =
+are&nbsp;exact, and not estimated.)<br class=3D"">
+<br class=3D"">
+All of the distributions used here I was able to find described =
+pretty&nbsp;clearly on wikipedia as well as the UncertML web site, so it =
+shouldn't&nbsp;be terribly difficult to figure out how to implement =
+support for them&nbsp;should you want to.<br class=3D"">
+<br class=3D"">
+Any questions, let me know, and if you're working on support, let =
+me&nbsp;know that, too!&nbsp; With any luck, we'll be able to finalize =
+the&nbsp;specification soon!</span></div><span class=3D"HOEnZb"><font =
+color=3D"#888888" class=3D""><div class=3D"gmail_quote"><br =
+class=3D""></div><div =
+class=3D"gmail_quote">-Lucian</div></font></span></div></div></div>
+=
+--------------------------------------------------------------------------=
+----<br class=3D"">_______________________________________________<br =
+class=3D"">sbml-distrib mailing list<br class=3D""><a =
+href=3D"mailto:sbml-distrib@lists.sourceforge.net" =
+class=3D"">sbml-distrib@lists.sourceforge.net</a><br =
+class=3D"">https://lists.sourceforge.net/lists/listinfo/sbml-distrib<br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_CD67C55D-80FA-403F-BCC4-2F99D47A242D--
+

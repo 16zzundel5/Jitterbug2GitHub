@@ -1,0 +1,125 @@
+From peskin@cs.utah.edu  Wed Jan 23 13:55:07 2002
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (IDENT:atacs-bugs@shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g0NKt6h05207
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 23 Jan 2002 13:55:06 -0700
+Date: Wed, 23 Jan 2002 13:55:06 -0700
+Message-Id: <200201232055.g0NKt6h05207@chou.elen.utah.edu>
+From: peskin@cs.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: posets hangs depending on rule order?
+
+Full_Name: Eric Robert Peskin
+Version: cvs tag sleepingBeauty
+OS: Red Hat Linux release 7.1 (Seawolf) Linux ming.elen.utah.edu 2.4.9-12 #1 Tue Oct 30 18:33:49 EST 2001 i686 unknown
+spec: /home/ming/peskin/atacs/work/tel/asleep.tel
+log: /home/ming/peskin/atacs/work/tel/atacs.log
+Submission from: ming.elen.utah.edu (155.99.23.210)
+Submitted by: peskin
+
+
+atacs/work/tel/asleep.tel puts posets to sleep (runs overnight, swaps
+a lot...  ... I killed it this morning).  But it works fine (and
+quickly) with untimed, geometric, and bag.
+
+Interestingly, atacs/work/tel/awake.tel works fine (and quickly) even
+under posets.
+
+But the two files differ only in the order of the rules!
+
+The sample session below shows first the diff of the two files.
+Then it runs each file under posets (first awake and then asleep).
+---8<------8<------8<------8<------8<------8<------8<------8<------8<---
+487 ming:~> cd ~peskin/atacs/work/tel/
+488 ming:work/tel> diff {awake,asleep}.tel
+59d58
+< winery_to_shop1?- $HSE/6  0 0 1
+60a60
+> winery_to_shop1?- $HSE/6  0 0 1
+489 ming:work/tel> ../../bin/atacs -ltoioqtsG0-1ys awake
+ATACS VERSION 5.0
+Logging session in:  atacs.log
+Loading timed event/level structure from:  awake.tel
+Initializing 3 cycles ... done
+Automatic state-variable insertion now DISABLED.
+PARG output on errors disabled.
+Using PO sets timing to obtain state graphs.
+Changing minimum gate delay from 0 to 0.
+Changing maximum gate delay from infinity to 1
+Using single-cube algorithm for synthesis.
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000080)
+Finding reduced state graph ... 2241 iterations 1000 regions, 545 states
+(stack_depth = 533)
+memory: max=3768024 inuse=3763536 free=4488 
+6561 iterations 2000 regions, 903 states (stack_depth = 672)
+memory: max=5029592 inuse=5011800 free=17792 
+12639 iterations 3000 regions, 1031 states (stack_depth = 577)
+memory: max=5476056 inuse=5444352 free=31704 
+19495 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591608 free=318624 
+19500 iterations 4000 regions, 1133 states (stack_depth = 390)
+memory: max=5910232 inuse=5588600 free=321632 
+19505 iterations 4000 regions, 1133 states (stack_depth = 390)
+memory: max=5910232 inuse=5588592 free=321640 
+19508 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591592 free=318640 
+19511 iterations 4000 regions, 1133 states (stack_depth = 392)
+memory: max=5910232 inuse=5594592 free=315640 
+19514 iterations 4000 regions, 1133 states (stack_depth = 392)
+memory: max=5910232 inuse=5594592 free=315640 
+19517 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591600 free=318632 
+19520 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591608 free=318624 
+19523 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591608 free=318624 
+19527 iterations 4000 regions, 1133 states (stack_depth = 391)
+memory: max=5910232 inuse=5591576 free=318656 
+19531 iterations 4000 regions, 1133 states (stack_depth = 390)
+memory: max=5910232 inuse=5588664 free=321568 
+19535 iterations 4000 regions, 1133 states (stack_depth = 390)
+memory: max=5910232 inuse=5588664 free=321568 
+19539 iterations 4000 regions, 1133 states (stack_depth = 389)
+memory: max=5910232 inuse=5585720 free=324512 
+nodes = 539, dead = 10734
+memory: max=5910232 inuse=4529216 free=1381016 
+done
+20774 iterations, 4077 regions, 5349 new_regions, 1137 states in 4.33375
+seconds
+nodes in use = 539, dead = 10734
+memory: max=5910232 inuse=4529216 free=1381016
+Found 4077 zones in 1137 states for awake (690d 5910232m 4.3u)
+Projecting out dummy transitions ... done (0.065624)
+Checking CSC ... complete state coded
+Finding regions ... done (0.000377)
+Finding conflicts ... done (0.000151)
+Finding covers ... done (0.000026)
+Storing production rules to:  awake.prs
+Synthesis succeeded with area = 8 literals 16 transistors
+490 ming:work/tel> 
+490 ming:work/tel> 
+490 ming:work/tel> ../../bin/atacs -ltoioqtsG0-1ys asleep
+ATACS VERSION 5.0
+Logging session in:  atacs.log
+Loading timed event/level structure from:  asleep.tel
+Initializing 3 cycles ... done
+Automatic state-variable insertion now DISABLED.
+PARG output on errors disabled.
+Using PO sets timing to obtain state graphs.
+Changing minimum gate delay from 0 to 0.
+Changing maximum gate delay from infinity to 1
+Using single-cube algorithm for synthesis.
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking safety ... safe
+Finding redundant rules ... done (0.000081)
+Finding reduced state graph ... 2355 iterations 1000 regions, 532 states
+(stack_depth = 506)
+memory: max=3686104 inuse=3684480 free=1624 
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<---
+... and that's the last message that posets prints.  Then it just sits there...
+

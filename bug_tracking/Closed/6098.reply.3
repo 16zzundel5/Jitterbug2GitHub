@@ -1,0 +1,9 @@
+From: Scott Glass <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: reaction dimension / indices (PR#6098)
+Date: Mon Jul 21 20:37:44 2014
+
+I found the source of the problem. It was in reactions and had to do with the ID
+being blank and calling SBMLutilities.variableInUse vs. checkIndices.
+
+Should work

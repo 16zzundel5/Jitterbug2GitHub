@@ -1,0 +1,24 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: n.roehner@utah.edu
+Subject: Re: BUG: orginal sets parameter to default value (PR#5059)
+Date: Tue Nov 16 02:59:13 2010
+CC: myers@ece.utah.edu
+
+The naming should now be the way that it is described below.  Moving to needs
+testing.
+
+> GCM editor:
+> 
+> Default / Custom
+> 
+> GCM analysis:
+> 
+> Default / Modified
+> OR
+> Custom / Modified
+> 
+> depending on how it appears in the GCM editor.
+> 
+> SBML analysis:
+> 
+> Original / Modified

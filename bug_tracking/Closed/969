@@ -1,0 +1,32 @@
+From atacs-bugs@chou.ece.utah.edu  Mon May 23 10:00:48 2005
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4NG0m33015201
+	for <atacs-bugs@shang.ece.utah.edu>; Mon, 23 May 2005 10:00:48 -0600
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.13.1/8.13.1/Submit) id j4NG0mCL015200
+	for atacs-bugs@shang.ece.utah.edu; Mon, 23 May 2005 10:00:48 -0600
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.98.27.199])
+	by chou.ece.utah.edu (8.13.1/8.13.1) with ESMTP id j4NG0lnL015195
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 May 2005 10:00:47 -0600
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id j4NG1irE023526
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 May 2005 10:01:44 -0600
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id j4NG1iNx023522
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 23 May 2005 10:01:44 -0600
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Mon, 23 May 2005 10:01:43 -0600 (MDT)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: tests
+Message-ID: <Pine.LNX.4.44.0505231001340.23512-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Spam-Checker-Version: SpamAssassin 3.0.3 (2005-04-27) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=5.0 tests=ALL_TRUSTED,
+	DNS_FROM_RFC_ABUSE autolearn=unavailable version=3.0.3
+
+

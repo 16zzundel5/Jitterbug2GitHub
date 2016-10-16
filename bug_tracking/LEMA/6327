@@ -1,0 +1,588 @@
+From myers@eng.utah.edu  Thu May 14 20:31:25 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t4F2VPKp016520
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 May 2015 20:31:25 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1Yt5PG-000PJi-Kt)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 May 2015 20:31:25 -0600
+Received: from [50.141.68.140] (helo=[192.168.1.10])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1Yt5ZN-000AZC-AH
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 14 May 2015 20:41:49 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_F2657ABF-37D9-4557-8F34-53F1527CFB99"
+Subject: BUG: buck converter example has problem with model generation
+Date: Thu, 14 May 2015 20:31:21 -0600
+References: <5525241C.8030407@newcastle.ac.uk>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <BEA7C18A-2057-4DDC-B098-8AE779684012@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+
+--Apple-Mail=_F2657ABF-37D9-4557-8F34-53F1527CFB99
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=windows-1252
+
+
+
+> Begin forwarded message:
+>=20
+> Date: April 8, 2015 at 6:50:36 AM MDT
+> From: "V.Dubikhin" <V.Dubikhin1@newcastle.ac.uk>
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+> Cc: ANDREW FISHER <andrew.n.fisher@utah.edu>
+> Subject: Re: Meeting on Friday
+>=20
+> Hi Chris,
+>=20
+> I have modified simulation data: lowered number of points 4 times and =
+split data into individual files for easier LPN creation and attached =
+data as archive(simple_buck_data - all data, other files contain only =
+data needed for generation of individual LPNs). I am planning to start =
+working with LEMA later this week(already noticed some bugs to report), =
+as I need to finish some things with my simulation testbench.
+>=20
+> Also, I have a question, regarding LPNs: is it possible to model =
+systems with high order derivatives? Would it be possible to model an LC =
+circuit with LEMA?
+>=20
+> On 04/06/2015 12:28 AM, Chris J. Myers wrote:
+>> Hi Vladimir,
+>>=20
+>> I think I=92m ready to take another shot at this, but the amount of =
+data in the files you sent is making it very sluggish.  Can you perhaps =
+split the data files into ones for each gate as you have broken down =
+below.  Also, can you perhaps generate less data points and still keep =
+the important features.
+>>=20
+>> Thanks,
+>>=20
+>> Chris
+>>=20
+>>> On Mar 5, 2015, at 1:42 PM, V.Dubikhin <V.Dubikhin1@newcastle.ac.uk =
+<mailto:V.Dubikhin1@newcastle.ac.uk>> wrote:
+>>>=20
+>>> Hi, Chris
+>>>=20
+>>> I have finally acquired simulation data for the buck. I took me =
+longer than expected due to problems with analog part of the testbench.
+>>> I am going to discuss buck operation and ways of verifying it during =
+our meeting. If possible, could you, please, create several LPNs from =
+the attached data:
+>>> Input -> Ouput
+>>> mos_n_in -> gn_ack
+>>> mos_p_in -> gp_ack
+>>> buck_out -> uv
+>>> supply_v_cs -> oc
+>>> gn -> mos_n_in
+>>> gp -> mos_p_in
+>>> gn_ack -> gn
+>>> gp_ack -> gp
+>>> Combination of all these LPNs should represent buck. I have tried =
+creating some of those nets myself but LEMA is constructing strange LNPs =
+with negative time, so I suppose I am doing something wrong.
+>>>=20
+>>>=20
+>>> On 03/05/2015 03:58 PM, ANDREW NATHAN FISHER wrote:
+>>>> Hello,=20
+>>>>=20
+>>>> The time also works for me.=20
+>>>>=20
+>>>> Andrew
+>>>>=20
+>>>>=20
+>>>> -------- Original message --------
+>>>> From: "V.Dubikhin"=20
+>>>> Date:03/05/2015 8:40 AM (GMT-07:00)=20
+>>>> To: u0030884=20
+>>>> Cc: ANDREW NATHAN FISHER=20
+>>>> Subject: Re: Meeting on Friday=20
+>>>>=20
+>>>> Hi,
+>>>>=20
+>>>> Sounds good to me. I am working on simulation of simple control for =
+buck=20
+>>>> converter now, so hopefully I will produce simulation data and buck =
+LPN=20
+>>>> by today.
+>>>>=20
+>>>>=20
+>>>> On 03/05/2015 03:34 PM, Chris J. Myers wrote:
+>>>> > Hi,
+>>>> >
+>>>> > Let=92s meet again at 10am MDT (5pm GMT), if that works for both =
+of you.
+>>>> >
+>>>> > Chris
+>>>> >
+>>>>=20
+>>>> --=20
+>>>> Regards,
+>>>> Vladimir Dubikhin
+>>>>=20
+>>>=20
+>>> --=20
+>>> Regards,
+>>> Vladimir Dubikhin
+>>> <simple_buck_data.zip>
+>>=20
+>=20
+> --=20
+> Regards,
+> Vladimir Dubikhin
+>=20
+>=20
+> [The attachment simple_buck.tar.gz has been manually removed]
+>=20
+
+
+--Apple-Mail=_F2657ABF-37D9-4557-8F34-53F1527CFB99
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=windows-1252
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dwindows-1252"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">April 8, 2015 at 6:50:36 AM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"V.Dubikhin" &lt;<a =
+href=3D"mailto:V.Dubikhin1@newcastle.ac.uk" =
+class=3D"">V.Dubikhin1@newcastle.ac.uk</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu" =
+class=3D"">myers@ece.utah.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Cc: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;" class=3D"">ANDREW FISHER &lt;<a =
+href=3D"mailto:andrew.n.fisher@utah.edu" =
+class=3D"">andrew.n.fisher@utah.edu</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Re: Meeting on =
+Friday</b><br class=3D""></span></div><br class=3D""><div class=3D"">
+ =20
+    <meta content=3D"text/html; charset=3Dwindows-1252" =
+http-equiv=3D"Content-Type" class=3D"">
+ =20
+  <div bgcolor=3D"#FFFFFF" text=3D"#000000" class=3D"">
+    Hi Chris,<br class=3D"">
+    <br class=3D"">
+    I have modified simulation data: lowered number of points 4 times
+    and split data into individual files for easier LPN creation and
+    attached data as archive(simple_buck_data - all data, other files
+    contain only data needed for generation of individual LPNs). I am
+    planning to start working with LEMA later this week(already noticed
+    some bugs to report), as I need to finish some things with my
+    simulation testbench.<br class=3D"">
+    <br class=3D"">
+    Also, I have a question, regarding LPNs: is it possible to model
+    systems with high order derivatives? Would it be possible to model
+    an LC circuit with LEMA?<br class=3D"">
+    <br class=3D"">
+    <div class=3D"moz-cite-prefix">On 04/06/2015 12:28 AM, Chris J. =
+Myers
+      wrote:<br class=3D"">
+    </div>
+    <blockquote =
+cite=3D"mid:2E272BD7-9107-4995-A613-E168029B4EB4@ece.utah.edu" =
+type=3D"cite" class=3D"">
+      <meta http-equiv=3D"Content-Type" content=3D"text/html;
+        charset=3Dwindows-1252" class=3D"">
+      Hi Vladimir,
+      <div class=3D""><br class=3D"">
+      </div>
+      <div class=3D"">I think I=92m ready to take another shot at this, =
+but
+        the amount of data in the files you sent is making it very
+        sluggish. &nbsp;Can you perhaps split the data files into ones =
+for
+        each gate as you have broken down below. &nbsp;Also, can you =
+perhaps
+        generate less data points and still keep the important =
+features.</div>
+      <div class=3D""><br class=3D"">
+      </div>
+      <div class=3D"">Thanks,</div>
+      <div class=3D""><br class=3D"">
+      </div>
+      <div class=3D"">Chris</div>
+      <div class=3D""><br class=3D"">
+      </div>
+      <div class=3D"">
+        <div class=3D"">
+          <blockquote type=3D"cite" class=3D"">
+            <div class=3D"">On Mar 5, 2015, at 1:42 PM, V.Dubikhin =
+&lt;<a moz-do-not-send=3D"true" =
+href=3D"mailto:V.Dubikhin1@newcastle.ac.uk" =
+class=3D"">V.Dubikhin1@newcastle.ac.uk</a>&gt;
+              wrote:</div>
+            <br class=3D"Apple-interchange-newline">
+            <div class=3D""><span style=3D"font-family: Helvetica;
+                font-size: 12px; font-style: normal; font-variant:
+                normal; font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255); float: none; display: inline
+                !important;" class=3D"">Hi, Chris</span><br =
+style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">I have finally
+                acquired simulation data for the buck. I took me longer
+                than expected due to problems with analog part of the
+                testbench.</span><br style=3D"font-family: Helvetica;
+                font-size: 12px; font-style: normal; font-variant:
+                normal; font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">I am going to
+                discuss buck operation and ways of verifying it during
+                our meeting. If possible, could you, please, create
+                several LPNs from the attached data:</span><br =
+style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">Input -&gt; =
+Ouput</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">mos_n_in -&gt;
+                gn_ack</span><br style=3D"font-family: Helvetica;
+                font-size: 12px; font-style: normal; font-variant:
+                normal; font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">mos_p_in -&gt;
+                gp_ack</span><br style=3D"font-family: Helvetica;
+                font-size: 12px; font-style: normal; font-variant:
+                normal; font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">buck_out -&gt; =
+uv</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">supply_v_cs =
+-&gt;
+                oc</span><br style=3D"font-family: Helvetica; font-size:
+                12px; font-style: normal; font-variant: normal;
+                font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">gn -&gt; =
+mos_n_in</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">gp -&gt; =
+mos_p_in</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">gn_ack -&gt; =
+gn</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">gp_ack -&gt; =
+gp</span><br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <span style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255); float: none;
+                display: inline !important;" class=3D"">Combination of =
+all
+                these LPNs should represent buck. I have tried creating
+                some of those nets myself but LEMA is constructing
+                strange LNPs with negative time, so I suppose I am doing
+                something wrong.</span><br style=3D"font-family:
+                Helvetica; font-size: 12px; font-style: normal;
+                font-variant: normal; font-weight: normal;
+                letter-spacing: normal; line-height: normal; orphans:
+                auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <div class=3D"moz-cite-prefix" style=3D"font-family:
+                Helvetica; font-size: 12px; font-style: normal;
+                font-variant: normal; font-weight: normal;
+                letter-spacing: normal; line-height: normal; orphans:
+                auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);">On 03/05/2015
+                03:58 PM, ANDREW NATHAN FISHER wrote:<br class=3D"">
+              </div>
+              <blockquote =
+cite=3D"mid:gulw8e32hkajxraqihjlatva.1425571124071@email.android.com" =
+type=3D"cite" style=3D"font-family: Helvetica; font-size:
+                12px; font-style: normal; font-variant: normal;
+                font-weight: normal; letter-spacing: normal;
+                line-height: normal; orphans: auto; text-align: start;
+                text-indent: 0px; text-transform: none; white-space:
+                normal; widows: auto; word-spacing: 0px;
+                -webkit-text-stroke-width: 0px; background-color:
+                rgb(255, 255, 255);" class=3D"">
+                <div class=3D"">
+                  <div class=3D"">Hello,&nbsp;</div>
+                  <div class=3D""><br class=3D"">
+                  </div>
+                  The time also works for me.&nbsp;
+                  <div class=3D""><br class=3D"">
+                  </div>
+                  <div class=3D"">Andrew</div>
+                  <br class=3D"">
+                  <br class=3D"">
+                  <div class=3D"">-------- Original message =
+--------</div>
+                  <div class=3D"">From: "V.Dubikhin"<span =
+class=3D"Apple-converted-space">&nbsp;</span></div>
+                  <div class=3D"">Date:03/05/2015 8:40 AM =
+(GMT-07:00)<span class=3D"Apple-converted-space">&nbsp;</span></div>
+                  <div class=3D"">To: u0030884<span =
+class=3D"Apple-converted-space">&nbsp;</span></div>
+                  <div class=3D"">Cc: ANDREW NATHAN FISHER<span =
+class=3D"Apple-converted-space">&nbsp;</span></div>
+                  <div class=3D"">Subject: Re: Meeting on Friday<span =
+class=3D"Apple-converted-space">&nbsp;</span></div>
+                  <div class=3D""><br class=3D"">
+                  </div>
+                </div>
+                <font class=3D"" size=3D"2"><span style=3D"font-size: =
+10pt;" class=3D"">Hi,<br class=3D"">
+                    <br class=3D"">
+                    Sounds good to me. I am working on simulation of
+                    simple control for buck&nbsp;<br class=3D"">
+                    converter now, so hopefully I will produce
+                    simulation data and buck LPN&nbsp;<br class=3D"">
+                    by today.<br class=3D"">
+                    <br class=3D"">
+                    <br class=3D"">
+                    On 03/05/2015 03:34 PM, Chris J. Myers wrote:<br =
+class=3D"">
+                    &gt; Hi,<br class=3D"">
+                    &gt;<br class=3D"">
+                    &gt; Let=92s meet again at 10am MDT (5pm GMT), if =
+that
+                    works for both of you.<br class=3D"">
+                    &gt;<br class=3D"">
+                    &gt; Chris<br class=3D"">
+                    &gt;<br class=3D"">
+                    <br class=3D"">
+                    --&nbsp;<br class=3D"">
+                    Regards,<br class=3D"">
+                    Vladimir Dubikhin<br class=3D"">
+                    <br class=3D"">
+                  </span></font></blockquote>
+              <br style=3D"font-family: Helvetica; font-size: 12px;
+                font-style: normal; font-variant: normal; font-weight:
+                normal; letter-spacing: normal; line-height: normal;
+                orphans: auto; text-align: start; text-indent: 0px;
+                text-transform: none; white-space: normal; widows: auto;
+                word-spacing: 0px; -webkit-text-stroke-width: 0px;
+                background-color: rgb(255, 255, 255);" class=3D"">
+              <pre class=3D"moz-signature" cols=3D"72" style=3D"font-size:=
+ 12px; font-style: normal; font-variant: normal; font-weight: normal; =
+letter-spacing: normal; line-height: normal; orphans: auto; text-align: =
+start; text-indent: 0px; text-transform: none; widows: auto; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: =
+rgb(255, 255, 255);">--=20
+Regards,
+Vladimir Dubikhin</pre>
+              <span =
+id=3D"cid:8381C793-1CFC-436F-BEDB-92598C73D189@hsd1.ut.comcast.net" =
+class=3D"">&lt;simple_buck_data.zip&gt;</span></div>
+          </blockquote>
+        </div>
+        <br class=3D"">
+      </div>
+    </blockquote>
+    <br class=3D"">
+    <pre class=3D"moz-signature" cols=3D"72">--=20
+Regards,
+Vladimir Dubikhin</pre>
+  </div>
+
+<br class=3D""><br class=3D"">[The attachment simple_buck.tar.gz has =
+been manually removed]<br class=3D""><br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_F2657ABF-37D9-4557-8F34-53F1527CFB99--
+

@@ -1,0 +1,22 @@
+From wendy@ee.utah.edu  Wed Apr  7 14:33:51 1999
+Received: from localhost (shang.elen.utah.edu [128.110.18.216]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id OAA25018 for <atacs-bugs@ming.elen.utah.edu>; Wed, 7 Apr 1999 14:33:51 -0600 (MDT)
+Date: Wed, 7 Apr 1999 14:33:51 -0600 (MDT)
+From: wendy@ee.utah.edu
+Message-Id: <199904072033.OAA25018@yuan.elen.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: bug in lab3.csp
+
+Full_Name: Wendy Belluomini
+Version: 4.1
+OS: Linux
+source: ~atacs/examples/bugs
+log: ~atacs/examples/logfiles/lab3bug.log
+Submission from: yuan.elen.utah.edu (128.110.18.206)
+Submitted by: wendy
+
+
+The example file lab3.csp produces "Cycle detected in acyclic constraint
+graph errors" when any of the geometric timing options are used.
+We need to determine whether this is a bug in the example, a
+bug in the redundant rule checker or if these errors should be
+ignored.

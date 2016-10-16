@@ -1,0 +1,46 @@
+From peskin@cs.utah.edu  Mon Apr  3 14:08:21 2000
+Return-Path: <peskin@cs.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA19673
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 3 Apr 2000 14:08:21 -0600
+Date: Mon, 3 Apr 2000 14:08:21 -0600
+From: peskin@cs.utah.edu
+Message-Id: <200004032008.OAA19673@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: shownet broken?
+
+Full_Name: Eric Robert Peskin
+Version: CVS tag PR393
+OS: Linux xia.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown
+spec: /home/xia/peskin/atacs/examples/csp/DME.csp
+log: /home/xia/peskin/atacs/examples/csp/atacs.log
+Submission from: xia.elen.utah.edu (155.99.23.200)
+Submitted by: peskin
+
+
+I can't get shownet to work:
+
+129 xia:examples/csp> atacs DME.csp -ya -dn
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling DME.csp ... 
+Storing process DME to DME.er
+Storing process DME to DME.er
+Loading timed event-rule structure from:  DME.er
+Initializing 3 cycles ... done
+Checking for cycles in acyclic constraint graph ... done.
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done (states=34,time=0.051444)
+Projecting out dummy transitions ... done (0.001223)
+Checking CSC ... complete state coded
+Finding regions ... done (0.000863)
+Finding conflicts ... done (0.001916)
+Finding covers ... done (0.001420)
+Storing production rules to:  DME.prs
+Total Area = 30 literals 48 transistors
+Generating dot file for net:  DME.dot
+Executing command:  shownet DME &
+130 xia:examples/csp> dot.lefty: cannot open file: DME
+

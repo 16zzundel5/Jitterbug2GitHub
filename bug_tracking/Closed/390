@@ -1,0 +1,49 @@
+From myers@vlsigroup.elen.utah.edu  Sat Apr  1 14:04:24 2000
+Return-Path: <myers@vlsigroup.elen.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id OAA10837
+	for <atacs-bugs@shang.elen.utah.edu>; Sat, 1 Apr 2000 14:04:24 -0700
+Date: Sat, 1 Apr 2000 14:04:24 -0700
+Message-Id: <200004012104.OAA10837@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: Problem with postprocess.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+When postprocessing is on, this example produce the wrong level expression
+between b+ and c+ should have level [d].
+
+module ex1;
+
+input  a = {false};
+input  b = {false};
+output c = {false};
+output d = {false};
+output x = {false};
+
+process ex1;
+*[[ skip -> a+; b+; [d]; c+; [~d]; a-
+  | skip -> b+; c+
+ ]; b-; c- ]
+endprocess
+
+gate dout1;
+a & b -> x+
+~a | ~b -> x-
+endgate
+
+gate dout;
+x & ~c -> d+
+~x | c -> d-
+endgate
+endmodule
+
+

@@ -1,0 +1,31 @@
+From myers@ece.utah.edu  Thu May 13 10:48:13 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=0.9 required=5.0 tests=AWL,BAYES_00,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o4DGmDbo032610
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 13 May 2010 10:48:13 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OCba1-0006EX-4n
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 13 May 2010 10:48:13 -0600
+Message-Id: <EA5C2519-5E70-4A6C-A68D-9CEA00F3FEF6@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: check for errors in SBML when creating from GCM
+Date: Thu, 13 May 2010 10:48:07 -0600
+X-Mailer: Apple Mail (2.936)
+
+1) When generating SBML from GCM, warn the user when inconsistencies  
+are found.
+
+2) Prevent the user from selecting SBML components that will create  
+inconsistencies.
+

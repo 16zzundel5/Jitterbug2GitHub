@@ -1,0 +1,97 @@
+From rodrigue@ebi.ac.uk  Mon May 16 05:54:00 2011
+Return-Path: <rodrigue@ebi.ac.uk>
+Received: from spike.ebi.ac.uk (spike.ebi.ac.uk [193.62.196.9])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4GBrx76009005
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 16 May 2011 05:53:59 -0600
+Received: from swallowtail.ebi.ac.uk (swallowtail.ebi.ac.uk [172.22.8.255])
+	by spike.ebi.ac.uk (8.13.8/8.13.8) with ESMTP id p4GBrsmN027713;
+	Mon, 16 May 2011 12:53:54 +0100
+Message-ID: <4DD11052.5020308@ebi.ac.uk>
+Date: Mon, 16 May 2011 12:53:54 +0100
+From: Nicolas Rodriguez <rodrigue@ebi.ac.uk>
+User-Agent: Thunderbird 2.0.0.22 (X11/20090625)
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+CC: myers@ece.utah.edu
+Subject: Re: BUG : iBioSim 'import Biomodels' problems (PR#5363)
+References: <201105131533.p4DFXuwm008504@chou.ece.utah.edu>
+In-Reply-To: <201105131533.p4DFXuwm008504@chou.ece.utah.edu>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Chris Myers wrote:
+> Hi Nicolas,
+>
+> The problem with this one appears to be because we used a hard coded web address
+> to find the biomodels online.  However, at some point they moved.  I've now
+> changed it so that is uses the web service code to get the file which should
+> solve this problem in the next release.  For now, you will need to use import. 
+> By the way, if you see problems with this in the future, please let us know.
+>
+> iBioSim will load any level/version combination of SBML file, but it immediately
+> converts it to either L2V4 or L3V1.  The decision of which to convert to is set
+> in the preferences under the SBML Preferences tab.  Note that we up-convert
+> only.  This means if you import a L3V1 file even in L2V4 mode, it will not
+> attempt to down convert and instead leave it as an L3V1 file.  Therefore, when
+> we save an SBML file, it will always save in either L2V4 or L3V1 depending on
+> the mode and the original file type.  
+>
+> The "Save SBML File" menu option is only supposed to be active for GCM files. 
+> It allows you to convert a GCM file to an SBML file.  Therefore, it is not
+> intended for your desired purpose.  We have actually removed this option, and
+> the GCM to SBML translation is now done through the analysis view.  
+>
+>   
+
+So, then when we just do save, the SBML file or the whole project with 
+the SBML file is saved ?
+(Sorry if the question is obvious, I did not read the manual).
+
+FYI, I am trying to install iBioSim at EBI to see if the curators of 
+biomodels DB can use it to curate models.
+
+> We could easily add an export option for older SBML level/versions, but we do
+> not currently support this.
+>
+>   
+Being able to work on L2V4 is fine for us, it was not apparent to me 
+that we could work with L2 models that is why I asked the question.
+
+Nico
+
+>
+>   
+>> Hello,
+>>
+>> I tried to import a Biomodels model, when I clicked on it I got a 
+>> windows with the list of Biomodels ID, I can get the names of the 
+>> models, 'Get Description' or 'Get Reference' work properly and open a 
+>> new browser window.
+>> But when I select a model and click on the 'ok' button, I am getting an 
+>> error message that say 'BIOMD0000000327.xml not found'.
+>>
+>> Also if I tried to import directly an 'SBML Model', it works most of the 
+>> time fine. Once, I got an exception about a wrong level and version 
+>> combination and iBiosim stopped/crashed but I am not sure what exactly I 
+>> did and I could not reproduce it.
+>>
+>>
+>> If I tried to use the 'save SBML model' menu item, I am getting an 
+>> exception :
+>>
+>> Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException: 
+>> sbmleditor.SBML_Editor cannot be cast to gcm2sbml.gui.GCM2SBMLEditor
+>>          at biomodelsim.BioSim.actionPerformed(BioSim.java:2401)
+>>
+>> It seems that you are supporting mainly SBML level 3 core, I wanted to 
+>> try to save a SBML model to see if I was able to save it as l2v4. Would 
+>> that be possible in the current version of iBioSim ?
+>>
+>>
+>> Thanks,
+>> Nico
+>>
+>>
+>>
+>>     
+

@@ -1,0 +1,33 @@
+From myers@ece.utah.edu  Mon Jun  7 11:07:15 2010
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.2 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o57H7FkC015059
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 7 Jun 2010 11:07:15 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.102])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1OLfn9-0007zS-Nf
+	for atacs-bugs@vlsigroup.ece.utah.edu; Mon, 07 Jun 2010 11:07:15 -0600
+Message-Id: <DC38E89C-E582-4DBC-848C-FF99B957F163@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: group of elements to add
+Date: Mon, 7 Jun 2010 11:07:15 -0600
+X-Mailer: Apple Mail (2.936)
+
+There should a mutually exclusive choice of element to add to a model  
+that includes:
+
+Select
+Species
+Promoter
+Component
+

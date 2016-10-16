@@ -1,0 +1,60 @@
+From myers@jiaqi.elen.utah.edu  Wed Sep 13 17:34:39 2000
+Return-Path: <myers@jiaqi.elen.utah.edu>
+Received: from jiaqi.elen.utah.edu (IDENT:root@jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id RAA03276;
+	Wed, 13 Sep 2000 17:34:38 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.9.3/8.9.3) with ESMTP id RAA03857;
+	Wed, 13 Sep 2000 17:39:27 -0600
+Date: Wed, 13 Sep 2000 17:39:27 -0600 (MDT)
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+To: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+cc: eemercer@vlsigroup.elen.utah.edu, hao@vlsigroup.elen.utah.edu
+Subject: Re: Solve CSC Error in store.er (PR#514)
+In-Reply-To: <200009131629.KAA32466@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.10.10009131737070.1253-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Well, it appears to be a combination of things.  First:
+
+Hao: Check in compile.c the function call rm_red seems to eliminate
+ordering rules since they are self-loops often.  rm_red should not touch
+ordering rules.
+
+Eric M.: Wendy's wipe out of reset rules only adjusts ncausal.  It should
+adjust ncausal if it is a causal rule and adjust nord if it is an ordering
+rule.  Can you make this change?
+
+Chris
+
+On Wed, 13 Sep 2000, Eric Robert Peskin wrote:
+
+> I've confirmed Eric's error on my build.
+> Have you tried a checkout with the tag Eric lists in Reply 1?
+> That would look like
+> 	cvs checkout -r SOLVECSCERROR -P atacs
+> Alternatively, if you just want to compare your working version to Eric's,
+> you could cd to your top atacs directory and run
+> 	cvs diff -r SOLVECSCERROR
+> 
+> Also, have you tried the exact command Eric specifies in Reply 1?
+> When I do, the CSC solver goes into an infinite loop, which makes it
+> hard to see the errors streaming by, but grep makes it easier:
+> 
+> 1436 xia:~> cd ~peskin/atacs/examples/csp/
+> 1437 xia:examples/csp> which atacs
+> /home/xia/peskin/atacs/src/atacs
+> 1438 xia:examples/csp> atacs -mEmXmcmsmUmPmTmFmOmpya jordi2wc.csp | grep ERROR
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> ERROR:45:  Unexpected end of line!
+> 
+> ...
+> 
+

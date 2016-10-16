@@ -1,0 +1,71 @@
+From kjones5863@gmail.com  Mon Mar 16 14:59:39 2009
+Return-Path: <kjones5863@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=5.0 tests=AWL,BAYES_00,HTML_MESSAGE
+	autolearn=ham version=3.2.4
+Received: from yw-out-2324.google.com (yw-out-2324.google.com [74.125.46.28])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n2GKxdq9001326;
+	Mon, 16 Mar 2009 14:59:39 -0600
+Received: by yw-out-2324.google.com with SMTP id 9so755424ywe.63
+        for <multiple recipients>; Mon, 16 Mar 2009 13:59:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:in-reply-to:references
+         :date:message-id:subject:from:to:cc:content-type;
+        bh=bXnM+d5Le79vLCtp1bQC+GcA/ENCpQujrdshZd4V0wQ=;
+        b=OQFaDaluVMDEjlWJq0TpeAOxSWaCmLAnot4XQ6j6tOnsjFpbN5i9hCO+gNUTuPGVyz
+         N17tvROOzbeoKtJ37j1v3fGegsvSTGvDeOfryOngXgpT+tyCegIlntJnjxqSmBME3ULZ
+         JC0BWdOiw32TZcEh+HvLaF9o0w9L022umlCls=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc:content-type;
+        b=n7Z/PwaWNc2h1AYBabKmk5j3t0w0P7aWuZG6FPRafSmyYuuSRWFQ/q5SVoZ8YyJEqB
+         Niusrgvwxa0dOpRvB5Hcswp4ZypyXPt2fArOz5yB7rRUqdt7WR4NpetWOftGe2/f9Zpb
+         hXjnI1fhp7ByBzyPBv6bCc2IxHrfmyrbc1LoI=
+MIME-Version: 1.0
+Received: by 10.142.199.16 with SMTP id w16mr2320159wff.4.1237237178417; Mon, 
+	16 Mar 2009 13:59:38 -0700 (PDT)
+In-Reply-To: <05D5568B-3D30-42E5-BBD5-6473D690BCCB@ece.utah.edu>
+References: <05D5568B-3D30-42E5-BBD5-6473D690BCCB@ece.utah.edu>
+Date: Mon, 16 Mar 2009 14:59:38 -0600
+Message-ID: <2b601e3d0903161359m421a7696n622485061893be42@mail.gmail.com>
+Subject: Re: CHANGE: command line for viewing a Petri net
+From: Kevin Jones <kjones5863@gmail.com>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+Cc: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>,
+        kjones@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=000e0cd22dec85c45e046542bad6
+
+--000e0cd22dec85c45e046542bad6
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+Done.
+
+On Mon, Mar 16, 2009 at 2:09 PM, Chris J. Myers <myers@ece.utah.edu> wrote:
+
+> The command line for view a Petri net in atacs should be:
+>
+> atacs -lgodde <file>.g
+>
+>
+
+--000e0cd22dec85c45e046542bad6
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Done.<br><br><div class=3D"gmail_quote">On Mon, Mar 16, 2009 at 2:09 PM, Ch=
+ris J. Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu">my=
+ers@ece.utah.edu</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote"=
+ style=3D"border-left: 1px solid rgb(204, 204, 204); margin: 0pt 0pt 0pt 0.=
+8ex; padding-left: 1ex;">
+The command line for view a Petri net in atacs should be:<br>
+<br>
+atacs -lgodde &lt;file&gt;.g<br>
+<br>
+</blockquote></div><br>
+
+--000e0cd22dec85c45e046542bad6--
+

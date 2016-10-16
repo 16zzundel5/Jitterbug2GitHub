@@ -1,0 +1,61 @@
+From myers@ece.utah.edu  Wed Jan 26 15:35:07 2011
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: **
+X-Spam-Status: No, score=2.4 required=10.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX autolearn=no version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0QMZ70W031031
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Wed, 26 Jan 2011 15:35:07 -0700
+Received: from 75-169-160-18.slkc.qwest.net ([75.169.160.18] helo=[192.168.0.9])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1PiDxD-0005J0-5h; Wed, 26 Jan 2011 15:35:07 -0700
+Message-Id: <33F20021-CBAE-46C3-8D33-43910CF43363@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: FEATURE: new transform to optimize uniform expressions
+Date: Wed, 26 Jan 2011 15:34:57 -0700
+Cc: Kevin Jones <kjones5863@gmail.com>
+X-Mailer: Apple Mail (2.936)
+
+This transform should detect expression trees of the form:
+
+uniform(l,u) OP uniform(l',u')
+
+and rearrange the tree as appropriate.
+
+If OP is + , then this would mean to create a new expression:
+	uniform(l+l',u+u')
+
+If OP is - then this would mean to create a new expression:
+	uniform(l-u',u-l')
+
+If OP is min then this would mean to create a new expression:
+  	uniform(min(l,l'),min(u,u'))
+
+If OP is max then this would mean to create a new expression:
+  	uniform(max(l,l'),max(u,u'))
+
+Other useful transforms:
+
+uniform(l,u) * n
+
+where n is a non-negative constant, results in
+
+uniform(n*l,n*u)
+
+floor(uniform(l,u)) <=> uniform(floor(l),floor(u))
+
+ceil(uniform(l,u)) <=> uniform(ceil(l),ceil(u))
+
+uniform(uniform(l,u),uniform(l',u')) <=> uniform(l,u')
+
+Did I missing any?
+
+Chris
+

@@ -1,0 +1,2263 @@
+From myers@eng.utah.edu  Fri Feb 15 10:51:31 2013
+Return-Path: <myers@eng.utah.edu>
+Received: from bowie.eng.utah.edu (bowie.eng.utah.edu [155.98.110.113])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r1FHpUX0018537
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 15 Feb 2013 10:51:30 -0700
+Received: from 66-117-145-136.lmi.net ([66.117.145.136] helo=[10.22.50.229])
+	by bowie.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.72 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1U6PJh-000Dlx-Pe
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 15 Feb 2013 10:43:22 -0700
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_E27BFE04-7201-4E41-81EB-70BD90F8676E"
+Subject: BUG: GeneNet does not get correct result for Windows 8
+Date: Fri, 15 Feb 2013 10:51:31 -0700
+References: <CAJepWQAEwtgtVz+=8FC9_ktpUKo+ZXNmxPiyn95pbUPf+15UOg@mail.gmail.com>
+To: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <2FF5F0D9-EBDC-433B-9C93-9F28C29D0C8F@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 6.2 \(1499\))
+X-Mailer: Apple Mail (2.1499)
+Sender: myers@eng.utah.edu
+
+
+--Apple-Mail=_E27BFE04-7201-4E41-81EB-70BD90F8676E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=iso-8859-1
+
+
+
+Begin forwarded message:
+
+> From: Shaofan Qi <chi.cedric@gmail.com>
+> Subject: Re: A little problem
+> Date: February 14, 2013 12:07:51 PM MST
+> To: "Chris J. Myers" <myers@ece.utah.edu>
+>=20
+> I copy all the dll from cygwin to the bin directory of Ibiosim's bin. =
+The GeneNet can work now. But the Ibiosim  have a new message, "unable =
+to learn from data".
+>=20
+> This is log file:
+> option:  2, text: '--debug', arg: '2'
+> 	Setting Debug Level to '2'
+> option:  3, text: '-ta', arg: '1.15'
+> 	Setting TA to '1.15'
+> option:  4, text: '-tr', arg: '0.75'
+> 	Setting TR to '0.75'
+> option:  5, text: '-ti', arg: '0.5'
+> 	Setting TI to '0.5'
+> option: 11, text: '--numBins', arg: '2'
+> 	Setting numBins to '2'
+> option: 12, text: '-tm', arg: '0.0'
+> 	Setting TM to '0'
+> option: 14, text: '-tt', arg: '0.025'
+> 	Setting relaxIPDelta to '0.025'
+> option: 16, text: '-tn', arg: '2'
+> 	Setting TN (allows n IVs though first round) to '2'
+> option: 26, text: '-tj', arg: '2'
+> 	Setting TJ to '2'
+> option: 17, text: '--cpp_harshenBoundsOnTie'
+> 	Setting CPP to use harsher bounds
+> option: 18, text: '--cpp_cmp_output_donotInvertSortOrder'
+> 	Setting sort order to not be inverted for AR
+> option: 19, text: '--cpp_seedParents'
+> 	Setting CMP competitions to be seeded
+> option: 20, text: '--cmp_score_mustNotWinMajority'
+> 	Setting CMP and score to use the actual score, and not disallow =
+a > r+n or r > a+n
+> file  0: '.'
+> Reading background knowledge
+> 1 CI CI
+> 2 CII CII
+> CI uu
+> CII uu
+> Reading the TSD files
+> Got './run-1.tsd' for call
+> Reading ./run-1.tsd
+> Reading ./run-2.tsd
+> Reading ./run-3.tsd
+> Reading ./run-4.tsd
+> Reading ./run-5.tsd
+> Reading ./run-6.tsd
+> Reading ./run-7.tsd
+> Reading ./run-8.tsd
+> Reading ./run-9.tsd
+> Reading ./run-10.tsd
+> Reading ./run-11.tsd
+> Reading ./run-12.tsd
+> Reading ./run-13.tsd
+> Reading ./run-14.tsd
+> Reading ./run-15.tsd
+> Reading ./run-16.tsd
+> Reading ./run-17.tsd
+> Reading ./run-18.tsd
+> Reading ./run-19.tsd
+> Reading ./run-20.tsd
+> Read in 20 tsd files
+> Finished Reading the TSD files
+> Removing the Time specie from the list
+> Opening ./contenders.txt for write
+> Encoding the experiments
+> Filling hashes now
+> Clearing Levels
+> Assigning values for species 0
+> 	Assigning levels for specie 0 numBins 2, Bin size: 2110, Amount =
+left 4220, Amount seen 0
+> 		Amount Seen 20, bin Size:2110, current value: 0
+> 		Amount Seen 40, bin Size:2110, current value: 10
+> 		Amount Seen 60, bin Size:2110, current value: 20
+> 		Amount Seen 80, bin Size:2110, current value: 30
+> 		Amount Seen 100, bin Size:2110, current value: 40
+> 		Amount Seen 120, bin Size:2110, current value: 50
+> 		Amount Seen 140, bin Size:2110, current value: 60
+> 		Amount Seen 160, bin Size:2110, current value: 70
+> 		Amount Seen 180, bin Size:2110, current value: 80
+> 		Amount Seen 200, bin Size:2110, current value: 90
+> 		Amount Seen 220, bin Size:2110, current value: 100
+> 		Amount Seen 240, bin Size:2110, current value: 110
+> 		Amount Seen 260, bin Size:2110, current value: 120
+> 		Amount Seen 280, bin Size:2110, current value: 130
+> 		Amount Seen 300, bin Size:2110, current value: 140
+> 		Amount Seen 320, bin Size:2110, current value: 150
+> 		Amount Seen 340, bin Size:2110, current value: 160
+> 		Amount Seen 360, bin Size:2110, current value: 170
+> 		Amount Seen 380, bin Size:2110, current value: 180
+> 		Amount Seen 400, bin Size:2110, current value: 190
+> 		Amount Seen 420, bin Size:2110, current value: 200
+> 		Amount Seen 440, bin Size:2110, current value: 210
+> 		Amount Seen 460, bin Size:2110, current value: 220
+> 		Amount Seen 480, bin Size:2110, current value: 230
+> 		Amount Seen 500, bin Size:2110, current value: 240
+> 		Amount Seen 520, bin Size:2110, current value: 250
+> 		Amount Seen 540, bin Size:2110, current value: 260
+> 		Amount Seen 560, bin Size:2110, current value: 270
+> 		Amount Seen 580, bin Size:2110, current value: 280
+> 		Amount Seen 600, bin Size:2110, current value: 290
+> 		Amount Seen 620, bin Size:2110, current value: 300
+> 		Amount Seen 640, bin Size:2110, current value: 310
+> 		Amount Seen 660, bin Size:2110, current value: 320
+> 		Amount Seen 680, bin Size:2110, current value: 330
+> 		Amount Seen 700, bin Size:2110, current value: 340
+> 		Amount Seen 720, bin Size:2110, current value: 350
+> 		Amount Seen 740, bin Size:2110, current value: 360
+> 		Amount Seen 760, bin Size:2110, current value: 370
+> 		Amount Seen 780, bin Size:2110, current value: 380
+> 		Amount Seen 800, bin Size:2110, current value: 390
+> 		Amount Seen 820, bin Size:2110, current value: 400
+> 		Amount Seen 840, bin Size:2110, current value: 410
+> 		Amount Seen 860, bin Size:2110, current value: 420
+> 		Amount Seen 880, bin Size:2110, current value: 430
+> 		Amount Seen 900, bin Size:2110, current value: 440
+> 		Amount Seen 920, bin Size:2110, current value: 450
+> 		Amount Seen 940, bin Size:2110, current value: 460
+> 		Amount Seen 960, bin Size:2110, current value: 470
+> 		Amount Seen 980, bin Size:2110, current value: 480
+> 		Amount Seen 1000, bin Size:2110, current value: 490
+> 		Amount Seen 1020, bin Size:2110, current value: 500
+> 		Amount Seen 1040, bin Size:2110, current value: 510
+> 		Amount Seen 1060, bin Size:2110, current value: 520
+> 		Amount Seen 1080, bin Size:2110, current value: 530
+> 		Amount Seen 1100, bin Size:2110, current value: 540
+> 		Amount Seen 1120, bin Size:2110, current value: 550
+> 		Amount Seen 1140, bin Size:2110, current value: 560
+> 		Amount Seen 1160, bin Size:2110, current value: 570
+> 		Amount Seen 1180, bin Size:2110, current value: 580
+> 		Amount Seen 1200, bin Size:2110, current value: 590
+> 		Amount Seen 1220, bin Size:2110, current value: 600
+> 		Amount Seen 1240, bin Size:2110, current value: 610
+> 		Amount Seen 1260, bin Size:2110, current value: 620
+> 		Amount Seen 1280, bin Size:2110, current value: 630
+> 		Amount Seen 1300, bin Size:2110, current value: 640
+> 		Amount Seen 1320, bin Size:2110, current value: 650
+> 		Amount Seen 1340, bin Size:2110, current value: 660
+> 		Amount Seen 1360, bin Size:2110, current value: 670
+> 		Amount Seen 1380, bin Size:2110, current value: 680
+> 		Amount Seen 1400, bin Size:2110, current value: 690
+> 		Amount Seen 1420, bin Size:2110, current value: 700
+> 		Amount Seen 1440, bin Size:2110, current value: 710
+> 		Amount Seen 1460, bin Size:2110, current value: 720
+> 		Amount Seen 1480, bin Size:2110, current value: 730
+> 		Amount Seen 1500, bin Size:2110, current value: 740
+> 		Amount Seen 1520, bin Size:2110, current value: 750
+> 		Amount Seen 1540, bin Size:2110, current value: 760
+> 		Amount Seen 1560, bin Size:2110, current value: 770
+> 		Amount Seen 1580, bin Size:2110, current value: 780
+> 		Amount Seen 1600, bin Size:2110, current value: 790
+> 		Amount Seen 1620, bin Size:2110, current value: 800
+> 		Amount Seen 1640, bin Size:2110, current value: 810
+> 		Amount Seen 1660, bin Size:2110, current value: 820
+> 		Amount Seen 1680, bin Size:2110, current value: 830
+> 		Amount Seen 1700, bin Size:2110, current value: 840
+> 		Amount Seen 1720, bin Size:2110, current value: 850
+> 		Amount Seen 1740, bin Size:2110, current value: 860
+> 		Amount Seen 1760, bin Size:2110, current value: 870
+> 		Amount Seen 1780, bin Size:2110, current value: 880
+> 		Amount Seen 1800, bin Size:2110, current value: 890
+> 		Amount Seen 1820, bin Size:2110, current value: 900
+> 		Amount Seen 1840, bin Size:2110, current value: 910
+> 		Amount Seen 1860, bin Size:2110, current value: 920
+> 		Amount Seen 1880, bin Size:2110, current value: 930
+> 		Amount Seen 1900, bin Size:2110, current value: 940
+> 		Amount Seen 1920, bin Size:2110, current value: 950
+> 		Amount Seen 1940, bin Size:2110, current value: 960
+> 		Amount Seen 1960, bin Size:2110, current value: 970
+> 		Amount Seen 1980, bin Size:2110, current value: 980
+> 		Amount Seen 2000, bin Size:2110, current value: 990
+> 		Amount Seen 2020, bin Size:2110, current value: 1000
+> 		Amount Seen 2040, bin Size:2110, current value: 1010
+> 		Amount Seen 2060, bin Size:2110, current value: 1020
+> 		Amount Seen 2080, bin Size:2110, current value: 1030
+> 		Amount Seen 2100, bin Size:2110, current value: 1040
+> 		Amount Seen 2120, bin Size:2110, current value: 1050
+> 			Found a bin at v[2119], value: 1050
+> 		Assigning level 0 for specie 0 at 1050
+> 		New bin Size:2100 =3D 2100 / (2 - 1)
+> Assigning values for species 1
+> 	Assigning levels for specie 1 numBins 2, Bin size: 2110, Amount =
+left 4220, Amount seen 0
+> 		Amount Seen 469, bin Size:2110, current value: 0
+> 		Amount Seen 754, bin Size:2110, current value: 1
+> 		Amount Seen 1016, bin Size:2110, current value: 2
+> 		Amount Seen 1278, bin Size:2110, current value: 3
+> 		Amount Seen 1510, bin Size:2110, current value: 4
+> 		Amount Seen 1768, bin Size:2110, current value: 5
+> 		Amount Seen 2045, bin Size:2110, current value: 6
+> 		Amount Seen 2266, bin Size:2110, current value: 7
+> 			Found a bin at v[2265], value: 7
+> 		Assigning level 0 for specie 1 at 7
+> 		New bin Size:1954 =3D 1954 / (2 - 1)
+> Assigning values for species 2
+> 	Assigning levels for specie 2 numBins 2, Bin size: 2110, Amount =
+left 4220, Amount seen 0
+> 		Amount Seen 222, bin Size:2110, current value: 0
+> 		Amount Seen 494, bin Size:2110, current value: 1
+> 		Amount Seen 832, bin Size:2110, current value: 2
+> 		Amount Seen 1171, bin Size:2110, current value: 3
+> 		Amount Seen 1485, bin Size:2110, current value: 4
+> 		Amount Seen 1804, bin Size:2110, current value: 5
+> 		Amount Seen 2100, bin Size:2110, current value: 6
+> 		Amount Seen 2372, bin Size:2110, current value: 7
+> 			Found a bin at v[2371], value: 7
+> 		Assigning level 0 for specie 2 at 7
+> 		New bin Size:1848 =3D 1848 / (2 - 1)
+> Levels for ( 'time' : '0') are:  1050
+> Levels for ( 'CI' : '1') are:  7
+> Levels for ( 'CII' : '2') are:  7
+> Finished initializing
+> Finished encoding
+>=20
+> Using specie ( 'CI' : '1') as a child
+> Remove mutations not implemented
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		We are sorting with inverted 0 P set:{ 0,  0.001 ( 'CII' =
+: '2'), } and G set { 0,  0.001 ( 'CI' : '1'), }
+> Opening ( 'CI' : '1') for write
+> 				Next =3D -01
+> 				Trying to create a ratio
+> 				Calculating the baseSet
+> 					-00 is Comparable
+> 					Found probability of 0.0142653
+> 				Next prob -01 =3D 116 / 853 =3D 0.135991
+> 					Ratio is 0.0142653 / 0.135991 =3D =
+9.53294
+> 				Finding a new bin because there is no =
+base to compare to
+> 				Next =3D -11
+> 				Trying to create a ratio
+> 				Calculating the baseSet
+> 					-10 is Comparable
+> 					Read to the end of a lattice =
+level
+> 					Those are a good base set
+> 					Found probability of 0.0271116
+> 				Next prob -11 =3D 105 / 986 =3D 0.106491
+> 					Ratio is 0.0271116 / 0.106491 =3D =
+3.92787
+> 						Calculated all the =
+ratios
+> 		votes (a,r,u) (2 0 0) or (2 - 0)/(2)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.775, 1.125] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.8, 1.1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.825, 1.075] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.85, 1.05] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.875, 1.025] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.9
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.9, 1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.925
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.925, 1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.95
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.95, 1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.975
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.975, 1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.5
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.5
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.475
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.475
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.45
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.45
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.425
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.425
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.4
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.4
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.375
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.375
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.35
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.35
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.325
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.325
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.3
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.3
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.275
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.275
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.25
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.25
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.225
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.225
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.2
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.2
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.175
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.175
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.15
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.15
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.125
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.125
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.1
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.1
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.075
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.075
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.05
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.05
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0.025
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.025
+> 	Testing specie ( 'CII' : '2') as a parent
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +-0
+> 		Means an activation parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0
+> CANNOT RELAX BOUNDS MORE TO LET 2 parent through
+> Rescoring parents with harsher numbers, as we relaxed the bounds
+> 		Found score in score cache (2, 0, 0)
+> 	Score of 1 and threshold +- 0.5 for ( 'CII' : '2')
+> Initial parents for ( 'CI' : '1') are: < { 1,  1 ( 'CII' : '2'), } >
+> In Create Multiple Parents for ( 'CI' : '1') with < { 1,  1 ( 'CII' : =
+'2'), } >
+> 	Which colapses to { 0,  1 ( 'CII' : '2'), }
+> 	Creating parents sets of 2 bases
+> Multiple parents for ( 'CI' : '1') are: < { 1,  1 ( 'CII' : '2'), } >
+> Competing parents for child ( 'CI' : '1')
+> After Competion < { 1,  1 ( 'CII' : '2'), } > is the winner set for =
+child ( 'CI' : '1')
+> Gene =3D ( 'CI' : '1')
+>=20
+> Using specie ( 'CII' : '2') as a child
+> Remove mutations not implemented
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		We are sorting with inverted 0 P set:{ 0,  0.001 ( 'CI' =
+: '1'), } and G set { 0,  0.001 ( 'CII' : '2'), }
+> Opening ( 'CII' : '2') for write
+> 				Next =3D -10
+> 				Trying to create a ratio
+> 				Calculating the baseSet
+> 					-00 is Comparable
+> 					Found probability of 0.10271
+> 				Next prob -10 =3D 14 / 959 =3D 0.0145985
+> 					Ratio is 0.10271 / 0.0145985 =3D =
+0.142133
+> 				Finding a new bin because there is no =
+base to compare to
+> 				Next =3D -11
+> 				Trying to create a ratio
+> 				Calculating the baseSet
+> 					-01 is Comparable
+> 					Read to the end of a lattice =
+level
+> 					Those are a good base set
+> 					Found probability of 0.0890973
+> 				Next prob -11 =3D 4 / 986 =3D 0.0040568
+> 					Ratio is 0.0890973 / 0.0040568 =3D=
+ 0.0455322
+> 						Calculated all the =
+ratios
+> 		votes (a,r,u) (0 2 0) or (0 - 2)/(2)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.775, 1.125] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.8, 1.1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.825, 1.075] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.85, 1.05] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.875, 1.025] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.9
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.9, 1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.925
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.925, 1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.95
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.95, 1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 0.975
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.975, 1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.5
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.5
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.475
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.475
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.45
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.45
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.425
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.425
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.4
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.4
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.375
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.375
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.35
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.35
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.325
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.325
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.3
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.3
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.275
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.275
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.25
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.25
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.225
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.225
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.2
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.2
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.175
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.175
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.15
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.15
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.125
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.125
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.1
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.1
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.075
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.075
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.05
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.05
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0.025
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0.025
+> 	Testing specie ( 'CI' : '1') as a parent
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +-0
+> 		Means a represion parent
+> ERROR: Activation or Represison thresholds reduced too much: 1 1
+> There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [1, 1] and Ti 0
+> CANNOT RELAX BOUNDS MORE TO LET 2 parent through
+> Rescoring parents with harsher numbers, as we relaxed the bounds
+> 		Found score in score cache (0, 2, 0)
+> 	Score of -1 and threshold +- 0.5 for ( 'CI' : '1')
+> Initial parents for ( 'CII' : '2') are: < { -1,  -1 ( 'CI' : '1'), } >
+> In Create Multiple Parents for ( 'CII' : '2') with < { -1,  -1 ( 'CI' =
+: '1'), } >
+> 	Which colapses to { 0,  -1 ( 'CI' : '1'), }
+> 	Creating parents sets of 2 bases
+> Multiple parents for ( 'CII' : '2') are: < { -1,  -1 ( 'CI' : '1'), } =
+>
+> Competing parents for child ( 'CII' : '2')
+> After Competion < { -1,  -1 ( 'CI' : '1'), } > is the winner set for =
+child ( 'CII' : '2')
+> Gene =3D ( 'CII' : '2')
+> All Network Connections are
+> Net Con
+> 	Child ( 'CI' : '1') has < { 1,  1 ( 'CII' : '2'), } >
+> 	Child ( 'CII' : '2') has < { -1,  -1 ( 'CI' : '1'), } >
+> End Net Con
+> 	but score may be changed using an and sort for multiple parents
+> Exiting the GeneNet algorithm
+> Opening ./method.gcm for write
+> Finished writing the species list
+> Exiting and destroying Species, Experiments, NetCon, Thresholds, =
+Encodings
+> Clearing Levels
+> Clearing the species that we created
+> Done
+>=20
+>=20
+>=20
+> On Thu, Feb 14, 2013 at 10:58 AM, Chris J. Myers <myers@ece.utah.edu> =
+wrote:
+> Shaofan: please let me know if placing this file in your bin directory =
+solves your problem?  If so, I will post an announcement for the class.
+>=20
+> Chris
+>=20
+> On Feb 14, 2013, at 10:57 AM, Curtis Kendall Madsen =
+<curtis.madsen@utah.edu> wrote:
+>=20
+> > I placed the dll in my public-html folder.  You can download it at:
+> >
+> > =
+www.async.ece.utah.edu/~cmadsen/cyggcc_s-1.dll<http://www.async.ece.utah.e=
+du/~cmadsen/cyggcc_s-1.dll>
+> >
+> > Let me know if there is anything else I can do to help.
+> >
+> > Curtis
+> >
+> > On Feb 14, 2013, at 10:43 AM, "Chris J. Myers" =
+<myers@ece.utah.edu<mailto:myers@ece.utah.edu>> wrote:
+> >
+> > Hmm, strange.  Not sure why GeneNet would need this extra library.  =
+You could try putting this extra library in the bin directory and see if =
+that helps.  You should not need to install all of cygwin.
+> >
+> > Curtis: could you check if you have this DLL and put it somewhere =
+that my student can get at?
+> >
+> > Chris
+> >
+> > On Feb 14, 2013, at 10:40 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> >
+> > It can work :
+> > Microsoft Windows [Version 6.2.9200]
+> > (c) 2012 Microsoft Corporation. All rights reserved.
+> >
+> >
+> > C:\Program Files\IBIOSIM\bin>reb2sac.exe
+> > usage: reb2sac [options] <source-filename>
+> > where options are:
+> > --<key>=3D<value> predefined keys are:
+> > source.encoding, target.encoding, out and reb2sac.properties
+> > --source.encoding=3Dsbml is default
+> > --target.encoding=3Dhse2 is default
+> > --out=3D<target-filename> if this option is not provided, the target =
+filename is s
+> > pecified by backend
+> > --reb2sac.properties=3Ddefault is default
+> > --reb2sac.properties.file can be used to specfied a properties file =
+for default
+> > reb2sac properties handler
+> >
+> > C:\Program Files\IBIOSIM\bin>
+> >
+> >
+> > On Thu, Feb 14, 2013 at 10:38 AM, Chris J. Myers =
+<myers@ece.utah.edu<mailto:myers@ece.utah.edu>> wrote:
+> > Perhaps, though it is strange.  In the past, the inclusion of =
+cygwin1.dll was sufficient.  It may be perhaps that this dll is not =
+valid for Windows 8.  Just out of curiosity, could you see if =
+reb2sac.exe will run?
+> >
+> > Chris
+> >
+> > On Feb 14, 2013, at 10:36 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> >
+> > I think I have to install Cygwin in my computer.
+> >
+> >
+> > On Thu, Feb 14, 2013 at 10:34 AM, Chris J. Myers =
+<myers@ece.utah.edu<mailto:myers@ece.utah.edu>> wrote:
+> > I found this online.  Maybe this will help:
+> >
+> > http://cygwin.com/ml/cygwin/2011-01/msg00305.html
+> >
+> > Chris
+> >
+> > On Feb 14, 2013, at 10:30 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> >
+> > This is the list of files in Ibiosim\bin
+> >
+> > bzip2.dll
+> >    cygwin1.dll
+> >    ffmpeg
+> >    ffmpeg.exe
+> >    ffmpeg.exe64
+> >    ffmpeg.linux64
+> >    GeneNet.exe
+> >    GeneNet.linux
+> >    GeneNet.linux64
+> >    GeneNet64
+> >    iBioSim.bat
+> >    iBioSim.linux
+> >    iBioSim.linux64
+> >    iconv.dll
+> >    libexpat.dll
+> >    libsbml.dll
+> >    libsbml32.dll
+> >    libxml2.dll
+> >    libyices.dll
+> >    msvcp100.dll
+> >    msvcr100.dll
+> >    MSVCRT.DLL
+> >    reb2sac.exe
+> >    reb2sac.linux
+> >    reb2sac.linux64
+> >    s2lpn
+> >    sbmlj.dll
+> >    xerces-c_3_1.dll
+> >    zlib1.dll
+> >
+> >
+> > On Thu, Feb 14, 2013 at 10:25 AM, Chris J. Myers =
+<myers@ece.utah.edu<mailto:myers@ece.utah.edu>> wrote:
+> > Hmm, that is strange.  The needed cygwin libraries should be found =
+in iBioSim/bin directory.  If you can find this dll file online and =
+install it in the bin directory it might help.  I wonder if this is =
+windows 8 issue as I've never run on windows 8 before.
+> >
+> > Curtis: is GeneNet version built by you or is this the old one built =
+by me?
+> >
+> > Chris
+> >
+> > On Feb 14, 2013, at 10:22 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> >
+> > I got this message. "The program can't start because cyggcc_s-1.dll =
+is missing from your computer."
+> >
+> >
+> > On Thu, Feb 14, 2013 at 10:19 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> > Tutorial question.
+> >
+> >
+> > On Thu, Feb 14, 2013 at 10:18 AM, Chris J. Myers =
+<myers@ece.utah.edu<mailto:myers@ece.utah.edu>> wrote:
+> > One more question is this while doing the tutorial or the homework =
+question?
+> >
+> > Chris
+> >
+> > On Feb 14, 2013, at 10:14 AM, Shaofan Qi =
+<chi.cedric@gmail.com<mailto:chi.cedric@gmail.com>> wrote:
+> >
+> >> Dear Prof. Myers,
+> >>
+> >> This is Shaofan Qi. I have a strange problem in using IBIOSIM. When =
+I click on the Save and Run icon, I get a message "A gcm file was not =
+generated Please see the run.log file". But the run.log is empty.
+> >>
+> >> I use Windows 8 64bit. Ibiosim is 2.4.2.
+> >>
+> >>
+> >>
+> >> Sincerely,
+> >>
+> >> Shaofan Qi
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> > <winmail.dat>
+>=20
+>=20
+
+
+--Apple-Mail=_E27BFE04-7201-4E41-81EB-70BD90F8676E
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=iso-8859-1
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Diso-8859-1"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">Shaofan Qi &lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;<br></spa=
+n></div><div style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px; margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Subject: =
+</b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;"><b>Re: A little problem</b><br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:'Helvetica'; =
+font-size:medium; color:rgba(0, 0, 0, 1.0);"><b>Date: </b></span><span =
+style=3D"font-family:'Helvetica'; font-size:medium;">February 14, 2013 =
+12:07:51 PM MST<br></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:'Helvetica'; font-size:medium; color:rgba(0, 0, 0, =
+1.0);"><b>To: </b></span><span style=3D"font-family:'Helvetica'; =
+font-size:medium;">"Chris J. Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;<br></span></=
+div><br><div dir=3D"ltr">I copy all the dll from cygwin to the =
+bin&nbsp;directory of Ibiosim's bin. The GeneNet can work now. But the =
+Ibiosim &nbsp;have a new message, "unable to learn from =
+data".<div><br></div><div style=3D"">This is log file:</div>
+<div style=3D""><div>option: &nbsp;2, text: '--debug', arg: =
+'2'</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Setting Debug Level to '2'</div><div>option: &nbsp;3, text: =
+'-ta', arg: '1.15'</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Setting =
+TA to '1.15'</div><div>option: &nbsp;4, text: '-tr', arg: =
+'0.75'</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Setting TR to '0.75'</div>
+<div>option: &nbsp;5, text: '-ti', arg: '0.5'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting TI to =
+'0.5'</div><div>option: 11, text: '--numBins', arg: '2'</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Setting numBins to =
+'2'</div>
+<div>option: 12, text: '-tm', arg: '0.0'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting TM to =
+'0'</div><div>option: 14, text: '-tt', arg: '0.025'</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Setting relaxIPDelta to =
+'0.025'</div>
+<div>option: 16, text: '-tn', arg: '2'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting TN (allows n IVs though =
+first round) to '2'</div><div>option: 26, text: '-tj', arg: '2'</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Setting =
+TJ to '2'</div><div>option: 17, text: =
+'--cpp_harshenBoundsOnTie'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting CPP to use harsher =
+bounds</div>
+<div>option: 18, text: =
+'--cpp_cmp_output_donotInvertSortOrder'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting sort order to not be =
+inverted for AR</div><div>option: 19, text: '--cpp_seedParents'</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Setting =
+CMP competitions to be seeded</div><div>option: 20, text: =
+'--cmp_score_mustNotWinMajority'</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Setting CMP and score to use the =
+actual score, and not disallow a &gt; r+n or r &gt; a+n</div>
+<div>file &nbsp;0: '.'</div><div>Reading background =
+knowledge</div><div>1 CI CI</div><div>2 CII CII</div><div>CI =
+uu</div><div>CII uu</div><div>Reading the TSD files</div><div>Got =
+'./run-1.tsd' for call</div><div>
+Reading ./run-1.tsd</div><div>Reading ./run-2.tsd</div><div>Reading =
+./run-3.tsd</div><div>Reading ./run-4.tsd</div><div>Reading =
+./run-5.tsd</div><div>Reading ./run-6.tsd</div><div>Reading =
+./run-7.tsd</div><div>Reading ./run-8.tsd</div>
+<div>Reading ./run-9.tsd</div><div>Reading =
+./run-10.tsd</div><div>Reading ./run-11.tsd</div><div>Reading =
+./run-12.tsd</div><div>Reading ./run-13.tsd</div><div>Reading =
+./run-14.tsd</div><div>Reading ./run-15.tsd</div><div>
+Reading ./run-16.tsd</div><div>Reading ./run-17.tsd</div><div>Reading =
+./run-18.tsd</div><div>Reading ./run-19.tsd</div><div>Reading =
+./run-20.tsd</div><div>Read in 20 tsd files</div><div>Finished Reading =
+the TSD files</div>
+<div>Removing the Time specie from the list</div><div>Opening =
+./contenders.txt for write</div><div>Encoding the =
+experiments</div><div>Filling hashes now</div><div>Clearing =
+Levels</div><div>Assigning values for species 0</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Assigning =
+levels for specie 0 numBins 2, Bin size: 2110, Amount left 4220, Amount =
+seen 0</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 20, bin Size:2110, current value: 0</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 40, bin Size:2110, current value: 10</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 60, =
+bin Size:2110, current value: 20</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 80, bin =
+Size:2110, current value: 30</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 100, bin Size:2110, current value: 40</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 120, =
+bin Size:2110, current value: 50</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 140, bin Size:2110, current value: 60</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 160, bin =
+Size:2110, current value: 70</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 180, bin =
+Size:2110, current value: 80</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 200, bin Size:2110, current value: 90</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 220, =
+bin Size:2110, current value: 100</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 240, bin Size:2110, current value: 110</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 260, bin =
+Size:2110, current value: 120</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 280, bin =
+Size:2110, current value: 130</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 300, bin Size:2110, current value: =
+140</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 320, bin Size:2110, current value: 150</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 340, bin Size:2110, current value: 160</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 360, bin =
+Size:2110, current value: 170</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 380, bin =
+Size:2110, current value: 180</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 400, bin Size:2110, current value: =
+190</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 420, bin Size:2110, current value: 200</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 440, bin Size:2110, current value: 210</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 460, bin =
+Size:2110, current value: 220</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 480, bin =
+Size:2110, current value: 230</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 500, bin Size:2110, current value: =
+240</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 520, bin Size:2110, current value: 250</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 540, bin Size:2110, current value: 260</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 560, bin =
+Size:2110, current value: 270</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 580, bin =
+Size:2110, current value: 280</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 600, bin Size:2110, current value: =
+290</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 620, bin Size:2110, current value: 300</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 640, bin Size:2110, current value: 310</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 660, bin =
+Size:2110, current value: 320</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 680, bin =
+Size:2110, current value: 330</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 700, bin Size:2110, current value: =
+340</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 720, bin Size:2110, current value: 350</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 740, bin Size:2110, current value: 360</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 760, bin =
+Size:2110, current value: 370</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 780, bin =
+Size:2110, current value: 380</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 800, bin Size:2110, current value: =
+390</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 820, bin Size:2110, current value: 400</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 840, bin Size:2110, current value: 410</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 860, bin =
+Size:2110, current value: 420</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 880, bin =
+Size:2110, current value: 430</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 900, bin Size:2110, current value: =
+440</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 920, bin Size:2110, current value: 450</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 940, bin Size:2110, current value: 460</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 960, bin =
+Size:2110, current value: 470</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 980, bin =
+Size:2110, current value: 480</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1000, bin Size:2110, current value: =
+490</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1020, bin Size:2110, current value: 500</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1040, bin Size:2110, current value: 510</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1060, bin =
+Size:2110, current value: 520</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1080, bin =
+Size:2110, current value: 530</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1100, bin Size:2110, current value: =
+540</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1120, bin Size:2110, current value: 550</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1140, bin Size:2110, current value: 560</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1160, bin =
+Size:2110, current value: 570</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1180, bin =
+Size:2110, current value: 580</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1200, bin Size:2110, current value: =
+590</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1220, bin Size:2110, current value: 600</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1240, bin Size:2110, current value: 610</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1260, bin =
+Size:2110, current value: 620</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1280, bin =
+Size:2110, current value: 630</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1300, bin Size:2110, current value: =
+640</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1320, bin Size:2110, current value: 650</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1340, bin Size:2110, current value: 660</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1360, bin =
+Size:2110, current value: 670</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1380, bin =
+Size:2110, current value: 680</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1400, bin Size:2110, current value: =
+690</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1420, bin Size:2110, current value: 700</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1440, bin Size:2110, current value: 710</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1460, bin =
+Size:2110, current value: 720</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1480, bin =
+Size:2110, current value: 730</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1500, bin Size:2110, current value: =
+740</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1520, bin Size:2110, current value: 750</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1540, bin Size:2110, current value: 760</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1560, bin =
+Size:2110, current value: 770</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1580, bin =
+Size:2110, current value: 780</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1600, bin Size:2110, current value: =
+790</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1620, bin Size:2110, current value: 800</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1640, bin Size:2110, current value: 810</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1660, bin =
+Size:2110, current value: 820</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1680, bin =
+Size:2110, current value: 830</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1700, bin Size:2110, current value: =
+840</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1720, bin Size:2110, current value: 850</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1740, bin Size:2110, current value: 860</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1760, bin =
+Size:2110, current value: 870</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1780, bin =
+Size:2110, current value: 880</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1800, bin Size:2110, current value: =
+890</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1820, bin Size:2110, current value: 900</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1840, bin Size:2110, current value: 910</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1860, bin =
+Size:2110, current value: 920</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1880, bin =
+Size:2110, current value: 930</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1900, bin Size:2110, current value: =
+940</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1920, bin Size:2110, current value: 950</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1940, bin Size:2110, current value: 960</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1960, bin =
+Size:2110, current value: 970</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1980, bin =
+Size:2110, current value: 980</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2000, bin Size:2110, current value: =
+990</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2020, bin Size:2110, current value: 1000</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2040, bin Size:2110, current value: =
+1010</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2060, bin Size:2110, current value: 1020</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2080, bin Size:2110, current value: =
+1030</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2100, bin Size:2110, current value: 1040</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 2120, bin Size:2110, current value: =
+1050</div><div><span class=3D"" style=3D"white-space:pre">			=
+</span>Found a bin at v[2119], value: 1050</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Assigning level 0 for =
+specie 0 at 1050</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>New bin Size:2100 =3D 2100 / (2 - 1)</div><div>Assigning values =
+for species 1</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Assigning levels for specie 1 numBins 2, Bin size: 2110, Amount =
+left 4220, Amount seen 0</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 469, bin Size:2110, current value: 0</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 754, =
+bin Size:2110, current value: 1</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1016, bin =
+Size:2110, current value: 2</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1278, bin Size:2110, current value: 3</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 1510, =
+bin Size:2110, current value: 4</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 1768, bin Size:2110, current value: 5</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 2045, bin =
+Size:2110, current value: 6</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 2266, bin =
+Size:2110, current value: 7</div>
+<div><span class=3D"" style=3D"white-space:pre">			=
+</span>Found a bin at v[2265], value: 7</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Assigning level 0 for =
+specie 1 at 7</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>New bin Size:1954 =3D 1954 / (2 - 1)</div>
+<div>Assigning values for species 2</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Assigning levels for specie 2 =
+numBins 2, Bin size: 2110, Amount left 4220, Amount seen =
+0</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 222, bin Size:2110, current value: 0</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 494, bin Size:2110, current value: 1</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 832, =
+bin Size:2110, current value: 2</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 1171, bin =
+Size:2110, current value: 3</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Amount Seen 1485, bin Size:2110, current value: 4</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>Amount Seen 1804, =
+bin Size:2110, current value: 5</div><div>
+<span class=3D"" style=3D"white-space:pre">		</span>Amount =
+Seen 2100, bin Size:2110, current value: 6</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>Amount Seen 2372, bin =
+Size:2110, current value: 7</div><div><span class=3D"" =
+style=3D"white-space:pre">			</span>Found a bin at =
+v[2371], value: 7</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Assigning level 0 for specie 2 at 7</div><div><span class=3D"" =
+style=3D"white-space:pre">		</span>New bin Size:1848 =3D =
+1848 / (2 - 1)</div><div>Levels for ( 'time' : '0') are: =
+&nbsp;1050</div>
+<div>Levels for ( 'CI' : '1') are: &nbsp;7</div><div>Levels for ( 'CII' =
+: '2') are: &nbsp;7</div><div>Finished initializing</div><div>Finished =
+encoding</div><div><br></div><div>Using specie ( 'CI' : '1') as a =
+child</div>
+<div>Remove mutations not implemented</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>We are sorting with inverted 0 P set:{ 0, &nbsp;0.001 ( 'CII' : =
+'2'), } and G set { 0, &nbsp;0.001 ( 'CI' : '1'), }</div>
+<div>Opening ( 'CI' : '1') for write</div><div><span class=3D"" =
+style=3D"white-space:pre">				</span>Next =3D =
+-01</div><div><span class=3D"" style=3D"white-space:pre">			=
+	</span>Trying to create a ratio</div><div><span class=3D"" =
+style=3D"white-space:pre">				=
+</span>Calculating the baseSet</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>-00 is Comparable</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Found probability of 0.0142653</div><div><span class=3D"" =
+style=3D"white-space:pre">				</span>Next prob =
+-01 =3D 116 / 853 =3D 0.135991</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>Ratio is 0.0142653 / 0.135991 =3D 9.53294</div><div><span =
+class=3D"" style=3D"white-space:pre">				=
+</span>Finding a new bin because there is no base to compare =
+to</div><div>
+<span class=3D"" style=3D"white-space:pre">				=
+</span>Next =3D -11</div><div><span class=3D"" style=3D"white-space:pre">	=
+			</span>Trying to create a ratio</div><div><span =
+class=3D"" style=3D"white-space:pre">				=
+</span>Calculating the baseSet</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>-10 is Comparable</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Read to the end of a lattice level</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Those are a good base set</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>Found probability of 0.0271116</div><div><span class=3D"" =
+style=3D"white-space:pre">				</span>Next prob =
+-11 =3D 105 / 986 =3D 0.106491</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Ratio is 0.0271116 / 0.106491 =3D 3.92787</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+		</span>Calculated all the ratios</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>votes (a,r,u) (2 =
+0 0) or (2 - 0)/(2)</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Score of 1 and threshold +-0.5</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div><div>There are not enough parents =
+for ( 'CI' : '1'), relaxing the thresholds to [0.775, 1.125] and Ti =
+0.5</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Testing specie ( 'CII' : '2') as a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.8, 1.1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.825, 1.075] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.85, 1.05] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [0.875, 1.025] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.9</div><div>There are not enough parents for ( 'CI' : '1'), relaxing =
+the thresholds to [0.9, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.925</div><div>There are not enough parents for ( 'CI' : '1'), relaxing =
+the thresholds to [0.925, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.95</div><div>There are not enough parents for ( 'CI' : '1'), relaxing =
+the thresholds to [0.95, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.975</div><div>There are not enough parents for ( 'CI' : '1'), relaxing =
+the thresholds to [0.975, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.475</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.475</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.45</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.45</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.425</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.425</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.4</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.4</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.375</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.375</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.35</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.35</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.325</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.325</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.3</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.3</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.275</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.275</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.25</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.25</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.225</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.225</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.2</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.2</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.175</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.175</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.15</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.15</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.125</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.125</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.1</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.1</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.075</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.075</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.05</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.05</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0.025</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0.025</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CII' : '2') as =
+a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold =
++-0</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means an activation parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CI' : '1'), relaxing the =
+thresholds to [1, 1] and Ti 0</div><div>CANNOT RELAX BOUNDS MORE TO LET =
+2 parent through</div>
+<div>Rescoring parents with harsher numbers, as we relaxed the =
+bounds</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (2, 0, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of 1 and threshold +- 0.5 =
+for ( 'CII' : '2')</div>
+<div>Initial parents for ( 'CI' : '1') are: &lt; { 1, &nbsp;1 ( 'CII' : =
+'2'), } &gt;</div><div>In Create Multiple Parents for ( 'CI' : '1') with =
+&lt; { 1, &nbsp;1 ( 'CII' : '2'), } &gt;</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Which =
+colapses to { 0, &nbsp;1 ( 'CII' : '2'), }</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Creating parents sets of 2 =
+bases</div><div>Multiple parents for ( 'CI' : '1') are: &lt; { 1, =
+&nbsp;1 ( 'CII' : '2'), } &gt;</div>
+<div>Competing parents for child ( 'CI' : '1')</div><div>After Competion =
+&lt; { 1, &nbsp;1 ( 'CII' : '2'), } &gt; is the winner set for child ( =
+'CI' : '1')</div><div>Gene =3D ( 'CI' : '1')</div>
+<div><br></div><div>Using specie ( 'CII' : '2') as a =
+child</div><div>Remove mutations not implemented</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Testing specie ( 'CI' : =
+'1') as a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>We are sorting with inverted 0 P set:{ 0, &nbsp;0.001 ( 'CI' : =
+'1'), } and G set { 0, &nbsp;0.001 ( 'CII' : '2'), }</div><div>Opening ( =
+'CII' : '2') for write</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+</span>Next =3D -10</div><div><span class=3D"" style=3D"white-space:pre">	=
+			</span>Trying to create a ratio</div><div><span =
+class=3D"" style=3D"white-space:pre">				=
+</span>Calculating the baseSet</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>-00 is Comparable</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Found probability of 0.10271</div><div><span class=3D"" =
+style=3D"white-space:pre">				</span>Next prob =
+-10 =3D 14 / 959 =3D 0.0145985</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>Ratio is 0.10271 / 0.0145985 =3D 0.142133</div><div><span =
+class=3D"" style=3D"white-space:pre">				=
+</span>Finding a new bin because there is no base to compare =
+to</div><div>
+<span class=3D"" style=3D"white-space:pre">				=
+</span>Next =3D -11</div><div><span class=3D"" style=3D"white-space:pre">	=
+			</span>Trying to create a ratio</div><div><span =
+class=3D"" style=3D"white-space:pre">				=
+</span>Calculating the baseSet</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>-01 is Comparable</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Read to the end of a lattice level</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Those are a good base set</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+	</span>Found probability of 0.0890973</div><div><span class=3D"" =
+style=3D"white-space:pre">				</span>Next prob =
+-11 =3D 4 / 986 =3D 0.0040568</div><div><span class=3D"" =
+style=3D"white-space:pre">					=
+</span>Ratio is 0.0890973 / 0.0040568 =3D 0.0455322</div>
+<div><span class=3D"" style=3D"white-space:pre">				=
+		</span>Calculated all the ratios</div><div><span =
+class=3D"" style=3D"white-space:pre">		</span>votes (a,r,u) (0 =
+2 0) or (0 - 2)/(2)</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Score of -1 and threshold +-0.5</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div><div>There are not enough parents =
+for ( 'CII' : '2'), relaxing the thresholds to [0.775, 1.125] and Ti =
+0.5</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>Testing specie ( 'CI' : '1') as a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.8, 1.1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.825, 1.075] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.85, 1.05] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>There are not enough parents for ( 'CII' : '2'), relaxing the =
+thresholds to [0.875, 1.025] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.9</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [0.9, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.925</div><div>There are not enough parents for ( 'CII' : '2'), =
+relaxing the thresholds to [0.925, 1] and Ti 0.5</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Testing specie ( 'CI' : =
+'1') as a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.95</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [0.95, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+0.975</div><div>There are not enough parents for ( 'CII' : '2'), =
+relaxing the thresholds to [0.975, 1] and Ti 0.5</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Testing specie ( 'CI' : =
+'1') as a parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.5</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.5</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.475</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.475</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.45</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.45</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.425</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.425</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.4</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.4</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.375</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.375</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.35</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.35</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.325</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.325</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.3</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.3</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.275</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.275</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.25</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.25</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.225</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.225</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.2</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.2</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.175</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.175</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.15</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.15</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.125</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.125</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.1</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.1</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.075</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.075</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.05</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.05</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0.025</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0.025</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Testing specie ( 'CI' : '1') as a =
+parent</div>
+<div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold =
++-0</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Means a represion parent</div>
+<div>ERROR: Activation or Represison thresholds reduced too much: 1 =
+1</div><div>There are not enough parents for ( 'CII' : '2'), relaxing =
+the thresholds to [1, 1] and Ti 0</div><div>CANNOT RELAX BOUNDS MORE TO =
+LET 2 parent through</div>
+<div>Rescoring parents with harsher numbers, as we relaxed the =
+bounds</div><div><span class=3D"" style=3D"white-space:pre">		=
+</span>Found score in score cache (0, 2, 0)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Score of -1 and threshold +- 0.5 =
+for ( 'CI' : '1')</div>
+<div>Initial parents for ( 'CII' : '2') are: &lt; { -1, &nbsp;-1 ( 'CI' =
+: '1'), } &gt;</div><div>In Create Multiple Parents for ( 'CII' : '2') =
+with &lt; { -1, &nbsp;-1 ( 'CI' : '1'), } &gt;</div>
+<div><span class=3D"" style=3D"white-space:pre">	</span>Which =
+colapses to { 0, &nbsp;-1 ( 'CI' : '1'), }</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Creating parents sets of 2 =
+bases</div><div>Multiple parents for ( 'CII' : '2') are: &lt; { -1, =
+&nbsp;-1 ( 'CI' : '1'), } &gt;</div>
+<div>Competing parents for child ( 'CII' : '2')</div><div>After =
+Competion &lt; { -1, &nbsp;-1 ( 'CI' : '1'), } &gt; is the winner set =
+for child ( 'CII' : '2')</div><div>Gene =3D ( 'CII' : '2')</div>
+<div>All Network Connections are</div><div>Net Con</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>Child ( 'CI' : '1') has =
+&lt; { 1, &nbsp;1 ( 'CII' : '2'), } &gt;</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>Child ( 'CII' : '2') has &lt; { =
+-1, &nbsp;-1 ( 'CI' : '1'), } &gt;</div>
+<div>End Net Con</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>but score may be changed using an and sort for multiple =
+parents</div><div>Exiting the GeneNet algorithm</div><div>Opening =
+./method.gcm for write</div>
+<div>Finished writing the species list</div><div>Exiting and destroying =
+Species, Experiments, NetCon, Thresholds, Encodings</div><div>Clearing =
+Levels</div><div>Clearing the species that we =
+created</div><div>Done</div><div>
+<br></div></div></div><div class=3D"gmail_extra"><br><br><div =
+class=3D"gmail_quote">On Thu, Feb 14, 2013 at 10:58 AM, Chris J. Myers =
+<span dir=3D"ltr">&lt;<a href=3D"mailto:myers@ece.utah.edu" =
+target=3D"_blank">myers@ece.utah.edu</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 =
+.8ex;border-left:1px #ccc solid;padding-left:1ex">Shaofan: please let me =
+know if placing this file in your bin directory solves your problem? =
+&nbsp;If so, I will post an announcement for the class.<br>
+
+<br>
+Chris<br>
+<div class=3D"im"><br>
+On Feb 14, 2013, at 10:57 AM, Curtis Kendall Madsen &lt;<a =
+href=3D"mailto:curtis.madsen@utah.edu">curtis.madsen@utah.edu</a>&gt; =
+wrote:<br>
+<br>
+&gt; I placed the dll in my public-html folder. &nbsp;You can download =
+it at:<br>
+&gt;<br>
+</div>&gt; <a =
+href=3D"http://www.async.ece.utah.edu/~cmadsen/cyggcc_s-1.dll" =
+target=3D"_blank">www.async.ece.utah.edu/~cmadsen/cyggcc_s-1.dll</a>&lt;<a=
+ href=3D"http://www.async.ece.utah.edu/~cmadsen/cyggcc_s-1.dll" =
+target=3D"_blank">http://www.async.ece.utah.edu/~cmadsen/cyggcc_s-1.dll</a=
+>&gt;<br>
+
+<div class=3D"im">&gt;<br>
+&gt; Let me know if there is anything else I can do to help.<br>
+&gt;<br>
+&gt; Curtis<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Feb 14, 2013, at 10:43 AM, "Chris J. =
+Myers" &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&lt;mailto:<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt; Hmm, strange. &nbsp;Not sure why GeneNet would need this extra =
+library. &nbsp;You could try putting this extra library in the bin =
+directory and see if that helps. &nbsp;You should not need to install =
+all of cygwin.<br>
+&gt;<br>
+&gt; Curtis: could you check if you have this DLL and put it somewhere =
+that my student can get at?<br>
+&gt;<br>
+&gt; Chris<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Feb 14, 2013, at 10:40 AM, Shaofan Qi =
+&lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt; It can work :<br>
+&gt; Microsoft Windows [Version 6.2.9200]<br>
+&gt; (c) 2012 Microsoft Corporation. All rights reserved.<br>
+&gt;<br>
+&gt;<br>
+&gt; C:\Program Files\IBIOSIM\bin&gt;reb2sac.exe<br>
+&gt; usage: reb2sac [options] &lt;source-filename&gt;<br>
+&gt; where options are:<br>
+&gt; --&lt;key&gt;=3D&lt;value&gt; predefined keys are:<br>
+&gt; source.encoding, target.encoding, out and reb2sac.properties<br>
+&gt; --source.encoding=3Dsbml is default<br>
+&gt; --target.encoding=3Dhse2 is default<br>
+&gt; --out=3D&lt;target-filename&gt; if this option is not provided, the =
+target filename is s<br>
+&gt; pecified by backend<br>
+&gt; --reb2sac.properties=3Ddefault is default<br>
+&gt; --reb2sac.properties.file can be used to specfied a properties file =
+for default<br>
+&gt; reb2sac properties handler<br>
+&gt;<br>
+&gt; C:\Program Files\IBIOSIM\bin&gt;<br>
+&gt;<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Thu, Feb 14, 2013 at 10:38 AM, Chris J. =
+Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&lt;mailto:<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;&gt; =
+wrote:<br>
+
+&gt; Perhaps, though it is strange. &nbsp;In the past, the inclusion of =
+cygwin1.dll was sufficient. &nbsp;It may be perhaps that this dll is not =
+valid for Windows 8. &nbsp;Just out of curiosity, could you see if =
+reb2sac.exe will run?<br>
+
+&gt;<br>
+&gt; Chris<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Feb 14, 2013, at 10:36 AM, Shaofan Qi =
+&lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt; I think I have to install Cygwin in my computer.<br>
+&gt;<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Thu, Feb 14, 2013 at 10:34 AM, Chris J. =
+Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&lt;mailto:<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;&gt; =
+wrote:<br>
+
+&gt; I found this online. &nbsp;Maybe this will help:<br>
+&gt;<br>
+&gt; <a href=3D"http://cygwin.com/ml/cygwin/2011-01/msg00305.html" =
+target=3D"_blank">http://cygwin.com/ml/cygwin/2011-01/msg00305.html</a><br=
+>
+&gt;<br>
+&gt; Chris<br>
+&gt;<br>
+</div><div><div class=3D"h5">&gt; On Feb 14, 2013, at 10:30 AM, Shaofan =
+Qi &lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt; This is the list of files in Ibiosim\bin<br>
+&gt;<br>
+&gt; bzip2.dll<br>
+&gt; &nbsp; &nbsp;cygwin1.dll<br>
+&gt; &nbsp; &nbsp;ffmpeg<br>
+&gt; &nbsp; &nbsp;ffmpeg.exe<br>
+&gt; &nbsp; &nbsp;ffmpeg.exe64<br>
+&gt; &nbsp; &nbsp;ffmpeg.linux64<br>
+&gt; &nbsp; &nbsp;GeneNet.exe<br>
+&gt; &nbsp; &nbsp;GeneNet.linux<br>
+&gt; &nbsp; &nbsp;GeneNet.linux64<br>
+&gt; &nbsp; &nbsp;GeneNet64<br>
+&gt; &nbsp; &nbsp;iBioSim.bat<br>
+&gt; &nbsp; &nbsp;iBioSim.linux<br>
+&gt; &nbsp; &nbsp;iBioSim.linux64<br>
+&gt; &nbsp; &nbsp;iconv.dll<br>
+&gt; &nbsp; &nbsp;libexpat.dll<br>
+&gt; &nbsp; &nbsp;libsbml.dll<br>
+&gt; &nbsp; &nbsp;libsbml32.dll<br>
+&gt; &nbsp; &nbsp;libxml2.dll<br>
+&gt; &nbsp; &nbsp;libyices.dll<br>
+&gt; &nbsp; &nbsp;msvcp100.dll<br>
+&gt; &nbsp; &nbsp;msvcr100.dll<br>
+&gt; &nbsp; &nbsp;MSVCRT.DLL<br>
+&gt; &nbsp; &nbsp;reb2sac.exe<br>
+&gt; &nbsp; &nbsp;reb2sac.linux<br>
+&gt; &nbsp; &nbsp;reb2sac.linux64<br>
+&gt; &nbsp; &nbsp;s2lpn<br>
+&gt; &nbsp; &nbsp;sbmlj.dll<br>
+&gt; &nbsp; &nbsp;xerces-c_3_1.dll<br>
+&gt; &nbsp; &nbsp;zlib1.dll<br>
+&gt;<br>
+&gt;<br>
+</div></div><div class=3D"im">&gt; On Thu, Feb 14, 2013 at 10:25 AM, =
+Chris J. Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&lt;mailto:<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;&gt; =
+wrote:<br>
+
+&gt; Hmm, that is strange. &nbsp;The needed cygwin libraries should be =
+found in iBioSim/bin directory. &nbsp;If you can find this dll file =
+online and install it in the bin directory it might help. &nbsp;I wonder =
+if this is windows 8 issue as I've never run on windows 8 before.<br>
+
+&gt;<br>
+&gt; Curtis: is GeneNet version built by you or is this the old one =
+built by me?<br>
+&gt;<br>
+&gt; Chris<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Feb 14, 2013, at 10:22 AM, Shaofan Qi =
+&lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt; I got this message. "The program can't start because cyggcc_s-1.dll =
+is missing from your computer."<br>
+&gt;<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Thu, Feb 14, 2013 at 10:19 AM, Shaofan =
+Qi &lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt; Tutorial question.<br>
+&gt;<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Thu, Feb 14, 2013 at 10:18 AM, Chris J. =
+Myers &lt;<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&lt;mailto:<a =
+href=3D"mailto:myers@ece.utah.edu">myers@ece.utah.edu</a>&gt;&gt; =
+wrote:<br>
+
+&gt; One more question is this while doing the tutorial or the homework =
+question?<br>
+&gt;<br>
+&gt; Chris<br>
+&gt;<br>
+</div><div class=3D"im">&gt; On Feb 14, 2013, at 10:14 AM, Shaofan Qi =
+&lt;<a =
+href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&lt;mailto:<a=
+ href=3D"mailto:chi.cedric@gmail.com">chi.cedric@gmail.com</a>&gt;&gt; =
+wrote:<br>
+
+&gt;<br>
+&gt;&gt; Dear Prof. Myers,<br>
+&gt;&gt;<br>
+&gt;&gt; This is Shaofan Qi. I have a strange problem in using IBIOSIM. =
+When I click on the Save and Run icon, I get a message "A gcm file was =
+not generated Please see the run.log file". But the run.log is =
+empty.<br>
+
+&gt;&gt;<br>
+&gt;&gt; I use Windows 8 64bit. Ibiosim is 2.4.2.<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt; Sincerely,<br>
+&gt;&gt;<br>
+&gt;&gt; Shaofan Qi<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+</div>&gt; &lt;winmail.dat&gt;<br>
+<br>
+</blockquote></div><br></div>
+</blockquote></div><br></body></html>=
+
+--Apple-Mail=_E27BFE04-7201-4E41-81EB-70BD90F8676E--
+

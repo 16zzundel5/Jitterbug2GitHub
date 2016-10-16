@@ -1,0 +1,14 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: add support for globally and eventually to markov analysis (PR#5352)
+Date: Fri Jul  8 00:51:47 2011
+
+This should be working now.  Moving to needs testing.
+
+> Markov analysis needs to support eventually which is just:
+> 
+> PF(p) <=> true PU p
+> 
+> PG(p) <=> true PU ~p then take 1-p where p is the determined probability.
+> 
+> 

@@ -1,0 +1,51 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: rodrigue@ebi.ac.uk
+Subject: Re: FEATURE/CHANGE : iBioSim pre-compiled program (PR#5362)
+Date: Fri May 13 16:47:24 2011
+CC: myers@ece.utah.edu
+
+Hi Nico,
+
+I've tried unsuccessfully to construct a static build of reb2sac.  This would be
+simplest to distribute to avoid the hassle of making people build this locally. 
+Do you know of any way to tell gcc to construct an executable that is compatible
+with earlier version of linux?  If we were to compile for an earlier version,
+which version or versions would we need to target?  Any suggestions on the best
+way to make the install more linux distribution flexible would be very happily
+received.
+
+Perhaps, the only solution is to distribute source for both our C/C++ programs
+and libsbml on linux and make compilation part of the installation.  However, I
+would love to avoid this hassle, if at all possible.
+
+Thanks,
+
+Chris 
+
+> Hello,
+> 
+> While trying to use IBioSim, I noticed that some programs did not work 
+> on our setup (Centos 5.4), which I was expecting as the compilation 
+> seems to have been made for Fedora 13.
+> 
+> Is it possible to get the sources of the programs to be able to compile 
+> them locally which would be the best for us or to get a version compiled 
+> for an earlier version of Linux ?
+> 
+> Here is the error I am getting in the 'command log' frame :
+> 
+> --------------------------------------
+> Executing:
+> reb2sac --target.encoding=rkf45 /homes/rodrigue/sbmlData/iBiosim/1/Test1.xml
+> 
+> Errors:
+> reb2sac: /lib64/libc.so.6: version `GLIBC_2.7' not found (required by 
+> reb2sac)
+> --------------------------------------
+> 
+> 
+> Thanks,
+> Nico
+> 
+> 
+> 

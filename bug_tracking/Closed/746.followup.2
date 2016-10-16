@@ -1,0 +1,41 @@
+From atacs-bugs  Sat Mar  8 18:33:38 2003
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.11.6/8.11.6) id h291Xc726529
+	for atacs-bugs@shang.elen.utah.edu; Sat, 8 Mar 2003 18:33:38 -0700
+Received: from jiaqi.stanford.edu (SW-90-710-281-1.Stanford.EDU [171.66.154.15])
+	by chou.ece.utah.edu (8.11.6/8.11.6) with ESMTP id h291XbZ26526
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 8 Mar 2003 18:33:37 -0700
+Received: from localhost (myers@localhost)
+	by jiaqi.stanford.edu (8.11.6/8.11.6) with ESMTP id h291NT202695
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 8 Mar 2003 17:23:29 -0800
+X-Authentication-Warning: jiaqi.stanford.edu: myers owned process doing -bs
+Date: Sat, 8 Mar 2003 17:23:29 -0800 (PST)
+From: "Chris J. Myers" <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@jiaqi.stanford.edu
+To: Eric Robert Peskin <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: Re: channel-level verification fails for MPEG example (PR#746)
+In-Reply-To: <200303032359.h23NxZZ09524@chou.ece.utah.edu>
+Message-ID: <Pine.LNX.4.44.0303081719390.2692-100000@jiaqi.stanford.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+> Could you take a look at this bug report?
+> The upshot is that the command that used to work for the MPEG
+> example doesn't work anymore.
+> 
+Problem is indeed in postproc.cc.  Even turning postprocess off does not 
+help due to the issue that individual files are compiled first before 
+commands are executed (problem we discussed before).  A workaround would 
+be to go to memaloc.c and change default of design->postproc and 
+design->redchk to FALSE.  Don't check this in though as it is not a good 
+general solution as it will make all the regressins tests now not use 
+postprocessing.  One way to trace this down would be to compare what the 
+tel's look like after postprocessing each component (use -ov).  This is 
+likely a lot of work though as the example is very large.  My guess is 
+that it may be a conflict issue, but I'm not sure.  Hope this helps for 
+now till I have more time to look at it.
+
+Chris
+
+

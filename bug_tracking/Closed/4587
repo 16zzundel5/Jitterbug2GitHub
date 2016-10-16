@@ -1,0 +1,35 @@
+From myers@ece.utah.edu  Fri Sep 26 14:09:07 2008
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.4 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m8QK96MT017753
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 26 Sep 2008 14:09:06 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.101])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1KjJI4-0008RY-OA
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 26 Sep 2008 13:47:48 -0600
+Message-Id: <5F0C0782-3632-40CA-803E-FDD453194431@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v926)
+Subject: FEATURE: new file types
+Date: Fri, 26 Sep 2008 14:09:01 -0600
+X-Mailer: Apple Mail (2.926)
+
+Add the following file types (icons to be determined later):
+
+VHDL/VHDL-AMS Model (vhd) <-- All (-lv)
+CSP Model (csp) <-- All (-lc)
+Handshaking Expansion (hse) <-- All (-lh)
+(Labeled Hybrid) Petri Net (g) <-- All (-ll)
+Extended Burst  Mode Machine (unc) <-- Syn / View (-lxodds)
+Reduced State Graphs (rsg) <-- Syn / View (-lsodds)
+
+

@@ -1,0 +1,278 @@
+From myers@eng.utah.edu  Fri Sep 16 09:08:21 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u8GF8LwT015548
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 16 Sep 2016 09:08:21 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.87 id 1bkukG-000GMG-1w)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 16 Sep 2016 09:08:20 -0600
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.88])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:ECDHE-RSA-AES256-SHA:256)
+	(Exim 4.87 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1bkujY-0002RH-6Y
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 16 Sep 2016 09:07:20 -0600
+From: Chris Myers <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_DC0FB68E-4A02-4D00-AEC3-44EA0E7CBF33"
+Subject: CHANGE: libSBML-5.14.0-experimental
+Date: Fri, 16 Sep 2016 09:07:58 -0600
+References: <10790a10-07c2-5e04-0538-872ea16e3f77@caltech.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <30643F2F-B75F-4E7C-A3FC-E02B9C937675@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+X-Mailer: Apple Mail (2.3124)
+X-UCE-Score: -2.4 (--)
+X-spam-level: --
+
+
+--Apple-Mail=_DC0FB68E-4A02-4D00-AEC3-44EA0E7CBF33
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> From: Sarah Keating <skeating@caltech.edu>
+> Subject: [sbml-discuss] Release of libSBML-5.14.0-experimental
+> Date: September 16, 2016 at 8:38:06 AM MDT
+> To: SBML Discussion List <sbml-discuss@googlegroups.com>, LibSBML =
+Development List <libsbml-development@googlegroups.com>
+> Reply-To: sbml-discuss@googlegroups.com
+>=20
+> ---------------------------------------
+> libSBML-5.14.0-experimental
+> ----------------------------------------
+>=20
+> We are pleased to announce the release of libSBML-5.14.0-experimental,
+> which is available for download from
+>=20
+> =
+https://sourceforge.net/projects/sbml/files/libsbml/5.14.0-experimental/
+>=20
+> The main change in this release is that it supports the SBML L3V2(RC1)
+> specification and has the relaxations that have been made to SBML L3V1
+> in the L3V1R2 (RC1) specification.  There will be a presentation at
+> COMBINE 2016 outlining the main changes and things that software
+> developers need to consider. We will make this presentation available
+> shortly after the meeting.
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> 5.14.0 (2016-09-15)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> ***                 Experimental-only release                    ***
+>=20
+> This is an experimental-only release; that is, a release of those
+> files provided in the experimental folder of a full release.
+>=20
+> This includes updates to all the SBML L3 packages that are not yet
+> accepted and undergoing development.
+>=20
+> NOTE: An experimental release is not as rigorously tested as a
+> full release.  Any changes/fixes listed as either referring to
+> stable or experimental code may change before the next full release.
+>=20
+> This release includes support for the SBML L3V1R2(RC1) and L3V2(RC1)
+> Release Candidate specifications.
+>=20
+> STABLE RELEASE
+>=20
+> * New features
+>=20
+>    - An Iterator class has been added to the List utility.
+> =09
+> * Bug fixes
+>=20
+>    - Validation was not being correctly invoked on <localParameter>
+>      objects. This has been fixed.
+>=20
+>    - The functions for parsing a string to an ASTNode would cause a
+>      crash if passed a NULL pointer.  This has been fixed.  Thanks to
+>      Matthias K=C3=B6nig for reporting it.
+>=20
+>    - The L3Parser has been improved to catch a case when a NULL input
+>      has been provided and return an error to the user.
+>=20
+> EXPERIMENTAL RELEASE
+>=20
+> * New features
+>=20
+>    - 'multi' package-specific updates:
+>=20
+>      - Code has been updated to reflect the latest v 1.0.7 =
+specification.
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Please report any problems you encounter using libSBML either to the
+> mailing list libsbml-team@caltech.edu or using the issue tracker for
+> libSBML at
+>=20
+> https://sourceforge.net/tracker/?group_id=3D71971&atid=3D942737
+>=20
+> Thanks,
+>=20
+> the LibSBMLTeam
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "sbml-discuss" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbml-discuss+unsubscribe@googlegroups.com.
+> To post to this group, send email to sbml-discuss@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/10790a10-07c2-5e04-0538-872=
+ea16e3f77%40caltech.edu.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_DC0FB68E-4A02-4D00-AEC3-44EA0E7CBF33
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Sarah Keating &lt;<a =
+href=3D"mailto:skeating@caltech.edu" =
+class=3D"">skeating@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-discuss] =
+Release of libSBML-5.14.0-experimental</b><br class=3D""></span></div><div=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">September 16, 2016 at 8:38:06 =
+AM MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">SBML Discussion List &lt;<a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a>&gt;, LibSBML Development =
+List &lt;<a href=3D"mailto:libsbml-development@googlegroups.com" =
+class=3D"">libsbml-development@googlegroups.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><br class=3D""><div class=3D""><div =
+class=3D"">---------------------------------------<br =
+class=3D"">libSBML-5.14.0-experimental<br =
+class=3D"">----------------------------------------<br class=3D""><br =
+class=3D"">We are pleased to announce the release of =
+libSBML-5.14.0-experimental,<br class=3D"">which is available for =
+download from<br class=3D""><br class=3D""><a =
+href=3D"https://sourceforge.net/projects/sbml/files/libsbml/5.14.0-experim=
+ental/" =
+class=3D"">https://sourceforge.net/projects/sbml/files/libsbml/5.14.0-expe=
+rimental/</a><br class=3D""><br class=3D"">The main change in this =
+release is that it supports the SBML L3V2(RC1)<br class=3D"">specification=
+ and has the relaxations that have been made to SBML L3V1<br class=3D"">in=
+ the L3V1R2 (RC1) specification. &nbsp;There will be a presentation =
+at<br class=3D"">COMBINE 2016 outlining the main changes and things that =
+software<br class=3D"">developers need to consider. We will make this =
+presentation available<br class=3D"">shortly after the meeting.<br =
+class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D"">5.14.0 (2016-09-15)<br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">*** =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;Experimental-only release =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***<br class=3D""><br =
+class=3D"">This is an experimental-only release; that is, a release of =
+those<br class=3D"">files provided in the experimental folder of a full =
+release.<br class=3D""><br class=3D"">This includes updates to all the =
+SBML L3 packages that are not yet<br class=3D"">accepted and undergoing =
+development.<br class=3D""><br class=3D"">NOTE: An experimental release =
+is not as rigorously tested as a<br class=3D"">full release. &nbsp;Any =
+changes/fixes listed as either referring to<br class=3D"">stable or =
+experimental code may change before the next full release.<br =
+class=3D""><br class=3D"">This release includes support for the SBML =
+L3V1R2(RC1) and L3V2(RC1)<br class=3D"">Release Candidate =
+specifications.<br class=3D""><br class=3D"">STABLE RELEASE<br =
+class=3D""><br class=3D"">* New features<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;- An Iterator class has been added to the List =
+utility.<br class=3D""><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	</span><br class=3D"">* Bug fixes<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- Validation was not being =
+correctly invoked on &lt;localParameter&gt;<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects. This has been fixed.<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- The functions for parsing =
+a string to an ASTNode would cause a<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crash if passed a NULL pointer. &nbsp;This =
+has been fixed. &nbsp;Thanks to<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matthias K=C3=B6nig for reporting it.<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;- The L3Parser has been =
+improved to catch a case when a NULL input<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has been provided and return an error to =
+the user.<br class=3D""><br class=3D"">EXPERIMENTAL RELEASE<br =
+class=3D""><br class=3D"">* New features<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;- 'multi' package-specific updates:<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Code has been updated to =
+reflect the latest v 1.0.7 specification.<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">Please report any problems you encounter using =
+libSBML either to the<br class=3D"">mailing list =
+libsbml-team@caltech.edu or using the issue tracker for<br =
+class=3D"">libSBML at<br class=3D""><br =
+class=3D"">https://sourceforge.net/tracker/?group_id=3D71971&amp;atid=3D94=
+2737<br class=3D""><br class=3D"">Thanks,<br class=3D""><br class=3D"">the=
+ LibSBMLTeam<br class=3D""><br class=3D"">-- <br class=3D"">You received =
+this message because you are subscribed to the Google Groups =
+"sbml-discuss" group.<br class=3D"">To unsubscribe from this group and =
+stop receiving emails from it, send an email to =
+sbml-discuss+unsubscribe@googlegroups.com.<br class=3D"">To post to this =
+group, send email to sbml-discuss@googlegroups.com.<br class=3D"">To =
+view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/10790a10-07c2-5e04-0538-872=
+ea16e3f77%40caltech.edu.<br class=3D"">For more options, visit =
+https://groups.google.com/d/optout.<br =
+class=3D""></div></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_DC0FB68E-4A02-4D00-AEC3-44EA0E7CBF33--
+

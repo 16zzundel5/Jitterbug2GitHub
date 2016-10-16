@@ -1,0 +1,244 @@
+From killpack@eng.utah.edu  Tue May  2 16:35:04 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA25425
+	for <atacs-bugs@shang.elen.utah.edu>; Tue, 2 May 2000 16:35:03 -0600
+Date: Tue, 2 May 2000 16:35:03 -0600
+From: killpack@eng.utah.edu
+Message-Id: <200005022235.QAA25425@chou.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: component decleration order matters
+
+Full_Name: Kip Killpack
+Version: 
+OS: 
+spec: 
+log: 
+Submission from: chou.elen.utah.edu (155.99.23.202)
+Submitted by: killpack
+
+
+If I have a top level with an environment component and a unit under test
+component,
+I have to put the environment component declaration after the UUT component 
+declaration - otherwise it seems that the initial value is messed up.
+
+Try switching component declarations around with these files - (also add in
+intermediat signals - that causes some funky stuff that I can't figure out)
+
+Kip
+command line:
+-- atacs -mV -mz -mU -mP -mT -ms -mD -lv -M20 -ya -sv ha_a_top.vhd
+TOP:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+
+ENTITY ha_a_top IS
+END ha_a_top;
+
+ARCHITECTURE behavior of ha_a_top IS
+
+component ha_a_env
+    PORT(
+	 en : IN std_logic;
+	 d0 : IN std_logic;
+	 d1 : IN std_logic;
+	 s0 : IN std_logic;
+	 s1 : IN std_logic;
+	 a0 : INOUT std_logic := '0';
+	 a1 : INOUT std_logic := '0';
+	 b0 : INOUT std_logic := '0';
+	 b1 : INOUT std_logic := '0';
+	 de : INOUT std_logic := '0';
+	 se : INOUT std_logic := '0'
+	 );
+END component;
+
+component ha_a
+    PORT(
+	 d0 : INOUT std_logic := '0';
+	 d1 : INOUT std_logic := '0';
+	 s0 : INOUT std_logic := '0';
+	 s1 : INOUT std_logic := '0';
+	 en : INOUT std_logic := '1';
+	 a0 : IN std_logic;
+	 a1 : IN std_logic;
+	 b0 : IN std_logic;
+	 b1 : IN std_logic;
+	 de : IN std_logic;
+	 se : IN std_logic
+	 );
+END component;
+
+BEGIN
+  env : ha_a_env
+    port map (
+      a0 => a0,
+      a1 => a1,
+      b0 => b0,
+      b1 => b1,
+      en => en,
+      s0 => s0,
+      s1 => s1,
+      se => se,
+      d0 => d0,
+      d1 => d1,
+      de => de
+      );
+
+  the_ha : ha_a
+    port map (
+      a0 => a0,
+      a1 => a1,
+      b0 => b0,
+      b1 => b1,
+      en => en,
+      s0 => s0,
+      s1 => s1,
+      se => se,
+      d0 => d0,
+      d1 => d1,
+      de => de
+      );
+
+end behavior;
+
+ha_a:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+use work.handshake.all;
+
+ENTITY ha_a IS
+    PORT(
+	 d0 : INOUT std_logic := '0';
+	 d1 : INOUT std_logic := '0';
+	 s0 : INOUT std_logic := '0';
+	 s1 : INOUT std_logic := '0';
+	 en : INOUT std_logic := '1';
+	 a0 : IN std_logic;
+	 a1 : IN std_logic;
+	 b0 : IN std_logic;
+	 b1 : IN std_logic;
+	 de : IN std_logic;
+	 se : IN std_logic
+	 );
+END ha_a;
+
+ARCHITECTURE behavior of ha_a IS
+BEGIN
+
+  sum_carry : process
+  begin
+    guard_and(se, '1', de, '1');
+    guard_or(a0, '1', a1, '1');
+    guard_or(b0, '1', b1, '1');
+    -- evaluate                                             ab => cs
+    if    (a0 = '1' and b0 = '1') then                --00 => 00
+      assign(d0, '1', 200, 300, s0, '1', 200, 300);
+    elsif (a0 = '1' and b1 = '1') then                --01 => 01
+      assign(d0, '1', 200, 300, s1, '1', 200, 300);
+    elsif (a1 = '1' and b0 = '1') then                --10 => 01
+      assign(d0, '1', 200, 300, s1, '1', 200, 300);
+    else
+--    elsif (a1 = '1' and b1 = '1') then                --11 => 10
+      assign(d1, '1', 200, 300, s0, '1', 200, 300);
+    end if;
+    -- start reset cycle
+    assign(en, '0', 200, 300);
+    guard_and(se, '0', de, '0');
+    -- reset s and d (my outputs)
+    if ( (d0 = '1') and (s0 = '1') ) then
+      assign(d0, '0', 200, 300, s0, '0', 200, 300);
+    elsif ( (d0 = '1') and (s1 = '1') ) then
+      assign(d0, '0', 200, 300, s1, '0', 200, 300);
+    elsif ( (d1 = '1') and (s0 = '1') ) then
+      assign(d1, '0', 200, 300, s0, '0', 200, 300);
+--    elsif ( (d1 = '1') and (s1 = '1') ) then
+    else
+      assign(d1, '0', 200, 300, s1, '0', 200, 300);
+    end if;
+    guard_and(a0, '0', a1, '0');
+    guard_and(b0, '0', b1, '0');
+    assign(en, '1', 200, 300);
+  end process;
+  
+END behavior;
+
+ha_a_env:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+LIBRARY ieee, work;
+USE ieee.std_logic_1164.all;
+use work.handshake.all;
+
+ENTITY ha_a_env IS
+    PORT(
+	 en : IN std_logic;
+	 d0 : IN std_logic;
+	 d1 : IN std_logic;
+	 s0 : IN std_logic;
+	 s1 : IN std_logic;
+	 a0 : INOUT std_logic := '0';
+	 a1 : INOUT std_logic := '0';
+	 b0 : INOUT std_logic := '0';
+	 b1 : INOUT std_logic := '0';
+	 de : INOUT std_logic := '0';
+	 se : INOUT std_logic := '0'
+	 );
+END ha_a_env;
+
+ARCHITECTURE behavior of ha_a_env IS
+BEGIN
+
+  a : process
+    variable choosea : integer;
+  begin
+    choosea := selection(2);
+    if (choosea = 1) then
+      assign(a0, '1', 200, inf);
+    else
+      assign(a1, '1', 200, inf);
+    end if;
+    guard(en, '0');
+    if (a0 = '1') then
+      assign(a0, '0', 200, inf);
+    elsif (a1 = '1') then
+      assign(a1, '0', 200, inf);
+    end if;
+    guard(en, '1');
+  end process;
+
+  b : process
+    variable chooseb : integer;
+  begin
+    chooseb := selection(2);
+    if (chooseb = 1) then
+      assign(b0, '1', 200, inf);
+    else
+      assign(b1, '1', 200, inf);
+    end if;
+    guard(en, '0');
+    if (b0 = '1') then
+      assign(b0, '0', 200, inf);
+    elsif (b1 = '1') then
+      assign(b1, '0', 200, inf);
+    end if;
+    guard(en, '1');
+  end process;
+
+  s : process
+  begin
+    assign(se, '1', 200, inf);
+    guard_or(s0, '1', s1, '1');
+    assign(se, '0', 200, inf);
+    guard_and(s0, '0', s1, '0');    
+  end process;
+
+  d : process
+  begin
+    assign(de, '1', 200, inf);
+    guard_or(d0, '1', d1, '1');
+    assign(de, '0', 200, inf);
+    guard_and(d0, '0', d1, '0');    
+  end process;
+
+END behavior;
+

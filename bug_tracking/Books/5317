@@ -1,0 +1,82 @@
+From amurthy.sunysb@gmail.com  Mon Mar 21 00:50:09 2011
+Return-Path: <amurthy.sunysb@gmail.com>
+Received: from mail-iy0-f170.google.com (mail-iy0-f170.google.com [209.85.210.170])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2L6o94R016682
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 21 Mar 2011 00:50:09 -0600
+Received: by iyb12 with SMTP id 12so7582001iyb.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 20 Mar 2011 23:50:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:sender:date:x-google-sender-auth
+         :message-id:subject:from:to:content-type;
+        bh=5NLWBJ775Ct0snkfrpPMoaEzKy2RUisOWehBDWuV09A=;
+        b=QQ2Di4lStw4nz5B3n2KXMZ3qItijIE6F/rxN8ONM/iAqTIuM1zO8jv855TVRUrjaGT
+         MnhGGT0mySnr6tJyjDjj+L7ajl+zM34YdwF0iVf9zC5TClOHPUcs2VB+ei63ZVp1Kl+c
+         3QGyyuW6dvOECLsC+E24SoUWHCOSxVogZEWl8=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:sender:date:x-google-sender-auth:message-id:subject
+         :from:to:content-type;
+        b=WYsi8xJEy5RfbB56Ko6emEFVIyLZfZvwk6Tmf3J4BvBUUqp44LYT/q1/t+9Gpi/mQV
+         jbrySEaZH9MXhPs2zOpK0UR3C3FwJF0bmOYW4bDYRlTXut+pMXxINlw6gf2Eh/swtlV+
+         LZpEaUvGCN4DgZVpEFg3ZfKZBDihwYstcHp+A=
+MIME-Version: 1.0
+Received: by 10.42.134.198 with SMTP id m6mr6469351ict.100.1300690208422; Sun,
+ 20 Mar 2011 23:50:08 -0700 (PDT)
+Sender: amurthy.sunysb@gmail.com
+Received: by 10.231.205.196 with HTTP; Sun, 20 Mar 2011 23:50:08 -0700 (PDT)
+Date: Mon, 21 Mar 2011 02:50:08 -0400
+X-Google-Sender-Auth: p-1QG2s3mLkjy5nnnPRUwqFGdG0
+Message-ID: <AANLkTi=h+9-Fi+5pdpXkm+tFXRbXkE2a+kSCn6MTs34V@mail.gmail.com>
+Subject: BUG: Page 35 Chapter 1 First paragraph
+From: Abhishek Murthy <amurthy@cs.sunysb.edu>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=90e6ba6e83d8d5f9ea049ef88992
+
+--90e6ba6e83d8d5f9ea049ef88992
+Content-Type: text/plain; charset=ISO-8859-1
+
+Hello
+
+Following seems to be a typo in the book:
+
+Page 35. Chapter 1 First paragraph under section 1.7.4 line 6 reads:
+
+"Assuming initially that there are no CI or CII molecules, CII production is
+initiated from the P_RE promoter while CI production from P_R is only at a
+low basal rate."
+
+I feel it should read the other way round:
+
+"Assuming initially that there are no CI or CII molecules, CII production is
+initiated from the P_R promoter while CI production from P_RE is only at a
+low basal rate."
+
+Kindly clarify.
+
+Thank you.
+Regards
+Abhishek Murthy
+Department of Computer Science
+Stony Brook University (SUNY)
+
+--90e6ba6e83d8d5f9ea049ef88992
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hello<div><br></div><div>Following seems to be a typo in the book:</div><di=
+v><br></div><div>Page 35. Chapter 1 First paragraph under section 1.7.4 lin=
+e 6 reads:</div><div><br></div><div>&quot;Assuming initially that there are=
+ no CI or CII molecules, CII production is initiated from the P_RE promoter=
+ while CI production from P_R is only at a low basal rate.&quot;</div>
+<div><br></div><div>I feel it should read the other way round:</div><div><b=
+r></div><div><div>&quot;Assuming initially that there are no CI or CII mole=
+cules, CII production is initiated from the P_R promoter while CI productio=
+n from P_RE is only at a low basal rate.&quot;</div>
+<div><br></div><div>Kindly clarify.</div><div><br></div><div>Thank you.</di=
+v>Regards<br>Abhishek Murthy<br>Department of Computer Science <br>Stony Br=
+ook University (SUNY)<br>
+</div>
+
+--90e6ba6e83d8d5f9ea049ef88992--
+

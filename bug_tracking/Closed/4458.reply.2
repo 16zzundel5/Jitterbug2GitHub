@@ -1,0 +1,22 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: cmadsen@vlsigroup.ece.utah.edu
+Subject: Re: CHANGE: add support to import csv and dat files (PR#4458)
+Date: Fri May  9 21:21:11 2008
+
+> In the data manager for learning, allow csv and dat files to be
+> imported.  They should be converted internally though to tsd files once
+> they are read in.
+> 
+I've added a quick and dirty support to bring in csv files into the learn view
+data manager to allow comparisons with the existing csv files from bioUML.
+
+The following issues remain:
+
+1) Support for importing dat files
+
+2) I discovered that separation between variable names and data looks for a time
+point 0, but the problem is that the csv files have a time point 0.0.  I've
+fixed this issue, but it would be better to look for the first ")" outside of a
+variable name.  In other words, if a ")" is found in a quoted variable name, it
+is ignored, but the first other ")" would indicate the change to data.  This is
+better because it allows for data which starts at a time point other than 0.

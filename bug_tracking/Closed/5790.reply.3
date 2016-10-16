@@ -1,0 +1,21 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: u0690874@utah.edu
+Subject: Re: BUG: problems with grid model simulations (PR#5790)
+Date: Thu Jan 17 21:52:47 2013
+
+I looked at your example, and I agree there are still some problems with this. 
+We will likely just need to use our flatten procedure for grid models for now.
+
+DETAILS BELOW BEING LOGGED TO REMEMBER WHAT I FIGURED OUT.  
+The issue is that grid flattening happens in two steps.  One step flattens the
+model using our routine then there is another routine which expands the arrays. 
+The flatten routine needs to know though how many copies there are of each
+object in the grid which I tried to address by expanding the submodel
+instantiations before calling flatten.  However, this also causes the membrane
+diffusion reactions to get flattened out too soon (this should happen in
+expandArrays).  I may need to write a new expandArrays for libsbml's flatten
+routine to address this issue.  One final point is the consideration of
+individual submodel replacements and deletions will also need to be considered
+when fixing this.
+
+Chris

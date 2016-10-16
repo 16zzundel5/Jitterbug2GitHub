@@ -1,0 +1,137 @@
+From prvs=97921db5b=zhen.zhang@utah.edu  Mon Jun 27 11:52:50 2016
+Return-Path: <prvs=97921db5b=zhen.zhang@utah.edu>
+Received: from ipo7.cc.utah.edu (ipo7.cc.utah.edu [155.97.144.42])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RHqnPT011860
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:52:49 -0600
+X-IronPort-AV: E=Sophos;i="5.26,537,1459836000"; 
+   d="scan'208,217";a="484241216"
+Received: from mail-oi0-f46.google.com ([209.85.218.46])
+  by ipo7smtp.cc.utah.edu with ESMTP/TLS/AES128-GCM-SHA256; 27 Jun 2016 11:52:49 -0600
+Received: by mail-oi0-f46.google.com with SMTP id s66so210776687oif.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 10:52:49 -0700 (PDT)
+X-Gm-Message-State: ALyK8tJ+l6wz7EBtQraU4JpwBKvSj5rK2Ze7Dk8vik1d4yqeBI3K2UEmQLMi+NkSihC11tiOZl3f8VRju/mE/w==
+X-Received: by 10.157.8.225 with SMTP id 88mr1539776otf.157.1467049969047;
+ Mon, 27 Jun 2016 10:52:49 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.202.172.21 with HTTP; Mon, 27 Jun 2016 10:52:09 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 27 Jun 2016 11:52:09 -0600
+X-Gmail-Original-Message-ID: <CA+LVOv=QpqtHC7Ef9AUe=0tTRRQgYDtUWuK4YYV49OQaoq2cjQ@mail.gmail.com>
+Message-ID: <CA+LVOv=QpqtHC7Ef9AUe=0tTRRQgYDtUWuK4YYV49OQaoq2cjQ@mail.gmail.com>
+Subject: BUG: null pointer exception when loading existing analysis view in BioSim
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a113cf70645e1600536463025
+
+--001a113cf70645e1600536463025
+Content-Type: text/plain; charset=UTF-8
+
+Existing analysis view in a BioSim project caused the exception below due
+to SEDML issues.
+
+java.lang.NullPointerException
+    at graph.Graph.loadSEDML(Graph.java:6022)
+    at graph.Graph.open(Graph.java:6191)
+    at graph.Graph.<init>(Graph.java:315)
+    at analysis.main.AnalysisView.createGraph(AnalysisView.java:2944)
+    at main.Gui.openAnalysisView(Gui.java:9978)
+    at main.Gui.executeMouseClickEvent(Gui.java:9072)
+    at main.Gui.mouseClicked(Gui.java:10084)
+    at
+java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:270)
+    at
+java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:269)
+    at java.awt.Component.processMouseEvent(Component.java:6538)
+    at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+    at java.awt.Component.processEvent(Component.java:6300)
+    at java.awt.Container.processEvent(Container.java:2236)
+    at java.awt.Component.dispatchEventImpl(Component.java:4891)
+    at java.awt.Container.dispatchEventImpl(Container.java:2294)
+    at java.awt.Component.dispatchEvent(Component.java:4713)
+    at
+java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+    at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4534)
+    at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+    at java.awt.Container.dispatchEventImpl(Container.java:2280)
+    at java.awt.Window.dispatchEventImpl(Window.java:2750)
+    at java.awt.Component.dispatchEvent(Component.java:4713)
+    at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+    at java.awt.EventQueue.access$500(EventQueue.java:97)
+    at java.awt.EventQueue$3.run(EventQueue.java:709)
+    at java.awt.EventQueue$3.run(EventQueue.java:703)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at
+java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+    at
+java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+    at java.awt.EventQueue$4.run(EventQueue.java:731)
+    at java.awt.EventQueue$4.run(EventQueue.java:729)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at
+java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+    at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+    at
+java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+    at
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+    at
+java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+    at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+    at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+--001a113cf70645e1600536463025
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Existing analysis view in a BioSim project caused the exce=
+ption below due to SEDML issues.<br><div><br>java.lang.NullPointerException=
+<br>=C2=A0=C2=A0=C2=A0 at graph.Graph.loadSEDML(Graph.java:6022)<br>=C2=A0=
+=C2=A0=C2=A0 at graph.Graph.open(Graph.java:6191)<br>=C2=A0=C2=A0=C2=A0 at =
+graph.Graph.&lt;init&gt;(Graph.java:315)<br>=C2=A0=C2=A0=C2=A0 at analysis.=
+main.AnalysisView.createGraph(AnalysisView.java:2944)<br>=C2=A0=C2=A0=C2=A0=
+ at main.Gui.openAnalysisView(Gui.java:9978)<br>=C2=A0=C2=A0=C2=A0 at main.=
+Gui.executeMouseClickEvent(Gui.java:9072)<br>=C2=A0=C2=A0=C2=A0 at main.Gui=
+.mouseClicked(Gui.java:10084)<br>=C2=A0=C2=A0=C2=A0 at java.awt.AWTEventMul=
+ticaster.mouseClicked(AWTEventMulticaster.java:270)<br>=C2=A0=C2=A0=C2=A0 a=
+t java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:269)<b=
+r>=C2=A0=C2=A0=C2=A0 at java.awt.Component.processMouseEvent(Component.java=
+:6538)<br>=C2=A0=C2=A0=C2=A0 at javax.swing.JComponent.processMouseEvent(JC=
+omponent.java:3324)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Component.processEven=
+t(Component.java:6300)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Container.processE=
+vent(Container.java:2236)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Component.dispa=
+tchEventImpl(Component.java:4891)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Contain=
+er.dispatchEventImpl(Container.java:2294)<br>=C2=A0=C2=A0=C2=A0 at java.awt=
+.Component.dispatchEvent(Component.java:4713)<br>=C2=A0=C2=A0=C2=A0 at java=
+.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)<br>=C2=
+=A0=C2=A0=C2=A0 at java.awt.LightweightDispatcher.processMouseEvent(Contain=
+er.java:4534)<br>=C2=A0=C2=A0=C2=A0 at java.awt.LightweightDispatcher.dispa=
+tchEvent(Container.java:4466)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Container.d=
+ispatchEventImpl(Container.java:2280)<br>=C2=A0=C2=A0=C2=A0 at java.awt.Win=
+dow.dispatchEventImpl(Window.java:2750)<br>=C2=A0=C2=A0=C2=A0 at java.awt.C=
+omponent.dispatchEvent(Component.java:4713)<br>=C2=A0=C2=A0=C2=A0 at java.a=
+wt.EventQueue.dispatchEventImpl(EventQueue.java:758)<br>=C2=A0=C2=A0=C2=A0 =
+at java.awt.EventQueue.access$500(EventQueue.java:97)<br>=C2=A0=C2=A0=C2=A0=
+ at java.awt.EventQueue$3.run(EventQueue.java:709)<br>=C2=A0=C2=A0=C2=A0 at=
+ java.awt.EventQueue$3.run(EventQueue.java:703)<br>=C2=A0=C2=A0=C2=A0 at ja=
+va.security.AccessController.doPrivileged(Native Method)<br>=C2=A0=C2=A0=C2=
+=A0 at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersection=
+Privilege(ProtectionDomain.java:76)<br>=C2=A0=C2=A0=C2=A0 at java.security.=
+ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionD=
+omain.java:86)<br>=C2=A0=C2=A0=C2=A0 at java.awt.EventQueue$4.run(EventQueu=
+e.java:731)<br>=C2=A0=C2=A0=C2=A0 at java.awt.EventQueue$4.run(EventQueue.j=
+ava:729)<br>=C2=A0=C2=A0=C2=A0 at java.security.AccessController.doPrivileg=
+ed(Native Method)<br>=C2=A0=C2=A0=C2=A0 at java.security.ProtectionDomain$J=
+avaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)<br>=
+=C2=A0=C2=A0=C2=A0 at java.awt.EventQueue.dispatchEvent(EventQueue.java:728=
+)<br>=C2=A0=C2=A0=C2=A0 at java.awt.EventDispatchThread.pumpOneEventForFilt=
+ers(EventDispatchThread.java:201)<br>=C2=A0=C2=A0=C2=A0 at java.awt.EventDi=
+spatchThread.pumpEventsForFilter(EventDispatchThread.java:116)<br>=C2=A0=C2=
+=A0=C2=A0 at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispa=
+tchThread.java:105)<br>=C2=A0=C2=A0=C2=A0 at java.awt.EventDispatchThread.p=
+umpEvents(EventDispatchThread.java:101)<br>=C2=A0=C2=A0=C2=A0 at java.awt.E=
+ventDispatchThread.pumpEvents(EventDispatchThread.java:93)<br>=C2=A0=C2=A0=
+=C2=A0 at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)</di=
+v></div>
+
+--001a113cf70645e1600536463025--
+

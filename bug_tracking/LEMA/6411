@@ -1,0 +1,61 @@
+From myers@eng.utah.edu  Sun Sep 27 17:17:45 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t8RNHj9o006061
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sun, 27 Sep 2015 17:17:45 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1ZgLCR-0008sH-2T); Sun, 27 Sep 2015 17:17:45 -0600
+Received: from c-73-3-103-205.hsd1.ut.comcast.net ([73.3.103.205] helo=[10.0.0.232])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1ZgLCS-000MgL-4i; Sun, 27 Sep 2015 17:17:44 -0600
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+Subject: Re: CHANGE: Differentiate delay assignments between immediate and non-immediate transitions
+From: "Chris J. Myers" <myers@ece.utah.edu>
+In-Reply-To: <CA+LVOvkQn4qZ6nqQETKOM8f1JAefOccmCYzoLCvf=7MwHfR=_Q@mail.gmail.com>
+Date: Sun, 27 Sep 2015 17:17:36 -0600
+Cc: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <982D028F-63AD-4103-B6FC-9EE893222225@ece.utah.edu>
+References: <CA+LVOvnfmp7RLwDMZ0yCdQhbhYYcPO1iF1aObD_bdWdP5HcKWQ@mail.gmail.com> <CFF43CA0-44F5-4824-8696-ABC95834015E@ece.utah.edu> <CA+LVOvmuxZhRGn0kK+rDj1D89Y_bXGjv7b-e1EExv4oC+wRguw@mail.gmail.com> <CA+LVOvkQn4qZ6nqQETKOM8f1JAefOccmCYzoLCvf=7MwHfR=_Q@mail.gmail.com>
+To: Zhen Zhang <zhen.zhang@utah.edu>
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -2.5 (--)
+X-spam-level: --
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id t8RNHj9o006061
+
+Yes, and I think from you previous message, it may not make much difference with POR if any transitions are marked as immediate.  It can likely discover that they are independent.
+
+I’m really beginning to suspect that immediate only matters for full state analysis, and what it really is, is some form of pre-computed, limited POR. It might help I suppose avoid checking if it is indeed safe to not interleave, but we are not currently doing it in this way anyway, since we still check.  
+
+In summary, I think we may be fine to leave everything as non-immediate for now, and let POR do the work.
+
+Chris
+
+> On Sep 26, 2015, at 6:45 PM, Zhen Zhang <zhen.zhang@utah.edu> wrote:
+> 
+> Correction. My reasoning for making 1 of the 6 transitions from send
+> and receive pair is wrong. An immediate transition is not always
+> independent of other transitions. POR still goes through dependent
+> analysis for an immediate transition.
+> 
+> On Sat, Sep 26, 2015 at 6:35 PM, Zhen Zhang <zhen.zhang@utah.edu> wrote:
+>> For a pair of send and receive, 6 LPN transitions are generated, 3 in
+>> each LPN process. I think the transition assigning its local data on
+>> the receiving end should be made non-immediate. This is because the
+>> receiver of this data may do different things based on its value.
+>> Making this transition non-immediate allows the trace-back to not miss
+>> any possible values. Do you agree?
+>> 
+>> For the assign statement, I think it is safe to compile it to
+>> immediate transitions. For other types of compiled transitions, I
+>> think we should be careful about making them immediate. We currently
+>> do not allow, for each enabled seed transition, its dependent set to
+>> contain the mixture of the immediate and non-immediate transitions. I
+>> am not sure making guards immediate can get us into this disallowed
+>> state.
+
+

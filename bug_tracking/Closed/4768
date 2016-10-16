@@ -1,0 +1,44 @@
+From myers@ece.utah.edu  Thu Jul 16 13:44:53 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.2 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.4
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id n6GJir8I001267
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 16 Jul 2009 13:44:53 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MRWsv-0001AK-33
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 16 Jul 2009 13:44:53 -0600
+Message-Id: <9DAE7FF2-438E-4E1B-8BE2-A7AA31D43448@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v935.3)
+Subject: BUG: delays not being added properly with abstraction
+Date: Thu, 16 Jul 2009 13:44:47 -0600
+X-Mailer: Apple Mail (2.935.3)
+
+For the example below, the delays are not adding properly after  
+abstraction.
+
+.inputs a
+.dummy t1 t0 t2
+#|.places p1 p0 p2
+#@.init_state [0]
+.graph
+t1 p2
+p1 t1
+t0 p1
+p0 t0
+t2 p0
+p2 t2
+.marking {p1 }
+#@.delay_assignments {<t1=[2,4]><t0=[2,4]><t2=[2,4]>}
+#@.boolean_assignments {<t1=[a:=true]><t2=[a:=false]>}
+.end
+

@@ -1,0 +1,42 @@
+From nroehner@comcast.net  Fri Jan 21 12:03:04 2011
+Return-Path: <nroehner@comcast.net>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.8 required=5.0 tests=AWL,BAYES_50,
+	DNS_FROM_OPENWHOIS,FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from qmta14.emeryville.ca.mail.comcast.net (qmta14.emeryville.ca.mail.comcast.net [76.96.27.212])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id p0LJ34Y4024354
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 21 Jan 2011 12:03:04 -0700
+Received: from omta18.emeryville.ca.mail.comcast.net ([76.96.30.74])
+	by qmta14.emeryville.ca.mail.comcast.net with comcast
+	id yJXu1f0061bwxycAEK34zY; Fri, 21 Jan 2011 19:03:04 +0000
+Received: from sz0128.ev.mail.comcast.net ([76.96.26.192])
+	by omta18.emeryville.ca.mail.comcast.net with comcast
+	id yK331f00g48h5108eK33yQ; Fri, 21 Jan 2011 19:03:03 +0000
+Date: Fri, 21 Jan 2011 19:03:03 +0000 (UTC)
+From: nroehner@comcast.net
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1561188578.1608005.1295636583469.JavaMail.root@sz0128a.emeryville.ca.mail.comcast.net>
+Subject: BUG: grayed out custom parameters not saved
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1608004_1524219508.1295636583468"
+X-Originating-IP: [155.98.26.227]
+X-Mailer: Zimbra 6.0.5_GA_2431.RHEL5_64 (ZimbraWebClient - FF3.0 (Linux)/6.0.5_GA_2427.RHEL4)
+
+------=_Part_1608004_1524219508.1295636583468
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+When a custom Ka is grayed out by switching influence type to repression and the influence panel is closed, reopening the panel reveals that custom parameter is saved. Closing and reopening the panel a second time, however, causes the grayed out Ka to revert to default. 
+------=_Part_1608004_1524219508.1295636583468
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html><head><style type='text/css'>p { margin: 0; }</style></head><body><div style='font-family: Arial; font-size: 12pt; color: #000000'><font><font size="2">When a custom Ka is grayed out by switching influence 
+type to repression and the influence panel is closed, reopening the 
+panel reveals that custom parameter is saved.&nbsp; Closing and reopening the
+ panel a second time, however, causes the grayed out Ka to revert to 
+default.</font></font></div></body></html>
+------=_Part_1608004_1524219508.1295636583468--
+

@@ -1,0 +1,41 @@
+From nicholasroehner@gmail.com  Tue Mar 11 11:59:35 2014
+Return-Path: <nicholasroehner@gmail.com>
+Received: from mail-ve0-f173.google.com (mail-ve0-f173.google.com [209.85.128.173])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s2BHxXov023225
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Mar 2014 11:59:34 -0600
+Received: by mail-ve0-f173.google.com with SMTP id oy12so8756993veb.4
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 11 Mar 2014 10:59:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        bh=0QloK0d6Mxgsqfg0R3ENfW6fdum8Gn4PnK5APeKd5Oo=;
+        b=ej4F5q7htxLo5+83hrre8FBY8Gu9N4dc/67b4dx1+YccWNrK2jMEl60NF2yD9Ec5zF
+         RLs1FgBWXFgPYuVhwUf476ZbJQpJKMEdkntR2OwjEn8CLVDXGR7q4ia8sSiyGXHy6wvG
+         c/RpzCg5/C31BeSg1MP8ulOXBCtKh5jXeL9gI9G8ylKoJWhB8MwkNNzKT4dDok15ljAZ
+         AFDUQvP4VAkhjhhBAO0M4tEQxJQX/l6UoEkokXx0SWcs0jkPeVFiYgKFLbuAD7uOFRxx
+         B1NKH2/FmC+XOsSyjvaGabQDf3AfNSsmD3Q0kQW4d1PUhX+5d/wLF41OYKnwtRUevy/U
+         OvjQ==
+MIME-Version: 1.0
+X-Received: by 10.52.241.106 with SMTP id wh10mr27728928vdc.16.1394560773764;
+ Tue, 11 Mar 2014 10:59:33 -0700 (PDT)
+Received: by 10.58.32.199 with HTTP; Tue, 11 Mar 2014 10:59:33 -0700 (PDT)
+Date: Tue, 11 Mar 2014 11:59:33 -0600
+Message-ID: <CAAfUgsGEpeDY=uBkXRJSmKCfXPozuoNq3UvZQUwUPU8mtTwspQ@mail.gmail.com>
+Subject: BUG iBioSim 2.6 exception when simulating with reb2sac methods
+From: Nicholas Roehner <nicholasroehner@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=001a1133eb3889bca904f4587bed
+
+--001a1133eb3889bca904f4587bed
+Content-Type: text/plain; charset=ISO-8859-1
+
+Using iBioSim 2.6, I'm getting a STATUS_ACCESS_VIOLATION when trying to
+simulate models using reb2sac methods.
+
+--001a1133eb3889bca904f4587bed
+Content-Type: text/html; charset=ISO-8859-1
+
+<div dir="ltr">Using iBioSim 2.6, I&#39;m getting a STATUS_ACCESS_VIOLATION when trying to simulate models using reb2sac methods.<br></div>
+
+--001a1133eb3889bca904f4587bed--
+

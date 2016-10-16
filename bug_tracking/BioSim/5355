@@ -1,0 +1,45 @@
+From moschino21@gmail.com  Fri May  6 16:24:09 2011
+Return-Path: <moschino21@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p46MO7GO024653
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 6 May 2011 16:24:08 -0600
+Received: by bwz18 with SMTP id 18so4295922bwz.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 06 May 2011 15:24:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:from:date:message-id:subject:to
+         :content-type;
+        bh=QN4OBGbKaPdNoaiz67iShQBcFZWLxrUFVrA+9FcMJ8k=;
+        b=uWdQVCOmc2CviX+F+wfNO9MDFIFB9oPdW07AhqY3nx+mHQ2MvnLOEDzRNUo/XmT/XL
+         Bl9+bX3kbL615sN6KirdlzpV/4gIS7pvCU55cXm0EJ/So3NT1rG046CWeMKNbL1Pw6g8
+         n/Yeaf+bjBWgI7/HBq2TNckNQdtWIWY160hOs=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:from:date:message-id:subject:to:content-type;
+        b=hYRMzD4YAZGjSVEGXSFKC4jhGYFaAihb6fyOSnKfRNlMe1vGMYqnDIXEJFqnQv349S
+         3npV1kMYmiegyWB/050fFUqMg7zZgf7Qq5MJAj5GvYUTxfvbJ8D563CL24hoFgYIO69i
+         qjX94IInDAnnH6r9o1Ndkaa/9wBpI0VKi+oDM=
+Received: by 10.204.136.210 with SMTP id s18mr1277360bkt.56.1304720647075;
+ Fri, 06 May 2011 15:24:07 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.205.65.76 with HTTP; Fri, 6 May 2011 15:23:47 -0700 (PDT)
+From: Zhen Zhang <moschino21@gmail.com>
+Date: Fri, 6 May 2011 16:23:47 -0600
+Message-ID: <BANLkTik2k5jHsHwboH3FjLhe0Txti7jcWg@mail.gmail.com>
+Subject: FEATURE:compile VHDL assertions to LPN fail transitions
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=0015175cd264b337c404a2a2f265
+
+--0015175cd264b337c404a2a2f265
+Content-Type: text/plain; charset=ISO-8859-1
+
+Need to modify the VHDL compiler to parse VHDL assertions and convert to LPN
+fail transitions.
+
+--0015175cd264b337c404a2a2f265
+Content-Type: text/html; charset=ISO-8859-1
+
+Need to modify the VHDL compiler to parse VHDL assertions and convert to LPN fail transitions.<br>
+
+--0015175cd264b337c404a2a2f265--
+

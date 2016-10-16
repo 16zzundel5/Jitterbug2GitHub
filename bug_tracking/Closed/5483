@@ -1,0 +1,24 @@
+From sarbruis@gmail.com  Fri Aug 19 20:33:34 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from localhost (shang.ece.utah.edu [155.98.27.201])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p7K2XXIw010851
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 19 Aug 2011 20:33:34 -0600
+Date: Fri, 19 Aug 2011 20:33:33 -0600
+Message-Id: <201108200233.p7K2XXIw010851@chou.ece.utah.edu>
+From: sarbruis@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Generated XHTML Species IDs Look Weird
+
+Full_Name: Jason
+Version: 
+OS: 
+source: 
+log: 
+Submission from: 174-27-222-206.slkc.qwest.net (174.27.222.206)
+Submitted by: jstev
+
+
+When I'm printing to a browser, the species IDs look like N_ACECA or something
+like that.  The IDs are fine in the XML, but there's something happening to them
+when translating to XHTML.
+

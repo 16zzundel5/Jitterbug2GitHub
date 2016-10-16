@@ -1,0 +1,5 @@
+Chris
+Now accepts hse extension.  When a file uses the hse extension, the compiled
+files
+are stored as .tel (instead of .er).
+

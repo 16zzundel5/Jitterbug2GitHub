@@ -1,0 +1,664 @@
+From christian.atheist@gmail.com  Mon Aug 27 11:25:21 2007
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.186])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id l7RHPJfK009500
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Aug 2007 11:25:20 -0600
+Received: by fk-out-0910.google.com with SMTP id 18so1797066fkq
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Aug 2007 10:25:18 -0700 (PDT)
+DKIM-Signature: a=rsa-sha1; c=relaxed/relaxed;
+        d=gmail.com; s=beta;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=RgaA+0KsVvwqsA4BGDCOf1UdwRiIepkdBOF3G9IABwMbSjKdWNxxLXkJVj9CyxsaX/3FE1E2mzcwov7YCN6/isn4f6EobRuG26kusUEKYkaQ9RQ1xq/eu3Phn3R541yECoTWxGpXrdSZ7ZQdBKVeDpLpic6FYzY43xgiyf91Zh8=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=beta;
+        h=received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=du9whcP7O3c2Wb751r4QRft7xRnhkSasjRJJtupQWd0U+/Bwo5s6jGHSWEJq59cHGrgGnUoD51vOsA/F7i2wU3yMemCmr43Nq9ShOoDjsXWX6dWF8Kuvs6Ra2sRIwpbT2TvDbfdxxqn36aTv2hvOSSier9SeklcR3soSSBmx0rU=
+Received: by 10.82.165.13 with SMTP id n13mr1375816bue.1188235517604;
+        Mon, 27 Aug 2007 10:25:17 -0700 (PDT)
+Received: by 10.82.149.9 with HTTP; Mon, 27 Aug 2007 10:25:17 -0700 (PDT)
+Message-ID: <eba119560708271025m40fd7672ned8d7abf180cfc89@mail.gmail.com>
+Date: Mon, 27 Aug 2007 11:25:17 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: BUG: Incorrect Species Being Graphed
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: 1249fae5a54cc81a
+
+When I graph my simulations, the species being graphed are incorrect.
+
+To recreate, use the sbml file below and create an analysis view.  Run
+a monte carlo simulation, and graph the average species B.  It will be
+flat at zero.  Now graph the average species A and B.  B's graph has
+changed.  This is because that's the plot for a different species.
+
+
+<?xml version="1.0"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" version="1" level="2">
+<model id="toggle">
+<listOfCompartments>
+<compartment id="default" />
+</listOfCompartments>
+
+<listOfSpecies>
+<species id = "Y" name = "Y" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "Gene_XZ" name = "Gene_XZ" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "Gene_D1" name = "Gene_D1" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "Rep_Rep_Gene_C1" name = "Rep_Rep_Gene_C1" compartment =
+"default" initialConcentration = "0.0"/>
+<species id = "C" name = "C" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "D" name = "D" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "copy_of_copy_of_Rep_Gene_D1" name = "copy of copy of
+Rep_Gene_D1" compartment = "default" initialConcentration = "0.0"/>
+<species id = "Rep_Rep_Gene_D1" name = "Rep_Rep_Gene_D1" compartment =
+"default" initialConcentration = "0.0"/>
+<species id = "Gene_C" name = "Gene_C" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "copy_of_Act_Gene" name = "copy of Act_Gene" compartment
+= "default" initialConcentration = "0.0"/>
+<species id = "copy_of_copy_of_Rep_Gene" name = "copy of copy of
+Rep_Gene" compartment = "default" initialConcentration = "0.0"/>
+<species id = "Rep_Gene_D1" name = "Rep_Gene_D1" compartment =
+"default" initialConcentration = "0.0"/>
+<species id = "Gene_YZ" name = "Gene_YZ" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "Z" name = "Z" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "copy_of_Rep_Gene_D1" name = "copy of Rep_Gene_D1"
+compartment = "default" initialConcentration = "0.0"/>
+<species id = "XY" name = "XY" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "copy_of_Rep_Rep_Gene_D1" name = "copy of
+Rep_Rep_Gene_D1" compartment = "default" initialConcentration =
+"0.0"/>
+<species id = "A" name = "A" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "Gene_C1" name = "Gene_C1" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "Rep_Gene_C1" name = "Rep_Gene_C1" compartment =
+"default" initialConcentration = "0.0"/>
+<species id = "B" name = "B" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "Gene_D" name = "Gene_D" compartment = "default"
+initialConcentration = "1.0"/>
+<species id = "X" name = "X" compartment = "default"
+initialConcentration = "0.0"/>
+<species id = "copy_of_copy_of_Rep_Rep_Gene_D1" name = "copy of copy
+of Rep_Rep_Gene_D1" compartment = "default" initialConcentration =
+"0.0"/>
+</listOfSpecies>
+
+<listOfReactions>
+<reaction id = "Production" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_XZ" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Gene_XZ" stoichiometry = "1"/>
+<speciesReference species = "X" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Production</ci><ci>Gene_XZ</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Production" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Production" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+<speciesReference species = "X" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Production</ci><ci>copy_of_Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Production" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Gene" >
+<listOfReactants>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Gene_C1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Rep_Gene_C1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Gene</ci><ci>D</ci><ci>Gene_C1</ci></apply><apply><times/><ci>kr_Rep_Gene</ci><ci>Rep_Gene_C1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Gene" name = "kr" value = "100.0"/>
+<parameter id = "kf_Rep_Gene" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Basal" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_D" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Gene_D" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Basal</ci><ci>Gene_D</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Basal" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Gene" >
+<listOfReactants>
+<speciesReference species = "B" stoichiometry = "1"/>
+<speciesReference species = "copy_of_copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Rep_Gene_D1"
+stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Rep_Gene</ci><ci>copy_of_copy_of_Rep_Gene_D1</ci><ci>B</ci></apply><apply><times/><ci>kr_Rep_Rep_Gene</ci><ci>copy_of_copy_of_Rep_Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Rep_Gene" name = "kr" value = "1.0"/>
+<parameter id = "kf_Rep_Rep_Gene" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Gene_0" >
+<listOfReactants>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Rep_Gene_C1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Rep_Rep_Gene_C1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Rep_Gene_0</ci><ci>Rep_Gene_C1</ci><ci>D</ci></apply><apply><times/><ci>kr_Rep_Rep_Gene_0</ci><ci>Rep_Rep_Gene_C1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Rep_Gene_0" name = "kr" value = "1.0"/>
+<parameter id = "kf_Rep_Rep_Gene_0" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Production_0" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+<speciesReference species = "Y" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Production_0</ci><ci>copy_of_copy_of_Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Production_0" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Complex_Formation" >
+<listOfReactants>
+<speciesReference species = "Y" stoichiometry = "1"/>
+<speciesReference species = "X" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "XY" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Complex_Formation</ci><ci>X</ci><ci>Y</ci></apply><apply><times/><ci>kr_Complex_Formation</ci><ci>XY</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Complex_Formation" name = "kr" value = "1.0"/>
+<parameter id = "kf_Complex_Formation" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Production" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_Rep_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_Rep_Rep_Gene_D1" stoichiometry = "1"/>
+<speciesReference species = "X" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Rep_Production</ci><ci>copy_of_Rep_Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Rep_Production" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_3" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_3</ci><ci>Z</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_3" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Production_0" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Rep_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Rep_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Rep_Production_0</ci><ci>Rep_Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Rep_Production_0" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Gene_0" >
+<listOfReactants>
+<speciesReference species = "Gene_XZ" stoichiometry = "1"/>
+<speciesReference species = "A" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Gene_0</ci><ci>A</ci><ci>Gene_XZ</ci></apply><apply><times/><ci>kr_Rep_Gene_0</ci><ci>copy_of_Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Gene_0" name = "kr" value = "100.0"/>
+<parameter id = "kf_Rep_Gene_0" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_6" reversible="false" >
+<listOfReactants>
+<speciesReference species = "D" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_6</ci><ci>D</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_6" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Production_1" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Production_1</ci><ci>Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Production_1" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Production_0" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_YZ" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Gene_YZ" stoichiometry = "1"/>
+<speciesReference species = "Y" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Production_0</ci><ci>Gene_YZ</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Production_0" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Gene_1" >
+<listOfReactants>
+<speciesReference species = "A" stoichiometry = "1"/>
+<speciesReference species = "copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_Rep_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Rep_Gene_1</ci><ci>copy_of_Rep_Gene_D1</ci><ci>A</ci></apply><apply><times/><ci>kr_Rep_Rep_Gene_1</ci><ci>copy_of_Rep_Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Rep_Gene_1" name = "kr" value = "1.0"/>
+<parameter id = "kf_Rep_Rep_Gene_1" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Gene_1" >
+<listOfReactants>
+<speciesReference species = "C" stoichiometry = "1"/>
+<speciesReference species = "Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Gene_1</ci><ci>C</ci><ci>Gene_D1</ci></apply><apply><times/><ci>kr_Rep_Gene_1</ci><ci>Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Gene_1" name = "kr" value = "100.0"/>
+<parameter id = "kf_Rep_Gene_1" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_4" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Y" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_4</ci><ci>Y</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_4" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Production_2" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_copy_of_Rep_Gene" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Gene" stoichiometry = "1"/>
+<speciesReference species = "C" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Production_2</ci><ci>copy_of_copy_of_Rep_Gene</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Production_2" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Production_3" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Rep_Gene_C1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "C" stoichiometry = "1"/>
+<speciesReference species = "Rep_Gene_C1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Production_3</ci><ci>Rep_Gene_C1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Production_3" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Production_1" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Production_1</ci><ci>Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Production_1" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Act_Production" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_Act_Gene" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "D" stoichiometry = "1"/>
+<speciesReference species = "copy_of_Act_Gene" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Act_Production</ci><ci>copy_of_Act_Gene</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Act_Production" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Act_Gene" >
+<listOfReactants>
+<speciesReference species = "Gene_D" stoichiometry = "1"/>
+<speciesReference species = "XY" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_Act_Gene" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Act_Gene</ci><ci>Gene_D</ci><ci>XY</ci></apply><apply><times/><ci>kr_Act_Gene</ci><ci>copy_of_Act_Gene</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Act_Gene" name = "kr" value = "10.0"/>
+<parameter id = "kf_Act_Gene" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Production_2" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_C1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Gene_C1" stoichiometry = "1"/>
+<speciesReference species = "C" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Production_2</ci><ci>Gene_C1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Production_2" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_1" reversible="false" >
+<listOfReactants>
+<speciesReference species = "XY" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_1</ci><ci>XY</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_1" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Production_3" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Gene_C" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "C" stoichiometry = "1"/>
+<speciesReference species = "Gene_C" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Production_3</ci><ci>Gene_C</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Production_3" name = "k" value = "0.5"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_5" reversible="false" >
+<listOfReactants>
+<speciesReference species = "C" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_5</ci><ci>C</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_5" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Gene_2" >
+<listOfReactants>
+<speciesReference species = "Gene_C" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Gene" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Gene_2</ci><ci>Z</ci><ci>Gene_C</ci></apply><apply><times/><ci>kr_Rep_Gene_2</ci><ci>copy_of_copy_of_Rep_Gene</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Gene_2" name = "kr" value = "10.0"/>
+<parameter id = "kf_Rep_Gene_2" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Degradation_2" reversible="false" >
+<listOfReactants>
+<speciesReference species = "X" stoichiometry = "1"/>
+</listOfReactants>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Degradation_2</ci><ci>X</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Degradation_2" name = "k" value = "0.0075"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Production_1" reversible="false" >
+<listOfReactants>
+<speciesReference species = "copy_of_copy_of_Rep_Rep_Gene_D1"
+stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Rep_Gene_D1"
+stoichiometry = "1"/>
+<speciesReference species = "Y" stoichiometry = "1"/>
+<speciesReference species = "Z" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Rep_Production_1</ci><ci>copy_of_copy_of_Rep_Rep_Gene_D1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Rep_Production_1" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Gene_3" >
+<listOfReactants>
+<speciesReference species = "Gene_YZ" stoichiometry = "1"/>
+<speciesReference species = "B" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "copy_of_copy_of_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Gene_3</ci><ci>Gene_YZ</ci><ci>B</ci></apply><apply><times/><ci>kr_Rep_Gene_3</ci><ci>copy_of_copy_of_Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Gene_3" name = "kr" value = "100.0"/>
+<parameter id = "kf_Rep_Gene_3" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Production_2" reversible="false" >
+<listOfReactants>
+<speciesReference species = "Rep_Rep_Gene_C1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "C" stoichiometry = "1"/>
+<speciesReference species = "Rep_Rep_Gene_C1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><times/><ci>k_Rep_Rep_Production_2</ci><ci>Rep_Rep_Gene_C1</ci></apply></math>
+<listOfParameters>
+<parameter id = "k_Rep_Rep_Production_2" name = "k" value = "5.0E-4"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+<reaction id = "Rep_Rep_Gene_2" >
+<listOfReactants>
+<speciesReference species = "C" stoichiometry = "1"/>
+<speciesReference species = "Rep_Gene_D1" stoichiometry = "1"/>
+</listOfReactants>
+<listOfProducts>
+<speciesReference species = "Rep_Rep_Gene_D1" stoichiometry = "1"/>
+</listOfProducts>
+<kineticLaw>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><minus/><apply><times/><ci>kf_Rep_Rep_Gene_2</ci><ci>Rep_Gene_D1</ci><ci>C</ci></apply><apply><times/><ci>kr_Rep_Rep_Gene_2</ci><ci>Rep_Rep_Gene_D1</ci></apply></apply></math>
+<listOfParameters>
+<parameter id = "kr_Rep_Rep_Gene_2" name = "kr" value = "1.0"/>
+<parameter id = "kf_Rep_Rep_Gene_2" name = "kf" value = "1.0"/>
+</listOfParameters>
+</kineticLaw>
+
+</reaction>
+</listOfReactions>
+</model>
+</sbml>
+

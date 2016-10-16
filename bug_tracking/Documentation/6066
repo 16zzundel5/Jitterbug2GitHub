@@ -1,0 +1,63 @@
+From l.watanabe@utah.edu  Tue Jun 10 14:09:13 2014
+Return-Path: <l.watanabe@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s5AK9CjL026478
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 10 Jun 2014 14:09:12 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AiMKAPRkl1ObYbVo/2dsb2JhbABYDoI4gXKqZwEBBpkSAYEgdYN6CwWBCwELAR5DEyYBBBuIOp5+qTKEcBeFVohCg2OBFgSJeYYNnWOCfECCLw
+X-IPAS-Result: AiMKAPRkl1ObYbVo/2dsb2JhbABYDoI4gXKqZwEBBpkSAYEgdYN6CwWBCwELAR5DEyYBBBuIOp5+qTKEcBeFVohCg2OBFgSJeYYNnWOCfECCLw
+X-IronPort-AV: E=Sophos;i="4.98,1011,1392188400"; 
+   d="scan'208,217";a="280139145"
+Received: from h104.umail.utah.edu (HELO X-HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 10 Jun 2014 14:09:09 -0600
+Received: from X-MB11.xds.umail.utah.edu ([169.254.3.39]) by
+ X-HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi id 14.03.0181.006;
+ Tue, 10 Jun 2014 14:09:09 -0600
+From: LEANDRO HIKIJI WATANABE <l.watanabe@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Disallow ids that may conflict with arrays objects
+Thread-Topic: Disallow ids that may conflict with arrays objects
+Thread-Index: Ac+E56SpFhPF6nRES6q7wfA6Nf1gNQ==
+Date: Tue, 10 Jun 2014 20:09:08 +0000
+Message-ID: <DDDF61188CC80F41AF904098A2BD0A5132888277@X-MB11.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [155.97.183.136]
+Content-Type: multipart/alternative;
+	boundary="_000_DDDF61188CC80F41AF904098A2BD0A5132888277XMB11xdsumailut_"
+MIME-Version: 1.0
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5132888277XMB11xdsumailut_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Currently, we are using ids 'i' and 'j' for dimension objects in the arrays=
+ package. We should prevent the user from adding objects with these ids or =
+any other id used in the arrays package. There is a possibility of changing=
+ these ids to more creative ones.
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5132888277XMB11xdsumailut_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" id=3D"owaParaStyle"></style>
+</head>
+<body fpstyle=3D"1" ocsi=3D"0">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">Currently, we are using ids 'i' and 'j' for dimension objects in the=
+ arrays package. We should prevent the user from adding objects with these =
+ids or any other id used in the arrays
+ package. There is a possibility of changing these ids to more creative one=
+s.</div>
+</body>
+</html>
+
+--_000_DDDF61188CC80F41AF904098A2BD0A5132888277XMB11xdsumailut_--
+

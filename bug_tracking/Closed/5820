@@ -1,0 +1,80 @@
+From ibiosim@gmail.com  Tue Jan 15 20:54:47 2013
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-ie0-f176.google.com (mail-ie0-f176.google.com [209.85.223.176])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id r0G3slXe029423
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 15 Jan 2013 20:54:47 -0700
+Received: by mail-ie0-f176.google.com with SMTP id 13so1654651iea.35
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 15 Jan 2013 19:54:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=x-received:date:from:to:message-id:subject:mime-version
+         :content-type:content-transfer-encoding;
+        bh=pr31GWOASSzwzBFgLW9bPM1VJp2jpLcamCFjeTR33v4=;
+        b=ss9Csfv1ThFNZC7AYsV+f03n6t1nKjV0EfLSTKKiBHB/APS9TmFKet9yoXUUNN+VRT
+         5KMjY5rxFlsIcwseQpx1dktDOZz8Xp2bFOury/2NQDx933EcltLjx9ZdUwqtqz6+OItS
+         EzZ+aBAbvU6TQuU3XmeIInsECG9/Qt7XE9Hz9HbYatgj1aC9xwJyx+a3avJvf22rZfM0
+         UzbWoDPnAp6VVoCF1u0OwjO1ikEWoy5mzwJrO1JLl3wXfkbSfEidktRNMyhbij6b0JM8
+         9wOknw1LBFg7KwU1v9o5X4i1ta/NcCt7y2feggEtX6J+aWlNlXgS2lyYZ41O0CUE+hmr
+         2wMA==
+X-Received: by 10.50.154.227 with SMTP id vr3mr3846125igb.43.1358308486771;
+        Tue, 15 Jan 2013 19:54:46 -0800 (PST)
+Received: from 10.0.0.2 (c-98-202-13-26.hsd1.ut.comcast.net. [98.202.13.26])
+        by mx.google.com with ESMTPS id px5sm3750448igc.0.2013.01.15.19.54.44
+        (version=TLSv1 cipher=RC4-SHA bits=128/128);
+        Tue, 15 Jan 2013 19:54:45 -0800 (PST)
+Date: Tue, 15 Jan 2013 19:54:45 -0800 (PST)
+From: ibiosim@gmail.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1677324530.0.1358308485560.JavaMail.myers@jiaqi>
+Subject: BUG:abc
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Bug reported by: abc
+
+Description:
+abc
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.gui.SpeciesPanel.handlePanelData(SpeciesPanel.java:688)
+	at biomodel.gui.SpeciesPanel.constructor(SpeciesPanel.java:611)
+	at biomodel.gui.SpeciesPanel.<init>(SpeciesPanel.java:66)
+	at biomodel.gui.ModelEditor.launchSpeciesPanel(ModelEditor.java:1947)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2239)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1155)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:273)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:272)
+	at java.awt.Component.processMouseEvent(Component.java:6382)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6147)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4744)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4619)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4280)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4210)
+	at java.awt.Container.dispatchEventImpl(Container.java:2127)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4572)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:704)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:663)
+	at java.awt.EventQueue$2.run(EventQueue.java:661)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:677)
+	at java.awt.EventQueue$3.run(EventQueue.java:675)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:674)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+

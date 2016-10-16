@@ -1,0 +1,36 @@
+From christian.atheist@gmail.com  Tue Feb 12 14:51:40 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.4 required=3.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.1
+Received: from fk-out-0910.google.com (fk-out-0910.google.com [209.85.128.188])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m1CLpcgF024420
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 14:51:39 -0700
+Received: by fk-out-0910.google.com with SMTP id 22so5826741fkq.13
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 12 Feb 2008 13:51:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        bh=BFqAYqab79um0Gqf3oftUu7fdLFI2zQnlWGk7FVkXXo=;
+        b=h9Z+WYQCtvOb0kdvydcpMulEGjb/SYiVqJ/6QuWmm0VWGfM3U2QafHZ6S3Oj9kwhjFCmgLh3ZhFaYNmmmG2chZZ1atyoELxGRQO6ikiFINIw8rSrxkiRJiaH9H1A6ZuuVKTPLDgIi/WK7vnDgq3jq4JmGg1c/WOMRsltBUn1t5w=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition;
+        b=V19Il+mtZk8NEvANgehssazEHlU8a3HConRiQTwWYNXKFspgUqL7GShaCXPyvlmzxfNpxsYdH9xRQSiNQcXCIIky3vwQdpQCTPSZsAq/5tZJVT1poHDGaLlmm2G5qPBDBOdLRO/xDooIqlIqFgEIYNe05vp0/vBJIB3H0mAH9WU=
+Received: by 10.82.181.7 with SMTP id d7mr3427456buf.4.1202853096974;
+        Tue, 12 Feb 2008 13:51:36 -0800 (PST)
+Received: by 10.82.149.19 with HTTP; Tue, 12 Feb 2008 13:51:36 -0800 (PST)
+Message-ID: <eba119560802121351uc976301s92fece632077f148@mail.gmail.com>
+Date: Tue, 12 Feb 2008 14:51:36 -0700
+From: "Nam Nguyen" <christian.atheist@gmail.com>
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: FEATURE: Have labels be pulldowns in editor
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Have labels be pulldowns that you can use to select whether you use
+custom or default values.
+

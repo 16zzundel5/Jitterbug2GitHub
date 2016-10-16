@@ -1,0 +1,37 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: root@ming.ece.utah.edu
+Subject: Re: BAD820 broken repository! (PR#738)
+Date: Mon Jan 27 12:32:21 2003
+CC: peskin@vlsigroup.ece.utah.edu
+
+It says the build is failing.  Any idea why?  I have the latest version and it
+is compiling fine.  Does the regression test do a make clean first before
+building?  
+
+Also, please have nighttime regression failures cc'ed to me also. 
+> 
+> CHECK THESE ERRORS FROM MAKE FIRST:
+> vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+> make: *** [build] Error 2
+> make[1]: *** [build] Error 2
+> make: *** [noPostProc] Error 2
+> make[1]: *** [build] Error 2
+> make: *** [hairy] Error 2
+> make[1]: *** [build] Error 2
+> make[2]: *** [.alu1b.prs-tsys] Error 5
+> make[1]: *** [csp/check.subDir] Error 2
+> make: *** [posets] Error 2
+> make[1]: *** [build] Error 2
+> make: *** [noX] Error 2
+> make[1]: *** [build] Error 2
+> make: *** [untimed] Error 2
+> make[3]: *** [.mergex.merge.prs-oioqtbG1-2ys] Error 1
+> make[2]: *** [mergex/merge.VHDLtest] Error 2
+> make[3]: *** [.newMergex.newMerge.prs-oioqtbG1-2ys] Error 1
+> make[2]: *** [newMergex/newMerge.VHDLtest] Error 2
+> make[1]: *** [vhd/VHDLtests.subDir] Error 2
+> make: *** [channelTests] Error 2
+> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+> 
+> 

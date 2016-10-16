@@ -1,0 +1,376 @@
+From peskin@eng.utah.edu  Thu Mar  4 13:39:04 1999
+Received: from arachne.eng.utah.edu (arachne.eng.utah.edu [155.99.222.1]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA16781 for <atacs-bugs@ming.elen.utah.edu>; Thu, 4 Mar 1999 13:39:03 -0700 (MST)
+Received: from cal.eng.utah.edu (cal.eng.utah.edu [155.99.222.12])
+	by arachne.eng.utah.edu (8.9.1a/8.9.1) with ESMTP id NAA24370
+	for <atacs-bugs@ming.elen.utah.edu>; Thu, 4 Mar 1999 13:39:07 -0700 (MST)
+From: Eric Peskin <peskin@eng.utah.edu>
+Received: (from peskin@localhost)
+	by cal.eng.utah.edu (8.9.1a/8.9.1) id NAA24967
+	for atacs-bugs@ming.elen.utah.edu; Thu, 4 Mar 1999 13:40:34 -0700 (MST)
+Date: Thu, 4 Mar 1999 13:40:34 -0700 (MST)
+Message-Id: <199903042040.NAA24967@cal.eng.utah.edu>
+To: atacs-bugs@ming.elen.utah.edu
+Subject: splitsemi.csp causes coredump with posets
+
+SYSTEM: solaris (SunOS cal.eng.utah.edu 5.6 Generic_105181-05 sun4m sparc)
+WHO:    peskin               
+WHERE:  /a/home/cs/grad/peskin/safe/bugs                 
+WHEN:   Thu Mar  4 13:39:43 MST 1999                
+WHAT:   /home/ee/prof/cmyers/ee547/bin/atacs -ms -mS -mX -mV -ya splitsemi.csp               
+OUTPUT:                       
+ld.so.1: /home/ee/prof/cmyers/ee547/bin/atacs: warning: /usr/4lib/libX11.so.4.3: has older revision than expected 10
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Using PO sets timing to obtain state graphs.
+Using single-cube algortithm for synthesis.
+Exception handling now turned ON.
+Verbose mode now turned ON.
+Compiling splitsemi.csp ... 
+Storing process leftenv to leftenv.er
+Storing process rightenv to rightenv.er
+Storing process AB to AB.er
+Storing process L to L.er
+Storing process H to H.er
+Storing process Ain to Ain.er
+Storing process RLHout to RLHout.er
+Storing process pre_process to pre_process.er
+Storing process splitsemi to splitsemi.er
+Storing process splitsemi to splitsemi.er
+Loading timed event-rule structure from:  splitsemi.er
+WARNING:  Duplicate rules ignored.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ...                               
+STATUS:  -2147483637       
+category: Fatal error     
+              
+FILE: splitsemi.csp:
+module splitsemi;
+
+input RLin = {<2,inf>};
+input RHin = {<2,inf>};
+input Aout = {<2,3>};
+output RLout = {<0,2>};
+output RHout = {<0,2>};
+output Ain = {<0,2>};
+output A = {<0,2>};
+output L = {<2,3>};
+output B = {<0,2>};
+output H = {<2,3>};
+
+process leftenv;
+    *[[ skip -> RLin+; [Ain+]; RLin-; [Ain-]
+     |  skip -> RHin+; [Ain+]; RHin-; [Ain-]
+     ]]
+endprocess
+
+process rightenv;
+    *[[ RLout+ -> Aout+; [RLout-]; Aout-
+     |  RHout+ -> Aout+; [RHout-]; Aout-
+     ]]
+endprocess
+
+process AB;
+    *[[ RLin+ -> A+; [RLin- & Aout+]; A-; [RLout-]
+     |  RHin+ -> (A+ || B+); [RHin- & Aout+]; (A- || B-); [RHout-]
+     ]]
+endprocess
+
+process L;
+    *[[ A+ -> L+; [A-]; L-
+     |  A+ -> L+; [A-]; L-
+     ]]
+endprocess
+
+process H;
+    *[ [B+]; H+; [B-]; H- ]
+endprocess
+
+process Ain;
+    *[[L+ -> Ain+; [L-]; Ain-
+     | L+ & H+ -> Ain+; [L- & H-]; Ain-
+     ]]
+endprocess
+
+process RLHout;
+    *[[A+ -> RLout+; [A-]; RLout-; [Aout-]
+     | A+ & B+ -> RHout+; [A- & B-]; RHout-; [Aout-]
+     ]]
+endprocess
+
+endmodule
+              
+              
+FILE: ./splitsemi.csp:
+module splitsemi;
+
+input RLin = {<2,inf>};
+input RHin = {<2,inf>};
+input Aout = {<2,3>};
+output RLout = {<0,2>};
+output RHout = {<0,2>};
+output Ain = {<0,2>};
+output A = {<0,2>};
+output L = {<2,3>};
+output B = {<0,2>};
+output H = {<2,3>};
+
+process leftenv;
+    *[[ skip -> RLin+; [Ain+]; RLin-; [Ain-]
+     |  skip -> RHin+; [Ain+]; RHin-; [Ain-]
+     ]]
+endprocess
+
+process rightenv;
+    *[[ RLout+ -> Aout+; [RLout-]; Aout-
+     |  RHout+ -> Aout+; [RHout-]; Aout-
+     ]]
+endprocess
+
+process AB;
+    *[[ RLin+ -> A+; [RLin- & Aout+]; A-; [RLout-]
+     |  RHin+ -> (A+ || B+); [RHin- & Aout+]; (A- || B-); [RHout-]
+     ]]
+endprocess
+
+process L;
+    *[[ A+ -> L+; [A-]; L-
+     |  A+ -> L+; [A-]; L-
+     ]]
+endprocess
+
+process H;
+    *[ [B+]; H+; [B-]; H- ]
+endprocess
+
+process Ain;
+    *[[L+ -> Ain+; [L-]; Ain-
+     | L+ & H+ -> Ain+; [L- & H-]; Ain-
+     ]]
+endprocess
+
+process RLHout;
+    *[[A+ -> RLout+; [A-]; RLout-; [Aout-]
+     | A+ & B+ -> RHout+; [A- & B-]; RHout-; [Aout-]
+     ]]
+endprocess
+
+endmodule
+              
+              
+FILE: ./splitsemi.er:
+.e 29
+.i 8
+.r 113
+.d 4
+.c 28
+.s 0000000000
+reset
+# 
+# INPUT EVENTS:
+# 
+RHin+/1 RHin-/1
+RLin+/1 RLin-/1
+Aout+/1 Aout-/1
+Aout+/2 Aout-/2
+# 
+# OUTPUT EVENTS:
+# 
+H+/1 H-/1
+A+/1 A-/1
+A+/2 A-/2
+B+/1 B-/1
+Ain+/1 Ain-/1
+Ain+/2 Ain-/2
+RHout+/1 RHout-/1
+RLout+/1 RLout-/1
+L+/1 L-/1
+L+/2 L-/2
+# 
+# DUMMY EVENTS:
+# 
+# 
+# RULES:
+# 
+A+/1 RLout+/1 0 0 2
+RLout+/1 RLout-/1 0 0 2
+A-/1 RLout-/1 0 0 2
+A+/2 RHout+/1 0 0 2
+B+/1 RHout+/1 0 0 2
+RHout+/1 RHout-/1 0 0 2
+B-/1 RHout-/1 0 0 2
+A-/2 RHout-/1 0 0 2
+reset RHout+/1 0 0 2
+reset RLout+/1 0 0 2
+H+/1 H-/1 0 2 3
+B-/1 H-/1 0 2 3
+B+/1 H+/1 0 2 3
+reset H+/1 0 2 3
+RLin+/1 A+/1 0 0 2
+A+/1 A-/1 0 0 2
+Aout+/1 A-/1 0 0 2
+RLin-/1 A-/1 0 0 2
+RHin+/1 B+/1 0 0 2
+RHin+/1 A+/2 0 0 2
+B+/1 A-/2 0 0 2
+B+/1 B-/1 0 0 2
+A+/2 A-/2 0 0 2
+A+/2 B-/1 0 0 2
+Aout+/2 A-/2 0 0 2
+Aout+/2 B-/1 0 0 2
+RHin-/1 A-/2 0 0 2
+RHin-/1 B-/1 0 0 2
+reset A+/2 0 0 2
+reset B+/1 0 0 2
+reset A+/1 0 0 2
+reset RLin+/1 0 2 inf
+reset RHin+/1 0 2 inf
+reset RLin+/1 0 2 inf
+reset RHin+/1 0 2 inf
+reset RLin+/1 0 2 inf
+reset RHin+/1 0 2 inf
+reset RLin+/1 0 2 inf
+reset RHin+/1 0 2 inf
+Ain+/2 RHin-/1 0 2 inf
+RHin+/1 RHin-/1 0 2 inf
+Ain+/1 RLin-/1 0 2 inf
+RLin+/1 RLin-/1 0 2 inf
+reset Aout+/1 0 2 3
+reset Aout+/2 0 2 3
+Aout+/2 Aout-/2 0 2 3
+RHout-/1 Aout-/2 0 2 3
+RHout+/1 Aout+/2 0 2 3
+Aout+/1 Aout-/1 0 2 3
+RLout-/1 Aout-/1 0 2 3
+RLout+/1 Aout+/1 0 2 3
+reset L+/1 0 2 3
+reset L+/2 0 2 3
+L+/2 L-/2 0 2 3
+A-/2 L-/2 0 2 3
+A+/2 L+/2 0 2 3
+L+/1 L-/1 0 2 3
+A-/1 L-/1 0 2 3
+A+/1 L+/1 0 2 3
+reset Ain+/1 0 0 2
+reset Ain+/2 0 0 2
+Ain+/2 Ain-/2 0 0 2
+H-/1 Ain-/2 0 0 2
+L-/2 Ain-/2 0 0 2
+H+/1 Ain+/2 0 0 2
+L+/2 Ain+/2 0 0 2
+Ain+/1 Ain-/1 0 0 2
+L-/1 Ain-/1 0 0 2
+L+/1 Ain+/1 0 0 2
+# 
+# INITIAL RULES:
+# 
+RLout-/1 RHout+/1 1 0 2
+RLout-/1 RLout+/1 1 0 2
+Aout-/1 RHout+/1 1 0 2
+Aout-/1 RLout+/1 1 0 2
+RHout-/1 RHout+/1 1 0 2
+RHout-/1 RLout+/1 1 0 2
+Aout-/2 RHout+/1 1 0 2
+Aout-/2 RLout+/1 1 0 2
+H-/1 H+/1 1 2 3
+A-/1 A+/2 1 0 2
+A-/1 B+/1 1 0 2
+A-/1 A+/1 1 0 2
+RLout-/1 A+/2 1 0 2
+RLout-/1 B+/1 1 0 2
+RLout-/1 A+/1 1 0 2
+A-/2 A+/2 1 0 2
+A-/2 B+/1 1 0 2
+A-/2 A+/1 1 0 2
+B-/1 A+/2 1 0 2
+B-/1 B+/1 1 0 2
+B-/1 A+/1 1 0 2
+RHout-/1 A+/2 1 0 2
+RHout-/1 B+/1 1 0 2
+RHout-/1 A+/1 1 0 2
+Ain-/2 RLin+/1 1 2 inf
+Ain-/2 RHin+/1 1 2 inf
+RHin-/1 RLin+/1 1 2 inf
+RHin-/1 RHin+/1 1 2 inf
+Ain-/1 RLin+/1 1 2 inf
+Ain-/1 RHin+/1 1 2 inf
+RLin-/1 RLin+/1 1 2 inf
+RLin-/1 RHin+/1 1 2 inf
+Aout-/2 Aout+/1 1 2 3
+Aout-/2 Aout+/2 1 2 3
+Aout-/1 Aout+/1 1 2 3
+Aout-/1 Aout+/2 1 2 3
+L-/2 L+/1 1 2 3
+L-/2 L+/2 1 2 3
+L-/1 L+/1 1 2 3
+L-/1 L+/2 1 2 3
+Ain-/2 Ain+/1 1 0 2
+Ain-/2 Ain+/2 1 0 2
+Ain-/1 Ain+/1 1 0 2
+Ain-/1 Ain+/2 1 0 2
+# 
+# MERGERS:
+# 
+A+/1 A+/2 
+Ain+/1 Ain+/2 
+Aout+/1 Aout+/2 
+L+/1 L+/2 
+# 
+# CONFLICTS:
+# 
+RLout-/1 RHout-/1
+RLout-/1 RHout+/1
+RLout+/1 RHout-/1
+RLout+/1 RHout+/1
+A-/1 A-/2
+A-/1 B-/1
+A-/1 B+/1
+A-/1 A+/2
+A+/1 A-/2
+A+/1 B-/1
+A+/1 B+/1
+A+/1 A+/2
+RLin+/1 RHin+/1
+RLin+/1 RHin-/1
+RLin-/1 RHin+/1
+RLin-/1 RHin-/1
+Aout-/1 Aout-/2
+Aout-/1 Aout+/2
+Aout+/1 Aout-/2
+Aout+/1 Aout+/2
+L-/1 L-/2
+L-/1 L+/2
+L+/1 L-/2
+L+/1 L+/2
+Ain-/1 Ain-/2
+Ain-/1 Ain+/2
+Ain+/1 Ain-/2
+Ain+/1 Ain+/2
+# 
+# LOOPING CONFLICTS:
+# 
+              
+              
+FILE: ./splitsemi.rr:
+< RHin+/1,RHin-/1,0,[2,2147483647] > ???
+< RLin+/1,RLin-/1,0,[2,2147483647] > ???
+< Aout+/1,Aout-/1,0,[2,3] > ???
+< Aout+/2,Aout-/2,0,[2,3] > ???
+< H+/1,H-/1,0,[2,3] > ???
+< H-/1,H+/1,1,[2,3] > ???
+< A+/1,A-/1,0,[0,2] > ???
+< A+/2,A-/2,0,[0,2] > ???
+< A+/2,B-/1,0,[0,2] > ???
+< B+/1,A-/2,0,[0,2] > ???
+< B+/1,B-/1,0,[0,2] > ???
+< Ain+/1,Ain-/1,0,[0,2] > ???
+< Ain+/2,Ain-/2,0,[0,2] > ???
+< RHout+/1,RHout-/1,0,[0,2] > ???
+< RLout+/1,RLout-/1,0,[0,2] > ???
+< L+/1,L-/1,0,[2,3] > ???
+< L+/2,L-/2,0,[2,3] > ???
+              
+              
+FILE: ./splitsemi.rsg:
+              

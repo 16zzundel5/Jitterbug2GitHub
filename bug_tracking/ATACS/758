@@ -1,0 +1,32 @@
+From atacs-bugs@chou.ece.utah.edu  Fri Jan  9 09:26:49 2004
+Return-Path: <atacs-bugs@chou.ece.utah.edu>
+Received: from chou.ece.utah.edu (localhost.localdomain [127.0.0.1])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GQmEN016655
+	for <atacs-bugs@shang.elen.utah.edu>; Fri, 9 Jan 2004 09:26:48 -0700
+Received: (from atacs-bugs@localhost)
+	by chou.ece.utah.edu (8.12.8/8.12.8/Submit) id i09GQmig016653
+	for atacs-bugs@shang.elen.utah.edu; Fri, 9 Jan 2004 09:26:48 -0700
+Received: from localhost.localdomain (jiaqi.ece.utah.edu [155.99.23.199])
+	by chou.ece.utah.edu (8.12.8/8.12.8) with ESMTP id i09GQlEN016647
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:26:47 -0700
+Received: from localhost.localdomain (jiaqi [127.0.0.1])
+	by localhost.localdomain (8.12.8/8.12.8) with ESMTP id i09GQbTp012145
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:26:37 -0700
+Received: from localhost (myers@localhost)
+	by localhost.localdomain (8.12.8/8.12.8/Submit) with ESMTP id i09GQbQQ012141
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 9 Jan 2004 09:26:37 -0700
+X-Authentication-Warning: localhost.localdomain: myers owned process doing -bs
+Date: Fri, 9 Jan 2004 09:26:37 -0700 (MST)
+From: Chris Myers <myers@vlsigroup.ece.utah.edu>
+X-X-Sender: myers@localhost.localdomain
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Subject: restrict after warp
+Message-ID: <Pine.LNX.4.44.0401090925510.12133-100000@localhost.localdomain>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+After doing a warp that increases resolution, then another restrict step 
+may be in order to improve the quality of the bounds.
+
+

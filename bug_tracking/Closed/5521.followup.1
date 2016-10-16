@@ -1,0 +1,102 @@
+From sarbruis@gmail.com  Sat Sep 24 14:28:39 2011
+Return-Path: <sarbruis@gmail.com>
+Received: from mail-bw0-f42.google.com (mail-bw0-f42.google.com [209.85.214.42])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id p8OKScjF013510
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 24 Sep 2011 14:28:38 -0600
+Received: by bkar4 with SMTP id r4so5190303bka.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 24 Sep 2011 13:28:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=S0Tz5BS8BO0Re3hAnuVkccOhDN/nBAoEkhJVeN4aBxg=;
+        b=crkiIJV9/ftycxfymRw+PeaYy1MJzfhncTjgvGZo5keedoqwiOv79GvqKzZIDHS0R5
+         OMIb+p0mliK9ZonKpgjfUrnSmFFdtP3fhpT0AR5in56HuNQFnbXBpQNngvf6q1MJHVC9
+         OAtzG2R0S7SlAEQlvO1ND1mEbTtzkZhcyRi5M=
+Received: by 10.204.133.22 with SMTP id d22mr3331081bkt.38.1316896117166; Sat,
+ 24 Sep 2011 13:28:37 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.204.58.78 with HTTP; Sat, 24 Sep 2011 13:27:57 -0700 (PDT)
+In-Reply-To: <201109242025.p8OKP4ng013489@chou.ece.utah.edu>
+References: <201109242025.p8OKP4ng013489@chou.ece.utah.edu>
+From: Jason Stevens <sarbruis@gmail.com>
+Date: Sat, 24 Sep 2011 14:27:57 -0600
+Message-ID: <CAHb1wp03npDOLuOdDRmB_9G2nz+cMft=Dnb1EFUUV08Mh70M8A@mail.gmail.com>
+Subject: Re: BUG: Events Not Deleting (PR#5521)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=00151747910045124804adb5c541
+
+--00151747910045124804adb5c541
+Content-Type: text/plain; charset=ISO-8859-1
+
+I haven't done much with events in a while, but I don't think this has been
+fixed.  I'll try to come up with the steps for reproducing this.
+
+On Sat, Sep 24, 2011 at 2:25 PM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> > Full_Name: Jason
+> > Version:
+> > OS:
+> > source:
+> > log:
+> > Submission from: 75-162-83-227.slkc.qwest.net (75.162.83.227)
+> > Submitted by: jstev
+> >
+> >
+> > I'm not sure what happened (maybe something with undo?), but I deleted
+> events,
+> > saved and saved, and the events didn't go away.  I re-opened iBioSim and
+> the
+> > events re-appeared (when I removed them this time they were actually
+> deleted).
+>
+> > I'll try to figure out how to reproduce exactly.
+> >
+> >
+> Are you still having this problem?
+>
+> Chris
+>
+>
+
+--00151747910045124804adb5c541
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I haven&#39;t done much with events in a while, but I don&#39;t think this =
+has been fixed. =A0I&#39;ll try to come up with the steps for reproducing t=
+his.<br><br><div class=3D"gmail_quote">On Sat, Sep 24, 2011 at 2:25 PM, Chr=
+is Myers <span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.u=
+tah.edu">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<br>
+
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex;">&gt; Full_Name: Jason<br>
+&gt; Version:<br>
+&gt; OS:<br>
+&gt; source:<br>
+&gt; log:<br>
+&gt; Submission from: <a href=3D"http://75-162-83-227.slkc.qwest.net" targe=
+t=3D"_blank">75-162-83-227.slkc.qwest.net</a> (75.162.83.227)<br>
+&gt; Submitted by: jstev<br>
+&gt;<br>
+&gt;<br>
+&gt; I&#39;m not sure what happened (maybe something with undo?), but I del=
+eted<br>
+events,<br>
+&gt; saved and saved, and the events didn&#39;t go away. =A0I re-opened iBi=
+oSim and the<br>
+&gt; events re-appeared (when I removed them this time they were actually d=
+eleted).<br>
+<br>
+&gt; I&#39;ll try to figure out how to reproduce exactly.<br>
+&gt;<br>
+&gt;<br>
+Are you still having this problem?<br>
+<font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></blockquote></div><br>
+
+--00151747910045124804adb5c541--
+

@@ -1,0 +1,25 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: need to check math dimensions (PR#6124)
+Date: Sat Sep 27 16:10:52 2014
+
+I'm considering the bug report about checking math dimensions.  For this, you
+create a method called 
+checkVectorMath to return the dimensions of a math formula, so it could be
+compared against the dimensions of 
+the variable or other structure that it is associated with.  However, I'm having
+trouble coming up with a situation 
+where this is needed.  I think when an assignment is made to all the index
+variables that all math formulas must 
+reduce to scalar formulas unless I'm missing something.  For example, assume the
+math is a kinetic law.  In this 
+case, you select a value for each dimension id for the reaction, and when you
+plug this into the math for the 
+kinetic law, it must return a single scalar value.  So, I think as long as the
+references in the math do not go out-
+of-bounds for some allowed value, then this formula is going to be okay.  In all
+cases that we listed, I think they 
+same argument applies whether a rule, event assignment, event trigger, etc.  Am
+I missing something?  
+
+Chris

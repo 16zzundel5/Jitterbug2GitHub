@@ -1,0 +1,53 @@
+From tahooie@gmail.com  Fri Jul  2 12:16:46 2010
+Return-Path: <tahooie@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: ****
+X-Spam-Status: No, score=4.1 required=5.0 tests=BAYES_40,DNS_FROM_OPENWHOIS,
+	FH_DATE_PAST_20XX,HTML_MESSAGE autolearn=no version=3.2.5
+Received: from mail-iw0-f170.google.com (mail-iw0-f170.google.com [209.85.214.170])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id o62IGjYk009319
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 2 Jul 2010 12:16:46 -0600
+Received: by iwn36 with SMTP id 36so2996876iwn.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 02 Jul 2010 11:16:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:sender:received:date
+         :x-google-sender-auth:message-id:subject:from:to:content-type;
+        bh=J354Jr5JdisMhsDAbXa9PS+z79XVEVas9/7qXO4lLvY=;
+        b=m/hskpVxFNoBGzAewnR2bEaifFS14FXlrlSB99gx7ldjUf5/rJZ3dwEu811WIdA5vX
+         nhdbSnB/9U9ZWysKt5fm3n1HqbZFAt9d5QCxul6a6jXwem7lNJGiEjBL1NJGHbQQB80X
+         3ovKo6spjr1aQ5IjVtcpVZmu0AU5IH5wjzZk0=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:sender:date:x-google-sender-auth:message-id:subject
+         :from:to:content-type;
+        b=MRaTkguLKiqji5Ubicw/NNRQpGDTHrwlkMo6sML6LJXN46wc9EZXO9SRJ14/Uk6W+Z
+         Ehp7XJy3I27I6qON/TJ/p11e6eobUJVtP8HBVh90VGam6n8uQIWgK6cduWaWBGJv9JK2
+         2Vdzi/qVv3y3gbeII/oJPPTu6ErIK+wixqtd8=
+MIME-Version: 1.0
+Received: by 10.231.130.99 with SMTP id r35mr1110681ibs.171.1278094604919; 
+	Fri, 02 Jul 2010 11:16:44 -0700 (PDT)
+Sender: tahooie@gmail.com
+Received: by 10.231.206.82 with HTTP; Fri, 2 Jul 2010 11:16:44 -0700 (PDT)
+Date: Fri, 2 Jul 2010 12:16:44 -0600
+X-Google-Sender-Auth: XtelTsSUU48F2Y1nwaopok1Ktu4
+Message-ID: <AANLkTikQPmHwufVuV06XcuXXg9q74Sy5_gQv-9P19Etk@mail.gmail.com>
+Subject: BUG: set dirty bit whenever I change anything
+From: Tyler Patterson <tpatterson80@gmail.com>
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Content-Type: multipart/alternative; boundary=005045014302ea658d048a6b96ea
+
+--005045014302ea658d048a6b96ea
+Content-Type: text/plain; charset=ISO-8859-1
+
+GCM2SBMLEditor.java
+
+"dirty"
+
+--005045014302ea658d048a6b96ea
+Content-Type: text/html; charset=ISO-8859-1
+
+GCM2SBMLEditor.java<div><br></div><div>&quot;dirty&quot;</div>
+
+--005045014302ea658d048a6b96ea--
+

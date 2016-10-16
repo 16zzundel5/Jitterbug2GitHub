@@ -1,0 +1,51 @@
+From peskin@vlsigroup.ece.utah.edu  Wed May  1 09:38:09 2002
+Return-Path: <peskin@vlsigroup.ece.utah.edu>
+Received: from vlsigroup.ece.utah.edu (IDENT:peskin@ming.elen.utah.edu [155.99.23.210])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g41Fc9P06982
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 1 May 2002 09:38:09 -0600
+Sender: peskin@chou.elen.utah.edu
+Message-ID: <3CD00BE1.BD66F421@vlsigroup.ece.utah.edu>
+Date: Wed, 01 May 2002 09:38:09 -0600
+From: Eric Peskin <peskin@vlsigroup.ece.utah.edu>
+X-Mailer: Mozilla 4.77 [en] (X11; U; Linux 2.4.9-31 i686)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: Cannot use state assignment on level-based specifications (PR#274)
+References: <200204232144.g3NLiKj19115@chou.elen.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+As of cvs tag PR274followup3
+==========================================================================
+Fatal errors in atacs/work/hse:
+	atacs -oqtsys alu2    still draws a segmentation fault.
+	atacs -oqtsys diffeq3 now draws a segmentation fault.
+Therefore, I am moving this report back to Fatal error.
+==========================================================================
+
+The good news is that e0, deco1, and domino2 now work!  Thanks!
+	(deco1 and domino2 never needed the CSC solver)
+I have moved these examples from
+	atacs/work/hse
+to 	atacs/examples/hse
+and added them into the regression suite.
+
+In atacs/work/vhd, using atacs -oqtsys <example>:
+test1 gets No solution found  findsv: Unable to solve CSC -- Possible error
+
+In atacs/examples/hse, using atacs -oqtsys <example>:
+compenv gets ERROR:45:  ack is not a signal!
+
+In atacs/work/hse, using atacs -oqtsys <example>:
+lab3 still produces an empty prs, and I still don't know why.
+FF gets No solution found findsv: Unable to solve CSC -- Possible error
+gasp3 gets ERROR: Ordering rule violation in state 
+postp, deco6, cory are deadlocked in state
+alu1 gets ERROR: Safety violation for rule endp+/1 -> endp-/1.
+absstari, stari12, stari14, fifoN each run out of memory (256 MB)
+sbuf, BUG, diffeq2 each take over 24 hours of cputime
+
+Because of the segmentation faults for alu2 and diffeq3, I am moving
+this bug report back to Fatal error, pending resolution.
+

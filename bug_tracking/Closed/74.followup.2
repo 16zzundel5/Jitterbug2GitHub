@@ -1,0 +1,67 @@
+From myers@jiaqi.elen.utah.edu  Thu May 20 12:16:41 1999
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id MAA02084 for <atacs-bugs@shang.elen.utah.edu>; Thu, 20 May 1999 12:16:39 -0600 (MDT)
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.8.7/8.8.7) id MAA01318
+	for atacs-bugs@shang.elen.utah.edu; Thu, 20 May 1999 12:16:15 -0600
+From: "Chris J. Myers" <myers@vlsigroup.elen.utah.edu>
+Message-Id: <199905201816.MAA01318@jiaqi.elen.utah.edu>
+Subject: Re: Environment process must be at the bottom if the outputs are ommitted from the declarations. (PR#74)
+To: atacs-bugs@shang.elen.utah.edu (Eric Robert Peskin)
+Date: Thu, 20 May 1999 12:16:14 -0600 (MDT)
+In-Reply-To: <199905201539.JAA01576@yuan.elen.utah.edu> from "Eric Robert Peskin" at May 20, 99 09:39:44 am
+Content-Type: text
+
+This has to do with new testbench convention.  The testbench type of process
+needs to be made for left and right in lapbsv.
+> 
+> OK.  Now atacs gives many errors about input/output usage.
+> Should I consider this correct?
+> 
+> 172 xia:meetMorn/fresh> pwd
+> /home/song/peskin/examples/csp/meetMorn/fresh
+> 173 xia:meetMorn/fresh> ls -l `which atacs`
+> -rwx------   1 peskin   101      11473713 May 19 18:37
+> /home/song/peskin/atacs/atacs*
+> 174 xia:meetMorn/fresh> atacs -ya lapbN
+> ATACS VERSION 4.1
+> Logging session in:  atacs.log
+> Compiling lapbN.csp ... 
+> error: undefined action 'o1+'
+> error: undefined action 'o1-'
+> error: undefined action 'i3+'
+> error: undefined action 'i3-'
+> error: output signal 'li+' used as an input
+> error: output signal 'li+' used as an input
+> error: output signal 'li-' used as an input
+> error: output signal 'li-' used as an input
+> error: output signal 'li+' used as an input
+> error: output signal 'ri+' used as an input
+> error: output signal 'ri-' used as an input
+> error: output signal 'ri-' used as an input
+> error: output signal 'ri+' used as an input
+> error: output signal 'ri+' used as an input
+> error: output signal 'li+' used as an input
+> error: output signal 'li+' used as an input
+> error: output signal 'li-' used as an input
+> error: output signal 'li-' used as an input
+> error: output signal 'li+' used as an input
+> error: output signal 'ri+' used as an input
+> error: output signal 'ri-' used as an input
+> error: output signal 'ri-' used as an input
+> error: output signal 'ri+' used as an input
+> error: output signal 'ri+' used as an input
+> Storing process lapbN to lapbN.er
+> Loading timed event-rule structure from:  lapbN.er
+> Initializing 3 cycles ... done
+> Checking liveness ... live
+> Checking connectivity ... NOT strongly connected
+> EXCEPTION:  Connectivity violation!
+> Checking safety ... safe
+> Finding reduced state graph ... done
+> Projecting out dummy transitions ... done
+> Checking CSC ... NOT complete state coded
+> EXCEPTION:  CSC violation!
+> 175 xia:meetMorn/fresh> 
+> 
+> 
+

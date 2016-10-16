@@ -1,0 +1,25 @@
+From myers@ece.utah.edu  Fri Mar 18 08:44:18 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p2IEiI78016231
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 18 Mar 2011 08:44:18 -0600
+Received: from changcheng.ece.utah.edu ([155.98.26.227] helo=[192.168.1.103])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1Q0auY-0002G9-1U
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 18 Mar 2011 08:44:18 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: text/plain; charset=us-ascii
+Subject: FEATURE: ability to select various SBOL elements for a genetically produced species
+Date: Fri, 18 Mar 2011 08:44:12 -0600
+Message-Id: <A842C60D-481F-4DA5-9706-063F04120C2E@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Mime-Version: 1.0 (Apple Message framework v1082)
+X-Mailer: Apple Mail (2.1082)
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p2IEiI78016231
+
+Several SBOL elements should be associated to a genetically produced species using the SBOL library browser.  These elements may be, for example, for a ribosome binding site, protein coding region (gene), terminator, etc.
+
+

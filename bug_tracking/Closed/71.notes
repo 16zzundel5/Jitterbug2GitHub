@@ -1,0 +1,10 @@
+Hao
+Just before this I ran
+
+155 sanguo:csp/IncludeSafe> g include *
+lapbN.csp:include LAPBsv;
+156 sanguo:csp/IncludeSafe> ll LAPBsv.csp 
+-r--------   1 peskin   101           658 Mar 18 14:33 LAPBsv.csp
+157 sanguo:csp/IncludeSafe>
+
+It looks like your scanner maps everything to lowercase.

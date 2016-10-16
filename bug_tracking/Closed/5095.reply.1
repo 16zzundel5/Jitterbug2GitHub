@@ -1,0 +1,16 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: curtis.madsen@utah.edu
+Subject: Re: BUG: Unable to delete local parameters in SBML Editor (PR#5095)
+Date: Wed Sep  8 23:52:51 2010
+CC: n.roehner@utah.edu
+
+You should be able to delete local parameters from a reaction without worrying
+which reaction is selected in the SBML Editor.  Moving to needs testing.
+
+> The SBML Editor doesn't always allow a user to delete local parameters clai=
+> ming that they are used in the kinetic law.  This is due to the fact that t=
+> he SBML Editor loads in information from the currently selected reaction, a=
+> nd if a new reaction is being created, then this reaction is a different re=
+> action with a different kinetic law.=
+> 
+> 

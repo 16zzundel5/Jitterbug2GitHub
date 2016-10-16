@@ -1,0 +1,58 @@
+From zhen.zhang@utah.edu  Mon Jun  2 17:08:47 2014
+Return-Path: <zhen.zhang@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id s52N8liD032364
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 2 Jun 2014 17:08:47 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ai0IAGgDjVPRVYCq/2dsb2JhbABZDoJ5gSqCbKo3AZY9CBZ0ghwiEXQBBzcCJBIBBQEiNYggnEODEWqLJ59PhQKRToFLBIolj1uRPBgpgTCCeF8e
+X-IPAS-Result: Ai0IAGgDjVPRVYCq/2dsb2JhbABZDoJ5gSqCbKo3AZY9CBZ0ghwiEXQBBzcCJBIBBQEiNYggnEODEWqLJ59PhQKRToFLBIolj1uRPBgpgTCCeF8e
+X-IronPort-AV: E=Sophos;i="4.98,960,1392188400"; 
+   d="scan'208";a="367928834"
+Received: from mail-ve0-f170.google.com ([209.85.128.170])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/RC4-SHA; 02 Jun 2014 17:08:46 -0600
+Received: by mail-ve0-f170.google.com with SMTP id db11so5985774veb.15
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 02 Jun 2014 16:08:45 -0700 (PDT)
+X-Received: by 10.221.27.8 with SMTP id ro8mr6206323vcb.30.1401750525794; Mon,
+ 02 Jun 2014 16:08:45 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.220.161.10 with HTTP; Mon, 2 Jun 2014 16:08:05 -0700 (PDT)
+From: Zhen Zhang <zhen.zhang@utah.edu>
+Date: Mon, 2 Jun 2014 17:08:05 -0600
+Message-ID: <CA+LVOvkGwu=k64sMfW+KB1YjTxneTeE4ntkjwyBAgPSXTUz5Yg@mail.gmail.com>
+Subject: BUG: Variable "fail" not removed after failure transition is removed
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a11336baa2762fa04fae27ae1
+
+--001a11336baa2762fa04fae27ae1
+Content-Type: text/plain; charset=UTF-8
+
+In the LEMA schematic editor, if a transition is marked as fail and the
+model is saved, then a "fail" variable appears in "Variable" field in the
+"Event Assignment Editor", and is available to be assigned to a value. I am
+not sure what the purpose of creating a fail variable that the user can
+change its value.
+
+Also, when all failure transitions are unmarked and/or deleted (i.e., no
+failure transition exists in the model), the fail variable remains in any
+newly created non-failure transition's assignment editor.
+
+--001a11336baa2762fa04fae27ae1
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">In the LEMA schematic editor, if a transition is marked as=
+ fail and the model is saved, then a &quot;fail&quot; variable appears in &=
+quot;Variable&quot; field in the &quot;Event Assignment Editor&quot;, and i=
+s available to be assigned to a value. I am not sure what the purpose of cr=
+eating a fail variable that the user can change its value.=C2=A0<div>
+
+<br></div><div>Also, when all failure transitions are unmarked and/or delet=
+ed (i.e., no failure transition exists in the model), the fail variable rem=
+ains in any newly created non-failure transition&#39;s assignment editor.=
+=C2=A0</div>
+
+</div>
+
+--001a11336baa2762fa04fae27ae1--
+

@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Tue Jul  5 10:15:31 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f173.google.com (mail-pf0-f173.google.com [209.85.192.173])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u65GFV65006108
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 5 Jul 2016 10:15:31 -0600
+Received: by mail-pf0-f173.google.com with SMTP id c2so71561302pfa.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 05 Jul 2016 09:15:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=pZ9UCYMOJnF87xWRO1RySvz9Cd6ndPLVQCtTNKvgZf0=;
+        b=y7kvAyVvOdCqgd2LeBC2dwgRhYjnRhgWoHrz0392iKzS0VbWf7suNK+OxRYg4aADOq
+         Fg1SUEyEziShYJia+nYDr/luZFSw37fYPhsPgAkKuMS5JdG/gaiKdUt2qg3IWkfh49rx
+         L2x6uvuxBYM3tUmB5LzJu8MIaG1sa0iJTBe0FsP1Z3N+2ItK8oVQUqc0cVul9kPOF5Bn
+         0avZ15mnzdpnFNfHz4jqIxbXH5gjYd6DD0F1cpirxVbW7kkZihBLIuN4eYVTIAtTvo4J
+         XrAwDBMETAtAn9UWmWdojpn9F833teYoRztW3xGP9646s6QNTH4fX7VLsUPuYbhjcxPE
+         eRRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=pZ9UCYMOJnF87xWRO1RySvz9Cd6ndPLVQCtTNKvgZf0=;
+        b=mjPLe8THDW+Wobu+lWiVLPPkX0/Iyn8aBO6V08J2+mk4LEFKNniuBZvrbgdVp+s26I
+         rbbcr3gtojewVDFw0Lm2rlbJ26UY3GrtRDGQonJkBRLbLJEkU9Hd1ZAQ5Fan9y1k6/LV
+         Xx4xsR/x+DP3nHaiWn1eiocfzRLXkclX3QiAzp4m/Ruf9ydwuxDM4/tcD/TMjpnVYxjx
+         +m/qZmVTWiaYLjbhW8oYEDnn4G4zCq7CFCmCWyb94B6Kx5yvZymcRy3rtui3NmBsZRox
+         0EIwss0jVjL4odNZxZlk1NcjWKLFtO6I25a4BgMmt1660nJ9kRqnJcd4SwCDCElWsOFn
+         XrCQ==
+X-Gm-Message-State: ALyK8tISaV6XpF3sS+fpyxhXuEUMbFSG9W9CVKZKXibHDLq8NmwGcqOB66FFjMDHv/nvXg==
+X-Received: by 10.98.7.22 with SMTP id b22mr33448738pfd.56.1467735331119;
+        Tue, 05 Jul 2016 09:15:31 -0700 (PDT)
+Received: from chings-air.uconnect.utah.edu ([128.110.79.195])
+        by smtp.gmail.com with ESMTPSA id 4sm6342587pav.33.2016.07.05.09.15.30
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 05 Jul 2016 09:15:30 -0700 (PDT)
+Date: Tue, 05 Jul 2016 09:15:30 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: ccmyers98@yahoo.com
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <205936211.2.1467735334419.JavaMail.ching@chings-air.uconnect.utah.edu>
+Subject: BUG: Port Type Bug
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.5
+
+Operating system: Mac OS X
+
+Bug reported by: ccmyers98@yahoo.com
+
+Description:
+In hierarchical models, the port type on the top model is always set to output regardless of choice.
+

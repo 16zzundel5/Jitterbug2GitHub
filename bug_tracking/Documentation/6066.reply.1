@@ -1,0 +1,15 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: l.watanabe@utah.edu
+Subject: Re: BUG: Disallow ids that may conflict with arrays objects (PR#6066)
+Date: Wed Jun 11 22:05:25 2014
+
+Before adding a dimension id, should make sure there is no other element with
+the same id in the model.  
+Otherwise, we need to rename the id to something else.  Maybe dd0, etc.  
+
+Also, should disallow any id's to be added to the model which are already in use
+as dimension ids.
+
+Perhaps a simpler approach will be to not allow id's of the form "d#", but this
+may be too heavy handed to 
+enforce.  

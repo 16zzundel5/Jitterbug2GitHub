@@ -1,0 +1,12 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu,zhen.zhang@utah.edu,thacker@vlsigroup.ece.utah.edu
+Subject: Re: BUG: problem with conversion from LPN to SBML (PR#5020)
+Date: Wed Jun  9 21:34:59 2010
+
+Hi,
+
+I fixed this problem.  Basically "^" was being used for both XOR and Power.  I
+fixed this and also removed floor from division operations for SBML and it
+started to work.
+
+Chris

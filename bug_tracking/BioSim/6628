@@ -1,0 +1,101 @@
+From ibiosim@gmail.com  Sat Jul 23 15:12:53 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-it0-f51.google.com (mail-it0-f51.google.com [209.85.214.51])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u6NLCrkK010165
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 23 Jul 2016 15:12:53 -0600
+Received: by mail-it0-f51.google.com with SMTP id f6so60247071ith.1
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Sat, 23 Jul 2016 14:12:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=rselfmkjw57dbfJXgKK7ic40ffz2CzDlNl2b3dx8ryc=;
+        b=PHo/1Hfi7DaRuU7OIZzp4kpecfQxhf4ueHegxU/AxvX8XBQgoETMW8JkFvQEV8Yhll
+         QwIV+8ypf3/RYVtWTRadMjHJtCebmGXDlbYnw9WWUAyWLFwZWkPnJt+vassE5r2dDl5s
+         9lSJl18iuVrD2woCQZs8IvdVK1LGLS/gtdtYtOie9fkviBcCrt8rcPI8O7E2eHgx5IQD
+         qlOzmLeRQWT6mvo3E7qhSlOBLr2R/2TrBZWhJSsA8M5TirKPd3cLdgJoiEjINsT8p4YK
+         8eOQO9yf/mRTzmO6HyhBJm13e6lhKUJ1kFFLbVYgaXM+6o3yUbbEm3hYGGu2aM+hzkaK
+         /wHQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=rselfmkjw57dbfJXgKK7ic40ffz2CzDlNl2b3dx8ryc=;
+        b=EKP6gU8b8XlStCcxoMPpsB3S/GSp7jp8szrPxIpWXuDaJsrlJD9bbJ5IU5y1ZJMmFv
+         jPxm8+ZbjLnfwvd5VSe+6/avCoQ/XRboVJhkqlgRF22ep1TAi7nHqNibJ4/oAP7gGVr1
+         nvnDRcYNuDKXFRT3G6tI+hmvk1DczuDyP3EiGgJvHRAnsBJJ1ZfxV9MFYUi8sGODK6iE
+         mXDJS+06e8A1xwCjqXkI4XEIiijreAB7gx4vCYEVo40o1NvEvGl1S3NU5afJXPQUXY78
+         OvzZuoEtBcxZyHViZ/cwHflLC2WeFscr7SvUsi4UxajUmFtX4onovusxbkyJz7OEqDvc
+         balA==
+X-Gm-Message-State: ALyK8tLTve3YgVelBCuCETBFkMOYpfdcGQtDYtE3+3ZFJgToGWZFWAtJ9a/5TJ3ug31uKw==
+X-Received: by 10.36.144.131 with SMTP id x125mr83581295itd.27.1469308371506;
+        Sat, 23 Jul 2016 14:12:51 -0700 (PDT)
+Received: from 10.0.0.88 (c-73-3-103-205.hsd1.ut.comcast.net. [73.3.103.205])
+        by smtp.gmail.com with ESMTPSA id 97sm8102451ioi.12.2016.07.23.14.12.50
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Sat, 23 Jul 2016 14:12:50 -0700 (PDT)
+Date: Sat, 23 Jul 2016 14:12:50 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: myers@ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1449338141.0.1469308368968.JavaMail.javamailuser@localhost>
+Subject: BUG: Need better exit when flattening fails
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.9.1
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+When flattening fails, need to catch this an exit gracefully.
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.network.GeneticNetwork.reformatArrayContent(GeneticNetwork.java:368)
+	at biomodel.gui.schematic.ModelEditor.createSBML(ModelEditor.java:1545)
+	at biomodel.gui.schematic.ModelEditor.saveParams(ModelEditor.java:1024)
+	at analysis.main.AnalysisView.executeRun(AnalysisView.java:3050)
+	at main.Gui.actionPerformed(Gui.java:3435)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2018)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2341)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6516)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3320)
+	at java.awt.Component.processEvent(Component.java:6281)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Component.dispatchEventImpl(Component.java:4872)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4832)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+	at java.awt.Container.dispatchEventImpl(Container.java:2273)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4698)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:708)
+	at java.awt.EventQueue$4.run(EventQueue.java:706)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+

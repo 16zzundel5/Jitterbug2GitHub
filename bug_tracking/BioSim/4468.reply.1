@@ -1,0 +1,11 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: combine ODE and Monte Carlo methods (PR#4468)
+Date: Thu Jan  7 07:51:11 2010
+
+This can be done by having the waiting time computed using the following
+equation:
+
+\int_t^{t+\tau} \alpha_0(t)dt + log(p1) = 0
+
+where p1 is a random number and you solve for \tau.

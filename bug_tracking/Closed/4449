@@ -1,0 +1,51 @@
+From christian.atheist@gmail.com  Mon May  5 21:10:37 2008
+Return-Path: <christian.atheist@gmail.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.1 (2007-05-02) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.3 required=5.0 tests=AWL,BAYES_50 autolearn=ham
+	version=3.2.1
+Received: from wf-out-1314.google.com (wf-out-1314.google.com [209.85.200.168])
+	by chou.ece.utah.edu (8.14.1/8.13.1) with ESMTP id m463AbGg015094
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 5 May 2008 21:10:37 -0600
+Received: by wf-out-1314.google.com with SMTP id 28so1521497wfc.24
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 05 May 2008 20:10:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        bh=b+uZXNa235aBW6o8ql5Pt2DNDKPRosuGYlA1/MEoJbc=;
+        b=mwacisd+84cZ+VPj53VriYbd25m8wQCTFvn+ZuKX7qDxR3azXtzFtj1vtUI5RXH8i2PrFOS45p/5gsdA/QGYzvnjMm4vFUCRODyMFQ4rw1D3CU4A+OZa080DU7zaJCRwUj6O/92MKHTV+Cu5G3/G+H82cndrJdEIBHN58raFvyg=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=message-id:date:from:sender:to:subject:mime-version:content-type:content-transfer-encoding:content-disposition:x-google-sender-auth;
+        b=rF9+0MnpvKjUoh5zU55jiVNpCVRKnhmUsn98Qn22gCP8oIc1uQAbjJnOJhT7GHxtp72Sj054yXWu8DVd3E/dkWiYspJg5Er4EEDfrOcc/kO70t3KGdPYSy/61dvf++XYSBSepDApF4sdhT2fD2ri7Qf1a73pQcqtfRPSXoq3LLY=
+Received: by 10.142.52.9 with SMTP id z9mr92246wfz.237.1210043436334;
+        Mon, 05 May 2008 20:10:36 -0700 (PDT)
+Received: by 10.142.14.13 with HTTP; Mon, 5 May 2008 20:10:36 -0700 (PDT)
+Message-ID: <eba119560805052010w3d3b7d7bl8738d024d48f32f@mail.gmail.com>
+Date: Mon, 5 May 2008 21:10:36 -0600
+From: "Nam Nguyen" <namphuon@cs.utah.edu>
+Sender: christian.atheist@gmail.com
+To: "Chris Myers" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: BUG: Extra timepoint occurs in tsd file
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+X-Google-Sender-Auth: 1ef8bc0d3513fa16
+
+I created a simulation of the majority gate, and ran 1000 simulations.
+ When I tried to analyze the results, I keep getting errors.  I
+eventually figured out that the errors were not in my code, but were
+from the data, specifically the tsd files created by Reb2Sac.
+
+Get the analysis view that contains the SBML file and all the tsd from
+this link.
+
+http://www.async.ece.utah.edu/~namphuon/temp/buggedView.zip
+
+Examine the file run-556.tsd and run-557.tsd do a character count of
+"(".  You'll find out that run-556.tsd has one more "(", basically, it
+contains one extra data point.  As far as I can tell, only this file
+has that has this error.  I have no idea how this happened or where
+the extra data point is coming from.
+

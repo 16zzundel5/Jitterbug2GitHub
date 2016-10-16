@@ -1,0 +1,10 @@
+From: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
+To: scottg@san.rr.com
+Subject: Re: BUG - register Id error (PR#6065)
+Date: Tue Jun 10 19:29:00 2014
+CC: myers@ece.utah.edu
+
+Are you creating variables with id 'i' or 'j' ? I was able to add dimensions to
+parameters without any complaints except when I create parameters with those
+ids. I think we should prevent the user to be able to create parameters with ids
+'i' and 'j' since every dimension in iBioSim is create with either 'i' or 'j'.

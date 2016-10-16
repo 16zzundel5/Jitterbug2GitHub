@@ -1,0 +1,31 @@
+From killpack@eng.utah.edu  Wed May  3 13:00:36 2000
+Return-Path: <killpack@eng.utah.edu>
+Received: from localhost (killpack@localhost)
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id NAA30715
+	for <atacs-bugs@shang.elen.utah.edu>; Wed, 3 May 2000 13:00:36 -0600
+X-Authentication-Warning: chou.elen.utah.edu: killpack owned process doing -bs
+Date: Wed, 3 May 2000 13:00:36 -0600 (MDT)
+From: Kip Killpack <killpack@eng.utah.edu>
+X-Sender: killpack@chou.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: filenames && different behavior specifications (VHDL)
+Message-ID: <Pine.LNX.4.10.10005031256410.30708-100000@chou.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+As it stands now, the entity must match the file name.
+
+If I have two behavioral models for the same entity, normally I would
+use the same entity name, but different architecture names.
+
+However, in order for me to synthesize each behavioral circuit with ATACS,
+they have to be in different files and I have to make a different entity
+for each with a different name for each entity.
+
+It would be nice to split the entity from the architecture name and be
+able to specify which architecture to synthesize with which entity rather
+than JUST specifying the entity name and having the architecture be
+implied as the architecture in that file.
+
+Kip
+

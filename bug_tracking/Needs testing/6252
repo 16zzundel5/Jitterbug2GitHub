@@ -1,0 +1,86 @@
+From ibiosim@gmail.com  Tue Feb 24 14:47:02 2015
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pd0-f173.google.com (mail-pd0-f173.google.com [209.85.192.173])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id t1OLl2ZD026348
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Feb 2015 14:47:02 -0700
+Received: by pdjy10 with SMTP id y10so36317725pdj.6
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 24 Feb 2015 13:47:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=jVMk6y/Nq1MkSgs9ZeU0pRlA7SotiUG5m9w3msJqAPI=;
+        b=y7RjQnyIhLEQhhFMEsXFaifpQoY+BfCbRHPWCxjjHoyLBJjfH98SiFPm/FKiuHwtdj
+         tDtMe8Fn2/07SOFG6c0D+PRBsgJ5RB2Te/rND1iBdwEAsUXojittfx6paK4HA+RC5lf4
+         kFiUHr+fBtV1eSQ3Uu5B+OTW4qWjb9swWLrybmrb2oILCBJX23F4Ckx6CAMAg5kRY8yD
+         hQSDnjJkT+VQrL/NQAeur+X5ujyQLWh2UGErUPjSX898xpff9+EaaUOS1GtCCpaezSDa
+         nCJwi//u5vTCw5NVUD+h6e3xXTTLEoZuELnAJO+S7OkEidEmhZ4ur/MUh+pEGUJVVVIc
+         5wVQ==
+X-Received: by 10.68.101.130 with SMTP id fg2mr7012479pbb.118.1424814420810;
+        Tue, 24 Feb 2015 13:47:00 -0800 (PST)
+Received: from andys-mbp.uconnect.utah.edu (128-110-74-102.uconnect.utah.edu. [128.110.74.102])
+        by mx.google.com with ESMTPSA id um16sm4871412pab.7.2015.02.24.13.46.58
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Tue, 24 Feb 2015 13:46:59 -0800 (PST)
+Date: Tue, 24 Feb 2015 13:46:59 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: andy.gilbert@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1608828042.0.1424814414441.JavaMail.Andy@andys-mbp.uconnect.utah.edu>
+Subject: BUG: Error thrown when creating a promoter
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.3
+
+Operating system: Mac OS X
+
+Bug reported by: andy.gilbert@utah.edu
+
+Description:
+Following the tutorial with version 2.8.3 and when I tried to create a promoter with custom values it gave an error
+
+Stack trace:
+java.lang.NullPointerException
+	at biomodel.parser.BioModel.changePromoterId(BioModel.java:3175)
+	at biomodel.gui.gcm.PromoterPanel.openGui(PromoterPanel.java:475)
+	at biomodel.gui.gcm.PromoterPanel.<init>(PromoterPanel.java:335)
+	at biomodel.gui.schematic.ModelEditor.launchPromoterPanel(ModelEditor.java:1874)
+	at biomodel.gui.schematic.Schematic.bringUpEditorForCell(Schematic.java:2764)
+	at biomodel.gui.schematic.Schematic$9.mouseReleased(Schematic.java:1182)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:290)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3322)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2739)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:751)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:702)
+	at java.awt.EventQueue$3.run(EventQueue.java:696)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:724)
+	at java.awt.EventQueue$4.run(EventQueue.java:722)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:721)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+

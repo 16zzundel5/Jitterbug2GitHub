@@ -1,0 +1,27 @@
+From myers@jiaqi.elen.utah.edu  Sun Jun 17 16:05:54 2001
+Return-Path: <myers@jiaqi.elen.utah.edu>
+Received: from jiaqi.elen.utah.edu (han.elen.utah.edu [155.99.23.196])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA24733
+	for <atacs-bugs@shang.elen.utah.edu>; Sun, 17 Jun 2001 16:05:52 -0600
+Received: from localhost (myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.2/8.11.2) with ESMTP id f5HM57E01272
+	for <atacs-bugs@shang.elen.utah.edu>; Sun, 17 Jun 2001 16:05:07 -0600
+Date: Sun, 17 Jun 2001 16:05:07 -0600 (MDT)
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+To: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+Subject: Re: BAD388 broken repository! (PR#544)
+In-Reply-To: <200106150010.SAA08659@chou.elen.utah.edu>
+Message-ID: <Pine.LNX.4.33.0106171557470.1234-100000@jiaqi.elen.utah.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+
+The problem appears to be that on RH7 it picks one insertion point and RH6
+picks a different one.  This is likely due to some changes in the STL
+containers on what order things get stored.  The reason it succeeds on RH7
+and fails on RH6 is simply dumb luck.  It is well known that the CSC
+solver does not work on all examples or with all insertion point
+selections.  In this case, the choice for RH6 ends up with a blank in the
+state vector.  This is due to a start state which is not found in a cycle.
+
+

@@ -1,0 +1,15 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: SBML files and GCM hierarchy (PR#4976)
+Date: Mon Jul 19 20:40:21 2010
+
+> 1) Allow user to select whether or not SBML file should be included  
+> when component is instantiated.
+> 
+> 2) Allow user to select which parts of the SBML file should be  
+> included when component is instantiated.
+> 
+> 
+The entire SBML file is kept when using hierarchy in GCM.  The GCM files are
+merged separately from the SBML files, and then the final GCM is merged with the
+SBML when the GCM is converted to an SBML file.  Moving to needs testing.

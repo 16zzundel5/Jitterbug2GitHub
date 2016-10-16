@@ -1,0 +1,134 @@
+From atacs-bugs  Fri Mar 29 08:05:42 2002
+Return-Path: <atacs-bugs@chou.elen.utah.edu>
+Received: (from atacs-bugs@localhost)
+	by chou.elen.utah.edu (8.11.6/8.11.6) id g2TF5gs17306
+	for atacs-bugs@shang.elen.utah.edu; Fri, 29 Mar 2002 08:05:42 -0700
+Received: from jiaqi.elen.utah.edu (jiaqi.elen.utah.edu [155.99.23.199])
+	by chou.elen.utah.edu (8.11.6/8.11.6) with ESMTP id g2TF5fK17288
+	for <atacs-bugs@vlsigroup.elen.utah.edu>; Fri, 29 Mar 2002 08:05:42 -0700
+Received: (from myers@localhost)
+	by jiaqi.elen.utah.edu (8.11.6/8.11.2) id g2T6k4e01285
+	for atacs-bugs@vlsigroup; Thu, 28 Mar 2002 23:46:04 -0700
+Date: Thu, 28 Mar 2002 23:46:04 -0700
+From: "Chris J. Myers" <myers@jiaqi.elen.utah.edu>
+Message-Id: <200203290646.g2T6k4e01285@jiaqi.elen.utah.edu>
+To: atacs-bugs@vlsigroup.elen.utah.edu
+Subject: BAP gets safety violation
+
+
+The file below gets a safety violation with bap and verifies successfully
+with bag.  Here is the command lines:
+
+atacs -oa -on -tp -va 16.er
+atacs -oa -on -tb -va 16.er
+
+.e 17
+.i 6
+.r 35
+.n 0
+.d 0
+.m 0
+.o 0
+.c 6
+.s 001001
+reset
+#
+# INPUT EVENTS:
+#
+x0t+/1:1 x0t-/1:1
+x0f+/1:1 x0f-/1:1
+ack2+/1:1 ack2-/1:1
+#
+# OUTPUT EVENTS:
+#
+x1f+/1:2 x1f-/1:2
+x1t+/1:2 x1t-/1:2
+ack1+/1:2 ack1-/1:2
+#
+# DUMMY INPUT EVENTS:
+#
+#
+# DUMMY OUTPUT EVENTS:
+#
+#
+# DUMMY EVENTS:
+#
+$x2t-/1:16
+$clk-/1:16
+$clk+/1:16
+$x2f+/1:16
+#
+# RULES:
+#
+$x2f+/1 $x2t-/1  0 300 600
+$clk+/1 $x2t-/1  0 500 1100
+reset $x2t-/1  0 500 1000
+x1t+/1 $x2f+/1  0 100 200
+x1f-/1 $x2t-/1  0 100 200
+$clk+/1 $clk-/1  0 1200 1200
+x0t+/1 x0t-/1  0 0 100
+x0f+/1 x0f-/1  0 0 100
+$clk+/1 x0f+/1  0 0 100
+x1t-/1 $x2t-/1  0 100 200
+$x2t-/1 ack2+/1  0 100 200
+$x2f+/1 ack2-/1  0 100 200
+x1f+/1 $x2f+/1  0 100 200
+reset $x2f+/1  0 100 200
+$clk+/1 x0t+/1  0 0 100
+$clk-/1 x0f-/1  0 0 100
+$clk-/1 x0t-/1  0 0 100
+reset $clk+/1  0 1200 1200
+x1t-/1 ack1+/1  0 100 200
+x1f+/1 ack1-/1  0 100 200
+x1t+/1 ack1-/1  0 100 200
+x1f-/1 ack1+/1  0 100 200
+x0t+/1 x1t+/1  0 100 200
+x0f-/1 x1f-/1  0 100 200
+ack2-/1 x1f-/1  0 100 200
+reset x1f+/1  0 100 200
+reset x1t+/1  0 100 200
+ack2-/1 x1t-/1  0 100 200
+x0t-/1 x1t-/1  0 100 200
+x0f+/1 x1f+/1  0 100 200
+#
+# INITIAL RULES:
+#
+$x2t-/1 $x2f+/1  1 300 600
+$clk-/1 $x2f+/1  1 500 1100
+ack2+/1 x1t+/1  1 100 200
+ack2+/1 x1f+/1  1 100 200
+$clk-/1 $clk+/1  1 1200 1200
+#
+# RULES:
+#
+#
+# INITIAL RULES:
+#
+# 
+# MERGERS:
+# 
+#
+# INPUT CONFLICTS:
+#
+#
+# LOOPING INPUT CONFLICTS:
+#
+#
+# OUTPUT CONFLICTS:
+#
+#
+# LOOPING OUTPUT CONFLICTS:
+#
+#
+#  CONFLICTS:
+#
+x0t+/1 x0f-/1
+x0t-/1 x0f-/1
+x0t-/1 x0f+/1
+x0t+/1 x0f+/1
+x1t-/1 x1f-/1
+x1t+/1 x1f+/1
+#
+# LOOPING CONFLICTS:
+#
+

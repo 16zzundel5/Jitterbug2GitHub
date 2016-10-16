@@ -1,0 +1,21 @@
+From myers@vlsigroup.elen.utah.edu  Mon Oct  4 16:43:25 1999
+Received: from localhost (shang.elen.utah.edu [155.99.23.201])
+	by chou.elen.utah.edu (8.9.3/8.9.3) with ESMTP id QAA25775
+	for <atacs-bugs@shang.elen.utah.edu>; Mon, 4 Oct 1999 16:43:25 -0600
+Date: Mon, 4 Oct 1999 16:43:25 -0600
+Message-Id: <199910042243.QAA25775@chou.elen.utah.edu>
+From: myers@vlsigroup.elen.utah.edu
+To: atacs-bugs@shang.elen.utah.edu
+Subject: verbose should not be needed for multicube approach.
+
+Full_Name: Chris Myers
+Version: 
+OS: 
+source: 
+log: 
+Submission from: jiaqi.elen.utah.edu (155.99.23.199)
+Submitted by: myers
+
+
+verbose should not be needed for multicube approach.
+

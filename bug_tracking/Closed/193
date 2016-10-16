@@ -1,0 +1,613 @@
+From peskin@song.elen.utah.edu  Tue Jun 22 13:27:05 1999
+Received: from song.elen.utah.edu (song.elen.utah.edu [128.110.18.207]) by yuan.elen.utah.edu with ESMTP (8.7.1/8.7.1) id NAA18925 for <atacs-bugs@shang.elen.utah.edu>; Tue, 22 Jun 1999 13:27:05 -0600 (MDT)
+Received: (from peskin@localhost)
+	by song.elen.utah.edu (8.9.3/8.9.3) id NAA06128
+	for atacs-bugs@shang.elen.utah.edu; Tue, 22 Jun 1999 13:27:21 -0600
+Date: Tue, 22 Jun 1999 13:27:21 -0600
+From: Eric Peskin <peskin@song.elen.utah.edu>
+Message-Id: <199906221927.NAA06128@song.elen.utah.edu>
+To: atacs-bugs@shang.elen.utah.edu
+Subject: atacs should halt on duplicate process label error
+
+SYSTEM: linux (Linux song.elen.utah.edu 2.2.5-22 #1 Wed Jun 2 09:17:03 EDT 1999 i686 unknown)
+WHO:    peskin               
+WHERE:  /home/ming/atacs/examples/bugs                
+WHEN:   Tue Jun 22 13:27:03 MDT 1999                
+WHAT:   -rwx------ 1 peskin utmp 11454019 Jun 22 12:58 /home/xia/peskin/atacs/src/atacs               
+HOW:    atacs -ya alpha            
+OUTPUT:                       
+                              
+file:///home/ming/atacs/examples/bugs/atacs.log                 
+Compiling alpha.csp ... 
+Loading timed event-rule structure from:  alpha.er
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... strongly connected
+Checking safety ... safe
+Finding reduced state graph ... done
+Projecting out dummy transitions ... done
+Checking CSC ... complete state coded
+Finding regions ... done
+Finding conflicts ... done
+Finding cover ... done
+synthesis took 0.00406098 seconds.
+Storing production rules to:  alpha.prs
+Total Area = 0 literals 0 transistors
+                              
+                              
+EXIT STATUS:  0  
+              
+file:///home/ming/atacs/examples/bugs/alpha.csp
+module alphaN;
+
+input a;
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+/*
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+
+process a;
+    *[ [<0,15>true] ]
+endprocess
+*/
+endmodule
+
+              
+              
+file:///home/ming/atacs/examples/bugs/alpha.grf
+N F T1 $0+/1
+N M P1 [0,15]
+E P T1 0 P1 0
+E P P1 0 T1 0
+ZZZZZ              
+              
+file:///home/ming/atacs/examples/bugs/alpha.prs
+              
+              
+file:///home/ming/atacs/examples/bugs/alpha.er
+.e 2
+.i 0
+.r 2
+.n 0
+.d 0
+.c 0
+.s 0
+reset
+# 
+# INPUT EVENTS:
+# 
+# 
+# OUTPUT EVENTS:
+# 
+# 
+# DUMMY EVENTS:
+# 
+$0+/1
+# 
+# RULES:
+# 
+reset $0+/1 0 0 15
+# 
+# INITIAL RULES:
+# 
+$0+/1 $0+/1 1 0 15
+# 
+# RULES:
+# 
+# 
+# INITIAL RULES:
+# 
+# 
+# MERGERS:
+# 
+# 
+# CONFLICTS:
+# 
+# 
+# LOOPING CONFLICTS:
+# 
+              

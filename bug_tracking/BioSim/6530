@@ -1,0 +1,56 @@
+From ibiosim@gmail.com  Mon Jun 27 12:52:21 2016
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-pf0-f176.google.com (mail-pf0-f176.google.com [209.85.192.176])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5RIqLSR018162
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 12:52:21 -0600
+Received: by mail-pf0-f176.google.com with SMTP id c2so64466412pfa.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Mon, 27 Jun 2016 11:52:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=YvVTClJr8bps9G/wBAAveoqHX+v7oIsD3EgEbA3UpUw=;
+        b=Roi5WTwvTBlCfr6R3HkNwI4J8h6+PmrbUqYZpngDOq/qoXhztbtTmk27vxgF6QdHpU
+         S4DGh/8NLMGun5/O2FRMRAgVfGI+imJwl62ckxU0VCq/eBNRpZxae/4fgC/vGBI4CkEV
+         wtln6pfFy0S5ipe+iZW0ErSj82xp3eTrPyCT0GaaSqncWARN+Be7RwgWWwnogYwIYbyj
+         yM/u+BDDm3AVc1tYzl18fEJctL9LLDx7E2GeznP++j+VRDrz0DHKn+hcFknZ+wZ/ftL3
+         aI0C3HqPzE1pymEfkahJu94hvIXLfdD125fEW94r10PT+DzVGkkud4r37aE68LSoPkwu
+         IyOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:subject:mime-version
+         :content-transfer-encoding;
+        bh=YvVTClJr8bps9G/wBAAveoqHX+v7oIsD3EgEbA3UpUw=;
+        b=Vws7RFC+CUVqvjW0rVhlEoWjFt/6DpvPqjd7MdTnhuakQ9KRqe2xyxLjvRGN4/3/jn
+         J7RbLm0BTA6SgdVT5Hzx+L5ZlElNW5Chf2dhDrBmn7bxrJo8rkqTXsqaNTjEHzcfh8H5
+         cWs31ufbnHiwl0oBrm4GGY3AFd3LzMT8IBFANsHwtkXs2ec9GYkfH60babbHoy3Upy/c
+         30/FtY/3cCKCT8vgtYap7sNnxMK+qhDbxMbSpQXb2AMvmcMn+EIStpt2qVToKKbsjHjh
+         RgX+8dW6vMVvuluaPPmGekLaD1QFV1REiPUp2hiTIG8kRYCIJP3lU+O5jfaNmPjUgNa0
+         wKxg==
+X-Gm-Message-State: ALyK8tJ12jM3afC0cezug4PNMBMkQcOnfaUemmGyUK7CKEa7yISsLcN/uvvLY5yaGVVVSA==
+X-Received: by 10.98.79.17 with SMTP id d17mr22347881pfb.127.1467053541087;
+        Mon, 27 Jun 2016 11:52:21 -0700 (PDT)
+Received: from chou.ece.utah.edu (vlsimail.ece.utah.edu. [155.98.27.202])
+        by smtp.gmail.com with ESMTPSA id 203sm1485802pfz.35.2016.06.27.11.52.20
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Mon, 27 Jun 2016 11:52:20 -0700 (PDT)
+Date: Mon, 27 Jun 2016 11:52:20 -0700 (PDT)
+From: ibiosim@gmail.com
+X-Google-Original-From: lwatanabe@utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <1265584189.2.1467053540028.JavaMail.leandro@chou.ece.utah.edu>
+Subject: BUG: Hierarchical Simulators need to implement grid models
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8.4
+
+Operating system: Linux
+
+Bug reported by: lwatanabe@utah.edu
+
+Description:
+Currently, grid models are only supported on flatten simulators
+

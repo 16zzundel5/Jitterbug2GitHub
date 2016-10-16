@@ -1,0 +1,27 @@
+From: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: CHANGE: use input/output type to infer direction of edges on components (PR#4975)
+Date: Fri Jul 23 05:54:39 2010
+
+This should be fixed now.  However, you'll need to open the GCM and save it for
+the correct arrow directions to be reflected when you view the model.  Moving to
+needs testing.
+
+>This does not seem to be correct.  I think it is taking the type from 
+>the top-level species when it needs to consider which port it is 
+>connected to.  For example, if you construct an oscillator out of 
+>three inverters.  The top-level has all species as output though each 
+>species is connected to an input and output of two separate components.
+>
+>Chris
+>
+>On Jul 22, 2010, at 6:07 PM, Curtis Madsen wrote:
+>
+>>> When species mapped to input, arrow goes into component, and when
+>>> output vice versa.
+>>>
+>>>
+>>
+>> Arrows now point in the correct direction for components when viewed 
+>> using
+>> dotty.  Moving to needs testing.

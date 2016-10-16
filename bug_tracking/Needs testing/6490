@@ -1,0 +1,472 @@
+From myers@eng.utah.edu  Thu Apr 14 07:37:11 2016
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u3EDbAFH003877
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Apr 2016 07:37:10 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.86 id 1aqhRz-0006Ve-Bg)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 14 Apr 2016 07:37:10 -0600
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1aqhRg-000O2N-KK
+	for atacs-bugs@vlsigroup.ece.utah.edu; Thu, 14 Apr 2016 07:36:32 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_7D8F6A43-C547-4900-B944-EEE2E3D6D9D3"
+Subject: CHANGE: update to libSBML-5.13.0
+Date: Thu, 14 Apr 2016 07:36:50 -0600
+References: <570F5C10.3010801@caltech.edu>
+To: atacs-bugs <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <FD4B533D-BDB0-4387-A938-209ADE0E4523@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2104\))
+X-Mailer: Apple Mail (2.2104)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+
+--Apple-Mail=_7D8F6A43-C547-4900-B944-EEE2E3D6D9D3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> From: Sarah Keating <skeating@caltech.edu>
+> Subject: [sbml-discuss] Release of libSBML-5.13.0
+> Date: April 14, 2016 at 3:00:00 AM MDT
+> To: LibSBML Development List <libsbml-development@googlegroups.com>, =
+SBML Discussion List <sbml-discuss@googlegroups.com>
+> Reply-To: sbml-discuss@googlegroups.com
+>=20
+> ----------------------
+> libSBML-5.13.0
+> ----------------------
+>=20
+> We are pleased to announce the release of libSBML-5.13.0 which is
+> available for download from
+>=20
+> https://sourceforge.net/projects/sbml/files/libsbml/5.13.0/
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> 5.13.0 (2016-04-14)
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> STABLE RELEASE
+>=20
+> * Groups
+>=20
+>   - The first official version of the specification of Groups
+>     is now available, and thus the libSBML code for
+>     'groups' is now included in the stable release of libSBML.  This
+>     means that all prebuilt binaries for the stable release will
+>     include the 'groups' package code. The src archive containing
+>     libSBML core code will continue to be available, but there will be
+>     additional src archives available in the stable branch: one
+>     containing libSBML core plus all stable packages and additional
+>     archives of the individual package code.
+>=20
+>     NOTE: The libSBML GNU make-based build system has not been updated
+>           for packages. Thus, to build from src, it is necessary to
+>           use the CMake build system.
+>=20
+>=20
+> * New features
+>=20
+>=20
+>   - New functions have been added to the XMLOutputStream to allow the
+>     optional XML comment to be further customized.
+>=20
+>   - The Python binding now includes a __version__ field.
+> =09
+>   - 'comp' package-specific updates:
+>=20
+>     - The SBMLResolver interface has been exposed within language =
+bindings.
+>=20
+>   - 'fbc' package-specific updates:
+>=20
+>     - The MATLAB interface has been expanded to include a dedicated
+>       FBC V2 structure.  Thanks to the COBRA Toolbox team for their
+>       feedback and testing.
+>=20
+>     - There was an issue with round-tripping geneProductAssociations
+>       between the expression and the infix representation.  This has
+>       been sorted.
+>=20
+>   - 'groups' package-specific updates:
+>=20
+>     - A function named 'copyInformationToNestedLists' has been
+>       added to facilitate keeping information consistent when multiple
+>       <group> objects refer to the same thing.
+>=20
+> * Bug fixes
+>=20
+>   - Validation was failing to catch when the <piece> element of a
+>     <piecewise> had an incorrect number of children.  This has been
+>     fixed. Thanks to Jason Zwolak for the report.
+>=20
+>   - Unit consistency checking was failing to interpret the units of
+>     <cn> elements when passed to a <functionDefinition>. This has been =
+fixed.
+>=20
+>   - The getListOfElements code was not being correctly ported to
+>     language bindings. This has been corrected.
+>=20
+>   - Unit consistency checking was failing to correctly handle =
+non-integer
+>     power expressions. This has been corrected. Thanks to Matthias =
+K=C3=B6nig
+>     for reporting this.
+>=20
+>   - The StrictUnitConsistencyValidator has been corrected to identify
+>     matching base SI units. Thus, 1000 litre will be correctly equated
+>     with 1 metre cubed.
+>=20
+>   - Sourceforge libSBML Tracker #421: The MATLAB binding was failing
+>     to round-trip multi-byte characters used in strings. This has
+>     been fixed. Thanks to Will Matern for the report.
+>=20
+>   - Validation was failing to report that a 'variable' attribute is
+>     not permitted on an AlgebraicRule.  This has been corrected.
+>=20
+>   - Sourceforge libSBML Tracker #418: Using the isnan() function can
+>     cause issues with some compilers. LibSBML has a util_isNaN() =
+function
+>     which should be used when necessary.  Thanks to Alan Garny for
+>     reporting this issue.
+>=20
+>   - The functions that convert an enumeration value to a string had
+>     not been ported to language bindings.  This has now been sorted.
+>     Thanks to Matthias K=C3=B6nig for letting us know.
+>=20
+>   - The new ASTNode class instances were failing to deal correctly =
+with
+>     semantic annotations.  This has been fixed.
+>=20
+>   - 'comp' package-specific bug fixes:
+>=20
+>     - Failing to access an external model could cause an endless
+>       loop while attempting validation.  This has been corrected.
+>       Thanks to Chris Myers for the report.
+>=20
+>   - 'fbc' package-specific bug fixes:
+>=20
+>     - Sourceforge libSBML Tracker #419: The converters provided for
+>       converting from COBRA style SBML models to SBML+fbc style models
+>       were losing a charge of '0' if explicitly set. This has been
+>       corrected. Thanks to Ali Ebrahim for reporting the problem.
+>=20
+>   - 'layout' package-specific bug fixes:
+>=20
+>     - In some cases the value of the 'id' attribute was being written =
+out
+>       as the 'name'.  This has been fixed.
+>=20
+> * Configuration/build system changes
+>=20
+>   - The Python bindings can now be configured to install using =
+setup.py.
+>=20
+>=20
+> * Miscellaneous
+>=20
+>   - The Python version of libSBML available via PyPi now includes =
+binary
+>     wheels for Windows and Mac OSX operating systems.
+>=20
+>   - The Python version of libSBML available via PyPi now includes all
+>     dependencies.
+>=20
+>   - We conducted a review of the mathml-infix parsing code and =
+compared
+>     inputs and outputs with those of JSBML. This has produced a more
+>     synchronized approach between the two APIs.
+>=20
+>   - There is a known bug in GCC versions 5.1 and 5.2 which results in =
+the
+>     problem that calling the copy constructor of a base class in the
+>     constructor of derived classes produces crashing code.  The =
+problem
+>     manifests itself in libSBML when using a language binding such as =
+the
+>     Python interface. Workarounds have been added to the libSBML
+>     'Known Issues' documentation.
+>=20
+>   - Sourceforge libSBML Tracker #417: Documentation was failing to =
+write
+>     using Python 3.5.  This has been fixed.  Thanks to  Antonio Trande =
+for
+>     reporting this.
+>=20
+>=20
+> EXPERIMENTAL RELEASE
+>=20
+> * New features
+>=20
+>   - 'multi' package-specific updates:
+>=20
+>     - The code has been updated to reflect v 1.0.6 of the =
+specification.
+>=20
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+>=20
+> Please report any problems you encounter using libSBML either to the =
+mailing list libsbml-team@caltech.edu or using the issue tracker for =
+libSBML at
+>=20
+> https://sourceforge.net/tracker/?group_id=3D71971&atid=3D942737
+>=20
+> Thanks,
+>=20
+> the LibSBMLTeam
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "sbml-discuss" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbml-discuss+unsubscribe@googlegroups.com.
+> To post to this group, send email to sbml-discuss@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/570F5C10.3010801%40caltech.=
+edu.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_7D8F6A43-C547-4900-B944-EEE2E3D6D9D3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div style=3D""><br class=3D""><blockquote =
+type=3D"cite" class=3D""><div class=3D"">Begin forwarded =
+message:</div><br class=3D"Apple-interchange-newline"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Sarah Keating &lt;<a =
+href=3D"mailto:skeating@caltech.edu" =
+class=3D"">skeating@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-discuss] =
+Release of libSBML-5.13.0</b><br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">April 14, 2016 at 3:00:00 AM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">LibSBML Development List &lt;<a =
+href=3D"mailto:libsbml-development@googlegroups.com" =
+class=3D"">libsbml-development@googlegroups.com</a>&gt;, SBML Discussion =
+List &lt;<a href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><br class=3D""><div =
+class=3D"">----------------------<br class=3D"">libSBML-5.13.0<br =
+class=3D"">----------------------<br class=3D""><br class=3D"">We are =
+pleased to announce the release of libSBML-5.13.0 which is<br =
+class=3D"">available for download from<br class=3D""><br class=3D""><a =
+href=3D"https://sourceforge.net/projects/sbml/files/libsbml/5.13.0/" =
+class=3D"">https://sourceforge.net/projects/sbml/files/libsbml/5.13.0/</a>=
+<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D"">5.13.0 (2016-04-14)<br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">STABLE RELEASE<br class=3D""><br class=3D"">* =
+Groups<br class=3D""><br class=3D""> &nbsp;&nbsp;- The first official =
+version of the specification of Groups<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;is now available, and thus the libSBML code =
+for<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;'groups' is now included in =
+the stable release of libSBML. &nbsp;This<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;means that all prebuilt binaries for the stable =
+release will<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;include the 'groups' =
+package code. The src archive containing<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;libSBML core code will continue to be available, =
+but there will be<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;additional src =
+archives available in the stable branch: one<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;containing libSBML core plus all stable packages =
+and additional<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;archives of the =
+individual package code.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;NOTE: The libSBML GNU make-based build system =
+has not been updated<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for =
+packages. Thus, to build from src, it is necessary to<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use the =
+CMake build system.<br class=3D""><br class=3D""><br class=3D"">* New =
+features<br class=3D""><br class=3D""><br class=3D""> &nbsp;&nbsp;- New =
+functions have been added to the XMLOutputStream to allow the<br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;optional XML comment to be further =
+customized.<br class=3D""><br class=3D""> &nbsp;&nbsp;- The Python =
+binding now includes a __version__ field.<br class=3D""><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	</span><br =
+class=3D""> &nbsp;&nbsp;- 'comp' package-specific updates:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;- The SBMLResolver =
+interface has been exposed within language bindings.<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;- 'fbc' package-specific updates:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;- The MATLAB =
+interface has been expanded to include a dedicated<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FBC V2 structure. &nbsp;Thanks to =
+the COBRA Toolbox team for their<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feedback and testing.<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;- There was an issue =
+with round-tripping geneProductAssociations<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;between the expression and the infix =
+representation. &nbsp;This has<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;been sorted.<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;- 'groups' package-specific updates:<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;- A function named =
+'copyInformationToNestedLists' has been<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;added to facilitate keeping =
+information consistent when multiple<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;group&gt; objects refer to the =
+same thing.<br class=3D""><br class=3D"">* Bug fixes<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;- Validation was failing to catch when the =
+&lt;piece&gt; element of a<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;piecewise&gt; had an incorrect number of =
+children. &nbsp;This has been<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;fixed. Thanks to Jason Zwolak for the report.<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;- Unit consistency checking was =
+failing to interpret the units of<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cn&gt; elements when passed to a =
+&lt;functionDefinition&gt;. This has been fixed.<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;- The getListOfElements code was not being =
+correctly ported to<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;language =
+bindings. This has been corrected.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- Unit consistency checking was failing to correctly handle =
+non-integer<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;power expressions. =
+This has been corrected. Thanks to Matthias K=C3=B6nig<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;for reporting this.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- The StrictUnitConsistencyValidator has been corrected to =
+identify<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;matching base SI units. =
+Thus, 1000 litre will be correctly equated<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;with 1 metre cubed.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- Sourceforge libSBML Tracker #421: The MATLAB binding was =
+failing<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;to round-trip multi-byte =
+characters used in strings. This has<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;been fixed. Thanks to Will Matern for the =
+report.<br class=3D""><br class=3D""> &nbsp;&nbsp;- Validation was =
+failing to report that a 'variable' attribute is<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;not permitted on an AlgebraicRule. &nbsp;This =
+has been corrected.<br class=3D""><br class=3D""> &nbsp;&nbsp;- =
+Sourceforge libSBML Tracker #418: Using the isnan() function can<br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;cause issues with some compilers. =
+LibSBML has a util_isNaN() function<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;which should be used when necessary. =
+&nbsp;Thanks to Alan Garny for<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;reporting this issue.<br class=3D""><br =
+class=3D""> &nbsp;&nbsp;- The functions that convert an enumeration =
+value to a string had<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;not been =
+ported to language bindings. &nbsp;This has now been sorted.<br =
+class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;Thanks to Matthias K=C3=B6nig for =
+letting us know.<br class=3D""><br class=3D""> &nbsp;&nbsp;- The new =
+ASTNode class instances were failing to deal correctly with<br class=3D"">=
+ &nbsp;&nbsp;&nbsp;&nbsp;semantic annotations. &nbsp;This has been =
+fixed.<br class=3D""><br class=3D""> &nbsp;&nbsp;- 'comp' =
+package-specific bug fixes:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;- Failing to access an external model could =
+cause an endless<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop =
+while attempting validation. &nbsp;This has been corrected.<br class=3D"">=
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to Chris Myers for the =
+report.<br class=3D""><br class=3D""> &nbsp;&nbsp;- 'fbc' =
+package-specific bug fixes:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;- Sourceforge libSBML Tracker #419: The =
+converters provided for<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;converting from COBRA style SBML =
+models to SBML+fbc style models<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;were losing a charge of '0' if =
+explicitly set. This has been<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corrected. Thanks to Ali Ebrahim for =
+reporting the problem.<br class=3D""><br class=3D""> &nbsp;&nbsp;- =
+'layout' package-specific bug fixes:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;- In some cases the value of the 'id' attribute =
+was being written out<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as the 'name'. &nbsp;This has been =
+fixed.<br class=3D""><br class=3D"">* Configuration/build system =
+changes<br class=3D""><br class=3D""> &nbsp;&nbsp;- The Python bindings =
+can now be configured to install using setup.py.<br class=3D""><br =
+class=3D""><br class=3D"">* Miscellaneous<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- The Python version of libSBML available via PyPi now =
+includes binary<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;wheels for =
+Windows and Mac OSX operating systems.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- The Python version of libSBML available via PyPi now =
+includes all<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;dependencies.<br =
+class=3D""><br class=3D""> &nbsp;&nbsp;- We conducted a review of the =
+mathml-infix parsing code and compared<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;inputs and outputs with those of JSBML. This has =
+produced a more<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;synchronized =
+approach between the two APIs.<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;- There is a known bug in GCC versions 5.1 and 5.2 which =
+results in the<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;problem that =
+calling the copy constructor of a base class in the<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;constructor of derived classes produces crashing =
+code. &nbsp;The problem<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;manifests =
+itself in libSBML when using a language binding such as the<br class=3D"">=
+ &nbsp;&nbsp;&nbsp;&nbsp;Python interface. Workarounds have been added =
+to the libSBML<br class=3D""> &nbsp;&nbsp;&nbsp;&nbsp;'Known Issues' =
+documentation.<br class=3D""><br class=3D""> &nbsp;&nbsp;- Sourceforge =
+libSBML Tracker #417: Documentation was failing to write<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;using Python 3.5. &nbsp;This has been fixed. =
+&nbsp;Thanks to &nbsp;Antonio Trande for<br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;reporting this.<br class=3D""><br class=3D""><br =
+class=3D"">EXPERIMENTAL RELEASE<br class=3D""><br class=3D"">* New =
+features<br class=3D""><br class=3D""> &nbsp;&nbsp;- 'multi' =
+package-specific updates:<br class=3D""><br class=3D""> =
+&nbsp;&nbsp;&nbsp;&nbsp;- The code has been updated to reflect v 1.0.6 =
+of the specification.<br class=3D""><br =
+class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br =
+class=3D""><br class=3D"">Please report any problems you encounter using =
+libSBML either to the mailing list libsbml-team@caltech.edu or using the =
+issue tracker for libSBML at<br class=3D""><br =
+class=3D"">https://sourceforge.net/tracker/?group_id=3D71971&amp;atid=3D94=
+2737<br class=3D""><br class=3D"">Thanks,<br class=3D""><br class=3D"">the=
+ LibSBMLTeam<br class=3D""><br class=3D"">-- <br class=3D"">You received =
+this message because you are subscribed to the Google Groups =
+"sbml-discuss" group.<br class=3D"">To unsubscribe from this group and =
+stop receiving emails from it, send an email to =
+sbml-discuss+unsubscribe@googlegroups.com.<br class=3D"">To post to this =
+group, send email to sbml-discuss@googlegroups.com.<br class=3D"">To =
+view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/570F5C10.3010801%40caltech.=
+edu.<br class=3D"">For more options, visit =
+https://groups.google.com/d/optout.<br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_7D8F6A43-C547-4900-B944-EEE2E3D6D9D3--
+

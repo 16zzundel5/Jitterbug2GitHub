@@ -1,0 +1,47 @@
+Chris
+loadg can't even parse the output just written by storeg
+
+Chris,
+I still get the parse errors, even with the latest, greatest atacs (see below).
+	--Eric Peskin
+
+[OK.  Chris points out that this is part of a larger problem with levels in 
+general.  See report 110.  --ERP]
+
+127 ming:~> pwd
+/home/shang/peskin
+128 ming:~> ls -l `which atacs`
+-rwxr-xr-x   1 peskin   101      10568691 Apr  6 09:29
+/home/shang/peskin/atacs/atacs*
+129 ming:~> atacs -sg -lg simple
+ATACS VERSION 4.1
+Logging session in:  atacs.log
+Compiling simple.csp ... 
+Storing process explicitSimple to explicitSimple.er
+Storing process env to env.er
+Storing process simple to simple.er
+Storing process simple to simple.er
+Loading timed event-rule structure from:  simple.er
+WARNING:  Graph not connected!
+WARNING:  Dropped 4 unconnected nodes.
+Initializing 3 cycles ... done
+Checking liveness ... live
+Checking connectivity ... NOT strongly connected
+EXCEPTION:  Connectivity violation!
+Checking safety ... safe
+Storing graph file used by SIS to:  simple.g
+parse error
+Parsing Error at line 3
+        $
+Parsing Error at line 3
+        $
+Parsing Error at line 3
+        3
+Parsing Error at line 3
+        $
+Parsing Error at line 3
+        1
+Converting Petri net to ER and storing to:  simple.er
+Loading timed event-rule structure from:  simple.er
+Initializing 3 cycles ... done
+130 ming:~>

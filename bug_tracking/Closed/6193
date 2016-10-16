@@ -1,0 +1,44 @@
+From ibiosim@gmail.com  Thu Nov 20 11:51:49 2014
+Return-Path: <ibiosim@gmail.com>
+Received: from mail-oi0-f43.google.com (mail-oi0-f43.google.com [209.85.218.43])
+	by chou.ece.utah.edu (8.14.7/8.14.4) with ESMTP id sAKIpmQ3004575
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 Nov 2014 11:51:48 -0700
+Received: by mail-oi0-f43.google.com with SMTP id a3so2523275oib.30
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 Nov 2014 10:51:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:subject:mime-version:content-type
+         :content-transfer-encoding;
+        bh=pSZjIoBbjbiMjNFLot3ieSaNFGrT0YwM/9Ff6oMY4V8=;
+        b=PiScdBHsQQwH+RV43iePxg5oP2lCgtKHfKFlGymlczWIf8PgUsPF9ZXgEkaPcsupj4
+         urcKFAzaapm4+sjYksb4qx2DzlccjgOLVhI0EbyEE6UK17Qpr3FwkxEv+tcO1RtP1YP8
+         lACS5u7xf4ceyqT4Huv27wZLCO8FiFnKkgClwCb5F5VFfZxUZZT1zwnM6fhMtLYaZb2+
+         frZmwaF77Leui0bR/4rwiDhSZwdgF3Z5GyRCKSk/E0GFDnRjhO4kTx13ycgrDe4ME1hv
+         G0nRqO9u6dHSAAHglqsnSbMmDUf2kO2XIVNyysR3J8VlzxMzmdB/9zqt/uxhCnVOqkwQ
+         3uMw==
+X-Received: by 10.60.35.132 with SMTP id h4mr43127109oej.12.1416509508270;
+        Thu, 20 Nov 2014 10:51:48 -0800 (PST)
+Received: from jiaqi.uconnect.utah.edu (128-110-75-170.uconnect.utah.edu. [128.110.75.170])
+        by mx.google.com with ESMTPSA id no6sm1210083obb.6.2014.11.20.10.51.46
+        for <atacs-bugs@vlsigroup.ece.utah.edu>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Thu, 20 Nov 2014 10:51:47 -0800 (PST)
+Date: Thu, 20 Nov 2014 10:51:47 -0800 (PST)
+From: ibiosim@gmail.com
+X-Google-Original-From: myers@ece.utah.edu
+To: atacs-bugs@vlsigroup.ece.utah.edu
+Message-ID: <694519405.1.1416509507203.JavaMail.myers@jiaqi>
+Subject: BUG: Details on exception not scrolling
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+iBioSim Version 2.8
+
+Operating system: Mac OS X
+
+Bug reported by: myers@ece.utah.edu
+
+Description:
+When details on exception are too long, you cannot see the whole thing.
+

@@ -1,0 +1,28 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: jeffrey.theisen@utah.edu
+Subject: Re: BUG: Move Random error rkf45 (java) (PR#5864)
+Date: Fri Mar 29 19:59:31 2013
+
+Well, turns out the information that needed to be setup to support movement in
+grids was not setup in the java 
+ODE simulator.  It is now, and it should work in the next release.
+
+Chris
+
+> Bug reported by: jeffrey.theisen@utah.edu
+> 
+> Description:
+> When I simulate a cell with random movement in the rkf45 (java) simulator it
+> comes up with a NullPointerException.  This error does not come up when using
+> the SSA-Direct (java) simulator.
+> 
+> Stack trace:
+> java.lang.NullPointerException
+> 	at analysis.dynamicsim.Simulator.fireEvents(Simulator.java:2183)
+> 	at analysis.dynamicsim.SimulatorODERK.simulate(SimulatorODERK.java:285)
+> 	at analysis.dynamicsim.DynamicSimulation.simulate(DynamicSimulation.java:85)
+> 	at analysis.Run.execute(Run.java:1266)
+> 	at analysis.AnalysisView.run(AnalysisView.java:2214)
+> 	at analysis.AnalysisThread.run(AnalysisThread.java:24)
+> 
+> 

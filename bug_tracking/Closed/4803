@@ -1,0 +1,29 @@
+From myers@ece.utah.edu  Sun Oct  4 16:36:00 2009
+Return-Path: <myers@ece.utah.edu>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on chou.ece.utah.edu
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.0 required=5.0 tests=AWL,BAYES_00 autolearn=ham
+	version=3.2.5
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.3/8.13.1) with ESMTP id n94MZx6f009933;
+	Sun, 4 Oct 2009 16:35:59 -0600
+Received: from 75-169-179-30.slkc.qwest.net ([75.169.179.30] helo=[192.168.0.3])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1MuZgN-0007Hl-M3; Sun, 04 Oct 2009 16:35:59 -0600
+Message-Id: <2737814B-BD7F-420F-95FD-CACA164E401B@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Kevin Jones <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: BUG: verification does not seem to copy the file correctly
+Date: Sun, 4 Oct 2009 16:35:53 -0600
+Cc: kjones@vlsigroup.ece.utah.edu
+X-Mailer: Apple Mail (2.936)
+
+When verifying waterAMS.vhd, it does not seem to copy the file into  
+the directory correctly.  The file is empty.  It should copy the file  
+just before running atacs on it.
+

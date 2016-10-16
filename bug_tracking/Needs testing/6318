@@ -1,0 +1,190 @@
+From myers@eng.utah.edu  Fri May  1 17:19:14 2015
+Return-Path: <myers@eng.utah.edu>
+Received: from mailhub.eng.utah.edu (mailhub.eng.utah.edu [155.98.110.27])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id t41NJEfk010135
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 1 May 2015 17:19:14 -0600
+Received: from panic.eng.utah.edu ([155.98.110.176])
+	by mailhub.eng.utah.edu with esmtps TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256
+	(Exim 4.84 id 1YoKD9-000DqA-HB)
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 01 May 2015 17:19:14 -0600
+Received: from ching.ece.utah.edu ([155.98.27.211])
+	by panic.eng.utah.edu with esmtpsa (TLSv1:DHE-RSA-AES256-SHA:256)
+	(Exim 4.84 (FreeBSD))
+	(envelope-from <myers@eng.utah.edu>)
+	id 1YoKMr-0003Dp-Pk
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 01 May 2015 17:29:13 -0600
+From: "Chris J. Myers" <myers@ece.utah.edu>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_1D536C21-2FD9-488D-B54B-2A9614C35457"
+Subject: CHANGE: Test with new test suite
+Date: Fri, 1 May 2015 17:19:10 -0600
+References: <20150422085158429377.00c3c6c2@caltech.edu>
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Message-Id: <FD7B79FF-58EF-4293-8078-59F6A057A4D0@ece.utah.edu>
+Mime-Version: 1.0 (Mac OS X Mail 8.2 \(2070.6\))
+X-Mailer: Apple Mail (2.2070.6)
+X-UCE-Score: -1.9 (-)
+X-spam-level: -
+
+
+--Apple-Mail=_1D536C21-2FD9-488D-B54B-2A9614C35457
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+> Begin forwarded message:
+>=20
+> Date: April 22, 2015 at 9:51:58 AM MDT
+> From: Michael Hucka <mhucka@caltech.edu>
+> To: sbml-discuss@googlegroups.com
+> Subject: [sbml-discuss] Stochastic test cases for SBML Test Suite 3.2
+> Reply-To: sbml-discuss@googlegroups.com
+>=20
+> As mentioned recently, in the next release of the SBML Test Suite, we =
+will make available new cases for syntactic tests and stochastic tests, =
+in addition to the current semantic test cases.  These will not (yet) be =
+integrated into the SBML Test Runners, but at least it will be a start =
+at addressing some additional needs that people have faced in the =
+context of testing SBML applications.
+>=20
+> The 3 types of tests (semantic, syntactic, stochastic) will be =
+distributed as separate archives.  The stochastic test cases are =
+available now.  You can find them here:
+>=20
+>  https://sourceforge.net/projects/sbml/files/test-suite/3.2.0-beta
+>=20
+> These files are essentially a repackaged version of the Discrete =
+Stochastic Model Test Suite (DSMTS), created by Thomas W. Evans, Colin =
+S. Gillespie, and Darren J. Wilkinson.  The DSMTS was originally =
+developed circa 2007-2010, and its home page is =
+http://dsmts.googlecode.com/.  We have incorporated the DSMTS into the =
+SBML Test Suite with the agreement of the original authors.  The SBML =
+Test Suite version includes the following changes:
+>=20
+>  - additional files for settings and output configuration
+>  - version of the CSV results file in SBML Test Suite format
+>  - plot files in conventional SBML Test Suite format
+>  - corrections to the SBML Level 3 versions of the tests
+>=20
+> All of the original DSMTS files are also provided in this SBML Test =
+Suite archive.
+>=20
+> As mentioned above, these are not yet integrated into the SBML Test =
+Suite runner.  We are releasing them now so that people can get access =
+to them and give us feedback.  So, please let us know what you think!
+>=20
+> Mike
+> on behalf of the libSBML Team (libsbml-team@caltech.edu)
+>=20
+> --=20
+> You received this message because you are subscribed to the Google =
+Groups "sbml-discuss" group.
+> To unsubscribe from this group and stop receiving emails from it, send =
+an email to sbml-discuss+unsubscribe@googlegroups.com.
+> To post to this group, send email to sbml-discuss@googlegroups.com.
+> To view this discussion on the web visit =
+https://groups.google.com/d/msgid/sbml-discuss/20150422085158429377.00c3c6=
+c2%40caltech.edu.
+> For more options, visit https://groups.google.com/d/optout.
+
+
+--Apple-Mail=_1D536C21-2FD9-488D-B54B-2A9614C35457
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" =
+class=3D""><br class=3D""><div><br class=3D""><blockquote type=3D"cite" =
+class=3D""><div class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">April 22, 2015 at 9:51:58 AM =
+MDT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Michael Hucka &lt;<a =
+href=3D"mailto:mhucka@caltech.edu" =
+class=3D"">mhucka@caltech.edu</a>&gt;<br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;" class=3D""><a href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">[sbml-discuss] =
+Stochastic test cases for SBML Test Suite 3.2</b><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Reply-To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a><br =
+class=3D""></span></div><br class=3D""><div class=3D"">As mentioned =
+recently, in the next release of the SBML Test Suite, we will make =
+available new cases for syntactic tests and stochastic tests, in =
+addition to the current semantic test cases. &nbsp;These will not (yet) =
+be integrated into the SBML Test Runners, but at least it will be a =
+start at addressing some additional needs that people have faced in the =
+context of testing SBML applications.<br class=3D""><br class=3D"">The 3 =
+types of tests (semantic, syntactic, stochastic) will be distributed as =
+separate archives. &nbsp;The stochastic test cases are available now. =
+&nbsp;You can find them here:<br class=3D""><br class=3D""> &nbsp;<a =
+href=3D"https://sourceforge.net/projects/sbml/files/test-suite/3.2.0-beta"=
+ =
+class=3D"">https://sourceforge.net/projects/sbml/files/test-suite/3.2.0-be=
+ta</a><br class=3D""><br class=3D"">These files are essentially a =
+repackaged version of the Discrete Stochastic Model Test Suite (DSMTS), =
+created by Thomas W. Evans, Colin S. Gillespie, and Darren J. Wilkinson. =
+&nbsp;The DSMTS was originally developed circa 2007-2010, and its home =
+page is <a href=3D"http://dsmts.googlecode.com/" =
+class=3D"">http://dsmts.googlecode.com/</a>. &nbsp;We have incorporated =
+the DSMTS into the SBML Test Suite with the agreement of the original =
+authors. &nbsp;The SBML Test Suite version includes the following =
+changes:<br class=3D""><br class=3D""> &nbsp;- additional files for =
+settings and output configuration<br class=3D""> &nbsp;- version of the =
+CSV results file in SBML Test Suite format<br class=3D""> &nbsp;- plot =
+files in conventional SBML Test Suite format<br class=3D""> &nbsp;- =
+corrections to the SBML Level 3 versions of the tests<br class=3D""><br =
+class=3D"">All of the original DSMTS files are also provided in this =
+SBML Test Suite archive.<br class=3D""><br class=3D"">As mentioned =
+above, these are not yet integrated into the SBML Test Suite runner. =
+&nbsp;We are releasing them now so that people can get access to them =
+and give us feedback. &nbsp;So, please let us know what you think!<br =
+class=3D""><br class=3D"">Mike<br class=3D"">on behalf of the libSBML =
+Team (<a href=3D"mailto:libsbml-team@caltech.edu" =
+class=3D"">libsbml-team@caltech.edu</a>)<br class=3D""><br class=3D"">-- =
+<br class=3D"">You received this message because you are subscribed to =
+the Google Groups "sbml-discuss" group.<br class=3D"">To unsubscribe =
+from this group and stop receiving emails from it, send an email to <a =
+href=3D"mailto:sbml-discuss+unsubscribe@googlegroups.com" =
+class=3D"">sbml-discuss+unsubscribe@googlegroups.com</a>.<br class=3D"">To=
+ post to this group, send email to <a =
+href=3D"mailto:sbml-discuss@googlegroups.com" =
+class=3D"">sbml-discuss@googlegroups.com</a>.<br class=3D"">To view this =
+discussion on the web visit <a =
+href=3D"https://groups.google.com/d/msgid/sbml-discuss/2015042208515842937=
+7.00c3c6c2%40caltech.edu" =
+class=3D"">https://groups.google.com/d/msgid/sbml-discuss/2015042208515842=
+9377.00c3c6c2%40caltech.edu</a>.<br class=3D"">For more options, visit =
+<a href=3D"https://groups.google.com/d/optout" =
+class=3D"">https://groups.google.com/d/optout</a>.<br =
+class=3D""></div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_1D536C21-2FD9-488D-B54B-2A9614C35457--
+

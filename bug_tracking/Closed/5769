@@ -1,0 +1,62 @@
+From andrew.n.fisher@utah.edu  Thu Sep 20 22:09:06 2012
+Return-Path: <andrew.n.fisher@utah.edu>
+Received: from ipoi.cc.utah.edu (ipoi.cc.utah.edu [155.97.131.81])
+	by chou.ece.utah.edu (8.14.5/8.14.4) with ESMTP id q8L4958w009763
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 20 Sep 2012 22:09:05 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ap4EADfoW1CbYbVo/2dsb2JhbABFDoI9vE2CFwsFgQsBCwEeQxMmAQQbh32YGZgziQeQYmADiCGFAZhjgiw7ghc
+X-IronPort-AV: E=Sophos;i="4.80,458,1344232800"; 
+   d="scan'208,217";a="12777675"
+Received: from h104.umail.utah.edu (HELO X-HUB4.xds.umail.utah.edu) ([155.97.181.104])
+  by ipoismtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 20 Sep 2012 22:08:59 -0600
+Received: from X-MB8.xds.umail.utah.edu ([169.254.2.67]) by
+ X-HUB4.xds.umail.utah.edu ([155.97.181.104]) with mapi id 14.02.0309.002;
+ Thu, 20 Sep 2012 22:08:25 -0600
+From: ANDREW NATHAN FISHER <andrew.n.fisher@utah.edu>
+To: "atacs-bugs@vlsigroup.ece.utah.edu" <atacs-bugs@vlsigroup.ece.utah.edu>
+Subject: CHANGE : give a more complete preference list.
+Thread-Topic: CHANGE : give a more complete preference list.
+Thread-Index: Ac2XrjzJA/5+cpRzT8OZT1IaLnKjVg==
+Date: Fri, 21 Sep 2012 04:08:24 +0000
+Message-ID: <33C595BF585B104B8418E9E32A58C0ED109ADE6A@X-MB8.xds.umail.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [67.161.221.170]
+Content-Type: multipart/alternative;
+	boundary="_000_33C595BF585B104B8418E9E32A58C0ED109ADE6AXMB8xdsumailuta_"
+MIME-Version: 1.0
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE6AXMB8xdsumailuta_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+The preference lists for LEMA lacks a few of the features that iBiosim has =
+that may be helpful now that LPNs can be created via drag and drop. As an e=
+xample, the "Use libsbml to Flatten Models" feature.
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE6AXMB8xdsumailuta_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">The preference lists for LEMA lacks a few of the features that iBios=
+im has that may be helpful now that LPNs can be created via drag and drop. =
+As an example, the &quot;Use libsbml to
+ Flatten Models&quot; feature.<br>
+</div>
+</body>
+</html>
+
+--_000_33C595BF585B104B8418E9E32A58C0ED109ADE6AXMB8xdsumailuta_--
+

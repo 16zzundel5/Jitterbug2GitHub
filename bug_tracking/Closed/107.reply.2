@@ -1,0 +1,16 @@
+From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
+To: wendy@ee.utah.edu
+Subject: Re: bug in lab3.csp (PR#107)
+Date: Sun May  2 17:18:02 1999
+CC: peskin@vlsigroup.elen.utah.edu
+
+There seems to be something wrong with this example.  In particular, 
+
+[ skip -> q0+
+| skip -> q0+]
+
+This doesn't make much sense to me.  I think it is there because later
+there are two instances of q0+, but this will not guarantee they will
+match correctly.  I think this example should deadlock.
+
+Chris

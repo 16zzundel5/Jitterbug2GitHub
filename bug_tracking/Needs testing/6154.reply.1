@@ -1,0 +1,54 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ece.utah.edu
+Subject: Re: FEATURE: add dimensions and index to layout (PR#6154)
+Date: Sun Sep 28 17:02:22 2014
+
+Hi,
+
+I've been thinking about an issue that I think Lucian pointed out at COMBINE. 
+Namely, if an object is an array and 
+it is referenced in layout, then there will be a problem trying to flatten out
+arrays.  The issue is that an arrayed 
+variable in layout does not currently have an index, so when the arrays are
+flattened, what flattened id would it 
+take.  For example:
+
+Parameter n=2
+Species S[n]
+SpeciesGlyph Glyph_S 
+	Species S
+
+when flattened, we have species S_0 and S_1 and which would the layout point
+to?
+
+So, the solution I can think of is to give SpeciesGlyphs a dimension and index:
+
+Parameter n=2
+Species S[n]
+SpeciesGlyph Glyph_S[n] where d0 is the id for the dimension 
+	Species S[d0]
+
+So, now flatten would create two SpeciesGlyphs on top of each other.  Another
+example of why I'm not sure we 
+should be flattening layout, but at least it is consistent.  A little trickier
+issue is with TextGlyphs:
+
+Parameter n=2
+Species S[n]
+SpeciesGlyph Glyph_S[n] where d0 is the id for the dimension 
+	Species S[d0]
+TextGlyph TextGlyph_S[n] where d0 is the id for the dimension
+	SpeciesGlyph Glyph_S[d0]
+	Text S[n]
+
+I want the text (as it shows in our schematic) to show the size.  However, after
+flatten, would make more sense if 
+the Text is S[0] and S[1] for the generated TextGlyphs.  I don't think there is
+any clean way to do this though.
+
+Anyway, curious your opinions about the approach that I've described before I go
+implementing it.
+
+Thanks,
+
+Chris

@@ -1,0 +1,10 @@
+From: Eric Robert Peskin <atacs-bugs@shang.elen.utah.edu>
+To: peskin@cs.utah.edu
+Subject: Re: now ATACS does not link on Hedwig (PR#195)
+Date: Thu Jul 22 17:34:29 1999
+
+OK.  I fixed this one myself.  The Makefile now checks the environment variable
+RELEASE.  If that is 2.0.36, it gets the BDD libraries from Rob's directory. 
+Otherwise, it gets them from /home/ming/software/lib.
+
+I will now close this report.

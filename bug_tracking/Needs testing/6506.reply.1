@@ -1,0 +1,85 @@
+From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+To: michael13162@gmail.com
+Subject: Re: BUG (PR#6506)
+Date: Thu Jul  7 21:56:17 2016
+
+I don't think this one should happen anymore with all the changes for SED-ML, so
+please verify that you can 
+reproduce.
+
+> --001a11449f662f3be205344cdead
+> Content-Type: text/plain; charset=UTF-8
+> 
+> Running certain simulations results in an error.  For example,
+> Reaction-based ODE was unable to write to the properties file.  Here is the
+> stack trace:
+> 
+> java.io.FileNotFoundException:
+> ssa\C:\Users\Michael\Desktop\SBOL\SynBioTutorial\GeneticToggle\GeneticToggle.properties
+> (The filename, directory name, or volume label syntax is incorrect)
+> at java.io.FileOutputStream.open0(Native Method)
+> at java.io.FileOutputStream.open(Unknown Source)
+> at java.io.FileOutputStream.<init>(Unknown Source)
+> at java.io.FileOutputStream.<init>(Unknown Source)
+> at analysis.main.AnalysisView.save(AnalysisView.java:1527)
+> at analysis.main.AnalysisView.run(AnalysisView.java:1002)
+> at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+> java.io.FileNotFoundException:
+> ssa\C:\Users\Michael\Desktop\SBOL\SynBioTutorial\GeneticToggle\running (The
+> filename, directory name, or volume label syntax is incorrect)
+> at java.io.FileOutputStream.open0(Native Method)
+> at java.io.FileOutputStream.open(Unknown Source)
+> at java.io.FileOutputStream.<init>(Unknown Source)
+> at java.io.FileOutputStream.<init>(Unknown Source)
+> at java.io.FileWriter.<init>(Unknown Source)
+> at analysis.main.Run.execute(Run.java:382)
+> at analysis.main.AnalysisView.run(AnalysisView.java:1081)
+> at analysis.main.AnalysisThread.run(AnalysisThread.java:24)
+> -- 
+> Thanks,
+> Michael Zhang
+> 
+> --001a11449f662f3be205344cdead
+> Content-Type: text/html; charset=UTF-8
+> Content-Transfer-Encoding: quoted-printable
+> 
+> <div dir=3D"ltr">Running certain simulations results in an error.=C2=A0 For=
+>  example, Reaction-based ODE was unable to write to the properties file.=C2=
+> =A0 Here is the stack trace:<div><br></div><div><div>java.io.FileNotFoundEx=
+> ception: ssa\C:\Users\Michael\Desktop\SBOL\SynBioTutorial\GeneticToggle\Gen=
+> eticToggle.properties (The filename, directory name, or volume label syntax=
+>  is incorrect)</div><div><span class=3D"Apple-tab-span" style=3D"white-spac=
+> e:pre">	</span>at java.io.FileOutputStream.open0(Native Method)</div><div><=
+> span class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at java.io.=
+> FileOutputStream.open(Unknown Source)</div><div><span class=3D"Apple-tab-sp=
+> an" style=3D"white-space:pre">	</span>at java.io.FileOutputStream.<init&=
+> gt;(Unknown Source)</div><div><span class=3D"Apple-tab-span" style=3D"white=
+> -space:pre">	</span>at java.io.FileOutputStream.<init>(Unknown Source=
+> )</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">	</spa=
+> n>at analysis.main.AnalysisView.save(AnalysisView.java:1527)</div><div><spa=
+> n class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at analysis.ma=
+> in.AnalysisView.run(AnalysisView.java:1002)</div><div><span class=3D"Apple-=
+> tab-span" style=3D"white-space:pre">	</span>at analysis.main.AnalysisThread=
+> .run(AnalysisThread.java:24)</div><div>java.io.FileNotFoundException: ssa\C=
+> :\Users\Michael\Desktop\SBOL\SynBioTutorial\GeneticToggle\running (The file=
+> name, directory name, or volume label syntax is incorrect)</div><div><span =
+> class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at java.io.FileO=
+> utputStream.open0(Native Method)</div><div><span class=3D"Apple-tab-span" s=
+> tyle=3D"white-space:pre">	</span>at java.io.FileOutputStream.open(Unknown S=
+> ource)</div><div><span class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+> </span>at java.io.FileOutputStream.<init>(Unknown Source)</div><div><=
+> span class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at java.io.=
+> FileOutputStream.<init>(Unknown Source)</div><div><span class=3D"Appl=
+> e-tab-span" style=3D"white-space:pre">	</span>at java.io.FileWriter.<ini=
+> t>(Unknown Source)</div><div><span class=3D"Apple-tab-span" style=3D"whi=
+> te-space:pre">	</span>at analysis.main.Run.execute(Run.java:382)</div><div>=
+> <span class=3D"Apple-tab-span" style=3D"white-space:pre">	</span>at analysi=
+> s.main.AnalysisView.run(AnalysisView.java:1081)</div><div><span class=3D"Ap=
+> ple-tab-span" style=3D"white-space:pre">	</span>at analysis.main.AnalysisTh=
+> read.run(AnalysisThread.java:24)</div></div></div><div dir=3D"ltr">-- <br><=
+> /div><div data-smartmail=3D"gmail_signature"><div dir=3D"ltr">Thanks,<div>M=
+> ichael Zhang</div></div></div>
+> 
+> --001a11449f662f3be205344cdead--
+> 
+> 

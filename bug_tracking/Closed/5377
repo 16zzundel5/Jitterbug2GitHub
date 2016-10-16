@@ -1,0 +1,24 @@
+From myers@ece.utah.edu  Fri May 20 08:26:42 2011
+Return-Path: <myers@ece.utah.edu>
+Received: from beta.eng.utah.edu (beta.eng.utah.edu [155.98.111.99])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p4KEQgfP014717
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Fri, 20 May 2011 08:26:42 -0600
+Received: from 75-169-176-88.slkc.qwest.net ([75.169.176.88] helo=[192.168.0.2])
+	by beta.eng.utah.edu with esmtpsa (TLSv1:AES128-SHA:128)
+	(Exim 4.63)
+	(envelope-from <myers@ece.utah.edu>)
+	id 1QNQf4-0002U2-16
+	for atacs-bugs@vlsigroup.ece.utah.edu; Fri, 20 May 2011 08:26:42 -0600
+Message-Id: <E6CA35D3-0AD3-40D2-8749-07F66EE17910@ece.utah.edu>
+From: "Chris J. Myers" <myers@ece.utah.edu>
+To: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Apple Message framework v936)
+Subject: CHANGE: change to single jar file version of libSBOL
+Date: Fri, 20 May 2011 08:26:31 -0600
+X-Mailer: Apple Mail (2.936)
+
+Use the single jar file version of libSBOL and unnecessary jars from  
+gui/lib.  Hopefully, can also remove config and data directories.
+

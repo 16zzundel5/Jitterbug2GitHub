@@ -1,0 +1,61 @@
+From curtis.madsen@utah.edu  Thu Apr 28 16:15:33 2011
+Return-Path: <curtis.madsen@utah.edu>
+Received: from ipo4hsc.utah.edu (ipo4hsc.utah.edu [155.97.131.100])
+	by chou.ece.utah.edu (8.14.4/8.14.4) with ESMTP id p3SMFXBm010250
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 28 Apr 2011 16:15:33 -0600
+X-SBRS: None
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: ApsEAFbmuU2bYbVl/2dsb2JhbACmeIhwtEWIb4V2BIYJiFONWlA
+X-IronPort-AV: E=Sophos;i="4.64,283,1301896800"; 
+   d="scan'208";a="492458843"
+Received: from h101.umail.utah.edu (HELO HUB1.xds.umail.utah.edu) ([155.97.181.101])
+  by ipo4smtp.cc.utah.edu with ESMTP/TLS/AES128-SHA; 28 Apr 2011 16:15:32 -0600
+Received: from C8V1.xds.umail.utah.edu ([169.254.1.52]) by
+ HUB1.xds.umail.utah.edu ([155.97.181.101]) with mapi; Thu, 28 Apr 2011
+ 16:15:32 -0600
+From: Curtis Kendall Madsen <curtis.madsen@utah.edu>
+To: "Chris J. Myers" <myers@ece.utah.edu>
+CC: Curtis Madsen <atacs-bugs@vlsigroup.ece.utah.edu>
+Date: Thu, 28 Apr 2011 16:15:29 -0600
+Subject: Re: CHANGE: ignore sweep when generating network graph (PR#5334)
+Thread-Topic: CHANGE: ignore sweep when generating network graph (PR#5334)
+Thread-Index: AcwF8cmUjbYL8NTtRn2q/zJQlMgMig==
+Message-ID: <293B92A7-DD7F-4C60-9DAA-A57785C95513@utah.edu>
+References: <201104271934.p3RJYiA9027134@chou.ece.utah.edu>
+ <534429D9-5418-45F0-AF72-39D437E19F5E@ece.utah.edu>
+In-Reply-To: <534429D9-5418-45F0-AF72-39D437E19F5E@ece.utah.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by chou.ece.utah.edu id p3SMFXBm010250
+
+Yes, I use the start value of the sweep.
+
+Curtis
+
+On Apr 28, 2011, at 4:06 PM, "Chris J. Myers" <myers@ece.utah.edu> wrote:
+
+> Looks good.  By the way, what value do you use in the model that is  
+> viewed, the start value?
+> 
+> Chris
+> 
+> On Apr 27, 2011, at 1:34 PM, Curtis Madsen wrote:
+> 
+>> Sweeping is now ignored when generating a network graph, viewing in  
+>> a browser,
+>> generating a SBML model, or generating a LPN.  Moving to needs  
+>> testing.
+>> 
+>>> In analysis view, when generating network graph for view, ignore  
+>>> sweep
+>>> variables.
+>>> 
+>>> 
+> 
+

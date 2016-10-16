@@ -1,0 +1,93 @@
+From mehersam251@gmail.com  Thu Jul  7 11:54:37 2016
+Return-Path: <mehersam251@gmail.com>
+Received: from mail-vk0-f52.google.com (mail-vk0-f52.google.com [209.85.213.52])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u67HsbYD004491
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 7 Jul 2016 11:54:37 -0600
+Received: by mail-vk0-f52.google.com with SMTP id v6so30168849vkb.2
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Thu, 07 Jul 2016 10:54:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=SVmxVsaFTbESxVTgqX7rj4t4i4od1f+wmVdjunjcbv8=;
+        b=BG2+oWS+ZufUVsrE3JNRs21W3MSxBTTyyrJGNRML3Pm/liTw3KhqWZDiBGb67Gq56E
+         +I9u60G25UxX79r9oHggpM6gtNiuA3+GAamlnrt3HruD8NMrmdriAkfdmIaE3QMGf+sD
+         778mzvVpdyg57b6EVsU2IWzbH0PFSeyPYjDL0FqwqJTk943OmCqfVqWyVOjG/SM8y4Zp
+         1OsTH61bjaQt84k72AoH+U8q4NZt3LCeYg1NCVALbbxTg0mx39ifWBTdoAf/tPbRtscM
+         HxndzyEVZMLQY+3mR+0v6sa0iNWG3wGuxGCkskbN4hwG4WDLW+LiGpbRHDFb8m7FjFMX
+         IkxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=SVmxVsaFTbESxVTgqX7rj4t4i4od1f+wmVdjunjcbv8=;
+        b=AvYict6e3uNM6OQbMLnb4+8N9LrzVSEYSL5gtXBNPgWhyvT7OO8bpwRfSO1XPW+qe3
+         X3WVGq+kIz1YyxvicYXjLAyksTuAHBungWIixhHvCVo64lxAAUP7hl/8g3j0BYQoRV5a
+         BFxdlRiLv+PuhMO4dfaef0qnIv9bL8+/8n9Uhat/M+KJNYzPa3YRkB76pKZ7XYiDxNkm
+         6+9udFKCYWsq+jvNKgyZ13vtEJR26Ymmdh/jDcw0o3ugaDH/F2AvGBs+TDk+IlQcZI/7
+         fJM/2+qlEfTxzn9ZJwtZTPSCj/Cm1WQn7Bz43s7GS0IS7sKQVVUmb8Kae5kRwPYC6poa
+         pGdQ==
+X-Gm-Message-State: ALyK8tKOyMbkP4I6/TyN0xWjb5ua6vuJ36+MYpsro/VaG7q+WkdRbo2T4f8UOTGFTOW0ynedQ+4sXCPq3TbILg==
+X-Received: by 10.31.109.197 with SMTP id i188mr673397vkc.157.1467914076684;
+ Thu, 07 Jul 2016 10:54:36 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.103.146.66 with HTTP; Thu, 7 Jul 2016 10:54:36 -0700 (PDT)
+In-Reply-To: <201607071750.u67Hod3U004421@chou.ece.utah.edu>
+References: <201607071750.u67Hod3U004421@chou.ece.utah.edu>
+From: Meher Samineni <mehersam251@gmail.com>
+Date: Thu, 7 Jul 2016 11:54:36 -0600
+Message-ID: <CAHmXq9akd61HYxWLw8bG_iMuaryJ8Znd4h22+L2q4-_T10zYxA@mail.gmail.com>
+Subject: Re: BUG: :Remember the directory path in registries (PR#6564)
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=94eb2c095ec81a06f805370f6128
+
+--94eb2c095ec81a06f805370f6128
+Content-Type: text/plain; charset=UTF-8
+
+Yes. I was referring to when I import parts in from existing registries in
+Designer, the path reverts to Documents or Desktop and I have to trace down
+directories again. But I don't think that's a bug, just a feature :)
+
+Best,
+
+Meher Samineni
+mehersam251@gmail.com
+801-654-8841
+
+
+On Thu, Jul 7, 2016 at 11:50 AM, Chris Myers <
+atacs-bugs@vlsigroup.ece.utah.edu> wrote:
+
+> Moving to SBOL Designer tracker as I believe that was what you were
+> referring
+> to.
+>
+> Chris
+>
+>
+
+--94eb2c095ec81a06f805370f6128
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Yes. I was referring to when I import parts in from existi=
+ng registries in Designer, the path reverts to Documents or Desktop and I h=
+ave to trace down directories again. But I don&#39;t think that&#39;s a bug=
+, just a feature :)</div><div class=3D"gmail_extra"><br clear=3D"all"><div>=
+<div class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=
+=3D"ltr">Best, <br><br>Meher Samineni<br><a href=3D"mailto:mehersam251@gmai=
+l.com" target=3D"_blank">mehersam251@gmail.com</a><br>801-654-8841<br><br><=
+/div></div></div>
+<br><div class=3D"gmail_quote">On Thu, Jul 7, 2016 at 11:50 AM, Chris Myers=
+ <span dir=3D"ltr">&lt;<a href=3D"mailto:atacs-bugs@vlsigroup.ece.utah.edu"=
+ target=3D"_blank">atacs-bugs@vlsigroup.ece.utah.edu</a>&gt;</span> wrote:<=
+br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left=
+:1px #ccc solid;padding-left:1ex">Moving to SBOL Designer tracker as I beli=
+eve that was what you were referring<br>
+to.<br>
+<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+Chris<br>
+<br>
+</font></span></blockquote></div><br></div>
+
+--94eb2c095ec81a06f805370f6128--
+

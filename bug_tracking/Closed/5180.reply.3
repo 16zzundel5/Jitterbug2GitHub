@@ -1,0 +1,39 @@
+From: tyler patterson <atacs-bugs@vlsigroup.ece.utah.edu>
+To: myers@ecetataededu
+Subject: Re: CHANGE: add support for constitutive promoters (PR#5180)
+Date: Wed Nov 24 04:24:30 2010
+
+> In the GCM file, it is possible to have an influence of the form:
+> 
+> none -> A, promoter P
+> 
+> This should display in the schematic as:
+> 
+> P -> A
+> 
+> where P is a promoter from which A is produced.
+> 
+> This means having promoters as a potential new type of node in the  
+> graphs.  In other words, both should be possible:
+> 
+> A -P-| B
+> 
+> AND
+> 
+> A -| P -> B
+> 
+> A promoter should have a property which says whether a promoter is  
+> shown explicitly or not.  Promoters that are shown explicitly should  
+> not be allowed to be selected as an implicit promoter on an  
+> influence.  Promoters which are used implicitly should not be allowed  
+> to be added as also an explicit promoter.
+> 
+> 
+
+I've checked in a rough version of this. I know that I still need to add checks
+that 
+drawn promoters cannot be selected as the promoter to existing influences. On
+top of 
+that I would be surprised if there aren't a lot of other places we have to
+account 
+for user interaction with them.

@@ -1,0 +1,236 @@
+From tramy.nguy@gmail.com  Tue Jun 28 11:34:48 2016
+Return-Path: <tramy.nguy@gmail.com>
+Received: from mail-qk0-f176.google.com (mail-qk0-f176.google.com [209.85.220.176])
+	by chou.ece.utah.edu (8.14.9/8.14.4) with ESMTP id u5SHYm9l002934
+	for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jun 2016 11:34:48 -0600
+Received: by mail-qk0-f176.google.com with SMTP id q79so43091384qke.0
+        for <atacs-bugs@vlsigroup.ece.utah.edu>; Tue, 28 Jun 2016 10:34:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=AtE1Ip7SLVt7GiNbDqka6NZkXlTDylcpcNZYOrmqsBs=;
+        b=uHLPFUg7nhsG0y42vj07GJfHasdhDmxdi7L/Tz7MeRqKmdHlMFVu6VqkioNzl+RIxR
+         LLILFDmcvak1UEBjmW8OZTT6JOuU/VGSIOWw2ZXmvRZb+q+VwEd0scNI1RG94EEFgSGc
+         4rKEJaGyf/4meQKPHMmE05SJg8rKMNNap3fKFzOtGIU3GPXos+1Xy2IbsrFi6g+nNXV9
+         ZwZFao2zo8kJJvh+rd0UZxSVzAKye9YeTOjS7s7kXwadqrWfpXFxdhb1j7ck53wbHkcv
+         uDedTa2eLtj2JYyNrC3rE4yXfxWqZ55o2Y0WfrXCFLfsaH4WGWXxmRNXw0KfpOrVLvtD
+         NEdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=AtE1Ip7SLVt7GiNbDqka6NZkXlTDylcpcNZYOrmqsBs=;
+        b=IFBLICo9RtnoEV6BgBAG/bDyWdmkaMQivqOp+SAEVspBS1K1JHipyzb1IjnQ3Bi2DK
+         +GtK3hDV1lKOVGGXZsVyiWOhbsSZUDDjPWwYeMoQVgzebXfUaBC8avvCzZgnZ7jrqVrt
+         G0gKQT2LOcPGqpjm1Z/+08WQ4BnW41UZAgrwV3K0sTCaX1RZ3E06l5vGGk7a08yzofKS
+         KrH82J112lA9E93LzzCD+iY8LVTMosO4QYqVAugrmr9ee9YlwBjm7Oc6eRdpQTSwtroN
+         RgJRcmc717YBhOiqJ07dKnjx+mfv6E6vHtUj3N6bpCQXKLTKw57xLwwQeojl1sFkz5Kl
+         hiGg==
+X-Gm-Message-State: ALyK8tKlOMKxXmxdZW458SNLd7piolrdLz3MNu81JvVDmJnoEY3WNG/PuYz/ezoOWB749BNMj4VOQpN+QSQXSg==
+X-Received: by 10.37.98.141 with SMTP id w135mr1461485ybb.9.1467135286679;
+ Tue, 28 Jun 2016 10:34:46 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.37.80.143 with HTTP; Tue, 28 Jun 2016 10:34:46 -0700 (PDT)
+From: Tramy Nguyen <tramy.nguy@gmail.com>
+Date: Tue, 28 Jun 2016 11:34:46 -0600
+Message-ID: <CAJxZzr5NgZ9tF_zkv_r4quXdMnCSCNHv3BFJqeK=HLB7trYC+w@mail.gmail.com>
+Subject: BUG: Getting GenericLocation exception when associating SBOL to Promoter
+To: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
+Content-Type: multipart/alternative; boundary=001a1142847e99a44705365a0dbe
+
+--001a1142847e99a44705365a0dbe
+Content-Type: text/plain; charset=UTF-8
+
+java.lang.ClassCastException: org.sbolstandard.core2.GenericLocation cannot
+be cast to org.sbolstandard.core2.Range
+at sbol.util.SBOLUtility2.orderSequenceAnnotations(SBOLUtility2.java:541)
+at sbol.assembly.Assembler2.loadAssemblyTypes(Assembler2.java:483)
+at sbol.assembly.Assembler2.loadAssemblyTypes(Assembler2.java:540)
+at sbol.assembly.Assembler2.loadNodeTypes(Assembler2.java:546)
+at sbol.assembly.Assembler2.orderAssemblyNodes(Assembler2.java:310)
+at sbol.assembly.Assembler2.assembleDNAComponent(Assembler2.java:54)
+at biomodel.gui.schematic.ModelEditor.saveSBOL2(ModelEditor.java:488)
+at biomodel.gui.schematic.ModelEditor.save(ModelEditor.java:398)
+at main.Gui.actionPerformed(Gui.java:3004)
+at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2018)
+at
+javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2341)
+at
+javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+at javax.swing.AbstractButton.doClick(AbstractButton.java:356)
+at
+javax.swing.plaf.basic.BasicMenuItemUI$Actions.actionPerformed(BasicMenuItemUI.java:802)
+at javax.swing.SwingUtilities.notifyAction(SwingUtilities.java:1662)
+at javax.swing.JComponent.processKeyBinding(JComponent.java:2878)
+at
+javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:689)
+at
+javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:697)
+at
+javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:697)
+at javax.swing.JMenuBar.processKeyBinding(JMenuBar.java:668)
+at javax.swing.KeyboardManager.fireBinding(KeyboardManager.java:307)
+at javax.swing.KeyboardManager.fireKeyboardAction(KeyboardManager.java:293)
+at
+javax.swing.JComponent.processKeyBindingsForAllComponents(JComponent.java:2970)
+at javax.swing.JComponent.processKeyBindings(JComponent.java:2962)
+at javax.swing.JComponent.processKeyEvent(JComponent.java:2841)
+at java.awt.Component.processEvent(Component.java:6282)
+at java.awt.Container.processEvent(Container.java:2229)
+at java.awt.Component.dispatchEventImpl(Component.java:4861)
+at java.awt.Container.dispatchEventImpl(Container.java:2287)
+at java.awt.Component.dispatchEvent(Component.java:4687)
+at
+java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1895)
+at
+java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:762)
+at
+java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1027)
+at
+java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:899)
+at
+java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:727)
+at java.awt.Component.dispatchEventImpl(Component.java:4731)
+at java.awt.Container.dispatchEventImpl(Container.java:2287)
+at java.awt.Window.dispatchEventImpl(Window.java:2719)
+at java.awt.Component.dispatchEvent(Component.java:4687)
+at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:735)
+at java.awt.EventQueue.access$200(EventQueue.java:103)
+at java.awt.EventQueue$3.run(EventQueue.java:694)
+at java.awt.EventQueue$3.run(EventQueue.java:692)
+at java.security.AccessController.doPrivileged(Native Method)
+at
+java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+at
+java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+at java.awt.EventQueue$4.run(EventQueue.java:708)
+at java.awt.EventQueue$4.run(EventQueue.java:706)
+at java.security.AccessController.doPrivileged(Native Method)
+at
+java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+at java.awt.EventQueue.dispatchEvent(EventQueue.java:705)
+at
+java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+at
+java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+at
+java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+
+--001a1142847e99a44705365a0dbe
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div style=3D"font-size:13px"><br></div></div><div><b=
+r></div><div>java.lang.ClassCastException: org.sbolstandard.core2.GenericLo=
+cation cannot be cast to org.sbolstandard.core2.Range</div><div><span class=
+=3D"" style=3D"white-space:pre">	</span>at sbol.util.SBOLUtility2.orderSequ=
+enceAnnotations(SBOLUtility2.java:541)</div><div><span class=3D"" style=3D"=
+white-space:pre">	</span>at sbol.assembly.Assembler2.loadAssemblyTypes(Asse=
+mbler2.java:483)</div><div><span class=3D"" style=3D"white-space:pre">	</sp=
+an>at sbol.assembly.Assembler2.loadAssemblyTypes(Assembler2.java:540)</div>=
+<div><span class=3D"" style=3D"white-space:pre">	</span>at sbol.assembly.As=
+sembler2.loadNodeTypes(Assembler2.java:546)</div><div><span class=3D"" styl=
+e=3D"white-space:pre">	</span>at sbol.assembly.Assembler2.orderAssemblyNode=
+s(Assembler2.java:310)</div><div><span class=3D"" style=3D"white-space:pre"=
+>	</span>at sbol.assembly.Assembler2.assembleDNAComponent(Assembler2.java:5=
+4)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at biomodel=
+.gui.schematic.ModelEditor.saveSBOL2(ModelEditor.java:488)</div><div><span =
+class=3D"" style=3D"white-space:pre">	</span>at biomodel.gui.schematic.Mode=
+lEditor.save(ModelEditor.java:398)</div><div><span class=3D"" style=3D"whit=
+e-space:pre">	</span>at main.Gui.actionPerformed(Gui.java:3004)</div><div><=
+span class=3D"" style=3D"white-space:pre">	</span>at javax.swing.AbstractBu=
+tton.fireActionPerformed(AbstractButton.java:2018)</div><div><span class=3D=
+"" style=3D"white-space:pre">	</span>at javax.swing.AbstractButton$Handler.=
+actionPerformed(AbstractButton.java:2341)</div><div><span class=3D"" style=
+=3D"white-space:pre">	</span>at javax.swing.DefaultButtonModel.fireActionPe=
+rformed(DefaultButtonModel.java:402)</div><div><span class=3D"" style=3D"wh=
+ite-space:pre">	</span>at javax.swing.DefaultButtonModel.setPressed(Default=
+ButtonModel.java:259)</div><div><span class=3D"" style=3D"white-space:pre">=
+	</span>at javax.swing.AbstractButton.doClick(AbstractButton.java:376)</div=
+><div><span class=3D"" style=3D"white-space:pre">	</span>at javax.swing.Abs=
+tractButton.doClick(AbstractButton.java:356)</div><div><span class=3D"" sty=
+le=3D"white-space:pre">	</span>at javax.swing.plaf.basic.BasicMenuItemUI$Ac=
+tions.actionPerformed(BasicMenuItemUI.java:802)</div><div><span class=3D"" =
+style=3D"white-space:pre">	</span>at javax.swing.SwingUtilities.notifyActio=
+n(SwingUtilities.java:1662)</div><div><span class=3D"" style=3D"white-space=
+:pre">	</span>at javax.swing.JComponent.processKeyBinding(JComponent.java:2=
+878)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at javax.=
+swing.JMenuBar.processBindingForKeyStrokeRecursive(JMenuBar.java:689)</div>=
+<div><span class=3D"" style=3D"white-space:pre">	</span>at javax.swing.JMen=
+uBar.processBindingForKeyStrokeRecursive(JMenuBar.java:697)</div><div><span=
+ class=3D"" style=3D"white-space:pre">	</span>at javax.swing.JMenuBar.proce=
+ssBindingForKeyStrokeRecursive(JMenuBar.java:697)</div><div><span class=3D"=
+" style=3D"white-space:pre">	</span>at javax.swing.JMenuBar.processKeyBindi=
+ng(JMenuBar.java:668)</div><div><span class=3D"" style=3D"white-space:pre">=
+	</span>at javax.swing.KeyboardManager.fireBinding(KeyboardManager.java:307=
+)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at javax.swi=
+ng.KeyboardManager.fireKeyboardAction(KeyboardManager.java:293)</div><div><=
+span class=3D"" style=3D"white-space:pre">	</span>at javax.swing.JComponent=
+.processKeyBindingsForAllComponents(JComponent.java:2970)</div><div><span c=
+lass=3D"" style=3D"white-space:pre">	</span>at javax.swing.JComponent.proce=
+ssKeyBindings(JComponent.java:2962)</div><div><span class=3D"" style=3D"whi=
+te-space:pre">	</span>at javax.swing.JComponent.processKeyEvent(JComponent.=
+java:2841)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at =
+java.awt.Component.processEvent(Component.java:6282)</div><div><span class=
+=3D"" style=3D"white-space:pre">	</span>at java.awt.Container.processEvent(=
+Container.java:2229)</div><div><span class=3D"" style=3D"white-space:pre">	=
+</span>at java.awt.Component.dispatchEventImpl(Component.java:4861)</div><d=
+iv><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.Container=
+.dispatchEventImpl(Container.java:2287)</div><div><span class=3D"" style=3D=
+"white-space:pre">	</span>at java.awt.Component.dispatchEvent(Component.jav=
+a:4687)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at jav=
+a.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1895)<=
+/div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.De=
+faultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java=
+:762)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.=
+awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusMan=
+ager.java:1027)</div><div><span class=3D"" style=3D"white-space:pre">	</spa=
+n>at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboa=
+rdFocusManager.java:899)</div><div><span class=3D"" style=3D"white-space:pr=
+e">	</span>at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKey=
+boardFocusManager.java:727)</div><div><span class=3D"" style=3D"white-space=
+:pre">	</span>at java.awt.Component.dispatchEventImpl(Component.java:4731)<=
+/div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.Co=
+ntainer.dispatchEventImpl(Container.java:2287)</div><div><span class=3D"" s=
+tyle=3D"white-space:pre">	</span>at java.awt.Window.dispatchEventImpl(Windo=
+w.java:2719)</div><div><span class=3D"" style=3D"white-space:pre">	</span>a=
+t java.awt.Component.dispatchEvent(Component.java:4687)</div><div><span cla=
+ss=3D"" style=3D"white-space:pre">	</span>at java.awt.EventQueue.dispatchEv=
+entImpl(EventQueue.java:735)</div><div><span class=3D"" style=3D"white-spac=
+e:pre">	</span>at java.awt.EventQueue.access$200(EventQueue.java:103)</div>=
+<div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.EventQu=
+eue$3.run(EventQueue.java:694)</div><div><span class=3D"" style=3D"white-sp=
+ace:pre">	</span>at java.awt.EventQueue$3.run(EventQueue.java:692)</div><di=
+v><span class=3D"" style=3D"white-space:pre">	</span>at java.security.Acces=
+sController.doPrivileged(Native Method)</div><div><span class=3D"" style=3D=
+"white-space:pre">	</span>at java.security.ProtectionDomain$1.doIntersectio=
+nPrivilege(ProtectionDomain.java:76)</div><div><span class=3D"" style=3D"wh=
+ite-space:pre">	</span>at java.security.ProtectionDomain$1.doIntersectionPr=
+ivilege(ProtectionDomain.java:87)</div><div><span class=3D"" style=3D"white=
+-space:pre">	</span>at java.awt.EventQueue$4.run(EventQueue.java:708)</div>=
+<div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.EventQu=
+eue$4.run(EventQueue.java:706)</div><div><span class=3D"" style=3D"white-sp=
+ace:pre">	</span>at java.security.AccessController.doPrivileged(Native Meth=
+od)</div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.se=
+curity.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)=
+</div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.E=
+ventQueue.dispatchEvent(EventQueue.java:705)</div><div><span class=3D"" sty=
+le=3D"white-space:pre">	</span>at java.awt.EventDispatchThread.pumpOneEvent=
+ForFilters(EventDispatchThread.java:242)</div><div><span class=3D"" style=
+=3D"white-space:pre">	</span>at java.awt.EventDispatchThread.pumpEventsForF=
+ilter(EventDispatchThread.java:161)</div><div><span class=3D"" style=3D"whi=
+te-space:pre">	</span>at java.awt.EventDispatchThread.pumpEventsForHierarch=
+y(EventDispatchThread.java:150)</div><div><span class=3D"" style=3D"white-s=
+pace:pre">	</span>at java.awt.EventDispatchThread.pumpEvents(EventDispatchT=
+hread.java:146)</div><div><span class=3D"" style=3D"white-space:pre">	</spa=
+n>at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)<=
+/div><div><span class=3D"" style=3D"white-space:pre">	</span>at java.awt.Ev=
+entDispatchThread.run(EventDispatchThread.java:91)</div><div><br></div></di=
+v>
+
+--001a1142847e99a44705365a0dbe--
+
