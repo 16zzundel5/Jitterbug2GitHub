@@ -1,9 +1,0 @@
-From: Satish Batchu <atacs-bugs@vlsigroup.ece.utah.edu>
-To: myers@ece.utah.edu
-Subject: Re: BUG: one transition phase interpolator gets the wrong values (PR#4970)
-Date: Wed May 12 03:11:23 2010
-
-Looks like I fixed it now. During dmv detection, while traversing a trace to
-find stable dmv values (based on epsilon), we should also check whether the
-startpoint and endpoint (of the duration where the values are within epsilon)
-belong to the same bin. This check was not being done before. 

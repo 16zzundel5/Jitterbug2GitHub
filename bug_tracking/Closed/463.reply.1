@@ -1,9 +1,0 @@
-From: Chris Myers <atacs-bugs@shang.elen.utah.edu>
-To: peskin@cs.utah.edu
-Subject: Re: new state assignment code breaks chantal and glc.  Film at 11. (PR#463)
-Date: Tue Apr 23 12:41:43 2002
-
-Problem was that the marking for the new signals created a deadlock.  Chris has
-code that moves the marking but it relied on the live/safe check.  Now, it finds
-the state graph and if there is a problem moves the markings.  So, chantal and
-glc work now.

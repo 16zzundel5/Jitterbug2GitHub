@@ -1,6 +1,0 @@
-Chris
-
-Actually nothing with levels worked.  I changed the way enabled events is 
-determined to take into accounts with untimed state space exploration.
-I also uncommented some code which makes me a little concerned about why
-it was commented, but things seem to work now.

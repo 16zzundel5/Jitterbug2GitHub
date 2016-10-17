@@ -1,8 +1,0 @@
-Hao
-apparently not.  Old versions of ATACS would have produced a warning like
-
-WARNING: Timed event-rule structure is not closed!
-         The behavior of these events are not specified:
-       (c+,1)
-
-Note that the new version of ATACS produces no such warning in the session below

@@ -1,9 +1,0 @@
-From: Chris Myers <atacs-bugs@vlsigroup.ece.utah.edu>
-To: myers@ece.utah.edu
-Subject: Re: BUG: progress bar with sweeping (PR#2400)
-Date: Fri Dec 14 14:50:26 2007
-
-This now works.  There was a race condition with "direct" and sbmlProp needed to
-be copied by the thread and not modified.
-
-Better approach may be to extend thread class and add direct as a parameter.

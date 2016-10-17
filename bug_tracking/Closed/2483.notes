@@ -1,7 +1,0 @@
-BioSim 1.1
-
-
-Refactorred code out of GCM2SBMLEditor into separate classes.
-
-Now need to abstract out panel classes to an abstract class since lots of code
-is duplicated.  

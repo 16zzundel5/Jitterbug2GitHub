@@ -1,7 +1,0 @@
-The correct example is actually semenov.er in atacs/examples/er.  IMPORTANT:
-you
-need to turn OFF findred in atacs.c to get this example to work.  findred
-removes
-rules that introduces deadlock.
-
-egm

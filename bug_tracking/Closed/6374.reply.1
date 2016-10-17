@@ -1,8 +1,0 @@
-From: Zhen Zhang <atacs-bugs@vlsigroup.ece.utah.edu>
-To: myers@ece.utah.edu
-Subject: Re: BUG: VHDL compiler does not compile the Boolean condition for "while" loop correctly (PR#6374)
-Date: Wed Sep  2 04:52:22 2015
-
-In order for this to work, the "free" variable is declared as a signal
-with type std_logic. The VHDL compiler now adds it correctly as a
-condition for the while loop. Closing.

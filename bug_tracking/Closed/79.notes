@@ -1,4 +1,0 @@
-Chris
-Running the command below produced a graph with MULTIPLE connected components.
-The same command without the -mD produced a graph with just ONE connected
-component.

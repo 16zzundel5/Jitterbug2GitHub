@@ -1,5 +1,0 @@
-0.3
-Save As in the Simulation and SBML editor.
-Copy <modelID>.properties and <modelID>.sbml to a new analysis view
-specified by
-the user.

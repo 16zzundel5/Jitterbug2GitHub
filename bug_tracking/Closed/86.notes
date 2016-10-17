@@ -1,9 +1,0 @@
-converta.g (need to change all /0 to /1 and all /1 to /2).
-same with wrdata.g 
-The rest in group 1 now work unchanged.
-
-master-read.g needed the variable names rearranged and di changed to din.
-
-sbuf-ram-write.g needed the initial state changed and other coding problems.
-
-all work now.

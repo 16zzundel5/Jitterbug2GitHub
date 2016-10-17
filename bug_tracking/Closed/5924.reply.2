@@ -1,8 +1,0 @@
-From: Leandro Hikiji Watanabe <atacs-bugs@vlsigroup.ece.utah.edu>
-To: myers@ece.utah.edu
-Subject: Re: BUG: crash during hierarchical simulation (PR#5924)
-Date: Sat Aug 31 17:13:00 2013
-
-I think I fixed this. I had a clear function to reset the model state but
-instead I was 
-calling the clear function of the data structure. It should work now.

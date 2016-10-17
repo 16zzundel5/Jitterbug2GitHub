@@ -1,8 +1,0 @@
-From: Nicholas Roehner <atacs-bugs@vlsigroup.ece.utah.edu>
-To: nroehner@comcast.net, atacs-bugs@vlsigroup.ece.utah.edu
-Subject: Re: BUG:  biochemical repression incompatible with biochemical (PR#5061)
-Date: Fri Sep  3 20:24:14 2010
-
-That's because I fixed it!  The printRepressionBindingVisitor had failed to
-replace the biochemical species with a multiplication of its constituent species
-in the forward term of the abstracted rate law.
